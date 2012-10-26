@@ -345,83 +345,84 @@ namespace Google.Apis.Audit.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"audit:v1\",\"name" +
-            "\":\"audit\",\"version\":\"v1\",\"revision\":\"20111110\",\"title\":\"Enterprise Audit API\",\"d" +
-            "escription\":\"Lets you access user activities in your enterprise made through var" +
-            "ious applications.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/s" +
-            "earch-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"}," +
-            "\"documentationLink\":\"http://code.google.com/googleapps/domain/audit_admin/v1/get" +
-            "ting_started.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/apps/" +
-            "reporting/audit/v1/\",\"basePath\":\"/apps/reporting/audit/v1/\",\"rootUrl\":\"https://w" +
-            "ww.googleapis.com/\",\"servicePath\":\"apps/reporting/audit/v1/\",\"batchPath\":\"batch\"" +
-            ",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respons" +
-            "e.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with " +
-            "Content-Type of application/atom+xml\",\"Responses with Content-Type of applicatio" +
-            "n/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector s" +
-            "pecifying which fields to include in a partial response.\",\"location\":\"query\"},\"k" +
-            "ey\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your projec" +
-            "t and provides you with API access, quota, and reports. Required unless you prov" +
-            "ide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"des" +
-            "cription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPri" +
-            "nt\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line" +
-            " breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"des" +
-            "cription\":\"Available to use for quota purposes for server-side applications. Can" +
-            " be any arbitrary string assigned to a user, but should not exceed 40 characters" +
-            ". Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"" +
-            "string\",\"description\":\"IP address of the site where the request originates. Use " +
-            "this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"A" +
-            "ctivities\":{\"id\":\"Activities\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"arr" +
-            "ay\",\"description\":\"Each record in read response.\",\"items\":{\"$ref\":\"Activity\"}},\"" +
-            "kind\":{\"type\":\"string\",\"description\":\"Kind of list response this is.\",\"default\":" +
-            "\"audit#activities\"},\"next\":{\"type\":\"string\",\"description\":\"Next page URL.\"}}},\"A" +
-            "ctivity\":{\"id\":\"Activity\",\"type\":\"object\",\"properties\":{\"actor\":{\"type\":\"object\"" +
-            ",\"description\":\"User doing the action.\",\"properties\":{\"applicationId\":{\"type\":\"s" +
-            "tring\",\"description\":\"ID of application which interacted on behalf of the user.\"" +
-            ",\"format\":\"int64\"},\"callerType\":{\"type\":\"string\",\"description\":\"User or OAuth 2L" +
-            "O request.\"},\"email\":{\"type\":\"string\",\"description\":\"Email address of the user.\"" +
-            "},\"key\":{\"type\":\"string\",\"description\":\"For OAuth 2LO API requests, consumer_key" +
-            " of the requestor.\"}}},\"events\":{\"type\":\"array\",\"description\":\"Activity events.\"" +
-            ",\"items\":{\"type\":\"object\",\"properties\":{\"eventType\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Type of event.\"},\"name\":{\"type\":\"string\",\"description\":\"Name of event.\"},\"pa" +
-            "rameters\":{\"type\":\"array\",\"description\":\"Event parameters.\",\"items\":{\"type\":\"obj" +
-            "ect\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"Name of the parameter." +
-            "\"},\"value\":{\"type\":\"string\",\"description\":\"Value of the parameter.\"}}}}}}},\"id\":" +
-            "{\"type\":\"object\",\"description\":\"Unique identifier for each activity record.\",\"pr" +
-            "operties\":{\"applicationId\":{\"type\":\"string\",\"description\":\"Application ID of the" +
-            " source application.\",\"format\":\"int64\"},\"customerId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Obfuscated customer ID of the source customer.\"},\"time\":{\"type\":\"string\",\"d" +
-            "escription\":\"Time of occurrence of the activity.\",\"format\":\"date-time\"},\"uniqQua" +
-            "lifier\":{\"type\":\"string\",\"description\":\"Unique qualifier if multiple events have" +
-            " the same time.\",\"format\":\"int64\"}}},\"ipAddress\":{\"type\":\"string\",\"description\":" +
-            "\"IP Address of the user doing the action.\"},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"Kind of resource this is.\",\"default\":\"audit#activity\"},\"ownerDomain\":{\"type\":" +
-            "\"string\",\"description\":\"Domain of source customer.\"}}}},\"resources\":{\"activities" +
-            "\":{\"methods\":{\"list\":{\"id\":\"audit.activities.list\",\"path\":\"{customerId}/{applica" +
-            "tionId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of activities for a " +
-            "specific customer and application.\",\"parameters\":{\"actorApplicationId\":{\"type\":\"" +
-            "string\",\"description\":\"Application ID of the application which interacted on beh" +
-            "alf of the user while performing the event.\",\"format\":\"int64\",\"location\":\"query\"" +
-            "},\"actorEmail\":{\"type\":\"string\",\"description\":\"Email address of the user who per" +
-            "formed the action.\",\"location\":\"query\"},\"actorIpAddress\":{\"type\":\"string\",\"descr" +
-            "iption\":\"IP Address of host where the event was performed. Supports both IPv4 an" +
-            "d IPv6 addresses.\",\"location\":\"query\"},\"applicationId\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Application ID of the application on which the event was performed.\",\"req" +
-            "uired\":true,\"format\":\"int64\",\"location\":\"path\"},\"caller\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Type of the caller.\",\"enum\":[\"application_owner\",\"customer\"],\"enumDescr" +
-            "iptions\":[\"Caller is an application owner.\",\"Caller is a customer.\"],\"location\":" +
-            "\"query\"},\"continuationToken\":{\"type\":\"string\",\"description\":\"Next page URL.\",\"lo" +
-            "cation\":\"query\"},\"customerId\":{\"type\":\"string\",\"description\":\"Represents the cus" +
-            "tomer who is the owner of target object on which action was performed.\",\"require" +
-            "d\":true,\"pattern\":\"C.+\",\"location\":\"path\"},\"endTime\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Return events which occured at or before this time.\",\"location\":\"query\"},\"e" +
-            "ventName\":{\"type\":\"string\",\"description\":\"Name of the event being queried.\",\"loc" +
-            "ation\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Number of activity" +
-            " records to be shown in each page.\",\"format\":\"int32\",\"minimum\":\"1\",\"maximum\":\"10" +
-            "00\",\"location\":\"query\"},\"parameters\":{\"type\":\"string\",\"description\":\"Event param" +
-            "eters in the form [parameter1 name]:[parameter1 value],[parameter2 name]:[parame" +
-            "ter2 value],...\",\"location\":\"query\"},\"startTime\":{\"type\":\"string\",\"description\":" +
-            "\"Return events which occured at or after this time.\",\"location\":\"query\"}},\"param" +
-            "eterOrder\":[\"customerId\",\"applicationId\"],\"response\":{\"$ref\":\"Activities\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/-B8kiF2" +
+            "Fdgu0yrollZG4PolyOWM\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"audit:v1\",\"name\":\"audit\",\"" +
+            "version\":\"v1\",\"revision\":\"20111110\",\"title\":\"Enterprise Audit API\",\"description\"" +
+            ":\"Lets you access user activities in your enterprise made through various applic" +
+            "ations.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gi" +
+            "f\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentat" +
+            "ionLink\":\"http://code.google.com/googleapps/domain/audit_admin/v1/getting_starte" +
+            "d.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/apps/reporting/a" +
+            "udit/v1/\",\"basePath\":\"/apps/reporting/audit/v1/\",\"rootUrl\":\"https://www.googleap" +
+            "is.com/\",\"servicePath\":\"apps/reporting/audit/v1/\",\"batchPath\":\"batch\",\"parameter" +
+            "s\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"defaul" +
+            "t\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with Content-Typ" +
+            "e of application/atom+xml\",\"Responses with Content-Type of application/json\"],\"l" +
+            "ocation\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying w" +
+            "hich fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\"" +
+            ":\"string\",\"description\":\"API key. Your API key identifies your project and provi" +
+            "des you with API access, quota, and reports. Required unless you provide an OAut" +
+            "h 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"" +
+            "OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\"" +
+            ":\"boolean\",\"description\":\"Returns response with indentations and line breaks.\",\"" +
+            "default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"" +
+            "Available to use for quota purposes for server-side applications. Can be any arb" +
+            "itrary string assigned to a user, but should not exceed 40 characters. Overrides" +
+            " userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"de" +
+            "scription\":\"IP address of the site where the request originates. Use this if you" +
+            " want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"Activities\":" +
+            "{\"id\":\"Activities\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descri" +
+            "ption\":\"Each record in read response.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"typ" +
+            "e\":\"string\",\"description\":\"Kind of list response this is.\",\"default\":\"audit#acti" +
+            "vities\"},\"next\":{\"type\":\"string\",\"description\":\"Next page URL.\"}}},\"Activity\":{\"" +
+            "id\":\"Activity\",\"type\":\"object\",\"properties\":{\"actor\":{\"type\":\"object\",\"descripti" +
+            "on\":\"User doing the action.\",\"properties\":{\"applicationId\":{\"type\":\"string\",\"des" +
+            "cription\":\"ID of application which interacted on behalf of the user.\",\"format\":\"" +
+            "int64\"},\"callerType\":{\"type\":\"string\",\"description\":\"User or OAuth 2LO request.\"" +
+            "},\"email\":{\"type\":\"string\",\"description\":\"Email address of the user.\"},\"key\":{\"t" +
+            "ype\":\"string\",\"description\":\"For OAuth 2LO API requests, consumer_key of the req" +
+            "uestor.\"}}},\"events\":{\"type\":\"array\",\"description\":\"Activity events.\",\"items\":{\"" +
+            "type\":\"object\",\"properties\":{\"eventType\":{\"type\":\"string\",\"description\":\"Type of" +
+            " event.\"},\"name\":{\"type\":\"string\",\"description\":\"Name of event.\"},\"parameters\":{" +
+            "\"type\":\"array\",\"description\":\"Event parameters.\",\"items\":{\"type\":\"object\",\"prope" +
+            "rties\":{\"name\":{\"type\":\"string\",\"description\":\"Name of the parameter.\"},\"value\":" +
+            "{\"type\":\"string\",\"description\":\"Value of the parameter.\"}}}}}}},\"id\":{\"type\":\"ob" +
+            "ject\",\"description\":\"Unique identifier for each activity record.\",\"properties\":{" +
+            "\"applicationId\":{\"type\":\"string\",\"description\":\"Application ID of the source app" +
+            "lication.\",\"format\":\"int64\"},\"customerId\":{\"type\":\"string\",\"description\":\"Obfusc" +
+            "ated customer ID of the source customer.\"},\"time\":{\"type\":\"string\",\"description\"" +
+            ":\"Time of occurrence of the activity.\",\"format\":\"date-time\"},\"uniqQualifier\":{\"t" +
+            "ype\":\"string\",\"description\":\"Unique qualifier if multiple events have the same t" +
+            "ime.\",\"format\":\"int64\"}}},\"ipAddress\":{\"type\":\"string\",\"description\":\"IP Address" +
+            " of the user doing the action.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of " +
+            "resource this is.\",\"default\":\"audit#activity\"},\"ownerDomain\":{\"type\":\"string\",\"d" +
+            "escription\":\"Domain of source customer.\"}}}},\"resources\":{\"activities\":{\"methods" +
+            "\":{\"list\":{\"id\":\"audit.activities.list\",\"path\":\"{customerId}/{applicationId}\",\"h" +
+            "ttpMethod\":\"GET\",\"description\":\"Retrieves a list of activities for a specific cu" +
+            "stomer and application.\",\"parameters\":{\"actorApplicationId\":{\"type\":\"string\",\"de" +
+            "scription\":\"Application ID of the application which interacted on behalf of the " +
+            "user while performing the event.\",\"format\":\"int64\",\"location\":\"query\"},\"actorEma" +
+            "il\":{\"type\":\"string\",\"description\":\"Email address of the user who performed the " +
+            "action.\",\"location\":\"query\"},\"actorIpAddress\":{\"type\":\"string\",\"description\":\"IP" +
+            " Address of host where the event was performed. Supports both IPv4 and IPv6 addr" +
+            "esses.\",\"location\":\"query\"},\"applicationId\":{\"type\":\"string\",\"description\":\"Appl" +
+            "ication ID of the application on which the event was performed.\",\"required\":true" +
+            ",\"format\":\"int64\",\"location\":\"path\"},\"caller\":{\"type\":\"string\",\"description\":\"Ty" +
+            "pe of the caller.\",\"enum\":[\"application_owner\",\"customer\"],\"enumDescriptions\":[\"" +
+            "Caller is an application owner.\",\"Caller is a customer.\"],\"location\":\"query\"},\"c" +
+            "ontinuationToken\":{\"type\":\"string\",\"description\":\"Next page URL.\",\"location\":\"qu" +
+            "ery\"},\"customerId\":{\"type\":\"string\",\"description\":\"Represents the customer who i" +
+            "s the owner of target object on which action was performed.\",\"required\":true,\"pa" +
+            "ttern\":\"C.+\",\"location\":\"path\"},\"endTime\":{\"type\":\"string\",\"description\":\"Return" +
+            " events which occured at or before this time.\",\"location\":\"query\"},\"eventName\":{" +
+            "\"type\":\"string\",\"description\":\"Name of the event being queried.\",\"location\":\"que" +
+            "ry\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Number of activity records to" +
+            " be shown in each page.\",\"format\":\"int32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"locati" +
+            "on\":\"query\"},\"parameters\":{\"type\":\"string\",\"description\":\"Event parameters in th" +
+            "e form [parameter1 name]:[parameter1 value],[parameter2 name]:[parameter2 value]" +
+            ",...\",\"location\":\"query\"},\"startTime\":{\"type\":\"string\",\"description\":\"Return eve" +
+            "nts which occured at or after this time.\",\"location\":\"query\"}},\"parameterOrder\":" +
+            "[\"customerId\",\"applicationId\"],\"response\":{\"$ref\":\"Activities\"}}}}}}";
         
         public const string Version = "v1";
         

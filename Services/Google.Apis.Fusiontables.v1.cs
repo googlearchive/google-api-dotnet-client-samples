@@ -1407,434 +1407,439 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"fusiontables:v1" +
-            "\",\"name\":\"fusiontables\",\"version\":\"v1\",\"revision\":\"20120831\",\"title\":\"Fusion Tab" +
-            "les API\",\"description\":\"API for working with Fusion Tables data.\",\"icons\":{\"x16\"" +
-            ":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.go" +
-            "ogle.com/images/icons/product/search-32.gif\"},\"documentationLink\":\"https://devel" +
-            "opers.google.com/fusiontables\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleap" +
-            "is.com/fusiontables/v1/\",\"basePath\":\"/fusiontables/v1/\",\"rootUrl\":\"https://www.g" +
-            "oogleapis.com/\",\"servicePath\":\"fusiontables/v1/\",\"batchPath\":\"batch\",\"parameters" +
-            "\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default" +
-            "\":\"json\",\"enum\":[\"csv\",\"json\"],\"enumDescriptions\":[\"Responses with Content-Type " +
-            "of text/csv\",\"Responses with Content-Type of application/json\"],\"location\":\"quer" +
-            "y\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to" +
-            " include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"des" +
-            "cription\":\"API key. Your API key identifies your project and provides you with A" +
-            "PI access, quota, and reports. Required unless you provide an OAuth 2.0 token.\"," +
-            "\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 toke" +
-            "n for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"de" +
-            "scription\":\"Returns response with indentations and line breaks.\",\"default\":\"true" +
-            "\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to u" +
-            "se for quota purposes for server-side applications. Can be any arbitrary string " +
-            "assigned to a user, but should not exceed 40 characters. Overrides userIp if bot" +
-            "h are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP" +
-            " address of the site where the request originates. Use this if you want to enfor" +
-            "ce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://w" +
-            "ww.googleapis.com/auth/fusiontables\":{\"description\":\"Manage your Fusion Tables\"}" +
-            ",\"https://www.googleapis.com/auth/fusiontables.readonly\":{\"description\":\"View yo" +
-            "ur Fusion Tables\"}}}},\"schemas\":{\"Bucket\":{\"id\":\"Bucket\",\"type\":\"object\",\"descri" +
-            "ption\":\"Specifies the minimum and maximum values, the color, opacity, icon and w" +
-            "eight of a bucket within a StyleSetting.\",\"properties\":{\"color\":{\"type\":\"string\"" +
-            ",\"description\":\"Color of line or the interior of a polygon in #RRGGBB format.\"}," +
-            "\"icon\":{\"type\":\"string\",\"description\":\"Icon name used for a point.\"},\"max\":{\"typ" +
-            "e\":\"number\",\"description\":\"Maximum value in the selected column for a row to be " +
-            "styled according to the bucket color, opacity, icon, or weight.\",\"format\":\"doubl" +
-            "e\"},\"min\":{\"type\":\"number\",\"description\":\"Minimum value in the selected column f" +
-            "or a row to be styled according to the bucket color, opacity, icon, or weight.\"," +
-            "\"format\":\"double\"},\"opacity\":{\"type\":\"number\",\"description\":\"Opacity of the colo" +
-            "r: 0.0 (transparent) to 1.0 (opaque).\",\"format\":\"double\"},\"weight\":{\"type\":\"inte" +
-            "ger\",\"description\":\"Width of a line (in pixels).\",\"format\":\"int32\"}}},\"Column\":{" +
-            "\"id\":\"Column\",\"type\":\"object\",\"description\":\"Specifies the id, name and type of " +
-            "a column in a table.\",\"properties\":{\"baseColumn\":{\"type\":\"object\",\"description\":" +
-            "\"Optional identifier of the base column. If present, this column is derived from" +
-            " the specified base column.\",\"properties\":{\"columnId\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"The id of the column in the base table from which this column is derived." +
-            "\",\"format\":\"int32\"},\"tableIndex\":{\"type\":\"integer\",\"description\":\"Offset to the " +
-            "entry in the list of base tables in the table definition.\",\"format\":\"int32\"}}},\"" +
-            "columnId\":{\"type\":\"integer\",\"description\":\"Identifier for the column.\",\"format\":" +
-            "\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Type name: a template for an ind" +
-            "ividual column.\",\"default\":\"fusiontables#column\"},\"name\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Required name of the column.\",\"annotations\":{\"required\":[\"fusiontables." +
-            "column.insert\"]}},\"type\":{\"type\":\"string\",\"description\":\"Required type of the co" +
-            "lumn.\",\"annotations\":{\"required\":[\"fusiontables.column.insert\"]}}}},\"ColumnList\"" +
-            ":{\"id\":\"ColumnList\",\"type\":\"object\",\"description\":\"Represents a list of columns " +
-            "in a table.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of all re" +
-            "quested columns.\",\"items\":{\"$ref\":\"Column\"}},\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Type name: a list of all tables.\",\"default\":\"fusiontables#columnList\"},\"next" +
-            "PageToken\":{\"type\":\"string\",\"description\":\"Token used to access the next page of" +
-            " this result. No token is displayed if there are no more tokens left.\"},\"totalIt" +
-            "ems\":{\"type\":\"integer\",\"description\":\"Total number of columns for the table.\",\"f" +
-            "ormat\":\"int32\"}}},\"Geometry\":{\"id\":\"Geometry\",\"type\":\"object\",\"description\":\"Rep" +
-            "resents a Geometry object.\",\"properties\":{\"geometries\":{\"type\":\"array\",\"descript" +
-            "ion\":\"The list of geometries in this geometry collection.\",\"items\":{\"type\":\"any\"" +
-            "}},\"geometry\":{\"type\":\"any\"},\"type\":{\"type\":\"string\",\"description\":\"Type: A coll" +
-            "ection of geometries.\",\"default\":\"GeometryCollection\"}}},\"Import\":{\"id\":\"Import\"" +
-            ",\"type\":\"object\",\"description\":\"Represents an import request.\",\"properties\":{\"ki" +
-            "nd\":{\"type\":\"string\",\"description\":\"Type name: a template for an import request." +
-            "\",\"default\":\"fusiontables#import\"},\"numRowsReceived\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The number of rows received from the import request.\",\"format\":\"int64\"}}},\"" +
-            "Line\":{\"id\":\"Line\",\"type\":\"object\",\"description\":\"Represents a line geometry.\",\"" +
-            "properties\":{\"coordinates\":{\"type\":\"array\",\"description\":\"The coordinates that d" +
-            "efine the line.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"number\",\"format\":\"doub" +
-            "le\"}}},\"type\":{\"type\":\"string\",\"description\":\"Type: A line geometry.\",\"default\":" +
-            "\"LineString\"}}},\"LineStyle\":{\"id\":\"LineStyle\",\"type\":\"object\",\"description\":\"Rep" +
-            "resents a LineStyle within a StyleSetting\",\"properties\":{\"strokeColor\":{\"type\":\"" +
-            "string\",\"description\":\"Color of the line in #RRGGBB format.\"},\"strokeColorStyler" +
-            "\":{\"$ref\":\"StyleFunction\",\"description\":\"Column-value, gradient or buckets style" +
-            "r that is used to determine the line color and opacity.\"},\"strokeOpacity\":{\"type" +
-            "\":\"number\",\"description\":\"Opacity of the line : 0.0 (transparent) to 1.0 (opaque" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/4Tf3ATj" +
+            "uvM987w1BS3ZhLiDyj70\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"fusiontables:v1\",\"name\":\"f" +
+            "usiontables\",\"version\":\"v1\",\"revision\":\"20121013\",\"title\":\"Fusion Tables API\",\"d" +
+            "escription\":\"API for working with Fusion Tables data.\",\"icons\":{\"x16\":\"http://ww" +
+            "w.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com/im" +
+            "ages/icons/product/search-32.gif\"},\"documentationLink\":\"https://developers.googl" +
+            "e.com/fusiontables\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/fusi" +
+            "ontables/v1/\",\"basePath\":\"/fusiontables/v1/\",\"rootUrl\":\"https://www.googleapis.c" +
+            "om/\",\"servicePath\":\"fusiontables/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"" +
+            "type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"e" +
+            "num\":[\"csv\",\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of text/csv" +
+            "\",\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fields" +
+            "\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to include in" +
+            " a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"" +
+            "API key. Your API key identifies your project and provides you with API access, " +
+            "quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":" +
+            "\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the c" +
+            "urrent user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":" +
+            "\"Returns response with indentations and line breaks.\",\"default\":\"true\",\"location" +
+            "\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quot" +
+            "a purposes for server-side applications. Can be any arbitrary string assigned to" +
+            " a user, but should not exceed 40 characters. Overrides userIp if both are provi" +
+            "ded.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of" +
+            " the site where the request originates. Use this if you want to enforce per-user" +
+            " limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleap" +
+            "is.com/auth/fusiontables\":{\"description\":\"Manage your Fusion Tables\"},\"https://w" +
+            "ww.googleapis.com/auth/fusiontables.readonly\":{\"description\":\"View your Fusion T" +
+            "ables\"}}}},\"schemas\":{\"Bucket\":{\"id\":\"Bucket\",\"type\":\"object\",\"description\":\"Spe" +
+            "cifies the minimum and maximum values, the color, opacity, icon and weight of a " +
+            "bucket within a StyleSetting.\",\"properties\":{\"color\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Color of line or the interior of a polygon in #RRGGBB format.\"},\"icon\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Icon name used for a point.\"},\"max\":{\"type\":\"number\"" +
+            ",\"description\":\"Maximum value in the selected column for a row to be styled acco" +
+            "rding to the bucket color, opacity, icon, or weight.\",\"format\":\"double\"},\"min\":{" +
+            "\"type\":\"number\",\"description\":\"Minimum value in the selected column for a row to" +
+            " be styled according to the bucket color, opacity, icon, or weight.\",\"format\":\"d" +
+            "ouble\"},\"opacity\":{\"type\":\"number\",\"description\":\"Opacity of the color: 0.0 (tra" +
+            "nsparent) to 1.0 (opaque).\",\"format\":\"double\"},\"weight\":{\"type\":\"integer\",\"descr" +
+            "iption\":\"Width of a line (in pixels).\",\"format\":\"int32\"}}},\"Column\":{\"id\":\"Colum" +
+            "n\",\"type\":\"object\",\"description\":\"Specifies the id, name and type of a column in" +
+            " a table.\",\"properties\":{\"baseColumn\":{\"type\":\"object\",\"description\":\"Optional i" +
+            "dentifier of the base column. If present, this column is derived from the specif" +
+            "ied base column.\",\"properties\":{\"columnId\":{\"type\":\"integer\",\"description\":\"The " +
+            "id of the column in the base table from which this column is derived.\",\"format\":" +
+            "\"int32\"},\"tableIndex\":{\"type\":\"integer\",\"description\":\"Offset to the entry in th" +
+            "e list of base tables in the table definition.\",\"format\":\"int32\"}}},\"columnId\":{" +
+            "\"type\":\"integer\",\"description\":\"Identifier for the column.\",\"format\":\"int32\"},\"k" +
+            "ind\":{\"type\":\"string\",\"description\":\"Type name: a template for an individual col" +
+            "umn.\",\"default\":\"fusiontables#column\"},\"name\":{\"type\":\"string\",\"description\":\"Re" +
+            "quired name of the column.\",\"annotations\":{\"required\":[\"fusiontables.column.inse" +
+            "rt\"]}},\"type\":{\"type\":\"string\",\"description\":\"Required type of the column.\",\"ann" +
+            "otations\":{\"required\":[\"fusiontables.column.insert\"]}}}},\"ColumnList\":{\"id\":\"Col" +
+            "umnList\",\"type\":\"object\",\"description\":\"Represents a list of columns in a table." +
+            "\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of all requested col" +
+            "umns.\",\"items\":{\"$ref\":\"Column\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type na" +
+            "me: a list of all tables.\",\"default\":\"fusiontables#columnList\"},\"nextPageToken\":" +
+            "{\"type\":\"string\",\"description\":\"Token used to access the next page of this resul" +
+            "t. No token is displayed if there are no more tokens left.\"},\"totalItems\":{\"type" +
+            "\":\"integer\",\"description\":\"Total number of columns for the table.\",\"format\":\"int" +
+            "32\"}}},\"Geometry\":{\"id\":\"Geometry\",\"type\":\"object\",\"description\":\"Represents a G" +
+            "eometry object.\",\"properties\":{\"geometries\":{\"type\":\"array\",\"description\":\"The l" +
+            "ist of geometries in this geometry collection.\",\"items\":{\"type\":\"any\"}},\"geometr" +
+            "y\":{\"type\":\"any\"},\"type\":{\"type\":\"string\",\"description\":\"Type: A collection of g" +
+            "eometries.\",\"default\":\"GeometryCollection\"}}},\"Import\":{\"id\":\"Import\",\"type\":\"ob" +
+            "ject\",\"description\":\"Represents an import request.\",\"properties\":{\"kind\":{\"type\"" +
+            ":\"string\",\"description\":\"Type name: a template for an import request.\",\"default\"" +
+            ":\"fusiontables#import\"},\"numRowsReceived\":{\"type\":\"string\",\"description\":\"The nu" +
+            "mber of rows received from the import request.\",\"format\":\"int64\"}}},\"Line\":{\"id\"" +
+            ":\"Line\",\"type\":\"object\",\"description\":\"Represents a line geometry.\",\"properties\"" +
+            ":{\"coordinates\":{\"type\":\"array\",\"description\":\"The coordinates that define the l" +
+            "ine.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"number\",\"format\":\"double\"}}},\"typ" +
+            "e\":{\"type\":\"string\",\"description\":\"Type: A line geometry.\",\"default\":\"LineString" +
+            "\"}}},\"LineStyle\":{\"id\":\"LineStyle\",\"type\":\"object\",\"description\":\"Represents a L" +
+            "ineStyle within a StyleSetting\",\"properties\":{\"strokeColor\":{\"type\":\"string\",\"de" +
+            "scription\":\"Color of the line in #RRGGBB format.\"},\"strokeColorStyler\":{\"$ref\":\"" +
+            "StyleFunction\",\"description\":\"Column-value, gradient or buckets styler that is u" +
+            "sed to determine the line color and opacity.\"},\"strokeOpacity\":{\"type\":\"number\"," +
+            "\"description\":\"Opacity of the line : 0.0 (transparent) to 1.0 (opaque).\",\"format" +
+            "\":\"double\"},\"strokeWeight\":{\"type\":\"integer\",\"description\":\"Width of the line in" +
+            " pixels.\",\"format\":\"int32\"},\"strokeWeightStyler\":{\"$ref\":\"StyleFunction\",\"descri" +
+            "ption\":\"Column-value or bucket styler that is used to determine the width of the" +
+            " line.\"}}},\"Point\":{\"id\":\"Point\",\"type\":\"object\",\"description\":\"Represents a poi" +
+            "nt object.\",\"properties\":{\"coordinates\":{\"type\":\"array\",\"description\":\"The coord" +
+            "inates that define the point.\",\"items\":{\"type\":\"number\",\"format\":\"double\"}},\"typ" +
+            "e\":{\"type\":\"string\",\"description\":\"Point: A point geometry.\",\"default\":\"Point\"}}" +
+            "},\"PointStyle\":{\"id\":\"PointStyle\",\"type\":\"object\",\"description\":\"Represents a Po" +
+            "intStyle within a StyleSetting\",\"properties\":{\"iconName\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Name of the icon. Use values defined in http://www.google.com/fusiontab" +
+            "les/DataSource?dsrcid=308519\"},\"iconStyler\":{\"$ref\":\"StyleFunction\",\"description" +
+            "\":\"Column or a bucket value from which the icon name is to be determined.\"}}},\"P" +
+            "olygon\":{\"id\":\"Polygon\",\"type\":\"object\",\"description\":\"Represents a polygon obje" +
+            "ct.\",\"properties\":{\"coordinates\":{\"type\":\"array\",\"description\":\"The coordinates " +
+            "that define the polygon.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"array\",\"items" +
+            "\":{\"type\":\"number\",\"format\":\"double\"}}}},\"type\":{\"type\":\"string\",\"description\":\"" +
+            "Type: A polygon geometry.\",\"default\":\"Polygon\"}}},\"PolygonStyle\":{\"id\":\"PolygonS" +
+            "tyle\",\"type\":\"object\",\"description\":\"Represents a PolygonStyle within a StyleSet" +
+            "ting\",\"properties\":{\"fillColor\":{\"type\":\"string\",\"description\":\"Color of the int" +
+            "erior of the polygon in #RRGGBB format.\"},\"fillColorStyler\":{\"$ref\":\"StyleFuncti" +
+            "on\",\"description\":\"Column-value, gradient, or bucket styler that is used to dete" +
+            "rmine the interior color and opacity of the polygon.\"},\"fillOpacity\":{\"type\":\"nu" +
+            "mber\",\"description\":\"Opacity of the interior of the polygon: 0.0 (transparent) t" +
+            "o 1.0 (opaque).\",\"format\":\"double\"},\"strokeColor\":{\"type\":\"string\",\"description\"" +
+            ":\"Color of the polygon border in #RRGGBB format.\"},\"strokeColorStyler\":{\"$ref\":\"" +
+            "StyleFunction\",\"description\":\"Column-value, gradient or buckets styler that is u" +
+            "sed to determine the border color and opacity.\"},\"strokeOpacity\":{\"type\":\"number" +
+            "\",\"description\":\"Opacity of the polygon border: 0.0 (transparent) to 1.0 (opaque" +
             ").\",\"format\":\"double\"},\"strokeWeight\":{\"type\":\"integer\",\"description\":\"Width of " +
-            "the line in pixels.\",\"format\":\"int32\"},\"strokeWeightStyler\":{\"$ref\":\"StyleFuncti" +
-            "on\",\"description\":\"Column-value or bucket styler that is used to determine the w" +
-            "idth of the line.\"}}},\"Point\":{\"id\":\"Point\",\"type\":\"object\",\"description\":\"Repre" +
-            "sents a point object.\",\"properties\":{\"coordinates\":{\"type\":\"array\",\"description\"" +
-            ":\"The coordinates that define the point.\",\"items\":{\"type\":\"number\",\"format\":\"dou" +
-            "ble\"}},\"type\":{\"type\":\"string\",\"description\":\"Point: A point geometry.\",\"default" +
-            "\":\"Point\"}}},\"PointStyle\":{\"id\":\"PointStyle\",\"type\":\"object\",\"description\":\"Repr" +
-            "esents a PointStyle within a StyleSetting\",\"properties\":{\"iconName\":{\"type\":\"str" +
-            "ing\",\"description\":\"Name of the icon. Use values defined in http://www.google.co" +
-            "m/fusiontables/DataSource?dsrcid=308519\"},\"iconStyler\":{\"$ref\":\"StyleFunction\",\"" +
-            "description\":\"Column or a bucket value from which the icon name is to be determi" +
-            "ned.\"}}},\"Polygon\":{\"id\":\"Polygon\",\"type\":\"object\",\"description\":\"Represents a p" +
-            "olygon object.\",\"properties\":{\"coordinates\":{\"type\":\"array\",\"description\":\"The c" +
-            "oordinates that define the polygon.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"ar" +
-            "ray\",\"items\":{\"type\":\"number\",\"format\":\"double\"}}}},\"type\":{\"type\":\"string\",\"des" +
-            "cription\":\"Type: A polygon geometry.\",\"default\":\"Polygon\"}}},\"PolygonStyle\":{\"id" +
-            "\":\"PolygonStyle\",\"type\":\"object\",\"description\":\"Represents a PolygonStyle within" +
-            " a StyleSetting\",\"properties\":{\"fillColor\":{\"type\":\"string\",\"description\":\"Color" +
-            " of the interior of the polygon in #RRGGBB format.\"},\"fillColorStyler\":{\"$ref\":\"" +
-            "StyleFunction\",\"description\":\"Column-value, gradient, or bucket styler that is u" +
-            "sed to determine the interior color and opacity of the polygon.\"},\"fillOpacity\":" +
-            "{\"type\":\"number\",\"description\":\"Opacity of the interior of the polygon: 0.0 (tra" +
-            "nsparent) to 1.0 (opaque).\",\"format\":\"double\"},\"strokeColor\":{\"type\":\"string\",\"d" +
-            "escription\":\"Color of the polygon border in #RRGGBB format.\"},\"strokeColorStyler" +
-            "\":{\"$ref\":\"StyleFunction\",\"description\":\"Column-value, gradient or buckets style" +
-            "r that is used to determine the border color and opacity.\"},\"strokeOpacity\":{\"ty" +
-            "pe\":\"number\",\"description\":\"Opacity of the polygon border: 0.0 (transparent) to " +
-            "1.0 (opaque).\",\"format\":\"double\"},\"strokeWeight\":{\"type\":\"integer\",\"description\"" +
-            ":\"Width of the polyon border in pixels.\",\"format\":\"int32\"},\"strokeWeightStyler\":" +
-            "{\"$ref\":\"StyleFunction\",\"description\":\"Column-value or bucket styler that is use" +
-            "d to determine the width of the polygon border.\"}}},\"Sqlresponse\":{\"id\":\"Sqlresp" +
-            "onse\",\"type\":\"object\",\"description\":\"Represents a response to an sql statement.\"" +
-            ",\"properties\":{\"columns\":{\"type\":\"array\",\"description\":\"Columns in the table.\",\"" +
-            "items\":{\"type\":\"string\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type name: a te" +
-            "mplate for an individual table.\",\"default\":\"fusiontables#sqlresponse\"},\"rows\":{\"" +
-            "type\":\"array\",\"description\":\"The rows in the table. For each cell we print out w" +
-            "hatever cell value (e.g., numeric, string) exists. Thus it is important that eac" +
-            "h cell contains only one value.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"any\"}}" +
-            "}}},\"StyleFunction\":{\"id\":\"StyleFunction\",\"type\":\"object\",\"description\":\"Represe" +
-            "nts a StyleFunction within a StyleSetting\",\"properties\":{\"buckets\":{\"type\":\"arra" +
-            "y\",\"description\":\"Bucket function that assigns a style based on the range a colu" +
-            "mn value falls into.\",\"items\":{\"$ref\":\"Bucket\"}},\"columnName\":{\"type\":\"string\",\"" +
-            "description\":\"Name of the column whose value is used in the style.\",\"annotations" +
-            "\":{\"required\":[\"fusiontables.style.insert\"]}},\"gradient\":{\"type\":\"object\",\"descr" +
-            "iption\":\"Gradient function that interpolates a range of colors based on column v" +
-            "alue.\",\"properties\":{\"colors\":{\"type\":\"array\",\"description\":\"Array with two or m" +
-            "ore colors.\",\"items\":{\"type\":\"object\",\"properties\":{\"color\":{\"type\":\"string\",\"de" +
-            "scription\":\"Color in #RRGGBB format.\"},\"opacity\":{\"type\":\"number\",\"description\":" +
-            "\"Opacity of the color: 0.0 (transparent) to 1.0 (opaque).\",\"format\":\"double\"}}}}" +
-            ",\"max\":{\"type\":\"number\",\"description\":\"Higher-end of the interpolation range: ro" +
-            "ws with this value will be assigned to colors[n-1].\",\"format\":\"double\"},\"min\":{\"" +
-            "type\":\"number\",\"description\":\"Lower-end of the interpolation range: rows with th" +
-            "is value will be assigned to colors[0].\",\"format\":\"double\"}}},\"kind\":{\"type\":\"st" +
-            "ring\",\"description\":\"Stylers can be one of three kinds: \\\"fusiontables#fromColum" +
-            "n\\\" if the column value is to be used as is, i.e., the column values can have co" +
-            "lors in #RRGGBBAA format or integer line widths or icon names; \\\"fusiontables#gr" +
-            "adient\\\" if the styling of the row is to be based on applying the gradient funct" +
-            "ion on the column value; or \\\"fusiontables#buckets\\\" if the styling is to based " +
-            "on the bucket into which the the column value falls.\"}}},\"StyleSetting\":{\"id\":\"S" +
-            "tyleSetting\",\"type\":\"object\",\"description\":\"Represents a complete StyleSettings " +
-            "object. The primary key is a combination of the tableId and a styleId.\",\"propert" +
-            "ies\":{\"isDefaultForTable\":{\"type\":\"boolean\",\"description\":\"Is this the default s" +
-            "tyle for the table.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type name: an indiv" +
-            "idual style setting. A StyleSetting contains the style defintions for points, li" +
-            "nes, and polygons in a table. Since a table can have any one or all of them, a s" +
-            "tyle definition can have point, line and polygon style definitions.\",\"default\":\"" +
-            "fusiontables#styleSetting\"},\"markerOptions\":{\"$ref\":\"PointStyle\",\"description\":\"" +
-            "Style definition for points in the table.\"},\"name\":{\"type\":\"string\",\"description" +
-            "\":\"Optional name for the style setting.\"},\"polygonOptions\":{\"$ref\":\"PolygonStyle" +
-            "\",\"description\":\"Style definition for polygons in the table.\"},\"polylineOptions\"" +
-            ":{\"$ref\":\"LineStyle\",\"description\":\"Style definition for lines in the table.\"},\"" +
-            "styleId\":{\"type\":\"integer\",\"description\":\"Identifier for the style setting (uniq" +
-            "ue only within tables).\",\"format\":\"int32\"},\"tableId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Identifier for the table.\"}}},\"StyleSettingList\":{\"id\":\"StyleSettingList\",\"" +
-            "type\":\"object\",\"description\":\"Represents a list of styles for a given table.\",\"p" +
-            "roperties\":{\"items\":{\"type\":\"array\",\"description\":\"All requested style settings." +
-            "\",\"items\":{\"$ref\":\"StyleSetting\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type n" +
-            "ame: in this case, a list of style settings.\",\"default\":\"fusiontables#styleSetti" +
-            "ngList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token used to access th" +
-            "e next page of this result. No token is displayed if there are no more styles le" +
-            "ft.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of styles for t" +
-            "he table.\",\"format\":\"int32\"}}},\"Table\":{\"id\":\"Table\",\"type\":\"object\",\"descriptio" +
-            "n\":\"Represents a table. Specifies the name, whether it is exportable, descriptio" +
-            "n, attribution, and attribution link.\",\"properties\":{\"attribution\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Optional attribution assigned to the table.\"},\"attributionLin" +
-            "k\":{\"type\":\"string\",\"description\":\"Optional link for attribution.\"},\"baseTableId" +
-            "s\":{\"type\":\"array\",\"description\":\"Optional base table identifier if this table i" +
-            "s a view or merged table.\",\"items\":{\"type\":\"string\"}},\"columns\":{\"type\":\"array\"," +
-            "\"description\":\"Columns in the table.\",\"items\":{\"$ref\":\"Column\"},\"annotations\":{\"" +
-            "required\":[\"fusiontables.table.insert\",\"fusiontables.table.update\"]}},\"descripti" +
-            "on\":{\"type\":\"string\",\"description\":\"Optional description assigned to the table.\"" +
-            "},\"isExportable\":{\"type\":\"boolean\",\"description\":\"Variable for whether table is " +
-            "exportable.\",\"annotations\":{\"required\":[\"fusiontables.table.insert\",\"fusiontable" +
-            "s.table.update\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Type name: a template " +
-            "for an individual table.\",\"default\":\"fusiontables#table\"},\"name\":{\"type\":\"string" +
-            "\",\"description\":\"Name assigned to a table.\",\"annotations\":{\"required\":[\"fusionta" +
-            "bles.table.insert\",\"fusiontables.table.update\"]}},\"sql\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Optional sql that encodes the table definition for derived tables.\"},\"ta" +
-            "bleId\":{\"type\":\"string\",\"description\":\"Encrypted unique alphanumeric identifier " +
-            "for the table.\"}}},\"TableList\":{\"id\":\"TableList\",\"type\":\"object\",\"description\":\"" +
-            "Represents a list of tables.\",\"properties\":{\"items\":{\"type\":\"array\",\"description" +
-            "\":\"List of all requested tables.\",\"items\":{\"$ref\":\"Table\"}},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Type name: a list of all tables.\",\"default\":\"fusiontables#tab" +
-            "leList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token used to access th" +
-            "e next page of this result. No token is displayed if there are no more tokens le" +
-            "ft.\"}}},\"Template\":{\"id\":\"Template\",\"type\":\"object\",\"description\":\"Represents th" +
-            "e contents of InfoWindow templates.\",\"properties\":{\"automaticColumnNames\":{\"type" +
-            "\":\"array\",\"description\":\"List of columns from which the template is to be automa" +
-            "tically constructed. Only one of body or automaticColumns can be specified.\",\"it" +
-            "ems\":{\"type\":\"string\"}},\"body\":{\"type\":\"string\",\"description\":\"Body of the templ" +
-            "ate. It contains HTML with {column_name} to insert values from a particular colu" +
-            "mn. The body is sanitized to remove certain tags, e.g., script. Only one of body" +
-            " or automaticColumns can be specified.\"},\"isDefaultForTable\":{\"type\":\"boolean\",\"" +
-            "description\":\"Is this the default template for the table.\"},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Type name: a template for the info window contents. The templ" +
-            "ate can either include an HTML body or a list of columns from which the template" +
-            " is computed automatically.\",\"default\":\"fusiontables#template\"},\"name\":{\"type\":\"" +
-            "string\",\"description\":\"Optional name assigned to a template.\"},\"tableId\":{\"type\"" +
-            ":\"string\",\"description\":\"Identifier for the table for which the template is defi" +
-            "ned.\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier for the template" +
-            ", unique within the context of a particular table.\",\"format\":\"int32\"}}},\"Templat" +
-            "eList\":{\"id\":\"TemplateList\",\"type\":\"object\",\"description\":\"Represents a list of " +
-            "templates for a given table.\",\"properties\":{\"items\":{\"type\":\"array\",\"description" +
-            "\":\"List of all requested templates.\",\"items\":{\"$ref\":\"Template\"}},\"kind\":{\"type\"" +
-            ":\"string\",\"description\":\"Type name: a list of all templates.\",\"default\":\"fusiont" +
-            "ables#templateList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token used " +
-            "to access the next page of this result. No token is displayed if there are no mo" +
-            "re tokens left.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of " +
-            "templates for the table.\",\"format\":\"int32\"}}}},\"resources\":{\"column\":{\"methods\":" +
-            "{\"delete\":{\"id\":\"fusiontables.column.delete\",\"path\":\"tables/{tableId}/columns/{c" +
-            "olumnId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the column.\",\"parameters\"" +
-            ":{\"columnId\":{\"type\":\"string\",\"description\":\"Name or identifier for the column b" +
-            "eing deleted.\",\"required\":true,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"de" +
-            "scription\":\"Table from which the column is being deleted.\",\"required\":true,\"loca" +
-            "tion\":\"path\"}},\"parameterOrder\":[\"tableId\",\"columnId\"],\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/fusiontables\"]},\"get\":{\"id\":\"fusiontables.column.get\",\"path\":\"" +
-            "tables/{tableId}/columns/{columnId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves" +
-            " a specific column by its id.\",\"parameters\":{\"columnId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Name or identifier for the column that is being requested.\",\"required\":t" +
-            "rue,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table to which " +
-            "the column belongs.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tabl" +
-            "eId\",\"columnId\"],\"response\":{\"$ref\":\"Column\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/fusiontables\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]}" +
-            ",\"insert\":{\"id\":\"fusiontables.column.insert\",\"path\":\"tables/{tableId}/columns\",\"" +
-            "httpMethod\":\"POST\",\"description\":\"Adds a new column to the table.\",\"parameters\":" +
-            "{\"tableId\":{\"type\":\"string\",\"description\":\"Table for which a new column is being" +
-            " added.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"reque" +
-            "st\":{\"$ref\":\"Column\"},\"response\":{\"$ref\":\"Column\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.column.list\",\"path\":\"ta" +
-            "bles/{tableId}/columns\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of co" +
-            "lumns.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numb" +
-            "er of columns to return. Optional. Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0" +
-            "\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuation t" +
-            "oken specifying which result page to return. Optional.\",\"location\":\"query\"},\"tab" +
-            "leId\":{\"type\":\"string\",\"description\":\"Table whose columns are being listed.\",\"re" +
-            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\"" +
-            ":\"ColumnList\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https:/" +
-            "/www.googleapis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.co" +
-            "lumn.patch\",\"path\":\"tables/{tableId}/columns/{columnId}\",\"httpMethod\":\"PATCH\",\"d" +
-            "escription\":\"Updates the name or type of an existing column. This method support" +
-            "s patch semantics.\",\"parameters\":{\"columnId\":{\"type\":\"string\",\"description\":\"Nam" +
-            "e or identifier for the column that is being updated.\",\"required\":true,\"location" +
-            "\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table for which the column i" +
-            "s being updated.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId" +
-            "\",\"columnId\"],\"request\":{\"$ref\":\"Column\"},\"response\":{\"$ref\":\"Column\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables.c" +
-            "olumn.update\",\"path\":\"tables/{tableId}/columns/{columnId}\",\"httpMethod\":\"PUT\",\"d" +
-            "escription\":\"Updates the name or type of an existing column.\",\"parameters\":{\"col" +
-            "umnId\":{\"type\":\"string\",\"description\":\"Name or identifier for the column that is" +
-            " being updated.\",\"required\":true,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"" +
-            "description\":\"Table for which the column is being updated.\",\"required\":true,\"loc" +
-            "ation\":\"path\"}},\"parameterOrder\":[\"tableId\",\"columnId\"],\"request\":{\"$ref\":\"Colum" +
-            "n\"},\"response\":{\"$ref\":\"Column\"},\"scopes\":[\"https://www.googleapis.com/auth/fusi" +
-            "ontables\"]}}},\"import\":{\"methods\":{\"insert\":{\"id\":\"fusiontables.import.insert\",\"" +
-            "path\":\"tables/{tableId}/import\",\"httpMethod\":\"POST\",\"description\":\"Import more r" +
-            "ows into a table.\",\"parameters\":{\"delimiter\":{\"type\":\"string\",\"description\":\"The" +
-            " delimiter used to separate cell values. Default is \',\'.\",\"location\":\"query\"},\"e" +
-            "ncoding\":{\"type\":\"string\",\"description\":\"The encoding of the content. Default is" +
-            " UTF-8.\",\"location\":\"query\"},\"endLine\":{\"type\":\"string\",\"description\":\"The index" +
-            " of the last line from which to start importing, exclusive. Thus, the number of " +
-            "imported lines is endLine - startLine. If this parameter is not provided, the fi" +
-            "le will be imported until the last line of the file. If endLine is negative, the" +
-            "n it is equivalent to N + endLine, where N is the number of lines in the file.\"," +
-            "\"format\":\"int64\",\"location\":\"query\"},\"isStrict\":{\"type\":\"boolean\",\"description\":" +
-            "\"Whether the CSV will be parsed strictly or not. Default is true.\",\"location\":\"q" +
-            "uery\"},\"startLine\":{\"type\":\"string\",\"description\":\"The index of the first line f" +
-            "rom which to start importing, inclusive. Default is 0.\",\"format\":\"int64\",\"locati" +
-            "on\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"The table into which new " +
-            "rows are being imported.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
-            "\"tableId\"],\"response\":{\"$ref\":\"Import\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/fusiontables\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"applicati" +
-            "on/octet-stream\"],\"maxSize\":\"100MB\",\"protocols\":{\"simple\":{\"multipart\":true,\"pat" +
-            "h\":\"/upload/fusiontables/v1/tables/{tableId}/import\"},\"resumable\":{\"multipart\":t" +
-            "rue,\"path\":\"/resumable/upload/fusiontables/v1/tables/{tableId}/import\"}}}}}},\"qu" +
-            "ery\":{\"methods\":{\"sql\":{\"id\":\"fusiontables.query.sql\",\"path\":\"query\",\"httpMethod" +
-            "\":\"POST\",\"description\":\"Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIB" +
-            "E/CREATE statement.\",\"parameters\":{\"hdrs\":{\"type\":\"boolean\",\"description\":\"Shoul" +
-            "d column names be included (in the first row)?. Default is true.\",\"location\":\"qu" +
-            "ery\"},\"sql\":{\"type\":\"string\",\"description\":\"An SQL SELECT/SHOW/DESCRIBE/INSERT/U" +
-            "PDATE/DELETE/CREATE statement.\",\"required\":true,\"location\":\"query\"},\"typed\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Should typed values be returned in the (JSON) respo" +
-            "nse -- numbers for numeric values and parsed geometries for KML values? Default " +
-            "is true.\",\"location\":\"query\"}},\"parameterOrder\":[\"sql\"],\"response\":{\"$ref\":\"Sqlr" +
-            "esponse\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www." +
-            "googleapis.com/auth/fusiontables.readonly\"]},\"sqlGet\":{\"id\":\"fusiontables.query." +
-            "sqlGet\",\"path\":\"query\",\"httpMethod\":\"GET\",\"description\":\"Executes an SQL SELECT/" +
-            "SHOW/DESCRIBE statement.\",\"parameters\":{\"hdrs\":{\"type\":\"boolean\",\"description\":\"" +
-            "Should column names be included (in the first row)?. Default is true.\",\"location" +
-            "\":\"query\"},\"sql\":{\"type\":\"string\",\"description\":\"An SQL SELECT/SHOW/DESCRIBE sta" +
-            "tement.\",\"required\":true,\"location\":\"query\"},\"typed\":{\"type\":\"boolean\",\"descript" +
-            "ion\":\"Should typed values be returned in the (JSON) response -- numbers for nume" +
-            "ric values and parsed geometries for KML values? Default is true.\",\"location\":\"q" +
-            "uery\"}},\"parameterOrder\":[\"sql\"],\"response\":{\"$ref\":\"Sqlresponse\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fus" +
-            "iontables.readonly\"]}}},\"style\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.style.d" +
-            "elete\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"DELETE\",\"descrip" +
-            "tion\":\"Deletes a style.\",\"parameters\":{\"styleId\":{\"type\":\"integer\",\"description\"" +
-            ":\"Identifier (within a table) for the style being deleted\",\"required\":true,\"form" +
-            "at\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table f" +
-            "rom which the style is being deleted\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"tableId\",\"styleId\"],\"scopes\":[\"https://www.googleapis.com/auth/fusi" +
-            "ontables\"]},\"get\":{\"id\":\"fusiontables.style.get\",\"path\":\"tables/{tableId}/styles" +
-            "/{styleId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a specific style.\",\"parameter" +
-            "s\":{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (integer) for a specif" +
-            "ic style in a table\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"tableI" +
-            "d\":{\"type\":\"string\",\"description\":\"Table to which the requested style belongs\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleId\"],\"respo" +
-            "nse\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapis.com/auth/fusionta" +
-            "bles\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]},\"insert\":{\"id\":\"" +
-            "fusiontables.style.insert\",\"path\":\"tables/{tableId}/styles\",\"httpMethod\":\"POST\"," +
-            "\"description\":\"Adds a new style for the table.\",\"parameters\":{\"tableId\":{\"type\":" +
-            "\"string\",\"description\":\"Table for which a new style is being added\",\"required\":t" +
-            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"StyleSet" +
-            "ting\"},\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.style.list\",\"path\":\"tables/{tabl" +
-            "eId}/styles\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of styles.\",\"par" +
-            "ameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of styles" +
-            " to return. Optional. Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":" +
-            "\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuation token specifyi" +
-            "ng which result page to return. Optional.\",\"location\":\"query\"},\"tableId\":{\"type\"" +
-            ":\"string\",\"description\":\"Table whose styles are being listed\",\"required\":true,\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"StyleSettingL" +
-            "ist\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.goog" +
-            "leapis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.style.patch" +
-            "\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"PATCH\",\"description\":" +
-            "\"Updates an existing style. This method supports patch semantics.\",\"parameters\":" +
-            "{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (within a table) for the " +
-            "style being updated.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"table" +
-            "Id\":{\"type\":\"string\",\"description\":\"Table whose style is being updated.\",\"requir" +
-            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleId\"],\"request\":{\"" +
-            "$ref\":\"StyleSetting\"},\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www." +
-            "googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables.style.update\",\"" +
-            "path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"PUT\",\"description\":\"Upda" +
-            "tes an existing style.\",\"parameters\":{\"styleId\":{\"type\":\"integer\",\"description\":" +
-            "\"Identifier (within a table) for the style being updated.\",\"required\":true,\"form" +
-            "at\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table w" +
-            "hose style is being updated.\",\"required\":true,\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"tableId\",\"styleId\"],\"request\":{\"$ref\":\"StyleSetting\"},\"response\":{\"$ref\":\"S" +
-            "tyleSetting\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]}}},\"tabl" +
-            "e\":{\"methods\":{\"copy\":{\"id\":\"fusiontables.table.copy\",\"path\":\"tables/{tableId}/c" +
-            "opy\",\"httpMethod\":\"POST\",\"description\":\"Copies a table.\",\"parameters\":{\"tableId\"" +
-            ":{\"type\":\"string\",\"description\":\"ID of the table that is being copied.\",\"require" +
-            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"Tab" +
-            "le\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googl" +
-            "eapis.com/auth/fusiontables.readonly\"]},\"delete\":{\"id\":\"fusiontables.table.delet" +
-            "e\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a tabl" +
-            "e.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"ID of the table that" +
-            " is being deleted.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"table" +
-            "Id\"],\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"get\":{\"id\":\"fus" +
-            "iontables.table.get\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"GET\",\"description\":" +
-            "\"Retrieves a specific table by its id.\",\"parameters\":{\"tableId\":{\"type\":\"string\"" +
-            ",\"description\":\"Identifier(ID) for the table being requested.\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"Table\"},\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com" +
-            "/auth/fusiontables.readonly\"]},\"insert\":{\"id\":\"fusiontables.table.insert\",\"path\"" +
-            ":\"tables\",\"httpMethod\":\"POST\",\"description\":\"Creates a new table.\",\"request\":{\"$" +
-            "ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.table.list\",\"path\":\"tables\",\"htt" +
-            "pMethod\":\"GET\",\"description\":\"Retrieves a list of tables a user owns.\",\"paramete" +
-            "rs\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of styles to r" +
-            "eturn. Optional. Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"quer" +
-            "y\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuation token specifying wh" +
-            "ich result page to return. Optional.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"T" +
-            "ableList\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www" +
-            ".googleapis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.table." +
-            "patch\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an " +
-            "existing table. Unless explicitly requested, only the name, description, and att" +
-            "ribution will be updated. This method supports patch semantics.\",\"parameters\":{\"" +
-            "replaceViewDefinition\":{\"type\":\"boolean\",\"description\":\"Should the view definiti" +
-            "on also be updated? The specified view definition replaces the existing one. Onl" +
-            "y a view can be updated with a new definition.\",\"location\":\"query\"},\"tableId\":{\"" +
-            "type\":\"string\",\"description\":\"ID of the table that is being updated.\",\"required\"" +
-            ":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Table\"" +
-            "},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiont" +
-            "ables\"]},\"update\":{\"id\":\"fusiontables.table.update\",\"path\":\"tables/{tableId}\",\"h" +
-            "ttpMethod\":\"PUT\",\"description\":\"Updates an existing table. Unless explicitly req" +
-            "uested, only the name, description, and attribution will be updated.\",\"parameter" +
-            "s\":{\"replaceViewDefinition\":{\"type\":\"boolean\",\"description\":\"Should the view def" +
-            "inition also be updated? The specified view definition replaces the existing one" +
-            ". Only a view can be updated with a new definition.\",\"location\":\"query\"},\"tableI" +
-            "d\":{\"type\":\"string\",\"description\":\"ID of the table that is being updated.\",\"requ" +
-            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"T" +
-            "able\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fu" +
-            "siontables\"]}}},\"template\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.template.del" +
-            "ete\",\"path\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"DELETE\",\"des" +
-            "cription\":\"Deletes a template\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Table from which the template is being deleted\",\"required\":true,\"location" +
-            "\":\"path\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier for the templ" +
-            "ate which is being deleted\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"tableId\",\"templateId\"],\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/fusiontables\"]},\"get\":{\"id\":\"fusiontables.template.get\",\"path\":\"tables/{ta" +
-            "bleId}/templates/{templateId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a spe" +
-            "cific template by its id\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\"" +
-            ":\"Table to which the template belongs\",\"required\":true,\"location\":\"path\"},\"templ" +
-            "ateId\":{\"type\":\"integer\",\"description\":\"Identifier for the template that is bein" +
-            "g requested\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"tableId\",\"templateId\"],\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fusiontable" +
-            "s.readonly\"]},\"insert\":{\"id\":\"fusiontables.template.insert\",\"path\":\"tables/{tabl" +
-            "eId}/templates\",\"httpMethod\":\"POST\",\"description\":\"Creates a new template for th" +
-            "e table.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table for whic" +
-            "h a new template is being created\",\"required\":true,\"location\":\"path\"}},\"paramete" +
-            "rOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"Template\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"list\":{\"id\":\"fusion" +
-            "tables.template.list\",\"path\":\"tables/{tableId}/templates\",\"httpMethod\":\"GET\",\"de" +
-            "scription\":\"Retrieves a list of templates.\",\"parameters\":{\"maxResults\":{\"type\":\"" +
-            "integer\",\"description\":\"Maximum number of templates to return. Optional. Default" +
-            " is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":" +
-            "\"string\",\"description\":\"Continuation token specifying which results page to retu" +
-            "rn. Optional.\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"Ide" +
-            "ntifier for the table whose templates are being requested\",\"required\":true,\"loca" +
-            "tion\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"TemplateList\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis." +
-            "com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.template.patch\",\"p" +
-            "ath\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"PATCH\",\"description" +
-            "\":\"Updates an existing template. This method supports patch semantics.\",\"paramet" +
-            "ers\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table to which the updated templ" +
-            "ate belongs\",\"required\":true,\"location\":\"path\"},\"templateId\":{\"type\":\"integer\",\"" +
-            "description\":\"Identifier for the template that is being updated\",\"required\":true" +
-            ",\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"templateId\"]," +
-            "\"request\":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables.template.up" +
-            "date\",\"path\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"PUT\",\"descr" +
-            "iption\":\"Updates an existing template\",\"parameters\":{\"tableId\":{\"type\":\"string\"," +
-            "\"description\":\"Table to which the updated template belongs\",\"required\":true,\"loc" +
-            "ation\":\"path\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier for the " +
-            "template that is being updated\",\"required\":true,\"format\":\"int32\",\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"tableId\",\"templateId\"],\"request\":{\"$ref\":\"Template\"},\"re" +
-            "sponse\":{\"$ref\":\"Template\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontab" +
-            "les\"]}}}}}";
+            "the polyon border in pixels.\",\"format\":\"int32\"},\"strokeWeightStyler\":{\"$ref\":\"St" +
+            "yleFunction\",\"description\":\"Column-value or bucket styler that is used to determ" +
+            "ine the width of the polygon border.\"}}},\"Sqlresponse\":{\"id\":\"Sqlresponse\",\"type" +
+            "\":\"object\",\"description\":\"Represents a response to an sql statement.\",\"propertie" +
+            "s\":{\"columns\":{\"type\":\"array\",\"description\":\"Columns in the table.\",\"items\":{\"ty" +
+            "pe\":\"string\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type name: a template for " +
+            "an individual table.\",\"default\":\"fusiontables#sqlresponse\"},\"rows\":{\"type\":\"arra" +
+            "y\",\"description\":\"The rows in the table. For each cell we print out whatever cel" +
+            "l value (e.g., numeric, string) exists. Thus it is important that each cell cont" +
+            "ains only one value.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"any\"}}}}},\"StyleF" +
+            "unction\":{\"id\":\"StyleFunction\",\"type\":\"object\",\"description\":\"Represents a Style" +
+            "Function within a StyleSetting\",\"properties\":{\"buckets\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"Bucket function that assigns a style based on the range a column value fa" +
+            "lls into.\",\"items\":{\"$ref\":\"Bucket\"}},\"columnName\":{\"type\":\"string\",\"description" +
+            "\":\"Name of the column whose value is used in the style.\",\"annotations\":{\"require" +
+            "d\":[\"fusiontables.style.insert\"]}},\"gradient\":{\"type\":\"object\",\"description\":\"Gr" +
+            "adient function that interpolates a range of colors based on column value.\",\"pro" +
+            "perties\":{\"colors\":{\"type\":\"array\",\"description\":\"Array with two or more colors." +
+            "\",\"items\":{\"type\":\"object\",\"properties\":{\"color\":{\"type\":\"string\",\"description\":" +
+            "\"Color in #RRGGBB format.\"},\"opacity\":{\"type\":\"number\",\"description\":\"Opacity of" +
+            " the color: 0.0 (transparent) to 1.0 (opaque).\",\"format\":\"double\"}}}},\"max\":{\"ty" +
+            "pe\":\"number\",\"description\":\"Higher-end of the interpolation range: rows with thi" +
+            "s value will be assigned to colors[n-1].\",\"format\":\"double\"},\"min\":{\"type\":\"numb" +
+            "er\",\"description\":\"Lower-end of the interpolation range: rows with this value wi" +
+            "ll be assigned to colors[0].\",\"format\":\"double\"}}},\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Stylers can be one of three kinds: \\\"fusiontables#fromColumn\\\" if the " +
+            "column value is to be used as is, i.e., the column values can have colors in #RR" +
+            "GGBBAA format or integer line widths or icon names; \\\"fusiontables#gradient\\\" if" +
+            " the styling of the row is to be based on applying the gradient function on the " +
+            "column value; or \\\"fusiontables#buckets\\\" if the styling is to based on the buck" +
+            "et into which the the column value falls.\"}}},\"StyleSetting\":{\"id\":\"StyleSetting" +
+            "\",\"type\":\"object\",\"description\":\"Represents a complete StyleSettings object. The" +
+            " primary key is a combination of the tableId and a styleId.\",\"properties\":{\"isDe" +
+            "faultForTable\":{\"type\":\"boolean\",\"description\":\"Is this the default style for th" +
+            "e table.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type name: an individual style" +
+            " setting. A StyleSetting contains the style defintions for points, lines, and po" +
+            "lygons in a table. Since a table can have any one or all of them, a style defini" +
+            "tion can have point, line and polygon style definitions.\",\"default\":\"fusiontable" +
+            "s#styleSetting\"},\"markerOptions\":{\"$ref\":\"PointStyle\",\"description\":\"Style defin" +
+            "ition for points in the table.\"},\"name\":{\"type\":\"string\",\"description\":\"Optional" +
+            " name for the style setting.\"},\"polygonOptions\":{\"$ref\":\"PolygonStyle\",\"descript" +
+            "ion\":\"Style definition for polygons in the table.\"},\"polylineOptions\":{\"$ref\":\"L" +
+            "ineStyle\",\"description\":\"Style definition for lines in the table.\"},\"styleId\":{\"" +
+            "type\":\"integer\",\"description\":\"Identifier for the style setting (unique only wit" +
+            "hin tables).\",\"format\":\"int32\"},\"tableId\":{\"type\":\"string\",\"description\":\"Identi" +
+            "fier for the table.\"}}},\"StyleSettingList\":{\"id\":\"StyleSettingList\",\"type\":\"obje" +
+            "ct\",\"description\":\"Represents a list of styles for a given table.\",\"properties\":" +
+            "{\"items\":{\"type\":\"array\",\"description\":\"All requested style settings.\",\"items\":{" +
+            "\"$ref\":\"StyleSetting\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type name: in thi" +
+            "s case, a list of style settings.\",\"default\":\"fusiontables#styleSettingList\"},\"n" +
+            "extPageToken\":{\"type\":\"string\",\"description\":\"Token used to access the next page" +
+            " of this result. No token is displayed if there are no more styles left.\"},\"tota" +
+            "lItems\":{\"type\":\"integer\",\"description\":\"Total number of styles for the table.\"," +
+            "\"format\":\"int32\"}}},\"Table\":{\"id\":\"Table\",\"type\":\"object\",\"description\":\"Represe" +
+            "nts a table. Specifies the name, whether it is exportable, description, attribut" +
+            "ion, and attribution link.\",\"properties\":{\"attribution\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Optional attribution assigned to the table.\"},\"attributionLink\":{\"type\":" +
+            "\"string\",\"description\":\"Optional link for attribution.\"},\"baseTableIds\":{\"type\":" +
+            "\"array\",\"description\":\"Optional base table identifier if this table is a view or" +
+            " merged table.\",\"items\":{\"type\":\"string\"}},\"columns\":{\"type\":\"array\",\"descriptio" +
+            "n\":\"Columns in the table.\",\"items\":{\"$ref\":\"Column\"},\"annotations\":{\"required\":[" +
+            "\"fusiontables.table.insert\",\"fusiontables.table.update\"]}},\"description\":{\"type\"" +
+            ":\"string\",\"description\":\"Optional description assigned to the table.\"},\"isExport" +
+            "able\":{\"type\":\"boolean\",\"description\":\"Variable for whether table is exportable." +
+            "\",\"annotations\":{\"required\":[\"fusiontables.table.insert\",\"fusiontables.table.upd" +
+            "ate\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Type name: a template for an indi" +
+            "vidual table.\",\"default\":\"fusiontables#table\"},\"name\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Name assigned to a table.\",\"annotations\":{\"required\":[\"fusiontables.table." +
+            "insert\",\"fusiontables.table.update\"]}},\"sql\":{\"type\":\"string\",\"description\":\"Opt" +
+            "ional sql that encodes the table definition for derived tables.\"},\"tableId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Encrypted unique alphanumeric identifier for the tab" +
+            "le.\"}}},\"TableList\":{\"id\":\"TableList\",\"type\":\"object\",\"description\":\"Represents " +
+            "a list of tables.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of " +
+            "all requested tables.\",\"items\":{\"$ref\":\"Table\"}},\"kind\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Type name: a list of all tables.\",\"default\":\"fusiontables#tableList\"},\"n" +
+            "extPageToken\":{\"type\":\"string\",\"description\":\"Token used to access the next page" +
+            " of this result. No token is displayed if there are no more tokens left.\"}}},\"Te" +
+            "mplate\":{\"id\":\"Template\",\"type\":\"object\",\"description\":\"Represents the contents " +
+            "of InfoWindow templates.\",\"properties\":{\"automaticColumnNames\":{\"type\":\"array\",\"" +
+            "description\":\"List of columns from which the template is to be automatically con" +
+            "structed. Only one of body or automaticColumns can be specified.\",\"items\":{\"type" +
+            "\":\"string\"}},\"body\":{\"type\":\"string\",\"description\":\"Body of the template. It con" +
+            "tains HTML with {column_name} to insert values from a particular column. The bod" +
+            "y is sanitized to remove certain tags, e.g., script. Only one of body or automat" +
+            "icColumns can be specified.\"},\"isDefaultForTable\":{\"type\":\"boolean\",\"description" +
+            "\":\"Is this the default template for the table.\"},\"kind\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Type name: a template for the info window contents. The template can eit" +
+            "her include an HTML body or a list of columns from which the template is compute" +
+            "d automatically.\",\"default\":\"fusiontables#template\"},\"name\":{\"type\":\"string\",\"de" +
+            "scription\":\"Optional name assigned to a template.\"},\"tableId\":{\"type\":\"string\",\"" +
+            "description\":\"Identifier for the table for which the template is defined.\"},\"tem" +
+            "plateId\":{\"type\":\"integer\",\"description\":\"Identifier for the template, unique wi" +
+            "thin the context of a particular table.\",\"format\":\"int32\"}}},\"TemplateList\":{\"id" +
+            "\":\"TemplateList\",\"type\":\"object\",\"description\":\"Represents a list of templates f" +
+            "or a given table.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of " +
+            "all requested templates.\",\"items\":{\"$ref\":\"Template\"}},\"kind\":{\"type\":\"string\",\"" +
+            "description\":\"Type name: a list of all templates.\",\"default\":\"fusiontables#templ" +
+            "ateList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token used to access t" +
+            "he next page of this result. No token is displayed if there are no more tokens l" +
+            "eft.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of templates f" +
+            "or the table.\",\"format\":\"int32\"}}}},\"resources\":{\"column\":{\"methods\":{\"delete\":{" +
+            "\"id\":\"fusiontables.column.delete\",\"path\":\"tables/{tableId}/columns/{columnId}\",\"" +
+            "httpMethod\":\"DELETE\",\"description\":\"Deletes the column.\",\"parameters\":{\"columnId" +
+            "\":{\"type\":\"string\",\"description\":\"Name or identifier for the column being delete" +
+            "d.\",\"required\":true,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":" +
+            "\"Table from which the column is being deleted.\",\"required\":true,\"location\":\"path" +
+            "\"}},\"parameterOrder\":[\"tableId\",\"columnId\"],\"scopes\":[\"https://www.googleapis.co" +
+            "m/auth/fusiontables\"]},\"get\":{\"id\":\"fusiontables.column.get\",\"path\":\"tables/{tab" +
+            "leId}/columns/{columnId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a specific" +
+            " column by its id.\",\"parameters\":{\"columnId\":{\"type\":\"string\",\"description\":\"Nam" +
+            "e or identifier for the column that is being requested.\",\"required\":true,\"locati" +
+            "on\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table to which the column " +
+            "belongs.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"colum" +
+            "nId\"],\"response\":{\"$ref\":\"Column\"},\"scopes\":[\"https://www.googleapis.com/auth/fu" +
+            "siontables\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]},\"insert\":{" +
+            "\"id\":\"fusiontables.column.insert\",\"path\":\"tables/{tableId}/columns\",\"httpMethod\"" +
+            ":\"POST\",\"description\":\"Adds a new column to the table.\",\"parameters\":{\"tableId\":" +
+            "{\"type\":\"string\",\"description\":\"Table for which a new column is being added.\",\"r" +
+            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\"" +
+            ":\"Column\"},\"response\":{\"$ref\":\"Column\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/fusiontables\"]},\"list\":{\"id\":\"fusiontables.column.list\",\"path\":\"tables/{table" +
+            "Id}/columns\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of columns.\",\"pa" +
+            "rameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of colum" +
+            "ns to return. Optional. Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location" +
+            "\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuation token specif" +
+            "ying which result page to return. Optional.\",\"location\":\"query\"},\"tableId\":{\"typ" +
+            "e\":\"string\",\"description\":\"Table whose columns are being listed.\",\"required\":tru" +
+            "e,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"ColumnLis" +
+            "t\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.google" +
+            "apis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.column.patch\"" +
+            ",\"path\":\"tables/{tableId}/columns/{columnId}\",\"httpMethod\":\"PATCH\",\"description\"" +
+            ":\"Updates the name or type of an existing column. This method supports patch sem" +
+            "antics.\",\"parameters\":{\"columnId\":{\"type\":\"string\",\"description\":\"Name or identi" +
+            "fier for the column that is being updated.\",\"required\":true,\"location\":\"path\"},\"" +
+            "tableId\":{\"type\":\"string\",\"description\":\"Table for which the column is being upd" +
+            "ated.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"columnId" +
+            "\"],\"request\":{\"$ref\":\"Column\"},\"response\":{\"$ref\":\"Column\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables.column.updat" +
+            "e\",\"path\":\"tables/{tableId}/columns/{columnId}\",\"httpMethod\":\"PUT\",\"description\"" +
+            ":\"Updates the name or type of an existing column.\",\"parameters\":{\"columnId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Name or identifier for the column that is being upda" +
+            "ted.\",\"required\":true,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description" +
+            "\":\"Table for which the column is being updated.\",\"required\":true,\"location\":\"pat" +
+            "h\"}},\"parameterOrder\":[\"tableId\",\"columnId\"],\"request\":{\"$ref\":\"Column\"},\"respon" +
+            "se\":{\"$ref\":\"Column\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]}" +
+            "}},\"query\":{\"methods\":{\"sql\":{\"id\":\"fusiontables.query.sql\",\"path\":\"query\",\"http" +
+            "Method\":\"POST\",\"description\":\"Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/D" +
+            "ESCRIBE/CREATE statement.\",\"parameters\":{\"hdrs\":{\"type\":\"boolean\",\"description\":" +
+            "\"Should column names be included (in the first row)?. Default is true.\",\"locatio" +
+            "n\":\"query\"},\"sql\":{\"type\":\"string\",\"description\":\"An SQL SELECT/SHOW/DESCRIBE/IN" +
+            "SERT/UPDATE/DELETE/CREATE statement.\",\"required\":true,\"location\":\"query\"},\"typed" +
+            "\":{\"type\":\"boolean\",\"description\":\"Should typed values be returned in the (JSON)" +
+            " response -- numbers for numeric values and parsed geometries for KML values? De" +
+            "fault is true.\",\"location\":\"query\"}},\"parameterOrder\":[\"sql\"],\"response\":{\"$ref\"" +
+            ":\"Sqlresponse\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https:" +
+            "//www.googleapis.com/auth/fusiontables.readonly\"]},\"sqlGet\":{\"id\":\"fusiontables." +
+            "query.sqlGet\",\"path\":\"query\",\"httpMethod\":\"GET\",\"description\":\"Executes an SQL S" +
+            "ELECT/SHOW/DESCRIBE statement.\",\"parameters\":{\"hdrs\":{\"type\":\"boolean\",\"descript" +
+            "ion\":\"Should column names be included (in the first row)?. Default is true.\",\"lo" +
+            "cation\":\"query\"},\"sql\":{\"type\":\"string\",\"description\":\"An SQL SELECT/SHOW/DESCRI" +
+            "BE statement.\",\"required\":true,\"location\":\"query\"},\"typed\":{\"type\":\"boolean\",\"de" +
+            "scription\":\"Should typed values be returned in the (JSON) response -- numbers fo" +
+            "r numeric values and parsed geometries for KML values? Default is true.\",\"locati" +
+            "on\":\"query\"}},\"parameterOrder\":[\"sql\"],\"response\":{\"$ref\":\"Sqlresponse\"},\"scopes" +
+            "\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/au" +
+            "th/fusiontables.readonly\"]}}},\"style\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.s" +
+            "tyle.delete\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"DELETE\",\"d" +
+            "escription\":\"Deletes a style.\",\"parameters\":{\"styleId\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"Identifier (within a table) for the style being deleted\",\"required\":true" +
+            ",\"format\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"T" +
+            "able from which the style is being deleted\",\"required\":true,\"location\":\"path\"}}," +
+            "\"parameterOrder\":[\"tableId\",\"styleId\"],\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/fusiontables\"]},\"get\":{\"id\":\"fusiontables.style.get\",\"path\":\"tables/{tableId}/" +
+            "styles/{styleId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a specific style.\",\"par" +
+            "ameters\":{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (integer) for a " +
+            "specific style in a table\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"" +
+            "tableId\":{\"type\":\"string\",\"description\":\"Table to which the requested style belo" +
+            "ngs\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleId\"]," +
+            "\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapis.com/auth/fu" +
+            "siontables\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]},\"insert\":{" +
+            "\"id\":\"fusiontables.style.insert\",\"path\":\"tables/{tableId}/styles\",\"httpMethod\":\"" +
+            "POST\",\"description\":\"Adds a new style for the table.\",\"parameters\":{\"tableId\":{\"" +
+            "type\":\"string\",\"description\":\"Table for which a new style is being added\",\"requi" +
+            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"St" +
+            "yleSetting\"},\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.style.list\",\"path\":\"tables" +
+            "/{tableId}/styles\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of styles." +
+            "\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of " +
+            "styles to return. Optional. Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"loca" +
+            "tion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuation token sp" +
+            "ecifying which result page to return. Optional.\",\"location\":\"query\"},\"tableId\":{" +
+            "\"type\":\"string\",\"description\":\"Table whose styles are being listed\",\"required\":t" +
+            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"StyleSe" +
+            "ttingList\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://ww" +
+            "w.googleapis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.style" +
+            ".patch\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"PATCH\",\"descrip" +
+            "tion\":\"Updates an existing style. This method supports patch semantics.\",\"parame" +
+            "ters\":{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (within a table) fo" +
+            "r the style being updated.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}," +
+            "\"tableId\":{\"type\":\"string\",\"description\":\"Table whose style is being updated.\",\"" +
+            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleId\"],\"reque" +
+            "st\":{\"$ref\":\"StyleSetting\"},\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables.style.upd" +
+            "ate\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"PUT\",\"description\"" +
+            ":\"Updates an existing style.\",\"parameters\":{\"styleId\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"Identifier (within a table) for the style being updated.\",\"required\":true" +
+            ",\"format\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"T" +
+            "able whose style is being updated.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"tableId\",\"styleId\"],\"request\":{\"$ref\":\"StyleSetting\"},\"response\":{\"$r" +
+            "ef\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]}}}" +
+            ",\"table\":{\"methods\":{\"copy\":{\"id\":\"fusiontables.table.copy\",\"path\":\"tables/{tabl" +
+            "eId}/copy\",\"httpMethod\":\"POST\",\"description\":\"Copies a table.\",\"parameters\":{\"ta" +
+            "bleId\":{\"type\":\"string\",\"description\":\"ID of the table that is being copied.\",\"r" +
+            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref" +
+            "\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www" +
+            ".googleapis.com/auth/fusiontables.readonly\"]},\"delete\":{\"id\":\"fusiontables.table" +
+            ".delete\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes " +
+            "a table.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"ID of the tabl" +
+            "e that is being deleted.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
+            "\"tableId\"],\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"get\":{\"id" +
+            "\":\"fusiontables.table.get\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"GET\",\"descrip" +
+            "tion\":\"Retrieves a specific table by its id.\",\"parameters\":{\"tableId\":{\"type\":\"s" +
+            "tring\",\"description\":\"Identifier(ID) for the table being requested.\",\"required\":" +
+            "true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"Table\"" +
+            "},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleap" +
+            "is.com/auth/fusiontables.readonly\"]},\"importRows\":{\"id\":\"fusiontables.table.impo" +
+            "rtRows\",\"path\":\"tables/{tableId}/import\",\"httpMethod\":\"POST\",\"description\":\"Impo" +
+            "rt more rows into a table.\",\"parameters\":{\"delimiter\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The delimiter used to separate cell values. This can only consist of a sin" +
+            "gle character. Default is \',\'.\",\"location\":\"query\"},\"encoding\":{\"type\":\"string\"," +
+            "\"description\":\"The encoding of the content. Default is UTF-8. Use \'auto-detect\' " +
+            "if you are unsure of the encoding.\",\"location\":\"query\"},\"endLine\":{\"type\":\"integ" +
+            "er\",\"description\":\"The index of the last line from which to start importing, exc" +
+            "lusive. Thus, the number of imported lines is endLine - startLine. If this param" +
+            "eter is not provided, the file will be imported until the last line of the file." +
+            " If endLine is negative, then the imported content will exclude the last endLine" +
+            " lines. That is, if endline is negative, no line will be imported whose index is" +
+            " greater than N + endLine where N is the number of lines in the file, and the nu" +
+            "mber of imported lines will be N + endLine - startLine.\",\"format\":\"int32\",\"locat" +
+            "ion\":\"query\"},\"isStrict\":{\"type\":\"boolean\",\"description\":\"Whether the CSV must h" +
+            "ave the same number of values for each row. If false, rows with fewer values wil" +
+            "l be padded with empty values. Default is true.\",\"location\":\"query\"},\"startLine\"" +
+            ":{\"type\":\"integer\",\"description\":\"The index of the first line from which to star" +
+            "t importing, inclusive. Default is 0.\",\"format\":\"int32\",\"location\":\"query\"},\"tab" +
+            "leId\":{\"type\":\"string\",\"description\":\"The table into which new rows are being im" +
+            "ported.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"respo" +
+            "nse\":{\"$ref\":\"Import\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]" +
+            ",\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"application/octet-stream\"]" +
+            ",\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"/upload/fusiontables/v1/tables/" +
+            "{tableId}/import\"},\"resumable\":{\"multipart\":true,\"path\":\"/resumable/upload/fusio" +
+            "ntables/v1/tables/{tableId}/import\"}}}},\"insert\":{\"id\":\"fusiontables.table.inser" +
+            "t\",\"path\":\"tables\",\"httpMethod\":\"POST\",\"description\":\"Creates a new table.\",\"req" +
+            "uest\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.google" +
+            "apis.com/auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.table.list\",\"path\":\"tab" +
+            "les\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of tables a user owns.\"," +
+            "\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of st" +
+            "yles to return. Optional. Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"locati" +
+            "on\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuation token spec" +
+            "ifying which result page to return. Optional.\",\"location\":\"query\"}},\"response\":{" +
+            "\"$ref\":\"TableList\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"ht" +
+            "tps://www.googleapis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontabl" +
+            "es.table.patch\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"PATCH\",\"description\":\"Up" +
+            "dates an existing table. Unless explicitly requested, only the name, description" +
+            ", and attribution will be updated. This method supports patch semantics.\",\"param" +
+            "eters\":{\"replaceViewDefinition\":{\"type\":\"boolean\",\"description\":\"Should the view" +
+            " definition also be updated? The specified view definition replaces the existing" +
+            " one. Only a view can be updated with a new definition.\",\"location\":\"query\"},\"ta" +
+            "bleId\":{\"type\":\"string\",\"description\":\"ID of the table that is being updated.\",\"" +
+            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref" +
+            "\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/fusiontables\"]},\"update\":{\"id\":\"fusiontables.table.update\",\"path\":\"tables/{tab" +
+            "leId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an existing table. Unless expli" +
+            "citly requested, only the name, description, and attribution will be updated.\",\"" +
+            "parameters\":{\"replaceViewDefinition\":{\"type\":\"boolean\",\"description\":\"Should the" +
+            " view definition also be updated? The specified view definition replaces the exi" +
+            "sting one. Only a view can be updated with a new definition.\",\"location\":\"query\"" +
+            "},\"tableId\":{\"type\":\"string\",\"description\":\"ID of the table that is being update" +
+            "d.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{" +
+            "\"$ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.co" +
+            "m/auth/fusiontables\"]}}},\"template\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.tem" +
+            "plate.delete\",\"path\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"DEL" +
+            "ETE\",\"description\":\"Deletes a template\",\"parameters\":{\"tableId\":{\"type\":\"string\"" +
+            ",\"description\":\"Table from which the template is being deleted\",\"required\":true," +
+            "\"location\":\"path\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier for " +
+            "the template which is being deleted\",\"required\":true,\"format\":\"int32\",\"location\"" +
+            ":\"path\"}},\"parameterOrder\":[\"tableId\",\"templateId\"],\"scopes\":[\"https://www.googl" +
+            "eapis.com/auth/fusiontables\"]},\"get\":{\"id\":\"fusiontables.template.get\",\"path\":\"t" +
+            "ables/{tableId}/templates/{templateId}\",\"httpMethod\":\"GET\",\"description\":\"Retrie" +
+            "ves a specific template by its id\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"des" +
+            "cription\":\"Table to which the template belongs\",\"required\":true,\"location\":\"path" +
+            "\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier for the template tha" +
+            "t is being requested\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}},\"para" +
+            "meterOrder\":[\"tableId\",\"templateId\"],\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fu" +
+            "siontables.readonly\"]},\"insert\":{\"id\":\"fusiontables.template.insert\",\"path\":\"tab" +
+            "les/{tableId}/templates\",\"httpMethod\":\"POST\",\"description\":\"Creates a new templa" +
+            "te for the table.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table" +
+            " for which a new template is being created\",\"required\":true,\"location\":\"path\"}}," +
+            "\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"T" +
+            "emplate\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"list\":{\"id" +
+            "\":\"fusiontables.template.list\",\"path\":\"tables/{tableId}/templates\",\"httpMethod\":" +
+            "\"GET\",\"description\":\"Retrieves a list of templates.\",\"parameters\":{\"maxResults\":" +
+            "{\"type\":\"integer\",\"description\":\"Maximum number of templates to return. Optional" +
+            ". Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\"" +
+            ":{\"type\":\"string\",\"description\":\"Continuation token specifying which results pag" +
+            "e to return. Optional.\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Identifier for the table whose templates are being requested\",\"required\":t" +
+            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"Templat" +
+            "eList\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.go" +
+            "ogleapis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.template." +
+            "patch\",\"path\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"PATCH\",\"de" +
+            "scription\":\"Updates an existing template. This method supports patch semantics.\"" +
+            ",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table to which the upda" +
+            "ted template belongs\",\"required\":true,\"location\":\"path\"},\"templateId\":{\"type\":\"i" +
+            "nteger\",\"description\":\"Identifier for the template that is being updated\",\"requi" +
+            "red\":true,\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"temp" +
+            "lateId\"],\"request\":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"Template\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables.te" +
+            "mplate.update\",\"path\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"PU" +
+            "T\",\"description\":\"Updates an existing template\",\"parameters\":{\"tableId\":{\"type\":" +
+            "\"string\",\"description\":\"Table to which the updated template belongs\",\"required\":" +
+            "true,\"location\":\"path\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier" +
+            " for the template that is being updated\",\"required\":true,\"format\":\"int32\",\"locat" +
+            "ion\":\"path\"}},\"parameterOrder\":[\"tableId\",\"templateId\"],\"request\":{\"$ref\":\"Templ" +
+            "ate\"},\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
+            "fusiontables\"]}}}}}";
         
         public const string Version = "v1";
         
@@ -1846,7 +1851,6 @@ namespace Google.Apis.Fusiontables.v1 {
             this._service = _service;
             this._authenticator = _authenticator;
             this._column = new ColumnResource(this, _authenticator);
-            this._import = new ImportResource(this, _authenticator);
             this._query = new QueryResource(this, _authenticator);
             this._style = new StyleResource(this, _authenticator);
             this._table = new TableResource(this, _authenticator);
@@ -2430,263 +2434,6 @@ namespace Google.Apis.Fusiontables.v1 {
             
             protected override object GetBody() {
                 return this.Body;
-            }
-        }
-    }
-    
-    public class ImportResource {
-        
-        private FusiontablesService service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string Resource = "import";
-        
-        public ImportResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this.service = service;
-            this._authenticator = _authenticator;
-        }
-        
-        /// <summary>Import more rows into a table.</summary>
-        /// <param name="tableId">Required - The table into which new rows are being imported.</param>
-        public virtual InsertRequest Insert(string tableId) {
-            return new InsertRequest(service, tableId);
-        }
-        
-        /// <summary>Import more rows into a table.</summary>
-        /// <param name="tableId">Required - The table into which new rows are being imported.</param>
-        public virtual InsertMediaUpload Insert(string tableId, System.IO.Stream stream, string contentType) {
-            return new InsertMediaUpload(service, tableId, stream, contentType);
-        }
-        
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Import> {
-            
-            private string _oauth_token;
-            
-            private System.Nullable<bool> _prettyPrint;
-            
-            private string _delimiter;
-            
-            private string _encoding;
-            
-            private string _endLine;
-            
-            private System.Nullable<bool> _isStrict;
-            
-            private string _startLine;
-            
-            private string _tableId;
-            
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
-                    base(service) {
-                this._tableId = tableId;
-            }
-            
-            /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Oauth_token {
-                get {
-                    return this._oauth_token;
-                }
-                set {
-                    this._oauth_token = value;
-                }
-            }
-            
-            /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> PrettyPrint {
-                get {
-                    return this._prettyPrint;
-                }
-                set {
-                    this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>The delimiter used to separate cell values. Default is ','.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("delimiter", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Delimiter {
-                get {
-                    return this._delimiter;
-                }
-                set {
-                    this._delimiter = value;
-                }
-            }
-            
-            /// <summary>The encoding of the content. Default is UTF-8.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("encoding", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Encoding {
-                get {
-                    return this._encoding;
-                }
-                set {
-                    this._encoding = value;
-                }
-            }
-            
-            /// <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then it is equivalent to N + endLine, where N is the number of lines in the file.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("endLine", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string EndLine {
-                get {
-                    return this._endLine;
-                }
-                set {
-                    this._endLine = value;
-                }
-            }
-            
-            /// <summary>Whether the CSV will be parsed strictly or not. Default is true.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("isStrict", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> IsStrict {
-                get {
-                    return this._isStrict;
-                }
-                set {
-                    this._isStrict = value;
-                }
-            }
-            
-            /// <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startLine", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string StartLine {
-                get {
-                    return this._startLine;
-                }
-                set {
-                    this._startLine = value;
-                }
-            }
-            
-            /// <summary>The table into which new rows are being imported.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
-            public virtual string TableId {
-                get {
-                    return this._tableId;
-                }
-            }
-            
-            protected override string ResourcePath {
-                get {
-                    return "import";
-                }
-            }
-            
-            protected override string MethodName {
-                get {
-                    return "insert";
-                }
-            }
-        }
-        
-        public class InsertMediaUpload : Google.Apis.Upload.ResumableUpload<string, Google.Apis.Fusiontables.v1.Data.Import> {
-            
-            private string _oauth_token;
-            
-            private System.Nullable<bool> _prettyPrint;
-            
-            private string _delimiter;
-            
-            private string _encoding;
-            
-            private string _endLine;
-            
-            private System.Nullable<bool> _isStrict;
-            
-            private string _startLine;
-            
-            private string _tableId;
-            
-            public InsertMediaUpload(Google.Apis.Discovery.IRequestProvider service, string tableId, System.IO.Stream stream, string contentType) : 
-                    base(service.BaseUri, "/upload/fusiontables/v1/tables/{tableId}/import", "POST", stream, contentType) {
-                this.Authenticator = service.Authenticator;
-                this._tableId = tableId;
-            }
-            
-            /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Oauth_token {
-                get {
-                    return this._oauth_token;
-                }
-                set {
-                    this._oauth_token = value;
-                }
-            }
-            
-            /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> PrettyPrint {
-                get {
-                    return this._prettyPrint;
-                }
-                set {
-                    this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>The delimiter used to separate cell values. Default is ','.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("delimiter", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Delimiter {
-                get {
-                    return this._delimiter;
-                }
-                set {
-                    this._delimiter = value;
-                }
-            }
-            
-            /// <summary>The encoding of the content. Default is UTF-8.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("encoding", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Encoding {
-                get {
-                    return this._encoding;
-                }
-                set {
-                    this._encoding = value;
-                }
-            }
-            
-            /// <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then it is equivalent to N + endLine, where N is the number of lines in the file.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("endLine", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string EndLine {
-                get {
-                    return this._endLine;
-                }
-                set {
-                    this._endLine = value;
-                }
-            }
-            
-            /// <summary>Whether the CSV will be parsed strictly or not. Default is true.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("isStrict", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> IsStrict {
-                get {
-                    return this._isStrict;
-                }
-                set {
-                    this._isStrict = value;
-                }
-            }
-            
-            /// <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startLine", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string StartLine {
-                get {
-                    return this._startLine;
-                }
-                set {
-                    this._startLine = value;
-                }
-            }
-            
-            /// <summary>The table into which new rows are being imported.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
-            public virtual string TableId {
-                get {
-                    return this._tableId;
-                }
             }
         }
     }
@@ -3423,6 +3170,18 @@ namespace Google.Apis.Fusiontables.v1 {
             return new GetRequest(service, tableId);
         }
         
+        /// <summary>Import more rows into a table.</summary>
+        /// <param name="tableId">Required - The table into which new rows are being imported.</param>
+        public virtual ImportRowsRequest ImportRows(string tableId) {
+            return new ImportRowsRequest(service, tableId);
+        }
+        
+        /// <summary>Import more rows into a table.</summary>
+        /// <param name="tableId">Required - The table into which new rows are being imported.</param>
+        public virtual ImportRowsMediaUpload ImportRows(string tableId, System.IO.Stream stream, string contentType) {
+            return new ImportRowsMediaUpload(service, tableId, stream, contentType);
+        }
+        
         /// <summary>Creates a new table.</summary>
         public virtual InsertRequest Insert(Google.Apis.Fusiontables.v1.Data.Table body) {
             return new InsertRequest(service, body);
@@ -3609,6 +3368,237 @@ namespace Google.Apis.Fusiontables.v1 {
             protected override string MethodName {
                 get {
                     return "get";
+                }
+            }
+        }
+        
+        public class ImportRowsRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Import> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _delimiter;
+            
+            private string _encoding;
+            
+            private System.Nullable<long> _endLine;
+            
+            private System.Nullable<bool> _isStrict;
+            
+            private System.Nullable<long> _startLine;
+            
+            private string _tableId;
+            
+            public ImportRowsRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
+                    base(service) {
+                this._tableId = tableId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The delimiter used to separate cell values. This can only consist of a single character. Default is ','.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("delimiter", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Delimiter {
+                get {
+                    return this._delimiter;
+                }
+                set {
+                    this._delimiter = value;
+                }
+            }
+            
+            /// <summary>The encoding of the content. Default is UTF-8. Use 'auto-detect' if you are unsure of the encoding.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("encoding", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Encoding {
+                get {
+                    return this._encoding;
+                }
+                set {
+                    this._encoding = value;
+                }
+            }
+            
+            /// <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then the imported content will exclude the last endLine lines. That is, if endline is negative, no line will be imported whose index is greater than N + endLine where N is the number of lines in the file, and the number of imported lines will be N + endLine - startLine.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("endLine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> EndLine {
+                get {
+                    return this._endLine;
+                }
+                set {
+                    this._endLine = value;
+                }
+            }
+            
+            /// <summary>Whether the CSV must have the same number of values for each row. If false, rows with fewer values will be padded with empty values. Default is true.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("isStrict", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> IsStrict {
+                get {
+                    return this._isStrict;
+                }
+                set {
+                    this._isStrict = value;
+                }
+            }
+            
+            /// <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("startLine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> StartLine {
+                get {
+                    return this._startLine;
+                }
+                set {
+                    this._startLine = value;
+                }
+            }
+            
+            /// <summary>The table into which new rows are being imported.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string TableId {
+                get {
+                    return this._tableId;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "table";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "importRows";
+                }
+            }
+        }
+        
+        public class ImportRowsMediaUpload : Google.Apis.Upload.ResumableUpload<string, Google.Apis.Fusiontables.v1.Data.Import> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _delimiter;
+            
+            private string _encoding;
+            
+            private System.Nullable<long> _endLine;
+            
+            private System.Nullable<bool> _isStrict;
+            
+            private System.Nullable<long> _startLine;
+            
+            private string _tableId;
+            
+            public ImportRowsMediaUpload(Google.Apis.Discovery.IRequestProvider service, string tableId, System.IO.Stream stream, string contentType) : 
+                    base(service.BaseUri, "/upload/fusiontables/v1/tables/{tableId}/import", "POST", stream, contentType) {
+                this.Authenticator = service.Authenticator;
+                this._tableId = tableId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The delimiter used to separate cell values. This can only consist of a single character. Default is ','.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("delimiter", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Delimiter {
+                get {
+                    return this._delimiter;
+                }
+                set {
+                    this._delimiter = value;
+                }
+            }
+            
+            /// <summary>The encoding of the content. Default is UTF-8. Use 'auto-detect' if you are unsure of the encoding.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("encoding", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Encoding {
+                get {
+                    return this._encoding;
+                }
+                set {
+                    this._encoding = value;
+                }
+            }
+            
+            /// <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then the imported content will exclude the last endLine lines. That is, if endline is negative, no line will be imported whose index is greater than N + endLine where N is the number of lines in the file, and the number of imported lines will be N + endLine - startLine.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("endLine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> EndLine {
+                get {
+                    return this._endLine;
+                }
+                set {
+                    this._endLine = value;
+                }
+            }
+            
+            /// <summary>Whether the CSV must have the same number of values for each row. If false, rows with fewer values will be padded with empty values. Default is true.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("isStrict", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> IsStrict {
+                get {
+                    return this._isStrict;
+                }
+                set {
+                    this._isStrict = value;
+                }
+            }
+            
+            /// <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("startLine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> StartLine {
+                get {
+                    return this._startLine;
+                }
+                set {
+                    this._startLine = value;
+                }
+            }
+            
+            /// <summary>The table into which new rows are being imported.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string TableId {
+                get {
+                    return this._tableId;
                 }
             }
         }
@@ -4436,8 +4426,6 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private ColumnResource _column;
         
-        private ImportResource _import;
-        
         private QueryResource _query;
         
         private StyleResource _style;
@@ -4455,12 +4443,6 @@ namespace Google.Apis.Fusiontables.v1 {
         public virtual ColumnResource Column {
             get {
                 return this._column;
-            }
-        }
-        
-        public virtual ImportResource Import {
-            get {
-                return this._import;
             }
         }
         

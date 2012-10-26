@@ -199,13 +199,13 @@
             <summary>A gadget that extends this event.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.GuestsCanInviteOthers">
-            <summary>Whether attendees other than the organizer can invite others to the event. Optional. The default is False.</summary>
+            <summary>Whether attendees other than the organizer can invite others to the event. Optional. The default is True.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.GuestsCanModify">
             <summary>Whether attendees other than the organizer can modify the event. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.GuestsCanSeeOtherGuests">
-            <summary>Whether attendees other than the organizer can see who the event&apos;s attendees are. Optional. The default is False.</summary>
+            <summary>Whether attendees other than the organizer can see who the event&apos;s attendees are. Optional. The default is True.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.HangoutLink">
             <summary>An absolute link to the Google+ hangout associated with this event. Read-only.</summary>
@@ -960,6 +960,9 @@
         <member name="P:Google.Apis.Calendar.v3.EventsResource.InsertRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.EventsResource.InsertRequest.MaxAttendees">
+            <summary>The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.InsertRequest.SendNotifications">
             <summary>Whether to send notifications about the creation of the new event. Optional. The default is False.</summary>
         </member>
@@ -1083,6 +1086,9 @@
         <member name="P:Google.Apis.Calendar.v3.EventsResource.PatchRequest.EventId">
             <summary>Event identifier.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.EventsResource.PatchRequest.MaxAttendees">
+            <summary>The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.PatchRequest.SendNotifications">
             <summary>Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). Optional. The default is False.</summary>
         </member>
@@ -1118,6 +1124,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.EventId">
             <summary>Event identifier.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.MaxAttendees">
+            <summary>The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.SendNotifications">
             <summary>Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). Optional. The default is False.</summary>

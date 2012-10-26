@@ -67,7 +67,6 @@
         <member name="P:Google.Apis.Plus.v1.Data.Activity.Verb">
              <summary>This activity&apos;s verb, indicating what action was performed. Possible values are:  
             - &quot;post&quot; - Publish content to the stream. 
-            - &quot;checkin&quot; - Check in to a location. 
             - &quot;share&quot; - Reshare an activity.</summary>
         </member>
         <member name="T:Google.Apis.Plus.v1.Data.Activity.ActorData">
@@ -113,7 +112,7 @@
             <summary>The media objects attached to this activity.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.Content">
-            <summary>The HTML-formatted content, suitable for display. When creating or updating an activity, this value must be supplied as plain text in the request. If successful, the response contains the HTML-formatted content. When updating an activity, use originalContent as the starting value, then assign the updated text to this property.</summary>
+            <summary>The HTML-formatted content, suitable for display.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.Id">
             <summary>The ID of the object. When resharing an activity, this is the ID of the activity being reshared.</summary>
@@ -124,7 +123,7 @@
             - &quot;activity&quot; - A Google+ activity.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.OriginalContent">
-            <summary>The content (text) as provided by the author, stored without any HTML formatting. When updating an activity&apos;s content, use the value of originalContent as the starting point from which to make edits. The formatting uses inline formatting in the style of *bold*, _italic_ and -strikethrough-.</summary>
+            <summary>The content (text) as provided by the author, stored without any HTML formatting. When creating or updating an activity, this value must be supplied as plain text in the request.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.Plusoners">
             <summary>People who +1&apos;d this activity.</summary>
@@ -160,7 +159,7 @@
             <summary>A URL that points to a thumbnail photo of the original actor.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Content">
-            <summary>If the attachment is an article, this property contains a snippet of text from the article.</summary>
+            <summary>If the attachment is an article, this property contains a snippet of text from the article. It may also include descriptions for other types.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.DisplayName">
             <summary>The title of the attachment (such as a photo caption or an article title).</summary>
@@ -172,7 +171,7 @@
             <summary>The full image URL for photo attachments.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Id">
-            <summary>The ID of the media object&apos;s resource.</summary>
+            <summary>The ID of the attachment.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Image">
             <summary>The preview image for photos or videos.</summary>
@@ -180,8 +179,12 @@
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ObjectType">
              <summary>The type of media object. Possible values are:  
             - &quot;photo&quot; - A photo. 
+            - &quot;album&quot; - A photo album. 
             - &quot;video&quot; - A video. 
             - &quot;article&quot; - An article, specified by a link.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Thumbnails">
+            <summary>If the attachment is an album, potential additional thumbnails from the album.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Url">
             <summary>The link to the attachment, should be of type text/html.</summary>
@@ -205,7 +208,7 @@
             <summary>Media type of the link.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.FullImageData.Url">
-            <summary>URL of the link.</summary>
+            <summary>URL to the image.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.FullImageData.Width">
             <summary>The width, in pixels, of the linked resource.</summary>
@@ -220,9 +223,33 @@
             <summary>Media type of the link.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ImageData.Url">
-            <summary>URL of the link.</summary>
+            <summary>Image url.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ImageData.Width">
+            <summary>The width, in pixels, of the linked resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ThumbnailsData.Description">
+            <summary>Potential name of the thumbnail.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ThumbnailsData.Image">
+            <summary>Image resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ThumbnailsData.Url">
+            <summary>URL to the webpage containing the image.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ThumbnailsData.ImageData">
+            <summary>Image resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ThumbnailsData.ImageData.Height">
+            <summary>The height, in pixels, of the linked resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ThumbnailsData.ImageData.Type">
+            <summary>Media type of the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ThumbnailsData.ImageData.Url">
+            <summary>Image url.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ThumbnailsData.ImageData.Width">
             <summary>The width, in pixels, of the linked resource.</summary>
         </member>
         <member name="T:Google.Apis.Plus.v1.Data.Activity.ObjectData.PlusonersData">
@@ -303,6 +330,9 @@
         <member name="P:Google.Apis.Plus.v1.Data.Comment.Object">
             <summary>The object of this comment.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Comment.Plusoners">
+            <summary>People who +1&apos;d this comment.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Comment.Published">
             <summary>The time at which this comment was initially published. Formatted as an RFC 3339 timestamp.</summary>
         </member>
@@ -347,11 +377,20 @@
             <summary>The object of this comment.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Comment.ObjectData.Content">
-            <summary>The content of this comment.</summary>
+            <summary>The HTML-formatted content, suitable for display.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Comment.ObjectData.ObjectType">
              <summary>The object type of this comment. Possible values are:  
             - &quot;comment&quot; - A comment in reply to an activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Comment.ObjectData.OriginalContent">
+            <summary>The content (text) as provided by the author, stored without any HTML formatting. When creating or updating a comment, this value must be supplied as plain text in the request.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.Data.Comment.PlusonersData">
+            <summary>People who +1&apos;d this comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Comment.PlusonersData.TotalItems">
+            <summary>Total number of people who +1&apos;d this comment.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.CommentFeed.ETag">
             <summary>ETag of this response for caching purposes.</summary>
@@ -395,6 +434,9 @@
         <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.Title">
             <summary>The title of this collection of people.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.TotalItems">
+            <summary>The total number of people available in this list. The number of people in a response may be smaller due to paging. This may not be set for all collections.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.AboutMe">
             <summary>A short biography for this person.</summary>
         </member>
@@ -428,11 +470,11 @@
         <member name="P:Google.Apis.Plus.v1.Data.Person.Image">
             <summary>The representation of the person&apos;s profile photo.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.IsPlusUser">
+            <summary>Whether this user has signed up for G+.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Kind">
             <summary>Identifies this resource as a person. Value: &quot;plus#person&quot;.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1.Data.Person.LanguagesSpoken">
-            <summary>The languages spoken by this person.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Name">
             <summary>An object representation of the individual components of a person&apos;s name.</summary>
@@ -560,6 +602,9 @@
         <member name="P:Google.Apis.Plus.v1.Data.Person.UrlsData.Value">
             <summary>The URL value.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.PlusAclentryResource.DisplayName">
+            <summary>A descriptive name for this entry. Suitable for display.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.PlusAclentryResource.Id">
             <summary>The ID of the entry. For entries of type &quot;person&quot; or &quot;circle&quot;, this is the ID of the resource. For other types, this property is not set.</summary>
         </member>
@@ -586,7 +631,7 @@
         </member>
         <member name="M:Google.Apis.Plus.v1.ActivitiesResource.List(System.String,Google.Apis.Plus.v1.ActivitiesResource.Collection)">
             <summary>List all of the activities in the specified collection for a particular user.</summary>
-            <param name="userId">Required - Must match pattern me|[0-9]+ - The ID of the user to get activities for. The special value &quot;me&quot; can be used to indicate the authenticated user.</param>
+            <param name="userId">Required - The ID of the user to get activities for. The special value &quot;me&quot; can be used to indicate the authenticated user.</param>
             <param name="collection">Required - Must be one of the following values [public] - The collection of activities to list.</param>
         </member>
         <member name="M:Google.Apis.Plus.v1.ActivitiesResource.Search(System.String)">
@@ -702,7 +747,7 @@
         </member>
         <member name="M:Google.Apis.Plus.v1.PeopleResource.Get(System.String)">
             <summary>Get a person&apos;s profile.</summary>
-            <param name="userId">Required - Must match pattern me|[0-9]+ - The ID of the person to get the profile for. The special value &quot;me&quot; can be used to indicate the authenticated user.</param>
+            <param name="userId">Required - The ID of the person to get the profile for. The special value &quot;me&quot; can be used to indicate the authenticated user.</param>
         </member>
         <member name="M:Google.Apis.Plus.v1.PeopleResource.ListByActivity(System.String,Google.Apis.Plus.v1.PeopleResource.Collection)">
             <summary>List all of the people in the specified collection for a particular activity.</summary>

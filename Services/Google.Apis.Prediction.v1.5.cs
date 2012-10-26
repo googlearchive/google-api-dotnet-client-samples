@@ -974,178 +974,179 @@ namespace Google.Apis.Prediction.v1_5 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"prediction:v1.5" +
-            "\",\"name\":\"prediction\",\"version\":\"v1.5\",\"revision\":\"20120724\",\"title\":\"Prediction" +
-            " API\",\"description\":\"Lets you access a cloud hosted machine learning service tha" +
-            "t makes it easy to build smart apps\",\"icons\":{\"x16\":\"http://www.google.com/image" +
-            "s/icons/feature/predictionapi-16.png\",\"x32\":\"http://www.google.com/images/icons/" +
-            "feature/predictionapi-32.png\"},\"documentationLink\":\"https://developers.google.co" +
-            "m/prediction/docs/developer-guide\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
-            "leapis.com/prediction/v1.5/\",\"basePath\":\"/prediction/v1.5/\",\"rootUrl\":\"https://w" +
-            "ww.googleapis.com/\",\"servicePath\":\"prediction/v1.5/\",\"batchPath\":\"batch\",\"parame" +
-            "ters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"def" +
-            "ault\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of" +
-            " application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":" +
-            "\"Selector specifying which fields to include in a partial response.\",\"location\":" +
-            "\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies " +
-            "your project and provides you with API access, quota, and reports. Required unle" +
-            "ss you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"s" +
-            "tring\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"}" +
-            ",\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentatio" +
-            "ns and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"s" +
-            "tring\",\"description\":\"Available to use for quota purposes for server-side applic" +
-            "ations. Can be any arbitrary string assigned to a user, but should not exceed 40" +
-            " characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp" +
-            "\":{\"type\":\"string\",\"description\":\"IP address of the site where the request origi" +
-            "nates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"a" +
-            "uth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.read_only\"" +
-            ":{\"description\":\"View your data in Google Cloud Storage\"},\"https://www.googleapi" +
-            "s.com/auth/prediction\":{\"description\":\"Manage your data in the Google Prediction" +
-            " API\"}}}},\"schemas\":{\"Analyze\":{\"id\":\"Analyze\",\"type\":\"object\",\"properties\":{\"da" +
-            "taDescription\":{\"type\":\"object\",\"description\":\"Description of the data the model" +
-            " was trained on.\",\"properties\":{\"features\":{\"type\":\"array\",\"description\":\"Descri" +
-            "ption of the input features in the data set.\",\"items\":{\"type\":\"object\",\"properti" +
-            "es\":{\"categorical\":{\"type\":\"object\",\"description\":\"Description of the categorica" +
-            "l values of this feature.\",\"properties\":{\"count\":{\"type\":\"string\",\"description\":" +
-            "\"Number of categorical values for this feature in the data.\",\"format\":\"int64\"},\"" +
-            "values\":{\"type\":\"array\",\"description\":\"List of all the categories for this featu" +
-            "re in the data set.\",\"items\":{\"type\":\"object\",\"properties\":{\"count\":{\"type\":\"str" +
-            "ing\",\"description\":\"Number of times this feature had this value.\",\"format\":\"int6" +
-            "4\"},\"value\":{\"type\":\"string\",\"description\":\"The category name.\"}}}}}},\"index\":{\"" +
-            "type\":\"string\",\"description\":\"The feature index.\",\"format\":\"int64\"},\"numeric\":{\"" +
-            "type\":\"object\",\"description\":\"Description of the numeric values of this feature." +
-            "\",\"properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of numeric values" +
-            " for this feature in the data set.\",\"format\":\"int64\"},\"mean\":{\"type\":\"number\",\"d" +
-            "escription\":\"Mean of the numeric values of this feature in the data set.\",\"forma" +
-            "t\":\"double\"},\"variance\":{\"type\":\"number\",\"description\":\"Variance of the numeric " +
-            "values of this feature in the data set.\",\"format\":\"double\"}}},\"text\":{\"type\":\"ob" +
-            "ject\",\"description\":\"Description of multiple-word text values of this feature.\"," +
-            "\"properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of multiple-word te" +
-            "xt values for this feature.\",\"format\":\"int64\"}}}}}},\"outputFeature\":{\"type\":\"obj" +
-            "ect\",\"description\":\"Description of the output value or label.\",\"properties\":{\"nu" +
-            "meric\":{\"type\":\"object\",\"description\":\"Description of the output values in the d" +
-            "ata set.\",\"properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of numeri" +
-            "c output values in the data set.\",\"format\":\"int64\"},\"mean\":{\"type\":\"number\",\"des" +
-            "cription\":\"Mean of the output values in the data set.\",\"format\":\"double\"},\"varia" +
-            "nce\":{\"type\":\"number\",\"description\":\"Variance of the output values in the data s" +
-            "et.\",\"format\":\"double\"}}},\"text\":{\"type\":\"array\",\"description\":\"Description of t" +
-            "he output labels in the data set.\",\"items\":{\"type\":\"object\",\"properties\":{\"count" +
-            "\":{\"type\":\"string\",\"description\":\"Number of times the output label occurred in t" +
-            "he data set.\",\"format\":\"int64\"},\"value\":{\"type\":\"string\",\"description\":\"The outp" +
-            "ut label.\"}}}}}}}},\"errors\":{\"type\":\"array\",\"description\":\"List of errors with t" +
-            "he data.\",\"items\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Error level followed by a detailed error message.\"}}},\"id\":{\"type\":\"st" +
-            "ring\",\"description\":\"The unique name for the predictive model.\"},\"kind\":{\"type\":" +
-            "\"string\",\"description\":\"What kind of resource this is.\",\"default\":\"prediction#an" +
-            "alyze\"},\"modelDescription\":{\"type\":\"object\",\"description\":\"Description of the mo" +
-            "del.\",\"properties\":{\"confusionMatrix\":{\"type\":\"object\",\"description\":\"An output " +
-            "confusion matrix. This shows an estimate for how this model will do in predictio" +
-            "ns. This is first indexed by the true class label. For each true class label, th" +
-            "is provides a pair {predicted_label, count}, where count is the estimated number" +
-            " of times the model will predict the predicted label given the true label. Will " +
-            "not output if more then 100 classes [Categorical models only].\",\"additionalPrope" +
-            "rties\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"double" +
-            "\"}}},\"confusionMatrixRowTotals\":{\"type\":\"object\",\"description\":\"A list of the co" +
-            "nfusion matrix row totals\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"dou" +
-            "ble\"}},\"modelinfo\":{\"$ref\":\"Training\",\"description\":\"Basic information about the" +
-            " model.\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this " +
-            "resource.\"}}},\"Input\":{\"id\":\"Input\",\"type\":\"object\",\"properties\":{\"input\":{\"type" +
-            "\":\"object\",\"description\":\"Input to the model for a prediction\",\"properties\":{\"cs" +
-            "vInstance\":{\"type\":\"array\",\"description\":\"A list of input features, these can be" +
-            " strings or doubles.\",\"items\":{\"type\":\"any\"}}}}}},\"List\":{\"id\":\"List\",\"type\":\"ob" +
-            "ject\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of models.\",\"ite" +
-            "ms\":{\"$ref\":\"Training\"}},\"kind\":{\"type\":\"string\",\"description\":\"What kind of res" +
-            "ource this is.\",\"default\":\"prediction#list\"},\"nextPageToken\":{\"type\":\"string\",\"d" +
-            "escription\":\"Pagination token to fetch the next page, if one exists.\"},\"selfLink" +
-            "\":{\"type\":\"string\",\"description\":\"A URL to re-request this resource.\"}}},\"Output" +
-            "\":{\"id\":\"Output\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The unique name for the predictive model.\"},\"kind\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"What kind of resource this is.\",\"default\":\"prediction#output\"},\"outputLab" +
-            "el\":{\"type\":\"string\",\"description\":\"The most likely class label [Categorical mod" +
-            "els only].\"},\"outputMulti\":{\"type\":\"array\",\"description\":\"A list of class labels" +
-            " with their estimated probabilities [Categorical models only].\",\"items\":{\"type\":" +
-            "\"object\",\"properties\":{\"label\":{\"type\":\"string\",\"description\":\"The class label.\"" +
-            "},\"score\":{\"type\":\"number\",\"description\":\"The probability of the class label.\",\"" +
-            "format\":\"double\"}}}},\"outputValue\":{\"type\":\"number\",\"description\":\"The estimated" +
-            " regression value [Regression models only].\",\"format\":\"double\"},\"selfLink\":{\"typ" +
-            "e\":\"string\",\"description\":\"A URL to re-request this resource.\"}}},\"Training\":{\"i" +
-            "d\":\"Training\",\"type\":\"object\",\"properties\":{\"created\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Insert time of the model (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}" +
-            ",\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive model.\"" +
-            "},\"kind\":{\"type\":\"string\",\"description\":\"What kind of resource this is.\",\"defaul" +
-            "t\":\"prediction#training\"},\"modelInfo\":{\"type\":\"object\",\"description\":\"Model meta" +
-            "data.\",\"properties\":{\"classWeightedAccuracy\":{\"type\":\"number\",\"description\":\"Est" +
-            "imated accuracy of model taking utility weights into account [Categorical models" +
-            " only].\",\"format\":\"double\"},\"classificationAccuracy\":{\"type\":\"number\",\"descripti" +
-            "on\":\"A number between 0.0 and 1.0, where 1.0 is 100% accurate. This is an estima" +
-            "te, based on the amount and quality of the training data, of the estimated predi" +
-            "ction accuracy. You can use this is a guide to decide whether the results are ac" +
-            "curate enough for your needs. This estimate will be more reliable if your real i" +
-            "nput data is similar to your training data [Categorical models only].\",\"format\":" +
-            "\"double\"},\"meanSquaredError\":{\"type\":\"number\",\"description\":\"An estimated mean s" +
-            "quared error. The can be used to measure the quality of the predicted model [Reg" +
-            "ression models only].\",\"format\":\"double\"},\"modelType\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Type of predictive model (CLASSIFICATION or REGRESSION)\"},\"numberInstances" +
-            "\":{\"type\":\"string\",\"description\":\"Number of valid data instances used in the tra" +
-            "ined model.\",\"format\":\"int64\"},\"numberLabels\":{\"type\":\"string\",\"description\":\"Nu" +
-            "mber of class labels in the trained model [Categorical models only].\",\"format\":\"" +
-            "int64\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this re" +
-            "source.\"},\"storageDataLocation\":{\"type\":\"string\",\"description\":\"Google storage l" +
-            "ocation of the training data file.\"},\"storagePMMLLocation\":{\"type\":\"string\",\"des" +
-            "cription\":\"Google storage location of the preprocessing pmml file.\"},\"storagePMM" +
-            "LModelLocation\":{\"type\":\"string\",\"description\":\"Google storage location of the p" +
-            "mml model file.\"},\"trainingComplete\":{\"type\":\"string\",\"description\":\"Training co" +
-            "mpletion time (as a RFC 3339 timestamp).\",\"format\":\"date-time\"},\"trainingStatus\"" +
-            ":{\"type\":\"string\",\"description\":\"The current status of the training job. This ca" +
-            "n be one of following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND\"},\"ut" +
-            "ility\":{\"type\":\"array\",\"description\":\"A class weighting function, which allows t" +
-            "he importance weights for class labels to be specified [Categorical models only]" +
-            ".\",\"items\":{\"type\":\"object\",\"description\":\"Class label (string).\",\"additionalPro" +
-            "perties\":{\"type\":\"number\",\"format\":\"double\"}}}}},\"Update\":{\"id\":\"Update\",\"type\":" +
-            "\"object\",\"properties\":{\"csvInstance\":{\"type\":\"array\",\"description\":\"The input fe" +
-            "atures for this instance\",\"items\":{\"type\":\"any\"}},\"label\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The class label of this instance\"}}}},\"resources\":{\"hostedmodels\":{\"me" +
-            "thods\":{\"predict\":{\"id\":\"prediction.hostedmodels.predict\",\"path\":\"hostedmodels/{" +
-            "hostedModelName}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit input and re" +
-            "quest an output against a hosted model.\",\"parameters\":{\"hostedModelName\":{\"type\"" +
-            ":\"string\",\"description\":\"The name of a hosted model.\",\"required\":true,\"location\"" +
-            ":\"path\"}},\"parameterOrder\":[\"hostedModelName\"],\"request\":{\"$ref\":\"Input\"},\"respo" +
-            "nse\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}" +
-            "},\"trainedmodels\":{\"methods\":{\"analyze\":{\"id\":\"prediction.trainedmodels.analyze\"" +
-            ",\"path\":\"trainedmodels/{id}/analyze\",\"httpMethod\":\"GET\",\"description\":\"Get analy" +
-            "sis of the model and the data the model was trained on.\",\"parameters\":{\"id\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The unique name for the predictive model.\",\"required" +
-            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Analyze\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"delete\":{\"id\":\"predic" +
-            "tion.trainedmodels.delete\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"DELETE\",\"de" +
-            "scription\":\"Delete a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The unique name for the predictive model.\",\"required\":true,\"location\":\"p" +
-            "ath\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/predic" +
-            "tion\"]},\"get\":{\"id\":\"prediction.trainedmodels.get\",\"path\":\"trainedmodels/{id}\",\"" +
-            "httpMethod\":\"GET\",\"description\":\"Check training status of your model.\",\"paramete" +
-            "rs\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive mod" +
-            "el.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$r" +
-            "ef\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"insert" +
-            "\":{\"id\":\"prediction.trainedmodels.insert\",\"path\":\"trainedmodels\",\"httpMethod\":\"P" +
-            "OST\",\"description\":\"Begin training your model.\",\"request\":{\"$ref\":\"Training\"},\"r" +
-            "esponse\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/devstora" +
-            "ge.read_only\",\"https://www.googleapis.com/auth/prediction\"]},\"list\":{\"id\":\"predi" +
-            "ction.trainedmodels.list\",\"path\":\"trainedmodels/list\",\"httpMethod\":\"GET\",\"descri" +
-            "ption\":\"List available models.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"de" +
-            "scription\":\"Maximum number of results to return\",\"format\":\"uint32\",\"minimum\":\"0\"" +
-            ",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Pagination toke" +
-            "n\",\"location\":\"query\"}},\"response\":{\"$ref\":\"List\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/prediction\"]},\"predict\":{\"id\":\"prediction.trainedmodels.predict\",\"" +
-            "path\":\"trainedmodels/{id}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit mod" +
-            "el id and request a prediction.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The unique name for the predictive model.\",\"required\":true,\"location\":\"path\"" +
-            "}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"update\":{\"id\":\"pred" +
-            "iction.trainedmodels.update\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"PUT\",\"des" +
-            "cription\":\"Add new data to a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\"" +
-            ",\"description\":\"The unique name for the predictive model.\",\"required\":true,\"loca" +
-            "tion\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Update\"},\"response\":{\"" +
-            "$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/yfVG8in" +
+            "VRdi10DQUe8njJEboIqs\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"prediction:v1.5\",\"name\":\"p" +
+            "rediction\",\"version\":\"v1.5\",\"revision\":\"20120724\",\"title\":\"Prediction API\",\"desc" +
+            "ription\":\"Lets you access a cloud hosted machine learning service that makes it " +
+            "easy to build smart apps\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/fea" +
+            "ture/predictionapi-16.png\",\"x32\":\"http://www.google.com/images/icons/feature/pre" +
+            "dictionapi-32.png\"},\"documentationLink\":\"https://developers.google.com/predictio" +
+            "n/docs/developer-guide\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/" +
+            "prediction/v1.5/\",\"basePath\":\"/prediction/v1.5/\",\"rootUrl\":\"https://www.googleap" +
+            "is.com/\",\"servicePath\":\"prediction/v1.5/\",\"batchPath\":\"batch\",\"parameters\":{\"alt" +
+            "\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json" +
+            "\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applicatio" +
+            "n/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector s" +
+            "pecifying which fields to include in a partial response.\",\"location\":\"query\"},\"k" +
+            "ey\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your projec" +
+            "t and provides you with API access, quota, and reports. Required unless you prov" +
+            "ide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"des" +
+            "cription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPri" +
+            "nt\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line" +
+            " breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"des" +
+            "cription\":\"Available to use for quota purposes for server-side applications. Can" +
+            " be any arbitrary string assigned to a user, but should not exceed 40 characters" +
+            ". Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"" +
+            "string\",\"description\":\"IP address of the site where the request originates. Use " +
+            "this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oaut" +
+            "h2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.read_only\":{\"descript" +
+            "ion\":\"View your data in Google Cloud Storage\"},\"https://www.googleapis.com/auth/" +
+            "prediction\":{\"description\":\"Manage your data in the Google Prediction API\"}}}},\"" +
+            "schemas\":{\"Analyze\":{\"id\":\"Analyze\",\"type\":\"object\",\"properties\":{\"dataDescripti" +
+            "on\":{\"type\":\"object\",\"description\":\"Description of the data the model was traine" +
+            "d on.\",\"properties\":{\"features\":{\"type\":\"array\",\"description\":\"Description of th" +
+            "e input features in the data set.\",\"items\":{\"type\":\"object\",\"properties\":{\"categ" +
+            "orical\":{\"type\":\"object\",\"description\":\"Description of the categorical values of" +
+            " this feature.\",\"properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of " +
+            "categorical values for this feature in the data.\",\"format\":\"int64\"},\"values\":{\"t" +
+            "ype\":\"array\",\"description\":\"List of all the categories for this feature in the d" +
+            "ata set.\",\"items\":{\"type\":\"object\",\"properties\":{\"count\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Number of times this feature had this value.\",\"format\":\"int64\"},\"value\"" +
+            ":{\"type\":\"string\",\"description\":\"The category name.\"}}}}}},\"index\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The feature index.\",\"format\":\"int64\"},\"numeric\":{\"type\":\"obje" +
+            "ct\",\"description\":\"Description of the numeric values of this feature.\",\"properti" +
+            "es\":{\"count\":{\"type\":\"string\",\"description\":\"Number of numeric values for this f" +
+            "eature in the data set.\",\"format\":\"int64\"},\"mean\":{\"type\":\"number\",\"description\"" +
+            ":\"Mean of the numeric values of this feature in the data set.\",\"format\":\"double\"" +
+            "},\"variance\":{\"type\":\"number\",\"description\":\"Variance of the numeric values of t" +
+            "his feature in the data set.\",\"format\":\"double\"}}},\"text\":{\"type\":\"object\",\"desc" +
+            "ription\":\"Description of multiple-word text values of this feature.\",\"properties" +
+            "\":{\"count\":{\"type\":\"string\",\"description\":\"Number of multiple-word text values f" +
+            "or this feature.\",\"format\":\"int64\"}}}}}},\"outputFeature\":{\"type\":\"object\",\"descr" +
+            "iption\":\"Description of the output value or label.\",\"properties\":{\"numeric\":{\"ty" +
+            "pe\":\"object\",\"description\":\"Description of the output values in the data set.\",\"" +
+            "properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of numeric output va" +
+            "lues in the data set.\",\"format\":\"int64\"},\"mean\":{\"type\":\"number\",\"description\":\"" +
+            "Mean of the output values in the data set.\",\"format\":\"double\"},\"variance\":{\"type" +
+            "\":\"number\",\"description\":\"Variance of the output values in the data set.\",\"forma" +
+            "t\":\"double\"}}},\"text\":{\"type\":\"array\",\"description\":\"Description of the output l" +
+            "abels in the data set.\",\"items\":{\"type\":\"object\",\"properties\":{\"count\":{\"type\":\"" +
+            "string\",\"description\":\"Number of times the output label occurred in the data set" +
+            ".\",\"format\":\"int64\"},\"value\":{\"type\":\"string\",\"description\":\"The output label.\"}" +
+            "}}}}}}},\"errors\":{\"type\":\"array\",\"description\":\"List of errors with the data.\",\"" +
+            "items\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"E" +
+            "rror level followed by a detailed error message.\"}}},\"id\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The unique name for the predictive model.\"},\"kind\":{\"type\":\"string\",\"d" +
+            "escription\":\"What kind of resource this is.\",\"default\":\"prediction#analyze\"},\"mo" +
+            "delDescription\":{\"type\":\"object\",\"description\":\"Description of the model.\",\"prop" +
+            "erties\":{\"confusionMatrix\":{\"type\":\"object\",\"description\":\"An output confusion m" +
+            "atrix. This shows an estimate for how this model will do in predictions. This is" +
+            " first indexed by the true class label. For each true class label, this provides" +
+            " a pair {predicted_label, count}, where count is the estimated number of times t" +
+            "he model will predict the predicted label given the true label. Will not output " +
+            "if more then 100 classes [Categorical models only].\",\"additionalProperties\":{\"ty" +
+            "pe\":\"object\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"double\"}}},\"confu" +
+            "sionMatrixRowTotals\":{\"type\":\"object\",\"description\":\"A list of the confusion mat" +
+            "rix row totals\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"double\"}},\"mod" +
+            "elinfo\":{\"$ref\":\"Training\",\"description\":\"Basic information about the model.\"}}}" +
+            ",\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this resource.\"}" +
+            "}},\"Input\":{\"id\":\"Input\",\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"object\"," +
+            "\"description\":\"Input to the model for a prediction\",\"properties\":{\"csvInstance\":" +
+            "{\"type\":\"array\",\"description\":\"A list of input features, these can be strings or" +
+            " doubles.\",\"items\":{\"type\":\"any\"}}}}}},\"List\":{\"id\":\"List\",\"type\":\"object\",\"prop" +
+            "erties\":{\"items\":{\"type\":\"array\",\"description\":\"List of models.\",\"items\":{\"$ref\"" +
+            ":\"Training\"}},\"kind\":{\"type\":\"string\",\"description\":\"What kind of resource this " +
+            "is.\",\"default\":\"prediction#list\"},\"nextPageToken\":{\"type\":\"string\",\"description\"" +
+            ":\"Pagination token to fetch the next page, if one exists.\"},\"selfLink\":{\"type\":\"" +
+            "string\",\"description\":\"A URL to re-request this resource.\"}}},\"Output\":{\"id\":\"Ou" +
+            "tput\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The uni" +
+            "que name for the predictive model.\"},\"kind\":{\"type\":\"string\",\"description\":\"What" +
+            " kind of resource this is.\",\"default\":\"prediction#output\"},\"outputLabel\":{\"type\"" +
+            ":\"string\",\"description\":\"The most likely class label [Categorical models only].\"" +
+            "},\"outputMulti\":{\"type\":\"array\",\"description\":\"A list of class labels with their" +
+            " estimated probabilities [Categorical models only].\",\"items\":{\"type\":\"object\",\"p" +
+            "roperties\":{\"label\":{\"type\":\"string\",\"description\":\"The class label.\"},\"score\":{" +
+            "\"type\":\"number\",\"description\":\"The probability of the class label.\",\"format\":\"do" +
+            "uble\"}}}},\"outputValue\":{\"type\":\"number\",\"description\":\"The estimated regression" +
+            " value [Regression models only].\",\"format\":\"double\"},\"selfLink\":{\"type\":\"string\"" +
+            ",\"description\":\"A URL to re-request this resource.\"}}},\"Training\":{\"id\":\"Trainin" +
+            "g\",\"type\":\"object\",\"properties\":{\"created\":{\"type\":\"string\",\"description\":\"Inser" +
+            "t time of the model (as a RFC 3339 timestamp).\",\"format\":\"date-time\"},\"id\":{\"typ" +
+            "e\":\"string\",\"description\":\"The unique name for the predictive model.\"},\"kind\":{\"" +
+            "type\":\"string\",\"description\":\"What kind of resource this is.\",\"default\":\"predict" +
+            "ion#training\"},\"modelInfo\":{\"type\":\"object\",\"description\":\"Model metadata.\",\"pro" +
+            "perties\":{\"classWeightedAccuracy\":{\"type\":\"number\",\"description\":\"Estimated accu" +
+            "racy of model taking utility weights into account [Categorical models only].\",\"f" +
+            "ormat\":\"double\"},\"classificationAccuracy\":{\"type\":\"number\",\"description\":\"A numb" +
+            "er between 0.0 and 1.0, where 1.0 is 100% accurate. This is an estimate, based o" +
+            "n the amount and quality of the training data, of the estimated prediction accur" +
+            "acy. You can use this is a guide to decide whether the results are accurate enou" +
+            "gh for your needs. This estimate will be more reliable if your real input data i" +
+            "s similar to your training data [Categorical models only].\",\"format\":\"double\"},\"" +
+            "meanSquaredError\":{\"type\":\"number\",\"description\":\"An estimated mean squared erro" +
+            "r. The can be used to measure the quality of the predicted model [Regression mod" +
+            "els only].\",\"format\":\"double\"},\"modelType\":{\"type\":\"string\",\"description\":\"Type " +
+            "of predictive model (CLASSIFICATION or REGRESSION)\"},\"numberInstances\":{\"type\":\"" +
+            "string\",\"description\":\"Number of valid data instances used in the trained model." +
+            "\",\"format\":\"int64\"},\"numberLabels\":{\"type\":\"string\",\"description\":\"Number of cla" +
+            "ss labels in the trained model [Categorical models only].\",\"format\":\"int64\"}}},\"" +
+            "selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this resource.\"},\"" +
+            "storageDataLocation\":{\"type\":\"string\",\"description\":\"Google storage location of " +
+            "the training data file.\"},\"storagePMMLLocation\":{\"type\":\"string\",\"description\":\"" +
+            "Google storage location of the preprocessing pmml file.\"},\"storagePMMLModelLocat" +
+            "ion\":{\"type\":\"string\",\"description\":\"Google storage location of the pmml model f" +
+            "ile.\"},\"trainingComplete\":{\"type\":\"string\",\"description\":\"Training completion ti" +
+            "me (as a RFC 3339 timestamp).\",\"format\":\"date-time\"},\"trainingStatus\":{\"type\":\"s" +
+            "tring\",\"description\":\"The current status of the training job. This can be one of" +
+            " following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND\"},\"utility\":{\"ty" +
+            "pe\":\"array\",\"description\":\"A class weighting function, which allows the importan" +
+            "ce weights for class labels to be specified [Categorical models only].\",\"items\":" +
+            "{\"type\":\"object\",\"description\":\"Class label (string).\",\"additionalProperties\":{\"" +
+            "type\":\"number\",\"format\":\"double\"}}}}},\"Update\":{\"id\":\"Update\",\"type\":\"object\",\"p" +
+            "roperties\":{\"csvInstance\":{\"type\":\"array\",\"description\":\"The input features for " +
+            "this instance\",\"items\":{\"type\":\"any\"}},\"label\":{\"type\":\"string\",\"description\":\"T" +
+            "he class label of this instance\"}}}},\"resources\":{\"hostedmodels\":{\"methods\":{\"pr" +
+            "edict\":{\"id\":\"prediction.hostedmodels.predict\",\"path\":\"hostedmodels/{hostedModel" +
+            "Name}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit input and request an ou" +
+            "tput against a hosted model.\",\"parameters\":{\"hostedModelName\":{\"type\":\"string\",\"" +
+            "description\":\"The name of a hosted model.\",\"required\":true,\"location\":\"path\"}},\"" +
+            "parameterOrder\":[\"hostedModelName\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref" +
+            "\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}},\"trainedm" +
+            "odels\":{\"methods\":{\"analyze\":{\"id\":\"prediction.trainedmodels.analyze\",\"path\":\"tr" +
+            "ainedmodels/{id}/analyze\",\"httpMethod\":\"GET\",\"description\":\"Get analysis of the " +
+            "model and the data the model was trained on.\",\"parameters\":{\"id\":{\"type\":\"string" +
+            "\",\"description\":\"The unique name for the predictive model.\",\"required\":true,\"loc" +
+            "ation\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Analyze\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/prediction\"]},\"delete\":{\"id\":\"prediction.traine" +
+            "dmodels.delete\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"DELETE\",\"description\":" +
+            "\"Delete a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The" +
+            " unique name for the predictive model.\",\"required\":true,\"location\":\"path\"}},\"par" +
+            "ameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"ge" +
+            "t\":{\"id\":\"prediction.trainedmodels.get\",\"path\":\"trainedmodels/{id}\",\"httpMethod\"" +
+            ":\"GET\",\"description\":\"Check training status of your model.\",\"parameters\":{\"id\":{" +
+            "\"type\":\"string\",\"description\":\"The unique name for the predictive model.\",\"requi" +
+            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Traini" +
+            "ng\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"insert\":{\"id\":\"pr" +
+            "ediction.trainedmodels.insert\",\"path\":\"trainedmodels\",\"httpMethod\":\"POST\",\"descr" +
+            "iption\":\"Begin training your model.\",\"request\":{\"$ref\":\"Training\"},\"response\":{\"" +
+            "$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.read_onl" +
+            "y\",\"https://www.googleapis.com/auth/prediction\"]},\"list\":{\"id\":\"prediction.train" +
+            "edmodels.list\",\"path\":\"trainedmodels/list\",\"httpMethod\":\"GET\",\"description\":\"Lis" +
+            "t available models.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":" +
+            "\"Maximum number of results to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\"" +
+            ":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Pagination token\",\"locatio" +
+            "n\":\"query\"}},\"response\":{\"$ref\":\"List\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/prediction\"]},\"predict\":{\"id\":\"prediction.trainedmodels.predict\",\"path\":\"trai" +
+            "nedmodels/{id}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit model id and r" +
+            "equest a prediction.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The uni" +
+            "que name for the predictive model.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"id\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/prediction\"]},\"update\":{\"id\":\"prediction.trai" +
+            "nedmodels.update\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"PUT\",\"description\":\"" +
+            "Add new data to a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The unique name for the predictive model.\",\"required\":true,\"location\":\"path" +
+            "\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Update\"},\"response\":{\"$ref\":\"Trai" +
+            "ning\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}}}}";
         
         public const string Version = "v1.5";
         

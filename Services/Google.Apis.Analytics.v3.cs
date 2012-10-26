@@ -258,6 +258,772 @@ namespace Google.Apis.Analytics.v3.Data {
         }
     }
     
+    /// <summary>JSON template for an Analytics custom data source.</summary>
+    public class CustomDataSource {
+        
+        private string _accountId;
+        
+        private CustomDataSource.ChildLinkData _childLink;
+        
+        private string _created;
+        
+        private string _description;
+        
+        private string _id;
+        
+        private string _kind;
+        
+        private string _name;
+        
+        private CustomDataSource.ParentLinkData _parentLink;
+        
+        private System.Collections.Generic.IList<string> _profilesLinked;
+        
+        private string _selfLink;
+        
+        private string _updated;
+        
+        private string _webPropertyId;
+        
+        /// <summary>Account ID to which this custom data source belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("accountId")]
+        public virtual string AccountId {
+            get {
+                return this._accountId;
+            }
+            set {
+                this._accountId = value;
+            }
+        }
+        
+        /// <summary>Child link for this custom data source. Points to the list of daily uploads for this custom data source.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("childLink")]
+        public virtual CustomDataSource.ChildLinkData ChildLink {
+            get {
+                return this._childLink;
+            }
+            set {
+                this._childLink = value;
+            }
+        }
+        
+        /// <summary>Time this custom data source was created.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("created")]
+        public virtual string Created {
+            get {
+                return this._created;
+            }
+            set {
+                this._created = value;
+            }
+        }
+        
+        /// <summary>Description of custom data source.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this._description;
+            }
+            set {
+                this._description = value;
+            }
+        }
+        
+        /// <summary>Custom data source ID.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        /// <summary>Resource type for Analytics custom data source.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Name of this custom data source.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("name")]
+        public virtual string Name {
+            get {
+                return this._name;
+            }
+            set {
+                this._name = value;
+            }
+        }
+        
+        /// <summary>Parent link for this custom data source. Points to the web property to which this custom data source belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("parentLink")]
+        public virtual CustomDataSource.ParentLinkData ParentLink {
+            get {
+                return this._parentLink;
+            }
+            set {
+                this._parentLink = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("profilesLinked")]
+        public virtual System.Collections.Generic.IList<string> ProfilesLinked {
+            get {
+                return this._profilesLinked;
+            }
+            set {
+                this._profilesLinked = value;
+            }
+        }
+        
+        /// <summary>Link for this Analytics custom data source.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
+        public virtual string SelfLink {
+            get {
+                return this._selfLink;
+            }
+            set {
+                this._selfLink = value;
+            }
+        }
+        
+        /// <summary>Time this custom data source was last modified.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this._updated;
+            }
+            set {
+                this._updated = value;
+            }
+        }
+        
+        /// <summary>Web property ID of the form UA-XXXXX-YY to which this custom data source belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("webPropertyId")]
+        public virtual string WebPropertyId {
+            get {
+                return this._webPropertyId;
+            }
+            set {
+                this._webPropertyId = value;
+            }
+        }
+        
+        /// <summary>Child link for this custom data source. Points to the list of daily uploads for this custom data source.</summary>
+        public class ChildLinkData {
+            
+            private string _href;
+            
+            private string _type;
+            
+            /// <summary>Link to the list of daily uploads for this custom data source.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("href")]
+            public virtual string Href {
+                get {
+                    return this._href;
+                }
+                set {
+                    this._href = value;
+                }
+            }
+            
+            /// <summary>Value is &quot;analytics#dailyUploads&quot;.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this._type;
+                }
+                set {
+                    this._type = value;
+                }
+            }
+        }
+        
+        /// <summary>Parent link for this custom data source. Points to the web property to which this custom data source belongs.</summary>
+        public class ParentLinkData {
+            
+            private string _href;
+            
+            private string _type;
+            
+            /// <summary>Link to the web property to which this custom data source belongs.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("href")]
+            public virtual string Href {
+                get {
+                    return this._href;
+                }
+                set {
+                    this._href = value;
+                }
+            }
+            
+            /// <summary>Value is &quot;analytics#webproperty&quot;.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this._type;
+                }
+                set {
+                    this._type = value;
+                }
+            }
+        }
+    }
+    
+    /// <summary>Lists Analytics custom data sources to which the user has access. Each resource in the collection corresponds to a single Analytics custom data source.</summary>
+    public class CustomDataSources : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private System.Collections.Generic.IList<CustomDataSource> _items;
+        
+        private System.Nullable<long> _itemsPerPage;
+        
+        private string _kind;
+        
+        private string _nextLink;
+        
+        private string _previousLink;
+        
+        private System.Nullable<long> _startIndex;
+        
+        private System.Nullable<long> _totalResults;
+        
+        private string _username;
+        
+        private string _ETag;
+        
+        /// <summary>Collection of custom data sources.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<CustomDataSource> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
+        public virtual System.Nullable<long> ItemsPerPage {
+            get {
+                return this._itemsPerPage;
+            }
+            set {
+                this._itemsPerPage = value;
+            }
+        }
+        
+        /// <summary>Collection type.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Link to next page for this custom data source collection.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
+        public virtual string NextLink {
+            get {
+                return this._nextLink;
+            }
+            set {
+                this._nextLink = value;
+            }
+        }
+        
+        /// <summary>Link to previous page for this custom data source collection.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("previousLink")]
+        public virtual string PreviousLink {
+            get {
+                return this._previousLink;
+            }
+            set {
+                this._previousLink = value;
+            }
+        }
+        
+        /// <summary>The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
+        public virtual System.Nullable<long> StartIndex {
+            get {
+                return this._startIndex;
+            }
+            set {
+                this._startIndex = value;
+            }
+        }
+        
+        /// <summary>The total number of results for the query, regardless of the number of results in the response.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
+        public virtual System.Nullable<long> TotalResults {
+            get {
+                return this._totalResults;
+            }
+            set {
+                this._totalResults = value;
+            }
+        }
+        
+        /// <summary>Email ID of the authenticated user</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("username")]
+        public virtual string Username {
+            get {
+                return this._username;
+            }
+            set {
+                this._username = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+    }
+    
+    /// <summary>Metadata for daily upload entity.</summary>
+    public class DailyUpload {
+        
+        private string _accountId;
+        
+        private System.Nullable<long> _appendCount;
+        
+        private string _createdTime;
+        
+        private string _customDataSourceId;
+        
+        private string _date;
+        
+        private string _kind;
+        
+        private string _modifiedTime;
+        
+        private DailyUpload.ParentLinkData _parentLink;
+        
+        private System.Collections.Generic.IList<DailyUpload.RecentChangesData> _recentChanges;
+        
+        private string _selfLink;
+        
+        private string _webPropertyId;
+        
+        /// <summary>Account ID to which this daily upload belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("accountId")]
+        public virtual string AccountId {
+            get {
+                return this._accountId;
+            }
+            set {
+                this._accountId = value;
+            }
+        }
+        
+        /// <summary>Number of appends for this date.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("appendCount")]
+        public virtual System.Nullable<long> AppendCount {
+            get {
+                return this._appendCount;
+            }
+            set {
+                this._appendCount = value;
+            }
+        }
+        
+        /// <summary>Time this daily upload was created.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("createdTime")]
+        public virtual string CreatedTime {
+            get {
+                return this._createdTime;
+            }
+            set {
+                this._createdTime = value;
+            }
+        }
+        
+        /// <summary>Custom data source ID to which this daily upload belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("customDataSourceId")]
+        public virtual string CustomDataSourceId {
+            get {
+                return this._customDataSourceId;
+            }
+            set {
+                this._customDataSourceId = value;
+            }
+        }
+        
+        /// <summary>Date associated with daily upload.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("date")]
+        public virtual string Date {
+            get {
+                return this._date;
+            }
+            set {
+                this._date = value;
+            }
+        }
+        
+        /// <summary>Resource type for Analytics daily upload.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Time this daily upload was last modified.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("modifiedTime")]
+        public virtual string ModifiedTime {
+            get {
+                return this._modifiedTime;
+            }
+            set {
+                this._modifiedTime = value;
+            }
+        }
+        
+        /// <summary>Parent link for a daily upload. Points to the custom data source to which this daily upload belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("parentLink")]
+        public virtual DailyUpload.ParentLinkData ParentLink {
+            get {
+                return this._parentLink;
+            }
+            set {
+                this._parentLink = value;
+            }
+        }
+        
+        /// <summary>Change log for last 10 changes in chronological order.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("recentChanges")]
+        public virtual System.Collections.Generic.IList<DailyUpload.RecentChangesData> RecentChanges {
+            get {
+                return this._recentChanges;
+            }
+            set {
+                this._recentChanges = value;
+            }
+        }
+        
+        /// <summary>Link for this daily upload.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
+        public virtual string SelfLink {
+            get {
+                return this._selfLink;
+            }
+            set {
+                this._selfLink = value;
+            }
+        }
+        
+        /// <summary>Web property ID of the form UA-XXXXX-YY to which this daily upload belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("webPropertyId")]
+        public virtual string WebPropertyId {
+            get {
+                return this._webPropertyId;
+            }
+            set {
+                this._webPropertyId = value;
+            }
+        }
+        
+        /// <summary>Parent link for a daily upload. Points to the custom data source to which this daily upload belongs.</summary>
+        public class ParentLinkData {
+            
+            private string _href;
+            
+            private string _type;
+            
+            /// <summary>Link to the custom data source to which this daily upload belongs.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("href")]
+            public virtual string Href {
+                get {
+                    return this._href;
+                }
+                set {
+                    this._href = value;
+                }
+            }
+            
+            /// <summary>Value is &quot;analytics#customDataSource&quot;.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this._type;
+                }
+                set {
+                    this._type = value;
+                }
+            }
+        }
+        
+        public class RecentChangesData {
+            
+            private string _change;
+            
+            private string _time;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("change")]
+            public virtual string Change {
+                get {
+                    return this._change;
+                }
+                set {
+                    this._change = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("time")]
+            public virtual string Time {
+                get {
+                    return this._time;
+                }
+                set {
+                    this._time = value;
+                }
+            }
+        }
+    }
+    
+    /// <summary>Metadata returned for a successful append operation.</summary>
+    public class DailyUploadAppend : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _accountId;
+        
+        private System.Nullable<long> _appendNumber;
+        
+        private string _customDataSourceId;
+        
+        private string _date;
+        
+        private string _kind;
+        
+        private string _nextAppendLink;
+        
+        private string _webPropertyId;
+        
+        private string _ETag;
+        
+        /// <summary>Account Id to which this daily upload append belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("accountId")]
+        public virtual string AccountId {
+            get {
+                return this._accountId;
+            }
+            set {
+                this._accountId = value;
+            }
+        }
+        
+        /// <summary>Append number.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("appendNumber")]
+        public virtual System.Nullable<long> AppendNumber {
+            get {
+                return this._appendNumber;
+            }
+            set {
+                this._appendNumber = value;
+            }
+        }
+        
+        /// <summary>Custom data source Id to which this daily upload append belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("customDataSourceId")]
+        public virtual string CustomDataSourceId {
+            get {
+                return this._customDataSourceId;
+            }
+            set {
+                this._customDataSourceId = value;
+            }
+        }
+        
+        /// <summary>Date associated with daily upload append.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("date")]
+        public virtual string Date {
+            get {
+                return this._date;
+            }
+            set {
+                this._date = value;
+            }
+        }
+        
+        /// <summary>Resource type for Analytics daily upload append.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("nextAppendLink")]
+        public virtual string NextAppendLink {
+            get {
+                return this._nextAppendLink;
+            }
+            set {
+                this._nextAppendLink = value;
+            }
+        }
+        
+        /// <summary>Web property Id of the form UA-XXXXX-YY to which this daily upload append belongs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("webPropertyId")]
+        public virtual string WebPropertyId {
+            get {
+                return this._webPropertyId;
+            }
+            set {
+                this._webPropertyId = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+    }
+    
+    /// <summary>A daily upload collection lists Analytics daily uploads to which the user has access. Each resource in the collection corresponds to a single Analytics daily upload.</summary>
+    public class DailyUploads : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private System.Collections.Generic.IList<DailyUpload> _items;
+        
+        private System.Nullable<long> _itemsPerPage;
+        
+        private string _kind;
+        
+        private string _nextLink;
+        
+        private string _previousLink;
+        
+        private System.Nullable<long> _startIndex;
+        
+        private System.Nullable<long> _totalResults;
+        
+        private string _username;
+        
+        private string _ETag;
+        
+        /// <summary>A collection of daily uploads.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<DailyUpload> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
+        public virtual System.Nullable<long> ItemsPerPage {
+            get {
+                return this._itemsPerPage;
+            }
+            set {
+                this._itemsPerPage = value;
+            }
+        }
+        
+        /// <summary>Collection type. Value is analytics#dailyUploads.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Link to next page for this daily upload collection.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
+        public virtual string NextLink {
+            get {
+                return this._nextLink;
+            }
+            set {
+                this._nextLink = value;
+            }
+        }
+        
+        /// <summary>Link to previous page for this daily upload collection.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("previousLink")]
+        public virtual string PreviousLink {
+            get {
+                return this._previousLink;
+            }
+            set {
+                this._previousLink = value;
+            }
+        }
+        
+        /// <summary>The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
+        public virtual System.Nullable<long> StartIndex {
+            get {
+                return this._startIndex;
+            }
+            set {
+                this._startIndex = value;
+            }
+        }
+        
+        /// <summary>The total number of results for the query, regardless of the number of results in the response.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
+        public virtual System.Nullable<long> TotalResults {
+            get {
+                return this._totalResults;
+            }
+            set {
+                this._totalResults = value;
+            }
+        }
+        
+        /// <summary>Email ID of the authenticated user</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("username")]
+        public virtual string Username {
+            get {
+                return this._username;
+            }
+            set {
+                this._username = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+    }
+    
     /// <summary>Analytics data for a given profile.</summary>
     public class GaData : Google.Apis.Requests.IDirectResponseSchema {
         
@@ -2862,471 +3628,641 @@ namespace Google.Apis.Analytics.v3 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"analytics:v3\",\"" +
-            "name\":\"analytics\",\"version\":\"v3\",\"revision\":\"20121007\",\"title\":\"Google Analytics" +
-            " API\",\"description\":\"View and manage your Google Analytics data\",\"icons\":{\"x16\":" +
-            "\"http://www.google.com/images/icons/product/analytics-16.png\",\"x32\":\"http://www." +
-            "google.com/images/icons/product/analytics-32.png\"},\"documentationLink\":\"https://" +
-            "developers.google.com/analytics/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googl" +
-            "eapis.com/analytics/v3/\",\"basePath\":\"/analytics/v3/\",\"rootUrl\":\"https://www.goog" +
-            "leapis.com/\",\"servicePath\":\"analytics/v3/\",\"batchPath\":\"batch\",\"parameters\":{\"al" +
-            "t\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"jso" +
-            "n\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applicati" +
-            "on/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector " +
-            "specifying which fields to include in a partial response.\",\"location\":\"query\"},\"" +
-            "key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your proje" +
-            "ct and provides you with API access, quota, and reports. Required unless you pro" +
-            "vide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"de" +
-            "scription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPr" +
-            "int\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and lin" +
-            "e breaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"d" +
-            "escription\":\"Available to use for quota purposes for server-side applications. C" +
-            "an be any arbitrary string assigned to a user, but should not exceed 40 characte" +
-            "rs. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\"" +
-            ":\"string\",\"description\":\"IP address of the site where the request originates. Us" +
-            "e this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oa" +
-            "uth2\":{\"scopes\":{\"https://www.googleapis.com/auth/analytics\":{\"description\":\"Vie" +
-            "w and manage your Google Analytics data\"},\"https://www.googleapis.com/auth/analy" +
-            "tics.readonly\":{\"description\":\"View your Google Analytics data\"}}}},\"schemas\":{\"" +
-            "Account\":{\"id\":\"Account\",\"type\":\"object\",\"description\":\"JSON template for Analyt" +
-            "ics account entry.\",\"properties\":{\"childLink\":{\"type\":\"object\",\"description\":\"Ch" +
-            "ild link for an account entry. Points to the list of web properties for this acc" +
-            "ount.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the list of " +
-            "web properties for this account.\"},\"type\":{\"type\":\"string\",\"description\":\"Type o" +
-            "f the child link. Its value is \\\"analytics#webproperties\\\".\",\"default\":\"analytic" +
-            "s#webproperties\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time the account w" +
-            "as created.\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"description\":\"Account " +
-            "ID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for Analytics account" +
-            ".\",\"default\":\"analytics#account\"},\"name\":{\"type\":\"string\",\"description\":\"Account" +
-            " name.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this account.\"},\"up" +
-            "dated\":{\"type\":\"string\",\"description\":\"Time the account was last modified.\",\"for" +
-            "mat\":\"date-time\"}}},\"Accounts\":{\"id\":\"Accounts\",\"type\":\"object\",\"description\":\"A" +
-            "n account collection provides a list of Analytics accounts to which a user has a" +
-            "ccess. The account collection is the entry point to all management information. " +
-            "Each resource in the collection corresponds to a single Analytics account.\",\"pro" +
-            "perties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of accounts.\",\"items\":{\"" +
-            "$ref\":\"Account\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum nu" +
-            "mber of entries the response can contain, regardless of the actual number of ent" +
-            "ries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, " +
-            "or otherwise specified by the max-results query parameter.\",\"format\":\"int32\"},\"k" +
-            "ind\":{\"type\":\"string\",\"description\":\"Collection type.\",\"default\":\"analytics#acco" +
-            "unts\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Next link for this account col" +
-            "lection.\"},\"previousLink\":{\"type\":\"string\",\"description\":\"Previous link for this" +
-            " account collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The startin" +
-            "g index of the entries, which is 1 by default or otherwise specified by the star" +
-            "t-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"de" +
-            "scription\":\"The total number of results for the query, regardless of the number " +
-            "of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Email ID of the authenticated user\"}}},\"GaData\":{\"id\":\"GaData\",\"type\":" +
-            "\"object\",\"description\":\"Analytics data for a given profile.\",\"properties\":{\"colu" +
-            "mnHeaders\":{\"type\":\"array\",\"description\":\"Column headers that list dimension nam" +
-            "es followed by the metric names. The order of dimensions and metrics is same as " +
-            "specified in the request.\",\"items\":{\"type\":\"object\",\"properties\":{\"columnType\":{" +
-            "\"type\":\"string\",\"description\":\"Column Type. Either DIMENSION or METRIC.\"},\"dataT" +
-            "ype\":{\"type\":\"string\",\"description\":\"Data type. Dimension column headers have on" +
-            "ly STRING as the data type. Metric column headers have data types for metric val" +
-            "ues such as INTEGER, DOUBLE, CURRENCY etc.\"},\"name\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Column name.\"}}}},\"containsSampledData\":{\"type\":\"boolean\",\"description\":\"Det" +
-            "ermines if Analytics data contains samples.\"},\"id\":{\"type\":\"string\",\"description" +
-            "\":\"Unique ID for this data response.\"},\"itemsPerPage\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"The maximum number of rows the response can contain, regardless of the ac" +
-            "tual number of rows returned. Its value ranges from 1 to 10,000 with a value of " +
-            "1000 by default, or otherwise specified by the max-results query parameter.\",\"fo" +
-            "rmat\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\":" +
-            "\"analytics#gaData\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Link to next page" +
-            " for this Analytics data query.\"},\"previousLink\":{\"type\":\"string\",\"description\":" +
-            "\"Link to previous page for this Analytics data query.\"},\"profileInfo\":{\"type\":\"o" +
-            "bject\",\"description\":\"Information for the profile, for which the Analytics data " +
-            "was requested.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Accoun" +
-            "t ID to which this profile belongs.\"},\"internalWebPropertyId\":{\"type\":\"string\",\"" +
-            "description\":\"Internal ID for the web property to which this profile belongs.\"}," +
-            "\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID.\"},\"profileName\":{\"type\":" +
-            "\"string\",\"description\":\"Profile name.\"},\"tableId\":{\"type\":\"string\",\"description\"" +
-            ":\"Table ID for profile.\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web Pr" +
-            "operty ID to which this profile belongs.\"}}},\"query\":{\"type\":\"object\",\"descripti" +
-            "on\":\"Analytics data request query parameters.\",\"properties\":{\"dimensions\":{\"type" +
-            "\":\"string\",\"description\":\"List of analytics dimensions.\"},\"end-date\":{\"type\":\"st" +
-            "ring\",\"description\":\"End date.\"},\"filters\":{\"type\":\"string\",\"description\":\"Comma" +
-            "-separated list of dimension or metric filters.\"},\"ids\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Unique table ID.\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximu" +
-            "m results per page.\",\"format\":\"int32\"},\"metrics\":{\"type\":\"array\",\"description\":\"" +
-            "List of analytics metrics.\",\"items\":{\"type\":\"string\"}},\"segment\":{\"type\":\"string" +
-            "\",\"description\":\"Analytics advanced segment.\"},\"sort\":{\"type\":\"array\",\"descripti" +
-            "on\":\"List of dimensions or metrics based on which Analytics data is sorted.\",\"it" +
-            "ems\":{\"type\":\"string\"}},\"start-date\":{\"type\":\"string\",\"description\":\"Start date." +
-            "\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Start index.\",\"format\":\"int32\"" +
-            "}}},\"rows\":{\"type\":\"array\",\"description\":\"Analytics data rows, where each row co" +
-            "ntains a list of dimension values followed by the metric values. The order of di" +
-            "mensions and metrics is same as specified in the request.\",\"items\":{\"type\":\"arra" +
-            "y\",\"items\":{\"type\":\"string\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Link t" +
-            "o this page.\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total number " +
-            "of rows for the query, regardless of the number of rows in the response.\",\"forma" +
-            "t\":\"int32\"},\"totalsForAllResults\":{\"type\":\"object\",\"description\":\"Total values f" +
-            "or the requested metrics over all the results, not just the results returned in " +
-            "this response. The order of the metric totals is same as the metric order specif" +
-            "ied in the request.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"Key-" +
-            "value pair for the total value of a metric. Key is the metric name and the value" +
-            " is the total value for that metric.\"}}}},\"Goal\":{\"id\":\"Goal\",\"type\":\"object\",\"d" +
-            "escription\":\"JSON template for Analytics goal resource.\",\"properties\":{\"accountI" +
-            "d\":{\"type\":\"string\",\"description\":\"Account ID to which this goal belongs.\"},\"act" +
-            "ive\":{\"type\":\"boolean\",\"description\":\"Determines whether this goal is active.\"}," +
-            "\"created\":{\"type\":\"string\",\"description\":\"Time this goal was created.\",\"format\":" +
-            "\"date-time\"},\"eventDetails\":{\"type\":\"object\",\"description\":\"Details for the goal" +
-            " of the type EVENT.\",\"properties\":{\"eventConditions\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"List of event conditions.\",\"items\":{\"type\":\"object\",\"properties\":{\"compariso" +
-            "nType\":{\"type\":\"string\",\"description\":\"Type of comparison. Possible values are L" +
-            "ESS_THAN, GREATER_THAN or EQUAL.\"},\"comparisonValue\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Value used for this comparison.\",\"format\":\"int64\"},\"expression\":{\"type\":\"st" +
-            "ring\",\"description\":\"Expression used for this match.\"},\"matchType\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Type of the match to be performed. Possible values are REGEXP" +
-            ", BEGINS_WITH, or EXACT.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of this e" +
-            "vent condition. Possible values are CATEGORY, ACTION, LABEL, or VALUE.\"}}}},\"use" +
-            "EventValue\":{\"type\":\"boolean\",\"description\":\"Determines if the event value shoul" +
-            "d be used as the value for this goal.\"}}},\"id\":{\"type\":\"string\",\"description\":\"G" +
-            "oal ID.\"},\"internalWebPropertyId\":{\"type\":\"string\",\"description\":\"Internal ID fo" +
-            "r the web property to which this goal belongs.\"},\"kind\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Resource type for an Analytics goal.\",\"default\":\"analytics#goal\"},\"name\"" +
-            ":{\"type\":\"string\",\"description\":\"Goal name.\"},\"parentLink\":{\"type\":\"object\",\"des" +
-            "cription\":\"Parent link for a goal. Points to the profile to which this goal belo" +
-            "ngs.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the profile t" +
-            "o which this goal belongs.\"},\"type\":{\"type\":\"string\",\"description\":\"Value is \\\"a" +
-            "nalytics#profile\\\".\",\"default\":\"analytics#profile\"}}},\"profileId\":{\"type\":\"strin" +
-            "g\",\"description\":\"Profile ID to which this goal belongs.\"},\"selfLink\":{\"type\":\"s" +
-            "tring\",\"description\":\"Link for this goal.\"},\"type\":{\"type\":\"string\",\"description" +
-            "\":\"Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_SITE, VISIT_NUM" +
-            "_PAGES, AND EVENT.\"},\"updated\":{\"type\":\"string\",\"description\":\"Time this goal wa" +
-            "s last modified.\",\"format\":\"date-time\"},\"urlDestinationDetails\":{\"type\":\"object\"" +
-            ",\"description\":\"Details for the goal of the type URL_DESTINATION.\",\"properties\":" +
-            "{\"caseSensitive\":{\"type\":\"boolean\",\"description\":\"Determines if the goal URL mus" +
-            "t exactly match the capitalization of visited URLs.\"},\"firstStepRequired\":{\"type" +
-            "\":\"boolean\",\"description\":\"Determines if the first step in this goal is required" +
-            ".\"},\"matchType\":{\"type\":\"string\",\"description\":\"Match type for the goal URL. Pos" +
-            "sible values are HEAD, EXACT, or REGEX.\"},\"steps\":{\"type\":\"array\",\"description\":" +
-            "\"List of steps configured for this goal funnel.\",\"items\":{\"type\":\"object\",\"prope" +
-            "rties\":{\"name\":{\"type\":\"string\",\"description\":\"Step name.\"},\"number\":{\"type\":\"in" +
-            "teger\",\"description\":\"Step number.\",\"format\":\"int32\"},\"url\":{\"type\":\"string\",\"de" +
-            "scription\":\"URL for this step.\"}}}},\"url\":{\"type\":\"string\",\"description\":\"URL fo" +
-            "r this goal.\"}}},\"value\":{\"type\":\"number\",\"description\":\"Goal value.\",\"format\":\"" +
-            "float\"},\"visitNumPagesDetails\":{\"type\":\"object\",\"description\":\"Details for the g" +
-            "oal of the type VISIT_NUM_PAGES.\",\"properties\":{\"comparisonType\":{\"type\":\"string" +
-            "\",\"description\":\"Type of comparison. Possible values are LESS_THAN, GREATER_THAN" +
-            ", or EQUAL.\"},\"comparisonValue\":{\"type\":\"string\",\"description\":\"Value used for t" +
-            "his comparison.\",\"format\":\"int64\"}}},\"visitTimeOnSiteDetails\":{\"type\":\"object\",\"" +
-            "description\":\"Details for the goal of the type VISIT_TIME_ON_SITE.\",\"properties\"" +
-            ":{\"comparisonType\":{\"type\":\"string\",\"description\":\"Type of comparison. Possible " +
-            "values are LESS_THAN or GREATER_THAN.\"},\"comparisonValue\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Value used for this comparison.\",\"format\":\"int64\"}}},\"webPropertyId\":{" +
-            "\"type\":\"string\",\"description\":\"Web property ID to which this goal belongs. The w" +
-            "eb property ID is of the form UA-XXXXX-YY.\"}}},\"Goals\":{\"id\":\"Goals\",\"type\":\"obj" +
-            "ect\",\"description\":\"A goal collection lists Analytics goals to which the user ha" +
-            "s access. Each profile can have a set of goals. Each resource in the Goal collec" +
-            "tion corresponds to a single Analytics goal.\",\"properties\":{\"items\":{\"type\":\"arr" +
-            "ay\",\"description\":\"A list of goals.\",\"items\":{\"$ref\":\"Goal\"}},\"itemsPerPage\":{\"t" +
-            "ype\":\"integer\",\"description\":\"The maximum number of resources the response can c" +
-            "ontain, regardless of the actual number of resources returned. Its value ranges " +
-            "from 1 to 1000 with a value of 1000 by default, or otherwise specified by the ma" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/kUYo1r4" +
+            "N7g46he-gAwtqbJMknnE\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"analytics:v3\",\"name\":\"anal" +
+            "ytics\",\"version\":\"v3\",\"revision\":\"20121022\",\"title\":\"Google Analytics API\",\"desc" +
+            "ription\":\"View and manage your Google Analytics data\",\"icons\":{\"x16\":\"http://www" +
+            ".google.com/images/icons/product/analytics-16.png\",\"x32\":\"http://www.google.com/" +
+            "images/icons/product/analytics-32.png\"},\"documentationLink\":\"https://developers." +
+            "google.com/analytics/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/a" +
+            "nalytics/v3/\",\"basePath\":\"/analytics/v3/\",\"rootUrl\":\"https://www.googleapis.com/" +
+            "\",\"servicePath\":\"analytics/v3/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":" +
+            "\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[" +
+            "\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"" +
+            "location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying " +
+            "which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type" +
+            "\":\"string\",\"description\":\"API key. Your API key identifies your project and prov" +
+            "ides you with API access, quota, and reports. Required unless you provide an OAu" +
+            "th 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":" +
+            "\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type" +
+            "\":\"boolean\",\"description\":\"Returns response with indentations and line breaks.\"," +
+            "\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\"" +
+            ":\"Available to use for quota purposes for server-side applications. Can be any a" +
+            "rbitrary string assigned to a user, but should not exceed 40 characters. Overrid" +
+            "es userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"" +
+            "description\":\"IP address of the site where the request originates. Use this if y" +
+            "ou want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"sco" +
+            "pes\":{\"https://www.googleapis.com/auth/analytics\":{\"description\":\"View and manag" +
+            "e your Google Analytics data\"},\"https://www.googleapis.com/auth/analytics.readon" +
+            "ly\":{\"description\":\"View your Google Analytics data\"}}}},\"schemas\":{\"Account\":{\"" +
+            "id\":\"Account\",\"type\":\"object\",\"description\":\"JSON template for Analytics account" +
+            " entry.\",\"properties\":{\"childLink\":{\"type\":\"object\",\"description\":\"Child link fo" +
+            "r an account entry. Points to the list of web properties for this account.\",\"pro" +
+            "perties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the list of web propert" +
+            "ies for this account.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the child" +
+            " link. Its value is \\\"analytics#webproperties\\\".\",\"default\":\"analytics#webproper" +
+            "ties\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time the account was created." +
+            "\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"description\":\"Account ID.\"},\"kind" +
+            "\":{\"type\":\"string\",\"description\":\"Resource type for Analytics account.\",\"default" +
+            "\":\"analytics#account\"},\"name\":{\"type\":\"string\",\"description\":\"Account name.\"},\"s" +
+            "elfLink\":{\"type\":\"string\",\"description\":\"Link for this account.\"},\"updated\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Time the account was last modified.\",\"format\":\"date-" +
+            "time\"}}},\"Accounts\":{\"id\":\"Accounts\",\"type\":\"object\",\"description\":\"An account c" +
+            "ollection provides a list of Analytics accounts to which a user has access. The " +
+            "account collection is the entry point to all management information. Each resour" +
+            "ce in the collection corresponds to a single Analytics account.\",\"properties\":{\"" +
+            "items\":{\"type\":\"array\",\"description\":\"A list of accounts.\",\"items\":{\"$ref\":\"Acco" +
+            "unt\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum number of ent" +
+            "ries the response can contain, regardless of the actual number of entries return" +
+            "ed. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwis" +
+            "e specified by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type" +
+            "\":\"string\",\"description\":\"Collection type.\",\"default\":\"analytics#accounts\"},\"nex" +
+            "tLink\":{\"type\":\"string\",\"description\":\"Next link for this account collection.\"}," +
+            "\"previousLink\":{\"type\":\"string\",\"description\":\"Previous link for this account co" +
+            "llection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting index of " +
+            "the entries, which is 1 by default or otherwise specified by the start-index que" +
+            "ry parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":" +
+            "\"The total number of results for the query, regardless of the number of results " +
+            "in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"E" +
+            "mail ID of the authenticated user\"}}},\"CustomDataSource\":{\"id\":\"CustomDataSource" +
+            "\",\"type\":\"object\",\"description\":\"JSON template for an Analytics custom data sour" +
+            "ce.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to whi" +
+            "ch this custom data source belongs.\"},\"childLink\":{\"type\":\"object\",\"description\"" +
+            ":\"Child link for this custom data source. Points to the list of daily uploads fo" +
+            "r this custom data source.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":" +
+            "\"Link to the list of daily uploads for this custom data source.\"},\"type\":{\"type\"" +
+            ":\"string\",\"description\":\"Value is \\\"analytics#dailyUploads\\\".\",\"default\":\"analyt" +
+            "ics#dailyUploads\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time this custom " +
+            "data source was created.\",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"" +
+            "description\":\"Description of custom data source.\"},\"id\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Custom data source ID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource" +
+            " type for Analytics custom data source.\",\"default\":\"analytics#customDataSource\"}" +
+            ",\"name\":{\"type\":\"string\",\"description\":\"Name of this custom data source.\"},\"pare" +
+            "ntLink\":{\"type\":\"object\",\"description\":\"Parent link for this custom data source." +
+            " Points to the web property to which this custom data source belongs.\",\"properti" +
+            "es\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the web property to which th" +
+            "is custom data source belongs.\"},\"type\":{\"type\":\"string\",\"description\":\"Value is" +
+            " \\\"analytics#webproperty\\\".\",\"default\":\"analytics#webproperty\"}}},\"profilesLinke" +
+            "d\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"selfLink\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Link for this Analytics custom data source.\"},\"updated\":{\"type\":\"string" +
+            "\",\"description\":\"Time this custom data source was last modified.\",\"format\":\"date" +
+            "-time\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID of the f" +
+            "orm UA-XXXXX-YY to which this custom data source belongs.\"}}},\"CustomDataSources" +
+            "\":{\"id\":\"CustomDataSources\",\"type\":\"object\",\"description\":\"Lists Analytics custo" +
+            "m data sources to which the user has access. Each resource in the collection cor" +
+            "responds to a single Analytics custom data source.\",\"properties\":{\"items\":{\"type" +
+            "\":\"array\",\"description\":\"Collection of custom data sources.\",\"items\":{\"$ref\":\"Cu" +
+            "stomDataSource\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum nu" +
+            "mber of resources the response can contain, regardless of the actual number of r" +
+            "esources returned. Its value ranges from 1 to 1000 with a value of 1000 by defau" +
+            "lt, or otherwise specified by the max-results query parameter.\",\"format\":\"int32\"" +
+            "},\"kind\":{\"type\":\"string\",\"description\":\"Collection type.\",\"default\":\"analytics#" +
+            "customDataSources\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Link to next page" +
+            " for this custom data source collection.\"},\"previousLink\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Link to previous page for this custom data source collection.\"},\"start" +
+            "Index\":{\"type\":\"integer\",\"description\":\"The starting index of the resources, whi" +
+            "ch is 1 by default or otherwise specified by the start-index query parameter.\",\"" +
+            "format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total numbe" +
+            "r of results for the query, regardless of the number of results in the response." +
+            "\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"Email ID of the a" +
+            "uthenticated user\"}}},\"DailyUpload\":{\"id\":\"DailyUpload\",\"type\":\"object\",\"descrip" +
+            "tion\":\"Metadata for daily upload entity.\",\"properties\":{\"accountId\":{\"type\":\"str" +
+            "ing\",\"description\":\"Account ID to which this daily upload belongs.\"},\"appendCoun" +
+            "t\":{\"type\":\"integer\",\"description\":\"Number of appends for this date.\",\"format\":\"" +
+            "int32\"},\"createdTime\":{\"type\":\"string\",\"description\":\"Time this daily upload was" +
+            " created.\",\"format\":\"date-time\"},\"customDataSourceId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Custom data source ID to which this daily upload belongs.\"},\"date\":{\"type\"" +
+            ":\"string\",\"description\":\"Date associated with daily upload.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"Resource type for Analytics daily upload.\",\"default\":\"analy" +
+            "tics#dailyUpload\"},\"modifiedTime\":{\"type\":\"string\",\"description\":\"Time this dail" +
+            "y upload was last modified.\",\"format\":\"date-time\"},\"parentLink\":{\"type\":\"object\"" +
+            ",\"description\":\"Parent link for a daily upload. Points to the custom data source" +
+            " to which this daily upload belongs.\",\"properties\":{\"href\":{\"type\":\"string\",\"des" +
+            "cription\":\"Link to the custom data source to which this daily upload belongs.\"}," +
+            "\"type\":{\"type\":\"string\",\"description\":\"Value is \\\"analytics#customDataSource\\\".\"" +
+            ",\"default\":\"analytics#customDataSource\"}}},\"recentChanges\":{\"type\":\"array\",\"desc" +
+            "ription\":\"Change log for last 10 changes in chronological order.\",\"items\":{\"type" +
+            "\":\"object\",\"properties\":{\"change\":{\"type\":\"string\"},\"time\":{\"type\":\"string\",\"for" +
+            "mat\":\"date-time\"}}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this da" +
+            "ily upload.\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID of" +
+            " the form UA-XXXXX-YY to which this daily upload belongs.\"}}},\"DailyUploadAppend" +
+            "\":{\"id\":\"DailyUploadAppend\",\"type\":\"object\",\"description\":\"Metadata returned for" +
+            " a successful append operation.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"des" +
+            "cription\":\"Account Id to which this daily upload append belongs.\"},\"appendNumber" +
+            "\":{\"type\":\"integer\",\"description\":\"Append number.\",\"format\":\"int32\"},\"customData" +
+            "SourceId\":{\"type\":\"string\",\"description\":\"Custom data source Id to which this da" +
+            "ily upload append belongs.\"},\"date\":{\"type\":\"string\",\"description\":\"Date associa" +
+            "ted with daily upload append.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource " +
+            "type for Analytics daily upload append.\",\"default\":\"analytics#dailyUploadAppend\"" +
+            "},\"nextAppendLink\":{\"type\":\"string\"},\"webPropertyId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Web property Id of the form UA-XXXXX-YY to which this daily upload append b" +
+            "elongs.\"}}},\"DailyUploads\":{\"id\":\"DailyUploads\",\"type\":\"object\",\"description\":\"A" +
+            " daily upload collection lists Analytics daily uploads to which the user has acc" +
+            "ess. Each resource in the collection corresponds to a single Analytics daily upl" +
+            "oad.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A collection of daily" +
+            " uploads.\",\"items\":{\"$ref\":\"DailyUpload\"}},\"itemsPerPage\":{\"type\":\"integer\",\"des" +
+            "cription\":\"The maximum number of resources the response can contain, regardless " +
+            "of the actual number of resources returned. Its value ranges from 1 to 1000 with" +
+            " a value of 1000 by default, or otherwise specified by the max-results query par" +
+            "ameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Collection typ" +
+            "e. Value is analytics#dailyUploads.\",\"default\":\"analytics#dailyUploads\"},\"nextLi" +
+            "nk\":{\"type\":\"string\",\"description\":\"Link to next page for this daily upload coll" +
+            "ection.\"},\"previousLink\":{\"type\":\"string\",\"description\":\"Link to previous page f" +
+            "or this daily upload collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":" +
+            "\"The starting index of the resources, which is 1 by default or otherwise specifi" +
+            "ed by the start-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\"" +
+            ":\"integer\",\"description\":\"The total number of results for the query, regardless " +
+            "of the number of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":" +
+            "\"string\",\"description\":\"Email ID of the authenticated user\"}}},\"GaData\":{\"id\":\"G" +
+            "aData\",\"type\":\"object\",\"description\":\"Analytics data for a given profile.\",\"prop" +
+            "erties\":{\"columnHeaders\":{\"type\":\"array\",\"description\":\"Column headers that list" +
+            " dimension names followed by the metric names. The order of dimensions and metri" +
+            "cs is same as specified in the request.\",\"items\":{\"type\":\"object\",\"properties\":{" +
+            "\"columnType\":{\"type\":\"string\",\"description\":\"Column Type. Either DIMENSION or ME" +
+            "TRIC.\"},\"dataType\":{\"type\":\"string\",\"description\":\"Data type. Dimension column h" +
+            "eaders have only STRING as the data type. Metric column headers have data types " +
+            "for metric values such as INTEGER, DOUBLE, CURRENCY etc.\"},\"name\":{\"type\":\"strin" +
+            "g\",\"description\":\"Column name.\"}}}},\"containsSampledData\":{\"type\":\"boolean\",\"des" +
+            "cription\":\"Determines if Analytics data contains samples.\"},\"id\":{\"type\":\"string" +
+            "\",\"description\":\"Unique ID for this data response.\"},\"itemsPerPage\":{\"type\":\"int" +
+            "eger\",\"description\":\"The maximum number of rows the response can contain, regard" +
+            "less of the actual number of rows returned. Its value ranges from 1 to 10,000 wi" +
+            "th a value of 1000 by default, or otherwise specified by the max-results query p" +
+            "arameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource typ" +
+            "e.\",\"default\":\"analytics#gaData\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Lin" +
+            "k to next page for this Analytics data query.\"},\"previousLink\":{\"type\":\"string\"," +
+            "\"description\":\"Link to previous page for this Analytics data query.\"},\"profileIn" +
+            "fo\":{\"type\":\"object\",\"description\":\"Information for the profile, for which the A" +
+            "nalytics data was requested.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Account ID to which this profile belongs.\"},\"internalWebPropertyId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Internal ID for the web property to which this profi" +
+            "le belongs.\"},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID.\"},\"profile" +
+            "Name\":{\"type\":\"string\",\"description\":\"Profile name.\"},\"tableId\":{\"type\":\"string\"" +
+            ",\"description\":\"Table ID for profile.\"},\"webPropertyId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Web Property ID to which this profile belongs.\"}}},\"query\":{\"type\":\"obje" +
+            "ct\",\"description\":\"Analytics data request query parameters.\",\"properties\":{\"dime" +
+            "nsions\":{\"type\":\"string\",\"description\":\"List of analytics dimensions.\"},\"end-dat" +
+            "e\":{\"type\":\"string\",\"description\":\"End date.\"},\"filters\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Comma-separated list of dimension or metric filters.\"},\"ids\":{\"type\":\"s" +
+            "tring\",\"description\":\"Unique table ID.\"},\"max-results\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"Maximum results per page.\",\"format\":\"int32\"},\"metrics\":{\"type\":\"array\",\"" +
+            "description\":\"List of analytics metrics.\",\"items\":{\"type\":\"string\"}},\"segment\":{" +
+            "\"type\":\"string\",\"description\":\"Analytics advanced segment.\"},\"sort\":{\"type\":\"arr" +
+            "ay\",\"description\":\"List of dimensions or metrics based on which Analytics data i" +
+            "s sorted.\",\"items\":{\"type\":\"string\"}},\"start-date\":{\"type\":\"string\",\"description" +
+            "\":\"Start date.\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Start index.\",\"f" +
+            "ormat\":\"int32\"}}},\"rows\":{\"type\":\"array\",\"description\":\"Analytics data rows, whe" +
+            "re each row contains a list of dimension values followed by the metric values. T" +
+            "he order of dimensions and metrics is same as specified in the request.\",\"items\"" +
+            ":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"selfLink\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Link to this page.\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The" +
+            " total number of rows for the query, regardless of the number of rows in the res" +
+            "ponse.\",\"format\":\"int32\"},\"totalsForAllResults\":{\"type\":\"object\",\"description\":\"" +
+            "Total values for the requested metrics over all the results, not just the result" +
+            "s returned in this response. The order of the metric totals is same as the metri" +
+            "c order specified in the request.\",\"additionalProperties\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Key-value pair for the total value of a metric. Key is the metric name" +
+            " and the value is the total value for that metric.\"}}}},\"Goal\":{\"id\":\"Goal\",\"typ" +
+            "e\":\"object\",\"description\":\"JSON template for Analytics goal resource.\",\"properti" +
+            "es\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to which this goal b" +
+            "elongs.\"},\"active\":{\"type\":\"boolean\",\"description\":\"Determines whether this goal" +
+            " is active.\"},\"created\":{\"type\":\"string\",\"description\":\"Time this goal was creat" +
+            "ed.\",\"format\":\"date-time\"},\"eventDetails\":{\"type\":\"object\",\"description\":\"Detail" +
+            "s for the goal of the type EVENT.\",\"properties\":{\"eventConditions\":{\"type\":\"arra" +
+            "y\",\"description\":\"List of event conditions.\",\"items\":{\"type\":\"object\",\"propertie" +
+            "s\":{\"comparisonType\":{\"type\":\"string\",\"description\":\"Type of comparison. Possibl" +
+            "e values are LESS_THAN, GREATER_THAN or EQUAL.\"},\"comparisonValue\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Value used for this comparison.\",\"format\":\"int64\"},\"expressio" +
+            "n\":{\"type\":\"string\",\"description\":\"Expression used for this match.\"},\"matchType\"" +
+            ":{\"type\":\"string\",\"description\":\"Type of the match to be performed. Possible val" +
+            "ues are REGEXP, BEGINS_WITH, or EXACT.\"},\"type\":{\"type\":\"string\",\"description\":\"" +
+            "Type of this event condition. Possible values are CATEGORY, ACTION, LABEL, or VA" +
+            "LUE.\"}}}},\"useEventValue\":{\"type\":\"boolean\",\"description\":\"Determines if the eve" +
+            "nt value should be used as the value for this goal.\"}}},\"id\":{\"type\":\"string\",\"d" +
+            "escription\":\"Goal ID.\"},\"internalWebPropertyId\":{\"type\":\"string\",\"description\":\"" +
+            "Internal ID for the web property to which this goal belongs.\"},\"kind\":{\"type\":\"s" +
+            "tring\",\"description\":\"Resource type for an Analytics goal.\",\"default\":\"analytics" +
+            "#goal\"},\"name\":{\"type\":\"string\",\"description\":\"Goal name.\"},\"parentLink\":{\"type\"" +
+            ":\"object\",\"description\":\"Parent link for a goal. Points to the profile to which " +
+            "this goal belongs.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to" +
+            " the profile to which this goal belongs.\"},\"type\":{\"type\":\"string\",\"description\"" +
+            ":\"Value is \\\"analytics#profile\\\".\",\"default\":\"analytics#profile\"}}},\"profileId\":" +
+            "{\"type\":\"string\",\"description\":\"Profile ID to which this goal belongs.\"},\"selfLi" +
+            "nk\":{\"type\":\"string\",\"description\":\"Link for this goal.\"},\"type\":{\"type\":\"string" +
+            "\",\"description\":\"Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_S" +
+            "ITE, VISIT_NUM_PAGES, AND EVENT.\"},\"updated\":{\"type\":\"string\",\"description\":\"Tim" +
+            "e this goal was last modified.\",\"format\":\"date-time\"},\"urlDestinationDetails\":{\"" +
+            "type\":\"object\",\"description\":\"Details for the goal of the type URL_DESTINATION.\"" +
+            ",\"properties\":{\"caseSensitive\":{\"type\":\"boolean\",\"description\":\"Determines if th" +
+            "e goal URL must exactly match the capitalization of visited URLs.\"},\"firstStepRe" +
+            "quired\":{\"type\":\"boolean\",\"description\":\"Determines if the first step in this go" +
+            "al is required.\"},\"matchType\":{\"type\":\"string\",\"description\":\"Match type for the" +
+            " goal URL. Possible values are HEAD, EXACT, or REGEX.\"},\"steps\":{\"type\":\"array\"," +
+            "\"description\":\"List of steps configured for this goal funnel.\",\"items\":{\"type\":\"" +
+            "object\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"Step name.\"},\"numbe" +
+            "r\":{\"type\":\"integer\",\"description\":\"Step number.\",\"format\":\"int32\"},\"url\":{\"type" +
+            "\":\"string\",\"description\":\"URL for this step.\"}}}},\"url\":{\"type\":\"string\",\"descri" +
+            "ption\":\"URL for this goal.\"}}},\"value\":{\"type\":\"number\",\"description\":\"Goal valu" +
+            "e.\",\"format\":\"float\"},\"visitNumPagesDetails\":{\"type\":\"object\",\"description\":\"Det" +
+            "ails for the goal of the type VISIT_NUM_PAGES.\",\"properties\":{\"comparisonType\":{" +
+            "\"type\":\"string\",\"description\":\"Type of comparison. Possible values are LESS_THAN" +
+            ", GREATER_THAN, or EQUAL.\"},\"comparisonValue\":{\"type\":\"string\",\"description\":\"Va" +
+            "lue used for this comparison.\",\"format\":\"int64\"}}},\"visitTimeOnSiteDetails\":{\"ty" +
+            "pe\":\"object\",\"description\":\"Details for the goal of the type VISIT_TIME_ON_SITE." +
+            "\",\"properties\":{\"comparisonType\":{\"type\":\"string\",\"description\":\"Type of compari" +
+            "son. Possible values are LESS_THAN or GREATER_THAN.\"},\"comparisonValue\":{\"type\":" +
+            "\"string\",\"description\":\"Value used for this comparison.\",\"format\":\"int64\"}}},\"we" +
+            "bPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID to which this goal " +
+            "belongs. The web property ID is of the form UA-XXXXX-YY.\"}}},\"Goals\":{\"id\":\"Goal" +
+            "s\",\"type\":\"object\",\"description\":\"A goal collection lists Analytics goals to whi" +
+            "ch the user has access. Each profile can have a set of goals. Each resource in t" +
+            "he Goal collection corresponds to a single Analytics goal.\",\"properties\":{\"items" +
+            "\":{\"type\":\"array\",\"description\":\"A list of goals.\",\"items\":{\"$ref\":\"Goal\"}},\"ite" +
+            "msPerPage\":{\"type\":\"integer\",\"description\":\"The maximum number of resources the " +
+            "response can contain, regardless of the actual number of resources returned. Its" +
+            " value ranges from 1 to 1000 with a value of 1000 by default, or otherwise speci" +
+            "fied by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Collection type.\",\"default\":\"analytics#goals\"},\"nextLink\":{\"t" +
+            "ype\":\"string\",\"description\":\"Link to next page for this goal collection.\"},\"prev" +
+            "iousLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this goal co" +
+            "llection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting index of " +
+            "the resources, which is 1 by default or otherwise specified by the start-index q" +
+            "uery parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description" +
+            "\":\"The total number of results for the query, regardless of the number of resour" +
+            "ces in the result.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":" +
+            "\"Email ID of the authenticated user\"}}},\"McfData\":{\"id\":\"McfData\",\"type\":\"object" +
+            "\",\"description\":\"Multi-Channel Funnels data for a given profile.\",\"properties\":{" +
+            "\"columnHeaders\":{\"type\":\"array\",\"description\":\"Column headers that list dimensio" +
+            "n names followed by the metric names. The order of dimensions and metrics is sam" +
+            "e as specified in the request.\",\"items\":{\"type\":\"object\",\"properties\":{\"columnTy" +
+            "pe\":{\"type\":\"string\",\"description\":\"Column Type. Either DIMENSION or METRIC.\"},\"" +
+            "dataType\":{\"type\":\"string\",\"description\":\"Data type. Dimension and metric values" +
+            " data types such as INTEGER, DOUBLE, CURRENCY, MCF_SEQUENCE etc.\"},\"name\":{\"type" +
+            "\":\"string\",\"description\":\"Column name.\"}}}},\"containsSampledData\":{\"type\":\"boole" +
+            "an\",\"description\":\"Determines if the Analytics data contains sampled data.\"},\"id" +
+            "\":{\"type\":\"string\",\"description\":\"Unique ID for this data response.\"},\"itemsPerP" +
+            "age\":{\"type\":\"integer\",\"description\":\"The maximum number of rows the response ca" +
+            "n contain, regardless of the actual number of rows returned. Its value ranges fr" +
+            "om 1 to 10,000 with a value of 1000 by default, or otherwise specified by the ma" +
             "x-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Collection type.\",\"default\":\"analytics#goals\"},\"nextLink\":{\"type\":\"string\"," +
-            "\"description\":\"Link to next page for this goal collection.\"},\"previousLink\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Link to previous page for this goal collection.\"},\"s" +
-            "tartIndex\":{\"type\":\"integer\",\"description\":\"The starting index of the resources," +
-            " which is 1 by default or otherwise specified by the start-index query parameter" +
-            ".\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total n" +
-            "umber of results for the query, regardless of the number of resources in the res" +
-            "ult.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"Email ID of t" +
-            "he authenticated user\"}}},\"McfData\":{\"id\":\"McfData\",\"type\":\"object\",\"description" +
-            "\":\"Multi-Channel Funnels data for a given profile.\",\"properties\":{\"columnHeaders" +
-            "\":{\"type\":\"array\",\"description\":\"Column headers that list dimension names follow" +
-            "ed by the metric names. The order of dimensions and metrics is same as specified" +
-            " in the request.\",\"items\":{\"type\":\"object\",\"properties\":{\"columnType\":{\"type\":\"s" +
-            "tring\",\"description\":\"Column Type. Either DIMENSION or METRIC.\"},\"dataType\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Data type. Dimension and metric values data types su" +
-            "ch as INTEGER, DOUBLE, CURRENCY, MCF_SEQUENCE etc.\"},\"name\":{\"type\":\"string\",\"de" +
-            "scription\":\"Column name.\"}}}},\"containsSampledData\":{\"type\":\"boolean\",\"descripti" +
-            "on\":\"Determines if the Analytics data contains sampled data.\"},\"id\":{\"type\":\"str" +
-            "ing\",\"description\":\"Unique ID for this data response.\"},\"itemsPerPage\":{\"type\":\"" +
-            "integer\",\"description\":\"The maximum number of rows the response can contain, reg" +
-            "ardless of the actual number of rows returned. Its value ranges from 1 to 10,000" +
-            " with a value of 1000 by default, or otherwise specified by the max-results quer" +
-            "y parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource " +
-            "type.\",\"default\":\"analytics#mcfData\"},\"nextLink\":{\"type\":\"string\",\"description\":" +
-            "\"Link to next page for this Analytics data query.\"},\"previousLink\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Link to previous page for this Analytics data query.\"},\"profi" +
-            "leInfo\":{\"type\":\"object\",\"description\":\"Information for the profile, for which t" +
-            "he Analytics data was requested.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"de" +
-            "scription\":\"Account ID to which this profile belongs.\"},\"internalWebPropertyId\":" +
-            "{\"type\":\"string\",\"description\":\"Internal ID for the web property to which this p" +
-            "rofile belongs.\"},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID.\"},\"pro" +
-            "fileName\":{\"type\":\"string\",\"description\":\"Profile name.\"},\"tableId\":{\"type\":\"str" +
-            "ing\",\"description\":\"Table ID for profile.\"},\"webPropertyId\":{\"type\":\"string\",\"de" +
-            "scription\":\"Web Property ID to which this profile belongs.\"}}},\"query\":{\"type\":\"" +
-            "object\",\"description\":\"Analytics data request query parameters.\",\"properties\":{\"" +
-            "dimensions\":{\"type\":\"string\",\"description\":\"List of analytics dimensions.\"},\"end" +
-            "-date\":{\"type\":\"string\",\"description\":\"End date.\"},\"filters\":{\"type\":\"string\",\"d" +
-            "escription\":\"Comma-separated list of dimension or metric filters.\"},\"ids\":{\"type" +
-            "\":\"string\",\"description\":\"Unique table ID.\"},\"max-results\":{\"type\":\"integer\",\"de" +
-            "scription\":\"Maximum results per page.\",\"format\":\"int32\"},\"metrics\":{\"type\":\"arra" +
-            "y\",\"description\":\"List of analytics metrics.\",\"items\":{\"type\":\"string\"}},\"segmen" +
-            "t\":{\"type\":\"string\",\"description\":\"Analytics advanced segment.\"},\"sort\":{\"type\":" +
-            "\"array\",\"description\":\"List of dimensions or metrics based on which Analytics da" +
-            "ta is sorted.\",\"items\":{\"type\":\"string\"}},\"start-date\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Start date.\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Start index." +
-            "\",\"format\":\"int32\"}}},\"rows\":{\"type\":\"array\",\"description\":\"Analytics data rows," +
-            " where each row contains a list of dimension values followed by the metric value" +
-            "s. The order of dimensions and metrics is same as specified in the request.\",\"it" +
-            "ems\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"description\":\"A union object repr" +
-            "esenting a dimension or metric value. Only one of \\\"primitiveValue\\\" or \\\"conver" +
-            "sionPathValue\\\" attribute will be populated.\",\"properties\":{\"conversionPathValue" +
-            "\":{\"type\":\"array\",\"description\":\"A conversion path dimension value, containing a" +
-            " list of interactions with their attributes.\",\"items\":{\"type\":\"object\",\"properti" +
-            "es\":{\"interactionType\":{\"type\":\"string\",\"description\":\"Type of an interaction on" +
-            " conversion path. Such as CLICK, IMPRESSION etc.\"},\"nodeValue\":{\"type\":\"string\"," +
-            "\"description\":\"Node value of an interaction on conversion path. Such as source, " +
-            "medium etc.\"}}}},\"primitiveValue\":{\"type\":\"string\",\"description\":\"A primitive di" +
-            "mension value. A primitive metric value.\"}}}}},\"selfLink\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Link to this page.\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"T" +
-            "he total number of rows for the query, regardless of the number of rows in the r" +
-            "esponse.\",\"format\":\"int32\"},\"totalsForAllResults\":{\"type\":\"object\",\"description\"" +
-            ":\"Total values for the requested metrics over all the results, not just the resu" +
-            "lts returned in this response. The order of the metric totals is same as the met" +
-            "ric order specified in the request.\",\"additionalProperties\":{\"type\":\"string\",\"de" +
-            "scription\":\"Key-value pair for the total value of a metric. Key is the metric na" +
-            "me and the value is the total value for that metric.\"}}}},\"Profile\":{\"id\":\"Profi" +
-            "le\",\"type\":\"object\",\"description\":\"JSON template for an Analytics profile.\",\"pro" +
-            "perties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to which this p" +
-            "rofile belongs.\"},\"childLink\":{\"type\":\"object\",\"description\":\"Child link for thi" +
-            "s profile. Points to the list of goals for this profile.\",\"properties\":{\"href\":{" +
-            "\"type\":\"string\",\"description\":\"Link to the list of goals for this profile.\"},\"ty" +
-            "pe\":{\"type\":\"string\",\"description\":\"Value is \\\"analytics#goals\\\".\",\"default\":\"an" +
-            "alytics#goals\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time this profile wa" +
-            "s created.\",\"format\":\"date-time\"},\"currency\":{\"type\":\"string\",\"description\":\"The" +
-            " currency type associated with this profile.\"},\"defaultPage\":{\"type\":\"string\",\"d" +
-            "escription\":\"Default page for this profile.\"},\"eCommerceTracking\":{\"type\":\"boole" +
-            "an\",\"description\":\"E-commerce tracking parameter for this profile.\"},\"excludeQue" +
-            "ryParameters\":{\"type\":\"string\",\"description\":\"The query parameters that are excl" +
-            "uded from this profile.\"},\"id\":{\"type\":\"string\",\"description\":\"Profile ID.\"},\"in" +
-            "ternalWebPropertyId\":{\"type\":\"string\",\"description\":\"Internal ID for the web pro" +
-            "perty to which this profile belongs.\"},\"kind\":{\"type\":\"string\",\"description\":\"Re" +
-            "source type for Analytics profile.\",\"default\":\"analytics#profile\"},\"name\":{\"type" +
-            "\":\"string\",\"description\":\"Name of this profile.\"},\"parentLink\":{\"type\":\"object\"," +
-            "\"description\":\"Parent link for this profile. Points to the web property to which" +
-            " this profile belongs.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Lin" +
-            "k to the web property to which this profile belongs.\"},\"type\":{\"type\":\"string\",\"" +
-            "description\":\"Value is \\\"analytics#webproperty\\\".\",\"default\":\"analytics#webprope" +
-            "rty\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this profile.\"},\"sit" +
-            "eSearchCategoryParameters\":{\"type\":\"string\",\"description\":\"Site search category " +
-            "parameters for this profile.\"},\"siteSearchQueryParameters\":{\"type\":\"string\",\"des" +
-            "cription\":\"The site search query parameters for this profile.\"},\"timezone\":{\"typ" +
-            "e\":\"string\",\"description\":\"Time zone for which this profile has been configured." +
-            "\"},\"updated\":{\"type\":\"string\",\"description\":\"Time this profile was last modified" +
-            ".\",\"format\":\"date-time\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web pro" +
-            "perty ID of the form UA-XXXXX-YY to which this profile belongs.\"},\"websiteUrl\":{" +
-            "\"type\":\"string\",\"description\":\"Website URL for this profile.\"}}},\"Profiles\":{\"id" +
-            "\":\"Profiles\",\"type\":\"object\",\"description\":\"A profile collection lists Analytics" +
-            " profiles to which the user has access. Each resource in the collection correspo" +
-            "nds to a single Analytics profile.\",\"properties\":{\"items\":{\"type\":\"array\",\"descr" +
-            "iption\":\"A list of profiles.\",\"items\":{\"$ref\":\"Profile\"}},\"itemsPerPage\":{\"type\"" +
-            ":\"integer\",\"description\":\"The maximum number of resources the response can conta" +
-            "in, regardless of the actual number of resources returned. Its value ranges from" +
-            " 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-re" +
-            "sults query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"Collection type.\",\"default\":\"analytics#profiles\"},\"nextLink\":{\"type\":\"string\",\"" +
-            "description\":\"Link to next page for this profile collection.\"},\"previousLink\":{\"" +
-            "type\":\"string\",\"description\":\"Link to previous page for this profile collection." +
-            "\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting index of the resou" +
-            "rces, which is 1 by default or otherwise specified by the start-index query para" +
-            "meter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The to" +
-            "tal number of results for the query, regardless of the number of results in the " +
-            "response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"Email ID" +
-            " of the authenticated user\"}}},\"Segment\":{\"id\":\"Segment\",\"type\":\"object\",\"descri" +
-            "ption\":\"JSON template for an Analytics advanced segment.\",\"properties\":{\"created" +
-            "\":{\"type\":\"string\",\"description\":\"Time the advanced segment was created.\",\"forma" +
-            "t\":\"date-time\"},\"definition\":{\"type\":\"string\",\"description\":\"Advanced segment de" +
-            "finition.\"},\"id\":{\"type\":\"string\",\"description\":\"Advanced segment ID.\"},\"kind\":{" +
-            "\"type\":\"string\",\"description\":\"Resource type for Analytics advanced segment.\",\"d" +
-            "efault\":\"analytics#segment\"},\"name\":{\"type\":\"string\",\"description\":\"Advanced seg" +
-            "ment name.\"},\"segmentId\":{\"type\":\"string\",\"description\":\"Segment ID. Can be used" +
-            " with the \'segment\' parameter in Data Feed.\"},\"selfLink\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Link for this advanced segment.\"},\"updated\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Time the advanced segment was last modified.\",\"format\":\"date-time\"}}},\"Segm" +
-            "ents\":{\"id\":\"Segments\",\"type\":\"object\",\"description\":\"An advanced segment collec" +
-            "tion lists Analytics advanced segments that the user has access to. Each resourc" +
-            "e in the collection corresponds to a single Analytics advanced segment.\",\"proper" +
-            "ties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of advanced segments.\",\"ite" +
-            "ms\":{\"$ref\":\"Segment\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maxi" +
-            "mum number of resources the response can contain, regardless of the actual numbe" +
-            "r of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by" +
-            " default, or otherwise specified by the max-results query parameter.\",\"format\":\"" +
-            "int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Collection type for advanced segm" +
-            "ents.\",\"default\":\"analytics#segments\"},\"nextLink\":{\"type\":\"string\",\"description\"" +
-            ":\"Link to next page for this advanced segment collection.\"},\"previousLink\":{\"typ" +
-            "e\":\"string\",\"description\":\"Link to previous page for this advanced segment colle" +
-            "ction.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting index of the" +
-            " resources, which is 1 by default or otherwise specified by the start-index quer" +
-            "y parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"" +
-            "The total number of results for the query, regardless of the number of results i" +
-            "n the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"Em" +
-            "ail ID of the authenticated user\"}}},\"Webproperties\":{\"id\":\"Webproperties\",\"type" +
-            "\":\"object\",\"description\":\"A web property collection lists Analytics web properti" +
-            "es to which the user has access. Each resource in the collection corresponds to " +
-            "a single Analytics web property.\",\"properties\":{\"items\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"A list of web properties.\",\"items\":{\"$ref\":\"Webproperty\"}},\"itemsPerPage\"" +
-            ":{\"type\":\"integer\",\"description\":\"The maximum number of resources the response c" +
-            "an contain, regardless of the actual number of resources returned. Its value ran" +
-            "ges from 1 to 1000 with a value of 1000 by default, or otherwise specified by th" +
-            "e max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Collection type.\",\"default\":\"analytics#webproperties\"},\"nextLink\":{\"typ" +
-            "e\":\"string\",\"description\":\"Link to next page for this web property collection.\"}" +
-            ",\"previousLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this w" +
-            "eb property collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The star" +
-            "ting index of the resources, which is 1 by default or otherwise specified by the" +
-            " start-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer" +
-            "\",\"description\":\"The total number of results for the query, regardless of the nu" +
-            "mber of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\"," +
-            "\"description\":\"Email ID of the authenticated user\"}}},\"Webproperty\":{\"id\":\"Webpr" +
-            "operty\",\"type\":\"object\",\"description\":\"JSON template for an Analytics web proper" +
-            "ty.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to whi" +
-            "ch this web property belongs.\"},\"childLink\":{\"type\":\"object\",\"description\":\"Chil" +
-            "d link for this web property. Points to the list of profiles for this web proper" +
-            "ty.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the list of pr" +
-            "ofiles for this web property.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of t" +
-            "he parent link. Its value is \\\"analytics#profiles\\\".\",\"default\":\"analytics#profi" +
-            "les\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time this web property was cre" +
-            "ated.\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"description\":\"Web property I" +
-            "D of the form UA-XXXXX-YY.\"},\"internalWebPropertyId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Internal ID for this web property.\"},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"Resource type for Analytics WebProperty.\",\"default\":\"analytics#webproperty\"},\"n" +
-            "ame\":{\"type\":\"string\",\"description\":\"Name of this web property.\"},\"parentLink\":{" +
-            "\"type\":\"object\",\"description\":\"Parent link for this web property. Points to the " +
-            "account to which this web property belongs.\",\"properties\":{\"href\":{\"type\":\"strin" +
-            "g\",\"description\":\"Link to the account for this web property.\"},\"type\":{\"type\":\"s" +
-            "tring\",\"description\":\"Type of the parent link. Its value is \\\"analytics#account\\" +
-            "\".\",\"default\":\"analytics#account\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"" +
-            "Link for this web property.\"},\"updated\":{\"type\":\"string\",\"description\":\"Time thi" +
-            "s web property was last modified.\",\"format\":\"date-time\"},\"websiteUrl\":{\"type\":\"s" +
-            "tring\",\"description\":\"Website url for this web property.\"}}}},\"resources\":{\"data" +
-            "\":{\"resources\":{\"ga\":{\"methods\":{\"get\":{\"id\":\"analytics.data.ga.get\",\"path\":\"dat" +
-            "a/ga\",\"httpMethod\":\"GET\",\"description\":\"Returns Analytics data for a profile.\",\"" +
-            "parameters\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A comma-separated list" +
-            " of Analytics dimensions. E.g., \'ga:browser,ga:city\'.\",\"pattern\":\"(ga:.+)?\",\"loc" +
-            "ation\":\"query\"},\"end-date\":{\"type\":\"string\",\"description\":\"End date for fetching" +
-            " Analytics data. All requests should specify an end date formatted as YYYY-MM-DD" +
-            ".\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"f" +
-            "ilters\":{\"type\":\"string\",\"description\":\"A comma-separated list of dimension or m" +
-            "etric filters to be applied to Analytics data.\",\"pattern\":\"ga:.+\",\"location\":\"qu" +
-            "ery\"},\"ids\":{\"type\":\"string\",\"description\":\"Unique table ID for retrieving Analy" +
-            "tics data. Table ID is of the form ga:XXXX, where XXXX is the Analytics profile " +
-            "ID.\",\"required\":true,\"pattern\":\"ga:[0-9]+\",\"location\":\"query\"},\"max-results\":{\"t" +
-            "ype\":\"integer\",\"description\":\"The maximum number of entries to include in this f" +
-            "eed.\",\"format\":\"int32\",\"location\":\"query\"},\"metrics\":{\"type\":\"string\",\"descripti" +
-            "on\":\"A comma-separated list of Analytics metrics. E.g., \'ga:visits,ga:pageviews\'" +
-            ". At least one metric must be specified.\",\"required\":true,\"pattern\":\"ga:.+\",\"loc" +
-            "ation\":\"query\"},\"segment\":{\"type\":\"string\",\"description\":\"An Analytics advanced " +
-            "segment to be applied to data.\",\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"des" +
-            "cription\":\"A comma-separated list of dimensions or metrics that determine the so" +
-            "rt order for Analytics data.\",\"pattern\":\"(-)?ga:.+\",\"location\":\"query\"},\"start-d" +
-            "ate\":{\"type\":\"string\",\"description\":\"Start date for fetching Analytics data. All" +
-            " requests should specify a start date formatted as YYYY-MM-DD.\",\"required\":true," +
-            "\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"start-index\":{\"type\"" +
-            ":\"integer\",\"description\":\"An index of the first entity to retrieve. Use this par" +
-            "ameter as a pagination mechanism along with the max-results parameter.\",\"format\"" +
-            ":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"ids\",\"start-date\"" +
-            ",\"end-date\",\"metrics\"],\"response\":{\"$ref\":\"GaData\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}" +
-            "}},\"mcf\":{\"methods\":{\"get\":{\"id\":\"analytics.data.mcf.get\",\"path\":\"data/mcf\",\"htt" +
-            "pMethod\":\"GET\",\"description\":\"Returns Analytics Multi-Channel Funnels data for a" +
-            " profile.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A comma-se" +
-            "parated list of Multi-Channel Funnels dimensions. E.g., \'mcf:source,mcf:medium\'." +
-            "\",\"pattern\":\"(mcf:.+)?\",\"location\":\"query\"},\"end-date\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"End date for fetching Analytics data. All requests should specify an end " +
-            "date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9" +
-            "]{2}\",\"location\":\"query\"},\"filters\":{\"type\":\"string\",\"description\":\"A comma-sepa" +
-            "rated list of dimension or metric filters to be applied to the Analytics data.\"," +
-            "\"pattern\":\"mcf:.+\",\"location\":\"query\"},\"ids\":{\"type\":\"string\",\"description\":\"Uni" +
-            "que table ID for retrieving Analytics data. Table ID is of the form ga:XXXX, whe" +
-            "re XXXX is the Analytics profile ID.\",\"required\":true,\"pattern\":\"ga:[0-9]+\",\"loc" +
-            "ation\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum numbe" +
-            "r of entries to include in this feed.\",\"format\":\"int32\",\"location\":\"query\"},\"met" +
-            "rics\":{\"type\":\"string\",\"description\":\"A comma-separated list of Multi-Channel Fu" +
-            "nnels metrics. E.g., \'mcf:totalConversions,mcf:totalConversionValue\'. At least o" +
-            "ne metric must be specified.\",\"required\":true,\"pattern\":\"mcf:.+\",\"location\":\"que" +
-            "ry\"},\"sort\":{\"type\":\"string\",\"description\":\"A comma-separated list of dimensions" +
-            " or metrics that determine the sort order for the Analytics data.\",\"pattern\":\"(-" +
-            ")?mcf:.+\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"description\":\"Start" +
-            " date for fetching Analytics data. All requests should specify a start date form" +
-            "atted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"lo" +
-            "cation\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the " +
-            "first entity to retrieve. Use this parameter as a pagination mechanism along wit" +
-            "h the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}" +
-            "},\"parameterOrder\":[\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"response\":{\"$ref\":" +
-            "\"McfData\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www.go" +
-            "ogleapis.com/auth/analytics.readonly\"]}}}}},\"management\":{\"resources\":{\"accounts" +
-            "\":{\"methods\":{\"list\":{\"id\":\"analytics.management.accounts.list\",\"path\":\"manageme" +
-            "nt/accounts\",\"httpMethod\":\"GET\",\"description\":\"Lists all accounts to which the u" +
-            "ser has access.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"description\":\"Th" +
-            "e maximum number of accounts to include in this response.\",\"format\":\"int32\",\"loc" +
-            "ation\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the f" +
-            "irst account to retrieve. Use this parameter as a pagination mechanism along wit" +
-            "h the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}" +
-            "},\"response\":{\"$ref\":\"Accounts\"},\"scopes\":[\"https://www.googleapis.com/auth/anal" +
-            "ytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"goals\":{\"method" +
-            "s\":{\"list\":{\"id\":\"analytics.management.goals.list\",\"path\":\"management/accounts/{" +
-            "accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"Lists goals to which the user has access.\",\"parameters\":{" +
-            "\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to retrieve goals for. Ca" +
-            "n either be a specific account ID or \'~all\', which refers to all the accounts th" +
-            "at user has access to.\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\"" +
-            ":\"integer\",\"description\":\"The maximum number of goals to include in this respons" +
-            "e.\",\"format\":\"int32\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Profile ID to retrieve goals for. Can either be a specific profile ID or \'~" +
-            "all\', which refers to all the profiles that user has access to.\",\"required\":true" +
-            ",\"location\":\"path\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of t" +
-            "he first goal to retrieve. Use this parameter as a pagination mechanism along wi" +
-            "th the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"" +
-            "},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID to retrieve go" +
-            "als for. Can either be a specific web property ID or \'~all\', which refers to all" +
-            " the web properties that user has access to.\",\"required\":true,\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"accountId\",\"webPropertyId\",\"profileId\"],\"response\":{\"$ref\":" +
-            "\"Goals\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www.goog" +
-            "leapis.com/auth/analytics.readonly\"]}}},\"profiles\":{\"methods\":{\"list\":{\"id\":\"ana" +
-            "lytics.management.profiles.list\",\"path\":\"management/accounts/{accountId}/webprop" +
-            "erties/{webPropertyId}/profiles\",\"httpMethod\":\"GET\",\"description\":\"Lists profile" +
-            "s to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"des" +
-            "cription\":\"Account ID for the profiles to retrieve. Can either be a specific acc" +
-            "ount ID or \'~all\', which refers to all the accounts to which the user has access" +
-            ".\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"The maximum number of profiles to include in this response.\",\"format\":\"int3" +
-            "2\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index o" +
-            "f the first entity to retrieve. Use this parameter as a pagination mechanism alo" +
-            "ng with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"q" +
-            "uery\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID for the p" +
-            "rofiles to retrieve. Can either be a specific web property ID or \'~all\', which r" +
-            "efers to all the web properties to which the user has access.\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropertyId\"],\"response\":{\"$" +
-            "ref\":\"Profiles\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://" +
-            "www.googleapis.com/auth/analytics.readonly\"]}}},\"segments\":{\"methods\":{\"list\":{\"" +
-            "id\":\"analytics.management.segments.list\",\"path\":\"management/segments\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Lists advanced segments to which the user has access.\",\"" +
-            "parameters\":{\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum number o" +
-            "f advanced segments to include in this response.\",\"format\":\"int32\",\"location\":\"q" +
-            "uery\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the first adva" +
-            "nced segment to retrieve. Use this parameter as a pagination mechanism along wit" +
-            "h the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}" +
-            "},\"response\":{\"$ref\":\"Segments\"},\"scopes\":[\"https://www.googleapis.com/auth/anal" +
-            "ytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"webproperties\":" +
-            "{\"methods\":{\"list\":{\"id\":\"analytics.management.webproperties.list\",\"path\":\"manag" +
-            "ement/accounts/{accountId}/webproperties\",\"httpMethod\":\"GET\",\"description\":\"List" +
-            "s web properties to which the user has access.\",\"parameters\":{\"accountId\":{\"type" +
-            "\":\"string\",\"description\":\"Account ID to retrieve web properties for. Can either " +
-            "be a specific account ID or \'~all\', which refers to all the accounts that user h" +
-            "as access to.\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer" +
-            "\",\"description\":\"The maximum number of web properties to include in this respons" +
-            "e.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"descri" +
-            "ption\":\"An index of the first entity to retrieve. Use this parameter as a pagina" +
-            "tion mechanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\"" +
-            ":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"accountId\"],\"response\":{\"$ref\":\"Web" +
-            "properties\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www." +
-            "googleapis.com/auth/analytics.readonly\"]}}}}}}}";
+            "on\":\"Resource type.\",\"default\":\"analytics#mcfData\"},\"nextLink\":{\"type\":\"string\"," +
+            "\"description\":\"Link to next page for this Analytics data query.\"},\"previousLink\"" +
+            ":{\"type\":\"string\",\"description\":\"Link to previous page for this Analytics data q" +
+            "uery.\"},\"profileInfo\":{\"type\":\"object\",\"description\":\"Information for the profil" +
+            "e, for which the Analytics data was requested.\",\"properties\":{\"accountId\":{\"type" +
+            "\":\"string\",\"description\":\"Account ID to which this profile belongs.\"},\"internalW" +
+            "ebPropertyId\":{\"type\":\"string\",\"description\":\"Internal ID for the web property t" +
+            "o which this profile belongs.\"},\"profileId\":{\"type\":\"string\",\"description\":\"Prof" +
+            "ile ID.\"},\"profileName\":{\"type\":\"string\",\"description\":\"Profile name.\"},\"tableId" +
+            "\":{\"type\":\"string\",\"description\":\"Table ID for profile.\"},\"webPropertyId\":{\"type" +
+            "\":\"string\",\"description\":\"Web Property ID to which this profile belongs.\"}}},\"qu" +
+            "ery\":{\"type\":\"object\",\"description\":\"Analytics data request query parameters.\",\"" +
+            "properties\":{\"dimensions\":{\"type\":\"string\",\"description\":\"List of analytics dime" +
+            "nsions.\"},\"end-date\":{\"type\":\"string\",\"description\":\"End date.\"},\"filters\":{\"typ" +
+            "e\":\"string\",\"description\":\"Comma-separated list of dimension or metric filters.\"" +
+            "},\"ids\":{\"type\":\"string\",\"description\":\"Unique table ID.\"},\"max-results\":{\"type\"" +
+            ":\"integer\",\"description\":\"Maximum results per page.\",\"format\":\"int32\"},\"metrics\"" +
+            ":{\"type\":\"array\",\"description\":\"List of analytics metrics.\",\"items\":{\"type\":\"str" +
+            "ing\"}},\"segment\":{\"type\":\"string\",\"description\":\"Analytics advanced segment.\"},\"" +
+            "sort\":{\"type\":\"array\",\"description\":\"List of dimensions or metrics based on whic" +
+            "h Analytics data is sorted.\",\"items\":{\"type\":\"string\"}},\"start-date\":{\"type\":\"st" +
+            "ring\",\"description\":\"Start date.\"},\"start-index\":{\"type\":\"integer\",\"description\"" +
+            ":\"Start index.\",\"format\":\"int32\"}}},\"rows\":{\"type\":\"array\",\"description\":\"Analyt" +
+            "ics data rows, where each row contains a list of dimension values followed by th" +
+            "e metric values. The order of dimensions and metrics is same as specified in the" +
+            " request.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"description\":\"A uni" +
+            "on object representing a dimension or metric value. Only one of \\\"primitiveValue" +
+            "\\\" or \\\"conversionPathValue\\\" attribute will be populated.\",\"properties\":{\"conve" +
+            "rsionPathValue\":{\"type\":\"array\",\"description\":\"A conversion path dimension value" +
+            ", containing a list of interactions with their attributes.\",\"items\":{\"type\":\"obj" +
+            "ect\",\"properties\":{\"interactionType\":{\"type\":\"string\",\"description\":\"Type of an " +
+            "interaction on conversion path. Such as CLICK, IMPRESSION etc.\"},\"nodeValue\":{\"t" +
+            "ype\":\"string\",\"description\":\"Node value of an interaction on conversion path. Su" +
+            "ch as source, medium etc.\"}}}},\"primitiveValue\":{\"type\":\"string\",\"description\":\"" +
+            "A primitive dimension value. A primitive metric value.\"}}}}},\"selfLink\":{\"type\":" +
+            "\"string\",\"description\":\"Link to this page.\"},\"totalResults\":{\"type\":\"integer\",\"d" +
+            "escription\":\"The total number of rows for the query, regardless of the number of" +
+            " rows in the response.\",\"format\":\"int32\"},\"totalsForAllResults\":{\"type\":\"object\"" +
+            ",\"description\":\"Total values for the requested metrics over all the results, not" +
+            " just the results returned in this response. The order of the metric totals is s" +
+            "ame as the metric order specified in the request.\",\"additionalProperties\":{\"type" +
+            "\":\"string\",\"description\":\"Key-value pair for the total value of a metric. Key is" +
+            " the metric name and the value is the total value for that metric.\"}}}},\"Profile" +
+            "\":{\"id\":\"Profile\",\"type\":\"object\",\"description\":\"JSON template for an Analytics " +
+            "profile.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID t" +
+            "o which this profile belongs.\"},\"childLink\":{\"type\":\"object\",\"description\":\"Chil" +
+            "d link for this profile. Points to the list of goals for this profile.\",\"propert" +
+            "ies\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the list of goals for this " +
+            "profile.\"},\"type\":{\"type\":\"string\",\"description\":\"Value is \\\"analytics#goals\\\".\"" +
+            ",\"default\":\"analytics#goals\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time t" +
+            "his profile was created.\",\"format\":\"date-time\"},\"currency\":{\"type\":\"string\",\"des" +
+            "cription\":\"The currency type associated with this profile.\"},\"defaultPage\":{\"typ" +
+            "e\":\"string\",\"description\":\"Default page for this profile.\"},\"eCommerceTracking\":" +
+            "{\"type\":\"boolean\",\"description\":\"E-commerce tracking parameter for this profile." +
+            "\"},\"excludeQueryParameters\":{\"type\":\"string\",\"description\":\"The query parameters" +
+            " that are excluded from this profile.\"},\"id\":{\"type\":\"string\",\"description\":\"Pro" +
+            "file ID.\"},\"internalWebPropertyId\":{\"type\":\"string\",\"description\":\"Internal ID f" +
+            "or the web property to which this profile belongs.\"},\"kind\":{\"type\":\"string\",\"de" +
+            "scription\":\"Resource type for Analytics profile.\",\"default\":\"analytics#profile\"}" +
+            ",\"name\":{\"type\":\"string\",\"description\":\"Name of this profile.\"},\"parentLink\":{\"t" +
+            "ype\":\"object\",\"description\":\"Parent link for this profile. Points to the web pro" +
+            "perty to which this profile belongs.\",\"properties\":{\"href\":{\"type\":\"string\",\"des" +
+            "cription\":\"Link to the web property to which this profile belongs.\"},\"type\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Value is \\\"analytics#webproperty\\\".\",\"default\":\"anal" +
+            "ytics#webproperty\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this p" +
+            "rofile.\"},\"siteSearchCategoryParameters\":{\"type\":\"string\",\"description\":\"Site se" +
+            "arch category parameters for this profile.\"},\"siteSearchQueryParameters\":{\"type\"" +
+            ":\"string\",\"description\":\"The site search query parameters for this profile.\"},\"t" +
+            "imezone\":{\"type\":\"string\",\"description\":\"Time zone for which this profile has be" +
+            "en configured.\"},\"updated\":{\"type\":\"string\",\"description\":\"Time this profile was" +
+            " last modified.\",\"format\":\"date-time\"},\"webPropertyId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Web property ID of the form UA-XXXXX-YY to which this profile belongs.\"}," +
+            "\"websiteUrl\":{\"type\":\"string\",\"description\":\"Website URL for this profile.\"}}},\"" +
+            "Profiles\":{\"id\":\"Profiles\",\"type\":\"object\",\"description\":\"A profile collection l" +
+            "ists Analytics profiles to which the user has access. Each resource in the colle" +
+            "ction corresponds to a single Analytics profile.\",\"properties\":{\"items\":{\"type\":" +
+            "\"array\",\"description\":\"A list of profiles.\",\"items\":{\"$ref\":\"Profile\"}},\"itemsPe" +
+            "rPage\":{\"type\":\"integer\",\"description\":\"The maximum number of resources the resp" +
+            "onse can contain, regardless of the actual number of resources returned. Its val" +
+            "ue ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified" +
+            " by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\"," +
+            "\"description\":\"Collection type.\",\"default\":\"analytics#profiles\"},\"nextLink\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Link to next page for this profile collection.\"},\"pr" +
+            "eviousLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this profi" +
+            "le collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting inde" +
+            "x of the resources, which is 1 by default or otherwise specified by the start-in" +
+            "dex query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"The total number of results for the query, regardless of the number of r" +
+            "esults in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Email ID of the authenticated user\"}}},\"Segment\":{\"id\":\"Segment\",\"type\":\"o" +
+            "bject\",\"description\":\"JSON template for an Analytics advanced segment.\",\"propert" +
+            "ies\":{\"created\":{\"type\":\"string\",\"description\":\"Time the advanced segment was cr" +
+            "eated.\",\"format\":\"date-time\"},\"definition\":{\"type\":\"string\",\"description\":\"Advan" +
+            "ced segment definition.\"},\"id\":{\"type\":\"string\",\"description\":\"Advanced segment " +
+            "ID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for Analytics advance" +
+            "d segment.\",\"default\":\"analytics#segment\"},\"name\":{\"type\":\"string\",\"description\"" +
+            ":\"Advanced segment name.\"},\"segmentId\":{\"type\":\"string\",\"description\":\"Segment I" +
+            "D. Can be used with the \'segment\' parameter in Data Feed.\"},\"selfLink\":{\"type\":\"" +
+            "string\",\"description\":\"Link for this advanced segment.\"},\"updated\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Time the advanced segment was last modified.\",\"format\":\"date-" +
+            "time\"}}},\"Segments\":{\"id\":\"Segments\",\"type\":\"object\",\"description\":\"An advanced " +
+            "segment collection lists Analytics advanced segments that the user has access to" +
+            ". Each resource in the collection corresponds to a single Analytics advanced seg" +
+            "ment.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of advanced s" +
+            "egments.\",\"items\":{\"$ref\":\"Segment\"}},\"itemsPerPage\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"The maximum number of resources the response can contain, regardless of th" +
+            "e actual number of resources returned. Its value ranges from 1 to 1000 with a va" +
+            "lue of 1000 by default, or otherwise specified by the max-results query paramete" +
+            "r.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Collection type for" +
+            " advanced segments.\",\"default\":\"analytics#segments\"},\"nextLink\":{\"type\":\"string\"" +
+            ",\"description\":\"Link to next page for this advanced segment collection.\"},\"previ" +
+            "ousLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this advanced" +
+            " segment collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The startin" +
+            "g index of the resources, which is 1 by default or otherwise specified by the st" +
+            "art-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"" +
+            "description\":\"The total number of results for the query, regardless of the numbe" +
+            "r of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"de" +
+            "scription\":\"Email ID of the authenticated user\"}}},\"Webproperties\":{\"id\":\"Webpro" +
+            "perties\",\"type\":\"object\",\"description\":\"A web property collection lists Analytic" +
+            "s web properties to which the user has access. Each resource in the collection c" +
+            "orresponds to a single Analytics web property.\",\"properties\":{\"items\":{\"type\":\"a" +
+            "rray\",\"description\":\"A list of web properties.\",\"items\":{\"$ref\":\"Webproperty\"}}," +
+            "\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum number of resources " +
+            "the response can contain, regardless of the actual number of resources returned." +
+            " Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise s" +
+            "pecified by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"" +
+            "string\",\"description\":\"Collection type.\",\"default\":\"analytics#webproperties\"},\"n" +
+            "extLink\":{\"type\":\"string\",\"description\":\"Link to next page for this web property" +
+            " collection.\"},\"previousLink\":{\"type\":\"string\",\"description\":\"Link to previous p" +
+            "age for this web property collection.\"},\"startIndex\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"The starting index of the resources, which is 1 by default or otherwise sp" +
+            "ecified by the start-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"" +
+            "type\":\"integer\",\"description\":\"The total number of results for the query, regard" +
+            "less of the number of results in the response.\",\"format\":\"int32\"},\"username\":{\"t" +
+            "ype\":\"string\",\"description\":\"Email ID of the authenticated user\"}}},\"Webproperty" +
+            "\":{\"id\":\"Webproperty\",\"type\":\"object\",\"description\":\"JSON template for an Analyt" +
+            "ics web property.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Acc" +
+            "ount ID to which this web property belongs.\"},\"childLink\":{\"type\":\"object\",\"desc" +
+            "ription\":\"Child link for this web property. Points to the list of profiles for t" +
+            "his web property.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to " +
+            "the list of profiles for this web property.\"},\"type\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Type of the parent link. Its value is \\\"analytics#profiles\\\".\",\"default\":\"a" +
+            "nalytics#profiles\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time this web pr" +
+            "operty was created.\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"description\":\"" +
+            "Web property ID of the form UA-XXXXX-YY.\"},\"internalWebPropertyId\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Internal ID for this web property.\"},\"kind\":{\"type\":\"string\"," +
+            "\"description\":\"Resource type for Analytics WebProperty.\",\"default\":\"analytics#we" +
+            "bproperty\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this web property.\"}," +
+            "\"parentLink\":{\"type\":\"object\",\"description\":\"Parent link for this web property. " +
+            "Points to the account to which this web property belongs.\",\"properties\":{\"href\":" +
+            "{\"type\":\"string\",\"description\":\"Link to the account for this web property.\"},\"ty" +
+            "pe\":{\"type\":\"string\",\"description\":\"Type of the parent link. Its value is \\\"anal" +
+            "ytics#account\\\".\",\"default\":\"analytics#account\"}}},\"selfLink\":{\"type\":\"string\",\"" +
+            "description\":\"Link for this web property.\"},\"updated\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Time this web property was last modified.\",\"format\":\"date-time\"},\"websiteU" +
+            "rl\":{\"type\":\"string\",\"description\":\"Website url for this web property.\"}}}},\"res" +
+            "ources\":{\"data\":{\"resources\":{\"ga\":{\"methods\":{\"get\":{\"id\":\"analytics.data.ga.ge" +
+            "t\",\"path\":\"data/ga\",\"httpMethod\":\"GET\",\"description\":\"Returns Analytics data for" +
+            " a profile.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A comma-" +
+            "separated list of Analytics dimensions. E.g., \'ga:browser,ga:city\'.\",\"pattern\":\"" +
+            "(ga:.+)?\",\"location\":\"query\"},\"end-date\":{\"type\":\"string\",\"description\":\"End dat" +
+            "e for fetching Analytics data. All requests should specify an end date formatted" +
+            " as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"locatio" +
+            "n\":\"query\"},\"filters\":{\"type\":\"string\",\"description\":\"A comma-separated list of " +
+            "dimension or metric filters to be applied to Analytics data.\",\"pattern\":\"ga:.+\"," +
+            "\"location\":\"query\"},\"ids\":{\"type\":\"string\",\"description\":\"Unique table ID for re" +
+            "trieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the Anal" +
+            "ytics profile ID.\",\"required\":true,\"pattern\":\"ga:[0-9]+\",\"location\":\"query\"},\"ma" +
+            "x-results\":{\"type\":\"integer\",\"description\":\"The maximum number of entries to inc" +
+            "lude in this feed.\",\"format\":\"int32\",\"location\":\"query\"},\"metrics\":{\"type\":\"stri" +
+            "ng\",\"description\":\"A comma-separated list of Analytics metrics. E.g., \'ga:visits" +
+            ",ga:pageviews\'. At least one metric must be specified.\",\"required\":true,\"pattern" +
+            "\":\"ga:.+\",\"location\":\"query\"},\"segment\":{\"type\":\"string\",\"description\":\"An Analy" +
+            "tics advanced segment to be applied to data.\",\"location\":\"query\"},\"sort\":{\"type\"" +
+            ":\"string\",\"description\":\"A comma-separated list of dimensions or metrics that de" +
+            "termine the sort order for Analytics data.\",\"pattern\":\"(-)?ga:.+\",\"location\":\"qu" +
+            "ery\"},\"start-date\":{\"type\":\"string\",\"description\":\"Start date for fetching Analy" +
+            "tics data. All requests should specify a start date formatted as YYYY-MM-DD.\",\"r" +
+            "equired\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"start-" +
+            "index\":{\"type\":\"integer\",\"description\":\"An index of the first entity to retrieve" +
+            ". Use this parameter as a pagination mechanism along with the max-results parame" +
+            "ter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"ids" +
+            "\",\"start-date\",\"end-date\",\"metrics\"],\"response\":{\"$ref\":\"GaData\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analyti" +
+            "cs.readonly\"]}}},\"mcf\":{\"methods\":{\"get\":{\"id\":\"analytics.data.mcf.get\",\"path\":\"" +
+            "data/mcf\",\"httpMethod\":\"GET\",\"description\":\"Returns Analytics Multi-Channel Funn" +
+            "els data for a profile.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"A comma-separated list of Multi-Channel Funnels dimensions. E.g., \'mcf:sourc" +
+            "e,mcf:medium\'.\",\"pattern\":\"(mcf:.+)?\",\"location\":\"query\"},\"end-date\":{\"type\":\"st" +
+            "ring\",\"description\":\"End date for fetching Analytics data. All requests should s" +
+            "pecify an end date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}" +
+            "-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"filters\":{\"type\":\"string\",\"description\"" +
+            ":\"A comma-separated list of dimension or metric filters to be applied to the Ana" +
+            "lytics data.\",\"pattern\":\"mcf:.+\",\"location\":\"query\"},\"ids\":{\"type\":\"string\",\"des" +
+            "cription\":\"Unique table ID for retrieving Analytics data. Table ID is of the for" +
+            "m ga:XXXX, where XXXX is the Analytics profile ID.\",\"required\":true,\"pattern\":\"g" +
+            "a:[0-9]+\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The" +
+            " maximum number of entries to include in this feed.\",\"format\":\"int32\",\"location\"" +
+            ":\"query\"},\"metrics\":{\"type\":\"string\",\"description\":\"A comma-separated list of Mu" +
+            "lti-Channel Funnels metrics. E.g., \'mcf:totalConversions,mcf:totalConversionValu" +
+            "e\'. At least one metric must be specified.\",\"required\":true,\"pattern\":\"mcf:.+\",\"" +
+            "location\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"A comma-separated list" +
+            " of dimensions or metrics that determine the sort order for the Analytics data.\"" +
+            ",\"pattern\":\"(-)?mcf:.+\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Start date for fetching Analytics data. All requests should specify a s" +
+            "tart date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}" +
+            "-[0-9]{2}\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An" +
+            " index of the first entity to retrieve. Use this parameter as a pagination mecha" +
+            "nism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"loca" +
+            "tion\":\"query\"}},\"parameterOrder\":[\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"resp" +
+            "onse\":{\"$ref\":\"McfData\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"" +
+            "https://www.googleapis.com/auth/analytics.readonly\"]}}}}},\"management\":{\"resourc" +
+            "es\":{\"accounts\":{\"methods\":{\"list\":{\"id\":\"analytics.management.accounts.list\",\"p" +
+            "ath\":\"management/accounts\",\"httpMethod\":\"GET\",\"description\":\"Lists all accounts " +
+            "to which the user has access.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"de" +
+            "scription\":\"The maximum number of accounts to include in this response.\",\"format" +
+            "\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An " +
+            "index of the first account to retrieve. Use this parameter as a pagination mecha" +
+            "nism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"loca" +
+            "tion\":\"query\"}},\"response\":{\"$ref\":\"Accounts\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"c" +
+            "ustomDataSources\":{\"methods\":{\"list\":{\"id\":\"analytics.management.customDataSourc" +
+            "es.list\",\"path\":\"management/accounts/{accountId}/webproperties/{webPropertyId}/c" +
+            "ustomDataSources\",\"httpMethod\":\"GET\",\"description\":\"List custom data sources to " +
+            "which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Account Id for the custom data sources to retrieve.\",\"required\":true,\"patt" +
+            "ern\":\"\\\\d+\",\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Th" +
+            "e maximum number of custom data sources to include in this response.\",\"format\":\"" +
+            "int32\",\"minimum\":\"1\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"A 1-based index of the first custom data source to retrieve. Use this pa" +
+            "rameter as a pagination mechanism along with the max-results parameter.\",\"format" +
+            "\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"de" +
+            "scription\":\"Web property Id for the custom data sources to retrieve.\",\"required\"" +
+            ":true,\"pattern\":\"UA-(\\\\d+)-(\\\\d+)\",\"location\":\"path\"}},\"parameterOrder\":[\"accoun" +
+            "tId\",\"webPropertyId\"],\"response\":{\"$ref\":\"CustomDataSources\"},\"scopes\":[\"https:/" +
+            "/www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.r" +
+            "eadonly\"]}}},\"dailyUploads\":{\"methods\":{\"delete\":{\"id\":\"analytics.management.dai" +
+            "lyUploads.delete\",\"path\":\"management/accounts/{accountId}/webproperties/{webProp" +
+            "ertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}\",\"httpMethod\"" +
+            ":\"DELETE\",\"description\":\"Delete uploaded data for the given date.\",\"parameters\":" +
+            "{\"accountId\":{\"type\":\"string\",\"description\":\"Account Id associated with daily up" +
+            "load delete.\",\"required\":true,\"pattern\":\"[0-9]+\",\"location\":\"path\"},\"customDataS" +
+            "ourceId\":{\"type\":\"string\",\"description\":\"Custom data source Id associated with d" +
+            "aily upload delete.\",\"required\":true,\"location\":\"path\"},\"date\":{\"type\":\"string\"," +
+            "\"description\":\"Date for which data is to be deleted. Date should be formatted as" +
+            " YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":" +
+            "\"path\"},\"type\":{\"type\":\"string\",\"description\":\"Type of data for this delete.\",\"r" +
+            "equired\":true,\"enum\":[\"cost\"],\"enumDescriptions\":[\"Value for specifying cost dat" +
+            "a upload.\"],\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"" +
+            "Web property Id associated with daily upload delete.\",\"required\":true,\"pattern\":" +
+            "\"UA-[0-9]+-[0-9]+\",\"location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropert" +
+            "yId\",\"customDataSourceId\",\"date\",\"type\"],\"scopes\":[\"https://www.googleapis.com/a" +
+            "uth/analytics\"]},\"list\":{\"id\":\"analytics.management.dailyUploads.list\",\"path\":\"m" +
+            "anagement/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{" +
+            "customDataSourceId}/dailyUploads\",\"httpMethod\":\"GET\",\"description\":\"List daily u" +
+            "ploads to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\"" +
+            ",\"description\":\"Account Id for the daily uploads to retrieve.\",\"required\":true,\"" +
+            "pattern\":\"\\\\d+\",\"location\":\"path\"},\"customDataSourceId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Custom data source Id for daily uploads to retrieve.\",\"required\":true,\"p" +
+            "attern\":\".{22}\",\"location\":\"path\"},\"end-date\":{\"type\":\"string\",\"description\":\"En" +
+            "d date of the form YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-" +
+            "9]{2}\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The ma" +
+            "ximum number of custom data sources to include in this response.\",\"format\":\"int3" +
+            "2\",\"minimum\":\"1\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"description\"" +
+            ":\"Start date of the form YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{" +
+            "2}-[0-9]{2}\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"" +
+            "A 1-based index of the first daily upload to retrieve. Use this parameter as a p" +
+            "agination mechanism along with the max-results parameter.\",\"format\":\"int32\",\"min" +
+            "imum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"We" +
+            "b property Id for the daily uploads to retrieve.\",\"required\":true,\"pattern\":\"UA-" +
+            "(\\\\d+)-(\\\\d+)\",\"location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropertyId\"" +
+            ",\"customDataSourceId\",\"start-date\",\"end-date\"],\"response\":{\"$ref\":\"DailyUploads\"" +
+            "},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googleapis." +
+            "com/auth/analytics.readonly\"]},\"upload\":{\"id\":\"analytics.management.dailyUploads" +
+            ".upload\",\"path\":\"management/accounts/{accountId}/webproperties/{webPropertyId}/c" +
+            "ustomDataSources/{customDataSourceId}/dailyUploads/{date}/uploads\",\"httpMethod\":" +
+            "\"POST\",\"description\":\"Update/Overwrite data for a custom data source.\",\"paramete" +
+            "rs\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account Id associated with dail" +
+            "y upload.\",\"required\":true,\"pattern\":\"\\\\d+\",\"location\":\"path\"},\"appendNumber\":{\"" +
+            "type\":\"integer\",\"description\":\"Append number for this upload indexed from 1.\",\"r" +
+            "equired\":true,\"format\":\"int32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"query\"}," +
+            "\"customDataSourceId\":{\"type\":\"string\",\"description\":\"Custom data source Id to wh" +
+            "ich the data being uploaded belongs.\",\"required\":true,\"location\":\"path\"},\"date\":" +
+            "{\"type\":\"string\",\"description\":\"Date for which data is uploaded. Date should be " +
+            "formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\"" +
+            ",\"location\":\"path\"},\"reset\":{\"type\":\"boolean\",\"description\":\"Reset/Overwrite all" +
+            " previous appends for this date and start over with this file as the first uploa" +
+            "d.\",\"default\":\"false\",\"location\":\"query\"},\"type\":{\"type\":\"string\",\"description\":" +
+            "\"Type of data for this upload.\",\"required\":true,\"enum\":[\"cost\"],\"enumDescription" +
+            "s\":[\"Value for specifying cost data upload.\"],\"location\":\"query\"},\"webPropertyId" +
+            "\":{\"type\":\"string\",\"description\":\"Web property Id associated with daily upload.\"" +
+            ",\"required\":true,\"pattern\":\"UA-\\\\d+-\\\\d+\",\"location\":\"path\"}},\"parameterOrder\":[" +
+            "\"accountId\",\"webPropertyId\",\"customDataSourceId\",\"date\",\"appendNumber\",\"type\"],\"" +
+            "response\":{\"$ref\":\"DailyUploadAppend\"},\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/analytics\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"application/o" +
+            "ctet-stream\"],\"maxSize\":\"5MB\",\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"/u" +
+            "pload/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId}" +
+            "/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads\"},\"resumable" +
+            "\":{\"multipart\":true,\"path\":\"/resumable/upload/analytics/v3/management/accounts/{" +
+            "accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSourceId}/" +
+            "dailyUploads/{date}/uploads\"}}}}}},\"goals\":{\"methods\":{\"list\":{\"id\":\"analytics.m" +
+            "anagement.goals.list\",\"path\":\"management/accounts/{accountId}/webproperties/{web" +
+            "PropertyId}/profiles/{profileId}/goals\",\"httpMethod\":\"GET\",\"description\":\"Lists " +
+            "goals to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\"," +
+            "\"description\":\"Account ID to retrieve goals for. Can either be a specific accoun" +
+            "t ID or \'~all\', which refers to all the accounts that user has access to.\",\"requ" +
+            "ired\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The" +
+            " maximum number of goals to include in this response.\",\"format\":\"int32\",\"locatio" +
+            "n\":\"query\"},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID to retrieve g" +
+            "oals for. Can either be a specific profile ID or \'~all\', which refers to all the" +
+            " profiles that user has access to.\",\"required\":true,\"location\":\"path\"},\"start-in" +
+            "dex\":{\"type\":\"integer\",\"description\":\"An index of the first goal to retrieve. Us" +
+            "e this parameter as a pagination mechanism along with the max-results parameter." +
+            "\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\":\"st" +
+            "ring\",\"description\":\"Web property ID to retrieve goals for. Can either be a spec" +
+            "ific web property ID or \'~all\', which refers to all the web properties that user" +
+            " has access to.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"accountI" +
+            "d\",\"webPropertyId\",\"profileId\"],\"response\":{\"$ref\":\"Goals\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.rea" +
+            "donly\"]}}},\"profiles\":{\"methods\":{\"list\":{\"id\":\"analytics.management.profiles.li" +
+            "st\",\"path\":\"management/accounts/{accountId}/webproperties/{webPropertyId}/profil" +
+            "es\",\"httpMethod\":\"GET\",\"description\":\"Lists profiles to which the user has acces" +
+            "s.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID for the" +
+            " profiles to retrieve. Can either be a specific account ID or \'~all\', which refe" +
+            "rs to all the accounts to which the user has access.\",\"required\":true,\"location\"" +
+            ":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum number of pr" +
+            "ofiles to include in this response.\",\"format\":\"int32\",\"location\":\"query\"},\"start" +
+            "-index\":{\"type\":\"integer\",\"description\":\"An index of the first entity to retriev" +
+            "e. Use this parameter as a pagination mechanism along with the max-results param" +
+            "eter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type" +
+            "\":\"string\",\"description\":\"Web property ID for the profiles to retrieve. Can eith" +
+            "er be a specific web property ID or \'~all\', which refers to all the web properti" +
+            "es to which the user has access.\",\"required\":true,\"location\":\"path\"}},\"parameter" +
+            "Order\":[\"accountId\",\"webPropertyId\"],\"response\":{\"$ref\":\"Profiles\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analy" +
+            "tics.readonly\"]}}},\"segments\":{\"methods\":{\"list\":{\"id\":\"analytics.management.seg" +
+            "ments.list\",\"path\":\"management/segments\",\"httpMethod\":\"GET\",\"description\":\"Lists" +
+            " advanced segments to which the user has access.\",\"parameters\":{\"max-results\":{\"" +
+            "type\":\"integer\",\"description\":\"The maximum number of advanced segments to includ" +
+            "e in this response.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":" +
+            "\"integer\",\"description\":\"An index of the first advanced segment to retrieve. Use" +
+            " this parameter as a pagination mechanism along with the max-results parameter.\"" +
+            ",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Segment" +
+            "s\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googleapi" +
+            "s.com/auth/analytics.readonly\"]}}},\"webproperties\":{\"methods\":{\"list\":{\"id\":\"ana" +
+            "lytics.management.webproperties.list\",\"path\":\"management/accounts/{accountId}/we" +
+            "bproperties\",\"httpMethod\":\"GET\",\"description\":\"Lists web properties to which the" +
+            " user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Acc" +
+            "ount ID to retrieve web properties for. Can either be a specific account ID or \'" +
+            "~all\', which refers to all the accounts that user has access to.\",\"required\":tru" +
+            "e,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum " +
+            "number of web properties to include in this response.\",\"format\":\"int32\",\"locatio" +
+            "n\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the first" +
+            " entity to retrieve. Use this parameter as a pagination mechanism along with the" +
+            " max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"pa" +
+            "rameterOrder\":[\"accountId\"],\"response\":{\"$ref\":\"Webproperties\"},\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics" +
+            ".readonly\"]}}}}}}}";
         
         public const string Version = "v3";
         
@@ -3820,6 +4756,10 @@ namespace Google.Apis.Analytics.v3 {
         
         private AccountsResource _accounts;
         
+        private CustomDataSourcesResource _customDataSources;
+        
+        private DailyUploadsResource _dailyUploads;
+        
         private GoalsResource _goals;
         
         private ProfilesResource _profiles;
@@ -3832,6 +4772,8 @@ namespace Google.Apis.Analytics.v3 {
             this.service = service;
             this._authenticator = _authenticator;
             this._accounts = new AccountsResource(service, _authenticator);
+            this._customDataSources = new CustomDataSourcesResource(service, _authenticator);
+            this._dailyUploads = new DailyUploadsResource(service, _authenticator);
             this._goals = new GoalsResource(service, _authenticator);
             this._profiles = new ProfilesResource(service, _authenticator);
             this._segments = new SegmentsResource(service, _authenticator);
@@ -3841,6 +4783,18 @@ namespace Google.Apis.Analytics.v3 {
         public virtual AccountsResource Accounts {
             get {
                 return this._accounts;
+            }
+        }
+        
+        public virtual CustomDataSourcesResource CustomDataSources {
+            get {
+                return this._customDataSources;
+            }
+        }
+        
+        public virtual DailyUploadsResource DailyUploads {
+            get {
+                return this._dailyUploads;
             }
         }
         
@@ -3953,6 +4907,649 @@ namespace Google.Apis.Analytics.v3 {
                 protected override string MethodName {
                     get {
                         return "list";
+                    }
+                }
+            }
+        }
+        
+        public class CustomDataSourcesResource {
+            
+            private AnalyticsService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            
+            private const string Resource = "management.customDataSources";
+            
+            public CustomDataSourcesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+                this.service = service;
+                this._authenticator = _authenticator;
+            }
+            
+            /// <summary>List custom data sources to which the user has access.</summary>
+            /// <param name="accountId">Required - Must match pattern \d+ - Account Id for the custom data sources to retrieve.</param>
+            /// <param name="webPropertyId">Required - Must match pattern UA-(\d+)-(\d+) - Web property Id for the custom data sources to retrieve.</param>
+            public virtual ListRequest List(string accountId, string webPropertyId) {
+                return new ListRequest(service, accountId, webPropertyId);
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.CustomDataSources> {
+                
+                private string _oauth_token;
+                
+                private System.Nullable<bool> _prettyPrint;
+                
+                private string _accountId;
+                
+                private System.Nullable<long> _maxResults;
+                
+                private System.Nullable<long> _startIndex;
+                
+                private string _webPropertyId;
+                
+                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId) : 
+                        base(service) {
+                    this._accountId = accountId;
+                    this._webPropertyId = webPropertyId;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Oauth_token {
+                    get {
+                        return this._oauth_token;
+                    }
+                    set {
+                        this._oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<bool> PrettyPrint {
+                    get {
+                        return this._prettyPrint;
+                    }
+                    set {
+                        this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Account Id for the custom data sources to retrieve.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("accountId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string AccountId {
+                    get {
+                        return this._accountId;
+                    }
+                }
+                
+                /// <summary>The maximum number of custom data sources to include in this response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<long> MaxResults {
+                    get {
+                        return this._maxResults;
+                    }
+                    set {
+                        this._maxResults = value;
+                    }
+                }
+                
+                /// <summary>A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<long> StartIndex {
+                    get {
+                        return this._startIndex;
+                    }
+                    set {
+                        this._startIndex = value;
+                    }
+                }
+                
+                /// <summary>Web property Id for the custom data sources to retrieve.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("webPropertyId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string WebPropertyId {
+                    get {
+                        return this._webPropertyId;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "management.customDataSources";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+        }
+        
+        public class DailyUploadsResource {
+            
+            private AnalyticsService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            
+            private const string Resource = "management.dailyUploads";
+            
+            public DailyUploadsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+                this.service = service;
+                this._authenticator = _authenticator;
+            }
+            
+            /// <summary>Delete uploaded data for the given date.</summary>
+            /// <param name="accountId">Required - Must match pattern [0-9]+ - Account Id associated with daily upload delete.</param>
+            /// <param name="webPropertyId">Required - Must match pattern UA-[0-9]+-[0-9]+ - Web property Id associated with daily upload delete.</param>
+            /// <param name="customDataSourceId">Required - Custom data source Id associated with daily upload delete.</param>
+            /// <param name="date">Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Date for which data is to be deleted. Date should be formatted as YYYY-MM-DD.</param>
+            /// <param name="type">Required - Must be one of the following values [cost] - Type of data for this delete.</param>
+            public virtual DeleteRequest Delete(string accountId, string webPropertyId, string customDataSourceId, string date, Type type) {
+                return new DeleteRequest(service, accountId, webPropertyId, customDataSourceId, date, type);
+            }
+            
+            /// <summary>List daily uploads to which the user has access.</summary>
+            /// <param name="accountId">Required - Must match pattern \d+ - Account Id for the daily uploads to retrieve.</param>
+            /// <param name="webPropertyId">Required - Must match pattern UA-(\d+)-(\d+) - Web property Id for the daily uploads to retrieve.</param>
+            /// <param name="customDataSourceId">Required - Must match pattern .{22} - Custom data source Id for daily uploads to retrieve.</param>
+            /// <param name="startDate">start-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Start date of the form YYYY-MM-DD.</param>
+            /// <param name="endDate">end-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - End date of the form YYYY-MM-DD.</param>
+            public virtual ListRequest List(string accountId, string webPropertyId, string customDataSourceId, string startDate, string endDate) {
+                return new ListRequest(service, accountId, webPropertyId, customDataSourceId, startDate, endDate);
+            }
+            
+            /// <summary>Update/Overwrite data for a custom data source.</summary>
+            /// <param name="accountId">Required - Must match pattern \d+ - Account Id associated with daily upload.</param>
+            /// <param name="webPropertyId">Required - Must match pattern UA-\d+-\d+ - Web property Id associated with daily upload.</param>
+            /// <param name="customDataSourceId">Required - Custom data source Id to which the data being uploaded belongs.</param>
+            /// <param name="date">Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Date for which data is uploaded. Date should be formatted as YYYY-MM-DD.</param>
+            /// <param name="appendNumber">Required - Minimum value of 1 - Maximum value of 20 - Append number for this upload indexed from 1.</param>
+            /// <param name="type">Required - Must be one of the following values [cost] - Type of data for this upload.</param>
+            public virtual UploadRequest Upload(string accountId, string webPropertyId, string customDataSourceId, string date, long appendNumber, Type type) {
+                return new UploadRequest(service, accountId, webPropertyId, customDataSourceId, date, appendNumber, type);
+            }
+            
+            /// <summary>Update/Overwrite data for a custom data source.</summary>
+            /// <param name="accountId">Required - Must match pattern \d+ - Account Id associated with daily upload.</param>
+            /// <param name="webPropertyId">Required - Must match pattern UA-\d+-\d+ - Web property Id associated with daily upload.</param>
+            /// <param name="customDataSourceId">Required - Custom data source Id to which the data being uploaded belongs.</param>
+            /// <param name="date">Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Date for which data is uploaded. Date should be formatted as YYYY-MM-DD.</param>
+            /// <param name="appendNumber">Required - Minimum value of 1 - Maximum value of 20 - Append number for this upload indexed from 1.</param>
+            /// <param name="type">Required - Must be one of the following values [cost] - Type of data for this upload.</param>
+            public virtual UploadMediaUpload Upload(string accountId, string webPropertyId, string customDataSourceId, string date, long appendNumber, Type type, System.IO.Stream stream, string contentType) {
+                return new UploadMediaUpload(service, accountId, webPropertyId, customDataSourceId, date, appendNumber, type, stream, contentType);
+            }
+            
+            /// <summary>Type of data for this delete.</summary>
+            [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+            public enum Type {
+                
+                /// <summary>Value for specifying cost data upload.</summary>
+                [Google.Apis.Util.StringValueAttribute("cost")]
+                Cost,
+            }
+            
+            public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+                
+                private string _oauth_token;
+                
+                private System.Nullable<bool> _prettyPrint;
+                
+                private string _accountId;
+                
+                private string _customDataSourceId;
+                
+                private string _date;
+                
+                private Type _type;
+                
+                private string _webPropertyId;
+                
+                public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string customDataSourceId, string date, Type type) : 
+                        base(service) {
+                    this._accountId = accountId;
+                    this._webPropertyId = webPropertyId;
+                    this._customDataSourceId = customDataSourceId;
+                    this._date = date;
+                    this._type = type;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Oauth_token {
+                    get {
+                        return this._oauth_token;
+                    }
+                    set {
+                        this._oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<bool> PrettyPrint {
+                    get {
+                        return this._prettyPrint;
+                    }
+                    set {
+                        this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Account Id associated with daily upload delete.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("accountId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string AccountId {
+                    get {
+                        return this._accountId;
+                    }
+                }
+                
+                /// <summary>Custom data source Id associated with daily upload delete.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("customDataSourceId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string CustomDataSourceId {
+                    get {
+                        return this._customDataSourceId;
+                    }
+                }
+                
+                /// <summary>Date for which data is to be deleted. Date should be formatted as YYYY-MM-DD.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("date", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string Date {
+                    get {
+                        return this._date;
+                    }
+                }
+                
+                /// <summary>Type of data for this delete.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("type", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual Type Type {
+                    get {
+                        return this._type;
+                    }
+                }
+                
+                /// <summary>Web property Id associated with daily upload delete.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("webPropertyId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string WebPropertyId {
+                    get {
+                        return this._webPropertyId;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "management.dailyUploads";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "delete";
+                    }
+                }
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.DailyUploads> {
+                
+                private string _oauth_token;
+                
+                private System.Nullable<bool> _prettyPrint;
+                
+                private string _accountId;
+                
+                private string _customDataSourceId;
+                
+                private string _endDate;
+                
+                private System.Nullable<long> _maxResults;
+                
+                private string _startDate;
+                
+                private System.Nullable<long> _startIndex;
+                
+                private string _webPropertyId;
+                
+                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string customDataSourceId, string startDate, string endDate) : 
+                        base(service) {
+                    this._accountId = accountId;
+                    this._webPropertyId = webPropertyId;
+                    this._customDataSourceId = customDataSourceId;
+                    this._startDate = startDate;
+                    this._endDate = endDate;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Oauth_token {
+                    get {
+                        return this._oauth_token;
+                    }
+                    set {
+                        this._oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<bool> PrettyPrint {
+                    get {
+                        return this._prettyPrint;
+                    }
+                    set {
+                        this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Account Id for the daily uploads to retrieve.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("accountId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string AccountId {
+                    get {
+                        return this._accountId;
+                    }
+                }
+                
+                /// <summary>Custom data source Id for daily uploads to retrieve.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("customDataSourceId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string CustomDataSourceId {
+                    get {
+                        return this._customDataSourceId;
+                    }
+                }
+                
+                /// <summary>End date of the form YYYY-MM-DD.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("end-date", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string EndDate {
+                    get {
+                        return this._endDate;
+                    }
+                }
+                
+                /// <summary>The maximum number of custom data sources to include in this response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<long> MaxResults {
+                    get {
+                        return this._maxResults;
+                    }
+                    set {
+                        this._maxResults = value;
+                    }
+                }
+                
+                /// <summary>Start date of the form YYYY-MM-DD.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("start-date", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string StartDate {
+                    get {
+                        return this._startDate;
+                    }
+                }
+                
+                /// <summary>A 1-based index of the first daily upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<long> StartIndex {
+                    get {
+                        return this._startIndex;
+                    }
+                    set {
+                        this._startIndex = value;
+                    }
+                }
+                
+                /// <summary>Web property Id for the daily uploads to retrieve.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("webPropertyId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string WebPropertyId {
+                    get {
+                        return this._webPropertyId;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "management.dailyUploads";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+            
+            public class UploadRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.DailyUploadAppend> {
+                
+                private string _oauth_token;
+                
+                private System.Nullable<bool> _prettyPrint;
+                
+                private string _accountId;
+                
+                private long _appendNumber;
+                
+                private string _customDataSourceId;
+                
+                private string _date;
+                
+                private System.Nullable<bool> _reset;
+                
+                private Type _type;
+                
+                private string _webPropertyId;
+                
+                public UploadRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string customDataSourceId, string date, long appendNumber, Type type) : 
+                        base(service) {
+                    this._accountId = accountId;
+                    this._webPropertyId = webPropertyId;
+                    this._customDataSourceId = customDataSourceId;
+                    this._date = date;
+                    this._appendNumber = appendNumber;
+                    this._type = type;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Oauth_token {
+                    get {
+                        return this._oauth_token;
+                    }
+                    set {
+                        this._oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<bool> PrettyPrint {
+                    get {
+                        return this._prettyPrint;
+                    }
+                    set {
+                        this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Account Id associated with daily upload.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("accountId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string AccountId {
+                    get {
+                        return this._accountId;
+                    }
+                }
+                
+                /// <summary>Append number for this upload indexed from 1.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("appendNumber", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual long AppendNumber {
+                    get {
+                        return this._appendNumber;
+                    }
+                }
+                
+                /// <summary>Custom data source Id to which the data being uploaded belongs.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("customDataSourceId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string CustomDataSourceId {
+                    get {
+                        return this._customDataSourceId;
+                    }
+                }
+                
+                /// <summary>Date for which data is uploaded. Date should be formatted as YYYY-MM-DD.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("date", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string Date {
+                    get {
+                        return this._date;
+                    }
+                }
+                
+                /// <summary>Reset/Overwrite all previous appends for this date and start over with this file as the first upload.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("reset", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<bool> Reset {
+                    get {
+                        return this._reset;
+                    }
+                    set {
+                        this._reset = value;
+                    }
+                }
+                
+                /// <summary>Type of data for this upload.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("type", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual Type Type {
+                    get {
+                        return this._type;
+                    }
+                }
+                
+                /// <summary>Web property Id associated with daily upload.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("webPropertyId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string WebPropertyId {
+                    get {
+                        return this._webPropertyId;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "management.dailyUploads";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "upload";
+                    }
+                }
+            }
+            
+            public class UploadMediaUpload : Google.Apis.Upload.ResumableUpload<string, Google.Apis.Analytics.v3.Data.DailyUploadAppend> {
+                
+                private string _oauth_token;
+                
+                private System.Nullable<bool> _prettyPrint;
+                
+                private string _accountId;
+                
+                private long _appendNumber;
+                
+                private string _customDataSourceId;
+                
+                private string _date;
+                
+                private System.Nullable<bool> _reset;
+                
+                private Type _type;
+                
+                private string _webPropertyId;
+                
+                public UploadMediaUpload(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string customDataSourceId, string date, long appendNumber, Type type, System.IO.Stream stream, string contentType) : 
+                        base(service.BaseUri, "/upload/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId" +
+                                "}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads", "POST", stream, contentType) {
+                    this.Authenticator = service.Authenticator;
+                    this._accountId = accountId;
+                    this._webPropertyId = webPropertyId;
+                    this._customDataSourceId = customDataSourceId;
+                    this._date = date;
+                    this._appendNumber = appendNumber;
+                    this._type = type;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Oauth_token {
+                    get {
+                        return this._oauth_token;
+                    }
+                    set {
+                        this._oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<bool> PrettyPrint {
+                    get {
+                        return this._prettyPrint;
+                    }
+                    set {
+                        this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Account Id associated with daily upload.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("accountId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string AccountId {
+                    get {
+                        return this._accountId;
+                    }
+                }
+                
+                /// <summary>Append number for this upload indexed from 1.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("appendNumber", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual long AppendNumber {
+                    get {
+                        return this._appendNumber;
+                    }
+                }
+                
+                /// <summary>Custom data source Id to which the data being uploaded belongs.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("customDataSourceId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string CustomDataSourceId {
+                    get {
+                        return this._customDataSourceId;
+                    }
+                }
+                
+                /// <summary>Date for which data is uploaded. Date should be formatted as YYYY-MM-DD.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("date", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string Date {
+                    get {
+                        return this._date;
+                    }
+                }
+                
+                /// <summary>Reset/Overwrite all previous appends for this date and start over with this file as the first upload.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("reset", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual System.Nullable<bool> Reset {
+                    get {
+                        return this._reset;
+                    }
+                    set {
+                        this._reset = value;
+                    }
+                }
+                
+                /// <summary>Type of data for this upload.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("type", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual Type Type {
+                    get {
+                        return this._type;
+                    }
+                }
+                
+                /// <summary>Web property Id associated with daily upload.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("webPropertyId", Google.Apis.Util.RequestParameterType.Path)]
+                public virtual string WebPropertyId {
+                    get {
+                        return this._webPropertyId;
                     }
                 }
             }

@@ -438,125 +438,126 @@ namespace Google.Apis.Drive.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"drive:v1\",\"name" +
-            "\":\"drive\",\"version\":\"v1\",\"revision\":\"20121008\",\"title\":\"Drive API\",\"description\"" +
-            ":\"The API to interact with Drive.\",\"icons\":{\"x16\":\"https://ssl.gstatic.com/docs/" +
-            "doclist/images/drive_icon_16.png\",\"x32\":\"https://ssl.gstatic.com/docs/doclist/im" +
-            "ages/drive_icon_32.png\"},\"documentationLink\":\"https://developers.google.com/driv" +
-            "e/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/drive/v1/\",\"basePath" +
-            "\":\"/drive/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"drive/v1/\"" +
-            ",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data fo" +
-            "rmat for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Re" +
-            "sponses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"t" +
-            "ype\":\"string\",\"description\":\"Selector specifying which fields to include in a pa" +
-            "rtial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API k" +
-            "ey. Your API key identifies your project and provides you with API access, quota" +
-            ", and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"quer" +
-            "y\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the curren" +
-            "t user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Retu" +
-            "rns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"qu" +
-            "ery\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota pur" +
-            "poses for server-side applications. Can be any arbitrary string assigned to a us" +
-            "er, but should not exceed 40 characters. Overrides userIp if both are provided.\"" +
-            ",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the " +
-            "site where the request originates. Use this if you want to enforce per-user limi" +
-            "ts.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.co" +
-            "m/auth/drive.file\":{\"description\":\"View and manage Google Drive files that you h" +
-            "ave opened or created with this app\"}}}},\"schemas\":{\"File\":{\"id\":\"File\",\"type\":\"" +
-            "object\",\"description\":\"The metadata for a file.\",\"properties\":{\"createdDate\":{\"t" +
-            "ype\":\"string\",\"description\":\"Create time for this file (formatted ISO8601 timest" +
-            "amp).\",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"description\":\"A sho" +
-            "rt description of the file\"},\"downloadUrl\":{\"type\":\"string\",\"description\":\"Short" +
-            " term download URL for the file. This will only be populated on files with conte" +
-            "nt stored in Drive.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of the file.\"}" +
-            ",\"fileExtension\":{\"type\":\"string\",\"description\":\"The file extension used when do" +
-            "wnloading this file. This field is read only. To set the extension, include it o" +
-            "n title when creating the file. This will only be populated on files with conten" +
-            "t stored in Drive.\"},\"fileSize\":{\"type\":\"string\",\"description\":\"The size of the " +
-            "file in bytes. This will only be populated on files with content stored in Drive" +
-            ".\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"description\":\"The id of the file.\"}," +
-            "\"indexableText\":{\"type\":\"object\",\"description\":\"Indexable text attributes for th" +
-            "e file (can only be written)\",\"properties\":{\"text\":{\"type\":\"string\",\"description" +
-            "\":\"The text to be indexed for this file\"}}},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"The type of file. This is always drive#file\",\"default\":\"drive#file\"},\"labels\"" +
-            ":{\"type\":\"object\",\"description\":\"Labels for the file.\",\"properties\":{\"hidden\":{\"" +
-            "type\":\"boolean\",\"description\":\"Whether this file is hidden from the user\"},\"star" +
-            "red\":{\"type\":\"boolean\",\"description\":\"Whether this file is starred by the user.\"" +
-            "},\"trashed\":{\"type\":\"boolean\",\"description\":\"Whether this file has been trashed." +
-            "\"}}},\"lastViewedDate\":{\"type\":\"string\",\"description\":\"Last time this file was vi" +
-            "ewed by the user (formatted RFC 3339 timestamp).\",\"format\":\"date-time\"},\"md5Chec" +
-            "ksum\":{\"type\":\"string\",\"description\":\"An MD5 checksum for the content of this fi" +
-            "le. This will only be populated on files with content stored in Drive.\"},\"mimeTy" +
-            "pe\":{\"type\":\"string\",\"description\":\"The mimetype of the file\"},\"modifiedByMeDate" +
-            "\":{\"type\":\"string\",\"description\":\"Last time this file was modified by the user (" +
-            "formatted RFC 3339 timestamp).\",\"format\":\"date-time\"},\"modifiedDate\":{\"type\":\"st" +
-            "ring\",\"description\":\"Last time this file was modified by anyone (formatted RFC 3" +
-            "339 timestamp).\",\"format\":\"date-time\"},\"parentsCollection\":{\"type\":\"array\",\"desc" +
-            "ription\":\"Collection of parent folders which contain this file.\\nOn insert, sett" +
-            "ing this field will put the file in all of the provided folders. If no folders a" +
-            "re provided, the file will be placed in the default root folder. On update, this" +
-            " field is ignored.\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"" +
-            ",\"description\":\"The id of this parent\"},\"parentLink\":{\"type\":\"string\",\"descripti" +
-            "on\":\"A link to get the metadata for this parent\"}}}},\"selfLink\":{\"type\":\"string\"" +
-            ",\"description\":\"A link back to this file.\"},\"title\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The title of this file.\"},\"userPermission\":{\"$ref\":\"Permission\",\"description" +
-            "\":\"The permissions for the authenticated user on this file.\"}}},\"Permission\":{\"i" +
-            "d\":\"Permission\",\"type\":\"object\",\"description\":\"A single permission for a file.\"," +
-            "\"properties\":{\"additionalRoles\":{\"type\":\"array\",\"description\":\"Any additional ro" +
-            "les that this permission describes.\",\"items\":{\"type\":\"string\"}},\"etag\":{\"type\":\"" +
-            "string\",\"description\":\"An etag for this permission.\"},\"kind\":{\"type\":\"string\",\"d" +
-            "escription\":\"The kind of this permission. This is always drive#permission\",\"defa" +
-            "ult\":\"drive#permission\"},\"role\":{\"type\":\"string\",\"description\":\"The role that th" +
-            "is permission describes. (For example: reader, writer, owner)\"},\"type\":{\"type\":\"" +
-            "string\",\"description\":\"The type of permission (For example: user, group etc).\"}}" +
-            "}},\"resources\":{\"files\":{\"methods\":{\"get\":{\"id\":\"drive.files.get\",\"path\":\"files/" +
-            "{id}\",\"httpMethod\":\"GET\",\"description\":\"Gets a file\'s metadata by id.\",\"paramete" +
-            "rs\":{\"id\":{\"type\":\"string\",\"description\":\"The id for the file in question.\",\"req" +
-            "uired\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string\",\"description\":\"This" +
-            " parameter is deprecated and has no function.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDesc" +
-            "riptions\":[\"Deprecated\",\"Deprecated\"],\"location\":\"query\"},\"updateViewedDate\":{\"t" +
-            "ype\":\"boolean\",\"description\":\"Whether to update the view date after successfully" +
-            " retrieving the file.\",\"default\":\"true\",\"location\":\"query\"}},\"parameterOrder\":[\"" +
-            "id\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive" +
-            ".file\"]},\"insert\":{\"id\":\"drive.files.insert\",\"path\":\"files\",\"httpMethod\":\"POST\"," +
-            "\"description\":\"Inserts a file, and any settable metadata or blob content sent wi" +
-            "th the request.\",\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/drive.file\"],\"supportsMediaUpload\":true,\"mediaU" +
-            "pload\":{\"accept\":[\"*/*\"],\"maxSize\":\"10GB\",\"protocols\":{\"simple\":{\"multipart\":tru" +
-            "e,\"path\":\"/upload/drive/v1/files\"},\"resumable\":{\"multipart\":true,\"path\":\"/resuma" +
-            "ble/upload/drive/v1/files\"}}}},\"patch\":{\"id\":\"drive.files.patch\",\"path\":\"files/{" +
-            "id}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates file metadata and/or content. T" +
-            "his method supports patch semantics.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The id for the file in question.\",\"required\":true,\"location\":\"path\"},\"n" +
-            "ewRevision\":{\"type\":\"boolean\",\"description\":\"Whether a blob upload should create" +
-            " a new revision. If not set or false, the blob data in the current head revision" +
-            " will be replaced.\",\"default\":\"true\",\"location\":\"query\"},\"updateModifiedDate\":{\"" +
-            "type\":\"boolean\",\"description\":\"Controls updating the modified date of the file. " +
-            "If true, the modified date will be updated to the current time, regardless of wh" +
-            "ether other changes are being made. If false, the modified date will only be upd" +
-            "ated to the current time if other changes are also being made (changing the titl" +
-            "e, for example).\",\"default\":\"false\",\"location\":\"query\"},\"updateViewedDate\":{\"typ" +
-            "e\":\"boolean\",\"description\":\"Whether to update the view date after successfully u" +
-            "pdating the file.\",\"default\":\"true\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"]" +
-            ",\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/drive.file\"]},\"update\":{\"id\":\"drive.files.update\",\"path\":\"files" +
-            "/{id}\",\"httpMethod\":\"PUT\",\"description\":\"Updates file metadata and/or content\",\"" +
-            "parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The id for the file in questio" +
-            "n.\",\"required\":true,\"location\":\"path\"},\"newRevision\":{\"type\":\"boolean\",\"descript" +
-            "ion\":\"Whether a blob upload should create a new revision. If not set or false, t" +
-            "he blob data in the current head revision will be replaced.\",\"default\":\"true\",\"l" +
-            "ocation\":\"query\"},\"updateModifiedDate\":{\"type\":\"boolean\",\"description\":\"Controls" +
-            " updating the modified date of the file. If true, the modified date will be upda" +
-            "ted to the current time, regardless of whether other changes are being made. If " +
-            "false, the modified date will only be updated to the current time if other chang" +
-            "es are also being made (changing the title, for example).\",\"default\":\"false\",\"lo" +
-            "cation\":\"query\"},\"updateViewedDate\":{\"type\":\"boolean\",\"description\":\"Whether to " +
-            "update the view date after successfully updating the file.\",\"default\":\"true\",\"lo" +
-            "cation\":\"query\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"File\"},\"response\":{" +
-            "\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive.file\"],\"supports" +
-            "MediaUpload\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"maxSize\":\"10GB\",\"protocols\":{" +
-            "\"simple\":{\"multipart\":true,\"path\":\"/upload/drive/v1/files/{id}\"},\"resumable\":{\"m" +
-            "ultipart\":true,\"path\":\"/resumable/upload/drive/v1/files/{id}\"}}}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/nBHvqFx" +
+            "EYbtRoUO0nwtB_rygcg0\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"drive:v1\",\"name\":\"drive\",\"" +
+            "version\":\"v1\",\"revision\":\"20120924\",\"title\":\"Drive API\",\"description\":\"The API t" +
+            "o interact with Drive.\",\"icons\":{\"x16\":\"https://ssl.gstatic.com/docs/doclist/ima" +
+            "ges/drive_icon_16.png\",\"x32\":\"https://ssl.gstatic.com/docs/doclist/images/drive_" +
+            "icon_32.png\"},\"documentationLink\":\"https://developers.google.com/drive/\",\"protoc" +
+            "ol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/drive/v1/\",\"basePath\":\"/drive/v" +
+            "1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"drive/v1/\",\"batchPath" +
+            "\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for th" +
+            "e response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses wit" +
+            "h Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"strin" +
+            "g\",\"description\":\"Selector specifying which fields to include in a partial respo" +
+            "nse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your AP" +
+            "I key identifies your project and provides you with API access, quota, and repor" +
+            "ts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_" +
+            "token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"l" +
+            "ocation\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respons" +
+            "e with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quot" +
+            "aUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for s" +
+            "erver-side applications. Can be any arbitrary string assigned to a user, but sho" +
+            "uld not exceed 40 characters. Overrides userIp if both are provided.\",\"location\"" +
+            ":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where " +
+            "the request originates. Use this if you want to enforce per-user limits.\",\"locat" +
+            "ion\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/driv" +
+            "e.file\":{\"description\":\"View and manage Google Drive files that you have opened " +
+            "or created with this app\"}}}},\"schemas\":{\"File\":{\"id\":\"File\",\"type\":\"object\",\"de" +
+            "scription\":\"The metadata for a file.\",\"properties\":{\"createdDate\":{\"type\":\"strin" +
+            "g\",\"description\":\"Create time for this file (formatted ISO8601 timestamp).\",\"for" +
+            "mat\":\"date-time\"},\"description\":{\"type\":\"string\",\"description\":\"A short descript" +
+            "ion of the file\"},\"downloadUrl\":{\"type\":\"string\",\"description\":\"Short term downl" +
+            "oad URL for the file. This will only be populated on files with content stored i" +
+            "n Drive.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of the file.\"},\"fileExten" +
+            "sion\":{\"type\":\"string\",\"description\":\"The file extension used when downloading t" +
+            "his file. This field is read only. To set the extension, include it on title whe" +
+            "n creating the file. This will only be populated on files with content stored in" +
+            " Drive.\"},\"fileSize\":{\"type\":\"string\",\"description\":\"The size of the file in byt" +
+            "es. This will only be populated on files with content stored in Drive.\",\"format\"" +
+            ":\"int64\"},\"id\":{\"type\":\"string\",\"description\":\"The id of the file.\"},\"indexableT" +
+            "ext\":{\"type\":\"object\",\"description\":\"Indexable text attributes for the file (can" +
+            " only be written)\",\"properties\":{\"text\":{\"type\":\"string\",\"description\":\"The text" +
+            " to be indexed for this file\"}}},\"kind\":{\"type\":\"string\",\"description\":\"The type" +
+            " of file. This is always drive#file\",\"default\":\"drive#file\"},\"labels\":{\"type\":\"o" +
+            "bject\",\"description\":\"Labels for the file.\",\"properties\":{\"hidden\":{\"type\":\"bool" +
+            "ean\",\"description\":\"Whether this file is hidden from the user\"},\"starred\":{\"type" +
+            "\":\"boolean\",\"description\":\"Whether this file is starred by the user.\"},\"trashed\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Whether this file has been trashed.\"}}},\"lastV" +
+            "iewedDate\":{\"type\":\"string\",\"description\":\"Last time this file was viewed by the" +
+            " user (formatted RFC 3339 timestamp).\",\"format\":\"date-time\"},\"md5Checksum\":{\"typ" +
+            "e\":\"string\",\"description\":\"An MD5 checksum for the content of this file. This wi" +
+            "ll only be populated on files with content stored in Drive.\"},\"mimeType\":{\"type\"" +
+            ":\"string\",\"description\":\"The mimetype of the file\"},\"modifiedByMeDate\":{\"type\":\"" +
+            "string\",\"description\":\"Last time this file was modified by the user (formatted R" +
+            "FC 3339 timestamp).\",\"format\":\"date-time\"},\"modifiedDate\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Last time this file was modified by anyone (formatted RFC 3339 timesta" +
+            "mp).\",\"format\":\"date-time\"},\"parentsCollection\":{\"type\":\"array\",\"description\":\"C" +
+            "ollection of parent folders which contain this file.\\nOn insert, setting this fi" +
+            "eld will put the file in all of the provided folders. If no folders are provided" +
+            ", the file will be placed in the default root folder. On update, this field is i" +
+            "gnored.\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The id of this parent\"},\"parentLink\":{\"type\":\"string\",\"description\":\"A link" +
+            " to get the metadata for this parent\"}}}},\"selfLink\":{\"type\":\"string\",\"descripti" +
+            "on\":\"A link back to this file.\"},\"title\":{\"type\":\"string\",\"description\":\"The tit" +
+            "le of this file.\"},\"userPermission\":{\"$ref\":\"Permission\",\"description\":\"The perm" +
+            "issions for the authenticated user on this file.\"}}},\"Permission\":{\"id\":\"Permiss" +
+            "ion\",\"type\":\"object\",\"description\":\"A single permission for a file.\",\"properties" +
+            "\":{\"additionalRoles\":{\"type\":\"array\",\"description\":\"Any additional roles that th" +
+            "is permission describes.\",\"items\":{\"type\":\"string\"}},\"etag\":{\"type\":\"string\",\"de" +
+            "scription\":\"An etag for this permission.\"},\"kind\":{\"type\":\"string\",\"description\"" +
+            ":\"The kind of this permission. This is always drive#permission\",\"default\":\"drive" +
+            "#permission\"},\"role\":{\"type\":\"string\",\"description\":\"The role that this permissi" +
+            "on describes. (For example: reader, writer, owner)\"},\"type\":{\"type\":\"string\",\"de" +
+            "scription\":\"The type of permission (For example: user, group etc).\"}}}},\"resourc" +
+            "es\":{\"files\":{\"methods\":{\"get\":{\"id\":\"drive.files.get\",\"path\":\"files/{id}\",\"http" +
+            "Method\":\"GET\",\"description\":\"Gets a file\'s metadata by id.\",\"parameters\":{\"id\":{" +
+            "\"type\":\"string\",\"description\":\"The id for the file in question.\",\"required\":true" +
+            ",\"location\":\"path\"},\"projection\":{\"type\":\"string\",\"description\":\"This parameter " +
+            "is deprecated and has no function.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDescriptions\":[" +
+            "\"Deprecated\",\"Deprecated\"],\"location\":\"query\"},\"updateViewedDate\":{\"type\":\"boole" +
+            "an\",\"description\":\"Whether to update the view date after successfully retrieving" +
+            " the file.\",\"default\":\"true\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"respo" +
+            "nse\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive.file\"]},\"i" +
+            "nsert\":{\"id\":\"drive.files.insert\",\"path\":\"files\",\"httpMethod\":\"POST\",\"descriptio" +
+            "n\":\"Inserts a file, and any settable metadata or blob content sent with the requ" +
+            "est.\",\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/drive.file\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"ac" +
+            "cept\":[\"*/*\"],\"maxSize\":\"10GB\",\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"/" +
+            "upload/drive/v1/files\"},\"resumable\":{\"multipart\":true,\"path\":\"/resumable/upload/" +
+            "drive/v1/files\"}}}},\"patch\":{\"id\":\"drive.files.patch\",\"path\":\"files/{id}\",\"httpM" +
+            "ethod\":\"PATCH\",\"description\":\"Updates file metadata and/or content. This method " +
+            "supports patch semantics.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"Th" +
+            "e id for the file in question.\",\"required\":true,\"location\":\"path\"},\"newRevision\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Whether a blob upload should create a new revi" +
+            "sion. If not set or false, the blob data in the current head revision will be re" +
+            "placed.\",\"default\":\"true\",\"location\":\"query\"},\"updateModifiedDate\":{\"type\":\"bool" +
+            "ean\",\"description\":\"Controls updating the modified date of the file. If true, th" +
+            "e modified date will be updated to the current time, regardless of whether other" +
+            " changes are being made. If false, the modified date will only be updated to the" +
+            " current time if other changes are also being made (changing the title, for exam" +
+            "ple).\",\"default\":\"false\",\"location\":\"query\"},\"updateViewedDate\":{\"type\":\"boolean" +
+            "\",\"description\":\"Whether to update the view date after successfully updating the" +
+            " file.\",\"default\":\"true\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"request\":" +
+            "{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/drive.file\"]},\"update\":{\"id\":\"drive.files.update\",\"path\":\"files/{id}\",\"htt" +
+            "pMethod\":\"PUT\",\"description\":\"Updates file metadata and/or content\",\"parameters\"" +
+            ":{\"id\":{\"type\":\"string\",\"description\":\"The id for the file in question.\",\"requir" +
+            "ed\":true,\"location\":\"path\"},\"newRevision\":{\"type\":\"boolean\",\"description\":\"Wheth" +
+            "er a blob upload should create a new revision. If not set or false, the blob dat" +
+            "a in the current head revision will be replaced.\",\"default\":\"true\",\"location\":\"q" +
+            "uery\"},\"updateModifiedDate\":{\"type\":\"boolean\",\"description\":\"Controls updating t" +
+            "he modified date of the file. If true, the modified date will be updated to the " +
+            "current time, regardless of whether other changes are being made. If false, the " +
+            "modified date will only be updated to the current time if other changes are also" +
+            " being made (changing the title, for example).\",\"default\":\"false\",\"location\":\"qu" +
+            "ery\"},\"updateViewedDate\":{\"type\":\"boolean\",\"description\":\"Whether to update the " +
+            "view date after successfully updating the file.\",\"default\":\"true\",\"location\":\"qu" +
+            "ery\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"Fil" +
+            "e\"},\"scopes\":[\"https://www.googleapis.com/auth/drive.file\"],\"supportsMediaUpload" +
+            "\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"maxSize\":\"10GB\",\"protocols\":{\"simple\":{\"" +
+            "multipart\":true,\"path\":\"/upload/drive/v1/files/{id}\"},\"resumable\":{\"multipart\":t" +
+            "rue,\"path\":\"/resumable/upload/drive/v1/files/{id}\"}}}}}}}}";
         
         public const string Version = "v1";
         

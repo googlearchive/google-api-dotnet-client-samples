@@ -64,6 +64,180 @@
         <member name="P:Google.Apis.Analytics.v3.Data.Accounts.Username">
             <summary>Email ID of the authenticated user</summary>
         </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.CustomDataSource">
+            <summary>JSON template for an Analytics custom data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.AccountId">
+            <summary>Account ID to which this custom data source belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.ChildLink">
+            <summary>Child link for this custom data source. Points to the list of daily uploads for this custom data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.Created">
+            <summary>Time this custom data source was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.Description">
+            <summary>Description of custom data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.Id">
+            <summary>Custom data source ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.Kind">
+            <summary>Resource type for Analytics custom data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.Name">
+            <summary>Name of this custom data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.ParentLink">
+            <summary>Parent link for this custom data source. Points to the web property to which this custom data source belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.SelfLink">
+            <summary>Link for this Analytics custom data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.Updated">
+            <summary>Time this custom data source was last modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.WebPropertyId">
+            <summary>Web property ID of the form UA-XXXXX-YY to which this custom data source belongs.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.CustomDataSource.ChildLinkData">
+            <summary>Child link for this custom data source. Points to the list of daily uploads for this custom data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.ChildLinkData.Href">
+            <summary>Link to the list of daily uploads for this custom data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.ChildLinkData.Type">
+            <summary>Value is &quot;analytics#dailyUploads&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.CustomDataSource.ParentLinkData">
+            <summary>Parent link for this custom data source. Points to the web property to which this custom data source belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.ParentLinkData.Href">
+            <summary>Link to the web property to which this custom data source belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSource.ParentLinkData.Type">
+            <summary>Value is &quot;analytics#webproperty&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.CustomDataSources">
+            <summary>Lists Analytics custom data sources to which the user has access. Each resource in the collection corresponds to a single Analytics custom data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSources.Items">
+            <summary>Collection of custom data sources.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSources.ItemsPerPage">
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSources.Kind">
+            <summary>Collection type.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSources.NextLink">
+            <summary>Link to next page for this custom data source collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSources.PreviousLink">
+            <summary>Link to previous page for this custom data source collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSources.StartIndex">
+            <summary>The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSources.TotalResults">
+            <summary>The total number of results for the query, regardless of the number of results in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.CustomDataSources.Username">
+            <summary>Email ID of the authenticated user</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.DailyUpload">
+            <summary>Metadata for daily upload entity.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.AccountId">
+            <summary>Account ID to which this daily upload belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.AppendCount">
+            <summary>Number of appends for this date.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.CreatedTime">
+            <summary>Time this daily upload was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.CustomDataSourceId">
+            <summary>Custom data source ID to which this daily upload belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.Date">
+            <summary>Date associated with daily upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.Kind">
+            <summary>Resource type for Analytics daily upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.ModifiedTime">
+            <summary>Time this daily upload was last modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.ParentLink">
+            <summary>Parent link for a daily upload. Points to the custom data source to which this daily upload belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.RecentChanges">
+            <summary>Change log for last 10 changes in chronological order.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.SelfLink">
+            <summary>Link for this daily upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.WebPropertyId">
+            <summary>Web property ID of the form UA-XXXXX-YY to which this daily upload belongs.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.DailyUpload.ParentLinkData">
+            <summary>Parent link for a daily upload. Points to the custom data source to which this daily upload belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.ParentLinkData.Href">
+            <summary>Link to the custom data source to which this daily upload belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUpload.ParentLinkData.Type">
+            <summary>Value is &quot;analytics#customDataSource&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.DailyUploadAppend">
+            <summary>Metadata returned for a successful append operation.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploadAppend.AccountId">
+            <summary>Account Id to which this daily upload append belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploadAppend.AppendNumber">
+            <summary>Append number.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploadAppend.CustomDataSourceId">
+            <summary>Custom data source Id to which this daily upload append belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploadAppend.Date">
+            <summary>Date associated with daily upload append.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploadAppend.Kind">
+            <summary>Resource type for Analytics daily upload append.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploadAppend.WebPropertyId">
+            <summary>Web property Id of the form UA-XXXXX-YY to which this daily upload append belongs.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.DailyUploads">
+            <summary>A daily upload collection lists Analytics daily uploads to which the user has access. Each resource in the collection corresponds to a single Analytics daily upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploads.Items">
+            <summary>A collection of daily uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploads.ItemsPerPage">
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploads.Kind">
+            <summary>Collection type. Value is analytics#dailyUploads.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploads.NextLink">
+            <summary>Link to next page for this daily upload collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploads.PreviousLink">
+            <summary>Link to previous page for this daily upload collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploads.StartIndex">
+            <summary>The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploads.TotalResults">
+            <summary>The total number of results for the query, regardless of the number of results in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.DailyUploads.Username">
+            <summary>Email ID of the authenticated user</summary>
+        </member>
         <member name="T:Google.Apis.Analytics.v3.Data.GaData">
             <summary>Analytics data for a given profile.</summary>
         </member>
@@ -806,6 +980,171 @@
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.StartIndex">
             <summary>An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.List(System.String,System.String)">
+            <summary>List custom data sources to which the user has access.</summary>
+            <param name="accountId">Required - Must match pattern \d+ - Account Id for the custom data sources to retrieve.</param>
+            <param name="webPropertyId">Required - Must match pattern UA-(\d+)-(\d+) - Web property Id for the custom data sources to retrieve.</param>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.AccountId">
+            <summary>Account Id for the custom data sources to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.MaxResults">
+            <summary>The maximum number of custom data sources to include in this response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.StartIndex">
+            <summary>A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.WebPropertyId">
+            <summary>Web property Id for the custom data sources to retrieve.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.Delete(System.String,System.String,System.String,System.String,Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.Type)">
+            <summary>Delete uploaded data for the given date.</summary>
+            <param name="accountId">Required - Must match pattern [0-9]+ - Account Id associated with daily upload delete.</param>
+            <param name="webPropertyId">Required - Must match pattern UA-[0-9]+-[0-9]+ - Web property Id associated with daily upload delete.</param>
+            <param name="customDataSourceId">Required - Custom data source Id associated with daily upload delete.</param>
+            <param name="date">Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Date for which data is to be deleted. Date should be formatted as YYYY-MM-DD.</param>
+            <param name="type">Required - Must be one of the following values [cost] - Type of data for this delete.</param>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.List(System.String,System.String,System.String,System.String,System.String)">
+            <summary>List daily uploads to which the user has access.</summary>
+            <param name="accountId">Required - Must match pattern \d+ - Account Id for the daily uploads to retrieve.</param>
+            <param name="webPropertyId">Required - Must match pattern UA-(\d+)-(\d+) - Web property Id for the daily uploads to retrieve.</param>
+            <param name="customDataSourceId">Required - Must match pattern .{22} - Custom data source Id for daily uploads to retrieve.</param>
+            <param name="startDate">start-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Start date of the form YYYY-MM-DD.</param>
+            <param name="endDate">end-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - End date of the form YYYY-MM-DD.</param>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.Upload(System.String,System.String,System.String,System.String,System.Int64,Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.Type)">
+            <summary>Update/Overwrite data for a custom data source.</summary>
+            <param name="accountId">Required - Must match pattern \d+ - Account Id associated with daily upload.</param>
+            <param name="webPropertyId">Required - Must match pattern UA-\d+-\d+ - Web property Id associated with daily upload.</param>
+            <param name="customDataSourceId">Required - Custom data source Id to which the data being uploaded belongs.</param>
+            <param name="date">Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Date for which data is uploaded. Date should be formatted as YYYY-MM-DD.</param>
+            <param name="appendNumber">Required - Minimum value of 1 - Maximum value of 20 - Append number for this upload indexed from 1.</param>
+            <param name="type">Required - Must be one of the following values [cost] - Type of data for this upload.</param>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.Upload(System.String,System.String,System.String,System.String,System.Int64,Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.Type,System.IO.Stream,System.String)">
+            <summary>Update/Overwrite data for a custom data source.</summary>
+            <param name="accountId">Required - Must match pattern \d+ - Account Id associated with daily upload.</param>
+            <param name="webPropertyId">Required - Must match pattern UA-\d+-\d+ - Web property Id associated with daily upload.</param>
+            <param name="customDataSourceId">Required - Custom data source Id to which the data being uploaded belongs.</param>
+            <param name="date">Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Date for which data is uploaded. Date should be formatted as YYYY-MM-DD.</param>
+            <param name="appendNumber">Required - Minimum value of 1 - Maximum value of 20 - Append number for this upload indexed from 1.</param>
+            <param name="type">Required - Must be one of the following values [cost] - Type of data for this upload.</param>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.Type">
+            <summary>Type of data for this delete.</summary>
+        </member>
+        <member name="F:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.Type.Cost">
+            <summary>Value for specifying cost data upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.AccountId">
+            <summary>Account Id associated with daily upload delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.CustomDataSourceId">
+            <summary>Custom data source Id associated with daily upload delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.Date">
+            <summary>Date for which data is to be deleted. Date should be formatted as YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.Type">
+            <summary>Type of data for this delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.WebPropertyId">
+            <summary>Web property Id associated with daily upload delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.AccountId">
+            <summary>Account Id for the daily uploads to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.CustomDataSourceId">
+            <summary>Custom data source Id for daily uploads to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.EndDate">
+            <summary>End date of the form YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.MaxResults">
+            <summary>The maximum number of custom data sources to include in this response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.StartDate">
+            <summary>Start date of the form YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.StartIndex">
+            <summary>A 1-based index of the first daily upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.WebPropertyId">
+            <summary>Web property Id for the daily uploads to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.AccountId">
+            <summary>Account Id associated with daily upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.AppendNumber">
+            <summary>Append number for this upload indexed from 1.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.CustomDataSourceId">
+            <summary>Custom data source Id to which the data being uploaded belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.Date">
+            <summary>Date for which data is uploaded. Date should be formatted as YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.Reset">
+            <summary>Reset/Overwrite all previous appends for this date and start over with this file as the first upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.Type">
+            <summary>Type of data for this upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.WebPropertyId">
+            <summary>Web property Id associated with daily upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.AccountId">
+            <summary>Account Id associated with daily upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.AppendNumber">
+            <summary>Append number for this upload indexed from 1.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.CustomDataSourceId">
+            <summary>Custom data source Id to which the data being uploaded belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.Date">
+            <summary>Date for which data is uploaded. Date should be formatted as YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.Reset">
+            <summary>Reset/Overwrite all previous appends for this date and start over with this file as the first upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.Type">
+            <summary>Type of data for this upload.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.WebPropertyId">
+            <summary>Web property Id associated with daily upload.</summary>
         </member>
         <member name="M:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.List(System.String,System.String,System.String)">
             <summary>Lists goals to which the user has access.</summary>

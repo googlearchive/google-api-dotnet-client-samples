@@ -313,80 +313,81 @@ namespace Google.Apis.Prediction.v1_2 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"prediction:v1.2" +
-            "\",\"name\":\"prediction\",\"version\":\"v1.2\",\"revision\":\"20120724\",\"title\":\"Prediction" +
-            " API\",\"description\":\"Lets you access a cloud hosted machine learning service tha" +
-            "t makes it easy to build smart apps\",\"icons\":{\"x16\":\"http://www.google.com/image" +
-            "s/icons/feature/predictionapi-16.png\",\"x32\":\"http://www.google.com/images/icons/" +
-            "feature/predictionapi-32.png\"},\"documentationLink\":\"https://developers.google.co" +
-            "m/prediction/docs/developer-guide\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
-            "leapis.com/prediction/v1.2/\",\"basePath\":\"/prediction/v1.2/\",\"rootUrl\":\"https://w" +
-            "ww.googleapis.com/\",\"servicePath\":\"prediction/v1.2/\",\"batchPath\":\"batch\",\"parame" +
-            "ters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"def" +
-            "ault\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of" +
-            " application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":" +
-            "\"Selector specifying which fields to include in a partial response.\",\"location\":" +
-            "\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies " +
-            "your project and provides you with API access, quota, and reports. Required unle" +
-            "ss you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"s" +
-            "tring\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"}" +
-            ",\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentatio" +
-            "ns and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"s" +
-            "tring\",\"description\":\"Available to use for quota purposes for server-side applic" +
-            "ations. Can be any arbitrary string assigned to a user, but should not exceed 40" +
-            " characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp" +
-            "\":{\"type\":\"string\",\"description\":\"IP address of the site where the request origi" +
-            "nates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"a" +
-            "uth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.read_only\"" +
-            ":{\"description\":\"View your data in Google Cloud Storage\"},\"https://www.googleapi" +
-            "s.com/auth/prediction\":{\"description\":\"Manage your data in the Google Prediction" +
-            " API\"}}}},\"schemas\":{\"Input\":{\"id\":\"Input\",\"type\":\"object\",\"properties\":{\"input\"" +
-            ":{\"type\":\"object\",\"properties\":{\"csvInstance\":{\"type\":\"array\",\"items\":{\"type\":\"a" +
-            "ny\"}}}}}},\"Output\":{\"id\":\"Output\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"st" +
-            "ring\"},\"kind\":{\"type\":\"string\",\"default\":\"prediction#output\"},\"outputLabel\":{\"ty" +
-            "pe\":\"string\"},\"outputMulti\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties" +
-            "\":{\"label\":{\"type\":\"string\"},\"score\":{\"type\":\"number\",\"format\":\"double\"}}}},\"out" +
-            "putValue\":{\"type\":\"number\",\"format\":\"double\"},\"selfLink\":{\"type\":\"string\"}}},\"Tr" +
-            "aining\":{\"id\":\"Training\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"k" +
-            "ind\":{\"type\":\"string\",\"default\":\"prediction#training\"},\"modelInfo\":{\"type\":\"obje" +
-            "ct\",\"properties\":{\"classificationAccuracy\":{\"type\":\"number\",\"format\":\"double\"},\"" +
-            "meanSquaredError\":{\"type\":\"number\",\"format\":\"double\"},\"modelType\":{\"type\":\"strin" +
-            "g\"}}},\"selfLink\":{\"type\":\"string\"},\"trainingStatus\":{\"type\":\"string\"}}},\"Update\"" +
-            ":{\"id\":\"Update\",\"type\":\"object\",\"properties\":{\"classLabel\":{\"type\":\"string\",\"des" +
-            "cription\":\"The true class label of this instance\"},\"csvInstance\":{\"type\":\"array\"" +
-            ",\"description\":\"The input features for this instance\",\"items\":{\"type\":\"any\"}}}}}" +
-            ",\"methods\":{\"predict\":{\"id\":\"prediction.predict\",\"path\":\"training/{data}/predict" +
-            "\",\"httpMethod\":\"POST\",\"description\":\"Submit data and request a prediction\",\"para" +
-            "meters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket%2Fmydata resource in Go" +
-            "ogle Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"req" +
-            "uest\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/prediction\"]}},\"resources\":{\"hostedmodels\":{\"methods\":{\"predict\":" +
-            "{\"id\":\"prediction.hostedmodels.predict\",\"path\":\"hostedmodels/{hostedModelName}/p" +
-            "redict\",\"httpMethod\":\"POST\",\"description\":\"Submit input and request an output ag" +
-            "ainst a hosted model\",\"parameters\":{\"hostedModelName\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The name of a hosted model\",\"required\":true,\"location\":\"path\"}},\"parameter" +
-            "Order\":[\"hostedModelName\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}},\"training\":{\"metho" +
-            "ds\":{\"delete\":{\"id\":\"prediction.training.delete\",\"path\":\"training/{data}\",\"httpM" +
-            "ethod\":\"DELETE\",\"description\":\"Delete a trained model\",\"parameters\":{\"data\":{\"ty" +
-            "pe\":\"string\",\"description\":\"mybucket/mydata resource in Google Storage\",\"require" +
-            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/prediction\"]},\"get\":{\"id\":\"prediction.training.get\",\"path\":\"tra" +
-            "ining/{data}\",\"httpMethod\":\"GET\",\"description\":\"Check training status of your mo" +
-            "del\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata resour" +
-            "ce in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"dat" +
-            "a\"],\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/pr" +
-            "ediction\"]},\"insert\":{\"id\":\"prediction.training.insert\",\"path\":\"training\",\"httpM" +
-            "ethod\":\"POST\",\"description\":\"Begin training your model\",\"parameters\":{\"data\":{\"t" +
-            "ype\":\"string\",\"description\":\"mybucket/mydata resource in Google Storage\",\"locati" +
-            "on\":\"query\"}},\"request\":{\"$ref\":\"Training\"},\"response\":{\"$ref\":\"Training\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/devstorage.read_only\",\"https://www.googlea" +
-            "pis.com/auth/prediction\"]},\"update\":{\"id\":\"prediction.training.update\",\"path\":\"t" +
-            "raining/{data}\",\"httpMethod\":\"PUT\",\"description\":\"Add new data to a trained mode" +
-            "l\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata resource" +
-            " in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"" +
-            "],\"request\":{\"$ref\":\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/prediction\"]}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/GCKVo12" +
+            "9unuc6D_FGyei8fIaZNc\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"prediction:v1.2\",\"name\":\"p" +
+            "rediction\",\"version\":\"v1.2\",\"revision\":\"20120724\",\"title\":\"Prediction API\",\"desc" +
+            "ription\":\"Lets you access a cloud hosted machine learning service that makes it " +
+            "easy to build smart apps\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/fea" +
+            "ture/predictionapi-16.png\",\"x32\":\"http://www.google.com/images/icons/feature/pre" +
+            "dictionapi-32.png\"},\"documentationLink\":\"https://developers.google.com/predictio" +
+            "n/docs/developer-guide\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/" +
+            "prediction/v1.2/\",\"basePath\":\"/prediction/v1.2/\",\"rootUrl\":\"https://www.googleap" +
+            "is.com/\",\"servicePath\":\"prediction/v1.2/\",\"batchPath\":\"batch\",\"parameters\":{\"alt" +
+            "\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json" +
+            "\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applicatio" +
+            "n/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector s" +
+            "pecifying which fields to include in a partial response.\",\"location\":\"query\"},\"k" +
+            "ey\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your projec" +
+            "t and provides you with API access, quota, and reports. Required unless you prov" +
+            "ide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"des" +
+            "cription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPri" +
+            "nt\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line" +
+            " breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"des" +
+            "cription\":\"Available to use for quota purposes for server-side applications. Can" +
+            " be any arbitrary string assigned to a user, but should not exceed 40 characters" +
+            ". Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"" +
+            "string\",\"description\":\"IP address of the site where the request originates. Use " +
+            "this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oaut" +
+            "h2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.read_only\":{\"descript" +
+            "ion\":\"View your data in Google Cloud Storage\"},\"https://www.googleapis.com/auth/" +
+            "prediction\":{\"description\":\"Manage your data in the Google Prediction API\"}}}},\"" +
+            "schemas\":{\"Input\":{\"id\":\"Input\",\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"o" +
+            "bject\",\"properties\":{\"csvInstance\":{\"type\":\"array\",\"items\":{\"type\":\"any\"}}}}}},\"" +
+            "Output\":{\"id\":\"Output\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"kin" +
+            "d\":{\"type\":\"string\",\"default\":\"prediction#output\"},\"outputLabel\":{\"type\":\"string" +
+            "\"},\"outputMulti\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"label\":" +
+            "{\"type\":\"string\"},\"score\":{\"type\":\"number\",\"format\":\"double\"}}}},\"outputValue\":{" +
+            "\"type\":\"number\",\"format\":\"double\"},\"selfLink\":{\"type\":\"string\"}}},\"Training\":{\"i" +
+            "d\":\"Training\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"kind\":{\"type" +
+            "\":\"string\",\"default\":\"prediction#training\"},\"modelInfo\":{\"type\":\"object\",\"proper" +
+            "ties\":{\"classificationAccuracy\":{\"type\":\"number\",\"format\":\"double\"},\"meanSquared" +
+            "Error\":{\"type\":\"number\",\"format\":\"double\"},\"modelType\":{\"type\":\"string\"}}},\"self" +
+            "Link\":{\"type\":\"string\"},\"trainingStatus\":{\"type\":\"string\"}}},\"Update\":{\"id\":\"Upd" +
+            "ate\",\"type\":\"object\",\"properties\":{\"classLabel\":{\"type\":\"string\",\"description\":\"" +
+            "The true class label of this instance\"},\"csvInstance\":{\"type\":\"array\",\"descripti" +
+            "on\":\"The input features for this instance\",\"items\":{\"type\":\"any\"}}}}},\"methods\":" +
+            "{\"predict\":{\"id\":\"prediction.predict\",\"path\":\"training/{data}/predict\",\"httpMeth" +
+            "od\":\"POST\",\"description\":\"Submit data and request a prediction\",\"parameters\":{\"d" +
+            "ata\":{\"type\":\"string\",\"description\":\"mybucket%2Fmydata resource in Google Storag" +
+            "e\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"request\":{\"$re" +
+            "f\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/a" +
+            "uth/prediction\"]}},\"resources\":{\"hostedmodels\":{\"methods\":{\"predict\":{\"id\":\"pred" +
+            "iction.hostedmodels.predict\",\"path\":\"hostedmodels/{hostedModelName}/predict\",\"ht" +
+            "tpMethod\":\"POST\",\"description\":\"Submit input and request an output against a hos" +
+            "ted model\",\"parameters\":{\"hostedModelName\":{\"type\":\"string\",\"description\":\"The n" +
+            "ame of a hosted model\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"ho" +
+            "stedModelName\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/prediction\"]}}},\"training\":{\"methods\":{\"delet" +
+            "e\":{\"id\":\"prediction.training.delete\",\"path\":\"training/{data}\",\"httpMethod\":\"DEL" +
+            "ETE\",\"description\":\"Delete a trained model\",\"parameters\":{\"data\":{\"type\":\"string" +
+            "\",\"description\":\"mybucket/mydata resource in Google Storage\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"data\"],\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/prediction\"]},\"get\":{\"id\":\"prediction.training.get\",\"path\":\"training/{data" +
+            "}\",\"httpMethod\":\"GET\",\"description\":\"Check training status of your model\",\"param" +
+            "eters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata resource in Googl" +
+            "e Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"respon" +
+            "se\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}" +
+            ",\"insert\":{\"id\":\"prediction.training.insert\",\"path\":\"training\",\"httpMethod\":\"POS" +
+            "T\",\"description\":\"Begin training your model\",\"parameters\":{\"data\":{\"type\":\"strin" +
+            "g\",\"description\":\"mybucket/mydata resource in Google Storage\",\"location\":\"query\"" +
+            "}},\"request\":{\"$ref\":\"Training\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/devstorage.read_only\",\"https://www.googleapis.com/aut" +
+            "h/prediction\"]},\"update\":{\"id\":\"prediction.training.update\",\"path\":\"training/{da" +
+            "ta}\",\"httpMethod\":\"PUT\",\"description\":\"Add new data to a trained model\",\"paramet" +
+            "ers\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata resource in Google " +
+            "Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"request\"" +
+            ":{\"$ref\":\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googlea" +
+            "pis.com/auth/prediction\"]}}}}}";
         
         public const string Version = "v1.2";
         

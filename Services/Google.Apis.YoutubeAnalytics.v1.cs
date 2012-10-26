@@ -124,83 +124,84 @@ namespace Google.Apis.YoutubeAnalytics.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"youtubeAnalytic" +
-            "s:v1\",\"name\":\"youtubeAnalytics\",\"version\":\"v1\",\"revision\":\"20120816\",\"title\":\"Yo" +
-            "uTube Analytics API\",\"description\":\"Retrieve your YouTube Analytics reports.\",\"i" +
-            "cons\":{\"x16\":\"http://www.google.com/images/icons/product/youtube-16.png\",\"x32\":\"" +
-            "http://www.google.com/images/icons/product/youtube-32.png\"},\"documentationLink\":" +
-            "\"http://developers.google.com/youtube/analytics/\",\"labels\":[\"graduated\"],\"protoc" +
-            "ol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/youtube/analytics/v1/\",\"basePat" +
-            "h\":\"/youtube/analytics/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath" +
-            "\":\"youtube/analytics/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"strin" +
-            "g\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"csv\"," +
-            "\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of text/csv\",\"Responses" +
-            " with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"s" +
-            "tring\",\"description\":\"Selector specifying which fields to include in a partial r" +
-            "esponse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. You" +
-            "r API key identifies your project and provides you with API access, quota, and r" +
-            "eports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oa" +
-            "uth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user." +
-            "\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns res" +
-            "ponse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"" +
-            "quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes f" +
-            "or server-side applications. Can be any arbitrary string assigned to a user, but" +
-            " should not exceed 40 characters. Overrides userIp if both are provided.\",\"locat" +
-            "ion\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site wh" +
-            "ere the request originates. Use this if you want to enforce per-user limits.\",\"l" +
-            "ocation\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/" +
-            "yt-analytics.readonly\":{\"description\":\"View YouTube Analytics reports for your Y" +
-            "ouTube content\"}}}},\"schemas\":{\"ResultTable\":{\"id\":\"ResultTable\",\"type\":\"object\"" +
-            ",\"description\":\"Contains a single result table. The table is returned as an arra" +
-            "y of rows that contain the values for the cells of the table. Depending on the m" +
-            "etric or dimension, the cell can contain a string (video ID, country code) or a " +
-            "number (number of views or number of likes).\",\"properties\":{\"columnHeaders\":{\"ty" +
-            "pe\":\"array\",\"description\":\"Contains information about the columns returned in th" +
-            "e \\\"rows\\\" fields. The order of the elements matches the order of the correspond" +
-            "ing columns in \\\"rows\\\" field.\",\"items\":{\"type\":\"object\",\"properties\":{\"columnTy" +
-            "pe\":{\"type\":\"string\",\"description\":\"The type of the column (DIMENSION, METRIC).\"" +
-            "},\"dataType\":{\"type\":\"string\",\"description\":\"Type of the data in the column (STR" +
-            "ING, INTEGER, FLOAT).\"},\"name\":{\"type\":\"string\",\"description\":\"The name of the d" +
-            "imension or metric.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"Identifier used " +
-            "to mark the structure as a result table.\",\"default\":\"youtubeAnalytics#resultTabl" +
-            "e\"},\"rows\":{\"type\":\"array\",\"description\":\"Contains all rows of the result table." +
-            " Each row contains an array with the values for the columns. The order matches t" +
-            "he order of the column information provided in the \\\"columnHeaders\\\" field. If n" +
-            "o data is available for the given query, the \\\"rows\\\" element will be omitted fr" +
-            "om the response. The response for a query with the day dimension will not contai" +
-            "n rows for the most recent days.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"any\"}" +
-            "}}}}},\"resources\":{\"reports\":{\"methods\":{\"query\":{\"id\":\"youtubeAnalytics.reports" +
-            ".query\",\"path\":\"reports\",\"httpMethod\":\"GET\",\"description\":\"Retrieve your YouTube" +
-            " Analytics reports.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"description\":\"" +
-            "A comma-separated list of YouTube Analytics dimensions. E.g., \'video\', or \'ageGr" +
-            "oup,gender\'.\",\"pattern\":\"[0-9a-zA-Z,]+\",\"location\":\"query\"},\"end-date\":{\"type\":\"" +
-            "string\",\"description\":\"End date for fetching YouTube Analytics data. All request" +
-            "s should specify an end date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\"" +
-            ":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"filters\":{\"type\":\"string\",\"de" +
-            "scription\":\"A list of dimension filters to be applied to YouTube Analytics data." +
-            " Multiple filters can be joined together with the \';\' character. The returned re" +
-            "sult table will satisfy both filters. E.g., video==dMH0bHeiRNg;country==IT will " +
-            "restrict the returned stats to the given video and the country Italy.\",\"location" +
-            "\":\"query\"},\"ids\":{\"type\":\"string\",\"description\":\"Unique channel or content owner" +
-            " ID for retrieving YouTube Analytics data. Either channel==C or contentOwner==O " +
-            "where \'C\' is the encrypted channel ID and \'O\' is the content owner name.\",\"requi" +
-            "red\":true,\"pattern\":\"[a-zA-Z]+==[a-zA-Z0-9_+-]+\",\"location\":\"query\"},\"max-result" +
-            "s\":{\"type\":\"integer\",\"description\":\"The maximum number of rows to include in the" +
-            " response.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"metrics\":{\"type\"" +
-            ":\"string\",\"description\":\"A comma-separated list of YouTube Analytics metrics. E." +
-            "g., \'views\' or \'likes,dislikes\'\",\"required\":true,\"pattern\":\"[0-9a-zA-Z,]+\",\"loca" +
-            "tion\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"A comma-separated list of " +
-            "dimensions or metrics that determine the sort order for YouTube Analytics data. " +
-            "By default the sort order is ascending, \'-\' prefix causes descending sort order." +
-            "\",\"pattern\":\"(-)?[0-9a-zA-Z,]+\",\"location\":\"query\"},\"start-date\":{\"type\":\"string" +
-            "\",\"description\":\"Start date for fetching YouTube Analytics data. All requests sh" +
-            "ould specify a start date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[" +
-            "0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"" +
-            "description\":\"An index of the first entity to retrieve. Use this parameter as a " +
-            "pagination mechanism along with the max-results parameter (one-based, inclusive)" +
-            ".\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"ids\",\"" +
-            "start-date\",\"end-date\",\"metrics\"],\"response\":{\"$ref\":\"ResultTable\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/yt-analytics.readonly\"]}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/LgOQJ9c" +
+            "I2d4JfnHUqOCy2P6YSBk\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"youtubeAnalytics:v1\",\"name" +
+            "\":\"youtubeAnalytics\",\"version\":\"v1\",\"revision\":\"20120928\",\"title\":\"YouTube Analy" +
+            "tics API\",\"description\":\"Retrieve your YouTube Analytics reports.\",\"icons\":{\"x16" +
+            "\":\"http://www.google.com/images/icons/product/youtube-16.png\",\"x32\":\"http://www." +
+            "google.com/images/icons/product/youtube-32.png\"},\"documentationLink\":\"http://dev" +
+            "elopers.google.com/youtube/analytics/\",\"labels\":[\"graduated\"],\"protocol\":\"rest\"," +
+            "\"baseUrl\":\"https://www.googleapis.com/youtube/analytics/v1/\",\"basePath\":\"/youtub" +
+            "e/analytics/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"youtube/" +
+            "analytics/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"csv\",\"json\"],\"en" +
+            "umDescriptions\":[\"Responses with Content-Type of text/csv\",\"Responses with Conte" +
+            "nt-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"des" +
+            "cription\":\"Selector specifying which fields to include in a partial response.\",\"" +
+            "location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key i" +
+            "dentifies your project and provides you with API access, quota, and reports. Req" +
+            "uired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":" +
+            "{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location" +
+            "\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with " +
+            "indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":" +
+            "{\"type\":\"string\",\"description\":\"Available to use for quota purposes for server-s" +
+            "ide applications. Can be any arbitrary string assigned to a user, but should not" +
+            " exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query" +
+            "\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the req" +
+            "uest originates. Use this if you want to enforce per-user limits.\",\"location\":\"q" +
+            "uery\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/yt-analytic" +
+            "s.readonly\":{\"description\":\"View YouTube Analytics reports for your YouTube cont" +
+            "ent\"}}}},\"schemas\":{\"ResultTable\":{\"id\":\"ResultTable\",\"type\":\"object\",\"descripti" +
+            "on\":\"Contains a single result table. The table is returned as an array of rows t" +
+            "hat contain the values for the cells of the table. Depending on the metric or di" +
+            "mension, the cell can contain a string (video ID, country code) or a number (num" +
+            "ber of views or number of likes).\",\"properties\":{\"columnHeaders\":{\"type\":\"array\"" +
+            ",\"description\":\"Contains information about the columns returned in the \\\"rows\\\" " +
+            "fields. The order of the elements matches the order of the corresponding columns" +
+            " in \\\"rows\\\" field.\",\"items\":{\"type\":\"object\",\"properties\":{\"columnType\":{\"type\"" +
+            ":\"string\",\"description\":\"The type of the column (DIMENSION, METRIC).\"},\"dataType" +
+            "\":{\"type\":\"string\",\"description\":\"Type of the data in the column (STRING, INTEGE" +
+            "R, FLOAT).\"},\"name\":{\"type\":\"string\",\"description\":\"The name of the dimension or" +
+            " metric.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"Identifier used to mark the" +
+            " structure as a result table.\",\"default\":\"youtubeAnalytics#resultTable\"},\"rows\":" +
+            "{\"type\":\"array\",\"description\":\"Contains all rows of the result table. Each row c" +
+            "ontains an array with the values for the columns. The order matches the order of" +
+            " the column information provided in the \\\"columnHeaders\\\" field. If no data is a" +
+            "vailable for the given query, the \\\"rows\\\" element will be omitted from the resp" +
+            "onse. The response for a query with the day dimension will not contain rows for " +
+            "the most recent days.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"any\"}}}}}},\"reso" +
+            "urces\":{\"reports\":{\"methods\":{\"query\":{\"id\":\"youtubeAnalytics.reports.query\",\"pa" +
+            "th\":\"reports\",\"httpMethod\":\"GET\",\"description\":\"Retrieve your YouTube Analytics " +
+            "reports.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A comma-sep" +
+            "arated list of YouTube Analytics dimensions. E.g., \'video\', or \'ageGroup,gender\'" +
+            ".\",\"pattern\":\"[0-9a-zA-Z,]+\",\"location\":\"query\"},\"end-date\":{\"type\":\"string\",\"de" +
+            "scription\":\"End date for fetching YouTube Analytics data. All requests should sp" +
+            "ecify an end date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-" +
+            "[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"filters\":{\"type\":\"string\",\"description\":" +
+            "\"A list of dimension filters to be applied to YouTube Analytics data. Multiple f" +
+            "ilters can be joined together with the \';\' character. The returned result table " +
+            "will satisfy both filters. E.g., video==dMH0bHeiRNg;country==IT will restrict th" +
+            "e returned stats to the given video and the country Italy.\",\"location\":\"query\"}," +
+            "\"ids\":{\"type\":\"string\",\"description\":\"Unique channel or content owner ID for ret" +
+            "rieving YouTube Analytics data. Either channel==C or contentOwner==O where \'C\' i" +
+            "s the encrypted channel ID and \'O\' is the content owner name.\",\"required\":true,\"" +
+            "pattern\":\"[a-zA-Z]+==[a-zA-Z0-9_+-]+\",\"location\":\"query\"},\"max-results\":{\"type\":" +
+            "\"integer\",\"description\":\"The maximum number of rows to include in the response.\"" +
+            ",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"metrics\":{\"type\":\"string\",\"" +
+            "description\":\"A comma-separated list of YouTube Analytics metrics. E.g., \'views\'" +
+            " or \'likes,dislikes\'\",\"required\":true,\"pattern\":\"[0-9a-zA-Z,]+\",\"location\":\"quer" +
+            "y\"},\"sort\":{\"type\":\"string\",\"description\":\"A comma-separated list of dimensions " +
+            "or metrics that determine the sort order for YouTube Analytics data. By default " +
+            "the sort order is ascending, \'-\' prefix causes descending sort order.\",\"pattern\"" +
+            ":\"(-)?[0-9a-zA-Z,]+\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Start date for fetching YouTube Analytics data. All requests should specif" +
+            "y a start date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-" +
+            "9]{2}-[0-9]{2}\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description" +
+            "\":\"An index of the first entity to retrieve. Use this parameter as a pagination " +
+            "mechanism along with the max-results parameter (one-based, inclusive).\",\"format\"" +
+            ":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"ids\",\"start-date\"" +
+            ",\"end-date\",\"metrics\"],\"response\":{\"$ref\":\"ResultTable\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/yt-analytics.readonly\"]}}}}}";
         
         public const string Version = "v1";
         

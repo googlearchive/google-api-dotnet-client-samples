@@ -1227,320 +1227,321 @@ namespace Google.Apis.Dfareporting.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"dfareporting:v1" +
-            "\",\"name\":\"dfareporting\",\"version\":\"v1\",\"revision\":\"20120831\",\"title\":\"DFA Report" +
-            "ing API\",\"description\":\"Lets you create, run and download reports.\",\"icons\":{\"x1" +
-            "6\":\"http://www.google.com/images/icons/product/doubleclick-16.gif\",\"x32\":\"http:/" +
-            "/www.google.com/images/icons/product/doubleclick-32.gif\"},\"documentationLink\":\"h" +
-            "ttps://developers.google.com/doubleclick-advertisers/reporting/\",\"protocol\":\"res" +
-            "t\",\"baseUrl\":\"https://www.googleapis.com/dfareporting/v1/\",\"basePath\":\"/dfarepor" +
-            "ting/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"dfareporting/v1" +
-            "/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data " +
-            "format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"" +
-            "Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{" +
-            "\"type\":\"string\",\"description\":\"Selector specifying which fields to include in a " +
-            "partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API" +
-            " key. Your API key identifies your project and provides you with API access, quo" +
-            "ta, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"qu" +
-            "ery\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the curr" +
-            "ent user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Re" +
-            "turns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"" +
-            "query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota p" +
-            "urposes for server-side applications. Can be any arbitrary string assigned to a " +
-            "user, but should not exceed 40 characters. Overrides userIp if both are provided" +
-            ".\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of th" +
-            "e site where the request originates. Use this if you want to enforce per-user li" +
-            "mits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis." +
-            "com/auth/dfareporting\":{\"description\":\"View and manage DoubleClick for Advertise" +
-            "rs reports\"}}}},\"schemas\":{\"DimensionFilter\":{\"id\":\"DimensionFilter\",\"type\":\"obj" +
-            "ect\",\"description\":\"Represents a dimension filter.\",\"properties\":{\"dimensionName" +
-            "\":{\"type\":\"string\",\"description\":\"The name of the dimension to filter.\"},\"kind\":" +
-            "{\"type\":\"string\",\"description\":\"Kind of resource this is, in this case dfareport" +
-            "ing#dimensionFilter.\",\"default\":\"dfareporting#dimensionFilter\"},\"value\":{\"type\":" +
-            "\"string\",\"description\":\"The value of the dimension to filter for.\"}}},\"Dimension" +
-            "Value\":{\"id\":\"DimensionValue\",\"type\":\"object\",\"description\":\"Represents a Dimens" +
-            "ionValue resource.\",\"properties\":{\"dimensionName\":{\"type\":\"string\",\"description\"" +
-            ":\"Name of the dimension.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of this r" +
-            "esponse for caching purposes.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID asso" +
-            "ciated with the value if available.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kin" +
-            "d of resource this is, in this case dfareporting#dimensionValue.\",\"default\":\"dfa" +
-            "reporting#dimensionValue\"},\"value\":{\"type\":\"string\",\"description\":\"The value of " +
-            "the dimension.\"}}},\"DimensionValueList\":{\"id\":\"DimensionValueList\",\"type\":\"objec" +
-            "t\",\"description\":\"Represents the list of DimensionValue resources.\",\"properties\"" +
-            ":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching purpo" +
-            "ses.\"},\"items\":{\"type\":\"array\",\"description\":\"The dimension values returned in t" +
-            "his response.\",\"items\":{\"$ref\":\"DimensionValue\"}},\"kind\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Kind of list this is, in this case dfareporting#dimensionValueList.\",\"d" +
-            "efault\":\"dfareporting#dimensionValueList\"},\"nextPageToken\":{\"type\":\"string\",\"des" +
-            "cription\":\"Continuation token used to page through dimension values. To retrieve" +
-            " the next page of results, set the next request\'s \\\"pageToken\\\" to the value of " +
-            "this field. The page token is only valid for a limited amount of time and should" +
-            " not be persisted.\"}}},\"DimensionValueRequest\":{\"id\":\"DimensionValueRequest\",\"ty" +
-            "pe\":\"object\",\"description\":\"Represents a DimensionValuesRequest.\",\"properties\":{" +
-            "\"dimensionName\":{\"type\":\"string\",\"description\":\"The name of the dimension values" +
-            " should be requested for.\"},\"endDate\":{\"type\":\"string\",\"description\":\"The end da" +
-            "te of the date range for which to retrieve dimension values. A string of the for" +
-            "mat: \\\"yyyy-MM-dd\\\".\",\"format\":\"date\"},\"filters\":{\"type\":\"array\",\"description\":\"" +
-            "List of filters to filter values by. The filters are ANDed.\",\"items\":{\"$ref\":\"Di" +
-            "mensionFilter\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of request this is," +
-            " in this case dfareporting#dimensionValueRequest.\",\"default\":\"dfareporting#dimen" +
-            "sionValueRequest\"},\"startDate\":{\"type\":\"string\",\"description\":\"The start date of" +
-            " the date range for which to retrieve dimension values. A string of the format: " +
-            "\\\"yyyy-MM-dd\\\".\",\"format\":\"date\"}}},\"File\":{\"id\":\"File\",\"type\":\"object\",\"descrip" +
-            "tion\":\"Represents a File resource. A File contains the meta-data for a report ru" +
-            "n. It shows the status of the run and holds the urls to the generated report dat" +
-            "a if the run is finished and the status is \\\"REPORT_AVAILABLE\\\".\",\"properties\":{" +
-            "\"dateRange\":{\"type\":\"object\",\"description\":\"The date range for which the file ha" +
-            "s report data.\",\"properties\":{\"endDate\":{\"type\":\"string\",\"description\":\"The end " +
-            "date of the date range, inclusive. A string of the format: \\\"yyyy-MM-dd\\\".\",\"for" +
-            "mat\":\"date\"},\"startDate\":{\"type\":\"string\",\"description\":\"The start date of the d" +
-            "ate range, inclusive. A string of the format: \\\"yyyy-MM-dd\\\".\",\"format\":\"date\"}}" +
-            "},\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching purpo" +
-            "ses.\"},\"fileName\":{\"type\":\"string\",\"description\":\"The file name of the file.\"},\"" +
-            "id\":{\"type\":\"string\",\"description\":\"The unique ID of this report file.\",\"format\"" +
-            ":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource this is, in th" +
-            "is case dfareporting#file.\",\"default\":\"dfareporting#file\"},\"lastModifiedTime\":{\"" +
-            "type\":\"string\",\"description\":\"The timestamp in milliseconds since epoch when thi" +
-            "s file was last modified.\",\"format\":\"int64\"},\"reportId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The ID of the report this file was generated from.\",\"format\":\"int64\"},\"s" +
-            "tatus\":{\"type\":\"string\",\"description\":\"The status of the report file, one of:  \\" +
-            "n- \\\"PROCESSING\\\" \\n- \\\"REPORT_AVAILABLE\\\" \\n- \\\"FAILED\\\" \\n- \\\"CANCELLED\\\"\"},\"u" +
-            "rls\":{\"type\":\"object\",\"description\":\"The urls where the completed report file ca" +
-            "n be downloaded.\",\"properties\":{\"csv\":{\"type\":\"object\",\"description\":\"Urls for g" +
-            "enerated CSV data.\",\"properties\":{\"apiUrl\":{\"type\":\"string\",\"description\":\"The u" +
-            "rl for downloading the report data through the API.\"},\"browserUrl\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The url for downloading the report data through a browser.\"}}" +
-            "}}}}},\"FileList\":{\"id\":\"FileList\",\"type\":\"object\",\"description\":\"Represents the " +
-            "list of File resources.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ET" +
-            "ag of this response for caching purposes.\"},\"items\":{\"type\":\"array\",\"description" +
-            "\":\"The files returned in this response.\",\"items\":{\"$ref\":\"File\"}},\"kind\":{\"type\"" +
-            ":\"string\",\"description\":\"Kind of list this is, in this case dfareporting#fileLis" +
-            "t.\",\"default\":\"dfareporting#fileList\"},\"nextPageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Continuation token used to page through files. To retrieve the next page " +
-            "of results, set the next request\'s \\\"pageToken\\\" to the value of this field. The" +
-            " page token is only valid for a limited amount of time and should not be persist" +
-            "ed.\"}}},\"Report\":{\"id\":\"Report\",\"type\":\"object\",\"description\":\"Represents a Repo" +
-            "rt resource.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"The acco" +
-            "unt id this report belongs to.\",\"format\":\"int64\",\"annotations\":{\"required\":[\"dfa" +
-            "reporting.reports.update\"]}},\"criteria\":{\"type\":\"object\",\"description\":\"The repo" +
-            "rt criteria.\",\"properties\":{\"activities\":{\"type\":\"object\",\"description\":\"Activit" +
-            "y group.\",\"properties\":{\"filters\":{\"type\":\"array\",\"description\":\"List of activit" +
-            "y filters. The dimension values need to be all either of type \\\"dfa:activity\\\" o" +
-            "r \\\"dfa:activityGroup\\\".\",\"items\":{\"$ref\":\"DimensionValue\"}},\"metricNames\":{\"typ" +
-            "e\":\"array\",\"description\":\"List of names of floodlight activity metrics.\",\"items\"" +
-            ":{\"type\":\"string\"}}}},\"customRichMediaEvents\":{\"type\":\"object\",\"description\":\"Cu" +
-            "stom Rich Media Events group.\",\"properties\":{\"filteredEventIds\":{\"type\":\"array\"," +
-            "\"description\":\"List of custom rich media event IDs. Dimension values must be all" +
-            " of type dfa:richMediaEventTypeIdAndName.\",\"items\":{\"$ref\":\"DimensionValue\"}}}}," +
-            "\"dateRange\":{\"type\":\"object\",\"description\":\"The date range this report should be" +
-            " run for.\",\"properties\":{\"endDate\":{\"type\":\"string\",\"description\":\"The end date " +
-            "of the date range, inclusive. A string of the format: \\\"yyyy-MM-dd\\\".\",\"format\":" +
-            "\"date\"},\"relativeDateRange\":{\"type\":\"string\",\"description\":\"The date range relat" +
-            "ive to the date of when the report is run, one of:  \\n- \\\"TODAY\\\" \\n- \\\"YESTERDA" +
-            "Y\\\" \\n- \\\"WEEK_TO_DATE\\\" \\n- \\\"MONTH_TO_DATE\\\" \\n- \\\"QUARTER_TO_DATE\\\" \\n- \\\"YEA" +
-            "R_TO_DATE\\\" \\n- \\\"PREVIOUS_WEEK\\\" \\n- \\\"PREVIOUS_MONTH\\\" \\n- \\\"PREVIOUS_QUARTER\\" +
-            "\" \\n- \\\"PREVIOUS_YEAR\\\" \\n- \\\"LAST_7_DAYS\\\" \\n- \\\"LAST_30_DAYS\\\" \\n- \\\"LAST_90_D" +
-            "AYS\\\" \\n- \\\"LAST_365_DAYS\\\" \\n- \\\"LAST_24_MONTHS\\\"\"},\"startDate\":{\"type\":\"string" +
-            "\",\"description\":\"The start date of the date range, inclusive. A string of the fo" +
-            "rmat: \\\"yyyy-MM-dd\\\".\",\"format\":\"date\"}}},\"dimensionFilters\":{\"type\":\"array\",\"de" +
-            "scription\":\"The list of filters dimensions are filtered on.\\nFilters for differe" +
-            "nt dimensions are ANDed, filters for the same dimension are grouped together and" +
-            " ORed.\",\"items\":{\"$ref\":\"DimensionValue\"}},\"dimensions\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"The list of dimensions the report should include.\",\"items\":{\"$ref\":\"Sorte" +
-            "dDimension\"}},\"metricNames\":{\"type\":\"array\",\"description\":\"The list of names of " +
-            "metrics the report should include.\",\"items\":{\"type\":\"string\"}}}},\"etag\":{\"type\":" +
-            "\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"fileName\"" +
-            ":{\"type\":\"string\",\"description\":\"The file name used when generating report files" +
-            " for this report.\"},\"id\":{\"type\":\"string\",\"description\":\"The unique ID identifyi" +
-            "ng this report resource.\",\"format\":\"int64\",\"annotations\":{\"required\":[\"dfareport" +
-            "ing.reports.update\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource t" +
-            "his is, in this case dfareporting#report.\",\"default\":\"dfareporting#report\"},\"las" +
-            "tModifiedTime\":{\"type\":\"string\",\"description\":\"The timestamp (in milliseconds si" +
-            "nce epoch) of when this report was last modified.\",\"format\":\"uint64\",\"annotation" +
-            "s\":{\"required\":[\"dfareporting.reports.update\"]}},\"name\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The name of the report.\",\"annotations\":{\"required\":[\"dfareporting.report" +
-            "s.insert\",\"dfareporting.reports.update\"]}},\"ownerProfileId\":{\"type\":\"string\",\"de" +
-            "scription\":\"The user profile id of the owner of this report.\",\"format\":\"int64\",\"" +
-            "annotations\":{\"required\":[\"dfareporting.reports.update\"]}},\"schedule\":{\"type\":\"o" +
-            "bject\",\"description\":\"The report\'s schedule. Can only be set if the report\'s \'da" +
-            "teRange\' is a relative date range and the relative date range is not \\\"TODAY\\\".\"" +
-            ",\"properties\":{\"active\":{\"type\":\"boolean\",\"description\":\"Whether the schedule is" +
-            " active or not. Must be set to either true or false.\",\"annotations\":{\"required\":" +
-            "[\"dfareporting.reports.insert\",\"dfareporting.reports.update\"]}},\"every\":{\"type\":" +
-            "\"integer\",\"description\":\"Defines every how many days, weeks or months the report" +
-            " should be run. Needs to be set when \\\"repeats\\\" is either \\\"DAILY\\\", \\\"WEEKLY\\\"" +
-            " or \\\"MONTHLY\\\".\",\"format\":\"int32\"},\"expirationDate\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The expiration date when the scheduled report stops running.\",\"format\":\"dat" +
-            "e\",\"annotations\":{\"required\":[\"dfareporting.reports.insert\",\"dfareporting.report" +
-            "s.update\"]}},\"repeats\":{\"type\":\"string\",\"description\":\"The interval the report i" +
-            "s repeated for, one of:  \\n- \\\"DAILY\\\", also requires field \\\"every\\\" to be set." +
-            " \\n- \\\"WEEKLY\\\", also requires fields \\\"every\\\" and \\\"repeatsOnWeekDays\\\" to be " +
-            "set. \\n- \\\"TWICE_A_MONTH\\\" \\n- \\\"MONTHLY\\\", also requires fields \\\"every\\\" and \\" +
-            "\"runsOnDayOfMonth\\\" to be set. \\n- \\\"QUARTERLY\\\" \\n- \\\"YEARLY\\\"\",\"annotations\":{" +
-            "\"required\":[\"dfareporting.reports.insert\",\"dfareporting.reports.update\"]}},\"repe" +
-            "atsOnWeekDays\":{\"type\":\"array\",\"description\":\"List of week days \\\"WEEKLY\\\" sched" +
-            "uled reports should run on.\",\"items\":{\"type\":\"string\"}},\"runsOnDayOfMonth\":{\"typ" +
-            "e\":\"string\",\"description\":\"Enum to define for \\\"MONTHLY\\\" scheduled reports whet" +
-            "her reports should be repeated on the same day of the month as \\\"startDate\\\" or " +
-            "the same day of the week of the month. Possible values are:  \\n- DAY_OF_MONTH \\n" +
-            "- WEEK_OF_MONTH  \\nExample: If \'startDate\' is Monday, April 2nd 2012 (2012-04-02" +
-            "), \\\"DAY_OF_MONTH\\\" would run subsequent reports on the 2nd of every Month, and " +
-            "\\\"WEEK_OF_MONTH\\\" would run subsequent reports on the first Monday of the month." +
-            "\"},\"startDate\":{\"type\":\"string\",\"description\":\"Start date of date range for whic" +
-            "h scheduled reports should be run.\",\"format\":\"date\",\"annotations\":{\"required\":[\"" +
-            "dfareporting.reports.insert\",\"dfareporting.reports.update\"]}}}},\"subAccountId\":{" +
-            "\"type\":\"string\",\"description\":\"The subbaccount id this report belongs to if appl" +
-            "icable.\",\"format\":\"int64\"},\"type\":{\"type\":\"string\",\"description\":\"The type of th" +
-            "e report, currently only \\\"STANDARD\\\" is supported.\",\"annotations\":{\"required\":[" +
-            "\"dfareporting.reports.insert\",\"dfareporting.reports.update\"]}}}},\"ReportList\":{\"" +
-            "id\":\"ReportList\",\"type\":\"object\",\"description\":\"Represents the list of reports.\"" +
-            ",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for " +
-            "caching purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The reports returned " +
-            "in this response.\",\"items\":{\"$ref\":\"Report\"}},\"kind\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Kind of list this is, in this case dfareporting#reportList.\",\"default\":\"dfa" +
-            "reporting#reportList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuat" +
-            "ion token used to page through reports. To retrieve the next page of results, se" +
-            "t the next request\'s \\\"pageToken\\\" to the value of this field. The page token is" +
-            " only valid for a limited amount of time and should not be persisted.\"}}},\"Sorte" +
-            "dDimension\":{\"id\":\"SortedDimension\",\"type\":\"object\",\"description\":\"Represents a " +
-            "sorted dimension.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Kind of " +
-            "resource this is, in this case dfareporting#sortedDimension.\",\"default\":\"dfarepo" +
-            "rting#sortedDimension\"},\"name\":{\"type\":\"string\",\"description\":\"The name of the d" +
-            "imension.\"},\"sortOrder\":{\"type\":\"string\",\"description\":\"An optional sort order f" +
-            "or the dimension column, one of:  \\n- \\\"ASCENDING\\\" \\n- \\\"DESCENDING\\\"\"}}},\"User" +
-            "Profile\":{\"id\":\"UserProfile\",\"type\":\"object\",\"description\":\"Represents a UserPro" +
-            "file resource.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"The ac" +
-            "count ID this profile belongs to.\",\"format\":\"int64\"},\"accountName\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The account name this profile belongs to.\"},\"etag\":{\"type\":\"s" +
-            "tring\",\"description\":\"ETag of this response for caching purposes.\"},\"kind\":{\"typ" +
-            "e\":\"string\",\"description\":\"Kind of resource this is, in this case dfareporting#u" +
-            "serProfile.\",\"default\":\"dfareporting#userProfile\"},\"profileId\":{\"type\":\"string\"," +
-            "\"description\":\"The unique ID of the user profile.\",\"format\":\"int64\"},\"subAccount" +
-            "Id\":{\"type\":\"string\",\"description\":\"The sub account ID this profile belongs to i" +
-            "f applicable.\",\"format\":\"int64\"},\"subAccountName\":{\"type\":\"string\",\"description\"" +
-            ":\"The sub account name this profile belongs to if applicable.\"},\"userName\":{\"typ" +
-            "e\":\"string\",\"description\":\"The user name.\"}}},\"UserProfileList\":{\"id\":\"UserProfi" +
-            "leList\",\"type\":\"object\",\"description\":\"Represents the list of user profiles.\",\"p" +
-            "roperties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for cac" +
-            "hing purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The user profiles return" +
-            "ed in this response.\",\"items\":{\"$ref\":\"UserProfile\"}},\"kind\":{\"type\":\"string\",\"d" +
-            "escription\":\"Kind of list this is, in this case dfareporting#userProfileList.\",\"" +
-            "default\":\"dfareporting#userProfileList\"}}}},\"resources\":{\"dimensionValues\":{\"met" +
-            "hods\":{\"query\":{\"id\":\"dfareporting.dimensionValues.query\",\"path\":\"userprofiles/{" +
-            "profileId}/dimensionvalues/query\",\"httpMethod\":\"POST\",\"description\":\"Retrieves l" +
-            "ist of report dimension values for a list of filters.\",\"parameters\":{\"maxResults" +
-            "\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return.\",\"format" +
-            "\":\"int32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":" +
-            "\"string\",\"description\":\"The value of the nextToken from the previous result page" +
-            ".\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\",\"description\":\"The DFA user " +
-            "profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"profileId\"],\"request\":{\"$ref\":\"DimensionValueRequest\"},\"response\":{\"$ref\":\"" +
-            "DimensionValueList\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]}}" +
-            "},\"files\":{\"methods\":{\"list\":{\"id\":\"dfareporting.files.list\",\"path\":\"userprofile" +
-            "s/{profileId}/files\",\"httpMethod\":\"GET\",\"description\":\"Lists files for a user pr" +
-            "ofile.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numb" +
-            "er of results to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10\",\"locatio" +
-            "n\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of the nextTok" +
-            "en from the previous result page.\",\"location\":\"query\"},\"profileId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The DFA profile id.\",\"required\":true,\"format\":\"int64\",\"locati" +
-            "on\":\"path\"},\"sortField\":{\"type\":\"string\",\"description\":\"The field to sort the li" +
-            "st by.\",\"default\":\"LAST_MODIFIED_TIME\",\"enum\":[\"ID\",\"LAST_MODIFIED_TIME\"],\"enumD" +
-            "escriptions\":[\"Sort by file id.\",\"Sort by \'lastmodifiedAt\' field.\"],\"location\":\"" +
-            "query\"},\"sortOrder\":{\"type\":\"string\",\"description\":\"Order of sorted results, def" +
-            "ault is \'DESCENDING\'.\",\"default\":\"DESCENDING\",\"enum\":[\"ASCENDING\",\"DESCENDING\"]," +
-            "\"enumDescriptions\":[\"Ascending order.\",\"Descending order.\"],\"location\":\"query\"}}" +
-            ",\"parameterOrder\":[\"profileId\"],\"response\":{\"$ref\":\"FileList\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/dfareporting\"]}}},\"reports\":{\"methods\":{\"delete\":{\"id\"" +
-            ":\"dfareporting.reports.delete\",\"path\":\"userprofiles/{profileId}/reports/{reportI" +
-            "d}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a report by its id.\",\"parameter" +
-            "s\":{\"profileId\":{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"requi" +
-            "red\":true,\"format\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The id of the report.\",\"required\":true,\"format\":\"int64\",\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"profileId\",\"reportId\"],\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/dfareporting\"]},\"get\":{\"id\":\"dfareporting.reports.get\",\"path\":\"userpro" +
-            "files/{profileId}/reports/{reportId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieve" +
-            "s a report by its id.\",\"parameters\":{\"profileId\":{\"type\":\"string\",\"description\":" +
-            "\"The DFA user profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"" +
-            "reportId\":{\"type\":\"string\",\"description\":\"The id of the report.\",\"required\":true" +
-            ",\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"profileId\",\"reportId\"]," +
-            "\"response\":{\"$ref\":\"Report\"},\"scopes\":[\"https://www.googleapis.com/auth/dfarepor" +
-            "ting\"]},\"insert\":{\"id\":\"dfareporting.reports.insert\",\"path\":\"userprofiles/{profi" +
-            "leId}/reports\",\"httpMethod\":\"POST\",\"description\":\"Creates a report.\",\"parameters" +
-            "\":{\"profileId\":{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"requir" +
-            "ed\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"profileId\"],\"re" +
-            "quest\":{\"$ref\":\"Report\"},\"response\":{\"$ref\":\"Report\"},\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/dfareporting\"]},\"list\":{\"id\":\"dfareporting.reports.list\",\"path\"" +
-            ":\"userprofiles/{profileId}/reports\",\"httpMethod\":\"GET\",\"description\":\"Retrieves " +
-            "list of reports.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Ma" +
-            "ximum number of results to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10" +
-            "\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of t" +
-            "he nextToken from the previous result page.\",\"location\":\"query\"},\"profileId\":{\"t" +
-            "ype\":\"string\",\"description\":\"The DFA user profile id.\",\"required\":true,\"format\":" +
-            "\"int64\",\"location\":\"path\"},\"sortField\":{\"type\":\"string\",\"description\":\"The field" +
-            " to sort the list by.\",\"default\":\"LAST_MODIFIED_TIME\",\"enum\":[\"ID\",\"LAST_MODIFIE" +
-            "D_TIME\",\"NAME\"],\"enumDescriptions\":[\"Sort by report id.\",\"Sort by \'lastModifiedT" +
-            "ime\' field.\",\"Sort by display name of reports.\"],\"location\":\"query\"},\"sortOrder\"" +
-            ":{\"type\":\"string\",\"description\":\"Order of sorted results, default is \'DESCENDING" +
-            "\'.\",\"default\":\"DESCENDING\",\"enum\":[\"ASCENDING\",\"DESCENDING\"],\"enumDescriptions\":" +
-            "[\"Ascending order.\",\"Descending order.\"],\"location\":\"query\"}},\"parameterOrder\":[" +
-            "\"profileId\"],\"response\":{\"$ref\":\"ReportList\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/dfareporting\"]},\"patch\":{\"id\":\"dfareporting.reports.patch\",\"path\":\"user" +
-            "profiles/{profileId}/reports/{reportId}\",\"httpMethod\":\"PATCH\",\"description\":\"Upd" +
-            "ates a report. This method supports patch semantics.\",\"parameters\":{\"profileId\":" +
-            "{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"required\":true,\"forma" +
-            "t\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"The id " +
-            "of the report.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"profileId\",\"reportId\"],\"request\":{\"$ref\":\"Report\"},\"response\":{\"$ref\":\"R" +
-            "eport\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"run\":{\"id\":\"" +
-            "dfareporting.reports.run\",\"path\":\"userprofiles/{profileId}/reports/{reportId}/ru" +
-            "n\",\"httpMethod\":\"POST\",\"description\":\"Runs a report.\",\"parameters\":{\"profileId\":" +
-            "{\"type\":\"string\",\"description\":\"The DFA profile id.\",\"required\":true,\"format\":\"i" +
-            "nt64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"The id of th" +
-            "e report.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"synchronous\":{\"t" +
-            "ype\":\"boolean\",\"description\":\"If set and true, tries to run the report synchrono" +
-            "usly.\",\"location\":\"query\"}},\"parameterOrder\":[\"profileId\",\"reportId\"],\"response\"" +
-            ":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"upd" +
-            "ate\":{\"id\":\"dfareporting.reports.update\",\"path\":\"userprofiles/{profileId}/report" +
-            "s/{reportId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a report.\",\"parameters\":" +
-            "{\"profileId\":{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"required" +
-            "\":true,\"format\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The id of the report.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"profileId\",\"reportId\"],\"request\":{\"$ref\":\"Report\"},\"respons" +
-            "e\":{\"$ref\":\"Report\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]}}" +
-            ",\"resources\":{\"files\":{\"methods\":{\"get\":{\"id\":\"dfareporting.reports.files.get\",\"" +
-            "path\":\"userprofiles/{profileId}/reports/{reportId}/files/{fileId}\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"Retrieves a report file.\",\"parameters\":{\"fileId\":{\"type\":\"s" +
-            "tring\",\"description\":\"The id of the report file.\",\"required\":true,\"format\":\"int6" +
-            "4\",\"location\":\"path\"},\"profileId\":{\"type\":\"string\",\"description\":\"The DFA profil" +
-            "e id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"s" +
-            "tring\",\"description\":\"The id of the report.\",\"required\":true,\"format\":\"int64\",\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"profileId\",\"reportId\",\"fileId\"],\"response\":" +
-            "{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"list" +
-            "\":{\"id\":\"dfareporting.reports.files.list\",\"path\":\"userprofiles/{profileId}/repor" +
-            "ts/{reportId}/files\",\"httpMethod\":\"GET\",\"description\":\"Lists files for a report." +
-            "\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of " +
-            "results to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10\",\"location\":\"qu" +
-            "ery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of the nextToken fro" +
-            "m the previous result page.\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\",\"d" +
-            "escription\":\"The DFA profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"p" +
-            "ath\"},\"reportId\":{\"type\":\"string\",\"description\":\"The id of the parent report.\",\"" +
-            "required\":true,\"format\":\"int64\",\"location\":\"path\"},\"sortField\":{\"type\":\"string\"," +
-            "\"description\":\"The field to sort the list by.\",\"default\":\"LAST_MODIFIED_TIME\",\"e" +
-            "num\":[\"ID\",\"LAST_MODIFIED_TIME\"],\"enumDescriptions\":[\"Sort by file id.\",\"Sort by" +
-            " \'lastmodifiedAt\' field.\"],\"location\":\"query\"},\"sortOrder\":{\"type\":\"string\",\"des" +
-            "cription\":\"Order of sorted results, default is \'DESCENDING\'.\",\"default\":\"DESCEND" +
-            "ING\",\"enum\":[\"ASCENDING\",\"DESCENDING\"],\"enumDescriptions\":[\"Ascending order.\",\"D" +
-            "escending order.\"],\"location\":\"query\"}},\"parameterOrder\":[\"profileId\",\"reportId\"" +
-            "],\"response\":{\"$ref\":\"FileList\"},\"scopes\":[\"https://www.googleapis.com/auth/dfar" +
-            "eporting\"]}}}}},\"userProfiles\":{\"methods\":{\"get\":{\"id\":\"dfareporting.userProfile" +
-            "s.get\",\"path\":\"userprofiles/{profileId}\",\"httpMethod\":\"GET\",\"description\":\"Gets " +
-            "one user profile by id.\",\"parameters\":{\"profileId\":{\"type\":\"string\",\"description" +
-            "\":\"The user profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"profileId\"],\"response\":{\"$ref\":\"UserProfile\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/dfareporting\"]},\"list\":{\"id\":\"dfareporting.userProfile" +
-            "s.list\",\"path\":\"userprofiles\",\"httpMethod\":\"GET\",\"description\":\"Retrieves list o" +
-            "f user profiles for a user.\",\"response\":{\"$ref\":\"UserProfileList\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/dfareporting\"]}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/NL3k0nV" +
+            "BknrlZnhzUEDeEYokJ70\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"dfareporting:v1\",\"name\":\"d" +
+            "fareporting\",\"version\":\"v1\",\"revision\":\"20120831\",\"title\":\"DFA Reporting API\",\"d" +
+            "escription\":\"Lets you create, run and download reports.\",\"icons\":{\"x16\":\"http://" +
+            "www.google.com/images/icons/product/doubleclick-16.gif\",\"x32\":\"http://www.google" +
+            ".com/images/icons/product/doubleclick-32.gif\"},\"documentationLink\":\"https://deve" +
+            "lopers.google.com/doubleclick-advertisers/reporting/\",\"protocol\":\"rest\",\"baseUrl" +
+            "\":\"https://www.googleapis.com/dfareporting/v1/\",\"basePath\":\"/dfareporting/v1/\",\"" +
+            "rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"dfareporting/v1/\",\"batchPa" +
+            "th\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for " +
+            "the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses w" +
+            "ith Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"str" +
+            "ing\",\"description\":\"Selector specifying which fields to include in a partial res" +
+            "ponse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your " +
+            "API key identifies your project and provides you with API access, quota, and rep" +
+            "orts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oaut" +
+            "h_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\"," +
+            "\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respo" +
+            "nse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"qu" +
+            "otaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for" +
+            " server-side applications. Can be any arbitrary string assigned to a user, but s" +
+            "hould not exceed 40 characters. Overrides userIp if both are provided.\",\"locatio" +
+            "n\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site wher" +
+            "e the request originates. Use this if you want to enforce per-user limits.\",\"loc" +
+            "ation\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/df" +
+            "areporting\":{\"description\":\"View and manage DoubleClick for Advertisers reports\"" +
+            "}}}},\"schemas\":{\"DimensionFilter\":{\"id\":\"DimensionFilter\",\"type\":\"object\",\"descr" +
+            "iption\":\"Represents a dimension filter.\",\"properties\":{\"dimensionName\":{\"type\":\"" +
+            "string\",\"description\":\"The name of the dimension to filter.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"Kind of resource this is, in this case dfareporting#dimensi" +
+            "onFilter.\",\"default\":\"dfareporting#dimensionFilter\"},\"value\":{\"type\":\"string\",\"d" +
+            "escription\":\"The value of the dimension to filter for.\"}}},\"DimensionValue\":{\"id" +
+            "\":\"DimensionValue\",\"type\":\"object\",\"description\":\"Represents a DimensionValue re" +
+            "source.\",\"properties\":{\"dimensionName\":{\"type\":\"string\",\"description\":\"Name of t" +
+            "he dimension.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for" +
+            " caching purposes.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID associated with" +
+            " the value if available.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resour" +
+            "ce this is, in this case dfareporting#dimensionValue.\",\"default\":\"dfareporting#d" +
+            "imensionValue\"},\"value\":{\"type\":\"string\",\"description\":\"The value of the dimensi" +
+            "on.\"}}},\"DimensionValueList\":{\"id\":\"DimensionValueList\",\"type\":\"object\",\"descrip" +
+            "tion\":\"Represents the list of DimensionValue resources.\",\"properties\":{\"etag\":{\"" +
+            "type\":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"ite" +
+            "ms\":{\"type\":\"array\",\"description\":\"The dimension values returned in this respons" +
+            "e.\",\"items\":{\"$ref\":\"DimensionValue\"}},\"kind\":{\"type\":\"string\",\"description\":\"Ki" +
+            "nd of list this is, in this case dfareporting#dimensionValueList.\",\"default\":\"df" +
+            "areporting#dimensionValueList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"" +
+            "Continuation token used to page through dimension values. To retrieve the next p" +
+            "age of results, set the next request\'s \\\"pageToken\\\" to the value of this field." +
+            " The page token is only valid for a limited amount of time and should not be per" +
+            "sisted.\"}}},\"DimensionValueRequest\":{\"id\":\"DimensionValueRequest\",\"type\":\"object" +
+            "\",\"description\":\"Represents a DimensionValuesRequest.\",\"properties\":{\"dimensionN" +
+            "ame\":{\"type\":\"string\",\"description\":\"The name of the dimension values should be " +
+            "requested for.\"},\"endDate\":{\"type\":\"string\",\"description\":\"The end date of the d" +
+            "ate range for which to retrieve dimension values. A string of the format: \\\"yyyy" +
+            "-MM-dd\\\".\",\"format\":\"date\"},\"filters\":{\"type\":\"array\",\"description\":\"List of fil" +
+            "ters to filter values by. The filters are ANDed.\",\"items\":{\"$ref\":\"DimensionFilt" +
+            "er\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of request this is, in this ca" +
+            "se dfareporting#dimensionValueRequest.\",\"default\":\"dfareporting#dimensionValueRe" +
+            "quest\"},\"startDate\":{\"type\":\"string\",\"description\":\"The start date of the date r" +
+            "ange for which to retrieve dimension values. A string of the format: \\\"yyyy-MM-d" +
+            "d\\\".\",\"format\":\"date\"}}},\"File\":{\"id\":\"File\",\"type\":\"object\",\"description\":\"Repr" +
+            "esents a File resource. A File contains the meta-data for a report run. It shows" +
+            " the status of the run and holds the urls to the generated report data if the ru" +
+            "n is finished and the status is \\\"REPORT_AVAILABLE\\\".\",\"properties\":{\"dateRange\"" +
+            ":{\"type\":\"object\",\"description\":\"The date range for which the file has report da" +
+            "ta.\",\"properties\":{\"endDate\":{\"type\":\"string\",\"description\":\"The end date of the" +
+            " date range, inclusive. A string of the format: \\\"yyyy-MM-dd\\\".\",\"format\":\"date\"" +
+            "},\"startDate\":{\"type\":\"string\",\"description\":\"The start date of the date range, " +
+            "inclusive. A string of the format: \\\"yyyy-MM-dd\\\".\",\"format\":\"date\"}}},\"etag\":{\"" +
+            "type\":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"fil" +
+            "eName\":{\"type\":\"string\",\"description\":\"The file name of the file.\"},\"id\":{\"type\"" +
+            ":\"string\",\"description\":\"The unique ID of this report file.\",\"format\":\"int64\"},\"" +
+            "kind\":{\"type\":\"string\",\"description\":\"Kind of resource this is, in this case dfa" +
+            "reporting#file.\",\"default\":\"dfareporting#file\"},\"lastModifiedTime\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The timestamp in milliseconds since epoch when this file was " +
+            "last modified.\",\"format\":\"int64\"},\"reportId\":{\"type\":\"string\",\"description\":\"The" +
+            " ID of the report this file was generated from.\",\"format\":\"int64\"},\"status\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The status of the report file, one of:  \\n- \\\"PROCES" +
+            "SING\\\" \\n- \\\"REPORT_AVAILABLE\\\" \\n- \\\"FAILED\\\" \\n- \\\"CANCELLED\\\"\"},\"urls\":{\"type" +
+            "\":\"object\",\"description\":\"The urls where the completed report file can be downlo" +
+            "aded.\",\"properties\":{\"csv\":{\"type\":\"object\",\"description\":\"Urls for generated CS" +
+            "V data.\",\"properties\":{\"apiUrl\":{\"type\":\"string\",\"description\":\"The url for down" +
+            "loading the report data through the API.\"},\"browserUrl\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The url for downloading the report data through a browser.\"}}}}}}},\"File" +
+            "List\":{\"id\":\"FileList\",\"type\":\"object\",\"description\":\"Represents the list of Fil" +
+            "e resources.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this " +
+            "response for caching purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The file" +
+            "s returned in this response.\",\"items\":{\"$ref\":\"File\"}},\"kind\":{\"type\":\"string\",\"" +
+            "description\":\"Kind of list this is, in this case dfareporting#fileList.\",\"defaul" +
+            "t\":\"dfareporting#fileList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Cont" +
+            "inuation token used to page through files. To retrieve the next page of results," +
+            " set the next request\'s \\\"pageToken\\\" to the value of this field. The page token" +
+            " is only valid for a limited amount of time and should not be persisted.\"}}},\"Re" +
+            "port\":{\"id\":\"Report\",\"type\":\"object\",\"description\":\"Represents a Report resource" +
+            ".\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"The account id this" +
+            " report belongs to.\",\"format\":\"int64\",\"annotations\":{\"required\":[\"dfareporting.r" +
+            "eports.update\"]}},\"criteria\":{\"type\":\"object\",\"description\":\"The report criteria" +
+            ".\",\"properties\":{\"activities\":{\"type\":\"object\",\"description\":\"Activity group.\",\"" +
+            "properties\":{\"filters\":{\"type\":\"array\",\"description\":\"List of activity filters. " +
+            "The dimension values need to be all either of type \\\"dfa:activity\\\" or \\\"dfa:act" +
+            "ivityGroup\\\".\",\"items\":{\"$ref\":\"DimensionValue\"}},\"metricNames\":{\"type\":\"array\"," +
+            "\"description\":\"List of names of floodlight activity metrics.\",\"items\":{\"type\":\"s" +
+            "tring\"}}}},\"customRichMediaEvents\":{\"type\":\"object\",\"description\":\"Custom Rich M" +
+            "edia Events group.\",\"properties\":{\"filteredEventIds\":{\"type\":\"array\",\"descriptio" +
+            "n\":\"List of custom rich media event IDs. Dimension values must be all of type df" +
+            "a:richMediaEventTypeIdAndName.\",\"items\":{\"$ref\":\"DimensionValue\"}}}},\"dateRange\"" +
+            ":{\"type\":\"object\",\"description\":\"The date range this report should be run for.\"," +
+            "\"properties\":{\"endDate\":{\"type\":\"string\",\"description\":\"The end date of the date" +
+            " range, inclusive. A string of the format: \\\"yyyy-MM-dd\\\".\",\"format\":\"date\"},\"re" +
+            "lativeDateRange\":{\"type\":\"string\",\"description\":\"The date range relative to the " +
+            "date of when the report is run, one of:  \\n- \\\"TODAY\\\" \\n- \\\"YESTERDAY\\\" \\n- \\\"W" +
+            "EEK_TO_DATE\\\" \\n- \\\"MONTH_TO_DATE\\\" \\n- \\\"QUARTER_TO_DATE\\\" \\n- \\\"YEAR_TO_DATE\\\"" +
+            " \\n- \\\"PREVIOUS_WEEK\\\" \\n- \\\"PREVIOUS_MONTH\\\" \\n- \\\"PREVIOUS_QUARTER\\\" \\n- \\\"PRE" +
+            "VIOUS_YEAR\\\" \\n- \\\"LAST_7_DAYS\\\" \\n- \\\"LAST_30_DAYS\\\" \\n- \\\"LAST_90_DAYS\\\" \\n- \\" +
+            "\"LAST_365_DAYS\\\" \\n- \\\"LAST_24_MONTHS\\\"\"},\"startDate\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The start date of the date range, inclusive. A string of the format: \\\"yyy" +
+            "y-MM-dd\\\".\",\"format\":\"date\"}}},\"dimensionFilters\":{\"type\":\"array\",\"description\":" +
+            "\"The list of filters dimensions are filtered on.\\nFilters for different dimensio" +
+            "ns are ANDed, filters for the same dimension are grouped together and ORed.\",\"it" +
+            "ems\":{\"$ref\":\"DimensionValue\"}},\"dimensions\":{\"type\":\"array\",\"description\":\"The " +
+            "list of dimensions the report should include.\",\"items\":{\"$ref\":\"SortedDimension\"" +
+            "}},\"metricNames\":{\"type\":\"array\",\"description\":\"The list of names of metrics the" +
+            " report should include.\",\"items\":{\"type\":\"string\"}}}},\"etag\":{\"type\":\"string\",\"d" +
+            "escription\":\"ETag of this response for caching purposes.\"},\"fileName\":{\"type\":\"s" +
+            "tring\",\"description\":\"The file name used when generating report files for this r" +
+            "eport.\"},\"id\":{\"type\":\"string\",\"description\":\"The unique ID identifying this rep" +
+            "ort resource.\",\"format\":\"int64\",\"annotations\":{\"required\":[\"dfareporting.reports" +
+            ".update\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource this is, in " +
+            "this case dfareporting#report.\",\"default\":\"dfareporting#report\"},\"lastModifiedTi" +
+            "me\":{\"type\":\"string\",\"description\":\"The timestamp (in milliseconds since epoch) " +
+            "of when this report was last modified.\",\"format\":\"uint64\",\"annotations\":{\"requir" +
+            "ed\":[\"dfareporting.reports.update\"]}},\"name\":{\"type\":\"string\",\"description\":\"The" +
+            " name of the report.\",\"annotations\":{\"required\":[\"dfareporting.reports.insert\",\"" +
+            "dfareporting.reports.update\"]}},\"ownerProfileId\":{\"type\":\"string\",\"description\":" +
+            "\"The user profile id of the owner of this report.\",\"format\":\"int64\",\"annotations" +
+            "\":{\"required\":[\"dfareporting.reports.update\"]}},\"schedule\":{\"type\":\"object\",\"des" +
+            "cription\":\"The report\'s schedule. Can only be set if the report\'s \'dateRange\' is" +
+            " a relative date range and the relative date range is not \\\"TODAY\\\".\",\"propertie" +
+            "s\":{\"active\":{\"type\":\"boolean\",\"description\":\"Whether the schedule is active or " +
+            "not. Must be set to either true or false.\",\"annotations\":{\"required\":[\"dfareport" +
+            "ing.reports.insert\",\"dfareporting.reports.update\"]}},\"every\":{\"type\":\"integer\",\"" +
+            "description\":\"Defines every how many days, weeks or months the report should be " +
+            "run. Needs to be set when \\\"repeats\\\" is either \\\"DAILY\\\", \\\"WEEKLY\\\" or \\\"MONTH" +
+            "LY\\\".\",\"format\":\"int32\"},\"expirationDate\":{\"type\":\"string\",\"description\":\"The ex" +
+            "piration date when the scheduled report stops running.\",\"format\":\"date\",\"annotat" +
+            "ions\":{\"required\":[\"dfareporting.reports.insert\",\"dfareporting.reports.update\"]}" +
+            "},\"repeats\":{\"type\":\"string\",\"description\":\"The interval the report is repeated " +
+            "for, one of:  \\n- \\\"DAILY\\\", also requires field \\\"every\\\" to be set. \\n- \\\"WEEK" +
+            "LY\\\", also requires fields \\\"every\\\" and \\\"repeatsOnWeekDays\\\" to be set. \\n- \\\"" +
+            "TWICE_A_MONTH\\\" \\n- \\\"MONTHLY\\\", also requires fields \\\"every\\\" and \\\"runsOnDayO" +
+            "fMonth\\\" to be set. \\n- \\\"QUARTERLY\\\" \\n- \\\"YEARLY\\\"\",\"annotations\":{\"required\":" +
+            "[\"dfareporting.reports.insert\",\"dfareporting.reports.update\"]}},\"repeatsOnWeekDa" +
+            "ys\":{\"type\":\"array\",\"description\":\"List of week days \\\"WEEKLY\\\" scheduled report" +
+            "s should run on.\",\"items\":{\"type\":\"string\"}},\"runsOnDayOfMonth\":{\"type\":\"string\"" +
+            ",\"description\":\"Enum to define for \\\"MONTHLY\\\" scheduled reports whether reports" +
+            " should be repeated on the same day of the month as \\\"startDate\\\" or the same da" +
+            "y of the week of the month. Possible values are:  \\n- DAY_OF_MONTH \\n- WEEK_OF_M" +
+            "ONTH  \\nExample: If \'startDate\' is Monday, April 2nd 2012 (2012-04-02), \\\"DAY_OF" +
+            "_MONTH\\\" would run subsequent reports on the 2nd of every Month, and \\\"WEEK_OF_M" +
+            "ONTH\\\" would run subsequent reports on the first Monday of the month.\"},\"startDa" +
+            "te\":{\"type\":\"string\",\"description\":\"Start date of date range for which scheduled" +
+            " reports should be run.\",\"format\":\"date\",\"annotations\":{\"required\":[\"dfareportin" +
+            "g.reports.insert\",\"dfareporting.reports.update\"]}}}},\"subAccountId\":{\"type\":\"str" +
+            "ing\",\"description\":\"The subbaccount id this report belongs to if applicable.\",\"f" +
+            "ormat\":\"int64\"},\"type\":{\"type\":\"string\",\"description\":\"The type of the report, c" +
+            "urrently only \\\"STANDARD\\\" is supported.\",\"annotations\":{\"required\":[\"dfareporti" +
+            "ng.reports.insert\",\"dfareporting.reports.update\"]}}}},\"ReportList\":{\"id\":\"Report" +
+            "List\",\"type\":\"object\",\"description\":\"Represents the list of reports.\",\"propertie" +
+            "s\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching pur" +
+            "poses.\"},\"items\":{\"type\":\"array\",\"description\":\"The reports returned in this res" +
+            "ponse.\",\"items\":{\"$ref\":\"Report\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind o" +
+            "f list this is, in this case dfareporting#reportList.\",\"default\":\"dfareporting#r" +
+            "eportList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuation token u" +
+            "sed to page through reports. To retrieve the next page of results, set the next " +
+            "request\'s \\\"pageToken\\\" to the value of this field. The page token is only valid" +
+            " for a limited amount of time and should not be persisted.\"}}},\"SortedDimension\"" +
+            ":{\"id\":\"SortedDimension\",\"type\":\"object\",\"description\":\"Represents a sorted dime" +
+            "nsion.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource th" +
+            "is is, in this case dfareporting#sortedDimension.\",\"default\":\"dfareporting#sorte" +
+            "dDimension\"},\"name\":{\"type\":\"string\",\"description\":\"The name of the dimension.\"}" +
+            ",\"sortOrder\":{\"type\":\"string\",\"description\":\"An optional sort order for the dime" +
+            "nsion column, one of:  \\n- \\\"ASCENDING\\\" \\n- \\\"DESCENDING\\\"\"}}},\"UserProfile\":{\"" +
+            "id\":\"UserProfile\",\"type\":\"object\",\"description\":\"Represents a UserProfile resour" +
+            "ce.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"The account ID th" +
+            "is profile belongs to.\",\"format\":\"int64\"},\"accountName\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The account name this profile belongs to.\"},\"etag\":{\"type\":\"string\",\"des" +
+            "cription\":\"ETag of this response for caching purposes.\"},\"kind\":{\"type\":\"string\"" +
+            ",\"description\":\"Kind of resource this is, in this case dfareporting#userProfile." +
+            "\",\"default\":\"dfareporting#userProfile\"},\"profileId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The unique ID of the user profile.\",\"format\":\"int64\"},\"subAccountId\":{\"type\"" +
+            ":\"string\",\"description\":\"The sub account ID this profile belongs to if applicabl" +
+            "e.\",\"format\":\"int64\"},\"subAccountName\":{\"type\":\"string\",\"description\":\"The sub a" +
+            "ccount name this profile belongs to if applicable.\"},\"userName\":{\"type\":\"string\"" +
+            ",\"description\":\"The user name.\"}}},\"UserProfileList\":{\"id\":\"UserProfileList\",\"ty" +
+            "pe\":\"object\",\"description\":\"Represents the list of user profiles.\",\"properties\":" +
+            "{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching purpos" +
+            "es.\"},\"items\":{\"type\":\"array\",\"description\":\"The user profiles returned in this " +
+            "response.\",\"items\":{\"$ref\":\"UserProfile\"}},\"kind\":{\"type\":\"string\",\"description\"" +
+            ":\"Kind of list this is, in this case dfareporting#userProfileList.\",\"default\":\"d" +
+            "fareporting#userProfileList\"}}}},\"resources\":{\"dimensionValues\":{\"methods\":{\"que" +
+            "ry\":{\"id\":\"dfareporting.dimensionValues.query\",\"path\":\"userprofiles/{profileId}/" +
+            "dimensionvalues/query\",\"httpMethod\":\"POST\",\"description\":\"Retrieves list of repo" +
+            "rt dimension values for a list of filters.\",\"parameters\":{\"maxResults\":{\"type\":\"" +
+            "integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"int32\",\"" +
+            "minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"d" +
+            "escription\":\"The value of the nextToken from the previous result page.\",\"locatio" +
+            "n\":\"query\"},\"profileId\":{\"type\":\"string\",\"description\":\"The DFA user profile id." +
+            "\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"profil" +
+            "eId\"],\"request\":{\"$ref\":\"DimensionValueRequest\"},\"response\":{\"$ref\":\"DimensionVa" +
+            "lueList\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]}}},\"files\":{" +
+            "\"methods\":{\"list\":{\"id\":\"dfareporting.files.list\",\"path\":\"userprofiles/{profileI" +
+            "d}/files\",\"httpMethod\":\"GET\",\"description\":\"Lists files for a user profile.\",\"pa" +
+            "rameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of resul" +
+            "ts to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10\",\"location\":\"query\"}" +
+            ",\"pageToken\":{\"type\":\"string\",\"description\":\"The value of the nextToken from the" +
+            " previous result page.\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The DFA profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}" +
+            ",\"sortField\":{\"type\":\"string\",\"description\":\"The field to sort the list by.\",\"de" +
+            "fault\":\"LAST_MODIFIED_TIME\",\"enum\":[\"ID\",\"LAST_MODIFIED_TIME\"],\"enumDescriptions" +
+            "\":[\"Sort by file id.\",\"Sort by \'lastmodifiedAt\' field.\"],\"location\":\"query\"},\"so" +
+            "rtOrder\":{\"type\":\"string\",\"description\":\"Order of sorted results, default is \'DE" +
+            "SCENDING\'.\",\"default\":\"DESCENDING\",\"enum\":[\"ASCENDING\",\"DESCENDING\"],\"enumDescri" +
+            "ptions\":[\"Ascending order.\",\"Descending order.\"],\"location\":\"query\"}},\"parameter" +
+            "Order\":[\"profileId\"],\"response\":{\"$ref\":\"FileList\"},\"scopes\":[\"https://www.googl" +
+            "eapis.com/auth/dfareporting\"]}}},\"reports\":{\"methods\":{\"delete\":{\"id\":\"dfareport" +
+            "ing.reports.delete\",\"path\":\"userprofiles/{profileId}/reports/{reportId}\",\"httpMe" +
+            "thod\":\"DELETE\",\"description\":\"Deletes a report by its id.\",\"parameters\":{\"profil" +
+            "eId\":{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"required\":true,\"" +
+            "format\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"Th" +
+            "e id of the report.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"profileId\",\"reportId\"],\"scopes\":[\"https://www.googleapis.com/auth/d" +
+            "fareporting\"]},\"get\":{\"id\":\"dfareporting.reports.get\",\"path\":\"userprofiles/{prof" +
+            "ileId}/reports/{reportId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a report " +
+            "by its id.\",\"parameters\":{\"profileId\":{\"type\":\"string\",\"description\":\"The DFA us" +
+            "er profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"reportId\":{" +
+            "\"type\":\"string\",\"description\":\"The id of the report.\",\"required\":true,\"format\":\"" +
+            "int64\",\"location\":\"path\"}},\"parameterOrder\":[\"profileId\",\"reportId\"],\"response\":" +
+            "{\"$ref\":\"Report\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"in" +
+            "sert\":{\"id\":\"dfareporting.reports.insert\",\"path\":\"userprofiles/{profileId}/repor" +
+            "ts\",\"httpMethod\":\"POST\",\"description\":\"Creates a report.\",\"parameters\":{\"profile" +
+            "Id\":{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"required\":true,\"f" +
+            "ormat\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"profileId\"],\"request\":{\"$r" +
+            "ef\":\"Report\"},\"response\":{\"$ref\":\"Report\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/dfareporting\"]},\"list\":{\"id\":\"dfareporting.reports.list\",\"path\":\"userprofi" +
+            "les/{profileId}/reports\",\"httpMethod\":\"GET\",\"description\":\"Retrieves list of rep" +
+            "orts.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numbe" +
+            "r of results to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10\",\"location" +
+            "\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of the nextToke" +
+            "n from the previous result page.\",\"location\":\"query\"},\"profileId\":{\"type\":\"strin" +
+            "g\",\"description\":\"The DFA user profile id.\",\"required\":true,\"format\":\"int64\",\"lo" +
+            "cation\":\"path\"},\"sortField\":{\"type\":\"string\",\"description\":\"The field to sort th" +
+            "e list by.\",\"default\":\"LAST_MODIFIED_TIME\",\"enum\":[\"ID\",\"LAST_MODIFIED_TIME\",\"NA" +
+            "ME\"],\"enumDescriptions\":[\"Sort by report id.\",\"Sort by \'lastModifiedTime\' field." +
+            "\",\"Sort by display name of reports.\"],\"location\":\"query\"},\"sortOrder\":{\"type\":\"s" +
+            "tring\",\"description\":\"Order of sorted results, default is \'DESCENDING\'.\",\"defaul" +
+            "t\":\"DESCENDING\",\"enum\":[\"ASCENDING\",\"DESCENDING\"],\"enumDescriptions\":[\"Ascending" +
+            " order.\",\"Descending order.\"],\"location\":\"query\"}},\"parameterOrder\":[\"profileId\"" +
+            "],\"response\":{\"$ref\":\"ReportList\"},\"scopes\":[\"https://www.googleapis.com/auth/df" +
+            "areporting\"]},\"patch\":{\"id\":\"dfareporting.reports.patch\",\"path\":\"userprofiles/{p" +
+            "rofileId}/reports/{reportId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a repo" +
+            "rt. This method supports patch semantics.\",\"parameters\":{\"profileId\":{\"type\":\"st" +
+            "ring\",\"description\":\"The DFA user profile id.\",\"required\":true,\"format\":\"int64\"," +
+            "\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"The id of the repo" +
+            "rt.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"pro" +
+            "fileId\",\"reportId\"],\"request\":{\"$ref\":\"Report\"},\"response\":{\"$ref\":\"Report\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"run\":{\"id\":\"dfareportin" +
+            "g.reports.run\",\"path\":\"userprofiles/{profileId}/reports/{reportId}/run\",\"httpMet" +
+            "hod\":\"POST\",\"description\":\"Runs a report.\",\"parameters\":{\"profileId\":{\"type\":\"st" +
+            "ring\",\"description\":\"The DFA profile id.\",\"required\":true,\"format\":\"int64\",\"loca" +
+            "tion\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"The id of the report.\"," +
+            "\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"synchronous\":{\"type\":\"boole" +
+            "an\",\"description\":\"If set and true, tries to run the report synchronously.\",\"loc" +
+            "ation\":\"query\"}},\"parameterOrder\":[\"profileId\",\"reportId\"],\"response\":{\"$ref\":\"F" +
+            "ile\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"update\":{\"id\":" +
+            "\"dfareporting.reports.update\",\"path\":\"userprofiles/{profileId}/reports/{reportId" +
+            "}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a report.\",\"parameters\":{\"profileId" +
+            "\":{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"required\":true,\"for" +
+            "mat\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"The i" +
+            "d of the report.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"paramete" +
+            "rOrder\":[\"profileId\",\"reportId\"],\"request\":{\"$ref\":\"Report\"},\"response\":{\"$ref\":" +
+            "\"Report\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]}},\"resources" +
+            "\":{\"files\":{\"methods\":{\"get\":{\"id\":\"dfareporting.reports.files.get\",\"path\":\"user" +
+            "profiles/{profileId}/reports/{reportId}/files/{fileId}\",\"httpMethod\":\"GET\",\"desc" +
+            "ription\":\"Retrieves a report file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"des" +
+            "cription\":\"The id of the report file.\",\"required\":true,\"format\":\"int64\",\"locatio" +
+            "n\":\"path\"},\"profileId\":{\"type\":\"string\",\"description\":\"The DFA profile id.\",\"req" +
+            "uired\":true,\"format\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"des" +
+            "cription\":\"The id of the report.\",\"required\":true,\"format\":\"int64\",\"location\":\"p" +
+            "ath\"}},\"parameterOrder\":[\"profileId\",\"reportId\",\"fileId\"],\"response\":{\"$ref\":\"Fi" +
+            "le\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"list\":{\"id\":\"df" +
+            "areporting.reports.files.list\",\"path\":\"userprofiles/{profileId}/reports/{reportI" +
+            "d}/files\",\"httpMethod\":\"GET\",\"description\":\"Lists files for a report.\",\"paramete" +
+            "rs\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to " +
+            "return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10\",\"location\":\"query\"},\"page" +
+            "Token\":{\"type\":\"string\",\"description\":\"The value of the nextToken from the previ" +
+            "ous result page.\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\",\"description\"" +
+            ":\"The DFA profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"repo" +
+            "rtId\":{\"type\":\"string\",\"description\":\"The id of the parent report.\",\"required\":t" +
+            "rue,\"format\":\"int64\",\"location\":\"path\"},\"sortField\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The field to sort the list by.\",\"default\":\"LAST_MODIFIED_TIME\",\"enum\":[\"ID\"," +
+            "\"LAST_MODIFIED_TIME\"],\"enumDescriptions\":[\"Sort by file id.\",\"Sort by \'lastmodif" +
+            "iedAt\' field.\"],\"location\":\"query\"},\"sortOrder\":{\"type\":\"string\",\"description\":\"" +
+            "Order of sorted results, default is \'DESCENDING\'.\",\"default\":\"DESCENDING\",\"enum\"" +
+            ":[\"ASCENDING\",\"DESCENDING\"],\"enumDescriptions\":[\"Ascending order.\",\"Descending o" +
+            "rder.\"],\"location\":\"query\"}},\"parameterOrder\":[\"profileId\",\"reportId\"],\"response" +
+            "\":{\"$ref\":\"FileList\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]}" +
+            "}}}},\"userProfiles\":{\"methods\":{\"get\":{\"id\":\"dfareporting.userProfiles.get\",\"pat" +
+            "h\":\"userprofiles/{profileId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one user pr" +
+            "ofile by id.\",\"parameters\":{\"profileId\":{\"type\":\"string\",\"description\":\"The user" +
+            " profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrd" +
+            "er\":[\"profileId\"],\"response\":{\"$ref\":\"UserProfile\"},\"scopes\":[\"https://www.googl" +
+            "eapis.com/auth/dfareporting\"]},\"list\":{\"id\":\"dfareporting.userProfiles.list\",\"pa" +
+            "th\":\"userprofiles\",\"httpMethod\":\"GET\",\"description\":\"Retrieves list of user prof" +
+            "iles for a user.\",\"response\":{\"$ref\":\"UserProfileList\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/dfareporting\"]}}}}}";
         
         public const string Version = "v1";
         

@@ -4050,783 +4050,784 @@ namespace Google.Apis.Books.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"books:v1\",\"name" +
-            "\":\"books\",\"version\":\"v1\",\"revision\":\"20120822\",\"title\":\"Books API\",\"description\"" +
-            ":\"Lets you search for books and manage your Google Books library.\",\"icons\":{\"x16" +
-            "\":\"http://www.google.com/images/icons/product/ebooks-16.png\",\"x32\":\"http://www.g" +
-            "oogle.com/images/icons/product/ebooks-32.png\"},\"documentationLink\":\"https://deve" +
-            "lopers.google.com/books/docs/v1/getting_started\",\"protocol\":\"rest\",\"baseUrl\":\"ht" +
-            "tps://www.googleapis.com/books/v1/\",\"basePath\":\"/books/v1/\",\"rootUrl\":\"https://w" +
-            "ww.googleapis.com/\",\"servicePath\":\"books/v1/\",\"batchPath\":\"batch\",\"parameters\":{" +
-            "\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"" +
-            "json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applic" +
-            "ation/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Select" +
-            "or specifying which fields to include in a partial response.\",\"location\":\"query\"" +
-            "},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your pr" +
-            "oject and provides you with API access, quota, and reports. Required unless you " +
-            "provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\"," +
-            "\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prett" +
-            "yPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and " +
-            "line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\"," +
-            "\"description\":\"Available to use for quota purposes for server-side applications." +
-            " Can be any arbitrary string assigned to a user, but should not exceed 40 charac" +
-            "ters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"typ" +
-            "e\":\"string\",\"description\":\"IP address of the site where the request originates. " +
-            "Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"" +
-            "oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/books\":{\"description\":\"Manag" +
-            "e your books\"}}}},\"schemas\":{\"Annotation\":{\"id\":\"Annotation\",\"type\":\"object\",\"pr" +
-            "operties\":{\"afterSelectedText\":{\"type\":\"string\",\"description\":\"Anchor text after" +
-            " excerpt.\"},\"beforeSelectedText\":{\"type\":\"string\",\"description\":\"Anchor text bef" +
-            "ore excerpt.\"},\"clientVersionRanges\":{\"type\":\"object\",\"description\":\"Selection r" +
-            "anges sent from the client.\",\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsR" +
-            "ange\",\"description\":\"Range in CFI format for this annotation sent by client.\"},\"" +
-            "contentVersion\":{\"type\":\"string\",\"description\":\"Content version the client sent " +
-            "in.\"},\"gbImageRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in GB " +
-            "image format for this annotation sent by client.\"},\"gbTextRange\":{\"$ref\":\"BooksA" +
-            "nnotationsRange\",\"description\":\"Range in GB text format for this annotation sent" +
-            " by client.\"}}},\"created\":{\"type\":\"string\",\"description\":\"Timestamp for the crea" +
-            "ted time of this annotation.\",\"format\":\"date-time\"},\"currentVersionRanges\":{\"typ" +
-            "e\":\"object\",\"description\":\"Selection ranges for the most recent content version." +
-            "\",\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range " +
-            "in CFI format for this annotation for version above.\"},\"contentVersion\":{\"type\":" +
-            "\"string\",\"description\":\"Content version applicable to ranges below.\"},\"gbImageRa" +
-            "nge\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in GB image format for" +
-            " this annotation for version above.\"},\"gbTextRange\":{\"$ref\":\"BooksAnnotationsRan" +
-            "ge\",\"description\":\"Range in GB text format for this annotation for version above" +
-            ".\"}}},\"data\":{\"type\":\"string\",\"description\":\"User-created data for this annotati" +
-            "on.\"},\"deleted\":{\"type\":\"boolean\",\"description\":\"Indicates that this annotation " +
-            "is deleted.\"},\"highlightStyle\":{\"type\":\"string\",\"description\":\"The highlight sty" +
-            "le for this annotation.\"},\"id\":{\"type\":\"string\",\"description\":\"Id of this annota" +
-            "tion, in the form of a GUID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource t" +
-            "ype.\",\"default\":\"books#annotation\"},\"layerId\":{\"type\":\"string\",\"description\":\"Th" +
-            "e layer this annotation is for.\"},\"pageIds\":{\"type\":\"array\",\"description\":\"Pages" +
-            " that this annotation spans.\",\"items\":{\"type\":\"string\"}},\"selectedText\":{\"type\":" +
-            "\"string\",\"description\":\"Excerpt from the volume.\"},\"selfLink\":{\"type\":\"string\",\"" +
-            "description\":\"URL to this resource.\"},\"updated\":{\"type\":\"string\",\"description\":\"" +
-            "Timestamp for the last time this annotation was modified.\",\"format\":\"date-time\"}" +
-            ",\"volumeId\":{\"type\":\"string\",\"description\":\"The volume that this annotation belo" +
-            "ngs to.\"}}},\"Annotationdata\":{\"id\":\"Annotationdata\",\"type\":\"object\",\"properties\"" +
-            ":{\"annotationType\":{\"type\":\"string\",\"description\":\"The type of annotation this d" +
-            "ata is for.\"},\"data\":{\"type\":\"any\"},\"encoded_data\":{\"type\":\"string\",\"description" +
-            "\":\"Base64 encoded data for this annotation data.\",\"format\":\"byte\"},\"id\":{\"type\":" +
-            "\"string\",\"description\":\"Unique id for this annotation data.\"},\"kind\":{\"type\":\"st" +
-            "ring\",\"description\":\"Resource Type\",\"default\":\"books#annotationdata\"},\"layerId\":" +
-            "{\"type\":\"string\",\"description\":\"The Layer id for this data. *\"},\"selfLink\":{\"typ" +
-            "e\":\"string\",\"description\":\"URL for this resource. *\"},\"updated\":{\"type\":\"string\"" +
-            ",\"description\":\"Timestamp for the last time this data was updated. (RFC 3339 UTC" +
-            " date-time format).\",\"format\":\"date-time\"},\"volumeId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The volume id for this data. *\"}}},\"Annotations\":{\"id\":\"Annotations\",\"type" +
-            "\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of annota" +
-            "tions.\",\"items\":{\"$ref\":\"Annotation\"}},\"kind\":{\"type\":\"string\",\"description\":\"Re" +
-            "source type.\",\"default\":\"books#annotations\"},\"nextPageToken\":{\"type\":\"string\",\"d" +
-            "escription\":\"Token to pass in for pagination for the next page. This will not be" +
-            " present if this request does not have more results.\"},\"totalItems\":{\"type\":\"int" +
-            "eger\",\"description\":\"Total number of annotations found. This may be greater than" +
-            " the number of notes returned in this response if results have been paginated.\"," +
-            "\"format\":\"int32\"}}},\"Annotationsdata\":{\"id\":\"Annotationsdata\",\"type\":\"object\",\"p" +
-            "roperties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of Annotation Data.\",\"" +
-            "items\":{\"$ref\":\"Annotationdata\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resourc" +
-            "e type\",\"default\":\"books#annotationsdata\"},\"nextPageToken\":{\"type\":\"string\",\"des" +
-            "cription\":\"Token to pass in for pagination for the next page. This will not be p" +
-            "resent if this request does not have more results.\"},\"totalItems\":{\"type\":\"integ" +
-            "er\",\"description\":\"The total number of volume annotations found.\",\"format\":\"int3" +
-            "2\"}}},\"BooksAnnotationsRange\":{\"id\":\"BooksAnnotationsRange\",\"type\":\"object\",\"pro" +
-            "perties\":{\"endOffset\":{\"type\":\"string\",\"description\":\"The offset from the ending" +
-            " position.\"},\"endPosition\":{\"type\":\"string\",\"description\":\"The ending position f" +
-            "or the range.\"},\"startOffset\":{\"type\":\"string\",\"description\":\"The offset from th" +
-            "e starting position.\"},\"startPosition\":{\"type\":\"string\",\"description\":\"The start" +
-            "ing position for the range.\"}}},\"BooksLayerDictData\":{\"id\":\"BooksLayerDictData\"," +
-            "\"type\":\"object\",\"properties\":{\"common\":{\"type\":\"object\",\"properties\":{\"title\":{\"" +
-            "type\":\"string\",\"description\":\"The display title and localized canonical name to " +
-            "use when searching for this entity on Google search.\"}}},\"dict\":{\"type\":\"object\"" +
-            ",\"properties\":{\"source\":{\"type\":\"object\",\"description\":\"The source, url and attr" +
-            "ibution for this dictionary data.\",\"properties\":{\"attribution\":{\"type\":\"string\"}" +
-            ",\"url\":{\"type\":\"string\"}}},\"words\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"pro" +
-            "perties\":{\"derivatives\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"" +
-            "source\":{\"type\":\"object\",\"properties\":{\"attribution\":{\"type\":\"string\"},\"url\":{\"t" +
-            "ype\":\"string\"}}},\"text\":{\"type\":\"string\"}}}},\"examples\":{\"type\":\"array\",\"items\":" +
-            "{\"type\":\"object\",\"properties\":{\"source\":{\"type\":\"object\",\"properties\":{\"attribut" +
-            "ion\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}}},\"text\":{\"type\":\"string\"}}}},\"se" +
-            "nses\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"conjugations\":{\"ty" +
-            "pe\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"type\":{\"type\":\"string\"},\"val" +
-            "ue\":{\"type\":\"string\"}}}},\"definitions\":{\"type\":\"array\",\"items\":{\"type\":\"object\"," +
-            "\"properties\":{\"definition\":{\"type\":\"string\"},\"examples\":{\"type\":\"array\",\"items\":" +
-            "{\"type\":\"object\",\"properties\":{\"source\":{\"type\":\"object\",\"properties\":{\"attribut" +
-            "ion\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}}},\"text\":{\"type\":\"string\"}}}}}}}," +
-            "\"partOfSpeech\":{\"type\":\"string\"},\"pronunciation\":{\"type\":\"string\"},\"pronunciatio" +
-            "nUrl\":{\"type\":\"string\"},\"source\":{\"type\":\"object\",\"properties\":{\"attribution\":{\"" +
-            "type\":\"string\"},\"url\":{\"type\":\"string\"}}},\"syllabification\":{\"type\":\"string\"},\"s" +
-            "ynonyms\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"source\":{\"type\"" +
-            ":\"object\",\"properties\":{\"attribution\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}}" +
-            "},\"text\":{\"type\":\"string\"}}}}}}},\"source\":{\"type\":\"object\",\"description\":\"The wo" +
-            "rds with different meanings but not related words, e.g. \\\"go\\\" (game) and \\\"go\\\"" +
-            " (verb).\",\"properties\":{\"attribution\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}}" +
-            "}}}}}}}},\"BooksLayerGeoData\":{\"id\":\"BooksLayerGeoData\",\"type\":\"object\",\"properti" +
-            "es\":{\"common\":{\"type\":\"object\",\"properties\":{\"lang\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The language of the information url and description.\"},\"previewImageUrl\":{\"t" +
-            "ype\":\"string\",\"description\":\"The URL for the preview image information.\"},\"snipp" +
-            "et\":{\"type\":\"string\",\"description\":\"The description for this location.\"},\"snippe" +
-            "tUrl\":{\"type\":\"string\",\"description\":\"The URL for information for this location." +
-            " Ex: wikipedia link.\"},\"title\":{\"type\":\"string\",\"description\":\"The display title" +
-            " and localized canonical name to use when searching for this entity on Google se" +
-            "arch.\"}}},\"geo\":{\"type\":\"object\",\"properties\":{\"boundary\":{\"type\":\"array\",\"descr" +
-            "iption\":\"The boundary of the location as a set of loops containing pairs of lati" +
-            "tude, longitude coordinates.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"" +
-            "properties\":{\"latitude\":{\"type\":\"integer\",\"format\":\"uint32\"},\"longitude\":{\"type\"" +
-            ":\"integer\",\"format\":\"uint32\"}}}}},\"cachePolicy\":{\"type\":\"string\",\"description\":\"" +
-            "The cache policy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER\"},\"co" +
-            "untryCode\":{\"type\":\"string\",\"description\":\"The country code of the location.\"},\"" +
-            "latitude\":{\"type\":\"number\",\"description\":\"The latitude of the location.\",\"format" +
-            "\":\"double\"},\"longitude\":{\"type\":\"number\",\"description\":\"The longitude of the loc" +
-            "ation.\",\"format\":\"double\"},\"mapType\":{\"type\":\"string\",\"description\":\"The type of" +
-            " map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERR" +
-            "AIN\"},\"viewport\":{\"type\":\"object\",\"description\":\"The viewport for showing this l" +
-            "ocation. This is a latitude, longitude rectangle.\",\"properties\":{\"hi\":{\"type\":\"o" +
-            "bject\",\"properties\":{\"latitude\":{\"type\":\"number\",\"format\":\"double\"},\"longitude\":" +
-            "{\"type\":\"number\",\"format\":\"double\"}}},\"lo\":{\"type\":\"object\",\"properties\":{\"latit" +
-            "ude\":{\"type\":\"number\",\"format\":\"double\"},\"longitude\":{\"type\":\"number\",\"format\":\"" +
-            "double\"}}}}},\"zoom\":{\"type\":\"integer\",\"description\":\"The Zoom level to use for t" +
-            "he map. Zoom levels between 0 (the lowest zoom level, in which the entire world " +
-            "can be seen on one map) to 21+ (down to individual buildings). See: https://deve" +
-            "lopers.google.com/maps/documentation/staticmaps/#Zoomlevels\",\"format\":\"int32\"}}}" +
-            "}},\"Bookshelf\":{\"id\":\"Bookshelf\",\"type\":\"object\",\"properties\":{\"access\":{\"type\":" +
-            "\"string\",\"description\":\"Whether this bookshelf is PUBLIC or PRIVATE.\"},\"created\"" +
-            ":{\"type\":\"string\",\"description\":\"Created time for this bookshelf (formatted UTC " +
-            "timestamp with millisecond resolution).\",\"format\":\"date-time\"},\"description\":{\"t" +
-            "ype\":\"string\",\"description\":\"Description of this bookshelf.\"},\"id\":{\"type\":\"inte" +
-            "ger\",\"description\":\"Id of this bookshelf, only unique by user.\",\"format\":\"int32\"" +
-            "},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for bookshelf metadata.\"," +
-            "\"default\":\"books#bookshelf\"},\"selfLink\":{\"type\":\"string\",\"description\":\"URL to t" +
-            "his resource.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of this bookshelf." +
-            "\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modified time of this bookshel" +
-            "f (formatted UTC timestamp with millisecond resolution).\",\"format\":\"date-time\"}," +
-            "\"volumeCount\":{\"type\":\"integer\",\"description\":\"Number of volumes in this bookshe" +
-            "lf.\",\"format\":\"int32\"},\"volumesLastUpdated\":{\"type\":\"string\",\"description\":\"Last" +
-            " time a volume was added or removed from this bookshelf (formatted UTC timestamp" +
-            " with millisecond resolution).\",\"format\":\"date-time\"}}},\"Bookshelves\":{\"id\":\"Boo" +
-            "kshelves\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A" +
-            " list of bookshelves.\",\"items\":{\"$ref\":\"Bookshelf\"}},\"kind\":{\"type\":\"string\",\"de" +
-            "scription\":\"Resource type.\",\"default\":\"books#bookshelves\"}}},\"ConcurrentAccessRe" +
-            "striction\":{\"id\":\"ConcurrentAccessRestriction\",\"type\":\"object\",\"properties\":{\"de" +
-            "viceAllowed\":{\"type\":\"boolean\",\"description\":\"Whether access is granted for this" +
-            " (user, device, volume).\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type." +
-            "\",\"default\":\"books#concurrentAccessRestriction\"},\"maxConcurrentDevices\":{\"type\":" +
-            "\"integer\",\"description\":\"The maximum number of concurrent access licenses for th" +
-            "is volume.\",\"format\":\"int32\"},\"message\":{\"type\":\"string\",\"description\":\"Error/wa" +
-            "rning message.\"},\"nonce\":{\"type\":\"string\",\"description\":\"Client nonce for verifi" +
-            "cation. Download access and client-validation only.\"},\"reasonCode\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Error/warning reason code.\"},\"restricted\":{\"type\":\"boolean\",\"" +
-            "description\":\"Whether this volume has any concurrent access restrictions.\"},\"sig" +
-            "nature\":{\"type\":\"string\",\"description\":\"Response signature.\"},\"source\":{\"type\":\"" +
-            "string\",\"description\":\"Client app identifier for verification. Download access a" +
-            "nd client-validation only.\"},\"timeWindowSeconds\":{\"type\":\"integer\",\"description\"" +
-            ":\"Time in seconds for license auto-expiration.\",\"format\":\"int32\"},\"volumeId\":{\"t" +
-            "ype\":\"string\",\"description\":\"Identifies the volume for which this entry applies." +
-            "\"}}},\"DownloadAccessRestriction\":{\"id\":\"DownloadAccessRestriction\",\"type\":\"objec" +
-            "t\",\"properties\":{\"deviceAllowed\":{\"type\":\"boolean\",\"description\":\"If restricted," +
-            " whether access is granted for this (user, device, volume).\"},\"downloadsAcquired" +
-            "\":{\"type\":\"integer\",\"description\":\"If restricted, the number of content download" +
-            " licenses already acquired (including the requesting client, if licensed).\",\"for" +
-            "mat\":\"int32\"},\"justAcquired\":{\"type\":\"boolean\",\"description\":\"If deviceAllowed, " +
-            "whether access was just acquired with this request.\"},\"kind\":{\"type\":\"string\",\"d" +
-            "escription\":\"Resource type.\",\"default\":\"books#downloadAccessRestriction\"},\"maxDo" +
-            "wnloadDevices\":{\"type\":\"integer\",\"description\":\"If restricted, the maximum numbe" +
-            "r of content download licenses for this volume.\",\"format\":\"int32\"},\"message\":{\"t" +
-            "ype\":\"string\",\"description\":\"Error/warning message.\"},\"nonce\":{\"type\":\"string\",\"" +
-            "description\":\"Client nonce for verification. Download access and client-validati" +
-            "on only.\"},\"reasonCode\":{\"type\":\"string\",\"description\":\"Error/warning reason cod" +
-            "e. Additional codes may be added in the future. 0 OK 100 ACCESS_DENIED_PUBLISHER" +
-            "_LIMIT 101 ACCESS_DENIED_LIMIT 200 WARNING_USED_LAST_ACCESS\"},\"restricted\":{\"typ" +
-            "e\":\"boolean\",\"description\":\"Whether this volume has any download access restrict" +
-            "ions.\"},\"signature\":{\"type\":\"string\",\"description\":\"Response signature.\"},\"sourc" +
-            "e\":{\"type\":\"string\",\"description\":\"Client app identifier for verification. Downl" +
-            "oad access and client-validation only.\"},\"volumeId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Identifies the volume for which this entry applies.\"}}},\"DownloadAccesses\":{" +
-            "\"id\":\"DownloadAccesses\",\"type\":\"object\",\"properties\":{\"downloadAccessList\":{\"typ" +
-            "e\":\"array\",\"description\":\"A list of download access responses.\",\"items\":{\"$ref\":" +
-            "\"DownloadAccessRestriction\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource ty" +
-            "pe.\",\"default\":\"books#downloadAccesses\"}}},\"Layersummaries\":{\"id\":\"Layersummarie" +
-            "s\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list o" +
-            "f layer summary items.\",\"items\":{\"$ref\":\"Layersummary\"}},\"kind\":{\"type\":\"string\"" +
-            ",\"description\":\"Resource type.\",\"default\":\"books#layersummaries\"},\"totalItems\":{" +
-            "\"type\":\"integer\",\"description\":\"The total number of layer summaries found.\",\"for" +
-            "mat\":\"int32\"}}},\"Layersummary\":{\"id\":\"Layersummary\",\"type\":\"object\",\"properties\"" +
-            ":{\"annotationCount\":{\"type\":\"integer\",\"description\":\"The number of annotations f" +
-            "or this layer.\",\"format\":\"int32\"},\"annotationTypes\":{\"type\":\"array\",\"description" +
-            "\":\"The list of annotation types contained for this layer.\",\"items\":{\"type\":\"stri" +
-            "ng\"}},\"annotationsDataLink\":{\"type\":\"string\",\"description\":\"Link to get data for" +
-            " this annotation.\"},\"annotationsLink\":{\"type\":\"string\",\"description\":\"The link t" +
-            "o get the annotations for this layer.\"},\"contentVersion\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The content version this resource is for.\"},\"dataCount\":{\"type\":\"intege" +
-            "r\",\"description\":\"The number of data items for this layer.\",\"format\":\"int32\"},\"i" +
-            "d\":{\"type\":\"string\",\"description\":\"Unique id of this layer summary.\"},\"kind\":{\"t" +
-            "ype\":\"string\",\"description\":\"Resource Type\",\"default\":\"books#layersummary\"},\"lay" +
-            "erId\":{\"type\":\"string\",\"description\":\"The layer id for this summary.\"},\"selfLink" +
-            "\":{\"type\":\"string\",\"description\":\"URL to this resource.\"},\"updated\":{\"type\":\"str" +
-            "ing\",\"description\":\"Timestamp for the last time an item in this layer was update" +
-            "d. (RFC 3339 UTC date-time format).\",\"format\":\"date-time\"},\"volumeId\":{\"type\":\"s" +
-            "tring\",\"description\":\"The volume id this resource is for.\"}}},\"ReadingPosition\":" +
-            "{\"id\":\"ReadingPosition\",\"type\":\"object\",\"properties\":{\"epubCfiPosition\":{\"type\":" +
-            "\"string\",\"description\":\"Position in an EPUB as a CFI.\"},\"gbImagePosition\":{\"type" +
-            "\":\"string\",\"description\":\"Position in a volume for image-based content.\"},\"gbTex" +
-            "tPosition\":{\"type\":\"string\",\"description\":\"Position in a volume for text-based c" +
-            "ontent.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for a reading pos" +
-            "ition.\",\"default\":\"books#readingPosition\"},\"pdfPosition\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Position in a PDF file.\"},\"updated\":{\"type\":\"string\",\"description\":\"Tim" +
-            "estamp when this reading position was last updated (formatted UTC timestamp with" +
-            " millisecond resolution).\",\"format\":\"date-time\"},\"volumeId\":{\"type\":\"string\",\"de" +
-            "scription\":\"Volume id associated with this reading position.\"}}},\"RequestAccess\"" +
-            ":{\"id\":\"RequestAccess\",\"type\":\"object\",\"properties\":{\"concurrentAccess\":{\"$ref\":" +
-            "\"ConcurrentAccessRestriction\",\"description\":\"A concurrent access response.\"},\"do" +
-            "wnloadAccess\":{\"$ref\":\"DownloadAccessRestriction\",\"description\":\"A download acce" +
-            "ss response.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\":" +
-            "\"books#requestAccess\"}}},\"Review\":{\"id\":\"Review\",\"type\":\"object\",\"properties\":{\"" +
-            "author\":{\"type\":\"object\",\"description\":\"Author of this review.\",\"properties\":{\"d" +
-            "isplayName\":{\"type\":\"string\",\"description\":\"Name of this person.\"}}},\"content\":{" +
-            "\"type\":\"string\",\"description\":\"Review text.\"},\"date\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Date of this review.\"},\"fullTextUrl\":{\"type\":\"string\",\"description\":\"URL fo" +
-            "r the full review text, for reviews gathered from the web.\"},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"Resource type for a review.\",\"default\":\"books#review\"},\"rati" +
-            "ng\":{\"type\":\"string\",\"description\":\"Star rating for this review. Possible values" +
-            " are ONE, TWO, THREE, FOUR, FIVE or NOT_RATED.\"},\"source\":{\"type\":\"object\",\"desc" +
-            "ription\":\"Information regarding the source of this review, when the review is no" +
-            "t from a Google Books user.\",\"properties\":{\"description\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Name of the source.\"},\"extraDescription\":{\"type\":\"string\",\"description\"" +
-            ":\"Extra text about the source of the review.\"},\"url\":{\"type\":\"string\",\"descripti" +
-            "on\":\"URL of the source of the review.\"}}},\"title\":{\"type\":\"string\",\"description\"" +
-            ":\"Title for this review.\"},\"type\":{\"type\":\"string\",\"description\":\"Source type fo" +
-            "r this review. Possible values are EDITORIAL, WEB_USER or GOOGLE_USER.\"},\"volume" +
-            "Id\":{\"type\":\"string\",\"description\":\"Volume that this review is for.\"}}},\"Volume\"" +
-            ":{\"id\":\"Volume\",\"type\":\"object\",\"properties\":{\"accessInfo\":{\"type\":\"object\",\"des" +
-            "cription\":\"Any information about a volume related to reading or obtaining that v" +
-            "olume text. This information can depend on country (books may be public domain i" +
-            "n one country but not in another, e.g.).\",\"properties\":{\"accessViewStatus\":{\"typ" +
-            "e\":\"string\",\"description\":\"Combines the access and viewability of this volume in" +
-            "to a single status field for this user. Values can be FULL_PURCHASED, FULL_PUBLI" +
-            "C_DOMAIN, SAMPLE or NONE. (In LITE projection.)\"},\"country\":{\"type\":\"string\",\"de" +
-            "scription\":\"The two-letter ISO_3166-1 country code for which this access informa" +
-            "tion is valid. (In LITE projection.)\"},\"downloadAccess\":{\"$ref\":\"DownloadAccessR" +
-            "estriction\",\"description\":\"Information about a volume\'s download license access " +
-            "restrictions.\"},\"embeddable\":{\"type\":\"boolean\",\"description\":\"Whether this volum" +
-            "e can be embedded in a viewport using the Embedded Viewer API.\"},\"epub\":{\"type\":" +
-            "\"object\",\"description\":\"Information about epub content. (In LITE projection.)\",\"" +
-            "properties\":{\"acsTokenLink\":{\"type\":\"string\",\"description\":\"URL to retrieve ACS " +
-            "token for epub download. (In LITE projection.)\"},\"downloadLink\":{\"type\":\"string\"" +
-            ",\"description\":\"URL to download epub. (In LITE projection.)\"},\"isAvailable\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Is a flowing text epub available either as public d" +
-            "omain or for purchase. (In LITE projection.)\"}}},\"pdf\":{\"type\":\"object\",\"descrip" +
-            "tion\":\"Information about pdf content. (In LITE projection.)\",\"properties\":{\"acsT" +
-            "okenLink\":{\"type\":\"string\",\"description\":\"URL to retrieve ACS token for pdf down" +
-            "load. (In LITE projection.)\"},\"downloadLink\":{\"type\":\"string\",\"description\":\"URL" +
-            " to download pdf. (In LITE projection.)\"},\"isAvailable\":{\"type\":\"boolean\",\"descr" +
-            "iption\":\"Is a scanned image pdf available either as public domain or for purchas" +
-            "e. (In LITE projection.)\"}}},\"publicDomain\":{\"type\":\"boolean\",\"description\":\"Whe" +
-            "ther or not this book is public domain in the country listed above.\"},\"textToSpe" +
-            "echPermission\":{\"type\":\"string\",\"description\":\"Whether text-to-speech is permitt" +
-            "ed for this volume. Values can be ALLOWED, ALLOWED_FOR_ACCESSIBILITY, or NOT_ALL" +
-            "OWED.\"},\"viewOrderUrl\":{\"type\":\"string\",\"description\":\"For ordered but not yet p" +
-            "rocessed orders, we give a URL that can be used to go to the appropriate Google " +
-            "Wallet page.\"},\"viewability\":{\"type\":\"string\",\"description\":\"The read access of " +
-            "a volume. Possible values are PARTIAL, ALL_PAGES, NO_PAGES or UNKNOWN. This valu" +
-            "e depends on the country listed above. A value of PARTIAL means that the publish" +
-            "er has allowed some portion of the volume to be viewed publicly, without purchas" +
-            "e. This can apply to eBooks as well as non-eBooks. Public domain books will alwa" +
-            "ys have a value of ALL_PAGES.\"},\"webReaderLink\":{\"type\":\"string\",\"description\":\"" +
-            "URL to read this volume on the Google Books site. Link will not allow users to r" +
-            "ead non-viewable volumes.\"}}},\"etag\":{\"type\":\"string\",\"description\":\"Opaque iden" +
-            "tifier for a specific version of a volume resource. (In LITE projection)\"},\"id\":" +
-            "{\"type\":\"string\",\"description\":\"Unique identifier for a volume. (In LITE project" +
-            "ion.)\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for a volume. (In L" +
-            "ITE projection.)\",\"default\":\"books#volume\"},\"saleInfo\":{\"type\":\"object\",\"descrip" +
-            "tion\":\"Any information about a volume related to the eBookstore and/or purchasea" +
-            "bility. This information can depend on the country where the request originates " +
-            "from (i.e. books may not be for sale in certain countries).\",\"properties\":{\"buyL" +
-            "ink\":{\"type\":\"string\",\"description\":\"URL to purchase this volume on the Google B" +
-            "ooks site. (In LITE projection)\"},\"country\":{\"type\":\"string\",\"description\":\"The " +
-            "two-letter ISO_3166-1 country code for which this sale information is valid. (In" +
-            " LITE projection.)\"},\"isEbook\":{\"type\":\"boolean\",\"description\":\"Whether or not t" +
-            "his volume is an eBook (can be added to the My eBooks shelf).\"},\"listPrice\":{\"ty" +
-            "pe\":\"object\",\"description\":\"Suggested retail price. (In LITE projection.)\",\"prop" +
-            "erties\":{\"amount\":{\"type\":\"number\",\"description\":\"Amount in the currency listed " +
-            "below. (In LITE projection.)\",\"format\":\"double\"},\"currencyCode\":{\"type\":\"string\"" +
-            ",\"description\":\"An ISO 4217, three-letter currency code. (In LITE projection.)\"}" +
-            "}},\"onSaleDate\":{\"type\":\"string\",\"description\":\"The date on which this book is a" +
-            "vailable for sale.\",\"format\":\"date-time\"},\"retailPrice\":{\"type\":\"object\",\"descri" +
-            "ption\":\"The actual selling price of the book. This is the same as the suggested " +
-            "retail or list price unless there are offers or discounts on this volume. (In LI" +
-            "TE projection.)\",\"properties\":{\"amount\":{\"type\":\"number\",\"description\":\"Amount i" +
-            "n the currency listed below. (In LITE projection.)\",\"format\":\"double\"},\"currency" +
-            "Code\":{\"type\":\"string\",\"description\":\"An ISO 4217, three-letter currency code. (" +
-            "In LITE projection.)\"}}},\"saleability\":{\"type\":\"string\",\"description\":\"Whether o" +
-            "r not this book is available for sale or offered for free in the Google eBooksto" +
-            "re for the country listed above. Possible values are FOR_SALE, FREE, NOT_FOR_SAL" +
-            "E, or FOR_PREORDER.\"}}},\"searchInfo\":{\"type\":\"object\",\"description\":\"Search resu" +
-            "lt information related to this volume.\",\"properties\":{\"textSnippet\":{\"type\":\"str" +
-            "ing\",\"description\":\"A text snippet containing the search query.\"}}},\"selfLink\":{" +
-            "\"type\":\"string\",\"description\":\"URL to this resource. (In LITE projection.)\"},\"us" +
-            "erInfo\":{\"type\":\"object\",\"description\":\"User specific information related to thi" +
-            "s volume. (e.g. page this user last read or whether they purchased this book)\",\"" +
-            "properties\":{\"isInMyBooks\":{\"type\":\"boolean\",\"description\":\"Whether or not this " +
-            "volume is currently in \\\"my books.\\\"\"},\"isPreordered\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Whether or not this volume was pre-ordered by the authenticated user maki" +
-            "ng the request. (In LITE projection.)\"},\"isPurchased\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Whether or not this volume was purchased by the authenticated user making" +
-            " the request. (In LITE projection.)\"},\"readingPosition\":{\"$ref\":\"ReadingPosition" +
-            "\",\"description\":\"The user\'s current reading position in the volume, if one is av" +
-            "ailable. (In LITE projection.)\"},\"review\":{\"$ref\":\"Review\",\"description\":\"This u" +
-            "ser\'s review of this volume, if one exists.\"},\"updated\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Timestamp when this volume was last modified by a user action, such as a" +
-            " reading position update, volume purchase or writing a review. (RFC 3339 UTC dat" +
-            "e-time format).\",\"format\":\"date-time\"}}},\"volumeInfo\":{\"type\":\"object\",\"descript" +
-            "ion\":\"General volume information.\",\"properties\":{\"authors\":{\"type\":\"array\",\"desc" +
-            "ription\":\"The names of the authors and/or editors for this volume. (In LITE proj" +
-            "ection)\",\"items\":{\"type\":\"string\"}},\"averageRating\":{\"type\":\"number\",\"descriptio" +
-            "n\":\"The mean review rating for this volume. (min = 1.0, max = 5.0)\",\"format\":\"do" +
-            "uble\"},\"canonicalVolumeLink\":{\"type\":\"string\",\"description\":\"Canonical URL for a" +
-            " volume. (In LITE projection.)\"},\"categories\":{\"type\":\"array\",\"description\":\"A l" +
-            "ist of subject categories, such as \\\"Fiction\\\", \\\"Suspense\\\", etc.\",\"items\":{\"ty" +
-            "pe\":\"string\"}},\"contentVersion\":{\"type\":\"string\",\"description\":\"An identifier fo" +
-            "r the version of the volume content (text & images). (In LITE projection)\"},\"des" +
-            "cription\":{\"type\":\"string\",\"description\":\"A synopsis of the volume. The text of " +
-            "the description is formatted in HTML and includes simple formatting elements, su" +
-            "ch as b, i, and br tags. (In LITE projection.)\"},\"dimensions\":{\"type\":\"object\",\"" +
-            "description\":\"Physical dimensions of this volume.\",\"properties\":{\"height\":{\"type" +
-            "\":\"string\",\"description\":\"Height or length of this volume (in cm).\"},\"thickness\"" +
-            ":{\"type\":\"string\",\"description\":\"Thickness of this volume (in cm).\"},\"width\":{\"t" +
-            "ype\":\"string\",\"description\":\"Width of this volume (in cm).\"}}},\"imageLinks\":{\"ty" +
-            "pe\":\"object\",\"description\":\"A list of image links for all the sizes that are ava" +
-            "ilable. (In LITE projection.)\",\"properties\":{\"extraLarge\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Image link for extra large size (width of ~1280 pixels). (In LITE proj" +
-            "ection)\"},\"large\":{\"type\":\"string\",\"description\":\"Image link for large size (wid" +
-            "th of ~800 pixels). (In LITE projection)\"},\"medium\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Image link for medium size (width of ~575 pixels). (In LITE projection)\"},\"s" +
-            "mall\":{\"type\":\"string\",\"description\":\"Image link for small size (width of ~300 p" +
-            "ixels). (In LITE projection)\"},\"smallThumbnail\":{\"type\":\"string\",\"description\":\"" +
-            "Image link for small thumbnail size (width of ~80 pixels). (In LITE projection)\"" +
-            "},\"thumbnail\":{\"type\":\"string\",\"description\":\"Image link for thumbnail size (wid" +
-            "th of ~128 pixels). (In LITE projection)\"}}},\"industryIdentifiers\":{\"type\":\"arra" +
-            "y\",\"description\":\"Industry standard identifiers for this volume.\",\"items\":{\"type" +
-            "\":\"object\",\"properties\":{\"identifier\":{\"type\":\"string\",\"description\":\"Industry s" +
-            "pecific volume identifier.\"},\"type\":{\"type\":\"string\",\"description\":\"Identifier t" +
-            "ype. Possible values are ISBN_10, ISBN_13, ISSN and OTHER.\"}}}},\"infoLink\":{\"typ" +
-            "e\":\"string\",\"description\":\"URL to view information about this volume on the Goog" +
-            "le Books site. (In LITE projection)\"},\"language\":{\"type\":\"string\",\"description\":" +
-            "\"Best language for this volume (based on content). It is the two-letter ISO 639-" +
-            "1 code such as \'fr\', \'en\', etc.\"},\"mainCategory\":{\"type\":\"string\",\"description\":" +
-            "\"The main category to which this volume belongs. It will be the category from th" +
-            "e categories list returned below that has the highest weight.\"},\"pageCount\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"Total number of pages.\",\"format\":\"int32\"},\"previewL" +
-            "ink\":{\"type\":\"string\",\"description\":\"URL to preview this volume on the Google Bo" +
-            "oks site.\"},\"printType\":{\"type\":\"string\",\"description\":\"Type of publication of t" +
-            "his volume. Possible values are BOOK or MAGAZINE.\"},\"publishedDate\":{\"type\":\"str" +
-            "ing\",\"description\":\"Date of publication. (In LITE projection.)\"},\"publisher\":{\"t" +
-            "ype\":\"string\",\"description\":\"Publisher of this volume. (In LITE projection.)\"},\"" +
-            "ratingsCount\":{\"type\":\"integer\",\"description\":\"The number of review ratings for " +
-            "this volume.\",\"format\":\"int32\"},\"subtitle\":{\"type\":\"string\",\"description\":\"Volum" +
-            "e subtitle. (In LITE projection.)\"},\"title\":{\"type\":\"string\",\"description\":\"Volu" +
-            "me title. (In LITE projection.)\"}}}}},\"Volumeannotation\":{\"id\":\"Volumeannotation" +
-            "\",\"type\":\"object\",\"properties\":{\"annotationDataId\":{\"type\":\"string\",\"description" +
-            "\":\"The annotation data id for this volume annotation.\"},\"annotationDataLink\":{\"t" +
-            "ype\":\"string\",\"description\":\"Link to get data for this annotation.\"},\"annotation" +
-            "Type\":{\"type\":\"string\",\"description\":\"The type of annotation this is.\"},\"content" +
-            "Ranges\":{\"type\":\"object\",\"description\":\"The content ranges to identify the selec" +
-            "ted text.\",\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description" +
-            "\":\"Range in CFI format for this annotation for version above.\"},\"contentVersion\"" +
-            ":{\"type\":\"string\",\"description\":\"Content version applicable to ranges below.\"},\"" +
-            "gbImageRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in GB image f" +
-            "ormat for this annotation for version above.\"},\"gbTextRange\":{\"$ref\":\"BooksAnnot" +
-            "ationsRange\",\"description\":\"Range in GB text format for this annotation for vers" +
-            "ion above.\"}}},\"data\":{\"type\":\"string\",\"description\":\"Data for this annotation.\"" +
-            "},\"deleted\":{\"type\":\"boolean\",\"description\":\"Indicates that this annotation is d" +
-            "eleted.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique id of this volume annotati" +
-            "on.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource Type\",\"default\":\"books#vol" +
-            "umeannotation\"},\"layerId\":{\"type\":\"string\",\"description\":\"The Layer this annotat" +
-            "ion is for.\"},\"pageIds\":{\"type\":\"array\",\"description\":\"Pages the annotation span" +
-            "s.\",\"items\":{\"type\":\"string\"}},\"selectedText\":{\"type\":\"string\",\"description\":\"Ex" +
-            "cerpt from the volume.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"URL to this " +
-            "resource.\"},\"updated\":{\"type\":\"string\",\"description\":\"Timestamp for the last tim" +
-            "e this anntoation was updated. (RFC 3339 UTC date-time format).\",\"format\":\"date-" +
-            "time\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The Volume this annotation is " +
-            "for.\"}}},\"Volumeannotations\":{\"id\":\"Volumeannotations\",\"type\":\"object\",\"properti" +
-            "es\":{\"items\":{\"type\":\"array\",\"description\":\"A list of volume annotations.\",\"item" +
-            "s\":{\"$ref\":\"Volumeannotation\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource " +
-            "type\",\"default\":\"books#volumeannotations\"},\"nextPageToken\":{\"type\":\"string\",\"des" +
-            "cription\":\"Token to pass in for pagination for the next page. This will not be p" +
-            "resent if this request does not have more results.\"},\"totalItems\":{\"type\":\"integ" +
-            "er\",\"description\":\"The total number of volume annotations found.\",\"format\":\"int3" +
-            "2\"}}},\"Volumes\":{\"id\":\"Volumes\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"a" +
-            "rray\",\"description\":\"A list of volumes.\",\"items\":{\"$ref\":\"Volume\"}},\"kind\":{\"typ" +
-            "e\":\"string\",\"description\":\"Resource type.\",\"default\":\"books#volumes\"},\"totalItem" +
-            "s\":{\"type\":\"integer\",\"description\":\"Total number of volumes found. This might be" +
-            " greater than the number of volumes returned in this response if results have be" +
-            "en paginated.\",\"format\":\"int32\"}}}},\"resources\":{\"bookshelves\":{\"methods\":{\"get\"" +
-            ":{\"id\":\"books.bookshelves.get\",\"path\":\"users/{userId}/bookshelves/{shelf}\",\"http" +
-            "Method\":\"GET\",\"description\":\"Retrieves metadata for a specific bookshelf for the" +
-            " specified user.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bo" +
-            "okshelf to retrieve.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"strin" +
-            "g\",\"description\":\"String to identify the originator of this request.\",\"location\"" +
-            ":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of user for whom to retrie" +
-            "ve bookshelves.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"," +
-            "\"shelf\"],\"response\":{\"$ref\":\"Bookshelf\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/books\"]},\"list\":{\"id\":\"books.bookshelves.list\",\"path\":\"users/{userId}/booksh" +
-            "elves\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of public bookshelves " +
-            "for the specified user.\",\"parameters\":{\"source\":{\"type\":\"string\",\"description\":\"" +
-            "String to identify the originator of this request.\",\"location\":\"query\"},\"userId\"" +
-            ":{\"type\":\"string\",\"description\":\"ID of user for whom to retrieve bookshelves.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref" +
-            "\":\"Bookshelves\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}},\"resources" +
-            "\":{\"volumes\":{\"methods\":{\"list\":{\"id\":\"books.bookshelves.volumes.list\",\"path\":\"u" +
-            "sers/{userId}/bookshelves/{shelf}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Ret" +
-            "rieves volumes in a specific bookshelf for the specified user.\",\"parameters\":{\"m" +
-            "axResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return\"" +
-            ",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"shelf\":{\"type\":\"string\",\"d" +
-            "escription\":\"ID of bookshelf to retrieve volumes.\",\"required\":true,\"location\":\"p" +
-            "ath\"},\"showPreorders\":{\"type\":\"boolean\",\"description\":\"Set to true to show pre-o" +
-            "rdered books. Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"string\"," +
-            "\"description\":\"String to identify the originator of this request.\",\"location\":\"q" +
-            "uery\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Index of the first element " +
-            "to return (starts at 0)\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"us" +
-            "erId\":{\"type\":\"string\",\"description\":\"ID of user for whom to retrieve bookshelf " +
-            "volumes.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"shelf\"" +
-            "],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/books" +
-            "\"]}}}}},\"layers\":{\"methods\":{\"get\":{\"id\":\"books.layers.get\",\"path\":\"volumes/{vol" +
-            "umeId}/layersummary/{summaryId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the laye" +
-            "r summary for a volume.\",\"parameters\":{\"contentVersion\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The content version for the requested volume.\",\"location\":\"query\"},\"sour" +
-            "ce\":{\"type\":\"string\",\"description\":\"String to identify the originator of this re" +
-            "quest.\",\"location\":\"query\"},\"summaryId\":{\"type\":\"string\",\"description\":\"The ID f" +
-            "or the layer to get the summary for.\",\"required\":true,\"location\":\"path\"},\"volume" +
-            "Id\":{\"type\":\"string\",\"description\":\"The volume to retrieve layers for.\",\"require" +
-            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\",\"summaryId\"],\"response\"" +
-            ":{\"$ref\":\"Layersummary\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"li" +
-            "st\":{\"id\":\"books.layers.list\",\"path\":\"volumes/{volumeId}/layersummary\",\"httpMeth" +
-            "od\":\"GET\",\"description\":\"List the layer summaries for a volume.\",\"parameters\":{\"" +
-            "contentVersion\":{\"type\":\"string\",\"description\":\"The content version for the requ" +
-            "ested volume.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":" +
-            "\"Maximum number of results to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":" +
-            "\"200\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value " +
-            "of the nextToken from the previous page.\",\"location\":\"query\"},\"source\":{\"type\":\"" +
-            "string\",\"description\":\"String to identify the originator of this request.\",\"loca" +
-            "tion\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to retrieve" +
-            " layers for.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\"]," +
-            "\"response\":{\"$ref\":\"Layersummaries\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "books\"]}},\"resources\":{\"annotationData\":{\"methods\":{\"get\":{\"id\":\"books.layers.an" +
-            "notationData.get\",\"path\":\"volumes/{volumeId}/layers/{layerId}/data/{annotationDa" +
-            "taId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the annotation data.\",\"parameters\"" +
-            ":{\"annotationDataId\":{\"type\":\"string\",\"description\":\"The ID of the annotation da" +
-            "ta to retrieve.\",\"required\":true,\"location\":\"path\"},\"contentVersion\":{\"type\":\"st" +
-            "ring\",\"description\":\"The content version for the volume you are trying to retrie" +
-            "ve.\",\"required\":true,\"location\":\"query\"},\"h\":{\"type\":\"integer\",\"description\":\"Th" +
-            "e requested pixel height for any images. If height is provided width must also b" +
-            "e provided.\",\"format\":\"int32\",\"location\":\"query\"},\"layerId\":{\"type\":\"string\",\"de" +
-            "scription\":\"The ID for the layer to get the annotations.\",\"required\":true,\"locat" +
-            "ion\":\"path\"},\"locale\":{\"type\":\"string\",\"description\":\"The locale information for" +
-            " the data. ISO-639-1 language and ISO-3166-1 country code. Ex: \'en_US\'.\",\"locati" +
-            "on\":\"query\"},\"scale\":{\"type\":\"integer\",\"description\":\"The requested scale for th" +
-            "e image.\",\"format\":\"int32\",\"minimum\":\"0\",\"location\":\"query\"},\"source\":{\"type\":\"s" +
-            "tring\",\"description\":\"String to identify the originator of this request.\",\"locat" +
-            "ion\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to retrieve " +
-            "annotations for.\",\"required\":true,\"location\":\"path\"},\"w\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"The requested pixel width for any images. If width is provided height " +
-            "must also be provided.\",\"format\":\"int32\",\"location\":\"query\"}},\"parameterOrder\":[" +
-            "\"volumeId\",\"layerId\",\"annotationDataId\",\"contentVersion\"],\"response\":{\"$ref\":\"An" +
-            "notationdata\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":" +
-            "\"books.layers.annotationData.list\",\"path\":\"volumes/{volumeId}/layers/{layerId}/d" +
-            "ata\",\"httpMethod\":\"GET\",\"description\":\"Gets the annotation data for a volume and" +
-            " layer.\",\"parameters\":{\"annotationDataId\":{\"type\":\"string\",\"description\":\"The li" +
-            "st of Annotation Data Ids to retrieve. Pagination is ignored if this is set.\",\"r" +
-            "epeated\":true,\"location\":\"query\"},\"contentVersion\":{\"type\":\"string\",\"description" +
-            "\":\"The content version for the requested volume.\",\"required\":true,\"location\":\"qu" +
-            "ery\"},\"h\":{\"type\":\"integer\",\"description\":\"The requested pixel height for any im" +
-            "ages. If height is provided width must also be provided.\",\"format\":\"int32\",\"loca" +
-            "tion\":\"query\"},\"layerId\":{\"type\":\"string\",\"description\":\"The ID for the layer to" +
-            " get the annotation data.\",\"required\":true,\"location\":\"path\"},\"locale\":{\"type\":\"" +
-            "string\",\"description\":\"The locale information for the data. ISO-639-1 language a" +
-            "nd ISO-3166-1 country code. Ex: \'en_US\'.\",\"location\":\"query\"},\"maxResults\":{\"typ" +
-            "e\":\"integer\",\"description\":\"Maximum number of results to return\",\"format\":\"uint3" +
-            "2\",\"minimum\":\"0\",\"maximum\":\"200\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string" +
-            "\",\"description\":\"The value of the nextToken from the previous page.\",\"location\":" +
-            "\"query\"},\"scale\":{\"type\":\"integer\",\"description\":\"The requested scale for the im" +
-            "age.\",\"format\":\"int32\",\"minimum\":\"0\",\"location\":\"query\"},\"source\":{\"type\":\"strin" +
-            "g\",\"description\":\"String to identify the originator of this request.\",\"location\"" +
-            ":\"query\"},\"updatedMax\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp to res" +
-            "trict to items updated prior to this timestamp (exclusive).\",\"location\":\"query\"}" +
-            ",\"updatedMin\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp to restrict to " +
-            "items updated since this timestamp (inclusive).\",\"location\":\"query\"},\"volumeId\":" +
-            "{\"type\":\"string\",\"description\":\"The volume to retrieve annotation data for.\",\"re" +
-            "quired\":true,\"location\":\"path\"},\"w\":{\"type\":\"integer\",\"description\":\"The request" +
-            "ed pixel width for any images. If width is provided height must also be provided" +
-            ".\",\"format\":\"int32\",\"location\":\"query\"}},\"parameterOrder\":[\"volumeId\",\"layerId\"," +
-            "\"contentVersion\"],\"response\":{\"$ref\":\"Annotationsdata\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/books\"]}}},\"volumeAnnotations\":{\"methods\":{\"get\":{\"id\":\"books" +
-            ".layers.volumeAnnotations.get\",\"path\":\"volumes/{volumeId}/layers/{layerId}/annot" +
-            "ations/{annotationId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the volume annotat" +
-            "ion.\",\"parameters\":{\"annotationId\":{\"type\":\"string\",\"description\":\"The ID of the" +
-            " volume annotation to retrieve.\",\"required\":true,\"location\":\"path\"},\"layerId\":{\"" +
-            "type\":\"string\",\"description\":\"The ID for the layer to get the annotations.\",\"req" +
-            "uired\":true,\"location\":\"path\"},\"locale\":{\"type\":\"string\",\"description\":\"The loca" +
-            "le information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex:" +
-            " \'en_US\'.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String t" +
-            "o identify the originator of this request.\",\"location\":\"query\"},\"volumeId\":{\"typ" +
-            "e\":\"string\",\"description\":\"The volume to retrieve annotations for.\",\"required\":t" +
-            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\",\"layerId\",\"annotationId\"],\"" +
-            "response\":{\"$ref\":\"Volumeannotation\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/books\"]},\"list\":{\"id\":\"books.layers.volumeAnnotations.list\",\"path\":\"volumes/{vo" +
-            "lumeId}/layers/{layerId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the volume anno" +
-            "tations for a volume and layer.\",\"parameters\":{\"contentVersion\":{\"type\":\"string\"" +
-            ",\"description\":\"The content version for the requested volume.\",\"required\":true,\"" +
-            "location\":\"query\"},\"endOffset\":{\"type\":\"string\",\"description\":\"The end offset to" +
-            " end retrieving data from.\",\"location\":\"query\"},\"endPosition\":{\"type\":\"string\",\"" +
-            "description\":\"The end position to end retrieving data from.\",\"location\":\"query\"}" +
-            ",\"layerId\":{\"type\":\"string\",\"description\":\"The ID for the layer to get the annot" +
-            "ations.\",\"required\":true,\"location\":\"path\"},\"locale\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The locale information for the data. ISO-639-1 language and ISO-3166-1 coun" +
-            "try code. Ex: \'en_US\'.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"Maximum number of results to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"" +
-            "maximum\":\"200\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"T" +
-            "he value of the nextToken from the previous page.\",\"location\":\"query\"},\"showDele" +
-            "ted\":{\"type\":\"boolean\",\"description\":\"Set to true to return deleted annotations." +
-            " updatedMin must be in the request to use this. Defaults to false.\",\"location\":\"" +
-            "query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originat" +
-            "or of this request.\",\"location\":\"query\"},\"startOffset\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The start offset to start retrieving data from.\",\"location\":\"query\"},\"sta" +
-            "rtPosition\":{\"type\":\"string\",\"description\":\"The start position to start retrievi" +
-            "ng data from.\",\"location\":\"query\"},\"updatedMax\":{\"type\":\"string\",\"description\":\"" +
-            "RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusi" +
-            "ve).\",\"location\":\"query\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"RFC 3339 " +
-            "timestamp to restrict to items updated since this timestamp (inclusive).\",\"locat" +
-            "ion\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to retrieve " +
-            "annotations for.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeI" +
-            "d\",\"layerId\",\"contentVersion\"],\"response\":{\"$ref\":\"Volumeannotations\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/books\"]}}}}},\"myconfig\":{\"methods\":{\"releaseDo" +
-            "wnloadAccess\":{\"id\":\"books.myconfig.releaseDownloadAccess\",\"path\":\"myconfig/rele" +
-            "aseDownloadAccess\",\"httpMethod\":\"POST\",\"description\":\"Release downloaded content" +
-            " access restriction.\",\"parameters\":{\"cpksver\":{\"type\":\"string\",\"description\":\"Th" +
-            "e device/version ID from which to release the restriction.\",\"required\":true,\"loc" +
-            "ation\":\"query\"},\"locale\":{\"type\":\"string\",\"description\":\"ISO-639-1, ISO-3166-1 c" +
-            "odes for message localization, i.e. en_US.\",\"location\":\"query\"},\"source\":{\"type\"" +
-            ":\"string\",\"description\":\"String to identify the originator of this request.\",\"lo" +
-            "cation\":\"query\"},\"volumeIds\":{\"type\":\"string\",\"description\":\"The volume(s) to re" +
-            "lease restrictions for.\",\"required\":true,\"repeated\":true,\"location\":\"query\"}},\"p" +
-            "arameterOrder\":[\"volumeIds\",\"cpksver\"],\"response\":{\"$ref\":\"DownloadAccesses\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/books\"]},\"requestAccess\":{\"id\":\"books.m" +
-            "yconfig.requestAccess\",\"path\":\"myconfig/requestAccess\",\"httpMethod\":\"POST\",\"desc" +
-            "ription\":\"Request concurrent and download access restrictions.\",\"parameters\":{\"c" +
-            "pksver\":{\"type\":\"string\",\"description\":\"The device/version ID from which to requ" +
-            "est the restrictions.\",\"required\":true,\"location\":\"query\"},\"locale\":{\"type\":\"str" +
-            "ing\",\"description\":\"ISO-639-1, ISO-3166-1 codes for message localization, i.e. e" +
-            "n_US.\",\"location\":\"query\"},\"nonce\":{\"type\":\"string\",\"description\":\"The client no" +
-            "nce value.\",\"required\":true,\"location\":\"query\"},\"source\":{\"type\":\"string\",\"descr" +
-            "iption\":\"String to identify the originator of this request.\",\"required\":true,\"lo" +
-            "cation\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to reques" +
-            "t concurrent/download restrictions for.\",\"required\":true,\"location\":\"query\"}},\"p" +
-            "arameterOrder\":[\"source\",\"volumeId\",\"nonce\",\"cpksver\"],\"response\":{\"$ref\":\"Reque" +
-            "stAccess\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"syncVolumeLicens" +
-            "es\":{\"id\":\"books.myconfig.syncVolumeLicenses\",\"path\":\"myconfig/syncVolumeLicense" +
-            "s\",\"httpMethod\":\"POST\",\"description\":\"Request downloaded content access for spec" +
-            "ified volumes on the My eBooks shelf.\",\"parameters\":{\"cpksver\":{\"type\":\"string\"," +
-            "\"description\":\"The device/version ID from which to release the restriction.\",\"re" +
-            "quired\":true,\"location\":\"query\"},\"locale\":{\"type\":\"string\",\"description\":\"ISO-63" +
-            "9-1, ISO-3166-1 codes for message localization, i.e. en_US.\",\"location\":\"query\"}" +
-            ",\"nonce\":{\"type\":\"string\",\"description\":\"The client nonce value.\",\"required\":tru" +
-            "e,\"location\":\"query\"},\"showPreorders\":{\"type\":\"boolean\",\"description\":\"Set to tr" +
-            "ue to show pre-ordered books. Defaults to false.\",\"location\":\"query\"},\"source\":{" +
-            "\"type\":\"string\",\"description\":\"String to identify the originator of this request" +
-            ".\",\"required\":true,\"location\":\"query\"},\"volumeIds\":{\"type\":\"string\",\"description" +
-            "\":\"The volume(s) to request download restrictions for.\",\"repeated\":true,\"locatio" +
-            "n\":\"query\"}},\"parameterOrder\":[\"source\",\"nonce\",\"cpksver\"],\"response\":{\"$ref\":\"V" +
-            "olumes\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}},\"mylibrary\":{\"res" +
-            "ources\":{\"annotations\":{\"methods\":{\"delete\":{\"id\":\"books.mylibrary.annotations.d" +
-            "elete\",\"path\":\"mylibrary/annotations/{annotationId}\",\"httpMethod\":\"DELETE\",\"desc" +
-            "ription\":\"Deletes an annotation.\",\"parameters\":{\"annotationId\":{\"type\":\"string\"," +
-            "\"description\":\"The ID for the annotation to delete.\",\"required\":true,\"location\":" +
-            "\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originat" +
-            "or of this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"annotationId\"],\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/books\"]},\"get\":{\"id\":\"books.mylibrary.ann" +
-            "otations.get\",\"path\":\"mylibrary/annotations/{annotationId}\",\"httpMethod\":\"GET\",\"" +
-            "description\":\"Gets an annotation by its ID.\",\"parameters\":{\"annotationId\":{\"type" +
-            "\":\"string\",\"description\":\"The ID for the annotation to retrieve.\",\"required\":tru" +
-            "e,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify" +
-            " the originator of this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"annota" +
-            "tionId\"],\"response\":{\"$ref\":\"Annotation\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/books\"]},\"insert\":{\"id\":\"books.mylibrary.annotations.insert\",\"path\":\"mylibr" +
-            "ary/annotations\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new annotation.\",\"" +
-            "parameters\":{\"source\":{\"type\":\"string\",\"description\":\"String to identify the ori" +
-            "ginator of this request.\",\"location\":\"query\"}},\"request\":{\"$ref\":\"Annotation\"},\"" +
-            "response\":{\"$ref\":\"Annotation\"},\"scopes\":[\"https://www.googleapis.com/auth/books" +
-            "\"]},\"list\":{\"id\":\"books.mylibrary.annotations.list\",\"path\":\"mylibrary/annotation" +
-            "s\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of annotations, possibly f" +
-            "iltered.\",\"parameters\":{\"contentVersion\":{\"type\":\"string\",\"description\":\"The con" +
-            "tent version for the requested volume.\",\"location\":\"query\"},\"layerId\":{\"type\":\"s" +
-            "tring\",\"description\":\"The layer ID to limit annotation by.\",\"location\":\"query\"}," +
-            "\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to retur" +
-            "n\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"40\",\"location\":\"query\"},\"pageIds\":" +
-            "{\"type\":\"string\",\"description\":\"The page ID(s) for the volume that is being quer" +
-            "ied.\",\"repeated\":true,\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The value of the nextToken from the previous page.\",\"location\":\"query\"},\"s" +
-            "howDeleted\":{\"type\":\"boolean\",\"description\":\"Set to true to return deleted annot" +
-            "ations. updatedMin must be in the request to use this. Defaults to false.\",\"loca" +
-            "tion\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the o" +
-            "riginator of this request.\",\"location\":\"query\"},\"updatedMax\":{\"type\":\"string\",\"d" +
-            "escription\":\"RFC 3339 timestamp to restrict to items updated prior to this times" +
-            "tamp (exclusive).\",\"location\":\"query\"},\"updatedMin\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"RFC 3339 timestamp to restrict to items updated since this timestamp (inclus" +
-            "ive).\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume" +
-            " to restrict annotations to.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Annotatio" +
-            "ns\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"update\":{\"id\":\"books.m" +
-            "ylibrary.annotations.update\",\"path\":\"mylibrary/annotations/{annotationId}\",\"http" +
-            "Method\":\"PUT\",\"description\":\"Updates an existing annotation.\",\"parameters\":{\"ann" +
-            "otationId\":{\"type\":\"string\",\"description\":\"The ID for the annotation to update.\"" +
-            ",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"Str" +
-            "ing to identify the originator of this request.\",\"location\":\"query\"}},\"parameter" +
-            "Order\":[\"annotationId\"],\"request\":{\"$ref\":\"Annotation\"},\"response\":{\"$ref\":\"Anno" +
-            "tation\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}},\"bookshelves\":{\"m" +
-            "ethods\":{\"addVolume\":{\"id\":\"books.mylibrary.bookshelves.addVolume\",\"path\":\"mylib" +
-            "rary/bookshelves/{shelf}/addVolume\",\"httpMethod\":\"POST\",\"description\":\"Adds a vo" +
-            "lume to a bookshelf.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID o" +
-            "f bookshelf to which to add a volume.\",\"required\":true,\"location\":\"path\"},\"sourc" +
-            "e\":{\"type\":\"string\",\"description\":\"String to identify the originator of this req" +
-            "uest.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volu" +
-            "me to add.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volu" +
-            "meId\"],\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"clearVolumes\":{\"id\":" +
-            "\"books.mylibrary.bookshelves.clearVolumes\",\"path\":\"mylibrary/bookshelves/{shelf}" +
-            "/clearVolumes\",\"httpMethod\":\"POST\",\"description\":\"Clears all volumes from a book" +
-            "shelf.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bookshelf fr" +
-            "om which to remove a volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type" +
-            "\":\"string\",\"description\":\"String to identify the originator of this request.\",\"l" +
-            "ocation\":\"query\"}},\"parameterOrder\":[\"shelf\"],\"scopes\":[\"https://www.googleapis." +
-            "com/auth/books\"]},\"get\":{\"id\":\"books.mylibrary.bookshelves.get\",\"path\":\"mylibrar" +
-            "y/bookshelves/{shelf}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves metadata for " +
-            "a specific bookshelf belonging to the authenticated user.\",\"parameters\":{\"shelf\"" +
-            ":{\"type\":\"string\",\"description\":\"ID of bookshelf to retrieve.\",\"required\":true,\"" +
-            "location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify th" +
-            "e originator of this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\"],\"" +
-            "response\":{\"$ref\":\"Bookshelf\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"" +
-            "]},\"list\":{\"id\":\"books.mylibrary.bookshelves.list\",\"path\":\"mylibrary/bookshelves" +
-            "\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of bookshelves belonging to" +
-            " the authenticated user.\",\"parameters\":{\"source\":{\"type\":\"string\",\"description\":" +
-            "\"String to identify the originator of this request.\",\"location\":\"query\"}},\"respo" +
-            "nse\":{\"$ref\":\"Bookshelves\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}," +
-            "\"moveVolume\":{\"id\":\"books.mylibrary.bookshelves.moveVolume\",\"path\":\"mylibrary/bo" +
-            "okshelves/{shelf}/moveVolume\",\"httpMethod\":\"POST\",\"description\":\"Moves a volume " +
-            "within a bookshelf.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of" +
-            " bookshelf with the volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\"" +
-            ":\"string\",\"description\":\"String to identify the originator of this request.\",\"lo" +
-            "cation\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volume to move" +
-            ".\",\"required\":true,\"location\":\"query\"},\"volumePosition\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"Position on shelf to move the item (0 puts the item before the current " +
-            "first item, 1 puts it between the first and the second and so on.)\",\"required\":t" +
-            "rue,\"format\":\"int32\",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\",\"" +
-            "volumePosition\"],\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"removeVolu" +
-            "me\":{\"id\":\"books.mylibrary.bookshelves.removeVolume\",\"path\":\"mylibrary/bookshelv" +
-            "es/{shelf}/removeVolume\",\"httpMethod\":\"POST\",\"description\":\"Removes a volume fro" +
-            "m a bookshelf.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of book" +
-            "shelf from which to remove a volume.\",\"required\":true,\"location\":\"path\"},\"source" +
-            "\":{\"type\":\"string\",\"description\":\"String to identify the originator of this requ" +
-            "est.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volum" +
-            "e to remove.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"vo" +
-            "lumeId\"],\"scopes\":[\"https://www.googleapis.com/auth/books\"]}},\"resources\":{\"volu" +
-            "mes\":{\"methods\":{\"list\":{\"id\":\"books.mylibrary.bookshelves.volumes.list\",\"path\":" +
-            "\"mylibrary/bookshelves/{shelf}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Gets v" +
-            "olume information for volumes on a bookshelf.\",\"parameters\":{\"country\":{\"type\":\"" +
-            "string\",\"description\":\"ISO-3166-1 code to override the IP-based location.\",\"loca" +
-            "tion\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of r" +
-            "esults to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"projectio" +
-            "n\":{\"type\":\"string\",\"description\":\"Restrict information returned to a set of sel" +
-            "ected fields.\",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all volume d" +
-            "ata.\",\"Includes a subset of fields in volumeInfo and accessInfo.\"],\"location\":\"q" +
-            "uery\"},\"q\":{\"type\":\"string\",\"description\":\"Full-text search query string in this" +
-            " bookshelf.\",\"location\":\"query\"},\"shelf\":{\"type\":\"string\",\"description\":\"The boo" +
-            "kshelf ID or name retrieve volumes for.\",\"required\":true,\"location\":\"path\"},\"sho" +
-            "wPreorders\":{\"type\":\"boolean\",\"description\":\"Set to true to show pre-ordered boo" +
-            "ks. Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"descripti" +
-            "on\":\"String to identify the originator of this request.\",\"location\":\"query\"},\"st" +
-            "artIndex\":{\"type\":\"integer\",\"description\":\"Index of the first element to return " +
-            "(starts at 0)\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"}},\"parameterOr" +
-            "der\":[\"shelf\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/books\"]}}}}},\"readingpositions\":{\"methods\":{\"get\":{\"id\":\"books.mylibrary" +
-            ".readingpositions.get\",\"path\":\"mylibrary/readingpositions/{volumeId}\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Retrieves my reading position information for a volume.\"" +
-            ",\"parameters\":{\"contentVersion\":{\"type\":\"string\",\"description\":\"Volume content v" +
-            "ersion for which this reading position is requested.\",\"location\":\"query\"},\"sourc" +
-            "e\":{\"type\":\"string\",\"description\":\"String to identify the originator of this req" +
-            "uest.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volu" +
-            "me for which to retrieve a reading position.\",\"required\":true,\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"volumeId\"],\"response\":{\"$ref\":\"ReadingPosition\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/books\"]},\"setPosition\":{\"id\":\"books.mylibrary.r" +
-            "eadingpositions.setPosition\",\"path\":\"mylibrary/readingpositions/{volumeId}/setPo" +
-            "sition\",\"httpMethod\":\"POST\",\"description\":\"Sets my reading position information " +
-            "for a volume.\",\"parameters\":{\"action\":{\"type\":\"string\",\"description\":\"Action tha" +
-            "t caused this reading position to be set.\",\"enum\":[\"bookmark\",\"chapter\",\"next-pa" +
-            "ge\",\"prev-page\",\"scroll\",\"search\"],\"enumDescriptions\":[\"User chose bookmark with" +
-            "in volume.\",\"User selected chapter from list.\",\"Next page event.\",\"Previous page" +
-            " event.\",\"User navigated to page.\",\"User chose search results within volume.\"],\"" +
-            "location\":\"query\"},\"contentVersion\":{\"type\":\"string\",\"description\":\"Volume conte" +
-            "nt version for which this reading position applies.\",\"location\":\"query\"},\"positi" +
-            "on\":{\"type\":\"string\",\"description\":\"Position string for the new volume reading p" +
-            "osition.\",\"required\":true,\"location\":\"query\"},\"source\":{\"type\":\"string\",\"descrip" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/qjZq2Hi" +
+            "iFoSSwCaYiocS1WFEpX8\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"books:v1\",\"name\":\"books\",\"" +
+            "version\":\"v1\",\"revision\":\"20120822\",\"title\":\"Books API\",\"description\":\"Lets you " +
+            "search for books and manage your Google Books library.\",\"icons\":{\"x16\":\"http://w" +
+            "ww.google.com/images/icons/product/ebooks-16.png\",\"x32\":\"http://www.google.com/i" +
+            "mages/icons/product/ebooks-32.png\"},\"documentationLink\":\"https://developers.goog" +
+            "le.com/books/docs/v1/getting_started\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.g" +
+            "oogleapis.com/books/v1/\",\"basePath\":\"/books/v1/\",\"rootUrl\":\"https://www.googleap" +
+            "is.com/\",\"servicePath\":\"books/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"typ" +
+            "e\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum" +
+            "\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"" +
+            "],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifyi" +
+            "ng which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"t" +
+            "ype\":\"string\",\"description\":\"API key. Your API key identifies your project and p" +
+            "rovides you with API access, quota, and reports. Required unless you provide an " +
+            "OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"t" +
+            "ype\":\"boolean\",\"description\":\"Returns response with indentations and line breaks" +
+            ".\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Available to use for quota purposes for server-side applications. Can be any" +
+            " arbitrary string assigned to a user, but should not exceed 40 characters. Overr" +
+            "ides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\"" +
+            ",\"description\":\"IP address of the site where the request originates. Use this if" +
+            " you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"s" +
+            "copes\":{\"https://www.googleapis.com/auth/books\":{\"description\":\"Manage your book" +
+            "s\"}}}},\"schemas\":{\"Annotation\":{\"id\":\"Annotation\",\"type\":\"object\",\"properties\":{" +
+            "\"afterSelectedText\":{\"type\":\"string\",\"description\":\"Anchor text after excerpt.\"}" +
+            ",\"beforeSelectedText\":{\"type\":\"string\",\"description\":\"Anchor text before excerpt" +
+            ".\"},\"clientVersionRanges\":{\"type\":\"object\",\"description\":\"Selection ranges sent " +
+            "from the client.\",\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsRange\",\"desc" +
+            "ription\":\"Range in CFI format for this annotation sent by client.\"},\"contentVers" +
+            "ion\":{\"type\":\"string\",\"description\":\"Content version the client sent in.\"},\"gbIm" +
+            "ageRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in GB image forma" +
+            "t for this annotation sent by client.\"},\"gbTextRange\":{\"$ref\":\"BooksAnnotationsR" +
+            "ange\",\"description\":\"Range in GB text format for this annotation sent by client." +
+            "\"}}},\"created\":{\"type\":\"string\",\"description\":\"Timestamp for the created time of" +
+            " this annotation.\",\"format\":\"date-time\"},\"currentVersionRanges\":{\"type\":\"object\"" +
+            ",\"description\":\"Selection ranges for the most recent content version.\",\"properti" +
+            "es\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in CFI form" +
+            "at for this annotation for version above.\"},\"contentVersion\":{\"type\":\"string\",\"d" +
+            "escription\":\"Content version applicable to ranges below.\"},\"gbImageRange\":{\"$ref" +
+            "\":\"BooksAnnotationsRange\",\"description\":\"Range in GB image format for this annot" +
+            "ation for version above.\"},\"gbTextRange\":{\"$ref\":\"BooksAnnotationsRange\",\"descri" +
+            "ption\":\"Range in GB text format for this annotation for version above.\"}}},\"data" +
+            "\":{\"type\":\"string\",\"description\":\"User-created data for this annotation.\"},\"dele" +
+            "ted\":{\"type\":\"boolean\",\"description\":\"Indicates that this annotation is deleted." +
+            "\"},\"highlightStyle\":{\"type\":\"string\",\"description\":\"The highlight style for this" +
+            " annotation.\"},\"id\":{\"type\":\"string\",\"description\":\"Id of this annotation, in th" +
+            "e form of a GUID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"defa" +
+            "ult\":\"books#annotation\"},\"layerId\":{\"type\":\"string\",\"description\":\"The layer thi" +
+            "s annotation is for.\"},\"pageIds\":{\"type\":\"array\",\"description\":\"Pages that this " +
+            "annotation spans.\",\"items\":{\"type\":\"string\"}},\"selectedText\":{\"type\":\"string\",\"d" +
+            "escription\":\"Excerpt from the volume.\"},\"selfLink\":{\"type\":\"string\",\"description" +
+            "\":\"URL to this resource.\"},\"updated\":{\"type\":\"string\",\"description\":\"Timestamp f" +
+            "or the last time this annotation was modified.\",\"format\":\"date-time\"},\"volumeId\"" +
+            ":{\"type\":\"string\",\"description\":\"The volume that this annotation belongs to.\"}}}" +
+            ",\"Annotationdata\":{\"id\":\"Annotationdata\",\"type\":\"object\",\"properties\":{\"annotati" +
+            "onType\":{\"type\":\"string\",\"description\":\"The type of annotation this data is for." +
+            "\"},\"data\":{\"type\":\"any\"},\"encoded_data\":{\"type\":\"string\",\"description\":\"Base64 e" +
+            "ncoded data for this annotation data.\",\"format\":\"byte\"},\"id\":{\"type\":\"string\",\"d" +
+            "escription\":\"Unique id for this annotation data.\"},\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Resource Type\",\"default\":\"books#annotationdata\"},\"layerId\":{\"type\":\"st" +
+            "ring\",\"description\":\"The Layer id for this data. *\"},\"selfLink\":{\"type\":\"string\"" +
+            ",\"description\":\"URL for this resource. *\"},\"updated\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Timestamp for the last time this data was updated. (RFC 3339 UTC date-time " +
+            "format).\",\"format\":\"date-time\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The v" +
+            "olume id for this data. *\"}}},\"Annotations\":{\"id\":\"Annotations\",\"type\":\"object\"," +
+            "\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of annotations.\",\"it" +
+            "ems\":{\"$ref\":\"Annotation\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource type" +
+            ".\",\"default\":\"books#annotations\"},\"nextPageToken\":{\"type\":\"string\",\"description\"" +
+            ":\"Token to pass in for pagination for the next page. This will not be present if" +
+            " this request does not have more results.\"},\"totalItems\":{\"type\":\"integer\",\"desc" +
+            "ription\":\"Total number of annotations found. This may be greater than the number" +
+            " of notes returned in this response if results have been paginated.\",\"format\":\"i" +
+            "nt32\"}}},\"Annotationsdata\":{\"id\":\"Annotationsdata\",\"type\":\"object\",\"properties\":" +
+            "{\"items\":{\"type\":\"array\",\"description\":\"A list of Annotation Data.\",\"items\":{\"$r" +
+            "ef\":\"Annotationdata\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource type\",\"de" +
+            "fault\":\"books#annotationsdata\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"" +
+            "Token to pass in for pagination for the next page. This will not be present if t" +
+            "his request does not have more results.\"},\"totalItems\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"The total number of volume annotations found.\",\"format\":\"int32\"}}},\"Book" +
+            "sAnnotationsRange\":{\"id\":\"BooksAnnotationsRange\",\"type\":\"object\",\"properties\":{\"" +
+            "endOffset\":{\"type\":\"string\",\"description\":\"The offset from the ending position.\"" +
+            "},\"endPosition\":{\"type\":\"string\",\"description\":\"The ending position for the rang" +
+            "e.\"},\"startOffset\":{\"type\":\"string\",\"description\":\"The offset from the starting " +
+            "position.\"},\"startPosition\":{\"type\":\"string\",\"description\":\"The starting positio" +
+            "n for the range.\"}}},\"BooksLayerDictData\":{\"id\":\"BooksLayerDictData\",\"type\":\"obj" +
+            "ect\",\"properties\":{\"common\":{\"type\":\"object\",\"properties\":{\"title\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The display title and localized canonical name to use when se" +
+            "arching for this entity on Google search.\"}}},\"dict\":{\"type\":\"object\",\"propertie" +
+            "s\":{\"source\":{\"type\":\"object\",\"description\":\"The source, url and attribution for" +
+            " this dictionary data.\",\"properties\":{\"attribution\":{\"type\":\"string\"},\"url\":{\"ty" +
+            "pe\":\"string\"}}},\"words\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"" +
+            "derivatives\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"source\":{\"t" +
+            "ype\":\"object\",\"properties\":{\"attribution\":{\"type\":\"string\"},\"url\":{\"type\":\"strin" +
+            "g\"}}},\"text\":{\"type\":\"string\"}}}},\"examples\":{\"type\":\"array\",\"items\":{\"type\":\"ob" +
+            "ject\",\"properties\":{\"source\":{\"type\":\"object\",\"properties\":{\"attribution\":{\"type" +
+            "\":\"string\"},\"url\":{\"type\":\"string\"}}},\"text\":{\"type\":\"string\"}}}},\"senses\":{\"typ" +
+            "e\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"conjugations\":{\"type\":\"array\"" +
+            ",\"items\":{\"type\":\"object\",\"properties\":{\"type\":{\"type\":\"string\"},\"value\":{\"type\"" +
+            ":\"string\"}}}},\"definitions\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties" +
+            "\":{\"definition\":{\"type\":\"string\"},\"examples\":{\"type\":\"array\",\"items\":{\"type\":\"ob" +
+            "ject\",\"properties\":{\"source\":{\"type\":\"object\",\"properties\":{\"attribution\":{\"type" +
+            "\":\"string\"},\"url\":{\"type\":\"string\"}}},\"text\":{\"type\":\"string\"}}}}}}},\"partOfSpee" +
+            "ch\":{\"type\":\"string\"},\"pronunciation\":{\"type\":\"string\"},\"pronunciationUrl\":{\"typ" +
+            "e\":\"string\"},\"source\":{\"type\":\"object\",\"properties\":{\"attribution\":{\"type\":\"stri" +
+            "ng\"},\"url\":{\"type\":\"string\"}}},\"syllabification\":{\"type\":\"string\"},\"synonyms\":{\"" +
+            "type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"source\":{\"type\":\"object\",\"" +
+            "properties\":{\"attribution\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}}},\"text\":{\"" +
+            "type\":\"string\"}}}}}}},\"source\":{\"type\":\"object\",\"description\":\"The words with di" +
+            "fferent meanings but not related words, e.g. \\\"go\\\" (game) and \\\"go\\\" (verb).\",\"" +
+            "properties\":{\"attribution\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}}}}}}}}}},\"B" +
+            "ooksLayerGeoData\":{\"id\":\"BooksLayerGeoData\",\"type\":\"object\",\"properties\":{\"commo" +
+            "n\":{\"type\":\"object\",\"properties\":{\"lang\":{\"type\":\"string\",\"description\":\"The lan" +
+            "guage of the information url and description.\"},\"previewImageUrl\":{\"type\":\"strin" +
+            "g\",\"description\":\"The URL for the preview image information.\"},\"snippet\":{\"type\"" +
+            ":\"string\",\"description\":\"The description for this location.\"},\"snippetUrl\":{\"typ" +
+            "e\":\"string\",\"description\":\"The URL for information for this location. Ex: wikipe" +
+            "dia link.\"},\"title\":{\"type\":\"string\",\"description\":\"The display title and locali" +
+            "zed canonical name to use when searching for this entity on Google search.\"}}},\"" +
+            "geo\":{\"type\":\"object\",\"properties\":{\"boundary\":{\"type\":\"array\",\"description\":\"Th" +
+            "e boundary of the location as a set of loops containing pairs of latitude, longi" +
+            "tude coordinates.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\"" +
+            ":{\"latitude\":{\"type\":\"integer\",\"format\":\"uint32\"},\"longitude\":{\"type\":\"integer\"," +
+            "\"format\":\"uint32\"}}}}},\"cachePolicy\":{\"type\":\"string\",\"description\":\"The cache p" +
+            "olicy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER\"},\"countryCode\":" +
+            "{\"type\":\"string\",\"description\":\"The country code of the location.\"},\"latitude\":{" +
+            "\"type\":\"number\",\"description\":\"The latitude of the location.\",\"format\":\"double\"}" +
+            ",\"longitude\":{\"type\":\"number\",\"description\":\"The longitude of the location.\",\"fo" +
+            "rmat\":\"double\"},\"mapType\":{\"type\":\"string\",\"description\":\"The type of map that s" +
+            "hould be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN\"},\"view" +
+            "port\":{\"type\":\"object\",\"description\":\"The viewport for showing this location. Th" +
+            "is is a latitude, longitude rectangle.\",\"properties\":{\"hi\":{\"type\":\"object\",\"pro" +
+            "perties\":{\"latitude\":{\"type\":\"number\",\"format\":\"double\"},\"longitude\":{\"type\":\"nu" +
+            "mber\",\"format\":\"double\"}}},\"lo\":{\"type\":\"object\",\"properties\":{\"latitude\":{\"type" +
+            "\":\"number\",\"format\":\"double\"},\"longitude\":{\"type\":\"number\",\"format\":\"double\"}}}}" +
+            "},\"zoom\":{\"type\":\"integer\",\"description\":\"The Zoom level to use for the map. Zoo" +
+            "m levels between 0 (the lowest zoom level, in which the entire world can be seen" +
+            " on one map) to 21+ (down to individual buildings). See: https://developers.goog" +
+            "le.com/maps/documentation/staticmaps/#Zoomlevels\",\"format\":\"int32\"}}}}},\"Bookshe" +
+            "lf\":{\"id\":\"Bookshelf\",\"type\":\"object\",\"properties\":{\"access\":{\"type\":\"string\",\"d" +
+            "escription\":\"Whether this bookshelf is PUBLIC or PRIVATE.\"},\"created\":{\"type\":\"s" +
+            "tring\",\"description\":\"Created time for this bookshelf (formatted UTC timestamp w" +
+            "ith millisecond resolution).\",\"format\":\"date-time\"},\"description\":{\"type\":\"strin" +
+            "g\",\"description\":\"Description of this bookshelf.\"},\"id\":{\"type\":\"integer\",\"descr" +
+            "iption\":\"Id of this bookshelf, only unique by user.\",\"format\":\"int32\"},\"kind\":{\"" +
+            "type\":\"string\",\"description\":\"Resource type for bookshelf metadata.\",\"default\":\"" +
+            "books#bookshelf\"},\"selfLink\":{\"type\":\"string\",\"description\":\"URL to this resourc" +
+            "e.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of this bookshelf.\"},\"updated" +
+            "\":{\"type\":\"string\",\"description\":\"Last modified time of this bookshelf (formatte" +
+            "d UTC timestamp with millisecond resolution).\",\"format\":\"date-time\"},\"volumeCoun" +
+            "t\":{\"type\":\"integer\",\"description\":\"Number of volumes in this bookshelf.\",\"forma" +
+            "t\":\"int32\"},\"volumesLastUpdated\":{\"type\":\"string\",\"description\":\"Last time a vol" +
+            "ume was added or removed from this bookshelf (formatted UTC timestamp with milli" +
+            "second resolution).\",\"format\":\"date-time\"}}},\"Bookshelves\":{\"id\":\"Bookshelves\",\"" +
+            "type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of bo" +
+            "okshelves.\",\"items\":{\"$ref\":\"Bookshelf\"}},\"kind\":{\"type\":\"string\",\"description\":" +
+            "\"Resource type.\",\"default\":\"books#bookshelves\"}}},\"ConcurrentAccessRestriction\":" +
+            "{\"id\":\"ConcurrentAccessRestriction\",\"type\":\"object\",\"properties\":{\"deviceAllowed" +
+            "\":{\"type\":\"boolean\",\"description\":\"Whether access is granted for this (user, dev" +
+            "ice, volume).\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\"" +
+            ":\"books#concurrentAccessRestriction\"},\"maxConcurrentDevices\":{\"type\":\"integer\",\"" +
+            "description\":\"The maximum number of concurrent access licenses for this volume.\"" +
+            ",\"format\":\"int32\"},\"message\":{\"type\":\"string\",\"description\":\"Error/warning messa" +
+            "ge.\"},\"nonce\":{\"type\":\"string\",\"description\":\"Client nonce for verification. Dow" +
+            "nload access and client-validation only.\"},\"reasonCode\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Error/warning reason code.\"},\"restricted\":{\"type\":\"boolean\",\"description" +
+            "\":\"Whether this volume has any concurrent access restrictions.\"},\"signature\":{\"t" +
+            "ype\":\"string\",\"description\":\"Response signature.\"},\"source\":{\"type\":\"string\",\"de" +
+            "scription\":\"Client app identifier for verification. Download access and client-v" +
+            "alidation only.\"},\"timeWindowSeconds\":{\"type\":\"integer\",\"description\":\"Time in s" +
+            "econds for license auto-expiration.\",\"format\":\"int32\"},\"volumeId\":{\"type\":\"strin" +
+            "g\",\"description\":\"Identifies the volume for which this entry applies.\"}}},\"Downl" +
+            "oadAccessRestriction\":{\"id\":\"DownloadAccessRestriction\",\"type\":\"object\",\"propert" +
+            "ies\":{\"deviceAllowed\":{\"type\":\"boolean\",\"description\":\"If restricted, whether ac" +
+            "cess is granted for this (user, device, volume).\"},\"downloadsAcquired\":{\"type\":\"" +
+            "integer\",\"description\":\"If restricted, the number of content download licenses a" +
+            "lready acquired (including the requesting client, if licensed).\",\"format\":\"int32" +
+            "\"},\"justAcquired\":{\"type\":\"boolean\",\"description\":\"If deviceAllowed, whether acc" +
+            "ess was just acquired with this request.\"},\"kind\":{\"type\":\"string\",\"description\"" +
+            ":\"Resource type.\",\"default\":\"books#downloadAccessRestriction\"},\"maxDownloadDevic" +
+            "es\":{\"type\":\"integer\",\"description\":\"If restricted, the maximum number of conten" +
+            "t download licenses for this volume.\",\"format\":\"int32\"},\"message\":{\"type\":\"strin" +
+            "g\",\"description\":\"Error/warning message.\"},\"nonce\":{\"type\":\"string\",\"description" +
+            "\":\"Client nonce for verification. Download access and client-validation only.\"}," +
+            "\"reasonCode\":{\"type\":\"string\",\"description\":\"Error/warning reason code. Addition" +
+            "al codes may be added in the future. 0 OK 100 ACCESS_DENIED_PUBLISHER_LIMIT 101 " +
+            "ACCESS_DENIED_LIMIT 200 WARNING_USED_LAST_ACCESS\"},\"restricted\":{\"type\":\"boolean" +
+            "\",\"description\":\"Whether this volume has any download access restrictions.\"},\"si" +
+            "gnature\":{\"type\":\"string\",\"description\":\"Response signature.\"},\"source\":{\"type\":" +
+            "\"string\",\"description\":\"Client app identifier for verification. Download access " +
+            "and client-validation only.\"},\"volumeId\":{\"type\":\"string\",\"description\":\"Identif" +
+            "ies the volume for which this entry applies.\"}}},\"DownloadAccesses\":{\"id\":\"Downl" +
+            "oadAccesses\",\"type\":\"object\",\"properties\":{\"downloadAccessList\":{\"type\":\"array\"," +
+            "\"description\":\"A list of download access responses.\",\"items\":{\"$ref\":\"DownloadAc" +
+            "cessRestriction\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"defau" +
+            "lt\":\"books#downloadAccesses\"}}},\"Layersummaries\":{\"id\":\"Layersummaries\",\"type\":\"" +
+            "object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of layer sum" +
+            "mary items.\",\"items\":{\"$ref\":\"Layersummary\"}},\"kind\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Resource type.\",\"default\":\"books#layersummaries\"},\"totalItems\":{\"type\":\"int" +
+            "eger\",\"description\":\"The total number of layer summaries found.\",\"format\":\"int32" +
+            "\"}}},\"Layersummary\":{\"id\":\"Layersummary\",\"type\":\"object\",\"properties\":{\"annotati" +
+            "onCount\":{\"type\":\"integer\",\"description\":\"The number of annotations for this lay" +
+            "er.\",\"format\":\"int32\"},\"annotationTypes\":{\"type\":\"array\",\"description\":\"The list" +
+            " of annotation types contained for this layer.\",\"items\":{\"type\":\"string\"}},\"anno" +
+            "tationsDataLink\":{\"type\":\"string\",\"description\":\"Link to get data for this annot" +
+            "ation.\"},\"annotationsLink\":{\"type\":\"string\",\"description\":\"The link to get the a" +
+            "nnotations for this layer.\"},\"contentVersion\":{\"type\":\"string\",\"description\":\"Th" +
+            "e content version this resource is for.\"},\"dataCount\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"The number of data items for this layer.\",\"format\":\"int32\"},\"id\":{\"type\":" +
+            "\"string\",\"description\":\"Unique id of this layer summary.\"},\"kind\":{\"type\":\"strin" +
+            "g\",\"description\":\"Resource Type\",\"default\":\"books#layersummary\"},\"layerId\":{\"typ" +
+            "e\":\"string\",\"description\":\"The layer id for this summary.\"},\"selfLink\":{\"type\":\"" +
+            "string\",\"description\":\"URL to this resource.\"},\"updated\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Timestamp for the last time an item in this layer was updated. (RFC 333" +
+            "9 UTC date-time format).\",\"format\":\"date-time\"},\"volumeId\":{\"type\":\"string\",\"des" +
+            "cription\":\"The volume id this resource is for.\"}}},\"ReadingPosition\":{\"id\":\"Read" +
+            "ingPosition\",\"type\":\"object\",\"properties\":{\"epubCfiPosition\":{\"type\":\"string\",\"d" +
+            "escription\":\"Position in an EPUB as a CFI.\"},\"gbImagePosition\":{\"type\":\"string\"," +
+            "\"description\":\"Position in a volume for image-based content.\"},\"gbTextPosition\":" +
+            "{\"type\":\"string\",\"description\":\"Position in a volume for text-based content.\"},\"" +
+            "kind\":{\"type\":\"string\",\"description\":\"Resource type for a reading position.\",\"de" +
+            "fault\":\"books#readingPosition\"},\"pdfPosition\":{\"type\":\"string\",\"description\":\"Po" +
+            "sition in a PDF file.\"},\"updated\":{\"type\":\"string\",\"description\":\"Timestamp when" +
+            " this reading position was last updated (formatted UTC timestamp with millisecon" +
+            "d resolution).\",\"format\":\"date-time\"},\"volumeId\":{\"type\":\"string\",\"description\":" +
+            "\"Volume id associated with this reading position.\"}}},\"RequestAccess\":{\"id\":\"Req" +
+            "uestAccess\",\"type\":\"object\",\"properties\":{\"concurrentAccess\":{\"$ref\":\"Concurrent" +
+            "AccessRestriction\",\"description\":\"A concurrent access response.\"},\"downloadAcces" +
+            "s\":{\"$ref\":\"DownloadAccessRestriction\",\"description\":\"A download access response" +
+            ".\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\":\"books#requ" +
+            "estAccess\"}}},\"Review\":{\"id\":\"Review\",\"type\":\"object\",\"properties\":{\"author\":{\"t" +
+            "ype\":\"object\",\"description\":\"Author of this review.\",\"properties\":{\"displayName\"" +
+            ":{\"type\":\"string\",\"description\":\"Name of this person.\"}}},\"content\":{\"type\":\"str" +
+            "ing\",\"description\":\"Review text.\"},\"date\":{\"type\":\"string\",\"description\":\"Date o" +
+            "f this review.\"},\"fullTextUrl\":{\"type\":\"string\",\"description\":\"URL for the full " +
+            "review text, for reviews gathered from the web.\"},\"kind\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Resource type for a review.\",\"default\":\"books#review\"},\"rating\":{\"type\"" +
+            ":\"string\",\"description\":\"Star rating for this review. Possible values are ONE, T" +
+            "WO, THREE, FOUR, FIVE or NOT_RATED.\"},\"source\":{\"type\":\"object\",\"description\":\"I" +
+            "nformation regarding the source of this review, when the review is not from a Go" +
+            "ogle Books user.\",\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"Na" +
+            "me of the source.\"},\"extraDescription\":{\"type\":\"string\",\"description\":\"Extra tex" +
+            "t about the source of the review.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of" +
+            " the source of the review.\"}}},\"title\":{\"type\":\"string\",\"description\":\"Title for" +
+            " this review.\"},\"type\":{\"type\":\"string\",\"description\":\"Source type for this revi" +
+            "ew. Possible values are EDITORIAL, WEB_USER or GOOGLE_USER.\"},\"volumeId\":{\"type\"" +
+            ":\"string\",\"description\":\"Volume that this review is for.\"}}},\"Volume\":{\"id\":\"Vol" +
+            "ume\",\"type\":\"object\",\"properties\":{\"accessInfo\":{\"type\":\"object\",\"description\":\"" +
+            "Any information about a volume related to reading or obtaining that volume text." +
+            " This information can depend on country (books may be public domain in one count" +
+            "ry but not in another, e.g.).\",\"properties\":{\"accessViewStatus\":{\"type\":\"string\"" +
+            ",\"description\":\"Combines the access and viewability of this volume into a single" +
+            " status field for this user. Values can be FULL_PURCHASED, FULL_PUBLIC_DOMAIN, S" +
+            "AMPLE or NONE. (In LITE projection.)\"},\"country\":{\"type\":\"string\",\"description\":" +
+            "\"The two-letter ISO_3166-1 country code for which this access information is val" +
+            "id. (In LITE projection.)\"},\"downloadAccess\":{\"$ref\":\"DownloadAccessRestriction\"" +
+            ",\"description\":\"Information about a volume\'s download license access restriction" +
+            "s.\"},\"embeddable\":{\"type\":\"boolean\",\"description\":\"Whether this volume can be em" +
+            "bedded in a viewport using the Embedded Viewer API.\"},\"epub\":{\"type\":\"object\",\"d" +
+            "escription\":\"Information about epub content. (In LITE projection.)\",\"properties\"" +
+            ":{\"acsTokenLink\":{\"type\":\"string\",\"description\":\"URL to retrieve ACS token for e" +
+            "pub download. (In LITE projection.)\"},\"downloadLink\":{\"type\":\"string\",\"descripti" +
+            "on\":\"URL to download epub. (In LITE projection.)\"},\"isAvailable\":{\"type\":\"boolea" +
+            "n\",\"description\":\"Is a flowing text epub available either as public domain or fo" +
+            "r purchase. (In LITE projection.)\"}}},\"pdf\":{\"type\":\"object\",\"description\":\"Info" +
+            "rmation about pdf content. (In LITE projection.)\",\"properties\":{\"acsTokenLink\":{" +
+            "\"type\":\"string\",\"description\":\"URL to retrieve ACS token for pdf download. (In L" +
+            "ITE projection.)\"},\"downloadLink\":{\"type\":\"string\",\"description\":\"URL to downloa" +
+            "d pdf. (In LITE projection.)\"},\"isAvailable\":{\"type\":\"boolean\",\"description\":\"Is" +
+            " a scanned image pdf available either as public domain or for purchase. (In LITE" +
+            " projection.)\"}}},\"publicDomain\":{\"type\":\"boolean\",\"description\":\"Whether or not" +
+            " this book is public domain in the country listed above.\"},\"textToSpeechPermissi" +
+            "on\":{\"type\":\"string\",\"description\":\"Whether text-to-speech is permitted for this" +
+            " volume. Values can be ALLOWED, ALLOWED_FOR_ACCESSIBILITY, or NOT_ALLOWED.\"},\"vi" +
+            "ewOrderUrl\":{\"type\":\"string\",\"description\":\"For ordered but not yet processed or" +
+            "ders, we give a URL that can be used to go to the appropriate Google Wallet page" +
+            ".\"},\"viewability\":{\"type\":\"string\",\"description\":\"The read access of a volume. P" +
+            "ossible values are PARTIAL, ALL_PAGES, NO_PAGES or UNKNOWN. This value depends o" +
+            "n the country listed above. A value of PARTIAL means that the publisher has allo" +
+            "wed some portion of the volume to be viewed publicly, without purchase. This can" +
+            " apply to eBooks as well as non-eBooks. Public domain books will always have a v" +
+            "alue of ALL_PAGES.\"},\"webReaderLink\":{\"type\":\"string\",\"description\":\"URL to read" +
+            " this volume on the Google Books site. Link will not allow users to read non-vie" +
+            "wable volumes.\"}}},\"etag\":{\"type\":\"string\",\"description\":\"Opaque identifier for " +
+            "a specific version of a volume resource. (In LITE projection)\"},\"id\":{\"type\":\"st" +
+            "ring\",\"description\":\"Unique identifier for a volume. (In LITE projection.)\"},\"ki" +
+            "nd\":{\"type\":\"string\",\"description\":\"Resource type for a volume. (In LITE project" +
+            "ion.)\",\"default\":\"books#volume\"},\"saleInfo\":{\"type\":\"object\",\"description\":\"Any " +
+            "information about a volume related to the eBookstore and/or purchaseability. Thi" +
+            "s information can depend on the country where the request originates from (i.e. " +
+            "books may not be for sale in certain countries).\",\"properties\":{\"buyLink\":{\"type" +
+            "\":\"string\",\"description\":\"URL to purchase this volume on the Google Books site. " +
+            "(In LITE projection)\"},\"country\":{\"type\":\"string\",\"description\":\"The two-letter " +
+            "ISO_3166-1 country code for which this sale information is valid. (In LITE proje" +
+            "ction.)\"},\"isEbook\":{\"type\":\"boolean\",\"description\":\"Whether or not this volume " +
+            "is an eBook (can be added to the My eBooks shelf).\"},\"listPrice\":{\"type\":\"object" +
+            "\",\"description\":\"Suggested retail price. (In LITE projection.)\",\"properties\":{\"a" +
+            "mount\":{\"type\":\"number\",\"description\":\"Amount in the currency listed below. (In " +
+            "LITE projection.)\",\"format\":\"double\"},\"currencyCode\":{\"type\":\"string\",\"descripti" +
+            "on\":\"An ISO 4217, three-letter currency code. (In LITE projection.)\"}}},\"onSaleD" +
+            "ate\":{\"type\":\"string\",\"description\":\"The date on which this book is available fo" +
+            "r sale.\",\"format\":\"date-time\"},\"retailPrice\":{\"type\":\"object\",\"description\":\"The" +
+            " actual selling price of the book. This is the same as the suggested retail or l" +
+            "ist price unless there are offers or discounts on this volume. (In LITE projecti" +
+            "on.)\",\"properties\":{\"amount\":{\"type\":\"number\",\"description\":\"Amount in the curre" +
+            "ncy listed below. (In LITE projection.)\",\"format\":\"double\"},\"currencyCode\":{\"typ" +
+            "e\":\"string\",\"description\":\"An ISO 4217, three-letter currency code. (In LITE pro" +
+            "jection.)\"}}},\"saleability\":{\"type\":\"string\",\"description\":\"Whether or not this " +
+            "book is available for sale or offered for free in the Google eBookstore for the " +
+            "country listed above. Possible values are FOR_SALE, FREE, NOT_FOR_SALE, or FOR_P" +
+            "REORDER.\"}}},\"searchInfo\":{\"type\":\"object\",\"description\":\"Search result informat" +
+            "ion related to this volume.\",\"properties\":{\"textSnippet\":{\"type\":\"string\",\"descr" +
+            "iption\":\"A text snippet containing the search query.\"}}},\"selfLink\":{\"type\":\"str" +
+            "ing\",\"description\":\"URL to this resource. (In LITE projection.)\"},\"userInfo\":{\"t" +
+            "ype\":\"object\",\"description\":\"User specific information related to this volume. (" +
+            "e.g. page this user last read or whether they purchased this book)\",\"properties\"" +
+            ":{\"isInMyBooks\":{\"type\":\"boolean\",\"description\":\"Whether or not this volume is c" +
+            "urrently in \\\"my books.\\\"\"},\"isPreordered\":{\"type\":\"boolean\",\"description\":\"Whet" +
+            "her or not this volume was pre-ordered by the authenticated user making the requ" +
+            "est. (In LITE projection.)\"},\"isPurchased\":{\"type\":\"boolean\",\"description\":\"Whet" +
+            "her or not this volume was purchased by the authenticated user making the reques" +
+            "t. (In LITE projection.)\"},\"readingPosition\":{\"$ref\":\"ReadingPosition\",\"descript" +
+            "ion\":\"The user\'s current reading position in the volume, if one is available. (I" +
+            "n LITE projection.)\"},\"review\":{\"$ref\":\"Review\",\"description\":\"This user\'s revie" +
+            "w of this volume, if one exists.\"},\"updated\":{\"type\":\"string\",\"description\":\"Tim" +
+            "estamp when this volume was last modified by a user action, such as a reading po" +
+            "sition update, volume purchase or writing a review. (RFC 3339 UTC date-time form" +
+            "at).\",\"format\":\"date-time\"}}},\"volumeInfo\":{\"type\":\"object\",\"description\":\"Gener" +
+            "al volume information.\",\"properties\":{\"authors\":{\"type\":\"array\",\"description\":\"T" +
+            "he names of the authors and/or editors for this volume. (In LITE projection)\",\"i" +
+            "tems\":{\"type\":\"string\"}},\"averageRating\":{\"type\":\"number\",\"description\":\"The mea" +
+            "n review rating for this volume. (min = 1.0, max = 5.0)\",\"format\":\"double\"},\"can" +
+            "onicalVolumeLink\":{\"type\":\"string\",\"description\":\"Canonical URL for a volume. (I" +
+            "n LITE projection.)\"},\"categories\":{\"type\":\"array\",\"description\":\"A list of subj" +
+            "ect categories, such as \\\"Fiction\\\", \\\"Suspense\\\", etc.\",\"items\":{\"type\":\"string" +
+            "\"}},\"contentVersion\":{\"type\":\"string\",\"description\":\"An identifier for the versi" +
+            "on of the volume content (text & images). (In LITE projection)\"},\"description\":{" +
+            "\"type\":\"string\",\"description\":\"A synopsis of the volume. The text of the descrip" +
+            "tion is formatted in HTML and includes simple formatting elements, such as b, i," +
+            " and br tags. (In LITE projection.)\"},\"dimensions\":{\"type\":\"object\",\"description" +
+            "\":\"Physical dimensions of this volume.\",\"properties\":{\"height\":{\"type\":\"string\"," +
+            "\"description\":\"Height or length of this volume (in cm).\"},\"thickness\":{\"type\":\"s" +
+            "tring\",\"description\":\"Thickness of this volume (in cm).\"},\"width\":{\"type\":\"strin" +
+            "g\",\"description\":\"Width of this volume (in cm).\"}}},\"imageLinks\":{\"type\":\"object" +
+            "\",\"description\":\"A list of image links for all the sizes that are available. (In" +
+            " LITE projection.)\",\"properties\":{\"extraLarge\":{\"type\":\"string\",\"description\":\"I" +
+            "mage link for extra large size (width of ~1280 pixels). (In LITE projection)\"},\"" +
+            "large\":{\"type\":\"string\",\"description\":\"Image link for large size (width of ~800 " +
+            "pixels). (In LITE projection)\"},\"medium\":{\"type\":\"string\",\"description\":\"Image l" +
+            "ink for medium size (width of ~575 pixels). (In LITE projection)\"},\"small\":{\"typ" +
+            "e\":\"string\",\"description\":\"Image link for small size (width of ~300 pixels). (In" +
+            " LITE projection)\"},\"smallThumbnail\":{\"type\":\"string\",\"description\":\"Image link " +
+            "for small thumbnail size (width of ~80 pixels). (In LITE projection)\"},\"thumbnai" +
+            "l\":{\"type\":\"string\",\"description\":\"Image link for thumbnail size (width of ~128 " +
+            "pixels). (In LITE projection)\"}}},\"industryIdentifiers\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"Industry standard identifiers for this volume.\",\"items\":{\"type\":\"object\"," +
+            "\"properties\":{\"identifier\":{\"type\":\"string\",\"description\":\"Industry specific vol" +
+            "ume identifier.\"},\"type\":{\"type\":\"string\",\"description\":\"Identifier type. Possib" +
+            "le values are ISBN_10, ISBN_13, ISSN and OTHER.\"}}}},\"infoLink\":{\"type\":\"string\"" +
+            ",\"description\":\"URL to view information about this volume on the Google Books si" +
+            "te. (In LITE projection)\"},\"language\":{\"type\":\"string\",\"description\":\"Best langu" +
+            "age for this volume (based on content). It is the two-letter ISO 639-1 code such" +
+            " as \'fr\', \'en\', etc.\"},\"mainCategory\":{\"type\":\"string\",\"description\":\"The main c" +
+            "ategory to which this volume belongs. It will be the category from the categorie" +
+            "s list returned below that has the highest weight.\"},\"pageCount\":{\"type\":\"intege" +
+            "r\",\"description\":\"Total number of pages.\",\"format\":\"int32\"},\"previewLink\":{\"type" +
+            "\":\"string\",\"description\":\"URL to preview this volume on the Google Books site.\"}" +
+            ",\"printType\":{\"type\":\"string\",\"description\":\"Type of publication of this volume." +
+            " Possible values are BOOK or MAGAZINE.\"},\"publishedDate\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Date of publication. (In LITE projection.)\"},\"publisher\":{\"type\":\"strin" +
+            "g\",\"description\":\"Publisher of this volume. (In LITE projection.)\"},\"ratingsCoun" +
+            "t\":{\"type\":\"integer\",\"description\":\"The number of review ratings for this volume" +
+            ".\",\"format\":\"int32\"},\"subtitle\":{\"type\":\"string\",\"description\":\"Volume subtitle." +
+            " (In LITE projection.)\"},\"title\":{\"type\":\"string\",\"description\":\"Volume title. (" +
+            "In LITE projection.)\"}}}}},\"Volumeannotation\":{\"id\":\"Volumeannotation\",\"type\":\"o" +
+            "bject\",\"properties\":{\"annotationDataId\":{\"type\":\"string\",\"description\":\"The anno" +
+            "tation data id for this volume annotation.\"},\"annotationDataLink\":{\"type\":\"strin" +
+            "g\",\"description\":\"Link to get data for this annotation.\"},\"annotationType\":{\"typ" +
+            "e\":\"string\",\"description\":\"The type of annotation this is.\"},\"contentRanges\":{\"t" +
+            "ype\":\"object\",\"description\":\"The content ranges to identify the selected text.\"," +
+            "\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in" +
+            " CFI format for this annotation for version above.\"},\"contentVersion\":{\"type\":\"s" +
+            "tring\",\"description\":\"Content version applicable to ranges below.\"},\"gbImageRang" +
+            "e\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in GB image format for t" +
+            "his annotation for version above.\"},\"gbTextRange\":{\"$ref\":\"BooksAnnotationsRange" +
+            "\",\"description\":\"Range in GB text format for this annotation for version above.\"" +
+            "}}},\"data\":{\"type\":\"string\",\"description\":\"Data for this annotation.\"},\"deleted\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Indicates that this annotation is deleted.\"},\"" +
+            "id\":{\"type\":\"string\",\"description\":\"Unique id of this volume annotation.\"},\"kind" +
+            "\":{\"type\":\"string\",\"description\":\"Resource Type\",\"default\":\"books#volumeannotati" +
+            "on\"},\"layerId\":{\"type\":\"string\",\"description\":\"The Layer this annotation is for." +
+            "\"},\"pageIds\":{\"type\":\"array\",\"description\":\"Pages the annotation spans.\",\"items\"" +
+            ":{\"type\":\"string\"}},\"selectedText\":{\"type\":\"string\",\"description\":\"Excerpt from " +
+            "the volume.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"URL to this resource.\"}" +
+            ",\"updated\":{\"type\":\"string\",\"description\":\"Timestamp for the last time this annt" +
+            "oation was updated. (RFC 3339 UTC date-time format).\",\"format\":\"date-time\"},\"vol" +
+            "umeId\":{\"type\":\"string\",\"description\":\"The Volume this annotation is for.\"}}},\"V" +
+            "olumeannotations\":{\"id\":\"Volumeannotations\",\"type\":\"object\",\"properties\":{\"items" +
+            "\":{\"type\":\"array\",\"description\":\"A list of volume annotations.\",\"items\":{\"$ref\":" +
+            "\"Volumeannotation\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource type\",\"defa" +
+            "ult\":\"books#volumeannotations\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"" +
+            "Token to pass in for pagination for the next page. This will not be present if t" +
+            "his request does not have more results.\"},\"totalItems\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"The total number of volume annotations found.\",\"format\":\"int32\"}}},\"Volu" +
+            "mes\":{\"id\":\"Volumes\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"desc" +
+            "ription\":\"A list of volumes.\",\"items\":{\"$ref\":\"Volume\"}},\"kind\":{\"type\":\"string\"" +
+            ",\"description\":\"Resource type.\",\"default\":\"books#volumes\"},\"totalItems\":{\"type\":" +
+            "\"integer\",\"description\":\"Total number of volumes found. This might be greater th" +
+            "an the number of volumes returned in this response if results have been paginate" +
+            "d.\",\"format\":\"int32\"}}}},\"resources\":{\"bookshelves\":{\"methods\":{\"get\":{\"id\":\"boo" +
+            "ks.bookshelves.get\",\"path\":\"users/{userId}/bookshelves/{shelf}\",\"httpMethod\":\"GE" +
+            "T\",\"description\":\"Retrieves metadata for a specific bookshelf for the specified " +
+            "user.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bookshelf to " +
+            "retrieve.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"descrip" +
             "tion\":\"String to identify the originator of this request.\",\"location\":\"query\"},\"" +
-            "timestamp\":{\"type\":\"string\",\"description\":\"RFC 3339 UTC format timestamp associa" +
-            "ted with this reading position.\",\"required\":true,\"location\":\"query\"},\"volumeId\":" +
-            "{\"type\":\"string\",\"description\":\"ID of volume for which to update the reading pos" +
-            "ition.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\",\"timest" +
-            "amp\",\"position\"],\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}}}},\"volume" +
-            "s\":{\"methods\":{\"get\":{\"id\":\"books.volumes.get\",\"path\":\"volumes/{volumeId}\",\"http" +
-            "Method\":\"GET\",\"description\":\"Gets volume information for a single volume.\",\"para" +
-            "meters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code to override t" +
-            "he IP-based location.\",\"location\":\"query\"},\"partner\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Brand results for partner ID.\",\"location\":\"query\"},\"projection\":{\"type\":\"st" +
-            "ring\",\"description\":\"Restrict information returned to a set of selected fields.\"" +
-            ",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Include" +
-            "s a subset of fields in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"source" +
-            "\":{\"type\":\"string\",\"description\":\"String to identify the originator of this requ" +
-            "est.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volum" +
-            "e to retrieve.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\"" +
-            "],\"response\":{\"$ref\":\"Volume\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"" +
-            "]},\"list\":{\"id\":\"books.volumes.list\",\"path\":\"volumes\",\"httpMethod\":\"GET\",\"descri" +
-            "ption\":\"Performs a book search.\",\"parameters\":{\"download\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Restrict to volumes by download availability.\",\"enum\":[\"epub\"],\"enumDe" +
-            "scriptions\":[\"All volumes with epub.\"],\"location\":\"query\"},\"filter\":{\"type\":\"str" +
-            "ing\",\"description\":\"Filter search results.\",\"enum\":[\"ebooks\",\"free-ebooks\",\"full" +
-            "\",\"paid-ebooks\",\"partial\"],\"enumDescriptions\":[\"All Google eBooks.\",\"Google eBoo" +
-            "k with full volume text viewability.\",\"Public can view entire volume text.\",\"Goo" +
-            "gle eBook with a price.\",\"Public able to see parts of text.\"],\"location\":\"query\"" +
-            "},\"langRestrict\":{\"type\":\"string\",\"description\":\"Restrict results to books with " +
-            "this language code.\",\"location\":\"query\"},\"libraryRestrict\":{\"type\":\"string\",\"des" +
-            "cription\":\"Restrict search to this user\'s library.\",\"enum\":[\"my-library\",\"no-res" +
-            "trict\"],\"enumDescriptions\":[\"Restrict to the user\'s library, any shelf.\",\"Do not" +
-            " restrict based on user\'s library.\"],\"location\":\"query\"},\"maxResults\":{\"type\":\"i" +
-            "nteger\",\"description\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"" +
-            "minimum\":\"0\",\"maximum\":\"40\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Sort search results.\",\"enum\":[\"newest\",\"relevance\"],\"enumDescriptions\"" +
-            ":[\"Most recently published.\",\"Relevance to search terms.\"],\"location\":\"query\"},\"" +
-            "partner\":{\"type\":\"string\",\"description\":\"Restrict and brand results for partner " +
-            "ID.\",\"location\":\"query\"},\"printType\":{\"type\":\"string\",\"description\":\"Restrict to" +
-            " books or magazines.\",\"enum\":[\"all\",\"books\",\"magazines\"],\"enumDescriptions\":[\"Al" +
-            "l volume content types.\",\"Just books.\",\"Just magazines.\"],\"location\":\"query\"},\"p" +
-            "rojection\":{\"type\":\"string\",\"description\":\"Restrict information returned to a se" +
-            "t of selected fields.\",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all " +
-            "volume data.\",\"Includes a subset of fields in volumeInfo and accessInfo.\"],\"loca" +
-            "tion\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Full-text search query string" +
-            ".\",\"required\":true,\"location\":\"query\"},\"showPreorders\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"Set to true to show books available for preorder. Defaults to false.\",\"l" +
-            "ocation\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify th" +
-            "e originator of this request.\",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer" +
-            "\",\"description\":\"Index of the first result to return (starts at 0)\",\"format\":\"ui" +
-            "nt32\",\"minimum\":\"0\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$re" +
-            "f\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}},\"resources\":{" +
-            "\"associated\":{\"methods\":{\"list\":{\"id\":\"books.volumes.associated.list\",\"path\":\"vo" +
-            "lumes/{volumeId}/associated\",\"httpMethod\":\"GET\",\"description\":\"Return a list of " +
-            "associated books.\",\"parameters\":{\"association\":{\"type\":\"string\",\"description\":\"A" +
-            "ssociation type.\",\"enum\":[\"end-of-sample\",\"end-of-volume\"],\"enumDescriptions\":[\"" +
-            "Recommendations for display end-of-sample.\",\"Recommendations for display end-of-" +
-            "volume.\"],\"location\":\"query\"},\"locale\":{\"type\":\"string\",\"description\":\"ISO-639-1" +
-            " language and ISO-3166-1 country code. Ex: \'en_US\'. Used for generating recommen" +
-            "dations.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to" +
-            " identify the originator of this request.\",\"location\":\"query\"},\"volumeId\":{\"type" +
-            "\":\"string\",\"description\":\"ID of the source volume.\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"volumeId\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/books\"]}}}}}}}";
+            "userId\":{\"type\":\"string\",\"description\":\"ID of user for whom to retrieve bookshel" +
+            "ves.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"shelf\"],\"r" +
+            "esponse\":{\"$ref\":\"Bookshelf\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]" +
+            "},\"list\":{\"id\":\"books.bookshelves.list\",\"path\":\"users/{userId}/bookshelves\",\"htt" +
+            "pMethod\":\"GET\",\"description\":\"Retrieves a list of public bookshelves for the spe" +
+            "cified user.\",\"parameters\":{\"source\":{\"type\":\"string\",\"description\":\"String to i" +
+            "dentify the originator of this request.\",\"location\":\"query\"},\"userId\":{\"type\":\"s" +
+            "tring\",\"description\":\"ID of user for whom to retrieve bookshelves.\",\"required\":t" +
+            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"Bookshel" +
+            "ves\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}},\"resources\":{\"volumes" +
+            "\":{\"methods\":{\"list\":{\"id\":\"books.bookshelves.volumes.list\",\"path\":\"users/{userI" +
+            "d}/bookshelves/{shelf}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Retrieves volu" +
+            "mes in a specific bookshelf for the specified user.\",\"parameters\":{\"maxResults\":" +
+            "{\"type\":\"integer\",\"description\":\"Maximum number of results to return\",\"format\":\"" +
+            "uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"shelf\":{\"type\":\"string\",\"description\"" +
+            ":\"ID of bookshelf to retrieve volumes.\",\"required\":true,\"location\":\"path\"},\"show" +
+            "Preorders\":{\"type\":\"boolean\",\"description\":\"Set to true to show pre-ordered book" +
+            "s. Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"String to identify the originator of this request.\",\"location\":\"query\"},\"sta" +
+            "rtIndex\":{\"type\":\"integer\",\"description\":\"Index of the first element to return (" +
+            "starts at 0)\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"userId\":{\"typ" +
+            "e\":\"string\",\"description\":\"ID of user for whom to retrieve bookshelf volumes.\",\"" +
+            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"shelf\"],\"response" +
+            "\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}}}},\"la" +
+            "yers\":{\"methods\":{\"get\":{\"id\":\"books.layers.get\",\"path\":\"volumes/{volumeId}/laye" +
+            "rsummary/{summaryId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the layer summary f" +
+            "or a volume.\",\"parameters\":{\"contentVersion\":{\"type\":\"string\",\"description\":\"The" +
+            " content version for the requested volume.\",\"location\":\"query\"},\"source\":{\"type\"" +
+            ":\"string\",\"description\":\"String to identify the originator of this request.\",\"lo" +
+            "cation\":\"query\"},\"summaryId\":{\"type\":\"string\",\"description\":\"The ID for the laye" +
+            "r to get the summary for.\",\"required\":true,\"location\":\"path\"},\"volumeId\":{\"type\"" +
+            ":\"string\",\"description\":\"The volume to retrieve layers for.\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"volumeId\",\"summaryId\"],\"response\":{\"$ref\":\"L" +
+            "ayersummary\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"" +
+            "books.layers.list\",\"path\":\"volumes/{volumeId}/layersummary\",\"httpMethod\":\"GET\",\"" +
+            "description\":\"List the layer summaries for a volume.\",\"parameters\":{\"contentVers" +
+            "ion\":{\"type\":\"string\",\"description\":\"The content version for the requested volum" +
+            "e.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum nu" +
+            "mber of results to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"200\",\"loca" +
+            "tion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of the next" +
+            "Token from the previous page.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"de" +
+            "scription\":\"String to identify the originator of this request.\",\"location\":\"quer" +
+            "y\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to retrieve layers for" +
+            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\"],\"response\":" +
+            "{\"$ref\":\"Layersummaries\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}},\"" +
+            "resources\":{\"annotationData\":{\"methods\":{\"get\":{\"id\":\"books.layers.annotationDat" +
+            "a.get\",\"path\":\"volumes/{volumeId}/layers/{layerId}/data/{annotationDataId}\",\"htt" +
+            "pMethod\":\"GET\",\"description\":\"Gets the annotation data.\",\"parameters\":{\"annotati" +
+            "onDataId\":{\"type\":\"string\",\"description\":\"The ID of the annotation data to retri" +
+            "eve.\",\"required\":true,\"location\":\"path\"},\"contentVersion\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The content version for the volume you are trying to retrieve.\",\"requi" +
+            "red\":true,\"location\":\"query\"},\"h\":{\"type\":\"integer\",\"description\":\"The requested" +
+            " pixel height for any images. If height is provided width must also be provided." +
+            "\",\"format\":\"int32\",\"location\":\"query\"},\"layerId\":{\"type\":\"string\",\"description\":" +
+            "\"The ID for the layer to get the annotations.\",\"required\":true,\"location\":\"path\"" +
+            "},\"locale\":{\"type\":\"string\",\"description\":\"The locale information for the data. " +
+            "ISO-639-1 language and ISO-3166-1 country code. Ex: \'en_US\'.\",\"location\":\"query\"" +
+            "},\"scale\":{\"type\":\"integer\",\"description\":\"The requested scale for the image.\",\"" +
+            "format\":\"int32\",\"minimum\":\"0\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"des" +
+            "cription\":\"String to identify the originator of this request.\",\"location\":\"query" +
+            "\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to retrieve annotations" +
+            " for.\",\"required\":true,\"location\":\"path\"},\"w\":{\"type\":\"integer\",\"description\":\"T" +
+            "he requested pixel width for any images. If width is provided height must also b" +
+            "e provided.\",\"format\":\"int32\",\"location\":\"query\"}},\"parameterOrder\":[\"volumeId\"," +
+            "\"layerId\",\"annotationDataId\",\"contentVersion\"],\"response\":{\"$ref\":\"Annotationdat" +
+            "a\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"books.laye" +
+            "rs.annotationData.list\",\"path\":\"volumes/{volumeId}/layers/{layerId}/data\",\"httpM" +
+            "ethod\":\"GET\",\"description\":\"Gets the annotation data for a volume and layer.\",\"p" +
+            "arameters\":{\"annotationDataId\":{\"type\":\"string\",\"description\":\"The list of Annot" +
+            "ation Data Ids to retrieve. Pagination is ignored if this is set.\",\"repeated\":tr" +
+            "ue,\"location\":\"query\"},\"contentVersion\":{\"type\":\"string\",\"description\":\"The cont" +
+            "ent version for the requested volume.\",\"required\":true,\"location\":\"query\"},\"h\":{" +
+            "\"type\":\"integer\",\"description\":\"The requested pixel height for any images. If he" +
+            "ight is provided width must also be provided.\",\"format\":\"int32\",\"location\":\"quer" +
+            "y\"},\"layerId\":{\"type\":\"string\",\"description\":\"The ID for the layer to get the an" +
+            "notation data.\",\"required\":true,\"location\":\"path\"},\"locale\":{\"type\":\"string\",\"de" +
+            "scription\":\"The locale information for the data. ISO-639-1 language and ISO-3166" +
+            "-1 country code. Ex: \'en_US\'.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer" +
+            "\",\"description\":\"Maximum number of results to return\",\"format\":\"uint32\",\"minimum" +
+            "\":\"0\",\"maximum\":\"200\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The value of the nextToken from the previous page.\",\"location\":\"query\"},\"s" +
+            "cale\":{\"type\":\"integer\",\"description\":\"The requested scale for the image.\",\"form" +
+            "at\":\"int32\",\"minimum\":\"0\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"String to identify the originator of this request.\",\"location\":\"query\"},\"" +
+            "updatedMax\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp to restrict to it" +
+            "ems updated prior to this timestamp (exclusive).\",\"location\":\"query\"},\"updatedMi" +
+            "n\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp to restrict to items updat" +
+            "ed since this timestamp (inclusive).\",\"location\":\"query\"},\"volumeId\":{\"type\":\"st" +
+            "ring\",\"description\":\"The volume to retrieve annotation data for.\",\"required\":tru" +
+            "e,\"location\":\"path\"},\"w\":{\"type\":\"integer\",\"description\":\"The requested pixel wi" +
+            "dth for any images. If width is provided height must also be provided.\",\"format\"" +
+            ":\"int32\",\"location\":\"query\"}},\"parameterOrder\":[\"volumeId\",\"layerId\",\"contentVer" +
+            "sion\"],\"response\":{\"$ref\":\"Annotationsdata\"},\"scopes\":[\"https://www.googleapis.c" +
+            "om/auth/books\"]}}},\"volumeAnnotations\":{\"methods\":{\"get\":{\"id\":\"books.layers.vol" +
+            "umeAnnotations.get\",\"path\":\"volumes/{volumeId}/layers/{layerId}/annotations/{ann" +
+            "otationId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the volume annotation.\",\"para" +
+            "meters\":{\"annotationId\":{\"type\":\"string\",\"description\":\"The ID of the volume ann" +
+            "otation to retrieve.\",\"required\":true,\"location\":\"path\"},\"layerId\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The ID for the layer to get the annotations.\",\"required\":true" +
+            ",\"location\":\"path\"},\"locale\":{\"type\":\"string\",\"description\":\"The locale informat" +
+            "ion for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: \'en_US\'.\"," +
+            "\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify " +
+            "the originator of this request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\"" +
+            ",\"description\":\"The volume to retrieve annotations for.\",\"required\":true,\"locati" +
+            "on\":\"path\"}},\"parameterOrder\":[\"volumeId\",\"layerId\",\"annotationId\"],\"response\":{" +
+            "\"$ref\":\"Volumeannotation\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"" +
+            "list\":{\"id\":\"books.layers.volumeAnnotations.list\",\"path\":\"volumes/{volumeId}/lay" +
+            "ers/{layerId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the volume annotations for" +
+            " a volume and layer.\",\"parameters\":{\"contentVersion\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The content version for the requested volume.\",\"required\":true,\"location\":\"" +
+            "query\"},\"endOffset\":{\"type\":\"string\",\"description\":\"The end offset to end retrie" +
+            "ving data from.\",\"location\":\"query\"},\"endPosition\":{\"type\":\"string\",\"description" +
+            "\":\"The end position to end retrieving data from.\",\"location\":\"query\"},\"layerId\":" +
+            "{\"type\":\"string\",\"description\":\"The ID for the layer to get the annotations.\",\"r" +
+            "equired\":true,\"location\":\"path\"},\"locale\":{\"type\":\"string\",\"description\":\"The lo" +
+            "cale information for the data. ISO-639-1 language and ISO-3166-1 country code. E" +
+            "x: \'en_US\'.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"M" +
+            "aximum number of results to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"2" +
+            "00\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of" +
+            " the nextToken from the previous page.\",\"location\":\"query\"},\"showDeleted\":{\"type" +
+            "\":\"boolean\",\"description\":\"Set to true to return deleted annotations. updatedMin" +
+            " must be in the request to use this. Defaults to false.\",\"location\":\"query\"},\"so" +
+            "urce\":{\"type\":\"string\",\"description\":\"String to identify the originator of this " +
+            "request.\",\"location\":\"query\"},\"startOffset\":{\"type\":\"string\",\"description\":\"The " +
+            "start offset to start retrieving data from.\",\"location\":\"query\"},\"startPosition\"" +
+            ":{\"type\":\"string\",\"description\":\"The start position to start retrieving data fro" +
+            "m.\",\"location\":\"query\"},\"updatedMax\":{\"type\":\"string\",\"description\":\"RFC 3339 ti" +
+            "mestamp to restrict to items updated prior to this timestamp (exclusive).\",\"loca" +
+            "tion\":\"query\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp t" +
+            "o restrict to items updated since this timestamp (inclusive).\",\"location\":\"query" +
+            "\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to retrieve annotations" +
+            " for.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\",\"layerId" +
+            "\",\"contentVersion\"],\"response\":{\"$ref\":\"Volumeannotations\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/books\"]}}}}},\"myconfig\":{\"methods\":{\"releaseDownloadAcces" +
+            "s\":{\"id\":\"books.myconfig.releaseDownloadAccess\",\"path\":\"myconfig/releaseDownload" +
+            "Access\",\"httpMethod\":\"POST\",\"description\":\"Release downloaded content access res" +
+            "triction.\",\"parameters\":{\"cpksver\":{\"type\":\"string\",\"description\":\"The device/ve" +
+            "rsion ID from which to release the restriction.\",\"required\":true,\"location\":\"que" +
+            "ry\"},\"locale\":{\"type\":\"string\",\"description\":\"ISO-639-1, ISO-3166-1 codes for me" +
+            "ssage localization, i.e. en_US.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"" +
+            "description\":\"String to identify the originator of this request.\",\"location\":\"qu" +
+            "ery\"},\"volumeIds\":{\"type\":\"string\",\"description\":\"The volume(s) to release restr" +
+            "ictions for.\",\"required\":true,\"repeated\":true,\"location\":\"query\"}},\"parameterOrd" +
+            "er\":[\"volumeIds\",\"cpksver\"],\"response\":{\"$ref\":\"DownloadAccesses\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/books\"]},\"requestAccess\":{\"id\":\"books.myconfig.req" +
+            "uestAccess\",\"path\":\"myconfig/requestAccess\",\"httpMethod\":\"POST\",\"description\":\"R" +
+            "equest concurrent and download access restrictions.\",\"parameters\":{\"cpksver\":{\"t" +
+            "ype\":\"string\",\"description\":\"The device/version ID from which to request the res" +
+            "trictions.\",\"required\":true,\"location\":\"query\"},\"locale\":{\"type\":\"string\",\"descr" +
+            "iption\":\"ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.\",\"loc" +
+            "ation\":\"query\"},\"nonce\":{\"type\":\"string\",\"description\":\"The client nonce value.\"" +
+            ",\"required\":true,\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"St" +
+            "ring to identify the originator of this request.\",\"required\":true,\"location\":\"qu" +
+            "ery\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to request concurren" +
+            "t/download restrictions for.\",\"required\":true,\"location\":\"query\"}},\"parameterOrd" +
+            "er\":[\"source\",\"volumeId\",\"nonce\",\"cpksver\"],\"response\":{\"$ref\":\"RequestAccess\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"syncVolumeLicenses\":{\"id\":\"" +
+            "books.myconfig.syncVolumeLicenses\",\"path\":\"myconfig/syncVolumeLicenses\",\"httpMet" +
+            "hod\":\"POST\",\"description\":\"Request downloaded content access for specified volum" +
+            "es on the My eBooks shelf.\",\"parameters\":{\"cpksver\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The device/version ID from which to release the restriction.\",\"required\":tru" +
+            "e,\"location\":\"query\"},\"locale\":{\"type\":\"string\",\"description\":\"ISO-639-1, ISO-31" +
+            "66-1 codes for message localization, i.e. en_US.\",\"location\":\"query\"},\"nonce\":{\"" +
+            "type\":\"string\",\"description\":\"The client nonce value.\",\"required\":true,\"location" +
+            "\":\"query\"},\"showPreorders\":{\"type\":\"boolean\",\"description\":\"Set to true to show " +
+            "pre-ordered books. Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"str" +
+            "ing\",\"description\":\"String to identify the originator of this request.\",\"require" +
+            "d\":true,\"location\":\"query\"},\"volumeIds\":{\"type\":\"string\",\"description\":\"The volu" +
+            "me(s) to request download restrictions for.\",\"repeated\":true,\"location\":\"query\"}" +
+            "},\"parameterOrder\":[\"source\",\"nonce\",\"cpksver\"],\"response\":{\"$ref\":\"Volumes\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/books\"]}}},\"mylibrary\":{\"resources\":{\"a" +
+            "nnotations\":{\"methods\":{\"delete\":{\"id\":\"books.mylibrary.annotations.delete\",\"pat" +
+            "h\":\"mylibrary/annotations/{annotationId}\",\"httpMethod\":\"DELETE\",\"description\":\"D" +
+            "eletes an annotation.\",\"parameters\":{\"annotationId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The ID for the annotation to delete.\",\"required\":true,\"location\":\"path\"},\"so" +
+            "urce\":{\"type\":\"string\",\"description\":\"String to identify the originator of this " +
+            "request.\",\"location\":\"query\"}},\"parameterOrder\":[\"annotationId\"],\"scopes\":[\"http" +
+            "s://www.googleapis.com/auth/books\"]},\"get\":{\"id\":\"books.mylibrary.annotations.ge" +
+            "t\",\"path\":\"mylibrary/annotations/{annotationId}\",\"httpMethod\":\"GET\",\"description" +
+            "\":\"Gets an annotation by its ID.\",\"parameters\":{\"annotationId\":{\"type\":\"string\"," +
+            "\"description\":\"The ID for the annotation to retrieve.\",\"required\":true,\"location" +
+            "\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the origin" +
+            "ator of this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"annotationId\"],\"r" +
+            "esponse\":{\"$ref\":\"Annotation\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"" +
+            "]},\"insert\":{\"id\":\"books.mylibrary.annotations.insert\",\"path\":\"mylibrary/annotat" +
+            "ions\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new annotation.\",\"parameters\"" +
+            ":{\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of " +
+            "this request.\",\"location\":\"query\"}},\"request\":{\"$ref\":\"Annotation\"},\"response\":{" +
+            "\"$ref\":\"Annotation\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":" +
+            "{\"id\":\"books.mylibrary.annotations.list\",\"path\":\"mylibrary/annotations\",\"httpMet" +
+            "hod\":\"GET\",\"description\":\"Retrieves a list of annotations, possibly filtered.\",\"" +
+            "parameters\":{\"contentVersion\":{\"type\":\"string\",\"description\":\"The content versio" +
+            "n for the requested volume.\",\"location\":\"query\"},\"layerId\":{\"type\":\"string\",\"des" +
+            "cription\":\"The layer ID to limit annotation by.\",\"location\":\"query\"},\"maxResults" +
+            "\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return\",\"format\"" +
+            ":\"uint32\",\"minimum\":\"0\",\"maximum\":\"40\",\"location\":\"query\"},\"pageIds\":{\"type\":\"st" +
+            "ring\",\"description\":\"The page ID(s) for the volume that is being queried.\",\"repe" +
+            "ated\":true,\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The v" +
+            "alue of the nextToken from the previous page.\",\"location\":\"query\"},\"showDeleted\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Set to true to return deleted annotations. upd" +
+            "atedMin must be in the request to use this. Defaults to false.\",\"location\":\"quer" +
+            "y\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator o" +
+            "f this request.\",\"location\":\"query\"},\"updatedMax\":{\"type\":\"string\",\"description\"" +
+            ":\"RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclu" +
+            "sive).\",\"location\":\"query\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"RFC 333" +
+            "9 timestamp to restrict to items updated since this timestamp (inclusive).\",\"loc" +
+            "ation\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to restric" +
+            "t annotations to.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Annotations\"},\"scope" +
+            "s\":[\"https://www.googleapis.com/auth/books\"]},\"update\":{\"id\":\"books.mylibrary.an" +
+            "notations.update\",\"path\":\"mylibrary/annotations/{annotationId}\",\"httpMethod\":\"PU" +
+            "T\",\"description\":\"Updates an existing annotation.\",\"parameters\":{\"annotationId\":" +
+            "{\"type\":\"string\",\"description\":\"The ID for the annotation to update.\",\"required\"" +
+            ":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to iden" +
+            "tify the originator of this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"an" +
+            "notationId\"],\"request\":{\"$ref\":\"Annotation\"},\"response\":{\"$ref\":\"Annotation\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/books\"]}}},\"bookshelves\":{\"methods\":{\"a" +
+            "ddVolume\":{\"id\":\"books.mylibrary.bookshelves.addVolume\",\"path\":\"mylibrary/booksh" +
+            "elves/{shelf}/addVolume\",\"httpMethod\":\"POST\",\"description\":\"Adds a volume to a b" +
+            "ookshelf.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bookshelf" +
+            " to which to add a volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":" +
+            "\"string\",\"description\":\"String to identify the originator of this request.\",\"loc" +
+            "ation\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volume to add.\"" +
+            ",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\"],\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/books\"]},\"clearVolumes\":{\"id\":\"books.myli" +
+            "brary.bookshelves.clearVolumes\",\"path\":\"mylibrary/bookshelves/{shelf}/clearVolum" +
+            "es\",\"httpMethod\":\"POST\",\"description\":\"Clears all volumes from a bookshelf.\",\"pa" +
+            "rameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bookshelf from which to" +
+            " remove a volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\"," +
+            "\"description\":\"String to identify the originator of this request.\",\"location\":\"q" +
+            "uery\"}},\"parameterOrder\":[\"shelf\"],\"scopes\":[\"https://www.googleapis.com/auth/bo" +
+            "oks\"]},\"get\":{\"id\":\"books.mylibrary.bookshelves.get\",\"path\":\"mylibrary/bookshelv" +
+            "es/{shelf}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves metadata for a specific " +
+            "bookshelf belonging to the authenticated user.\",\"parameters\":{\"shelf\":{\"type\":\"s" +
+            "tring\",\"description\":\"ID of bookshelf to retrieve.\",\"required\":true,\"location\":\"" +
+            "path\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originato" +
+            "r of this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\"],\"response\":{" +
+            "\"$ref\":\"Bookshelf\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{" +
+            "\"id\":\"books.mylibrary.bookshelves.list\",\"path\":\"mylibrary/bookshelves\",\"httpMeth" +
+            "od\":\"GET\",\"description\":\"Retrieves a list of bookshelves belonging to the authen" +
+            "ticated user.\",\"parameters\":{\"source\":{\"type\":\"string\",\"description\":\"String to " +
+            "identify the originator of this request.\",\"location\":\"query\"}},\"response\":{\"$ref" +
+            "\":\"Bookshelves\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"moveVolume" +
+            "\":{\"id\":\"books.mylibrary.bookshelves.moveVolume\",\"path\":\"mylibrary/bookshelves/{" +
+            "shelf}/moveVolume\",\"httpMethod\":\"POST\",\"description\":\"Moves a volume within a bo" +
+            "okshelf.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bookshelf " +
+            "with the volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"" +
+            "description\":\"String to identify the originator of this request.\",\"location\":\"qu" +
+            "ery\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volume to move.\",\"require" +
+            "d\":true,\"location\":\"query\"},\"volumePosition\":{\"type\":\"integer\",\"description\":\"Po" +
+            "sition on shelf to move the item (0 puts the item before the current first item," +
+            " 1 puts it between the first and the second and so on.)\",\"required\":true,\"format" +
+            "\":\"int32\",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\",\"volumePosit" +
+            "ion\"],\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"removeVolume\":{\"id\":\"" +
+            "books.mylibrary.bookshelves.removeVolume\",\"path\":\"mylibrary/bookshelves/{shelf}/" +
+            "removeVolume\",\"httpMethod\":\"POST\",\"description\":\"Removes a volume from a bookshe" +
+            "lf.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bookshelf from " +
+            "which to remove a volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"" +
+            "string\",\"description\":\"String to identify the originator of this request.\",\"loca" +
+            "tion\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volume to remove" +
+            ".\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\"],\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/books\"]}},\"resources\":{\"volumes\":{\"meth" +
+            "ods\":{\"list\":{\"id\":\"books.mylibrary.bookshelves.volumes.list\",\"path\":\"mylibrary/" +
+            "bookshelves/{shelf}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Gets volume infor" +
+            "mation for volumes on a bookshelf.\",\"parameters\":{\"country\":{\"type\":\"string\",\"de" +
+            "scription\":\"ISO-3166-1 code to override the IP-based location.\",\"location\":\"quer" +
+            "y\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to r" +
+            "eturn\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"projection\":{\"type\":" +
+            "\"string\",\"description\":\"Restrict information returned to a set of selected field" +
+            "s.\",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Incl" +
+            "udes a subset of fields in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"q\":" +
+            "{\"type\":\"string\",\"description\":\"Full-text search query string in this bookshelf." +
+            "\",\"location\":\"query\"},\"shelf\":{\"type\":\"string\",\"description\":\"The bookshelf ID o" +
+            "r name retrieve volumes for.\",\"required\":true,\"location\":\"path\"},\"showPreorders\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Set to true to show pre-ordered books. Default" +
+            "s to false.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String" +
+            " to identify the originator of this request.\",\"location\":\"query\"},\"startIndex\":{" +
+            "\"type\":\"integer\",\"description\":\"Index of the first element to return (starts at " +
+            "0)\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"}},\"parameterOrder\":[\"shel" +
+            "f\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/boo" +
+            "ks\"]}}}}},\"readingpositions\":{\"methods\":{\"get\":{\"id\":\"books.mylibrary.readingpos" +
+            "itions.get\",\"path\":\"mylibrary/readingpositions/{volumeId}\",\"httpMethod\":\"GET\",\"d" +
+            "escription\":\"Retrieves my reading position information for a volume.\",\"parameter" +
+            "s\":{\"contentVersion\":{\"type\":\"string\",\"description\":\"Volume content version for " +
+            "which this reading position is requested.\",\"location\":\"query\"},\"source\":{\"type\":" +
+            "\"string\",\"description\":\"String to identify the originator of this request.\",\"loc" +
+            "ation\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volume for whic" +
+            "h to retrieve a reading position.\",\"required\":true,\"location\":\"path\"}},\"paramete" +
+            "rOrder\":[\"volumeId\"],\"response\":{\"$ref\":\"ReadingPosition\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/books\"]},\"setPosition\":{\"id\":\"books.mylibrary.readingposit" +
+            "ions.setPosition\",\"path\":\"mylibrary/readingpositions/{volumeId}/setPosition\",\"ht" +
+            "tpMethod\":\"POST\",\"description\":\"Sets my reading position information for a volum" +
+            "e.\",\"parameters\":{\"action\":{\"type\":\"string\",\"description\":\"Action that caused th" +
+            "is reading position to be set.\",\"enum\":[\"bookmark\",\"chapter\",\"next-page\",\"prev-p" +
+            "age\",\"scroll\",\"search\"],\"enumDescriptions\":[\"User chose bookmark within volume.\"" +
+            ",\"User selected chapter from list.\",\"Next page event.\",\"Previous page event.\",\"U" +
+            "ser navigated to page.\",\"User chose search results within volume.\"],\"location\":\"" +
+            "query\"},\"contentVersion\":{\"type\":\"string\",\"description\":\"Volume content version " +
+            "for which this reading position applies.\",\"location\":\"query\"},\"position\":{\"type\"" +
+            ":\"string\",\"description\":\"Position string for the new volume reading position.\",\"" +
+            "required\":true,\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"Stri" +
+            "ng to identify the originator of this request.\",\"location\":\"query\"},\"timestamp\":" +
+            "{\"type\":\"string\",\"description\":\"RFC 3339 UTC format timestamp associated with th" +
+            "is reading position.\",\"required\":true,\"location\":\"query\"},\"volumeId\":{\"type\":\"st" +
+            "ring\",\"description\":\"ID of volume for which to update the reading position.\",\"re" +
+            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\",\"timestamp\",\"posit" +
+            "ion\"],\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}}}},\"volumes\":{\"method" +
+            "s\":{\"get\":{\"id\":\"books.volumes.get\",\"path\":\"volumes/{volumeId}\",\"httpMethod\":\"GE" +
+            "T\",\"description\":\"Gets volume information for a single volume.\",\"parameters\":{\"c" +
+            "ountry\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code to override the IP-based" +
+            " location.\",\"location\":\"query\"},\"partner\":{\"type\":\"string\",\"description\":\"Brand " +
+            "results for partner ID.\",\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Restrict information returned to a set of selected fields.\",\"enum\":[\"f" +
+            "ull\",\"lite\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Includes a subset " +
+            "of fields in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"source\":{\"type\":\"" +
+            "string\",\"description\":\"String to identify the originator of this request.\",\"loca" +
+            "tion\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volume to retrie" +
+            "ve.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\"],\"response" +
+            "\":{\"$ref\":\"Volume\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{" +
+            "\"id\":\"books.volumes.list\",\"path\":\"volumes\",\"httpMethod\":\"GET\",\"description\":\"Per" +
+            "forms a book search.\",\"parameters\":{\"download\":{\"type\":\"string\",\"description\":\"R" +
+            "estrict to volumes by download availability.\",\"enum\":[\"epub\"],\"enumDescriptions\"" +
+            ":[\"All volumes with epub.\"],\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Filter search results.\",\"enum\":[\"ebooks\",\"free-ebooks\",\"full\",\"paid-ebo" +
+            "oks\",\"partial\"],\"enumDescriptions\":[\"All Google eBooks.\",\"Google eBook with full" +
+            " volume text viewability.\",\"Public can view entire volume text.\",\"Google eBook w" +
+            "ith a price.\",\"Public able to see parts of text.\"],\"location\":\"query\"},\"langRest" +
+            "rict\":{\"type\":\"string\",\"description\":\"Restrict results to books with this langua" +
+            "ge code.\",\"location\":\"query\"},\"libraryRestrict\":{\"type\":\"string\",\"description\":\"" +
+            "Restrict search to this user\'s library.\",\"enum\":[\"my-library\",\"no-restrict\"],\"en" +
+            "umDescriptions\":[\"Restrict to the user\'s library, any shelf.\",\"Do not restrict b" +
+            "ased on user\'s library.\"],\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"de" +
+            "scription\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"minimum\":\"0" +
+            "\",\"maximum\":\"40\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"description\":\"S" +
+            "ort search results.\",\"enum\":[\"newest\",\"relevance\"],\"enumDescriptions\":[\"Most rec" +
+            "ently published.\",\"Relevance to search terms.\"],\"location\":\"query\"},\"partner\":{\"" +
+            "type\":\"string\",\"description\":\"Restrict and brand results for partner ID.\",\"locat" +
+            "ion\":\"query\"},\"printType\":{\"type\":\"string\",\"description\":\"Restrict to books or m" +
+            "agazines.\",\"enum\":[\"all\",\"books\",\"magazines\"],\"enumDescriptions\":[\"All volume co" +
+            "ntent types.\",\"Just books.\",\"Just magazines.\"],\"location\":\"query\"},\"projection\":" +
+            "{\"type\":\"string\",\"description\":\"Restrict information returned to a set of select" +
+            "ed fields.\",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all volume data" +
+            ".\",\"Includes a subset of fields in volumeInfo and accessInfo.\"],\"location\":\"quer" +
+            "y\"},\"q\":{\"type\":\"string\",\"description\":\"Full-text search query string.\",\"require" +
+            "d\":true,\"location\":\"query\"},\"showPreorders\":{\"type\":\"boolean\",\"description\":\"Set" +
+            " to true to show books available for preorder. Defaults to false.\",\"location\":\"q" +
+            "uery\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originato" +
+            "r of this request.\",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"Index of the first result to return (starts at 0)\",\"format\":\"uint32\",\"mini" +
+            "mum\":\"0\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Volumes" +
+            "\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}},\"resources\":{\"associated" +
+            "\":{\"methods\":{\"list\":{\"id\":\"books.volumes.associated.list\",\"path\":\"volumes/{volu" +
+            "meId}/associated\",\"httpMethod\":\"GET\",\"description\":\"Return a list of associated " +
+            "books.\",\"parameters\":{\"association\":{\"type\":\"string\",\"description\":\"Association " +
+            "type.\",\"enum\":[\"end-of-sample\",\"end-of-volume\"],\"enumDescriptions\":[\"Recommendat" +
+            "ions for display end-of-sample.\",\"Recommendations for display end-of-volume.\"],\"" +
+            "location\":\"query\"},\"locale\":{\"type\":\"string\",\"description\":\"ISO-639-1 language a" +
+            "nd ISO-3166-1 country code. Ex: \'en_US\'. Used for generating recommendations.\",\"" +
+            "location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify t" +
+            "he originator of this request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\"," +
+            "\"description\":\"ID of the source volume.\",\"required\":true,\"location\":\"path\"}},\"pa" +
+            "rameterOrder\":[\"volumeId\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/books\"]}}}}}}}";
         
         public const string Version = "v1";
         

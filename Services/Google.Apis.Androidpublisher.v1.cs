@@ -95,62 +95,63 @@ namespace Google.Apis.Androidpublisher.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"androidpublishe" +
-            "r:v1\",\"name\":\"androidpublisher\",\"version\":\"v1\",\"revision\":\"20120608\",\"title\":\"Go" +
-            "ogle Play Android Developer API\",\"description\":\"Lets Android application develop" +
-            "ers access their Google Play accounts.\",\"icons\":{\"x16\":\"http://www.google.com/im" +
-            "ages/icons/product/android-16.png\",\"x32\":\"http://www.google.com/images/icons/pro" +
-            "duct/android-32.png\"},\"documentationLink\":\"https://developers.google.com/android" +
-            "-publisher\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/androidpubli" +
-            "sher/v1/applications/\",\"basePath\":\"/androidpublisher/v1/applications/\",\"rootUrl\"" +
-            ":\"https://www.googleapis.com/\",\"servicePath\":\"androidpublisher/v1/applications/\"" +
-            ",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data fo" +
-            "rmat for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Re" +
-            "sponses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"t" +
-            "ype\":\"string\",\"description\":\"Selector specifying which fields to include in a pa" +
-            "rtial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API k" +
-            "ey. Your API key identifies your project and provides you with API access, quota" +
-            ", and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"quer" +
-            "y\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the curren" +
-            "t user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Retu" +
-            "rns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"qu" +
-            "ery\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota pur" +
-            "poses for server-side applications. Can be any arbitrary string assigned to a us" +
-            "er, but should not exceed 40 characters. Overrides userIp if both are provided.\"" +
-            ",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the " +
-            "site where the request originates. Use this if you want to enforce per-user limi" +
-            "ts.\",\"location\":\"query\"}},\"schemas\":{\"SubscriptionPurchase\":{\"id\":\"SubscriptionP" +
-            "urchase\",\"type\":\"object\",\"description\":\"A Purchase resource indicates the status" +
-            " of a user\'s subscription purchase.\",\"properties\":{\"autoRenewing\":{\"type\":\"boole" +
-            "an\",\"description\":\"Whether the subscription will automatically be renewed when i" +
-            "t reaches its current expiry time.\"},\"initiationTimestampMsec\":{\"type\":\"string\"," +
-            "\"description\":\"Time at which the subscription was granted, in milliseconds since" +
-            " Epoch.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"This kind repr" +
-            "esents a subscriptionPurchase object in the androidpublisher service.\",\"default\"" +
-            ":\"androidpublisher#subscriptionPurchase\"},\"validUntilTimestampMsec\":{\"type\":\"str" +
-            "ing\",\"description\":\"Time at which the subscription will expire, in milliseconds " +
-            "since Epoch.\",\"format\":\"int64\"}}}},\"resources\":{\"purchases\":{\"methods\":{\"cancel\"" +
-            ":{\"id\":\"androidpublisher.purchases.cancel\",\"path\":\"{packageName}/subscriptions/{" +
-            "subscriptionId}/purchases/{token}/cancel\",\"httpMethod\":\"POST\",\"description\":\"Can" +
-            "cels a user\'s subscription purchase. The subscription remains valid until its ex" +
-            "piration time.\",\"parameters\":{\"packageName\":{\"type\":\"string\",\"description\":\"The " +
-            "package name of the application for which this subscription was purchased (for e" +
-            "xample, \'com.some.thing\').\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":" +
-            "{\"type\":\"string\",\"description\":\"The purchased subscription ID (for example, \'mon" +
-            "thly001\').\",\"required\":true,\"location\":\"path\"},\"token\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The token provided to the user\'s device when the subscription was purchas" +
-            "ed.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"packageName\",\"subscr" +
-            "iptionId\",\"token\"]},\"get\":{\"id\":\"androidpublisher.purchases.get\",\"path\":\"{packag" +
-            "eName}/subscriptions/{subscriptionId}/purchases/{token}\",\"httpMethod\":\"GET\",\"des" +
-            "cription\":\"Checks whether a user\'s subscription purchase is valid and returns it" +
-            "s expiry time.\",\"parameters\":{\"packageName\":{\"type\":\"string\",\"description\":\"The " +
-            "package name of the application for which this subscription was purchased (for e" +
-            "xample, \'com.some.thing\').\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":" +
-            "{\"type\":\"string\",\"description\":\"The purchased subscription ID (for example, \'mon" +
-            "thly001\').\",\"required\":true,\"location\":\"path\"},\"token\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The token provided to the user\'s device when the subscription was purchas" +
-            "ed.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"packageName\",\"subscr" +
-            "iptionId\",\"token\"],\"response\":{\"$ref\":\"SubscriptionPurchase\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/w4oNsm9" +
+            "WYapQlRAudY0Tr7UlWAU\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"androidpublisher:v1\",\"name" +
+            "\":\"androidpublisher\",\"version\":\"v1\",\"revision\":\"20120608\",\"title\":\"Google Play A" +
+            "ndroid Developer API\",\"description\":\"Lets Android application developers access " +
+            "their Google Play accounts.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/" +
+            "product/android-16.png\",\"x32\":\"http://www.google.com/images/icons/product/androi" +
+            "d-32.png\"},\"documentationLink\":\"https://developers.google.com/android-publisher\"" +
+            ",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/androidpublisher/v1/app" +
+            "lications/\",\"basePath\":\"/androidpublisher/v1/applications/\",\"rootUrl\":\"https://w" +
+            "ww.googleapis.com/\",\"servicePath\":\"androidpublisher/v1/applications/\",\"batchPath" +
+            "\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for th" +
+            "e response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses wit" +
+            "h Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"strin" +
+            "g\",\"description\":\"Selector specifying which fields to include in a partial respo" +
+            "nse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your AP" +
+            "I key identifies your project and provides you with API access, quota, and repor" +
+            "ts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_" +
+            "token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"l" +
+            "ocation\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respons" +
+            "e with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quot" +
+            "aUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for s" +
+            "erver-side applications. Can be any arbitrary string assigned to a user, but sho" +
+            "uld not exceed 40 characters. Overrides userIp if both are provided.\",\"location\"" +
+            ":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where " +
+            "the request originates. Use this if you want to enforce per-user limits.\",\"locat" +
+            "ion\":\"query\"}},\"schemas\":{\"SubscriptionPurchase\":{\"id\":\"SubscriptionPurchase\",\"t" +
+            "ype\":\"object\",\"description\":\"A Purchase resource indicates the status of a user\'" +
+            "s subscription purchase.\",\"properties\":{\"autoRenewing\":{\"type\":\"boolean\",\"descri" +
+            "ption\":\"Whether the subscription will automatically be renewed when it reaches i" +
+            "ts current expiry time.\"},\"initiationTimestampMsec\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Time at which the subscription was granted, in milliseconds since Epoch.\",\"f" +
+            "ormat\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"This kind represents a su" +
+            "bscriptionPurchase object in the androidpublisher service.\",\"default\":\"androidpu" +
+            "blisher#subscriptionPurchase\"},\"validUntilTimestampMsec\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Time at which the subscription will expire, in milliseconds since Epoch" +
+            ".\",\"format\":\"int64\"}}}},\"resources\":{\"purchases\":{\"methods\":{\"cancel\":{\"id\":\"and" +
+            "roidpublisher.purchases.cancel\",\"path\":\"{packageName}/subscriptions/{subscriptio" +
+            "nId}/purchases/{token}/cancel\",\"httpMethod\":\"POST\",\"description\":\"Cancels a user" +
+            "\'s subscription purchase. The subscription remains valid until its expiration ti" +
+            "me.\",\"parameters\":{\"packageName\":{\"type\":\"string\",\"description\":\"The package nam" +
+            "e of the application for which this subscription was purchased (for example, \'co" +
+            "m.some.thing\').\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":{\"type\":\"st" +
+            "ring\",\"description\":\"The purchased subscription ID (for example, \'monthly001\').\"" +
+            ",\"required\":true,\"location\":\"path\"},\"token\":{\"type\":\"string\",\"description\":\"The " +
+            "token provided to the user\'s device when the subscription was purchased.\",\"requi" +
+            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"packageName\",\"subscriptionId\",\"" +
+            "token\"]},\"get\":{\"id\":\"androidpublisher.purchases.get\",\"path\":\"{packageName}/subs" +
+            "criptions/{subscriptionId}/purchases/{token}\",\"httpMethod\":\"GET\",\"description\":\"" +
+            "Checks whether a user\'s subscription purchase is valid and returns its expiry ti" +
+            "me.\",\"parameters\":{\"packageName\":{\"type\":\"string\",\"description\":\"The package nam" +
+            "e of the application for which this subscription was purchased (for example, \'co" +
+            "m.some.thing\').\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":{\"type\":\"st" +
+            "ring\",\"description\":\"The purchased subscription ID (for example, \'monthly001\').\"" +
+            ",\"required\":true,\"location\":\"path\"},\"token\":{\"type\":\"string\",\"description\":\"The " +
+            "token provided to the user\'s device when the subscription was purchased.\",\"requi" +
+            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"packageName\",\"subscriptionId\",\"" +
+            "token\"],\"response\":{\"$ref\":\"SubscriptionPurchase\"}}}}}}";
         
         public const string Version = "v1";
         

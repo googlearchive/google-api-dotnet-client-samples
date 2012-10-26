@@ -459,195 +459,196 @@ namespace Google.Apis.Tasks.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"tasks:v1\",\"name" +
-            "\":\"tasks\",\"version\":\"v1\",\"revision\":\"20111027\",\"title\":\"Tasks API\",\"description\"" +
-            ":\"Lets you manage your tasks and task lists.\",\"icons\":{\"x16\":\"http://www.google." +
-            "com/images/icons/product/tasks-16.png\",\"x32\":\"http://www.google.com/images/icons" +
-            "/product/tasks-32.png\"},\"documentationLink\":\"http://code.google.com/apis/tasks/v" +
-            "1/using.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/tasks/v1/\"" +
-            ",\"basePath\":\"/tasks/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"" +
-            "tasks/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description" +
-            "\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescript" +
-            "ions\":[\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"f" +
-            "ields\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to inclu" +
-            "de in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"descripti" +
-            "on\":\"API key. Your API key identifies your project and provides you with API acc" +
-            "ess, quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"locat" +
-            "ion\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for " +
-            "the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"descript" +
-            "ion\":\"Returns response with indentations and line breaks.\",\"default\":\"true\",\"loc" +
-            "ation\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for" +
-            " quota purposes for server-side applications. Can be any arbitrary string assign" +
-            "ed to a user, but should not exceed 40 characters. Overrides userIp if both are " +
-            "provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP addre" +
-            "ss of the site where the request originates. Use this if you want to enforce per" +
-            "-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.goo" +
-            "gleapis.com/auth/tasks\":{\"description\":\"Manage your tasks\"},\"https://www.googlea" +
-            "pis.com/auth/tasks.readonly\":{\"description\":\"View your tasks\"}}}},\"schemas\":{\"Ta" +
-            "sk\":{\"id\":\"Task\",\"type\":\"object\",\"properties\":{\"completed\":{\"type\":\"string\",\"des" +
-            "cription\":\"Completion date of the task (as a RFC 3339 timestamp). This field is " +
-            "omitted if the task has not been completed.\",\"format\":\"date-time\"},\"deleted\":{\"t" +
-            "ype\":\"boolean\",\"description\":\"Flag indicating whether the task has been deleted." +
-            " The default if False.\"},\"due\":{\"type\":\"string\",\"description\":\"Due date of the t" +
-            "ask (as a RFC 3339 timestamp). Optional.\",\"format\":\"date-time\"},\"etag\":{\"type\":\"" +
-            "string\",\"description\":\"ETag of the resource.\"},\"hidden\":{\"type\":\"boolean\",\"descr" +
-            "iption\":\"Flag indicating whether the task is hidden. This is the case if the tas" +
-            "k had been marked completed when the task list was last cleared. The default is " +
-            "False. This field is read-only.\"},\"id\":{\"type\":\"string\",\"description\":\"Task iden" +
-            "tifier.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This is a" +
-            "lways \\\"tasks#task\\\".\",\"default\":\"tasks#task\"},\"links\":{\"type\":\"array\",\"descript" +
-            "ion\":\"Collection of links. This collection is read-only.\",\"items\":{\"type\":\"objec" +
-            "t\",\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"The description. " +
-            "In HTML speak: Everything between <a> and </a>.\"},\"link\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The URL.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the link, e.g" +
-            ". \\\"email\\\".\"}}}},\"notes\":{\"type\":\"string\",\"description\":\"Notes describing the t" +
-            "ask. Optional.\"},\"parent\":{\"type\":\"string\",\"description\":\"Parent task identifier" +
-            ". This field is omitted if it is a top-level task. This field is read-only. Use " +
-            "the \\\"move\\\" method to move the task under a different parent or to the top leve" +
-            "l.\"},\"position\":{\"type\":\"string\",\"description\":\"String indicating the position o" +
-            "f the task among its sibling tasks under the same parent task or at the top leve" +
-            "l. If this string is greater than another task\'s corresponding position string a" +
-            "ccording to lexicographical ordering, the task is positioned after the other tas" +
-            "k under the same parent task (or at the top level). This field is read-only. Use" +
-            " the \\\"move\\\" method to move the task to another position.\"},\"selfLink\":{\"type\":" +
-            "\"string\",\"description\":\"URL pointing to this task. Used to retrieve, update, or " +
-            "delete this task.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the task." +
-            " This is either \\\"needsAction\\\" or \\\"completed\\\".\"},\"title\":{\"type\":\"string\",\"de" +
-            "scription\":\"Title of the task.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last " +
-            "modification time of the task (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}" +
-            "},\"TaskList\":{\"id\":\"TaskList\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"stri" +
-            "ng\",\"description\":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"" +
-            "Task list identifier.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resou" +
-            "rce. This is always \\\"tasks#taskList\\\".\",\"default\":\"tasks#taskList\"},\"selfLink\":" +
-            "{\"type\":\"string\",\"description\":\"URL pointing to this task list. Used to retrieve" +
-            ", update, or delete this task list.\"},\"title\":{\"type\":\"string\",\"description\":\"Ti" +
-            "tle of the task list.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modificat" +
-            "ion time of the task list (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}},\"T" +
-            "askLists\":{\"id\":\"TaskLists\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string" +
-            "\",\"description\":\"ETag of the resource.\"},\"items\":{\"type\":\"array\",\"description\":\"" +
-            "Collection of task lists.\",\"items\":{\"$ref\":\"TaskList\"}},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"Type of the resource. This is always \\\"tasks#taskLists\\\".\",\"defau" +
-            "lt\":\"tasks#taskLists\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token tha" +
-            "t can be used to request the next page of this result.\"}}},\"Tasks\":{\"id\":\"Tasks\"" +
-            ",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of th" +
-            "e resource.\"},\"items\":{\"type\":\"array\",\"description\":\"Collection of tasks.\",\"item" +
-            "s\":{\"$ref\":\"Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource." +
-            " This is always \\\"tasks#tasks\\\".\",\"default\":\"tasks#tasks\"},\"nextPageToken\":{\"typ" +
-            "e\":\"string\",\"description\":\"Token used to access the next page of this result.\"}}" +
-            "}},\"resources\":{\"tasklists\":{\"methods\":{\"delete\":{\"id\":\"tasks.tasklists.delete\"," +
-            "\"path\":\"users/@me/lists/{tasklist}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes" +
-            " the authenticated user\'s specified task list.\",\"parameters\":{\"tasklist\":{\"type\"" +
-            ":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"tasklist\"],\"scopes\":[\"https://www.googleapis.com/auth/tas" +
-            "ks\"]},\"get\":{\"id\":\"tasks.tasklists.get\",\"path\":\"users/@me/lists/{tasklist}\",\"htt" +
-            "pMethod\":\"GET\",\"description\":\"Returns the authenticated user\'s specified task li" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/-FRO-hz" +
+            "ZfDWPF3fu3VkP7b9BOUQ\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"tasks:v1\",\"name\":\"tasks\",\"" +
+            "version\":\"v1\",\"revision\":\"20111027\",\"title\":\"Tasks API\",\"description\":\"Lets you " +
+            "manage your tasks and task lists.\",\"icons\":{\"x16\":\"http://www.google.com/images/" +
+            "icons/product/tasks-16.png\",\"x32\":\"http://www.google.com/images/icons/product/ta" +
+            "sks-32.png\"},\"documentationLink\":\"http://code.google.com/apis/tasks/v1/using.htm" +
+            "l\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/tasks/v1/\",\"basePath\"" +
+            ":\"/tasks/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"tasks/v1/\"," +
+            "\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data for" +
+            "mat for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Res" +
+            "ponses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Selector specifying which fields to include in a par" +
+            "tial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API ke" +
+            "y. Your API key identifies your project and provides you with API access, quota," +
+            " and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query" +
+            "\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current" +
+            " user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Retur" +
+            "ns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"que" +
+            "ry\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purp" +
+            "oses for server-side applications. Can be any arbitrary string assigned to a use" +
+            "r, but should not exceed 40 characters. Overrides userIp if both are provided.\"," +
+            "\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the s" +
+            "ite where the request originates. Use this if you want to enforce per-user limit" +
+            "s.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com" +
+            "/auth/tasks\":{\"description\":\"Manage your tasks\"},\"https://www.googleapis.com/aut" +
+            "h/tasks.readonly\":{\"description\":\"View your tasks\"}}}},\"schemas\":{\"Task\":{\"id\":\"" +
+            "Task\",\"type\":\"object\",\"properties\":{\"completed\":{\"type\":\"string\",\"description\":\"" +
+            "Completion date of the task (as a RFC 3339 timestamp). This field is omitted if " +
+            "the task has not been completed.\",\"format\":\"date-time\"},\"deleted\":{\"type\":\"boole" +
+            "an\",\"description\":\"Flag indicating whether the task has been deleted. The defaul" +
+            "t if False.\"},\"due\":{\"type\":\"string\",\"description\":\"Due date of the task (as a R" +
+            "FC 3339 timestamp). Optional.\",\"format\":\"date-time\"},\"etag\":{\"type\":\"string\",\"de" +
+            "scription\":\"ETag of the resource.\"},\"hidden\":{\"type\":\"boolean\",\"description\":\"Fl" +
+            "ag indicating whether the task is hidden. This is the case if the task had been " +
+            "marked completed when the task list was last cleared. The default is False. This" +
+            " field is read-only.\"},\"id\":{\"type\":\"string\",\"description\":\"Task identifier.\"},\"" +
+            "kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This is always \\\"tas" +
+            "ks#task\\\".\",\"default\":\"tasks#task\"},\"links\":{\"type\":\"array\",\"description\":\"Colle" +
+            "ction of links. This collection is read-only.\",\"items\":{\"type\":\"object\",\"propert" +
+            "ies\":{\"description\":{\"type\":\"string\",\"description\":\"The description. In HTML spe" +
+            "ak: Everything between <a> and </a>.\"},\"link\":{\"type\":\"string\",\"description\":\"Th" +
+            "e URL.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the link, e.g. \\\"email\\\"" +
+            ".\"}}}},\"notes\":{\"type\":\"string\",\"description\":\"Notes describing the task. Option" +
+            "al.\"},\"parent\":{\"type\":\"string\",\"description\":\"Parent task identifier. This fiel" +
+            "d is omitted if it is a top-level task. This field is read-only. Use the \\\"move\\" +
+            "\" method to move the task under a different parent or to the top level.\"},\"posit" +
+            "ion\":{\"type\":\"string\",\"description\":\"String indicating the position of the task " +
+            "among its sibling tasks under the same parent task or at the top level. If this " +
+            "string is greater than another task\'s corresponding position string according to" +
+            " lexicographical ordering, the task is positioned after the other task under the" +
+            " same parent task (or at the top level). This field is read-only. Use the \\\"move" +
+            "\\\" method to move the task to another position.\"},\"selfLink\":{\"type\":\"string\",\"d" +
+            "escription\":\"URL pointing to this task. Used to retrieve, update, or delete this" +
+            " task.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the task. This is ei" +
+            "ther \\\"needsAction\\\" or \\\"completed\\\".\"},\"title\":{\"type\":\"string\",\"description\":" +
+            "\"Title of the task.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modificatio" +
+            "n time of the task (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}},\"TaskList" +
+            "\":{\"id\":\"TaskList\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"descri" +
+            "ption\":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Task list i" +
+            "dentifier.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This i" +
+            "s always \\\"tasks#taskList\\\".\",\"default\":\"tasks#taskList\"},\"selfLink\":{\"type\":\"st" +
+            "ring\",\"description\":\"URL pointing to this task list. Used to retrieve, update, o" +
+            "r delete this task list.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of the " +
+            "task list.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of" +
+            " the task list (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}},\"TaskLists\":{" +
+            "\"id\":\"TaskLists\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"descript" +
+            "ion\":\"ETag of the resource.\"},\"items\":{\"type\":\"array\",\"description\":\"Collection " +
+            "of task lists.\",\"items\":{\"$ref\":\"TaskList\"}},\"kind\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Type of the resource. This is always \\\"tasks#taskLists\\\".\",\"default\":\"tasks#" +
+            "taskLists\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token that can be us" +
+            "ed to request the next page of this result.\"}}},\"Tasks\":{\"id\":\"Tasks\",\"type\":\"ob" +
+            "ject\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resource." +
+            "\"},\"items\":{\"type\":\"array\",\"description\":\"Collection of tasks.\",\"items\":{\"$ref\":" +
+            "\"Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This is al" +
+            "ways \\\"tasks#tasks\\\".\",\"default\":\"tasks#tasks\"},\"nextPageToken\":{\"type\":\"string\"" +
+            ",\"description\":\"Token used to access the next page of this result.\"}}}},\"resourc" +
+            "es\":{\"tasklists\":{\"methods\":{\"delete\":{\"id\":\"tasks.tasklists.delete\",\"path\":\"use" +
+            "rs/@me/lists/{tasklist}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the authen" +
+            "ticated user\'s specified task list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"" +
+            "description\":\"Task list identifier.\",\"required\":true,\"location\":\"path\"}},\"parame" +
+            "terOrder\":[\"tasklist\"],\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]},\"get\"" +
+            ":{\"id\":\"tasks.tasklists.get\",\"path\":\"users/@me/lists/{tasklist}\",\"httpMethod\":\"G" +
+            "ET\",\"description\":\"Returns the authenticated user\'s specified task list.\",\"param" +
+            "eters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"requi" +
+            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"response\":{\"$ref\":\"" +
+            "TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\",\"https://www.google" +
+            "apis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"tasks.tasklists.insert\",\"path\":\"" +
+            "users/@me/lists\",\"httpMethod\":\"POST\",\"description\":\"Creates a new task list and " +
+            "adds it to the authenticated user\'s task lists.\",\"request\":{\"$ref\":\"TaskList\"},\"" +
+            "response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]" +
+            "},\"list\":{\"id\":\"tasks.tasklists.list\",\"path\":\"users/@me/lists\",\"httpMethod\":\"GET" +
+            "\",\"description\":\"Returns all the authenticated user\'s task lists.\",\"parameters\":" +
+            "{\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number of task lists retur" +
+            "ned on one page. Optional. The default is 100.\",\"format\":\"int64\",\"location\":\"que" +
+            "ry\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying the result pag" +
+            "e to return. Optional.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"TaskLists\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/tasks\",\"https://www.googleapis.com/auth/" +
+            "tasks.readonly\"]},\"patch\":{\"id\":\"tasks.tasklists.patch\",\"path\":\"users/@me/lists/" +
+            "{tasklist}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the authenticated user\'s" +
+            " specified task list. This method supports patch semantics.\",\"parameters\":{\"task" +
+            "list\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"request\":{\"$ref\":\"TaskList\"},\"re" +
+            "sponse\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]}," +
+            "\"update\":{\"id\":\"tasks.tasklists.update\",\"path\":\"users/@me/lists/{tasklist}\",\"htt" +
+            "pMethod\":\"PUT\",\"description\":\"Updates the authenticated user\'s specified task li" +
             "st.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifi" +
-            "er.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"response" +
-            "\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\",\"https:/" +
-            "/www.googleapis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"tasks.tasklists.inser" +
-            "t\",\"path\":\"users/@me/lists\",\"httpMethod\":\"POST\",\"description\":\"Creates a new tas" +
-            "k list and adds it to the authenticated user\'s task lists.\",\"request\":{\"$ref\":\"T" +
-            "askList\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/tasks\"]},\"list\":{\"id\":\"tasks.tasklists.list\",\"path\":\"users/@me/lists\",\"httpM" +
-            "ethod\":\"GET\",\"description\":\"Returns all the authenticated user\'s task lists.\",\"p" +
-            "arameters\":{\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number of task " +
-            "lists returned on one page. Optional. The default is 100.\",\"format\":\"int64\",\"loc" +
-            "ation\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying the" +
-            " result page to return. Optional.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Task" +
-            "Lists\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\",\"https://www.googleapi" +
-            "s.com/auth/tasks.readonly\"]},\"patch\":{\"id\":\"tasks.tasklists.patch\",\"path\":\"users" +
-            "/@me/lists/{tasklist}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the authentic" +
-            "ated user\'s specified task list. This method supports patch semantics.\",\"paramet" +
-            "ers\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"require" +
-            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"request\":{\"$ref\":\"Tas" +
-            "kList\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/tasks\"]},\"update\":{\"id\":\"tasks.tasklists.update\",\"path\":\"users/@me/lists/{task" +
-            "list}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the authenticated user\'s specif" +
-            "ied task list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task li" +
-            "st identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"" +
-            "],\"request\":{\"$ref\":\"TaskList\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/tasks\"]}}},\"tasks\":{\"methods\":{\"clear\":{\"id\":\"tasks.ta" +
-            "sks.clear\",\"path\":\"lists/{tasklist}/clear\",\"httpMethod\":\"POST\",\"description\":\"Cl" +
-            "ears all completed tasks from the specified task list. The affected tasks will b" +
-            "e marked as \'hidden\' and no longer be returned by default when retrieving all ta" +
-            "sks for a task list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"T" +
-            "ask list identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tas" +
-            "klist\"],\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]},\"delete\":{\"id\":\"task" +
-            "s.tasks.delete\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"httpMethod\":\"DELETE\",\"de" +
-            "scription\":\"Deletes the specified task from the task list.\",\"parameters\":{\"task\"" +
-            ":{\"type\":\"string\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"p" +
-            "ath\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"require" +
-            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"scopes\":[\"http" +
-            "s://www.googleapis.com/auth/tasks\"]},\"get\":{\"id\":\"tasks.tasks.get\",\"path\":\"lists" +
-            "/{tasklist}/tasks/{task}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specifie" +
-            "d task.\",\"parameters\":{\"task\":{\"type\":\"string\",\"description\":\"Task identifier.\"," +
-            "\"required\":true,\"location\":\"path\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Ta" +
-            "sk list identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"task" +
-            "list\",\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/tasks\",\"https://www.googleapis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"ta" +
-            "sks.tasks.insert\",\"path\":\"lists/{tasklist}/tasks\",\"httpMethod\":\"POST\",\"descripti" +
-            "on\":\"Creates a new task on the specified task list.\",\"parameters\":{\"parent\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Parent task identifier. If the task is created at th" +
-            "e top level, this parameter is omitted. Optional.\",\"location\":\"query\"},\"previous" +
-            "\":{\"type\":\"string\",\"description\":\"Previous sibling task identifier. If the task " +
-            "is created at the first position among its siblings, this parameter is omitted. " +
-            "Optional.\",\"location\":\"query\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task l" +
-            "ist identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist" +
-            "\"],\"request\":{\"$ref\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/tasks\"]},\"list\":{\"id\":\"tasks.tasks.list\",\"path\":\"lists/{taskl" +
-            "ist}/tasks\",\"httpMethod\":\"GET\",\"description\":\"Returns all tasks in the specified" +
-            " task list.\",\"parameters\":{\"completedMax\":{\"type\":\"string\",\"description\":\"Upper " +
-            "bound for a task\'s completion date (as a RFC 3339 timestamp) to filter by. Optio" +
-            "nal. The default is not to filter by completion date.\",\"location\":\"query\"},\"comp" +
-            "letedMin\":{\"type\":\"string\",\"description\":\"Lower bound for a task\'s completion da" +
-            "te (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filte" +
-            "r by completion date.\",\"location\":\"query\"},\"dueMax\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Upper bound for a task\'s due date (as a RFC 3339 timestamp) to filter by. Op" +
-            "tional. The default is not to filter by due date.\",\"location\":\"query\"},\"dueMin\":" +
-            "{\"type\":\"string\",\"description\":\"Lower bound for a task\'s due date (as a RFC 3339" +
-            " timestamp) to filter by. Optional. The default is not to filter by due date.\",\"" +
-            "location\":\"query\"},\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number o" +
-            "f task lists returned on one page. Optional. The default is 100.\",\"format\":\"int6" +
-            "4\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specify" +
-            "ing the result page to return. Optional.\",\"location\":\"query\"},\"showCompleted\":{\"" +
-            "type\":\"boolean\",\"description\":\"Flag indicating whether completed tasks are retur" +
-            "ned in the result. Optional. The default is True.\",\"location\":\"query\"},\"showDele" +
-            "ted\":{\"type\":\"boolean\",\"description\":\"Flag indicating whether deleted tasks are " +
-            "returned in the result. Optional. The default is False.\",\"location\":\"query\"},\"sh" +
-            "owHidden\":{\"type\":\"boolean\",\"description\":\"Flag indicating whether hidden tasks " +
-            "are returned in the result. Optional. The default is False.\",\"location\":\"query\"}" +
-            ",\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":tr" +
-            "ue,\"location\":\"path\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"Lower bound f" +
-            "or a task\'s last modification time (as a RFC 3339 timestamp) to filter by. Optio" +
-            "nal. The default is not to filter by last modification time.\",\"location\":\"query\"" +
-            "}},\"parameterOrder\":[\"tasklist\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/tasks\",\"https://www.googleapis.com/auth/tasks.readonly\"]" +
-            "},\"move\":{\"id\":\"tasks.tasks.move\",\"path\":\"lists/{tasklist}/tasks/{task}/move\",\"h" +
-            "ttpMethod\":\"POST\",\"description\":\"Moves the specified task to another position in" +
-            " the task list. This can include putting it as a child task under a new parent a" +
-            "nd/or move it to a different position among its sibling tasks.\",\"parameters\":{\"p" +
-            "arent\":{\"type\":\"string\",\"description\":\"New parent task identifier. If the task i" +
-            "s moved to the top level, this parameter is omitted. Optional.\",\"location\":\"quer" +
-            "y\"},\"previous\":{\"type\":\"string\",\"description\":\"New previous sibling task identif" +
-            "ier. If the task is moved to the first position among its siblings, this paramet" +
-            "er is omitted. Optional.\",\"location\":\"query\"},\"task\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"tasklist\":{\"type\":\"st" +
-            "ring\",\"description\":\"Task list identifier.\",\"required\":true,\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"tasklist\",\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/tasks\"]},\"patch\":{\"id\":\"tasks.tasks.patch\",\"path\":\"li" +
-            "sts/{tasklist}/tasks/{task}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the spe" +
-            "cified task. This method supports patch semantics.\",\"parameters\":{\"task\":{\"type\"" +
-            ":\"string\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"t" +
-            "asklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true," +
-            "\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$ref\":\"Task" +
-            "\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]" +
-            "},\"update\":{\"id\":\"tasks.tasks.update\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"ht" +
-            "tpMethod\":\"PUT\",\"description\":\"Updates the specified task.\",\"parameters\":{\"task\"" +
-            ":{\"type\":\"string\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"p" +
-            "ath\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"require" +
-            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$re" +
-            "f\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/tasks\"]}}}}}";
+            "er.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"request\"" +
+            ":{\"$ref\":\"TaskList\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googl" +
+            "eapis.com/auth/tasks\"]}}},\"tasks\":{\"methods\":{\"clear\":{\"id\":\"tasks.tasks.clear\"," +
+            "\"path\":\"lists/{tasklist}/clear\",\"httpMethod\":\"POST\",\"description\":\"Clears all co" +
+            "mpleted tasks from the specified task list. The affected tasks will be marked as" +
+            " \'hidden\' and no longer be returned by default when retrieving all tasks for a t" +
+            "ask list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list id" +
+            "entifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/tasks\"]},\"delete\":{\"id\":\"tasks.tasks.del" +
+            "ete\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"httpMethod\":\"DELETE\",\"description\":" +
+            "\"Deletes the specified task from the task list.\",\"parameters\":{\"task\":{\"type\":\"s" +
+            "tring\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"task" +
+            "list\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"scopes\":[\"https://www.goo" +
+            "gleapis.com/auth/tasks\"]},\"get\":{\"id\":\"tasks.tasks.get\",\"path\":\"lists/{tasklist}" +
+            "/tasks/{task}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified task.\",\"p" +
+            "arameters\":{\"task\":{\"type\":\"string\",\"description\":\"Task identifier.\",\"required\":" +
+            "true,\"location\":\"path\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task list ide" +
+            "ntifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task" +
+            "\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"," +
+            "\"https://www.googleapis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"tasks.tasks.i" +
+            "nsert\",\"path\":\"lists/{tasklist}/tasks\",\"httpMethod\":\"POST\",\"description\":\"Create" +
+            "s a new task on the specified task list.\",\"parameters\":{\"parent\":{\"type\":\"string" +
+            "\",\"description\":\"Parent task identifier. If the task is created at the top level" +
+            ", this parameter is omitted. Optional.\",\"location\":\"query\"},\"previous\":{\"type\":\"" +
+            "string\",\"description\":\"Previous sibling task identifier. If the task is created " +
+            "at the first position among its siblings, this parameter is omitted. Optional.\"," +
+            "\"location\":\"query\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identif" +
+            "ier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"request" +
+            "\":{\"$ref\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.c" +
+            "om/auth/tasks\"]},\"list\":{\"id\":\"tasks.tasks.list\",\"path\":\"lists/{tasklist}/tasks\"" +
+            ",\"httpMethod\":\"GET\",\"description\":\"Returns all tasks in the specified task list." +
+            "\",\"parameters\":{\"completedMax\":{\"type\":\"string\",\"description\":\"Upper bound for a" +
+            " task\'s completion date (as a RFC 3339 timestamp) to filter by. Optional. The de" +
+            "fault is not to filter by completion date.\",\"location\":\"query\"},\"completedMin\":{" +
+            "\"type\":\"string\",\"description\":\"Lower bound for a task\'s completion date (as a RF" +
+            "C 3339 timestamp) to filter by. Optional. The default is not to filter by comple" +
+            "tion date.\",\"location\":\"query\"},\"dueMax\":{\"type\":\"string\",\"description\":\"Upper b" +
+            "ound for a task\'s due date (as a RFC 3339 timestamp) to filter by. Optional. The" +
+            " default is not to filter by due date.\",\"location\":\"query\"},\"dueMin\":{\"type\":\"st" +
+            "ring\",\"description\":\"Lower bound for a task\'s due date (as a RFC 3339 timestamp)" +
+            " to filter by. Optional. The default is not to filter by due date.\",\"location\":\"" +
+            "query\"},\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number of task list" +
+            "s returned on one page. Optional. The default is 100.\",\"format\":\"int64\",\"locatio" +
+            "n\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying the res" +
+            "ult page to return. Optional.\",\"location\":\"query\"},\"showCompleted\":{\"type\":\"bool" +
+            "ean\",\"description\":\"Flag indicating whether completed tasks are returned in the " +
+            "result. Optional. The default is True.\",\"location\":\"query\"},\"showDeleted\":{\"type" +
+            "\":\"boolean\",\"description\":\"Flag indicating whether deleted tasks are returned in" +
+            " the result. Optional. The default is False.\",\"location\":\"query\"},\"showHidden\":{" +
+            "\"type\":\"boolean\",\"description\":\"Flag indicating whether hidden tasks are returne" +
+            "d in the result. Optional. The default is False.\",\"location\":\"query\"},\"tasklist\"" +
+            ":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"locatio" +
+            "n\":\"path\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"Lower bound for a task\'s" +
+            " last modification time (as a RFC 3339 timestamp) to filter by. Optional. The de" +
+            "fault is not to filter by last modification time.\",\"location\":\"query\"}},\"paramet" +
+            "erOrder\":[\"tasklist\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://www.googlea" +
+            "pis.com/auth/tasks\",\"https://www.googleapis.com/auth/tasks.readonly\"]},\"move\":{\"" +
+            "id\":\"tasks.tasks.move\",\"path\":\"lists/{tasklist}/tasks/{task}/move\",\"httpMethod\":" +
+            "\"POST\",\"description\":\"Moves the specified task to another position in the task l" +
+            "ist. This can include putting it as a child task under a new parent and/or move " +
+            "it to a different position among its sibling tasks.\",\"parameters\":{\"parent\":{\"ty" +
+            "pe\":\"string\",\"description\":\"New parent task identifier. If the task is moved to " +
+            "the top level, this parameter is omitted. Optional.\",\"location\":\"query\"},\"previo" +
+            "us\":{\"type\":\"string\",\"description\":\"New previous sibling task identifier. If the" +
+            " task is moved to the first position among its siblings, this parameter is omitt" +
+            "ed. Optional.\",\"location\":\"query\"},\"task\":{\"type\":\"string\",\"description\":\"Task i" +
+            "dentifier.\",\"required\":true,\"location\":\"path\"},\"tasklist\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Task list identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
+            "rder\":[\"tasklist\",\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.goog" +
+            "leapis.com/auth/tasks\"]},\"patch\":{\"id\":\"tasks.tasks.patch\",\"path\":\"lists/{taskli" +
+            "st}/tasks/{task}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the specified task" +
+            ". This method supports patch semantics.\",\"parameters\":{\"task\":{\"type\":\"string\",\"" +
+            "description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"tasklist\":{\"" +
+            "type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"location\":" +
+            "\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$ref\":\"Task\"},\"respons" +
+            "e\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]},\"update\":" +
+            "{\"id\":\"tasks.tasks.update\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"httpMethod\":\"" +
+            "PUT\",\"description\":\"Updates the specified task.\",\"parameters\":{\"task\":{\"type\":\"s" +
+            "tring\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"task" +
+            "list\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$ref\":\"Task\"}," +
+            "\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]}}}" +
+            "}}";
         
         public const string Version = "v1";
         

@@ -686,187 +686,188 @@ namespace Google.Apis.Reseller.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"reseller:v1\",\"n" +
-            "ame\":\"reseller\",\"version\":\"v1\",\"revision\":\"20120803\",\"title\":\"Enterprise Apps Re" +
-            "seller API\",\"description\":\"Lets you create and manage your customers and their s" +
-            "ubscriptions.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search" +
-            "-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"docu" +
-            "mentationLink\":\"https://developers.google.com/google-apps/reseller/\",\"labels\":[\"" +
-            "limited_availability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/a" +
-            "pps/reseller/v1/\",\"basePath\":\"/apps/reseller/v1/\",\"rootUrl\":\"https://www.googlea" +
-            "pis.com/\",\"servicePath\":\"apps/reseller/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"a" +
-            "lt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"js" +
-            "on\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applicat" +
-            "ion/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector" +
-            " specifying which fields to include in a partial response.\",\"location\":\"query\"}," +
-            "\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your proj" +
-            "ect and provides you with API access, quota, and reports. Required unless you pr" +
-            "ovide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"d" +
-            "escription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyP" +
-            "rint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and li" +
-            "ne breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"d" +
-            "escription\":\"Available to use for quota purposes for server-side applications. C" +
-            "an be any arbitrary string assigned to a user, but should not exceed 40 characte" +
-            "rs. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\"" +
-            ":\"string\",\"description\":\"IP address of the site where the request originates. Us" +
-            "e this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{" +
-            "\"Address\":{\"id\":\"Address\",\"type\":\"object\",\"description\":\"JSON template for addre" +
-            "ss of a customer.\",\"properties\":{\"addressLine1\":{\"type\":\"string\",\"description\":\"" +
-            "Address line 1 of the address.\"},\"addressLine2\":{\"type\":\"string\",\"description\":\"" +
-            "Address line 2 of the address.\"},\"addressLine3\":{\"type\":\"string\",\"description\":\"" +
-            "Address line 3 of the address.\"},\"contactName\":{\"type\":\"string\",\"description\":\"N" +
-            "ame of the contact person.\"},\"countryCode\":{\"type\":\"string\",\"description\":\"ISO 3" +
-            "166 country code.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resour" +
-            "ce as a customer address.\",\"default\":\"customers#address\"},\"locality\":{\"type\":\"st" +
-            "ring\",\"description\":\"Name of the locality. This is in accordance with - http://p" +
-            "ortablecontacts.net/draft-spec.html#address_element.\"},\"organizationName\":{\"type" +
-            "\":\"string\",\"description\":\"Name of the organization.\"},\"postalCode\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The postal code. This is in accordance with - http://portable" +
-            "contacts.net/draft-spec.html#address_element.\"},\"region\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Name of the region. This is in accordance with - http://portablecontact" +
-            "s.net/draft-spec.html#address_element.\"}}},\"ChangePlanRequest\":{\"id\":\"ChangePlan" +
-            "Request\",\"type\":\"object\",\"description\":\"JSON template for the ChangePlan rpc req" +
-            "uest.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resou" +
-            "rce as a subscription change plan request.\",\"default\":\"subscriptions#changePlanR" +
-            "equest\"},\"planName\":{\"type\":\"string\",\"description\":\"Name of the plan to change t" +
-            "o.\"},\"purchaseOrderId\":{\"type\":\"string\",\"description\":\"Purchase order id for you" +
-            "r order tracking purposes.\"},\"seats\":{\"$ref\":\"Seats\",\"description\":\"Number/Limit" +
-            " of seats in the new plan.\"}}},\"Customer\":{\"id\":\"Customer\",\"type\":\"object\",\"desc" +
-            "ription\":\"JSON template for a customer.\",\"properties\":{\"alternateEmail\":{\"type\":" +
-            "\"string\",\"description\":\"The alternate email of the customer.\"},\"customerDomain\":" +
-            "{\"type\":\"string\",\"description\":\"The domain name of the customer.\"},\"customerId\":" +
-            "{\"type\":\"string\",\"description\":\"The id of the customer.\"},\"kind\":{\"type\":\"string" +
-            "\",\"description\":\"Identifies the resource as a customer.\",\"default\":\"reseller#cus" +
-            "tomer\"},\"phoneNumber\":{\"type\":\"string\",\"description\":\"The phone number of the cu" +
-            "stomer.\"},\"postalAddress\":{\"$ref\":\"Address\",\"description\":\"The postal address of" +
-            " the customer.\"}}},\"RenewalSettings\":{\"id\":\"RenewalSettings\",\"type\":\"object\",\"de" +
-            "scription\":\"JSON template for a subscription renewal settings.\",\"properties\":{\"k" +
-            "ind\":{\"type\":\"string\",\"description\":\"Identifies the resource as a subscription r" +
-            "enewal setting.\",\"default\":\"subscriptions#renewalSettings\"},\"renewalType\":{\"type" +
-            "\":\"string\",\"description\":\"Subscription renewal type.\"}}},\"Seats\":{\"id\":\"Seats\",\"" +
-            "type\":\"object\",\"description\":\"JSON template for subscription seats.\",\"properties" +
-            "\":{\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resource as a subscript" +
-            "ion change plan request.\",\"default\":\"subscriptions#seats\"},\"maximumNumberOfSeats" +
-            "\":{\"type\":\"integer\",\"description\":\"Maximum number of seats that can be purchased" +
-            ". This needs to be provided only for a non-commitment plan. For a commitment pla" +
-            "n it is decided by the contract.\",\"format\":\"int32\"},\"numberOfSeats\":{\"type\":\"int" +
-            "eger\",\"description\":\"Number of seats to purchase. This is applicable only for a " +
-            "commitment plan.\",\"format\":\"int32\"}}},\"Subscription\":{\"id\":\"Subscription\",\"type\"" +
-            ":\"object\",\"description\":\"JSON template for a subscription.\",\"properties\":{\"creat" +
-            "ionTime\":{\"type\":\"string\",\"description\":\"Creation time of this subscription in m" +
-            "illiseconds since Unix epoch.\",\"format\":\"int64\"},\"customerId\":{\"type\":\"string\",\"" +
-            "description\":\"The id of the customer to whom the subscription belongs.\"},\"kind\":" +
-            "{\"type\":\"string\",\"description\":\"Identifies the resource as a Subscription.\",\"def" +
-            "ault\":\"reseller#subscription\"},\"plan\":{\"type\":\"object\",\"description\":\"Plan detai" +
-            "ls of the subscription\",\"properties\":{\"commitmentInterval\":{\"type\":\"object\",\"des" +
-            "cription\":\"Interval of the commitment if it is a commitment plan.\",\"properties\":" +
-            "{\"endTime\":{\"type\":\"string\",\"description\":\"End time of the commitment interval i" +
-            "n milliseconds since Unix epoch.\",\"format\":\"int64\"},\"startTime\":{\"type\":\"string\"" +
-            ",\"description\":\"Start time of the commitment interval in milliseconds since Unix" +
-            " epoch.\",\"format\":\"int64\"}}},\"isCommitmentPlan\":{\"type\":\"boolean\",\"description\":" +
-            "\"Whether the plan is a commitment plan or not.\"},\"planName\":{\"type\":\"string\",\"de" +
-            "scription\":\"The plan name of this subscription\'s plan.\"}}},\"purchaseOrderId\":{\"t" +
-            "ype\":\"string\",\"description\":\"Purchase order id for your order tracking purposes." +
-            "\"},\"renewalSettings\":{\"$ref\":\"RenewalSettings\",\"description\":\"Renewal settings o" +
-            "f the subscription.\"},\"seats\":{\"$ref\":\"Seats\",\"description\":\"Number/Limit of sea" +
-            "ts in the new plan.\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name of the sku fo" +
-            "r which this subscription is purchased.\"},\"subscriptionId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The id of the subscription.\"},\"trialSettings\":{\"type\":\"object\",\"descr" +
-            "iption\":\"Trial Settings of the subscription.\",\"properties\":{\"isInTrial\":{\"type\":" +
-            "\"boolean\",\"description\":\"Whether the subscription is in trial.\"},\"trialEndTime\":" +
-            "{\"type\":\"string\",\"description\":\"End time of the trial in milliseconds since Unix" +
-            " epoch.\",\"format\":\"int64\"}}}}},\"Subscriptions\":{\"id\":\"Subscriptions\",\"type\":\"obj" +
-            "ect\",\"description\":\"JSON template for a subscription list.\",\"properties\":{\"kind\"" +
-            ":{\"type\":\"string\",\"description\":\"Identifies the resource as a collection of subs" +
-            "criptions.\",\"default\":\"reseller#subscriptions\"},\"nextPageToken\":{\"type\":\"string\"" +
-            ",\"description\":\"The continuation token, used to page through large result sets. " +
-            "Provide this value in a subsequent request to return the next page of results.\"}" +
-            ",\"subscriptions\":{\"type\":\"array\",\"description\":\"The subscriptions in this page o" +
-            "f results.\",\"items\":{\"$ref\":\"Subscription\"}}}}},\"resources\":{\"customers\":{\"metho" +
-            "ds\":{\"get\":{\"id\":\"reseller.customers.get\",\"path\":\"customers/{customerId}\",\"httpM" +
-            "ethod\":\"GET\",\"description\":\"Gets a customer resource if one exists and is owned " +
-            "by the reseller.\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"description\":\"Id " +
-            "of the Customer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customer" +
-            "Id\"],\"response\":{\"$ref\":\"Customer\"}},\"insert\":{\"id\":\"reseller.customers.insert\"," +
-            "\"path\":\"customers\",\"httpMethod\":\"POST\",\"description\":\"Creates a customer resourc" +
-            "e if one does not already exist.\",\"parameters\":{\"customerAuthToken\":{\"type\":\"str" +
-            "ing\",\"description\":\"An auth token needed for inserting a customer for which doma" +
-            "in already exists. Can be generated at https://www.google.com/a/cpanel//Transfer" +
-            "Token. Optional.\",\"location\":\"query\"}},\"request\":{\"$ref\":\"Customer\"},\"response\":" +
-            "{\"$ref\":\"Customer\"}},\"patch\":{\"id\":\"reseller.customers.patch\",\"path\":\"customers/" +
-            "{customerId}\",\"httpMethod\":\"PATCH\",\"description\":\"Update a customer resource if " +
-            "one it exists and is owned by the reseller. This method supports patch semantics" +
-            ".\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"description\":\"Id of the Customer" +
-            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\"],\"request\":" +
-            "{\"$ref\":\"Customer\"},\"response\":{\"$ref\":\"Customer\"}},\"update\":{\"id\":\"reseller.cus" +
-            "tomers.update\",\"path\":\"customers/{customerId}\",\"httpMethod\":\"PUT\",\"description\":" +
-            "\"Update a customer resource if one it exists and is owned by the reseller.\",\"par" +
-            "ameters\":{\"customerId\":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"requ" +
-            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\"],\"request\":{\"$ref\"" +
-            ":\"Customer\"},\"response\":{\"$ref\":\"Customer\"}}}},\"subscriptions\":{\"methods\":{\"chan" +
-            "gePlan\":{\"id\":\"reseller.subscriptions.changePlan\",\"path\":\"customers/{customerId}" +
-            "/subscriptions/{subscriptionId}/changePlan\",\"httpMethod\":\"POST\",\"description\":\"C" +
-            "hanges the plan of a subscription\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"" +
-            "description\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"subscripti" +
-            "onId\":{\"type\":\"string\",\"description\":\"Id of the subscription, which is unique fo" +
-            "r a customer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\"" +
-            ",\"subscriptionId\"],\"request\":{\"$ref\":\"ChangePlanRequest\"},\"response\":{\"$ref\":\"Su" +
-            "bscription\"}},\"changeRenewalSettings\":{\"id\":\"reseller.subscriptions.changeRenewa" +
-            "lSettings\",\"path\":\"customers/{customerId}/subscriptions/{subscriptionId}/changeR" +
-            "enewalSettings\",\"httpMethod\":\"POST\",\"description\":\"Changes the renewal settings " +
-            "of a subscription\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"description\":\"Id" +
-            " of the Customer\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":{\"type\":\"s" +
-            "tring\",\"description\":\"Id of the subscription, which is unique for a customer\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\",\"subscriptionId" +
-            "\"],\"request\":{\"$ref\":\"RenewalSettings\"},\"response\":{\"$ref\":\"Subscription\"}},\"cha" +
-            "ngeSeats\":{\"id\":\"reseller.subscriptions.changeSeats\",\"path\":\"customers/{customer" +
-            "Id}/subscriptions/{subscriptionId}/changeSeats\",\"httpMethod\":\"POST\",\"description" +
-            "\":\"Changes the seats configuration of a subscription\",\"parameters\":{\"customerId\"" +
-            ":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"required\":true,\"location\":" +
-            "\"path\"},\"subscriptionId\":{\"type\":\"string\",\"description\":\"Id of the subscription," +
-            " which is unique for a customer\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"customerId\",\"subscriptionId\"],\"request\":{\"$ref\":\"Seats\"},\"response\":{\"$r" +
-            "ef\":\"Subscription\"}},\"delete\":{\"id\":\"reseller.subscriptions.delete\",\"path\":\"cust" +
-            "omers/{customerId}/subscriptions/{subscriptionId}\",\"httpMethod\":\"DELETE\",\"descri" +
-            "ption\":\"Cancels/Downgrades a subscription.\",\"parameters\":{\"customerId\":{\"type\":\"" +
-            "string\",\"description\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"d" +
-            "eletionType\":{\"type\":\"string\",\"description\":\"Whether the subscription is to be f" +
-            "ully cancelled or downgraded\",\"required\":true,\"enum\":[\"cancel\",\"downgrade\",\"susp" +
-            "end\"],\"enumDescriptions\":[\"Cancels the subscription immediately\",\"Downgrades a G" +
-            "oogle Apps for Business subscription to Google Apps\",\"Suspends the subscriptions" +
-            " for 4 days before cancelling it\"],\"location\":\"query\"},\"subscriptionId\":{\"type\":" +
-            "\"string\",\"description\":\"Id of the subscription, which is unique for a customer\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\",\"subscription" +
-            "Id\",\"deletionType\"]},\"get\":{\"id\":\"reseller.subscriptions.get\",\"path\":\"customers/" +
-            "{customerId}/subscriptions/{subscriptionId}\",\"httpMethod\":\"GET\",\"description\":\"G" +
-            "ets a subscription of the customer.\",\"parameters\":{\"customerId\":{\"type\":\"string\"" +
-            ",\"description\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"subscrip" +
-            "tionId\":{\"type\":\"string\",\"description\":\"Id of the subscription, which is unique " +
-            "for a customer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerI" +
-            "d\",\"subscriptionId\"],\"response\":{\"$ref\":\"Subscription\"}},\"insert\":{\"id\":\"reselle" +
-            "r.subscriptions.insert\",\"path\":\"customers/{customerId}/subscriptions\",\"httpMetho" +
-            "d\":\"POST\",\"description\":\"Creates/Transfers a subscription for the customer.\",\"pa" +
-            "rameters\":{\"customerAuthToken\":{\"type\":\"string\",\"description\":\"An auth token nee" +
-            "ded for transferring a subscription. Can be generated at https://www.google.com/" +
-            "a/cpanel/customer-domain/TransferToken. Optional.\",\"location\":\"query\"},\"customer" +
-            "Id\":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"required\":true,\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"customerId\"],\"request\":{\"$ref\":\"Subscription\"},\"r" +
-            "esponse\":{\"$ref\":\"Subscription\"}},\"list\":{\"id\":\"reseller.subscriptions.list\",\"pa" +
-            "th\":\"subscriptions\",\"httpMethod\":\"GET\",\"description\":\"Lists subscriptions of a r" +
-            "eseller, optionally filtered by a customer name prefix.\",\"parameters\":{\"customer" +
-            "NamePrefix\":{\"type\":\"string\",\"description\":\"Prefix of the customer\'s domain name" +
-            " by which the subscriptions should be filtered. Optional\",\"location\":\"query\"},\"m" +
-            "axResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return\"" +
-            ",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"Token to specify next page in the list\",\"locati" +
-            "on\":\"query\"}},\"response\":{\"$ref\":\"Subscriptions\"}},\"startPaidService\":{\"id\":\"res" +
-            "eller.subscriptions.startPaidService\",\"path\":\"customers/{customerId}/subscriptio" +
-            "ns/{subscriptionId}/startPaidService\",\"httpMethod\":\"POST\",\"description\":\"Starts " +
-            "paid service of a trial subscription\",\"parameters\":{\"customerId\":{\"type\":\"string" +
-            "\",\"description\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"subscri" +
-            "ptionId\":{\"type\":\"string\",\"description\":\"Id of the subscription, which is unique" +
-            " for a customer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customer" +
-            "Id\",\"subscriptionId\"],\"response\":{\"$ref\":\"Subscription\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/c6L0yVj" +
+            "hIsC4ieqeiwq21R0bOtc\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"reseller:v1\",\"name\":\"resel" +
+            "ler\",\"version\":\"v1\",\"revision\":\"20120803\",\"title\":\"Enterprise Apps Reseller API\"" +
+            ",\"description\":\"Lets you create and manage your customers and their subscription" +
+            "s.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x" +
+            "32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLi" +
+            "nk\":\"https://developers.google.com/google-apps/reseller/\",\"labels\":[\"limited_ava" +
+            "ilability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/apps/reselle" +
+            "r/v1/\",\"basePath\":\"/apps/reseller/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"" +
+            "servicePath\":\"apps/reseller/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\"" +
+            ":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":" +
+            "[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"]," +
+            "\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying" +
+            " which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"typ" +
+            "e\":\"string\",\"description\":\"API key. Your API key identifies your project and pro" +
+            "vides you with API access, quota, and reports. Required unless you provide an OA" +
+            "uth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\"" +
+            ":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"typ" +
+            "e\":\"boolean\",\"description\":\"Returns response with indentations and line breaks.\"" +
+            ",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\"" +
+            ":\"Available to use for quota purposes for server-side applications. Can be any a" +
+            "rbitrary string assigned to a user, but should not exceed 40 characters. Overrid" +
+            "es userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"" +
+            "description\":\"IP address of the site where the request originates. Use this if y" +
+            "ou want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"Address\":{" +
+            "\"id\":\"Address\",\"type\":\"object\",\"description\":\"JSON template for address of a cus" +
+            "tomer.\",\"properties\":{\"addressLine1\":{\"type\":\"string\",\"description\":\"Address lin" +
+            "e 1 of the address.\"},\"addressLine2\":{\"type\":\"string\",\"description\":\"Address lin" +
+            "e 2 of the address.\"},\"addressLine3\":{\"type\":\"string\",\"description\":\"Address lin" +
+            "e 3 of the address.\"},\"contactName\":{\"type\":\"string\",\"description\":\"Name of the " +
+            "contact person.\"},\"countryCode\":{\"type\":\"string\",\"description\":\"ISO 3166 country" +
+            " code.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resource as a cus" +
+            "tomer address.\",\"default\":\"customers#address\"},\"locality\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Name of the locality. This is in accordance with - http://portablecont" +
+            "acts.net/draft-spec.html#address_element.\"},\"organizationName\":{\"type\":\"string\"," +
+            "\"description\":\"Name of the organization.\"},\"postalCode\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The postal code. This is in accordance with - http://portablecontacts.ne" +
+            "t/draft-spec.html#address_element.\"},\"region\":{\"type\":\"string\",\"description\":\"Na" +
+            "me of the region. This is in accordance with - http://portablecontacts.net/draft" +
+            "-spec.html#address_element.\"}}},\"ChangePlanRequest\":{\"id\":\"ChangePlanRequest\",\"t" +
+            "ype\":\"object\",\"description\":\"JSON template for the ChangePlan rpc request.\",\"pro" +
+            "perties\":{\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resource as a su" +
+            "bscription change plan request.\",\"default\":\"subscriptions#changePlanRequest\"},\"p" +
+            "lanName\":{\"type\":\"string\",\"description\":\"Name of the plan to change to.\"},\"purch" +
+            "aseOrderId\":{\"type\":\"string\",\"description\":\"Purchase order id for your order tra" +
+            "cking purposes.\"},\"seats\":{\"$ref\":\"Seats\",\"description\":\"Number/Limit of seats i" +
+            "n the new plan.\"}}},\"Customer\":{\"id\":\"Customer\",\"type\":\"object\",\"description\":\"J" +
+            "SON template for a customer.\",\"properties\":{\"alternateEmail\":{\"type\":\"string\",\"d" +
+            "escription\":\"The alternate email of the customer.\"},\"customerDomain\":{\"type\":\"st" +
+            "ring\",\"description\":\"The domain name of the customer.\"},\"customerId\":{\"type\":\"st" +
+            "ring\",\"description\":\"The id of the customer.\"},\"kind\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Identifies the resource as a customer.\",\"default\":\"reseller#customer\"},\"ph" +
+            "oneNumber\":{\"type\":\"string\",\"description\":\"The phone number of the customer.\"},\"" +
+            "postalAddress\":{\"$ref\":\"Address\",\"description\":\"The postal address of the custom" +
+            "er.\"}}},\"RenewalSettings\":{\"id\":\"RenewalSettings\",\"type\":\"object\",\"description\":" +
+            "\"JSON template for a subscription renewal settings.\",\"properties\":{\"kind\":{\"type" +
+            "\":\"string\",\"description\":\"Identifies the resource as a subscription renewal sett" +
+            "ing.\",\"default\":\"subscriptions#renewalSettings\"},\"renewalType\":{\"type\":\"string\"," +
+            "\"description\":\"Subscription renewal type.\"}}},\"Seats\":{\"id\":\"Seats\",\"type\":\"obje" +
+            "ct\",\"description\":\"JSON template for subscription seats.\",\"properties\":{\"kind\":{" +
+            "\"type\":\"string\",\"description\":\"Identifies the resource as a subscription change " +
+            "plan request.\",\"default\":\"subscriptions#seats\"},\"maximumNumberOfSeats\":{\"type\":\"" +
+            "integer\",\"description\":\"Maximum number of seats that can be purchased. This need" +
+            "s to be provided only for a non-commitment plan. For a commitment plan it is dec" +
+            "ided by the contract.\",\"format\":\"int32\"},\"numberOfSeats\":{\"type\":\"integer\",\"desc" +
+            "ription\":\"Number of seats to purchase. This is applicable only for a commitment " +
+            "plan.\",\"format\":\"int32\"}}},\"Subscription\":{\"id\":\"Subscription\",\"type\":\"object\",\"" +
+            "description\":\"JSON template for a subscription.\",\"properties\":{\"creationTime\":{\"" +
+            "type\":\"string\",\"description\":\"Creation time of this subscription in milliseconds" +
+            " since Unix epoch.\",\"format\":\"int64\"},\"customerId\":{\"type\":\"string\",\"description" +
+            "\":\"The id of the customer to whom the subscription belongs.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"Identifies the resource as a Subscription.\",\"default\":\"rese" +
+            "ller#subscription\"},\"plan\":{\"type\":\"object\",\"description\":\"Plan details of the s" +
+            "ubscription\",\"properties\":{\"commitmentInterval\":{\"type\":\"object\",\"description\":\"" +
+            "Interval of the commitment if it is a commitment plan.\",\"properties\":{\"endTime\":" +
+            "{\"type\":\"string\",\"description\":\"End time of the commitment interval in milliseco" +
+            "nds since Unix epoch.\",\"format\":\"int64\"},\"startTime\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Start time of the commitment interval in milliseconds since Unix epoch.\",\"f" +
+            "ormat\":\"int64\"}}},\"isCommitmentPlan\":{\"type\":\"boolean\",\"description\":\"Whether th" +
+            "e plan is a commitment plan or not.\"},\"planName\":{\"type\":\"string\",\"description\":" +
+            "\"The plan name of this subscription\'s plan.\"}}},\"purchaseOrderId\":{\"type\":\"strin" +
+            "g\",\"description\":\"Purchase order id for your order tracking purposes.\"},\"renewal" +
+            "Settings\":{\"$ref\":\"RenewalSettings\",\"description\":\"Renewal settings of the subsc" +
+            "ription.\"},\"seats\":{\"$ref\":\"Seats\",\"description\":\"Number/Limit of seats in the n" +
+            "ew plan.\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name of the sku for which thi" +
+            "s subscription is purchased.\"},\"subscriptionId\":{\"type\":\"string\",\"description\":\"" +
+            "The id of the subscription.\"},\"trialSettings\":{\"type\":\"object\",\"description\":\"Tr" +
+            "ial Settings of the subscription.\",\"properties\":{\"isInTrial\":{\"type\":\"boolean\",\"" +
+            "description\":\"Whether the subscription is in trial.\"},\"trialEndTime\":{\"type\":\"st" +
+            "ring\",\"description\":\"End time of the trial in milliseconds since Unix epoch.\",\"f" +
+            "ormat\":\"int64\"}}}}},\"Subscriptions\":{\"id\":\"Subscriptions\",\"type\":\"object\",\"descr" +
+            "iption\":\"JSON template for a subscription list.\",\"properties\":{\"kind\":{\"type\":\"s" +
+            "tring\",\"description\":\"Identifies the resource as a collection of subscriptions.\"" +
+            ",\"default\":\"reseller#subscriptions\"},\"nextPageToken\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The continuation token, used to page through large result sets. Provide thi" +
+            "s value in a subsequent request to return the next page of results.\"},\"subscript" +
+            "ions\":{\"type\":\"array\",\"description\":\"The subscriptions in this page of results.\"" +
+            ",\"items\":{\"$ref\":\"Subscription\"}}}}},\"resources\":{\"customers\":{\"methods\":{\"get\":" +
+            "{\"id\":\"reseller.customers.get\",\"path\":\"customers/{customerId}\",\"httpMethod\":\"GET" +
+            "\",\"description\":\"Gets a customer resource if one exists and is owned by the rese" +
+            "ller.\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"description\":\"Id of the Cust" +
+            "omer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\"],\"respo" +
+            "nse\":{\"$ref\":\"Customer\"}},\"insert\":{\"id\":\"reseller.customers.insert\",\"path\":\"cus" +
+            "tomers\",\"httpMethod\":\"POST\",\"description\":\"Creates a customer resource if one do" +
+            "es not already exist.\",\"parameters\":{\"customerAuthToken\":{\"type\":\"string\",\"descr" +
+            "iption\":\"An auth token needed for inserting a customer for which domain already " +
+            "exists. Can be generated at https://www.google.com/a/cpanel//TransferToken. Opti" +
+            "onal.\",\"location\":\"query\"}},\"request\":{\"$ref\":\"Customer\"},\"response\":{\"$ref\":\"Cu" +
+            "stomer\"}},\"patch\":{\"id\":\"reseller.customers.patch\",\"path\":\"customers/{customerId" +
+            "}\",\"httpMethod\":\"PATCH\",\"description\":\"Update a customer resource if one it exis" +
+            "ts and is owned by the reseller. This method supports patch semantics.\",\"paramet" +
+            "ers\":{\"customerId\":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"required" +
+            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\"],\"request\":{\"$ref\":\"Cu" +
+            "stomer\"},\"response\":{\"$ref\":\"Customer\"}},\"update\":{\"id\":\"reseller.customers.upda" +
+            "te\",\"path\":\"customers/{customerId}\",\"httpMethod\":\"PUT\",\"description\":\"Update a c" +
+            "ustomer resource if one it exists and is owned by the reseller.\",\"parameters\":{\"" +
+            "customerId\":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"required\":true," +
+            "\"location\":\"path\"}},\"parameterOrder\":[\"customerId\"],\"request\":{\"$ref\":\"Customer\"" +
+            "},\"response\":{\"$ref\":\"Customer\"}}}},\"subscriptions\":{\"methods\":{\"changePlan\":{\"i" +
+            "d\":\"reseller.subscriptions.changePlan\",\"path\":\"customers/{customerId}/subscripti" +
+            "ons/{subscriptionId}/changePlan\",\"httpMethod\":\"POST\",\"description\":\"Changes the " +
+            "plan of a subscription\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"description" +
+            "\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":{\"typ" +
+            "e\":\"string\",\"description\":\"Id of the subscription, which is unique for a custome" +
+            "r\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\",\"subscript" +
+            "ionId\"],\"request\":{\"$ref\":\"ChangePlanRequest\"},\"response\":{\"$ref\":\"Subscription\"" +
+            "}},\"changeRenewalSettings\":{\"id\":\"reseller.subscriptions.changeRenewalSettings\"," +
+            "\"path\":\"customers/{customerId}/subscriptions/{subscriptionId}/changeRenewalSetti" +
+            "ngs\",\"httpMethod\":\"POST\",\"description\":\"Changes the renewal settings of a subscr" +
+            "iption\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"description\":\"Id of the Cus" +
+            "tomer\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":{\"type\":\"string\",\"des" +
+            "cription\":\"Id of the subscription, which is unique for a customer\",\"required\":tr" +
+            "ue,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\",\"subscriptionId\"],\"request" +
+            "\":{\"$ref\":\"RenewalSettings\"},\"response\":{\"$ref\":\"Subscription\"}},\"changeSeats\":{" +
+            "\"id\":\"reseller.subscriptions.changeSeats\",\"path\":\"customers/{customerId}/subscri" +
+            "ptions/{subscriptionId}/changeSeats\",\"httpMethod\":\"POST\",\"description\":\"Changes " +
+            "the seats configuration of a subscription\",\"parameters\":{\"customerId\":{\"type\":\"s" +
+            "tring\",\"description\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"su" +
+            "bscriptionId\":{\"type\":\"string\",\"description\":\"Id of the subscription, which is u" +
+            "nique for a customer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"cus" +
+            "tomerId\",\"subscriptionId\"],\"request\":{\"$ref\":\"Seats\"},\"response\":{\"$ref\":\"Subscr" +
+            "iption\"}},\"delete\":{\"id\":\"reseller.subscriptions.delete\",\"path\":\"customers/{cust" +
+            "omerId}/subscriptions/{subscriptionId}\",\"httpMethod\":\"DELETE\",\"description\":\"Can" +
+            "cels/Downgrades a subscription.\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"de" +
+            "scription\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"deletionType" +
+            "\":{\"type\":\"string\",\"description\":\"Whether the subscription is to be fully cancel" +
+            "led or downgraded\",\"required\":true,\"enum\":[\"cancel\",\"downgrade\",\"suspend\"],\"enum" +
+            "Descriptions\":[\"Cancels the subscription immediately\",\"Downgrades a Google Apps " +
+            "for Business subscription to Google Apps\",\"Suspends the subscriptions for 4 days" +
+            " before cancelling it\"],\"location\":\"query\"},\"subscriptionId\":{\"type\":\"string\",\"d" +
+            "escription\":\"Id of the subscription, which is unique for a customer\",\"required\":" +
+            "true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\",\"subscriptionId\",\"deleti" +
+            "onType\"]},\"get\":{\"id\":\"reseller.subscriptions.get\",\"path\":\"customers/{customerId" +
+            "}/subscriptions/{subscriptionId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a subsc" +
+            "ription of the customer.\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":{\"t" +
+            "ype\":\"string\",\"description\":\"Id of the subscription, which is unique for a custo" +
+            "mer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\",\"subscri" +
+            "ptionId\"],\"response\":{\"$ref\":\"Subscription\"}},\"insert\":{\"id\":\"reseller.subscript" +
+            "ions.insert\",\"path\":\"customers/{customerId}/subscriptions\",\"httpMethod\":\"POST\",\"" +
+            "description\":\"Creates/Transfers a subscription for the customer.\",\"parameters\":{" +
+            "\"customerAuthToken\":{\"type\":\"string\",\"description\":\"An auth token needed for tra" +
+            "nsferring a subscription. Can be generated at https://www.google.com/a/cpanel/cu" +
+            "stomer-domain/TransferToken. Optional.\",\"location\":\"query\"},\"customerId\":{\"type\"" +
+            ":\"string\",\"description\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"}}" +
+            ",\"parameterOrder\":[\"customerId\"],\"request\":{\"$ref\":\"Subscription\"},\"response\":{\"" +
+            "$ref\":\"Subscription\"}},\"list\":{\"id\":\"reseller.subscriptions.list\",\"path\":\"subscr" +
+            "iptions\",\"httpMethod\":\"GET\",\"description\":\"Lists subscriptions of a reseller, op" +
+            "tionally filtered by a customer name prefix.\",\"parameters\":{\"customerNamePrefix\"" +
+            ":{\"type\":\"string\",\"description\":\"Prefix of the customer\'s domain name by which t" +
+            "he subscriptions should be filtered. Optional\",\"location\":\"query\"},\"maxResults\":" +
+            "{\"type\":\"integer\",\"description\":\"Maximum number of results to return\",\"format\":\"" +
+            "uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"s" +
+            "tring\",\"description\":\"Token to specify next page in the list\",\"location\":\"query\"" +
+            "}},\"response\":{\"$ref\":\"Subscriptions\"}},\"startPaidService\":{\"id\":\"reseller.subsc" +
+            "riptions.startPaidService\",\"path\":\"customers/{customerId}/subscriptions/{subscri" +
+            "ptionId}/startPaidService\",\"httpMethod\":\"POST\",\"description\":\"Starts paid servic" +
+            "e of a trial subscription\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":{\"" +
+            "type\":\"string\",\"description\":\"Id of the subscription, which is unique for a cust" +
+            "omer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\",\"subscr" +
+            "iptionId\"],\"response\":{\"$ref\":\"Subscription\"}}}}}}";
         
         public const string Version = "v1";
         

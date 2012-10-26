@@ -565,175 +565,176 @@ namespace Google.Apis.Coordinate.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"coordinate:v1\"," +
-            "\"name\":\"coordinate\",\"version\":\"v1\",\"revision\":\"20121016\",\"title\":\"Google Maps Co" +
-            "ordinate API\",\"description\":\"Lets you view and manage jobs in a Coordinate team." +
-            "\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32" +
-            "\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink" +
-            "\":\"https://developers.google.com/coordinate/\",\"protocol\":\"rest\",\"baseUrl\":\"https" +
-            "://www.googleapis.com/coordinate/v1/teams/\",\"basePath\":\"/coordinate/v1/teams/\",\"" +
-            "rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"coordinate/v1/teams/\",\"bat" +
-            "chPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format " +
-            "for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Respons" +
-            "es with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":" +
-            "\"string\",\"description\":\"Selector specifying which fields to include in a partial" +
-            " response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Y" +
-            "our API key identifies your project and provides you with API access, quota, and" +
-            " reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"" +
-            "oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current use" +
-            "r.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns r" +
-            "esponse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"}" +
-            ",\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes" +
-            " for server-side applications. Can be any arbitrary string assigned to a user, b" +
-            "ut should not exceed 40 characters. Overrides userIp if both are provided.\",\"loc" +
-            "ation\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site " +
-            "where the request originates. Use this if you want to enforce per-user limits.\"," +
-            "\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/aut" +
-            "h/coordinate\":{\"description\":\"View and manage your Google Maps Coordinate jobs\"}" +
-            ",\"https://www.googleapis.com/auth/coordinate.readonly\":{\"description\":\"View your" +
-            " Google Coordinate jobs\"}}}},\"schemas\":{\"CustomField\":{\"id\":\"CustomField\",\"type\"" +
-            ":\"object\",\"description\":\"Custom field.\",\"properties\":{\"customFieldId\":{\"type\":\"s" +
-            "tring\",\"description\":\"Custom field id.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string" +
-            "\",\"description\":\"Identifies this object as a custom field.\",\"default\":\"coordinat" +
-            "e#customField\"},\"value\":{\"type\":\"string\",\"description\":\"Custom field value.\"}}}," +
-            "\"CustomFieldDef\":{\"id\":\"CustomFieldDef\",\"type\":\"object\",\"description\":\"Custom fi" +
-            "eld definition.\",\"properties\":{\"enabled\":{\"type\":\"boolean\",\"description\":\"Whethe" +
-            "r the field is enabled.\"},\"id\":{\"type\":\"string\",\"description\":\"Custom field id.\"" +
-            ",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object" +
-            " as a custom field definition.\",\"default\":\"coordinate#customFieldDef\"},\"name\":{\"" +
-            "type\":\"string\",\"description\":\"Custom field name.\"},\"requiredForCheckout\":{\"type\"" +
-            ":\"boolean\",\"description\":\"Whether the field is required for checkout.\"},\"type\":{" +
-            "\"type\":\"string\",\"description\":\"Custom field type.\"}}},\"CustomFieldDefListRespons" +
-            "e\":{\"id\":\"CustomFieldDefListResponse\",\"type\":\"object\",\"description\":\"Collection " +
-            "of custom field definitions for a team.\",\"properties\":{\"items\":{\"type\":\"array\",\"" +
-            "description\":\"Collection of custom field definitions in a team.\",\"items\":{\"$ref\"" +
-            ":\"CustomFieldDef\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this objec" +
-            "t as a collection of custom field definitions in a team.\",\"default\":\"coordinate#" +
-            "customFieldDefList\"}}},\"CustomFields\":{\"id\":\"CustomFields\",\"type\":\"object\",\"desc" +
-            "ription\":\"Collection of custom fields.\",\"properties\":{\"customField\":{\"type\":\"arr" +
-            "ay\",\"description\":\"Collection of custom fields.\",\"items\":{\"$ref\":\"CustomField\"}}" +
-            ",\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object as a collection o" +
-            "f custom fields.\",\"default\":\"coordinate#customFields\"}}},\"Job\":{\"id\":\"Job\",\"type" +
-            "\":\"object\",\"description\":\"A job.\",\"properties\":{\"id\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Job id.\",\"format\":\"uint64\"},\"jobChange\":{\"type\":\"array\",\"description\":\"List" +
-            " of job changes since it was created. The first change corresponds to the state " +
-            "of the job when it was created.\",\"items\":{\"$ref\":\"JobChange\"}},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Identifies this object as a job.\",\"default\":\"coordinate#jo" +
-            "b\"},\"state\":{\"$ref\":\"JobState\",\"description\":\"Current job state.\"}}},\"JobChange\"" +
-            ":{\"id\":\"JobChange\",\"type\":\"object\",\"description\":\"Change to a job. For example a" +
-            "ssigning the job to a different worker.\",\"properties\":{\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"Identifies this object as a job change.\",\"default\":\"coordinate#job" +
-            "Change\"},\"state\":{\"$ref\":\"JobState\",\"description\":\"Change applied to the job. On" +
-            "ly the fields that were changed are set.\"},\"timestamp\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Time at which this change was applied.\",\"format\":\"uint64\"}}},\"JobListResp" +
-            "onse\":{\"id\":\"JobListResponse\",\"type\":\"object\",\"description\":\"Response from a Lis" +
-            "t Jobs request.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Jobs in th" +
-            "e collection.\",\"items\":{\"$ref\":\"Job\"}},\"kind\":{\"type\":\"string\",\"description\":\"Id" +
-            "entifies this object as a list of jobs.\",\"default\":\"coordinate#jobList\"},\"nextPa" +
-            "geToken\":{\"type\":\"string\",\"description\":\"A token to provide to get the next page" +
-            " of results.\"}}},\"JobState\":{\"id\":\"JobState\",\"type\":\"object\",\"description\":\"Curr" +
-            "ent state of a job.\",\"properties\":{\"assignee\":{\"type\":\"string\",\"description\":\"Em" +
-            "ail address of the assignee.\"},\"customFields\":{\"$ref\":\"CustomFields\",\"descriptio" +
-            "n\":\"Custom fields.\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer nam" +
-            "e.\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer phone number" +
-            ".\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object as a job state" +
-            ".\",\"default\":\"coordinate#jobState\"},\"location\":{\"$ref\":\"Location\",\"description\":" +
-            "\"Job location.\"},\"note\":{\"type\":\"array\",\"description\":\"Note added to the job.\",\"" +
-            "items\":{\"type\":\"string\"}},\"progress\":{\"type\":\"string\",\"description\":\"Job progres" +
-            "s.\"},\"title\":{\"type\":\"string\",\"description\":\"Job title.\"}}},\"Location\":{\"id\":\"Lo" +
-            "cation\",\"type\":\"object\",\"description\":\"Location of a job.\",\"properties\":{\"addres" +
-            "sLine\":{\"type\":\"array\",\"description\":\"Address.\",\"items\":{\"type\":\"string\"}},\"kind" +
-            "\":{\"type\":\"string\",\"description\":\"Identifies this object as a location.\",\"defaul" +
-            "t\":\"coordinate#location\"},\"lat\":{\"type\":\"number\",\"description\":\"Latitude.\",\"form" +
-            "at\":\"double\"},\"lng\":{\"type\":\"number\",\"description\":\"Longitude.\",\"format\":\"double" +
-            "\"}}}},\"resources\":{\"customFieldDef\":{\"methods\":{\"list\":{\"id\":\"coordinate.customF" +
-            "ieldDef.list\",\"path\":\"{teamId}/custom_fields\",\"httpMethod\":\"GET\",\"description\":\"" +
-            "Retrieves a list of custom field definitions for a team.\",\"parameters\":{\"teamId\"" +
-            ":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"teamId\"],\"response\":{\"$ref\":\"CustomFieldDefListResponse\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/coordinate\",\"https://www.googleapis.com/au" +
-            "th/coordinate.readonly\"]}}},\"jobs\":{\"methods\":{\"get\":{\"id\":\"coordinate.jobs.get\"" +
-            ",\"path\":\"{teamId}/jobs/{jobId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a jo" +
-            "b, including all the changes made to the job.\",\"parameters\":{\"jobId\":{\"type\":\"st" +
-            "ring\",\"description\":\"Job number\",\"required\":true,\"format\":\"uint64\",\"location\":\"p" +
-            "ath\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"response\":{\"$ref\":\"Job\"},\"scope" +
-            "s\":[\"https://www.googleapis.com/auth/coordinate\",\"https://www.googleapis.com/aut" +
-            "h/coordinate.readonly\"]},\"insert\":{\"id\":\"coordinate.jobs.insert\",\"path\":\"{teamId" +
-            "}/jobs\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new job. Only the state fie" +
-            "ld of the job should be set.\",\"parameters\":{\"address\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Job address as newline (Unix) separated string\",\"required\":true,\"location\"" +
-            ":\"query\"},\"assignee\":{\"type\":\"string\",\"description\":\"Assignee email address, or " +
-            "empty string to unassign.\",\"location\":\"query\"},\"customField\":{\"type\":\"string\",\"d" +
-            "escription\":\"Map from custom field id (from /team//custom_fields) to the field v" +
-            "alue. For example \'123=Alice\'\",\"repeated\":true,\"location\":\"query\"},\"customerName" +
-            "\":{\"type\":\"string\",\"description\":\"Customer name\",\"location\":\"query\"},\"customerPh" +
-            "oneNumber\":{\"type\":\"string\",\"description\":\"Customer phone number\",\"location\":\"qu" +
-            "ery\"},\"lat\":{\"type\":\"number\",\"description\":\"The latitude coordinate of this job\'" +
-            "s location.\",\"required\":true,\"format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\"" +
-            ":\"number\",\"description\":\"The longitude coordinate of this job\'s location.\",\"requ" +
-            "ired\":true,\"format\":\"double\",\"location\":\"query\"},\"note\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Job note as newline (Unix) separated string\",\"location\":\"query\"},\"teamId" +
-            "\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"},\"t" +
-            "itle\":{\"type\":\"string\",\"description\":\"Job title\",\"required\":true,\"location\":\"que" +
-            "ry\"}},\"parameterOrder\":[\"teamId\",\"address\",\"lat\",\"lng\",\"title\"],\"request\":{\"$ref" +
-            "\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/co" +
-            "ordinate\"]},\"list\":{\"id\":\"coordinate.jobs.list\",\"path\":\"{teamId}/jobs\",\"httpMeth" +
-            "od\":\"GET\",\"description\":\"Retrieves jobs created or modified since the given time" +
-            "stamp.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numb" +
-            "er of results to return in one page.\",\"format\":\"uint32\",\"location\":\"query\"},\"min" +
-            "ModifiedTimestampMs\":{\"type\":\"string\",\"description\":\"Minimum time a job was modi" +
-            "fied in milliseconds since epoch.\",\"format\":\"uint64\",\"location\":\"query\"},\"pageTo" +
-            "ken\":{\"type\":\"string\",\"description\":\"Continuation token\",\"location\":\"query\"},\"te" +
-            "amId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"" +
-            "}},\"parameterOrder\":[\"teamId\"],\"response\":{\"$ref\":\"JobListResponse\"},\"scopes\":[\"" +
-            "https://www.googleapis.com/auth/coordinate\",\"https://www.googleapis.com/auth/coo" +
-            "rdinate.readonly\"]},\"patch\":{\"id\":\"coordinate.jobs.patch\",\"path\":\"{teamId}/jobs/" +
-            "{jobId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a job. Fields that are set " +
-            "in the job state will be updated. This method supports patch semantics.\",\"parame" +
-            "ters\":{\"address\":{\"type\":\"string\",\"description\":\"Job address as newline (Unix) s" +
-            "eparated string\",\"location\":\"query\"},\"assignee\":{\"type\":\"string\",\"description\":\"" +
-            "Assignee email address, or empty string to unassign.\",\"location\":\"query\"},\"custo" +
-            "mField\":{\"type\":\"string\",\"description\":\"Map from custom field id (from /team//cu" +
-            "stom_fields) to the field value. For example \'123=Alice\'\",\"repeated\":true,\"locat" +
-            "ion\":\"query\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name\",\"loc" +
-            "ation\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer p" +
-            "hone number\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job num" +
-            "ber\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"number\"" +
-            ",\"description\":\"The latitude coordinate of this job\'s location.\",\"format\":\"doubl" +
-            "e\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude coord" +
-            "inate of this job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"note\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Job note as newline (Unix) separated string\",\"locati" +
-            "on\":\"query\"},\"progress\":{\"type\":\"string\",\"description\":\"Job progress\",\"enum\":[\"C" +
-            "OMPLETED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescriptio" +
-            "ns\":[\"Completed\",\"In progress\",\"Not accepted\",\"Not started\",\"Obsolete\"],\"locatio" +
-            "n\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"l" +
-            "ocation\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job title\",\"location\":\"" +
-            "query\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"response\"" +
-            ":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/coordinate\"]},\"update" +
-            "\":{\"id\":\"coordinate.jobs.update\",\"path\":\"{teamId}/jobs/{jobId}\",\"httpMethod\":\"PU" +
-            "T\",\"description\":\"Updates a job. Fields that are set in the job state will be up" +
-            "dated.\",\"parameters\":{\"address\":{\"type\":\"string\",\"description\":\"Job address as n" +
-            "ewline (Unix) separated string\",\"location\":\"query\"},\"assignee\":{\"type\":\"string\"," +
-            "\"description\":\"Assignee email address, or empty string to unassign.\",\"location\":" +
-            "\"query\"},\"customField\":{\"type\":\"string\",\"description\":\"Map from custom field id " +
-            "(from /team//custom_fields) to the field value. For example \'123=Alice\'\",\"repeat" +
-            "ed\":true,\"location\":\"query\"},\"customerName\":{\"type\":\"string\",\"description\":\"Cust" +
-            "omer name\",\"location\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Customer phone number\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Job number\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{" +
-            "\"type\":\"number\",\"description\":\"The latitude coordinate of this job\'s location.\"," +
-            "\"format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The " +
-            "longitude coordinate of this job\'s location.\",\"format\":\"double\",\"location\":\"quer" +
-            "y\"},\"note\":{\"type\":\"string\",\"description\":\"Job note as newline (Unix) separated " +
-            "string\",\"location\":\"query\"},\"progress\":{\"type\":\"string\",\"description\":\"Job progr" +
-            "ess\",\"enum\":[\"COMPLETED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"]," +
-            "\"enumDescriptions\":[\"Completed\",\"In progress\",\"Not accepted\",\"Not started\",\"Obso" +
-            "lete\"],\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"re" +
-            "quired\":true,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job titl" +
-            "e\",\"location\":\"query\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"J" +
-            "ob\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/coordi" +
-            "nate\"]}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/Vs95H8U" +
+            "0NOHeh2UcF2XpiEnUkzU\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"coordinate:v1\",\"name\":\"coo" +
+            "rdinate\",\"version\":\"v1\",\"revision\":\"20121016\",\"title\":\"Google Maps Coordinate AP" +
+            "I\",\"description\":\"Lets you view and manage jobs in a Coordinate team.\",\"icons\":{" +
+            "\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://w" +
+            "ww.google.com/images/icons/product/search-32.gif\"},\"documentationLink\":\"https://" +
+            "developers.google.com/coordinate/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
+            "leapis.com/coordinate/v1/teams/\",\"basePath\":\"/coordinate/v1/teams/\",\"rootUrl\":\"h" +
+            "ttps://www.googleapis.com/\",\"servicePath\":\"coordinate/v1/teams/\",\"batchPath\":\"ba" +
+            "tch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the res" +
+            "ponse.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Con" +
+            "tent-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"d" +
+            "escription\":\"Selector specifying which fields to include in a partial response.\"" +
+            ",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key" +
+            " identifies your project and provides you with API access, quota, and reports. R" +
+            "equired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token" +
+            "\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"locati" +
+            "on\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response wit" +
+            "h indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser" +
+            "\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for server" +
+            "-side applications. Can be any arbitrary string assigned to a user, but should n" +
+            "ot exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"que" +
+            "ry\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the r" +
+            "equest originates. Use this if you want to enforce per-user limits.\",\"location\":" +
+            "\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/coordinat" +
+            "e\":{\"description\":\"View and manage your Google Maps Coordinate jobs\"},\"https://w" +
+            "ww.googleapis.com/auth/coordinate.readonly\":{\"description\":\"View your Google Coo" +
+            "rdinate jobs\"}}}},\"schemas\":{\"CustomField\":{\"id\":\"CustomField\",\"type\":\"object\",\"" +
+            "description\":\"Custom field.\",\"properties\":{\"customFieldId\":{\"type\":\"string\",\"des" +
+            "cription\":\"Custom field id.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Identifies this object as a custom field.\",\"default\":\"coordinate#customFie" +
+            "ld\"},\"value\":{\"type\":\"string\",\"description\":\"Custom field value.\"}}},\"CustomFiel" +
+            "dDef\":{\"id\":\"CustomFieldDef\",\"type\":\"object\",\"description\":\"Custom field definit" +
+            "ion.\",\"properties\":{\"enabled\":{\"type\":\"boolean\",\"description\":\"Whether the field" +
+            " is enabled.\"},\"id\":{\"type\":\"string\",\"description\":\"Custom field id.\",\"format\":\"" +
+            "int64\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object as a custo" +
+            "m field definition.\",\"default\":\"coordinate#customFieldDef\"},\"name\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Custom field name.\"},\"requiredForCheckout\":{\"type\":\"boolean\"," +
+            "\"description\":\"Whether the field is required for checkout.\"},\"type\":{\"type\":\"str" +
+            "ing\",\"description\":\"Custom field type.\"}}},\"CustomFieldDefListResponse\":{\"id\":\"C" +
+            "ustomFieldDefListResponse\",\"type\":\"object\",\"description\":\"Collection of custom f" +
+            "ield definitions for a team.\",\"properties\":{\"items\":{\"type\":\"array\",\"description" +
+            "\":\"Collection of custom field definitions in a team.\",\"items\":{\"$ref\":\"CustomFie" +
+            "ldDef\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object as a coll" +
+            "ection of custom field definitions in a team.\",\"default\":\"coordinate#customField" +
+            "DefList\"}}},\"CustomFields\":{\"id\":\"CustomFields\",\"type\":\"object\",\"description\":\"C" +
+            "ollection of custom fields.\",\"properties\":{\"customField\":{\"type\":\"array\",\"descri" +
+            "ption\":\"Collection of custom fields.\",\"items\":{\"$ref\":\"CustomField\"}},\"kind\":{\"t" +
+            "ype\":\"string\",\"description\":\"Identifies this object as a collection of custom fi" +
+            "elds.\",\"default\":\"coordinate#customFields\"}}},\"Job\":{\"id\":\"Job\",\"type\":\"object\"," +
+            "\"description\":\"A job.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Job id" +
+            ".\",\"format\":\"uint64\"},\"jobChange\":{\"type\":\"array\",\"description\":\"List of job cha" +
+            "nges since it was created. The first change corresponds to the state of the job " +
+            "when it was created.\",\"items\":{\"$ref\":\"JobChange\"}},\"kind\":{\"type\":\"string\",\"des" +
+            "cription\":\"Identifies this object as a job.\",\"default\":\"coordinate#job\"},\"state\"" +
+            ":{\"$ref\":\"JobState\",\"description\":\"Current job state.\"}}},\"JobChange\":{\"id\":\"Job" +
+            "Change\",\"type\":\"object\",\"description\":\"Change to a job. For example assigning th" +
+            "e job to a different worker.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description" +
+            "\":\"Identifies this object as a job change.\",\"default\":\"coordinate#jobChange\"},\"s" +
+            "tate\":{\"$ref\":\"JobState\",\"description\":\"Change applied to the job. Only the fiel" +
+            "ds that were changed are set.\"},\"timestamp\":{\"type\":\"string\",\"description\":\"Time" +
+            " at which this change was applied.\",\"format\":\"uint64\"}}},\"JobListResponse\":{\"id\"" +
+            ":\"JobListResponse\",\"type\":\"object\",\"description\":\"Response from a List Jobs requ" +
+            "est.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Jobs in the collectio" +
+            "n.\",\"items\":{\"$ref\":\"Job\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies th" +
+            "is object as a list of jobs.\",\"default\":\"coordinate#jobList\"},\"nextPageToken\":{\"" +
+            "type\":\"string\",\"description\":\"A token to provide to get the next page of results" +
+            ".\"}}},\"JobState\":{\"id\":\"JobState\",\"type\":\"object\",\"description\":\"Current state o" +
+            "f a job.\",\"properties\":{\"assignee\":{\"type\":\"string\",\"description\":\"Email address" +
+            " of the assignee.\"},\"customFields\":{\"$ref\":\"CustomFields\",\"description\":\"Custom " +
+            "fields.\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name.\"},\"custo" +
+            "merPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer phone number.\"},\"kind\":" +
+            "{\"type\":\"string\",\"description\":\"Identifies this object as a job state.\",\"default" +
+            "\":\"coordinate#jobState\"},\"location\":{\"$ref\":\"Location\",\"description\":\"Job locati" +
+            "on.\"},\"note\":{\"type\":\"array\",\"description\":\"Note added to the job.\",\"items\":{\"ty" +
+            "pe\":\"string\"}},\"progress\":{\"type\":\"string\",\"description\":\"Job progress.\"},\"title" +
+            "\":{\"type\":\"string\",\"description\":\"Job title.\"}}},\"Location\":{\"id\":\"Location\",\"ty" +
+            "pe\":\"object\",\"description\":\"Location of a job.\",\"properties\":{\"addressLine\":{\"ty" +
+            "pe\":\"array\",\"description\":\"Address.\",\"items\":{\"type\":\"string\"}},\"kind\":{\"type\":\"" +
+            "string\",\"description\":\"Identifies this object as a location.\",\"default\":\"coordin" +
+            "ate#location\"},\"lat\":{\"type\":\"number\",\"description\":\"Latitude.\",\"format\":\"double" +
+            "\"},\"lng\":{\"type\":\"number\",\"description\":\"Longitude.\",\"format\":\"double\"}}}},\"reso" +
+            "urces\":{\"customFieldDef\":{\"methods\":{\"list\":{\"id\":\"coordinate.customFieldDef.lis" +
+            "t\",\"path\":\"{teamId}/custom_fields\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a" +
+            " list of custom field definitions for a team.\",\"parameters\":{\"teamId\":{\"type\":\"s" +
+            "tring\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
+            "er\":[\"teamId\"],\"response\":{\"$ref\":\"CustomFieldDefListResponse\"},\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/coordinate\",\"https://www.googleapis.com/auth/coordina" +
+            "te.readonly\"]}}},\"jobs\":{\"methods\":{\"get\":{\"id\":\"coordinate.jobs.get\",\"path\":\"{t" +
+            "eamId}/jobs/{jobId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a job, includin" +
+            "g all the changes made to the job.\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Job number\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"team" +
+            "Id\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"}}" +
+            ",\"parameterOrder\":[\"teamId\",\"jobId\"],\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/coordinate\",\"https://www.googleapis.com/auth/coordinat" +
+            "e.readonly\"]},\"insert\":{\"id\":\"coordinate.jobs.insert\",\"path\":\"{teamId}/jobs\",\"ht" +
+            "tpMethod\":\"POST\",\"description\":\"Inserts a new job. Only the state field of the j" +
+            "ob should be set.\",\"parameters\":{\"address\":{\"type\":\"string\",\"description\":\"Job a" +
+            "ddress as newline (Unix) separated string\",\"required\":true,\"location\":\"query\"},\"" +
+            "assignee\":{\"type\":\"string\",\"description\":\"Assignee email address, or empty strin" +
+            "g to unassign.\",\"location\":\"query\"},\"customField\":{\"type\":\"string\",\"description\"" +
+            ":\"Map from custom field id (from /team//custom_fields) to the field value. For e" +
+            "xample \'123=Alice\'\",\"repeated\":true,\"location\":\"query\"},\"customerName\":{\"type\":\"" +
+            "string\",\"description\":\"Customer name\",\"location\":\"query\"},\"customerPhoneNumber\":" +
+            "{\"type\":\"string\",\"description\":\"Customer phone number\",\"location\":\"query\"},\"lat\"" +
+            ":{\"type\":\"number\",\"description\":\"The latitude coordinate of this job\'s location." +
+            "\",\"required\":true,\"format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"" +
+            "description\":\"The longitude coordinate of this job\'s location.\",\"required\":true," +
+            "\"format\":\"double\",\"location\":\"query\"},\"note\":{\"type\":\"string\",\"description\":\"Job" +
+            " note as newline (Unix) separated string\",\"location\":\"query\"},\"teamId\":{\"type\":\"" +
+            "string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"},\"title\":{\"typ" +
+            "e\":\"string\",\"description\":\"Job title\",\"required\":true,\"location\":\"query\"}},\"para" +
+            "meterOrder\":[\"teamId\",\"address\",\"lat\",\"lng\",\"title\"],\"request\":{\"$ref\":\"Job\"},\"r" +
+            "esponse\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/coordinate\"]}" +
+            ",\"list\":{\"id\":\"coordinate.jobs.list\",\"path\":\"{teamId}/jobs\",\"httpMethod\":\"GET\",\"" +
+            "description\":\"Retrieves jobs created or modified since the given timestamp.\",\"pa" +
+            "rameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of resul" +
+            "ts to return in one page.\",\"format\":\"uint32\",\"location\":\"query\"},\"minModifiedTim" +
+            "estampMs\":{\"type\":\"string\",\"description\":\"Minimum time a job was modified in mil" +
+            "liseconds since epoch.\",\"format\":\"uint64\",\"location\":\"query\"},\"pageToken\":{\"type" +
+            "\":\"string\",\"description\":\"Continuation token\",\"location\":\"query\"},\"teamId\":{\"typ" +
+            "e\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"teamId\"],\"response\":{\"$ref\":\"JobListResponse\"},\"scopes\":[\"https://www" +
+            ".googleapis.com/auth/coordinate\",\"https://www.googleapis.com/auth/coordinate.rea" +
+            "donly\"]},\"patch\":{\"id\":\"coordinate.jobs.patch\",\"path\":\"{teamId}/jobs/{jobId}\",\"h" +
+            "ttpMethod\":\"PATCH\",\"description\":\"Updates a job. Fields that are set in the job " +
+            "state will be updated. This method supports patch semantics.\",\"parameters\":{\"add" +
+            "ress\":{\"type\":\"string\",\"description\":\"Job address as newline (Unix) separated st" +
+            "ring\",\"location\":\"query\"},\"assignee\":{\"type\":\"string\",\"description\":\"Assignee em" +
+            "ail address, or empty string to unassign.\",\"location\":\"query\"},\"customField\":{\"t" +
+            "ype\":\"string\",\"description\":\"Map from custom field id (from /team//custom_fields" +
+            ") to the field value. For example \'123=Alice\'\",\"repeated\":true,\"location\":\"query" +
+            "\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name\",\"location\":\"que" +
+            "ry\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer phone number" +
+            "\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job number\",\"requi" +
+            "red\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"number\",\"descripti" +
+            "on\":\"The latitude coordinate of this job\'s location.\",\"format\":\"double\",\"locatio" +
+            "n\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude coordinate of th" +
+            "is job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"note\":{\"type\":\"string" +
+            "\",\"description\":\"Job note as newline (Unix) separated string\",\"location\":\"query\"" +
+            "},\"progress\":{\"type\":\"string\",\"description\":\"Job progress\",\"enum\":[\"COMPLETED\",\"" +
+            "IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescriptions\":[\"Compl" +
+            "eted\",\"In progress\",\"Not accepted\",\"Not started\",\"Obsolete\"],\"location\":\"query\"}" +
+            ",\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"p" +
+            "ath\"},\"title\":{\"type\":\"string\",\"description\":\"Job title\",\"location\":\"query\"}},\"p" +
+            "arameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"J" +
+            "ob\"},\"scopes\":[\"https://www.googleapis.com/auth/coordinate\"]},\"update\":{\"id\":\"co" +
+            "ordinate.jobs.update\",\"path\":\"{teamId}/jobs/{jobId}\",\"httpMethod\":\"PUT\",\"descrip" +
+            "tion\":\"Updates a job. Fields that are set in the job state will be updated.\",\"pa" +
+            "rameters\":{\"address\":{\"type\":\"string\",\"description\":\"Job address as newline (Uni" +
+            "x) separated string\",\"location\":\"query\"},\"assignee\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Assignee email address, or empty string to unassign.\",\"location\":\"query\"},\"c" +
+            "ustomField\":{\"type\":\"string\",\"description\":\"Map from custom field id (from /team" +
+            "//custom_fields) to the field value. For example \'123=Alice\'\",\"repeated\":true,\"l" +
+            "ocation\":\"query\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name\"," +
+            "\"location\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Custom" +
+            "er phone number\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job" +
+            " number\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"num" +
+            "ber\",\"description\":\"The latitude coordinate of this job\'s location.\",\"format\":\"d" +
+            "ouble\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude c" +
+            "oordinate of this job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"note\":" +
+            "{\"type\":\"string\",\"description\":\"Job note as newline (Unix) separated string\",\"lo" +
+            "cation\":\"query\"},\"progress\":{\"type\":\"string\",\"description\":\"Job progress\",\"enum\"" +
+            ":[\"COMPLETED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescri" +
+            "ptions\":[\"Completed\",\"In progress\",\"Not accepted\",\"Not started\",\"Obsolete\"],\"loc" +
+            "ation\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":tru" +
+            "e,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job title\",\"locatio" +
+            "n\":\"query\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"respo" +
+            "nse\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/coordinate\"]}}}}}" +
+            "";
         
         public const string Version = "v1";
         

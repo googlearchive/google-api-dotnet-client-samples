@@ -658,171 +658,172 @@ namespace Google.Apis.Adexchangebuyer.v1_1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"adexchangebuyer" +
-            ":v1.1\",\"name\":\"adexchangebuyer\",\"version\":\"v1.1\",\"revision\":\"20120718\",\"title\":\"" +
-            "Ad Exchange Buyer API\",\"description\":\"Lets you manage your Ad Exchange Buyer acc" +
-            "ount.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/doubleclick-16" +
-            ".gif\",\"x32\":\"http://www.google.com/images/icons/product/doubleclick-32.gif\"},\"do" +
-            "cumentationLink\":\"https://developers.google.com/ad-exchange/buyer-rest\",\"protoco" +
-            "l\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/adexchangebuyer/v1.1/\",\"basePath" +
-            "\":\"/adexchangebuyer/v1.1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\"" +
-            ":\"adexchangebuyer/v1.1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string" +
-            "\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"]" +
-            ",\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"locatio" +
-            "n\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which f" +
-            "ields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"stri" +
-            "ng\",\"description\":\"API key. Your API key identifies your project and provides yo" +
-            "u with API access, quota, and reports. Required unless you provide an OAuth 2.0 " +
-            "token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth " +
-            "2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"bool" +
-            "ean\",\"description\":\"Returns response with indentations and line breaks.\",\"defaul" +
-            "t\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Availa" +
-            "ble to use for quota purposes for server-side applications. Can be any arbitrary" +
-            " string assigned to a user, but should not exceed 40 characters. Overrides userI" +
-            "p if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"descript" +
-            "ion\":\"IP address of the site where the request originates. Use this if you want " +
-            "to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"h" +
-            "ttps://www.googleapis.com/auth/adexchange.buyer\":{\"description\":\"Manage your Ad " +
-            "Exchange buyer account configuration\"}}}},\"schemas\":{\"Account\":{\"id\":\"Account\",\"" +
-            "type\":\"object\",\"description\":\"Configuration data for an Ad Exchange buyer accoun" +
-            "t.\",\"properties\":{\"bidderLocation\":{\"type\":\"array\",\"description\":\"Your bidder lo" +
-            "cations that have distinct URLs.\",\"items\":{\"type\":\"object\",\"properties\":{\"maximu" +
-            "mQps\":{\"type\":\"integer\",\"description\":\"The maximum queries per second the Ad Exc" +
-            "hange will send.\",\"format\":\"int32\"},\"region\":{\"type\":\"string\",\"description\":\"The" +
-            " geographical region the Ad Exchange should send requests from. Only used by som" +
-            "e quota systems, but always setting the value is recommended. Allowed values:  \\" +
-            "n- ASIA \\n- EUROPE \\n- US_EAST \\n- US_WEST\"},\"url\":{\"type\":\"string\",\"description" +
-            "\":\"The URL to which the Ad Exchange will send bid requests.\"}}}},\"cookieMatching" +
-            "Nid\":{\"type\":\"string\",\"description\":\"The nid parameter value used in cookie matc" +
-            "h requests. Please contact your technical account manager if you need to change " +
-            "this.\"},\"cookieMatchingUrl\":{\"type\":\"string\",\"description\":\"The base URL used in" +
-            " cookie match requests.\"},\"id\":{\"type\":\"integer\",\"description\":\"Account id.\",\"fo" +
-            "rmat\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\":" +
-            "\"adexchangebuyer#account\"},\"maximumTotalQps\":{\"type\":\"integer\",\"description\":\"Th" +
-            "e sum of all bidderLocation.maximumQps values cannot exceed this. Please contact" +
-            " your technical account manager if you need to change this.\",\"format\":\"int32\"}}}" +
-            ",\"AccountsList\":{\"id\":\"AccountsList\",\"type\":\"object\",\"description\":\"An account f" +
-            "eed lists Ad Exchange buyer accounts that the user has access to. Each entry in " +
-            "the feed corresponds to a single buyer account.\",\"properties\":{\"items\":{\"type\":\"" +
-            "array\",\"description\":\"A list of accounts.\",\"items\":{\"$ref\":\"Account\"}},\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"Resource type.\",\"default\":\"adexchangebuyer#account" +
-            "sList\"}}},\"Creative\":{\"id\":\"Creative\",\"type\":\"object\",\"description\":\"A creative " +
-            "and its classification data.\",\"properties\":{\"HTMLSnippet\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The HTML snippet that displays the ad when inserted in the web page. I" +
-            "f set, videoURL should not be set.\"},\"accountId\":{\"type\":\"integer\",\"description\"" +
-            ":\"Account id.\",\"format\":\"int32\",\"annotations\":{\"required\":[\"adexchangebuyer.crea" +
-            "tives.insert\"]}},\"advertiserId\":{\"type\":\"array\",\"description\":\"Detected advertis" +
-            "er id, if any. Read-only. This field should not be set in requests.\",\"items\":{\"t" +
-            "ype\":\"string\",\"format\":\"int64\"}},\"advertiserName\":{\"type\":\"string\",\"description\"" +
-            ":\"The name of the company being advertised in the creative.\",\"annotations\":{\"req" +
-            "uired\":[\"adexchangebuyer.creatives.insert\"]}},\"attribute\":{\"type\":\"array\",\"descr" +
-            "iption\":\"All attributes for the ads that may be shown from this snippet.\",\"items" +
-            "\":{\"type\":\"integer\",\"format\":\"int32\"}},\"buyerCreativeId\":{\"type\":\"string\",\"descr" +
-            "iption\":\"A buyer-specific id identifying the creative in this ad.\",\"annotations\"" +
-            ":{\"required\":[\"adexchangebuyer.creatives.insert\"]}},\"clickThroughUrl\":{\"type\":\"a" +
-            "rray\",\"description\":\"The set of destination urls for the snippet.\",\"items\":{\"typ" +
-            "e\":\"string\"},\"annotations\":{\"required\":[\"adexchangebuyer.creatives.insert\"]}},\"d" +
-            "isapprovalReasons\":{\"type\":\"array\",\"description\":\"The reason for disapproval, if" +
-            " any. Note that not all disapproval reasons may be categorized, so it is possibl" +
-            "e for the creative to have a status of DISAPPROVED with an empty list for disapp" +
-            "roval_reasons. In this case, please reach out to your TAM to help debug the issu" +
-            "e. Read-only. This field should not be set in requests.\",\"items\":{\"type\":\"string" +
-            "\"}},\"height\":{\"type\":\"integer\",\"description\":\"Ad height.\",\"format\":\"int32\",\"anno" +
-            "tations\":{\"required\":[\"adexchangebuyer.creatives.insert\"]}},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Resource type.\",\"default\":\"adexchangebuyer#creative\"},\"produc" +
-            "tCategories\":{\"type\":\"array\",\"description\":\"Detected product categories, if any." +
-            " Read-only. This field should not be set in requests.\",\"items\":{\"type\":\"integer\"" +
-            ",\"format\":\"int32\"}},\"sensitiveCategories\":{\"type\":\"array\",\"description\":\"Detecte" +
-            "d sensitive categories, if any. Read-only. This field should not be set in reque" +
-            "sts.\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"status\":{\"type\":\"string\",\"de" +
-            "scription\":\"Creative serving status. Read-only. This field should not be set in " +
-            "requests.\"},\"vendorType\":{\"type\":\"array\",\"description\":\"All vendor types for the" +
-            " ads that may be shown from this snippet.\",\"items\":{\"type\":\"integer\",\"format\":\"i" +
-            "nt32\"}},\"videoURL\":{\"type\":\"string\",\"description\":\"The url to fetch a video ad. " +
-            "If set, HTMLSnippet should not be set.\"},\"width\":{\"type\":\"integer\",\"description\"" +
-            ":\"Ad width.\",\"format\":\"int32\",\"annotations\":{\"required\":[\"adexchangebuyer.creati" +
-            "ves.insert\"]}}}},\"CreativesList\":{\"id\":\"CreativesList\",\"type\":\"object\",\"descript" +
-            "ion\":\"The creatives feed lists the active creatives for the Ad Exchange buyer ac" +
-            "counts that the user has access to. Each entry in the feed corresponds to a sing" +
-            "le creative.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of cre" +
-            "atives.\",\"items\":{\"$ref\":\"Creative\"}},\"kind\":{\"type\":\"string\",\"description\":\"Res" +
-            "ource type.\",\"default\":\"adexchangebuyer#creativesList\"},\"nextPageToken\":{\"type\":" +
-            "\"string\",\"description\":\"Continuation token used to page through creatives. To re" +
-            "trieve the next page of results, set the next request\'s \\\"pageToken\\\" value to t" +
-            "his.\"}}},\"DirectDeal\":{\"id\":\"DirectDeal\",\"type\":\"object\",\"description\":\"The conf" +
-            "iguration data for an Ad Exchange direct deal.\",\"properties\":{\"accountId\":{\"type" +
-            "\":\"integer\",\"description\":\"The account id of the buyer this deal is for.\",\"forma" +
-            "t\":\"int32\"},\"advertiser\":{\"type\":\"string\",\"description\":\"The name of the adverti" +
-            "ser this deal is for.\"},\"currencyCode\":{\"type\":\"string\",\"description\":\"The curre" +
-            "ncy code that applies to the fixed_cpm value. If not set then assumed to be USD." +
-            "\"},\"endTime\":{\"type\":\"string\",\"description\":\"End time for when this deal stops b" +
-            "eing active. If not set then this deal is valid until manually disabled by the p" +
-            "ublisher. In seconds since the epoch.\",\"format\":\"int64\"},\"fixedCpm\":{\"type\":\"str" +
-            "ing\",\"description\":\"The fixed price for this direct deal. In cpm micros of curre" +
-            "ncy according to currency_code.\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Deal id.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"Resou" +
-            "rce type.\",\"default\":\"adexchangebuyer#directDeal\"},\"sellerNetwork\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The name of the publisher offering this direct deal.\"},\"start" +
-            "Time\":{\"type\":\"string\",\"description\":\"Start time for when this deal becomes acti" +
-            "ve. If not set then this deal is active immediately upon creation. In seconds si" +
-            "nce the epoch.\",\"format\":\"int64\"}}},\"DirectDealsList\":{\"id\":\"DirectDealsList\",\"t" +
-            "ype\":\"object\",\"description\":\"A direct deals feed lists Direct Deals the Ad Excha" +
-            "nge buyer account has access to. This includes direct deals set up for the buyer" +
-            " account as well as its merged stream seats.\",\"properties\":{\"directDeals\":{\"type" +
-            "\":\"array\",\"description\":\"A list of direct deals relevant for your account.\",\"ite" +
-            "ms\":{\"$ref\":\"DirectDeal\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource type." +
-            "\",\"default\":\"adexchangebuyer#directDealsList\"}}}},\"resources\":{\"accounts\":{\"meth" +
-            "ods\":{\"get\":{\"id\":\"adexchangebuyer.accounts.get\",\"path\":\"accounts/{id}\",\"httpMet" +
-            "hod\":\"GET\",\"description\":\"Gets one account by ID.\",\"parameters\":{\"id\":{\"type\":\"i" +
-            "nteger\",\"description\":\"The account id\",\"required\":true,\"format\":\"int32\",\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Account\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/adexchange.buyer\"]},\"list\":{\"id\":\"adexchangebuyer.a" +
-            "ccounts.list\",\"path\":\"accounts\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the " +
-            "authenticated user\'s list of accounts.\",\"response\":{\"$ref\":\"AccountsList\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/adexchange.buyer\"]},\"patch\":{\"id\":\"adexcha" +
-            "ngebuyer.accounts.patch\",\"path\":\"accounts/{id}\",\"httpMethod\":\"PATCH\",\"descriptio" +
-            "n\":\"Updates an existing account. This method supports patch semantics.\",\"paramet" +
-            "ers\":{\"id\":{\"type\":\"integer\",\"description\":\"The account id\",\"required\":true,\"for" +
-            "mat\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Acco" +
-            "unt\"},\"response\":{\"$ref\":\"Account\"},\"scopes\":[\"https://www.googleapis.com/auth/a" +
-            "dexchange.buyer\"]},\"update\":{\"id\":\"adexchangebuyer.accounts.update\",\"path\":\"acco" +
-            "unts/{id}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an existing account.\",\"para" +
-            "meters\":{\"id\":{\"type\":\"integer\",\"description\":\"The account id\",\"required\":true,\"" +
-            "format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"A" +
-            "ccount\"},\"response\":{\"$ref\":\"Account\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/adexchange.buyer\"]}}},\"creatives\":{\"methods\":{\"get\":{\"id\":\"adexchangebuyer.cre" +
-            "atives.get\",\"path\":\"creatives/{accountId}/{buyerCreativeId}\",\"httpMethod\":\"GET\"," +
-            "\"description\":\"Gets the status for a single creative.\",\"parameters\":{\"accountId\"" +
-            ":{\"type\":\"integer\",\"description\":\"The id for the account that will serve this cr" +
-            "eative.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"buyerCreativeId\":{" +
-            "\"type\":\"string\",\"description\":\"The buyer-specific id for this creative.\",\"requir" +
-            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"buyerCreativeId\"],\"r" +
-            "esponse\":{\"$ref\":\"Creative\"},\"scopes\":[\"https://www.googleapis.com/auth/adexchan" +
-            "ge.buyer\"]},\"insert\":{\"id\":\"adexchangebuyer.creatives.insert\",\"path\":\"creatives\"" +
-            ",\"httpMethod\":\"POST\",\"description\":\"Submit a new creative.\",\"request\":{\"$ref\":\"C" +
-            "reative\"},\"response\":{\"$ref\":\"Creative\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/adexchange.buyer\"]},\"list\":{\"id\":\"adexchangebuyer.creatives.list\",\"path\":\"cr" +
-            "eatives\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of the authenticated" +
-            " user\'s active creatives.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"Maximum number of entries returned on one result page. If not set, the de" +
-            "fault is 100. Optional.\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"locat" +
-            "ion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token, " +
-            "used to page through ad clients. To retrieve the next page, set this parameter t" +
-            "o the value of \\\"nextPageToken\\\" from the previous response. Optional.\",\"locatio" +
-            "n\":\"query\"},\"statusFilter\":{\"type\":\"string\",\"description\":\"When specified, only " +
-            "creatives having the given status are returned.\",\"enum\":[\"approved\",\"disapproved" +
-            "\",\"not_checked\"],\"enumDescriptions\":[\"Creatives which have been approved.\",\"Crea" +
-            "tives which have been disapproved.\",\"Creatives whose status is not yet checked.\"" +
-            "],\"location\":\"query\"}},\"response\":{\"$ref\":\"CreativesList\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/adexchange.buyer\"]}}},\"directDeals\":{\"methods\":{\"get\":{\"id" +
-            "\":\"adexchangebuyer.directDeals.get\",\"path\":\"directdeals/{id}\",\"httpMethod\":\"GET\"" +
-            ",\"description\":\"Gets one direct deal by ID.\",\"parameters\":{\"id\":{\"type\":\"string\"" +
-            ",\"description\":\"The direct deal id\",\"required\":true,\"format\":\"int64\",\"location\":" +
-            "\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"DirectDeal\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/adexchange.buyer\"]},\"list\":{\"id\":\"adexchangebuyer.d" +
-            "irectDeals.list\",\"path\":\"directdeals\",\"httpMethod\":\"GET\",\"description\":\"Retrieve" +
-            "s the authenticated user\'s list of direct deals.\",\"response\":{\"$ref\":\"DirectDeal" +
-            "sList\"},\"scopes\":[\"https://www.googleapis.com/auth/adexchange.buyer\"]}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/Lo3rgHb" +
+            "bJX8N-wB3Jaq1gHcQ2P0\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"adexchangebuyer:v1.1\",\"nam" +
+            "e\":\"adexchangebuyer\",\"version\":\"v1.1\",\"revision\":\"20120718\",\"title\":\"Ad Exchange" +
+            " Buyer API\",\"description\":\"Lets you manage your Ad Exchange Buyer account.\",\"ico" +
+            "ns\":{\"x16\":\"http://www.google.com/images/icons/product/doubleclick-16.gif\",\"x32\"" +
+            ":\"http://www.google.com/images/icons/product/doubleclick-32.gif\"},\"documentation" +
+            "Link\":\"https://developers.google.com/ad-exchange/buyer-rest\",\"protocol\":\"rest\",\"" +
+            "baseUrl\":\"https://www.googleapis.com/adexchangebuyer/v1.1/\",\"basePath\":\"/adexcha" +
+            "ngebuyer/v1.1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"adexchang" +
+            "ebuyer/v1.1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescr" +
+            "iptions\":[\"Responses with Content-Type of application/json\"],\"location\":\"query\"}" +
+            ",\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to in" +
+            "clude in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"descri" +
+            "ption\":\"API key. Your API key identifies your project and provides you with API " +
+            "access, quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"lo" +
+            "cation\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token f" +
+            "or the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"descr" +
+            "iption\":\"Returns response with indentations and line breaks.\",\"default\":\"true\",\"" +
+            "location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use " +
+            "for quota purposes for server-side applications. Can be any arbitrary string ass" +
+            "igned to a user, but should not exceed 40 characters. Overrides userIp if both a" +
+            "re provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP ad" +
+            "dress of the site where the request originates. Use this if you want to enforce " +
+            "per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www." +
+            "googleapis.com/auth/adexchange.buyer\":{\"description\":\"Manage your Ad Exchange bu" +
+            "yer account configuration\"}}}},\"schemas\":{\"Account\":{\"id\":\"Account\",\"type\":\"obje" +
+            "ct\",\"description\":\"Configuration data for an Ad Exchange buyer account.\",\"proper" +
+            "ties\":{\"bidderLocation\":{\"type\":\"array\",\"description\":\"Your bidder locations tha" +
+            "t have distinct URLs.\",\"items\":{\"type\":\"object\",\"properties\":{\"maximumQps\":{\"typ" +
+            "e\":\"integer\",\"description\":\"The maximum queries per second the Ad Exchange will " +
+            "send.\",\"format\":\"int32\"},\"region\":{\"type\":\"string\",\"description\":\"The geographic" +
+            "al region the Ad Exchange should send requests from. Only used by some quota sys" +
+            "tems, but always setting the value is recommended. Allowed values:  \\n- ASIA \\n-" +
+            " EUROPE \\n- US_EAST \\n- US_WEST\"},\"url\":{\"type\":\"string\",\"description\":\"The URL " +
+            "to which the Ad Exchange will send bid requests.\"}}}},\"cookieMatchingNid\":{\"type" +
+            "\":\"string\",\"description\":\"The nid parameter value used in cookie match requests." +
+            " Please contact your technical account manager if you need to change this.\"},\"co" +
+            "okieMatchingUrl\":{\"type\":\"string\",\"description\":\"The base URL used in cookie mat" +
+            "ch requests.\"},\"id\":{\"type\":\"integer\",\"description\":\"Account id.\",\"format\":\"int3" +
+            "2\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\":\"adexchange" +
+            "buyer#account\"},\"maximumTotalQps\":{\"type\":\"integer\",\"description\":\"The sum of al" +
+            "l bidderLocation.maximumQps values cannot exceed this. Please contact your techn" +
+            "ical account manager if you need to change this.\",\"format\":\"int32\"}}},\"AccountsL" +
+            "ist\":{\"id\":\"AccountsList\",\"type\":\"object\",\"description\":\"An account feed lists A" +
+            "d Exchange buyer accounts that the user has access to. Each entry in the feed co" +
+            "rresponds to a single buyer account.\",\"properties\":{\"items\":{\"type\":\"array\",\"des" +
+            "cription\":\"A list of accounts.\",\"items\":{\"$ref\":\"Account\"}},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Resource type.\",\"default\":\"adexchangebuyer#accountsList\"}}},\"" +
+            "Creative\":{\"id\":\"Creative\",\"type\":\"object\",\"description\":\"A creative and its cla" +
+            "ssification data.\",\"properties\":{\"HTMLSnippet\":{\"type\":\"string\",\"description\":\"T" +
+            "he HTML snippet that displays the ad when inserted in the web page. If set, vide" +
+            "oURL should not be set.\"},\"accountId\":{\"type\":\"integer\",\"description\":\"Account i" +
+            "d.\",\"format\":\"int32\",\"annotations\":{\"required\":[\"adexchangebuyer.creatives.inser" +
+            "t\"]}},\"advertiserId\":{\"type\":\"array\",\"description\":\"Detected advertiser id, if a" +
+            "ny. Read-only. This field should not be set in requests.\",\"items\":{\"type\":\"strin" +
+            "g\",\"format\":\"int64\"}},\"advertiserName\":{\"type\":\"string\",\"description\":\"The name " +
+            "of the company being advertised in the creative.\",\"annotations\":{\"required\":[\"ad" +
+            "exchangebuyer.creatives.insert\"]}},\"attribute\":{\"type\":\"array\",\"description\":\"Al" +
+            "l attributes for the ads that may be shown from this snippet.\",\"items\":{\"type\":\"" +
+            "integer\",\"format\":\"int32\"}},\"buyerCreativeId\":{\"type\":\"string\",\"description\":\"A " +
+            "buyer-specific id identifying the creative in this ad.\",\"annotations\":{\"required" +
+            "\":[\"adexchangebuyer.creatives.insert\"]}},\"clickThroughUrl\":{\"type\":\"array\",\"desc" +
+            "ription\":\"The set of destination urls for the snippet.\",\"items\":{\"type\":\"string\"" +
+            "},\"annotations\":{\"required\":[\"adexchangebuyer.creatives.insert\"]}},\"disapprovalR" +
+            "easons\":{\"type\":\"array\",\"description\":\"The reason for disapproval, if any. Note " +
+            "that not all disapproval reasons may be categorized, so it is possible for the c" +
+            "reative to have a status of DISAPPROVED with an empty list for disapproval_reaso" +
+            "ns. In this case, please reach out to your TAM to help debug the issue. Read-onl" +
+            "y. This field should not be set in requests.\",\"items\":{\"type\":\"string\"}},\"height" +
+            "\":{\"type\":\"integer\",\"description\":\"Ad height.\",\"format\":\"int32\",\"annotations\":{\"" +
+            "required\":[\"adexchangebuyer.creatives.insert\"]}},\"kind\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Resource type.\",\"default\":\"adexchangebuyer#creative\"},\"productCategories" +
+            "\":{\"type\":\"array\",\"description\":\"Detected product categories, if any. Read-only." +
+            " This field should not be set in requests.\",\"items\":{\"type\":\"integer\",\"format\":\"" +
+            "int32\"}},\"sensitiveCategories\":{\"type\":\"array\",\"description\":\"Detected sensitive" +
+            " categories, if any. Read-only. This field should not be set in requests.\",\"item" +
+            "s\":{\"type\":\"integer\",\"format\":\"int32\"}},\"status\":{\"type\":\"string\",\"description\":" +
+            "\"Creative serving status. Read-only. This field should not be set in requests.\"}" +
+            ",\"vendorType\":{\"type\":\"array\",\"description\":\"All vendor types for the ads that m" +
+            "ay be shown from this snippet.\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"vi" +
+            "deoURL\":{\"type\":\"string\",\"description\":\"The url to fetch a video ad. If set, HTM" +
+            "LSnippet should not be set.\"},\"width\":{\"type\":\"integer\",\"description\":\"Ad width." +
+            "\",\"format\":\"int32\",\"annotations\":{\"required\":[\"adexchangebuyer.creatives.insert\"" +
+            "]}}}},\"CreativesList\":{\"id\":\"CreativesList\",\"type\":\"object\",\"description\":\"The c" +
+            "reatives feed lists the active creatives for the Ad Exchange buyer accounts that" +
+            " the user has access to. Each entry in the feed corresponds to a single creative" +
+            ".\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of creatives.\",\"i" +
+            "tems\":{\"$ref\":\"Creative\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource type." +
+            "\",\"default\":\"adexchangebuyer#creativesList\"},\"nextPageToken\":{\"type\":\"string\",\"d" +
+            "escription\":\"Continuation token used to page through creatives. To retrieve the " +
+            "next page of results, set the next request\'s \\\"pageToken\\\" value to this.\"}}},\"D" +
+            "irectDeal\":{\"id\":\"DirectDeal\",\"type\":\"object\",\"description\":\"The configuration d" +
+            "ata for an Ad Exchange direct deal.\",\"properties\":{\"accountId\":{\"type\":\"integer\"" +
+            ",\"description\":\"The account id of the buyer this deal is for.\",\"format\":\"int32\"}" +
+            ",\"advertiser\":{\"type\":\"string\",\"description\":\"The name of the advertiser this de" +
+            "al is for.\"},\"currencyCode\":{\"type\":\"string\",\"description\":\"The currency code th" +
+            "at applies to the fixed_cpm value. If not set then assumed to be USD.\"},\"endTime" +
+            "\":{\"type\":\"string\",\"description\":\"End time for when this deal stops being active" +
+            ". If not set then this deal is valid until manually disabled by the publisher. I" +
+            "n seconds since the epoch.\",\"format\":\"int64\"},\"fixedCpm\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The fixed price for this direct deal. In cpm micros of currency accordi" +
+            "ng to currency_code.\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"description\":\"Dea" +
+            "l id.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\"," +
+            "\"default\":\"adexchangebuyer#directDeal\"},\"sellerNetwork\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The name of the publisher offering this direct deal.\"},\"startTime\":{\"typ" +
+            "e\":\"string\",\"description\":\"Start time for when this deal becomes active. If not " +
+            "set then this deal is active immediately upon creation. In seconds since the epo" +
+            "ch.\",\"format\":\"int64\"}}},\"DirectDealsList\":{\"id\":\"DirectDealsList\",\"type\":\"objec" +
+            "t\",\"description\":\"A direct deals feed lists Direct Deals the Ad Exchange buyer a" +
+            "ccount has access to. This includes direct deals set up for the buyer account as" +
+            " well as its merged stream seats.\",\"properties\":{\"directDeals\":{\"type\":\"array\",\"" +
+            "description\":\"A list of direct deals relevant for your account.\",\"items\":{\"$ref\"" +
+            ":\"DirectDeal\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\"" +
+            ":\"adexchangebuyer#directDealsList\"}}}},\"resources\":{\"accounts\":{\"methods\":{\"get\"" +
+            ":{\"id\":\"adexchangebuyer.accounts.get\",\"path\":\"accounts/{id}\",\"httpMethod\":\"GET\"," +
+            "\"description\":\"Gets one account by ID.\",\"parameters\":{\"id\":{\"type\":\"integer\",\"de" +
+            "scription\":\"The account id\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}}" +
+            ",\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Account\"},\"scopes\":[\"https://www.go" +
+            "ogleapis.com/auth/adexchange.buyer\"]},\"list\":{\"id\":\"adexchangebuyer.accounts.lis" +
+            "t\",\"path\":\"accounts\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the authenticat" +
+            "ed user\'s list of accounts.\",\"response\":{\"$ref\":\"AccountsList\"},\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/adexchange.buyer\"]},\"patch\":{\"id\":\"adexchangebuyer.ac" +
+            "counts.patch\",\"path\":\"accounts/{id}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates" +
+            " an existing account. This method supports patch semantics.\",\"parameters\":{\"id\":" +
+            "{\"type\":\"integer\",\"description\":\"The account id\",\"required\":true,\"format\":\"int32" +
+            "\",\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Account\"},\"resp" +
+            "onse\":{\"$ref\":\"Account\"},\"scopes\":[\"https://www.googleapis.com/auth/adexchange.b" +
+            "uyer\"]},\"update\":{\"id\":\"adexchangebuyer.accounts.update\",\"path\":\"accounts/{id}\"," +
+            "\"httpMethod\":\"PUT\",\"description\":\"Updates an existing account.\",\"parameters\":{\"i" +
+            "d\":{\"type\":\"integer\",\"description\":\"The account id\",\"required\":true,\"format\":\"in" +
+            "t32\",\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Account\"},\"r" +
+            "esponse\":{\"$ref\":\"Account\"},\"scopes\":[\"https://www.googleapis.com/auth/adexchang" +
+            "e.buyer\"]}}},\"creatives\":{\"methods\":{\"get\":{\"id\":\"adexchangebuyer.creatives.get\"" +
+            ",\"path\":\"creatives/{accountId}/{buyerCreativeId}\",\"httpMethod\":\"GET\",\"descriptio" +
+            "n\":\"Gets the status for a single creative.\",\"parameters\":{\"accountId\":{\"type\":\"i" +
+            "nteger\",\"description\":\"The id for the account that will serve this creative.\",\"r" +
+            "equired\":true,\"format\":\"int32\",\"location\":\"path\"},\"buyerCreativeId\":{\"type\":\"str" +
+            "ing\",\"description\":\"The buyer-specific id for this creative.\",\"required\":true,\"l" +
+            "ocation\":\"path\"}},\"parameterOrder\":[\"accountId\",\"buyerCreativeId\"],\"response\":{\"" +
+            "$ref\":\"Creative\"},\"scopes\":[\"https://www.googleapis.com/auth/adexchange.buyer\"]}" +
+            ",\"insert\":{\"id\":\"adexchangebuyer.creatives.insert\",\"path\":\"creatives\",\"httpMetho" +
+            "d\":\"POST\",\"description\":\"Submit a new creative.\",\"request\":{\"$ref\":\"Creative\"},\"" +
+            "response\":{\"$ref\":\"Creative\"},\"scopes\":[\"https://www.googleapis.com/auth/adexcha" +
+            "nge.buyer\"]},\"list\":{\"id\":\"adexchangebuyer.creatives.list\",\"path\":\"creatives\",\"h" +
+            "ttpMethod\":\"GET\",\"description\":\"Retrieves a list of the authenticated user\'s act" +
+            "ive creatives.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maxi" +
+            "mum number of entries returned on one result page. If not set, the default is 10" +
+            "0. Optional.\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location\":\"query" +
+            "\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token, used to pag" +
+            "e through ad clients. To retrieve the next page, set this parameter to the value" +
+            " of \\\"nextPageToken\\\" from the previous response. Optional.\",\"location\":\"query\"}" +
+            ",\"statusFilter\":{\"type\":\"string\",\"description\":\"When specified, only creatives h" +
+            "aving the given status are returned.\",\"enum\":[\"approved\",\"disapproved\",\"not_chec" +
+            "ked\"],\"enumDescriptions\":[\"Creatives which have been approved.\",\"Creatives which" +
+            " have been disapproved.\",\"Creatives whose status is not yet checked.\"],\"location" +
+            "\":\"query\"}},\"response\":{\"$ref\":\"CreativesList\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/adexchange.buyer\"]}}},\"directDeals\":{\"methods\":{\"get\":{\"id\":\"adexchan" +
+            "gebuyer.directDeals.get\",\"path\":\"directdeals/{id}\",\"httpMethod\":\"GET\",\"descripti" +
+            "on\":\"Gets one direct deal by ID.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The direct deal id\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"p" +
+            "arameterOrder\":[\"id\"],\"response\":{\"$ref\":\"DirectDeal\"},\"scopes\":[\"https://www.go" +
+            "ogleapis.com/auth/adexchange.buyer\"]},\"list\":{\"id\":\"adexchangebuyer.directDeals." +
+            "list\",\"path\":\"directdeals\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the authe" +
+            "nticated user\'s list of direct deals.\",\"response\":{\"$ref\":\"DirectDealsList\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/adexchange.buyer\"]}}}}}";
         
         public const string Version = "v1.1";
         

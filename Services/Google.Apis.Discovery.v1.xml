@@ -139,6 +139,9 @@
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.DocumentationLink">
             <summary>A link to human readable documentation for the API.</summary>
         </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.ETag">
+            <summary>The etag for this response.</summary>
+        </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Features">
             <summary>A list of supported features for this API.</summary>
         </member>

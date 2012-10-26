@@ -2981,673 +2981,674 @@ namespace Google.Apis.Orkut.v2 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"orkut:v2\",\"name" +
-            "\":\"orkut\",\"version\":\"v2\",\"revision\":\"20120223\",\"title\":\"Orkut API\",\"description\"" +
-            ":\"Lets you manage activities, comments and badges in Orkut. More stuff coming in" +
-            " time.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/orkut-16.png\"" +
-            ",\"x32\":\"http://www.google.com/images/icons/product/orkut-32.png\"},\"documentation" +
-            "Link\":\"http://code.google.com/apis/orkut/v2/reference.html\",\"protocol\":\"rest\",\"b" +
-            "aseUrl\":\"https://www.googleapis.com/orkut/v2/\",\"basePath\":\"/orkut/v2/\",\"rootUrl\"" +
-            ":\"https://www.googleapis.com/\",\"servicePath\":\"orkut/v2/\",\"batchPath\":\"batch\",\"pa" +
-            "rameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\"," +
-            "\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Typ" +
-            "e of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Selector specifying which fields to include in a partial response.\",\"locati" +
-            "on\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identif" +
-            "ies your project and provides you with API access, quota, and reports. Required " +
-            "unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type" +
-            "\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"que" +
-            "ry\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indent" +
-            "ations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type" +
-            "\":\"string\",\"description\":\"Available to use for quota purposes for server-side ap" +
-            "plications. Can be any arbitrary string assigned to a user, but should not excee" +
-            "d 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"us" +
-            "erIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request o" +
-            "riginates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}" +
-            "},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/orkut\":{\"descript" +
-            "ion\":\"Manage your Orkut activity\"},\"https://www.googleapis.com/auth/orkut.readon" +
-            "ly\":{\"description\":\"View your Orkut data\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type" +
-            "\":\"object\",\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"Human rea" +
-            "dable description of the access granted.\"},\"items\":{\"type\":\"array\",\"description\"" +
-            ":\"The list of ACL entries.\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":" +
-            "\"string\",\"description\":\"The ID of the entity. For entities of type \\\"person\\\" or" +
-            " \\\"circle\\\", this is the ID of the resource. For other types, this will be unset" +
-            ".\"},\"type\":{\"type\":\"string\",\"description\":\"The type of entity to whom access is " +
-            "granted.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as" +
-            " an access control list. Value: \\\"orkut#acl\\\"\",\"default\":\"orkut#acl\"},\"totalPart" +
-            "icipants\":{\"type\":\"integer\",\"description\":\"The total count of participants of th" +
-            "e parent resource.\",\"format\":\"int32\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"obje" +
-            "ct\",\"properties\":{\"access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has acces" +
-            "s to see this activity.\"},\"actor\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"T" +
-            "he person who performed the activity.\"},\"id\":{\"type\":\"string\",\"description\":\"The" +
-            " ID for the activity.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of activ" +
-            "ity. Always orkut#activity.\",\"default\":\"orkut#activity\"},\"links\":{\"type\":\"array\"" +
-            ",\"description\":\"Links to resources related to this activity.\",\"items\":{\"$ref\":\"O" +
-            "rkutLinkResource\"}},\"object\":{\"type\":\"object\",\"description\":\"The activity\'s obje" +
-            "ct.\",\"properties\":{\"content\":{\"type\":\"string\",\"description\":\"The HTML-formatted " +
-            "content, suitable for display. When updating an activity\'s content, post the cha" +
-            "nges to this property, using the value of originalContent as a starting point. I" +
-            "f the update is successful, the server adds HTML formatting and responds with th" +
-            "is formatted content.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of addit" +
-            "ional items.\",\"items\":{\"$ref\":\"OrkutActivityobjectsResource\"}},\"objectType\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The type of the object affected by the activity. Cli" +
-            "ents can use this information to style the rendered activity object differently " +
-            "depending on the content.\"},\"replies\":{\"type\":\"object\",\"description\":\"Comments i" +
-            "n reply to this activity.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"" +
-            "The list of comments.\",\"items\":{\"$ref\":\"Comment\"}},\"totalItems\":{\"type\":\"string\"" +
-            ",\"description\":\"Total number of comments.\",\"format\":\"uint64\"},\"url\":{\"type\":\"str" +
-            "ing\",\"description\":\"URL for the collection of comments in reply to this activity" +
-            ".\"}}}}},\"published\":{\"type\":\"string\",\"description\":\"The time at which the activi" +
-            "ty was initially published.\",\"format\":\"date-time\"},\"title\":{\"type\":\"string\",\"des" +
-            "cription\":\"Title of the activity.\"},\"updated\":{\"type\":\"string\",\"description\":\"Th" +
-            "e time at which the activity was last updated.\",\"format\":\"date-time\"},\"verb\":{\"t" +
-            "ype\":\"string\",\"description\":\"This activity\'s verb, indicating what action was pe" +
-            "rformed. Possible values are:  \\n- add - User added new content to profile or al" +
-            "bum, e.g. video, photo. \\n- post - User publish content to the stream, e.g. stat" +
-            "us, scrap. \\n- update - User commented on an activity. \\n- make-friend - User ad" +
-            "ded a new friend. \\n- birthday - User has a birthday.\"}}},\"ActivityList\":{\"id\":\"" +
-            "ActivityList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description" +
-            "\":\"List of activities retrieved.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Identifies this resource as a collection of activities. Va" +
-            "lue: \\\"orkut#activityList\\\"\",\"default\":\"orkut#activityList\"},\"nextPageToken\":{\"t" +
-            "ype\":\"string\",\"description\":\"The value of pageToken query parameter in activitie" +
-            "s.list request to get the next page, if there are more to retrieve.\"}}},\"Badge\":" +
-            "{\"id\":\"Badge\",\"type\":\"object\",\"properties\":{\"badgeLargeLogo\":{\"type\":\"string\",\"d" +
-            "escription\":\"The URL for the 64x64 badge logo.\"},\"badgeSmallLogo\":{\"type\":\"strin" +
-            "g\",\"description\":\"The URL for the 24x24 badge logo.\"},\"caption\":{\"type\":\"string\"" +
-            ",\"description\":\"The name of the badge, suitable for display.\"},\"description\":{\"t" +
-            "ype\":\"string\",\"description\":\"The description for the badge, suitable for display" +
-            ".\"},\"id\":{\"type\":\"string\",\"description\":\"The unique ID for the badge.\",\"format\":" +
-            "\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a ba" +
-            "dge. Value: \\\"orkut#badge\\\"\",\"default\":\"orkut#badge\"},\"sponsorLogo\":{\"type\":\"str" +
-            "ing\",\"description\":\"The URL for the 32x32 badge sponsor logo.\"},\"sponsorName\":{\"" +
-            "type\":\"string\",\"description\":\"The name of the badge sponsor, suitable for displa" +
-            "y.\"},\"sponsorUrl\":{\"type\":\"string\",\"description\":\"The URL for the badge sponsor." +
-            "\"}}},\"BadgeList\":{\"id\":\"BadgeList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\"" +
-            ":\"array\",\"description\":\"List of badges retrieved.\",\"items\":{\"$ref\":\"Badge\"}},\"ki" +
-            "nd\":{\"type\":\"string\",\"description\":\"Identifies this resource as a collection of " +
-            "badges. Value: \\\"orkut#badgeList\\\"\",\"default\":\"orkut#badgeList\"}}},\"Comment\":{\"i" +
-            "d\":\"Comment\",\"type\":\"object\",\"properties\":{\"actor\":{\"$ref\":\"OrkutAuthorResource\"" +
-            ",\"description\":\"The person who posted the comment.\"},\"content\":{\"type\":\"string\"," +
-            "\"description\":\"The content of the comment in text/html\"},\"id\":{\"type\":\"string\",\"" +
-            "description\":\"The unique ID for the comment.\"},\"inReplyTo\":{\"type\":\"object\",\"des" +
-            "cription\":\"Link to the original activity where this comment was posted.\",\"proper" +
-            "ties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the post on activity strea" +
-            "m being commented.\"},\"ref\":{\"type\":\"string\",\"description\":\"Unique identifier of " +
-            "the post on activity stream being commented.\"},\"rel\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Relationship between the comment and the post on activity stream being comm" +
-            "ented. Always inReplyTo.\",\"default\":\"inReplyTo\"},\"type\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Type of the post on activity stream being commented. Always text/html.\"}" +
-            "}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a comment." +
-            " Value: \\\"orkut#comment\\\"\",\"default\":\"orkut#comment\"},\"links\":{\"type\":\"array\",\"d" +
-            "escription\":\"List of resources for the comment.\",\"items\":{\"$ref\":\"OrkutLinkResou" +
-            "rce\"}},\"published\":{\"type\":\"string\",\"description\":\"The time the comment was init" +
-            "ially published, in RFC 3339 format.\",\"format\":\"date-time\"}}},\"CommentList\":{\"id" +
-            "\":\"CommentList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descripti" +
-            "on\":\"List of comments retrieved.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"st" +
-            "ring\",\"description\":\"Identifies this resource as a collection of comments. Value" +
-            ": \\\"orkut#commentList\\\"\",\"default\":\"orkut#commentList\"},\"nextPageToken\":{\"type\":" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/VfoS4eN" +
+            "XwnSLQSINLegXe2mt6L0\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"orkut:v2\",\"name\":\"orkut\",\"" +
+            "version\":\"v2\",\"revision\":\"20120223\",\"title\":\"Orkut API\",\"description\":\"Lets you " +
+            "manage activities, comments and badges in Orkut. More stuff coming in time.\",\"ic" +
+            "ons\":{\"x16\":\"http://www.google.com/images/icons/product/orkut-16.png\",\"x32\":\"htt" +
+            "p://www.google.com/images/icons/product/orkut-32.png\"},\"documentationLink\":\"http" +
+            "://code.google.com/apis/orkut/v2/reference.html\",\"protocol\":\"rest\",\"baseUrl\":\"ht" +
+            "tps://www.googleapis.com/orkut/v2/\",\"basePath\":\"/orkut/v2/\",\"rootUrl\":\"https://w" +
+            "ww.googleapis.com/\",\"servicePath\":\"orkut/v2/\",\"batchPath\":\"batch\",\"parameters\":{" +
+            "\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"" +
+            "json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applic" +
+            "ation/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Select" +
+            "or specifying which fields to include in a partial response.\",\"location\":\"query\"" +
+            "},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your pr" +
+            "oject and provides you with API access, quota, and reports. Required unless you " +
+            "provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\"," +
+            "\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prett" +
+            "yPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and " +
+            "line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\"," +
+            "\"description\":\"Available to use for quota purposes for server-side applications." +
+            " Can be any arbitrary string assigned to a user, but should not exceed 40 charac" +
+            "ters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"typ" +
+            "e\":\"string\",\"description\":\"IP address of the site where the request originates. " +
+            "Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"" +
+            "oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/orkut\":{\"description\":\"Manag" +
+            "e your Orkut activity\"},\"https://www.googleapis.com/auth/orkut.readonly\":{\"descr" +
+            "iption\":\"View your Orkut data\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"object\"," +
+            "\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"Human readable descr" +
+            "iption of the access granted.\"},\"items\":{\"type\":\"array\",\"description\":\"The list " +
+            "of ACL entries.\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"d" +
+            "escription\":\"The ID of the entity. For entities of type \\\"person\\\" or \\\"circle\\\"" +
+            ", this is the ID of the resource. For other types, this will be unset.\"},\"type\":" +
+            "{\"type\":\"string\",\"description\":\"The type of entity to whom access is granted.\"}}" +
+            "}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as an access " +
+            "control list. Value: \\\"orkut#acl\\\"\",\"default\":\"orkut#acl\"},\"totalParticipants\":{" +
+            "\"type\":\"integer\",\"description\":\"The total count of participants of the parent re" +
+            "source.\",\"format\":\"int32\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"object\",\"proper" +
+            "ties\":{\"access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has access to see th" +
+            "is activity.\"},\"actor\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The person w" +
+            "ho performed the activity.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID for the" +
+            " activity.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of activity. Always" +
+            " orkut#activity.\",\"default\":\"orkut#activity\"},\"links\":{\"type\":\"array\",\"descripti" +
+            "on\":\"Links to resources related to this activity.\",\"items\":{\"$ref\":\"OrkutLinkRes" +
+            "ource\"}},\"object\":{\"type\":\"object\",\"description\":\"The activity\'s object.\",\"prope" +
+            "rties\":{\"content\":{\"type\":\"string\",\"description\":\"The HTML-formatted content, su" +
+            "itable for display. When updating an activity\'s content, post the changes to thi" +
+            "s property, using the value of originalContent as a starting point. If the updat" +
+            "e is successful, the server adds HTML formatting and responds with this formatte" +
+            "d content.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of additional items" +
+            ".\",\"items\":{\"$ref\":\"OrkutActivityobjectsResource\"}},\"objectType\":{\"type\":\"string" +
+            "\",\"description\":\"The type of the object affected by the activity. Clients can us" +
+            "e this information to style the rendered activity object differently depending o" +
+            "n the content.\"},\"replies\":{\"type\":\"object\",\"description\":\"Comments in reply to " +
+            "this activity.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of" +
+            " comments.\",\"items\":{\"$ref\":\"Comment\"}},\"totalItems\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Total number of comments.\",\"format\":\"uint64\"},\"url\":{\"type\":\"string\",\"descr" +
+            "iption\":\"URL for the collection of comments in reply to this activity.\"}}}}},\"pu" +
+            "blished\":{\"type\":\"string\",\"description\":\"The time at which the activity was init" +
+            "ially published.\",\"format\":\"date-time\"},\"title\":{\"type\":\"string\",\"description\":\"" +
+            "Title of the activity.\"},\"updated\":{\"type\":\"string\",\"description\":\"The time at w" +
+            "hich the activity was last updated.\",\"format\":\"date-time\"},\"verb\":{\"type\":\"strin" +
+            "g\",\"description\":\"This activity\'s verb, indicating what action was performed. Po" +
+            "ssible values are:  \\n- add - User added new content to profile or album, e.g. v" +
+            "ideo, photo. \\n- post - User publish content to the stream, e.g. status, scrap. " +
+            "\\n- update - User commented on an activity. \\n- make-friend - User added a new f" +
+            "riend. \\n- birthday - User has a birthday.\"}}},\"ActivityList\":{\"id\":\"ActivityLis" +
+            "t\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of " +
+            "activities retrieved.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string\",\"des" +
+            "cription\":\"Identifies this resource as a collection of activities. Value: \\\"orku" +
+            "t#activityList\\\"\",\"default\":\"orkut#activityList\"},\"nextPageToken\":{\"type\":\"strin" +
+            "g\",\"description\":\"The value of pageToken query parameter in activities.list requ" +
+            "est to get the next page, if there are more to retrieve.\"}}},\"Badge\":{\"id\":\"Badg" +
+            "e\",\"type\":\"object\",\"properties\":{\"badgeLargeLogo\":{\"type\":\"string\",\"description\"" +
+            ":\"The URL for the 64x64 badge logo.\"},\"badgeSmallLogo\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The URL for the 24x24 badge logo.\"},\"caption\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The name of the badge, suitable for display.\"},\"description\":{\"type\":\"strin" +
+            "g\",\"description\":\"The description for the badge, suitable for display.\"},\"id\":{\"" +
+            "type\":\"string\",\"description\":\"The unique ID for the badge.\",\"format\":\"int64\"},\"k" +
+            "ind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a badge. Value:" +
+            " \\\"orkut#badge\\\"\",\"default\":\"orkut#badge\"},\"sponsorLogo\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The URL for the 32x32 badge sponsor logo.\"},\"sponsorName\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The name of the badge sponsor, suitable for display.\"},\"spons" +
+            "orUrl\":{\"type\":\"string\",\"description\":\"The URL for the badge sponsor.\"}}},\"Badge" +
+            "List\":{\"id\":\"BadgeList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"d" +
+            "escription\":\"List of badges retrieved.\",\"items\":{\"$ref\":\"Badge\"}},\"kind\":{\"type\"" +
+            ":\"string\",\"description\":\"Identifies this resource as a collection of badges. Val" +
+            "ue: \\\"orkut#badgeList\\\"\",\"default\":\"orkut#badgeList\"}}},\"Comment\":{\"id\":\"Comment" +
+            "\",\"type\":\"object\",\"properties\":{\"actor\":{\"$ref\":\"OrkutAuthorResource\",\"descripti" +
+            "on\":\"The person who posted the comment.\"},\"content\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The content of the comment in text/html\"},\"id\":{\"type\":\"string\",\"description" +
+            "\":\"The unique ID for the comment.\"},\"inReplyTo\":{\"type\":\"object\",\"description\":\"" +
+            "Link to the original activity where this comment was posted.\",\"properties\":{\"hre" +
+            "f\":{\"type\":\"string\",\"description\":\"Link to the post on activity stream being com" +
+            "mented.\"},\"ref\":{\"type\":\"string\",\"description\":\"Unique identifier of the post on" +
+            " activity stream being commented.\"},\"rel\":{\"type\":\"string\",\"description\":\"Relati" +
+            "onship between the comment and the post on activity stream being commented. Alwa" +
+            "ys inReplyTo.\",\"default\":\"inReplyTo\"},\"type\":{\"type\":\"string\",\"description\":\"Typ" +
+            "e of the post on activity stream being commented. Always text/html.\"}}},\"kind\":{" +
+            "\"type\":\"string\",\"description\":\"Identifies this resource as a comment. Value: \\\"o" +
+            "rkut#comment\\\"\",\"default\":\"orkut#comment\"},\"links\":{\"type\":\"array\",\"description\"" +
+            ":\"List of resources for the comment.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"pub" +
+            "lished\":{\"type\":\"string\",\"description\":\"The time the comment was initially publi" +
+            "shed, in RFC 3339 format.\",\"format\":\"date-time\"}}},\"CommentList\":{\"id\":\"CommentL" +
+            "ist\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List o" +
+            "f comments retrieved.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Identifies this resource as a collection of comments. Value: \\\"orkut#c" +
+            "ommentList\\\"\",\"default\":\"orkut#commentList\"},\"nextPageToken\":{\"type\":\"string\",\"d" +
+            "escription\":\"The value of pageToken query parameter in comments.list request to " +
+            "get the next page, if there are more to retrieve.\"},\"previousPageToken\":{\"type\":" +
             "\"string\",\"description\":\"The value of pageToken query parameter in comments.list " +
-            "request to get the next page, if there are more to retrieve.\"},\"previousPageToke" +
-            "n\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in com" +
-            "ments.list request to get the previous page, if there are more to retrieve.\"}}}," +
-            "\"Community\":{\"id\":\"Community\",\"type\":\"object\",\"properties\":{\"category\":{\"type\":\"" +
-            "string\",\"description\":\"The category of the community.\"},\"co_owners\":{\"type\":\"arr" +
-            "ay\",\"description\":\"The co-owners of the community.\",\"items\":{\"$ref\":\"OrkutAuthor" +
-            "Resource\"}},\"creation_date\":{\"type\":\"string\",\"description\":\"The time the communi" +
-            "ty was created, in RFC 3339 format.\",\"format\":\"date-time\"},\"description\":{\"type\"" +
-            ":\"string\",\"description\":\"The description of the community.\"},\"id\":{\"type\":\"integ" +
-            "er\",\"description\":\"The id of the community.\",\"format\":\"int32\"},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Identifies this resource as a community. Value: \\\"orkut#co" +
-            "mmunity\\\"\",\"default\":\"orkut#community\"},\"language\":{\"type\":\"string\",\"description" +
-            "\":\"The official language of the community.\"},\"links\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"List of resources for the community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}}," +
-            "\"location\":{\"type\":\"string\",\"description\":\"The location of the community.\"},\"mem" +
-            "ber_count\":{\"type\":\"integer\",\"description\":\"The number of users who are part of " +
-            "the community. This number may be approximate, so do not rely on it for iteratio" +
-            "n.\",\"format\":\"int32\"},\"moderators\":{\"type\":\"array\",\"description\":\"The list of mo" +
-            "derators of the community.\",\"items\":{\"$ref\":\"OrkutAuthorResource\"}},\"name\":{\"typ" +
-            "e\":\"string\",\"description\":\"The name of the community.\"},\"owner\":{\"$ref\":\"OrkutAu" +
-            "thorResource\",\"description\":\"The person who owns the community.\"},\"photo_url\":{\"" +
-            "type\":\"string\",\"description\":\"The photo of the community.\"}}},\"CommunityList\":{\"" +
-            "id\":\"CommunityList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descr" +
-            "iption\":\"List of communities retrieved.\",\"items\":{\"$ref\":\"Community\"}},\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"Identifies this resource as a collection of commun" +
-            "ities. Value: \\\"orkut#communityList\\\"\",\"default\":\"orkut#communityList\"}}},\"Commu" +
-            "nityMembers\":{\"id\":\"CommunityMembers\",\"type\":\"object\",\"properties\":{\"communityMe" +
-            "mbershipStatus\":{\"$ref\":\"CommunityMembershipStatus\",\"description\":\"Status and pe" +
-            "rmissions of the user related to the community.\"},\"kind\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Kind of this item. Always orkut#communityMembers.\",\"default\":\"orkut#com" +
-            "munityMembers\"},\"person\":{\"$ref\":\"OrkutActivitypersonResource\",\"description\":\"De" +
-            "scription of the community member.\"}}},\"CommunityMembersList\":{\"id\":\"CommunityMe" +
-            "mbersList\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The value of pageToken query parameter in community_members.list reque" +
-            "st to get the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of commu" +
-            "nity members retrieved.\",\"items\":{\"$ref\":\"CommunityMembers\"}},\"kind\":{\"type\":\"st" +
-            "ring\",\"description\":\"Kind of this item. Always orkut#communityMembersList.\",\"def" +
-            "ault\":\"orkut#communityMembersList\"},\"lastPageToken\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The value of pageToken query parameter in community_members.list request to " +
-            "get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The value o" +
-            "f pageToken query parameter in community_members.list request to get the next pa" +
-            "ge, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The value of pageToken query parameter in community_members.list request to" +
-            " get the previous page, if there are more to retrieve.\"}}},\"CommunityMembershipS" +
-            "tatus\":{\"id\":\"CommunityMembershipStatus\",\"type\":\"object\",\"properties\":{\"canCreat" +
-            "ePoll\":{\"type\":\"boolean\",\"description\":\"Whether the user can create a poll in th" +
-            "is community.\"},\"canCreateTopic\":{\"type\":\"boolean\",\"description\":\"Whether the us" +
-            "er can create a topic in this community.\"},\"canShout\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Whether the user can perform a shout operation in this community.\"},\"isCo" +
-            "Owner\":{\"type\":\"boolean\",\"description\":\"Whether the session user is a community " +
-            "co-owner.\"},\"isFollowing\":{\"type\":\"boolean\",\"description\":\"Whether the user is f" +
-            "ollowing this community.\"},\"isModerator\":{\"type\":\"boolean\",\"description\":\"Whethe" +
-            "r the session user is a community moderator.\"},\"isOwner\":{\"type\":\"boolean\",\"desc" +
-            "ription\":\"Whether the session user is the community owner.\"},\"isRestoreAvailable" +
-            "\":{\"type\":\"boolean\",\"description\":\"Whether the restore operation is available fo" +
-            "r the community.\"},\"isTakebackAvailable\":{\"type\":\"boolean\",\"description\":\"Whethe" +
-            "r the take-back operation is available for the community.\"},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Kind of this item. Always orkut#communityMembershipStatus.\",\"" +
-            "default\":\"orkut#communityMembershipStatus\"},\"status\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The status of the current link between the community and the user.\"}}},\"Com" +
-            "munityMessage\":{\"id\":\"CommunityMessage\",\"type\":\"object\",\"properties\":{\"addedDate" +
-            "\":{\"type\":\"string\",\"description\":\"The timestamp of the date when the message was" +
-            " added, in RFC 3339 format.\",\"format\":\"date-time\"},\"author\":{\"$ref\":\"OrkutAuthor" +
-            "Resource\",\"description\":\"The creator of the message. If ommited, the message is " +
-            "annonimous.\"},\"body\":{\"type\":\"string\",\"description\":\"The body of the message.\"}," +
-            "\"id\":{\"type\":\"string\",\"description\":\"The ID of the message.\",\"format\":\"int64\"},\"" +
-            "isSpam\":{\"type\":\"boolean\",\"description\":\"Whether this post was marked as spam by" +
-            " the viewer, when he/she is not the community owner or one of its moderators.\"}," +
-            "\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a community m" +
-            "essage. Value: \\\"orkut#communityMessage\\\"\",\"default\":\"orkut#communityMessage\"},\"" +
-            "links\":{\"type\":\"array\",\"description\":\"List of resources for the community messag" +
-            "e.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"subject\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The subject of the message.\"}}},\"CommunityMessageList\":{\"id\":\"CommunityMessa" +
-            "geList\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The value of pageToken query parameter in community_messages.list request" +
-            " to get the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of message" +
-            "s retrieved.\",\"items\":{\"$ref\":\"CommunityMessage\"}},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Identifies this resource as a collection of community messages. Value:" +
-            " \\\"orkut#communityMessageList\\\"\",\"default\":\"orkut#communityMessageList\"},\"lastPa" +
-            "geToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter " +
-            "in community_messages.list request to get the last page.\"},\"nextPageToken\":{\"typ" +
-            "e\":\"string\",\"description\":\"The value of pageToken query parameter in community_m" +
-            "essages.list request to get the next page, if there are more to retrieve.\"},\"pre" +
-            "vPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query paramet" +
-            "er in community_messages.list request to get the previous page, if there are mor" +
-            "e to retrieve.\"}}},\"CommunityPoll\":{\"id\":\"CommunityPoll\",\"type\":\"object\",\"proper" +
-            "ties\":{\"author\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The person who crea" +
-            "ted the poll.\"},\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the com" +
-            "munity.\",\"format\":\"int32\"},\"creationTime\":{\"type\":\"string\",\"description\":\"The da" +
-            "te of creation of this poll\",\"format\":\"date-time\"},\"description\":{\"type\":\"string" +
-            "\",\"description\":\"The poll description.\"},\"endingTime\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The ending date of this poll or empty if the poll doesn\'t have one.\",\"form" +
-            "at\":\"date-time\"},\"hasVoted\":{\"type\":\"boolean\",\"description\":\"Whether the user ha" +
-            "s voted on this poll.\"},\"id\":{\"type\":\"string\",\"description\":\"The poll ID.\"},\"ima" +
-            "ge\":{\"type\":\"object\",\"description\":\"The image representing the poll. Field is om" +
+            "request to get the previous page, if there are more to retrieve.\"}}},\"Community\"" +
+            ":{\"id\":\"Community\",\"type\":\"object\",\"properties\":{\"category\":{\"type\":\"string\",\"de" +
+            "scription\":\"The category of the community.\"},\"co_owners\":{\"type\":\"array\",\"descri" +
+            "ption\":\"The co-owners of the community.\",\"items\":{\"$ref\":\"OrkutAuthorResource\"}}" +
+            ",\"creation_date\":{\"type\":\"string\",\"description\":\"The time the community was crea" +
+            "ted, in RFC 3339 format.\",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"" +
+            "description\":\"The description of the community.\"},\"id\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"The id of the community.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"des" +
+            "cription\":\"Identifies this resource as a community. Value: \\\"orkut#community\\\"\"," +
+            "\"default\":\"orkut#community\"},\"language\":{\"type\":\"string\",\"description\":\"The offi" +
+            "cial language of the community.\"},\"links\":{\"type\":\"array\",\"description\":\"List of" +
+            " resources for the community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"location\":" +
+            "{\"type\":\"string\",\"description\":\"The location of the community.\"},\"member_count\":" +
+            "{\"type\":\"integer\",\"description\":\"The number of users who are part of the communi" +
+            "ty. This number may be approximate, so do not rely on it for iteration.\",\"format" +
+            "\":\"int32\"},\"moderators\":{\"type\":\"array\",\"description\":\"The list of moderators of" +
+            " the community.\",\"items\":{\"$ref\":\"OrkutAuthorResource\"}},\"name\":{\"type\":\"string\"" +
+            ",\"description\":\"The name of the community.\"},\"owner\":{\"$ref\":\"OrkutAuthorResourc" +
+            "e\",\"description\":\"The person who owns the community.\"},\"photo_url\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The photo of the community.\"}}},\"CommunityList\":{\"id\":\"Commun" +
+            "ityList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Li" +
+            "st of communities retrieved.\",\"items\":{\"$ref\":\"Community\"}},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Identifies this resource as a collection of communities. Valu" +
+            "e: \\\"orkut#communityList\\\"\",\"default\":\"orkut#communityList\"}}},\"CommunityMembers" +
+            "\":{\"id\":\"CommunityMembers\",\"type\":\"object\",\"properties\":{\"communityMembershipSta" +
+            "tus\":{\"$ref\":\"CommunityMembershipStatus\",\"description\":\"Status and permissions o" +
+            "f the user related to the community.\"},\"kind\":{\"type\":\"string\",\"description\":\"Ki" +
+            "nd of this item. Always orkut#communityMembers.\",\"default\":\"orkut#communityMembe" +
+            "rs\"},\"person\":{\"$ref\":\"OrkutActivitypersonResource\",\"description\":\"Description o" +
+            "f the community member.\"}}},\"CommunityMembersList\":{\"id\":\"CommunityMembersList\"," +
+            "\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"T" +
+            "he value of pageToken query parameter in community_members.list request to get t" +
+            "he first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of community member" +
+            "s retrieved.\",\"items\":{\"$ref\":\"CommunityMembers\"}},\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Kind of this item. Always orkut#communityMembersList.\",\"default\":\"orku" +
+            "t#communityMembersList\"},\"lastPageToken\":{\"type\":\"string\",\"description\":\"The val" +
+            "ue of pageToken query parameter in community_members.list request to get the las" +
+            "t page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken" +
+            " query parameter in community_members.list request to get the next page, if ther" +
+            "e are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\",\"description\":\"The va" +
+            "lue of pageToken query parameter in community_members.list request to get the pr" +
+            "evious page, if there are more to retrieve.\"}}},\"CommunityMembershipStatus\":{\"id" +
+            "\":\"CommunityMembershipStatus\",\"type\":\"object\",\"properties\":{\"canCreatePoll\":{\"ty" +
+            "pe\":\"boolean\",\"description\":\"Whether the user can create a poll in this communit" +
+            "y.\"},\"canCreateTopic\":{\"type\":\"boolean\",\"description\":\"Whether the user can crea" +
+            "te a topic in this community.\"},\"canShout\":{\"type\":\"boolean\",\"description\":\"Whet" +
+            "her the user can perform a shout operation in this community.\"},\"isCoOwner\":{\"ty" +
+            "pe\":\"boolean\",\"description\":\"Whether the session user is a community co-owner.\"}" +
+            ",\"isFollowing\":{\"type\":\"boolean\",\"description\":\"Whether the user is following th" +
+            "is community.\"},\"isModerator\":{\"type\":\"boolean\",\"description\":\"Whether the sessi" +
+            "on user is a community moderator.\"},\"isOwner\":{\"type\":\"boolean\",\"description\":\"W" +
+            "hether the session user is the community owner.\"},\"isRestoreAvailable\":{\"type\":\"" +
+            "boolean\",\"description\":\"Whether the restore operation is available for the commu" +
+            "nity.\"},\"isTakebackAvailable\":{\"type\":\"boolean\",\"description\":\"Whether the take-" +
+            "back operation is available for the community.\"},\"kind\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Kind of this item. Always orkut#communityMembershipStatus.\",\"default\":\"o" +
+            "rkut#communityMembershipStatus\"},\"status\":{\"type\":\"string\",\"description\":\"The st" +
+            "atus of the current link between the community and the user.\"}}},\"CommunityMessa" +
+            "ge\":{\"id\":\"CommunityMessage\",\"type\":\"object\",\"properties\":{\"addedDate\":{\"type\":\"" +
+            "string\",\"description\":\"The timestamp of the date when the message was added, in " +
+            "RFC 3339 format.\",\"format\":\"date-time\"},\"author\":{\"$ref\":\"OrkutAuthorResource\",\"" +
+            "description\":\"The creator of the message. If ommited, the message is annonimous." +
+            "\"},\"body\":{\"type\":\"string\",\"description\":\"The body of the message.\"},\"id\":{\"type" +
+            "\":\"string\",\"description\":\"The ID of the message.\",\"format\":\"int64\"},\"isSpam\":{\"t" +
+            "ype\":\"boolean\",\"description\":\"Whether this post was marked as spam by the viewer" +
+            ", when he/she is not the community owner or one of its moderators.\"},\"kind\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Identifies this resource as a community message. Val" +
+            "ue: \\\"orkut#communityMessage\\\"\",\"default\":\"orkut#communityMessage\"},\"links\":{\"ty" +
+            "pe\":\"array\",\"description\":\"List of resources for the community message.\",\"items\"" +
+            ":{\"$ref\":\"OrkutLinkResource\"}},\"subject\":{\"type\":\"string\",\"description\":\"The sub" +
+            "ject of the message.\"}}},\"CommunityMessageList\":{\"id\":\"CommunityMessageList\",\"ty" +
+            "pe\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The " +
+            "value of pageToken query parameter in community_messages.list request to get the" +
+            " first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of messages retrieved" +
+            ".\",\"items\":{\"$ref\":\"CommunityMessage\"}},\"kind\":{\"type\":\"string\",\"description\":\"I" +
+            "dentifies this resource as a collection of community messages. Value: \\\"orkut#co" +
+            "mmunityMessageList\\\"\",\"default\":\"orkut#communityMessageList\"},\"lastPageToken\":{\"" +
+            "type\":\"string\",\"description\":\"The value of pageToken query parameter in communit" +
+            "y_messages.list request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\"" +
+            ",\"description\":\"The value of pageToken query parameter in community_messages.lis" +
+            "t request to get the next page, if there are more to retrieve.\"},\"prevPageToken\"" +
+            ":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in commu" +
+            "nity_messages.list request to get the previous page, if there are more to retrie" +
+            "ve.\"}}},\"CommunityPoll\":{\"id\":\"CommunityPoll\",\"type\":\"object\",\"properties\":{\"aut" +
+            "hor\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The person who created the pol" +
+            "l.\"},\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community.\",\"f" +
+            "ormat\":\"int32\"},\"creationTime\":{\"type\":\"string\",\"description\":\"The date of creat" +
+            "ion of this poll\",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The poll description.\"},\"endingTime\":{\"type\":\"string\",\"description\":\"The e" +
+            "nding date of this poll or empty if the poll doesn\'t have one.\",\"format\":\"date-t" +
+            "ime\"},\"hasVoted\":{\"type\":\"boolean\",\"description\":\"Whether the user has voted on " +
+            "this poll.\"},\"id\":{\"type\":\"string\",\"description\":\"The poll ID.\"},\"image\":{\"type\"" +
+            ":\"object\",\"description\":\"The image representing the poll. Field is omitted if no" +
+            " image exists.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A URL that p" +
+            "oints to an image of the poll.\"}}},\"isClosed\":{\"type\":\"boolean\",\"description\":\"W" +
+            "hether the poll is not expired if there is an expiration date. A poll is open (t" +
+            "hat is, not closed for voting) if it either is not expired or doesn\'t have an ex" +
+            "piration date at all. Note that just because a poll is open, it doesn\'t mean tha" +
+            "t the requester can vote on it.\"},\"isMultipleAnswers\":{\"type\":\"boolean\",\"descrip" +
+            "tion\":\"Whether this poll allows voting for more than one option.\"},\"isOpenForVot" +
+            "ing\":{\"type\":\"boolean\",\"description\":\"Whether this poll is still opened for voti" +
+            "ng. A poll is open for voting if it is not closed, the user has not yet voted on" +
+            " it and the user has the permission to do so, which happens if he/she is either " +
+            "a community member or the poll is open for everybody.\"},\"isRestricted\":{\"type\":\"" +
+            "boolean\",\"description\":\"Whether this poll is restricted for members only. If a p" +
+            "oll is open but the user can\'t vote on it, it\'s been restricted to members only." +
+            " This information is important to tell this case apart from the one where the us" +
+            "er can\'t vote simply because the poll is already closed.\"},\"isSpam\":{\"type\":\"boo" +
+            "lean\",\"description\":\"Whether the user has marked this poll as spam. This only af" +
+            "fects the poll for this user, not globally.\"},\"isUsersVotePublic\":{\"type\":\"boole" +
+            "an\",\"description\":\"If user has already voted, whether his vote is publicly visib" +
+            "le.\"},\"isVotingAllowedForNonMembers\":{\"type\":\"boolean\",\"description\":\"Whether no" +
+            "n-members of the community can vote on the poll.\"},\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Identifies this resource as a community poll. Value: \\\"orkut#community" +
+            "Poll\\\"\",\"default\":\"orkut#communityPoll\"},\"lastUpdate\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The date of the last update of this poll.\",\"format\":\"date-time\"},\"links\":{" +
+            "\"type\":\"array\",\"description\":\"List of resources for the community poll.\",\"items\"" +
+            ":{\"$ref\":\"OrkutLinkResource\"}},\"options\":{\"type\":\"array\",\"description\":\"List of " +
+            "options of this poll.\",\"items\":{\"$ref\":\"OrkutCommunitypolloptionResource\"}},\"que" +
+            "stion\":{\"type\":\"string\",\"description\":\"The poll question.\"},\"totalNumberOfVotes\"" +
+            ":{\"type\":\"integer\",\"description\":\"The total number of votes this poll has receiv" +
+            "ed.\",\"format\":\"int32\"},\"votedOptions\":{\"type\":\"array\",\"description\":\"List of opt" +
+            "ions the user has voted on, if there are any.\",\"items\":{\"type\":\"integer\",\"format" +
+            "\":\"int32\"}}}},\"CommunityPollComment\":{\"id\":\"CommunityPollComment\",\"type\":\"object" +
+            "\",\"properties\":{\"addedDate\":{\"type\":\"string\",\"description\":\"The date when the me" +
+            "ssage was added, in RFC 3339 format.\",\"format\":\"date-time\"},\"author\":{\"$ref\":\"Or" +
+            "kutAuthorResource\",\"description\":\"The creator of the comment.\"},\"body\":{\"type\":\"" +
+            "string\",\"description\":\"The body of the message.\"},\"id\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"The ID of the comment.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Identifies this resource as a community poll comment. Value: \\\"orkut#co" +
+            "mmunityPollComment\\\"\",\"default\":\"orkut#communityPollComment\"}}},\"CommunityPollCo" +
+            "mmentList\":{\"id\":\"CommunityPollCommentList\",\"type\":\"object\",\"properties\":{\"first" +
+            "PageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query paramete" +
+            "r in community_poll_comments.list request to get the first page.\"},\"items\":{\"typ" +
+            "e\":\"array\",\"description\":\"List of community poll comments retrieved.\",\"items\":{\"" +
+            "$ref\":\"CommunityPollComment\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies" +
+            " this resource as a collection of community poll comments. Value: \\\"orkut#Commun" +
+            "ityPollCommentList\\\"\",\"default\":\"orkut#CommunityPollCommentList\"},\"lastPageToken" +
+            "\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in comm" +
+            "unity_poll_comments.list request to get the last page.\"},\"nextPageToken\":{\"type\"" +
+            ":\"string\",\"description\":\"The value of pageToken query parameter in community_pol" +
+            "l_comments.list request to get the next page, if there are more to retrieve.\"},\"" +
+            "prevPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query para" +
+            "meter in community_poll_comments.list request to get the previous page, if there" +
+            " are more to retrieve.\"}}},\"CommunityPollList\":{\"id\":\"CommunityPollList\",\"type\":" +
+            "\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The valu" +
+            "e of pageToken query parameter in community_polls.list request to get the first " +
+            "page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of community polls retrieved" +
+            ".\",\"items\":{\"$ref\":\"CommunityPoll\"}},\"kind\":{\"type\":\"string\",\"description\":\"Iden" +
+            "tifies this resource as a collection of community polls. Value: \\\"orkut#communit" +
+            "yPollList\\\"\",\"default\":\"orkut#communityPollList\"},\"lastPageToken\":{\"type\":\"strin" +
+            "g\",\"description\":\"The value of pageToken query parameter in community_polls.list" +
+            " request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":" +
+            "\"The value of pageToken query parameter in community_polls.list request to get t" +
+            "he next page, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\"," +
+            "\"description\":\"The value of pageToken query parameter in community_polls.list re" +
+            "quest to get the previous page, if there are more to retrieve.\"}}},\"CommunityPol" +
+            "lVote\":{\"id\":\"CommunityPollVote\",\"type\":\"object\",\"properties\":{\"isVotevisible\":{" +
+            "\"type\":\"boolean\",\"description\":\"Whether this vote is visible to other users or n" +
+            "ot.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a commu" +
+            "nity poll vote. Value: \\\"orkut#communityPollVote\\\"\",\"default\":\"orkut#communityPo" +
+            "llVote\"},\"optionIds\":{\"type\":\"array\",\"description\":\"The ids of the voted options" +
+            ".\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}}}},\"CommunityTopic\":{\"id\":\"Commun" +
+            "ityTopic\",\"type\":\"object\",\"properties\":{\"author\":{\"$ref\":\"OrkutAuthorResource\",\"" +
+            "description\":\"The creator of the topic.\"},\"body\":{\"type\":\"string\",\"description\":" +
+            "\"The body of the topic.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the top" +
+            "ic.\",\"format\":\"int64\"},\"isClosed\":{\"type\":\"boolean\",\"description\":\"Whether the t" +
+            "opic is closed for new messages.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identi" +
+            "fies this resource as a community topic. Value: \\\"orkut#communityTopic\\\"\",\"defau" +
+            "lt\":\"orkut#communityTopic\"},\"lastUpdate\":{\"type\":\"string\",\"description\":\"The tim" +
+            "estamp of the last update, in RFC 3339 format.\",\"format\":\"date-time\"},\"latestMes" +
+            "sageSnippet\":{\"type\":\"string\",\"description\":\"Snippet of the last message posted " +
+            "on this topic.\"},\"links\":{\"type\":\"array\",\"description\":\"List of resources for th" +
+            "e community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"messages\":{\"type\":\"array\",\"" +
+            "description\":\"Most recent messages.\",\"items\":{\"$ref\":\"CommunityMessage\"}},\"numbe" +
+            "rOfReplies\":{\"type\":\"integer\",\"description\":\"The total number of replies this to" +
+            "pic has received.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"description\":\"The" +
+            " title of the topic.\"}}},\"CommunityTopicList\":{\"id\":\"CommunityTopicList\",\"type\":" +
+            "\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The valu" +
+            "e of pageToken query parameter in community_topic.list request to get the first " +
+            "page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of topics retrieved.\",\"items" +
+            "\":{\"$ref\":\"CommunityTopic\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies t" +
+            "his resource as a collection of community topics. Value: \\\"orkut#communityTopicL" +
+            "ist\\\"\",\"default\":\"orkut#communityTopicList\"},\"lastPageToken\":{\"type\":\"string\",\"d" +
+            "escription\":\"The value of pageToken query parameter in community_topic.list requ" +
+            "est to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The " +
+            "value of pageToken query parameter in community_topic.list request to get the ne" +
+            "xt page, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The value of pageToken query parameter in community_topic.list request" +
+            " to get the previous page, if there are more to retrieve.\"}}},\"Counters\":{\"id\":\"" +
+            "Counters\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"L" +
+            "ist of counters retrieved.\",\"items\":{\"$ref\":\"OrkutCounterResource\"}},\"kind\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Identifies this resource as a collection of counters" +
+            ". Value: \\\"orkut#counters\\\"\",\"default\":\"orkut#counters\"}}},\"OrkutActivityobjects" +
+            "Resource\":{\"id\":\"OrkutActivityobjectsResource\",\"type\":\"object\",\"properties\":{\"co" +
+            "mmunity\":{\"$ref\":\"Community\",\"description\":\"The community which is related with " +
+            "this activity, e.g. a joined community.\"},\"content\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The HTML-formatted content, suitable for display. When updating an activity\'" +
+            "s content, post the changes to this property, using the value of originalContent" +
+            " as a starting point. If the update is successful, the server adds HTML formatti" +
+            "ng and responds with this formatted content.\"},\"displayName\":{\"type\":\"string\",\"d" +
+            "escription\":\"The title of the object.\"},\"id\":{\"type\":\"string\",\"description\":\"The" +
+            " ID for the object.\"},\"links\":{\"type\":\"array\",\"description\":\"Links to other reso" +
+            "urces related to this object.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"objectType" +
+            "\":{\"type\":\"string\",\"description\":\"The object type.\"},\"person\":{\"$ref\":\"OrkutActi" +
+            "vitypersonResource\",\"description\":\"The person who is related with this activity," +
+            " e.g. an Added User.\"}}},\"OrkutActivitypersonResource\":{\"id\":\"OrkutActivityperso" +
+            "nResource\",\"type\":\"object\",\"properties\":{\"birthday\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The person\'s date of birth, represented as YYYY-MM-DD.\"},\"gender\":{\"type\":\"s" +
+            "tring\",\"description\":\"The person\'s gender. Values include \\\"male\\\", \\\"female\\\", " +
+            "and \\\"other\\\".\"},\"id\":{\"type\":\"string\",\"description\":\"The person\'s opensocial ID" +
+            ".\"},\"image\":{\"type\":\"object\",\"description\":\"The person\'s profile photo. This is " +
+            "adapted from Google+ and was originaly introduced as extra OpenSocial convenienc" +
+            "e fields.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of the pe" +
+            "rson\'s profile photo.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An object that " +
+            "encapsulates the individual components of a person\'s name.\",\"properties\":{\"famil" +
+            "yName\":{\"type\":\"string\",\"description\":\"The family name (last name) of this perso" +
+            "n.\"},\"givenName\":{\"type\":\"string\",\"description\":\"The given name (first name) of " +
+            "this person.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The person\'s profile url." +
+            " This is adapted from Google+ and was originaly introduced as extra OpenSocial c" +
+            "onvenience fields.\"}}},\"OrkutAuthorResource\":{\"id\":\"OrkutAuthorResource\",\"type\":" +
+            "\"object\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The name of" +
+            " the author, suitable for display.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique" +
+            " identifier of the person who posted the comment. This is the person\'s OpenSocia" +
+            "l ID.\"},\"image\":{\"type\":\"object\",\"description\":\"Image data about the author.\",\"p" +
+            "roperties\":{\"url\":{\"type\":\"string\",\"description\":\"A URL that points to a thumbna" +
+            "il photo of the author.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The URL of the" +
+            " author who posted the comment [not yet implemented]\"}}},\"OrkutCommunitypollopti" +
+            "onResource\":{\"id\":\"OrkutCommunitypolloptionResource\",\"type\":\"object\",\"properties" +
+            "\":{\"description\":{\"type\":\"string\",\"description\":\"The option description.\"},\"imag" +
+            "e\":{\"type\":\"object\",\"description\":\"Image data about the poll option. Field is om" +
             "itted if no image exists.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A" +
-            " URL that points to an image of the poll.\"}}},\"isClosed\":{\"type\":\"boolean\",\"desc" +
-            "ription\":\"Whether the poll is not expired if there is an expiration date. A poll" +
-            " is open (that is, not closed for voting) if it either is not expired or doesn\'t" +
-            " have an expiration date at all. Note that just because a poll is open, it doesn" +
-            "\'t mean that the requester can vote on it.\"},\"isMultipleAnswers\":{\"type\":\"boolea" +
-            "n\",\"description\":\"Whether this poll allows voting for more than one option.\"},\"i" +
-            "sOpenForVoting\":{\"type\":\"boolean\",\"description\":\"Whether this poll is still open" +
-            "ed for voting. A poll is open for voting if it is not closed, the user has not y" +
-            "et voted on it and the user has the permission to do so, which happens if he/she" +
-            " is either a community member or the poll is open for everybody.\"},\"isRestricted" +
-            "\":{\"type\":\"boolean\",\"description\":\"Whether this poll is restricted for members o" +
-            "nly. If a poll is open but the user can\'t vote on it, it\'s been restricted to me" +
-            "mbers only. This information is important to tell this case apart from the one w" +
-            "here the user can\'t vote simply because the poll is already closed.\"},\"isSpam\":{" +
-            "\"type\":\"boolean\",\"description\":\"Whether the user has marked this poll as spam. T" +
-            "his only affects the poll for this user, not globally.\"},\"isUsersVotePublic\":{\"t" +
-            "ype\":\"boolean\",\"description\":\"If user has already voted, whether his vote is pub" +
-            "licly visible.\"},\"isVotingAllowedForNonMembers\":{\"type\":\"boolean\",\"description\":" +
-            "\"Whether non-members of the community can vote on the poll.\"},\"kind\":{\"type\":\"st" +
-            "ring\",\"description\":\"Identifies this resource as a community poll. Value: \\\"orku" +
-            "t#communityPoll\\\"\",\"default\":\"orkut#communityPoll\"},\"lastUpdate\":{\"type\":\"string" +
-            "\",\"description\":\"The date of the last update of this poll.\",\"format\":\"date-time\"" +
-            "},\"links\":{\"type\":\"array\",\"description\":\"List of resources for the community pol" +
-            "l.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"options\":{\"type\":\"array\",\"description" +
-            "\":\"List of options of this poll.\",\"items\":{\"$ref\":\"OrkutCommunitypolloptionResou" +
-            "rce\"}},\"question\":{\"type\":\"string\",\"description\":\"The poll question.\"},\"totalNum" +
-            "berOfVotes\":{\"type\":\"integer\",\"description\":\"The total number of votes this poll" +
-            " has received.\",\"format\":\"int32\"},\"votedOptions\":{\"type\":\"array\",\"description\":\"" +
-            "List of options the user has voted on, if there are any.\",\"items\":{\"type\":\"integ" +
-            "er\",\"format\":\"int32\"}}}},\"CommunityPollComment\":{\"id\":\"CommunityPollComment\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"addedDate\":{\"type\":\"string\",\"description\":\"The date " +
-            "when the message was added, in RFC 3339 format.\",\"format\":\"date-time\"},\"author\":" +
-            "{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The creator of the comment.\"},\"body" +
-            "\":{\"type\":\"string\",\"description\":\"The body of the message.\"},\"id\":{\"type\":\"integ" +
-            "er\",\"description\":\"The ID of the comment.\",\"format\":\"int32\"},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"Identifies this resource as a community poll comment. Value:" +
-            " \\\"orkut#communityPollComment\\\"\",\"default\":\"orkut#communityPollComment\"}}},\"Comm" +
-            "unityPollCommentList\":{\"id\":\"CommunityPollCommentList\",\"type\":\"object\",\"properti" +
-            "es\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken que" +
-            "ry parameter in community_poll_comments.list request to get the first page.\"},\"i" +
-            "tems\":{\"type\":\"array\",\"description\":\"List of community poll comments retrieved.\"" +
-            ",\"items\":{\"$ref\":\"CommunityPollComment\"}},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"Identifies this resource as a collection of community poll comments. Value: \\\"o" +
-            "rkut#CommunityPollCommentList\\\"\",\"default\":\"orkut#CommunityPollCommentList\"},\"la" +
-            "stPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query parame" +
-            "ter in community_poll_comments.list request to get the last page.\"},\"nextPageTok" +
-            "en\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in co" +
-            "mmunity_poll_comments.list request to get the next page, if there are more to re" +
-            "trieve.\"},\"prevPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken" +
-            " query parameter in community_poll_comments.list request to get the previous pag" +
-            "e, if there are more to retrieve.\"}}},\"CommunityPollList\":{\"id\":\"CommunityPollLi" +
-            "st\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description" +
-            "\":\"The value of pageToken query parameter in community_polls.list request to get" +
-            " the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of community poll" +
-            "s retrieved.\",\"items\":{\"$ref\":\"CommunityPoll\"}},\"kind\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Identifies this resource as a collection of community polls. Value: \\\"ork" +
-            "ut#communityPollList\\\"\",\"default\":\"orkut#communityPollList\"},\"lastPageToken\":{\"t" +
-            "ype\":\"string\",\"description\":\"The value of pageToken query parameter in community" +
-            "_polls.list request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"de" +
-            "scription\":\"The value of pageToken query parameter in community_polls.list reque" +
-            "st to get the next page, if there are more to retrieve.\"},\"prevPageToken\":{\"type" +
-            "\":\"string\",\"description\":\"The value of pageToken query parameter in community_po" +
-            "lls.list request to get the previous page, if there are more to retrieve.\"}}},\"C" +
-            "ommunityPollVote\":{\"id\":\"CommunityPollVote\",\"type\":\"object\",\"properties\":{\"isVot" +
-            "evisible\":{\"type\":\"boolean\",\"description\":\"Whether this vote is visible to other" +
-            " users or not.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource" +
-            " as a community poll vote. Value: \\\"orkut#communityPollVote\\\"\",\"default\":\"orkut#" +
-            "communityPollVote\"},\"optionIds\":{\"type\":\"array\",\"description\":\"The ids of the vo" +
-            "ted options.\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}}}},\"CommunityTopic\":{\"" +
-            "id\":\"CommunityTopic\",\"type\":\"object\",\"properties\":{\"author\":{\"$ref\":\"OrkutAuthor" +
-            "Resource\",\"description\":\"The creator of the topic.\"},\"body\":{\"type\":\"string\",\"de" +
-            "scription\":\"The body of the topic.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID" +
-            " of the topic.\",\"format\":\"int64\"},\"isClosed\":{\"type\":\"boolean\",\"description\":\"Wh" +
-            "ether the topic is closed for new messages.\"},\"kind\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Identifies this resource as a community topic. Value: \\\"orkut#communityTopi" +
-            "c\\\"\",\"default\":\"orkut#communityTopic\"},\"lastUpdate\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The timestamp of the last update, in RFC 3339 format.\",\"format\":\"date-time\"}" +
-            ",\"latestMessageSnippet\":{\"type\":\"string\",\"description\":\"Snippet of the last mess" +
-            "age posted on this topic.\"},\"links\":{\"type\":\"array\",\"description\":\"List of resou" +
-            "rces for the community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"messages\":{\"type" +
-            "\":\"array\",\"description\":\"Most recent messages.\",\"items\":{\"$ref\":\"CommunityMessag" +
-            "e\"}},\"numberOfReplies\":{\"type\":\"integer\",\"description\":\"The total number of repl" +
-            "ies this topic has received.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The title of the topic.\"}}},\"CommunityTopicList\":{\"id\":\"CommunityTopicLi" +
-            "st\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description" +
-            "\":\"The value of pageToken query parameter in community_topic.list request to get" +
-            " the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of topics retriev" +
-            "ed.\",\"items\":{\"$ref\":\"CommunityTopic\"}},\"kind\":{\"type\":\"string\",\"description\":\"I" +
-            "dentifies this resource as a collection of community topics. Value: \\\"orkut#comm" +
-            "unityTopicList\\\"\",\"default\":\"orkut#communityTopicList\"},\"lastPageToken\":{\"type\":" +
-            "\"string\",\"description\":\"The value of pageToken query parameter in community_topi" +
-            "c.list request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The value of pageToken query parameter in community_topic.list request to" +
-            " get the next page, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"The value of pageToken query parameter in community_topic.l" +
-            "ist request to get the previous page, if there are more to retrieve.\"}}},\"Counte" +
-            "rs\":{\"id\":\"Counters\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"desc" +
-            "ription\":\"List of counters retrieved.\",\"items\":{\"$ref\":\"OrkutCounterResource\"}}," +
-            "\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a collection " +
-            "of counters. Value: \\\"orkut#counters\\\"\",\"default\":\"orkut#counters\"}}},\"OrkutActi" +
-            "vityobjectsResource\":{\"id\":\"OrkutActivityobjectsResource\",\"type\":\"object\",\"prope" +
-            "rties\":{\"community\":{\"$ref\":\"Community\",\"description\":\"The community which is re" +
-            "lated with this activity, e.g. a joined community.\"},\"content\":{\"type\":\"string\"," +
-            "\"description\":\"The HTML-formatted content, suitable for display. When updating a" +
-            "n activity\'s content, post the changes to this property, using the value of orig" +
-            "inalContent as a starting point. If the update is successful, the server adds HT" +
-            "ML formatting and responds with this formatted content.\"},\"displayName\":{\"type\":" +
-            "\"string\",\"description\":\"The title of the object.\"},\"id\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The ID for the object.\"},\"links\":{\"type\":\"array\",\"description\":\"Links to" +
-            " other resources related to this object.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}}," +
-            "\"objectType\":{\"type\":\"string\",\"description\":\"The object type.\"},\"person\":{\"$ref\"" +
-            ":\"OrkutActivitypersonResource\",\"description\":\"The person who is related with thi" +
-            "s activity, e.g. an Added User.\"}}},\"OrkutActivitypersonResource\":{\"id\":\"OrkutAc" +
-            "tivitypersonResource\",\"type\":\"object\",\"properties\":{\"birthday\":{\"type\":\"string\"," +
-            "\"description\":\"The person\'s date of birth, represented as YYYY-MM-DD.\"},\"gender\"" +
-            ":{\"type\":\"string\",\"description\":\"The person\'s gender. Values include \\\"male\\\", \\" +
-            "\"female\\\", and \\\"other\\\".\"},\"id\":{\"type\":\"string\",\"description\":\"The person\'s op" +
-            "ensocial ID.\"},\"image\":{\"type\":\"object\",\"description\":\"The person\'s profile phot" +
-            "o. This is adapted from Google+ and was originaly introduced as extra OpenSocial" +
-            " convenience fields.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The UR" +
-            "L of the person\'s profile photo.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An o" +
-            "bject that encapsulates the individual components of a person\'s name.\",\"properti" +
-            "es\":{\"familyName\":{\"type\":\"string\",\"description\":\"The family name (last name) of" +
-            " this person.\"},\"givenName\":{\"type\":\"string\",\"description\":\"The given name (firs" +
-            "t name) of this person.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The person\'s p" +
-            "rofile url. This is adapted from Google+ and was originaly introduced as extra O" +
-            "penSocial convenience fields.\"}}},\"OrkutAuthorResource\":{\"id\":\"OrkutAuthorResour" +
-            "ce\",\"type\":\"object\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"" +
-            "The name of the author, suitable for display.\"},\"id\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Unique identifier of the person who posted the comment. This is the person\'" +
-            "s OpenSocial ID.\"},\"image\":{\"type\":\"object\",\"description\":\"Image data about the " +
-            "author.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A URL that points t" +
-            "o a thumbnail photo of the author.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The" +
-            " URL of the author who posted the comment [not yet implemented]\"}}},\"OrkutCommun" +
-            "itypolloptionResource\":{\"id\":\"OrkutCommunitypolloptionResource\",\"type\":\"object\"," +
-            "\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"The option descripti" +
-            "on.\"},\"image\":{\"type\":\"object\",\"description\":\"Image data about the poll option. " +
-            "Field is omitted if no image exists.\",\"properties\":{\"url\":{\"type\":\"string\",\"desc" +
-            "ription\":\"A URL that points to an image of the poll question.\"}}},\"numberOfVotes" +
-            "\":{\"type\":\"integer\",\"description\":\"The total number of votes that this option re" +
-            "ceived.\",\"format\":\"int32\"},\"optionId\":{\"type\":\"integer\",\"description\":\"The poll " +
-            "option ID\",\"format\":\"int32\"}}},\"OrkutCounterResource\":{\"id\":\"OrkutCounterResourc" +
-            "e\",\"type\":\"object\",\"properties\":{\"link\":{\"$ref\":\"OrkutLinkResource\",\"description" +
-            "\":\"Link to the collection being counted.\"},\"name\":{\"type\":\"string\",\"description\"" +
-            ":\"The name of the counted collection. Currently supported collections are:  \\n- " +
-            "scraps - The scraps of the user. \\n- photos - The photos of the user. \\n- videos" +
-            " - The videos of the user. \\n- pendingTestimonials - The pending testimonials of" +
-            " the user.\"},\"total\":{\"type\":\"integer\",\"description\":\"The number of resources on" +
-            " the counted collection.\",\"format\":\"int32\"}}},\"OrkutLinkResource\":{\"id\":\"OrkutLi" +
-            "nkResource\",\"type\":\"object\",\"description\":\"Links to resources related to the par" +
-            "ent object.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"URL of the lin" +
-            "k.\"},\"rel\":{\"type\":\"string\",\"description\":\"Relation between the resource and the" +
-            " parent object.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of the link.\"},\"" +
-            "type\":{\"type\":\"string\",\"description\":\"Media type of the link.\"}}},\"Visibility\":{" +
-            "\"id\":\"Visibility\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Identifies this resource as a visibility item. Value: \\\"orkut#visibility\\" +
-            "\"\",\"default\":\"orkut#visibility\"},\"links\":{\"type\":\"array\",\"description\":\"List of " +
-            "resources for the visibility item.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"visib" +
-            "ility\":{\"type\":\"string\",\"description\":\"The visibility of the resource. Possible " +
-            "values are:  \\n- default: not hidden by the user \\n- hidden: hidden\"}}}},\"resour" +
-            "ces\":{\"acl\":{\"methods\":{\"delete\":{\"id\":\"orkut.acl.delete\",\"path\":\"activities/{ac" +
-            "tivityId}/acl/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Excludes an element" +
-            " from the ACL of the activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"des" +
-            "cription\":\"ID of the activity.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"ID of the user to be removed from the activity.\",\"re" +
-            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\",\"userId\"],\"scope" +
-            "s\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"activities\":{\"methods\":{\"delete" +
-            "\":{\"id\":\"orkut.activities.delete\",\"path\":\"activities/{activityId}\",\"httpMethod\":" +
-            "\"DELETE\",\"description\":\"Deletes an existing activity, if the access controls all" +
-            "ow it.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID of the act" +
-            "ivity to remove.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activit" +
-            "yId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.ac" +
-            "tivities.list\",\"path\":\"people/{userId}/activities/{collection}\",\"httpMethod\":\"GE" +
-            "T\",\"description\":\"Retrieves a list of activities.\",\"parameters\":{\"collection\":{\"" +
-            "type\":\"string\",\"description\":\"The collection of activities to list.\",\"required\":" +
-            "true,\"enum\":[\"all\",\"scraps\",\"stream\"],\"enumDescriptions\":[\"All activities create" +
-            "d by the specified user that the authenticated user is authorized to view.\",\"The" +
-            " specified user\'s scrapbook.\",\"The specified user\'s stream feed, intended for co" +
-            "nsumption. This includes activities posted by people that the user is following," +
-            " and activities in which the user has been mentioned.\"],\"location\":\"path\"},\"hl\":" +
-            "{\"type\":\"string\",\"description\":\"Specifies the interface language (host language)" +
-            " of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"de" +
-            "scription\":\"The maximum number of activities to include in the response.\",\"forma" +
-            "t\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type" +
-            "\":\"string\",\"description\":\"A continuation token that allows pagination.\",\"locatio" +
-            "n\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user whose ac" +
-            "tivities will be listed. Can be me to refer to the viewer (i.e. the authenticate" +
-            "d user).\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"collec" +
-            "tion\"],\"response\":{\"$ref\":\"ActivityList\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]}}},\"activityVisibi" +
-            "lity\":{\"methods\":{\"get\":{\"id\":\"orkut.activityVisibility.get\",\"path\":\"activities/" +
-            "{activityId}/visibility\",\"httpMethod\":\"GET\",\"description\":\"Gets the visibility o" +
-            "f an existing activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"ID of the activity to get the visibility.\",\"required\":true,\"location\":\"path\"" +
-            "}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"Visibility\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.rea" +
-            "donly\"]},\"patch\":{\"id\":\"orkut.activityVisibility.patch\",\"path\":\"activities/{acti" +
-            "vityId}/visibility\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the visibility o" +
-            "f an existing activity. This method supports patch semantics.\",\"parameters\":{\"ac" +
-            "tivityId\":{\"type\":\"string\",\"description\":\"ID of the activity.\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"activityId\"],\"request\":{\"$ref\":\"Visibility" +
-            "\"},\"response\":{\"$ref\":\"Visibility\"},\"scopes\":[\"https://www.googleapis.com/auth/o" +
-            "rkut\"]},\"update\":{\"id\":\"orkut.activityVisibility.update\",\"path\":\"activities/{act" +
-            "ivityId}/visibility\",\"httpMethod\":\"PUT\",\"description\":\"Updates the visibility of" +
-            " an existing activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description" +
-            "\":\"ID of the activity.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"a" +
-            "ctivityId\"],\"request\":{\"$ref\":\"Visibility\"},\"response\":{\"$ref\":\"Visibility\"},\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"badges\":{\"methods\":{\"get\":{\"" +
-            "id\":\"orkut.badges.get\",\"path\":\"people/{userId}/badges/{badgeId}\",\"httpMethod\":\"G" +
-            "ET\",\"description\":\"Retrieves a badge from a user.\",\"parameters\":{\"badgeId\":{\"typ" +
-            "e\":\"string\",\"description\":\"The ID of the badge that will be retrieved.\",\"require" +
-            "d\":true,\"format\":\"int64\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The ID of the user whose badges will be listed. Can be me to refer to calle" +
-            "r.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"badgeId\"],\"r" +
-            "esponse\":{\"$ref\":\"Badge\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"htt" +
-            "ps://www.googleapis.com/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.badges.list\"," +
-            "\"path\":\"people/{userId}/badges\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the " +
-            "list of visible badges of a user.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The id of the user whose badges will be listed. Can be me to refer to " +
-            "caller.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"respon" +
-            "se\":{\"$ref\":\"BadgeList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"http" +
-            "s://www.googleapis.com/auth/orkut.readonly\"]}}},\"comments\":{\"methods\":{\"delete\":" +
-            "{\"id\":\"orkut.comments.delete\",\"path\":\"comments/{commentId}\",\"httpMethod\":\"DELETE" +
-            "\",\"description\":\"Deletes an existing comment.\",\"parameters\":{\"commentId\":{\"type\"" +
-            ":\"string\",\"description\":\"ID of the comment to remove.\",\"required\":true,\"location" +
-            "\":\"path\"}},\"parameterOrder\":[\"commentId\"],\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/orkut\"]},\"get\":{\"id\":\"orkut.comments.get\",\"path\":\"comments/{commentId}\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"Retrieves an existing comment.\",\"parameters\":{\"co" +
-            "mmentId\":{\"type\":\"string\",\"description\":\"ID of the comment to get.\",\"required\":t" +
-            "rue,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interf" +
-            "ace language (host language) of your user interface.\",\"location\":\"query\"}},\"para" +
-            "meterOrder\":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"in" +
-            "sert\":{\"id\":\"orkut.comments.insert\",\"path\":\"activities/{activityId}/comments\",\"h" +
-            "ttpMethod\":\"POST\",\"description\":\"Inserts a new comment to an activity.\",\"paramet" +
-            "ers\":{\"activityId\":{\"type\":\"string\",\"description\":\"The ID of the activity to con" +
-            "tain the new comment.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"ac" +
-            "tivityId\"],\"request\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.comments.list\",\"pa" +
-            "th\":\"activities/{activityId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retriev" +
-            "es a list of comments, possibly filtered.\",\"parameters\":{\"activityId\":{\"type\":\"s" +
-            "tring\",\"description\":\"The ID of the activity containing the comments.\",\"required" +
-            "\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the int" +
-            "erface language (host language) of your user interface.\",\"location\":\"query\"},\"ma" +
-            "xResults\":{\"type\":\"integer\",\"description\":\"The maximum number of activities to i" +
-            "nclude in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"or" +
-            "derBy\":{\"type\":\"string\",\"description\":\"Sort search results.\",\"default\":\"DESCENDI" +
-            "NG_SORT\",\"enum\":[\"ascending\",\"descending\"],\"enumDescriptions\":[\"Use ascending so" +
-            "rt order.\",\"Use descending sort order.\"],\"location\":\"query\"},\"pageToken\":{\"type\"" +
-            ":\"string\",\"description\":\"A continuation token that allows pagination.\",\"location" +
-            "\":\"query\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"CommentList\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth" +
-            "/orkut.readonly\"]}}},\"communities\":{\"methods\":{\"get\":{\"id\":\"orkut.communities.ge" +
-            "t\",\"path\":\"communities/{communityId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieve" +
-            "s the basic information (aka. profile) of a community.\",\"parameters\":{\"community" +
-            "Id\":{\"type\":\"integer\",\"description\":\"The ID of the community to get.\",\"required\"" +
-            ":true,\"format\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"S" +
-            "pecifies the interface language (host language) of your user interface.\",\"locati" +
-            "on\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"Community\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/aut" +
-            "h/orkut.readonly\"]},\"list\":{\"id\":\"orkut.communities.list\",\"path\":\"people/{userId" +
-            "}/communities\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of communiti" +
-            "es the current user is a member of.\",\"parameters\":{\"hl\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Specifies the interface language (host language) of your user interface." +
-            "\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum " +
-            "number of communities to include in the response.\",\"format\":\"uint32\",\"minimum\":\"" +
-            "1\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"description\":\"How to order th" +
-            "e communities by.\",\"enum\":[\"id\",\"ranked\"],\"enumDescriptions\":[\"Returns the commu" +
-            "nities sorted by a fixed, natural order.\",\"Returns the communities ranked accord" +
-            "ingly to how they are displayed on the orkut web application.\"],\"location\":\"quer" +
-            "y\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user whose communitie" +
-            "s will be listed. Can be me to refer to caller.\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\":[\"" +
-            "https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.re" +
-            "adonly\"]}}},\"communityFollow\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityFollow." +
-            "delete\",\"path\":\"communities/{communityId}/followers/{userId}\",\"httpMethod\":\"DELE" +
-            "TE\",\"description\":\"Removes a user from the followers of a community.\",\"parameter" +
-            "s\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID of the community.\",\"requir" +
-            "ed\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"co" +
-            "mmunityId\",\"userId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"insert" +
-            "\":{\"id\":\"orkut.communityFollow.insert\",\"path\":\"communities/{communityId}/followe" +
-            "rs/{userId}\",\"httpMethod\":\"POST\",\"description\":\"Adds a user as a follower of a c" +
-            "ommunity.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID of th" +
-            "e community.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"typ" +
-            "e\":\"string\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMembers\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"communityMembers\":{\"meth" +
-            "ods\":{\"delete\":{\"id\":\"orkut.communityMembers.delete\",\"path\":\"communities/{commun" +
-            "ityId}/members/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Makes the user lea" +
-            "ve a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID" +
-            " of the community.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\"" +
-            ":{\"type\":\"string\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"pa" +
-            "th\"}},\"parameterOrder\":[\"communityId\",\"userId\"],\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/orkut\"]},\"get\":{\"id\":\"orkut.communityMembers.get\",\"path\":\"communities" +
-            "/{communityId}/members/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the" +
-            " relationship between a user and a community.\",\"parameters\":{\"communityId\":{\"typ" +
-            "e\":\"integer\",\"description\":\"ID of the community.\",\"required\":true,\"format\":\"int3" +
-            "2\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interfa" +
-            "ce language (host language) of your user interface.\",\"location\":\"query\"},\"userId" +
-            "\":{\"type\":\"string\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"p" +
-            "ath\"}},\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMe" +
-            "mbers\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapi" +
-            "s.com/auth/orkut.readonly\"]},\"insert\":{\"id\":\"orkut.communityMembers.insert\",\"pat" +
-            "h\":\"communities/{communityId}/members/{userId}\",\"httpMethod\":\"POST\",\"description" +
-            "\":\"Makes the user join a community.\",\"parameters\":{\"communityId\":{\"type\":\"intege" +
-            "r\",\"description\":\"ID of the community.\",\"required\":true,\"format\":\"int32\",\"locati" +
-            "on\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user.\",\"required\"" +
-            ":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{" +
-            "\"$ref\":\"CommunityMembers\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"" +
-            "list\":{\"id\":\"orkut.communityMembers.list\",\"path\":\"communities/{communityId}/memb" +
-            "ers\",\"httpMethod\":\"GET\",\"description\":\"Lists members of a community. Use the pag" +
-            "ination tokens to retrieve the full list; do not rely on the member count availa" +
-            "ble in the community profile information to know when to stop iterating, as that" +
-            " count may be approximate.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"The ID of the community whose members will be listed.\",\"required\":true," +
-            "\"format\":\"int32\",\"location\":\"path\"},\"friendsOnly\":{\"type\":\"boolean\",\"description" +
-            "\":\"Whether to list only community members who are friends of the user.\",\"locatio" +
-            "n\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface languag" +
-            "e (host language) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"The maximum number of members to include in the res" +
-            "ponse.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"pageToken\":{\"type\":" +
-            "\"string\",\"description\":\"A continuation token that allows pagination.\",\"location\"" +
-            ":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityMembers" +
-            "List\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis" +
-            ".com/auth/orkut.readonly\"]}}},\"communityMessages\":{\"methods\":{\"delete\":{\"id\":\"or" +
-            "kut.communityMessages.delete\",\"path\":\"communities/{communityId}/topics/{topicId}" +
-            "/messages/{messageId}\",\"httpMethod\":\"DELETE\",\"description\":\"Moves a message of t" +
-            "he community to the trash folder.\",\"parameters\":{\"communityId\":{\"type\":\"integer\"" +
-            ",\"description\":\"The ID of the community whose message will be moved to the trash" +
-            " folder.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"messageId\":{\"type" +
-            "\":\"string\",\"description\":\"The ID of the message to be moved to the trash folder." +
-            "\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\"" +
-            ",\"description\":\"The ID of the topic whose message will be moved to the trash fol" +
-            "der.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"co" +
-            "mmunityId\",\"topicId\",\"messageId\"],\"scopes\":[\"https://www.googleapis.com/auth/ork" +
-            "ut\"]},\"insert\":{\"id\":\"orkut.communityMessages.insert\",\"path\":\"communities/{commu" +
-            "nityId}/topics/{topicId}/messages\",\"httpMethod\":\"POST\",\"description\":\"Adds a mes" +
-            "sage to a given community topic.\",\"parameters\":{\"communityId\":{\"type\":\"integer\"," +
-            "\"description\":\"The ID of the community the message should be added to.\",\"require" +
-            "d\":true,\"format\":\"int32\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The ID of the topic the message should be added to.\",\"required\":true,\"form" +
-            "at\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"requ" +
-            "est\":{\"$ref\":\"CommunityMessage\"},\"response\":{\"$ref\":\"CommunityMessage\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.communityMessage" +
-            "s.list\",\"path\":\"communities/{communityId}/topics/{topicId}/messages\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"Retrieves the messages of a topic of a community.\",\"param" +
-            "eters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community w" +
-            "hich messages will be listed.\",\"required\":true,\"format\":\"int32\",\"location\":\"path" +
-            "\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language (host l" +
-            "anguage) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"inte" +
-            "ger\",\"description\":\"The maximum number of messages to include in the response.\"," +
-            "\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":" +
-            "{\"type\":\"string\",\"description\":\"A continuation token that allows pagination.\",\"l" +
-            "ocation\":\"query\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic " +
-            "which messages will be listed.\",\"required\":true,\"format\":\"int64\",\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"response\":{\"$ref\":\"CommunityMes" +
-            "sageList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.google" +
-            "apis.com/auth/orkut.readonly\"]}}},\"communityPollComments\":{\"methods\":{\"insert\":{" +
-            "\"id\":\"orkut.communityPollComments.insert\",\"path\":\"communities/{communityId}/poll" +
-            "s/{pollId}/comments\",\"httpMethod\":\"POST\",\"description\":\"Adds a comment on a comm" +
-            "unity poll.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID" +
-            " of the community whose poll is being commented.\",\"required\":true,\"format\":\"int3" +
-            "2\",\"location\":\"path\"},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of the pol" +
-            "l being commented.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"commu" +
-            "nityId\",\"pollId\"],\"request\":{\"$ref\":\"CommunityPollComment\"},\"response\":{\"$ref\":\"" +
-            "CommunityPollComment\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list" +
-            "\":{\"id\":\"orkut.communityPollComments.list\",\"path\":\"communities/{communityId}/pol" +
-            "ls/{pollId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the comments o" +
-            "f a community poll.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\"" +
-            ":\"The ID of the community whose poll is having its comments listed.\",\"required\":" +
-            "true,\"format\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Sp" +
-            "ecifies the interface language (host language) of your user interface.\",\"locatio" +
-            "n\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of " +
-            "comments to include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\"" +
-            ":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token that " +
-            "allows pagination.\",\"location\":\"query\"},\"pollId\":{\"type\":\"string\",\"description\":" +
-            "\"The ID of the community whose polls will be listed.\",\"required\":true,\"location\"" +
-            ":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"Communit" +
-            "yPollCommentList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://ww" +
-            "w.googleapis.com/auth/orkut.readonly\"]}}},\"communityPollVotes\":{\"methods\":{\"inse" +
-            "rt\":{\"id\":\"orkut.communityPollVotes.insert\",\"path\":\"communities/{communityId}/po" +
-            "lls/{pollId}/votes\",\"httpMethod\":\"POST\",\"description\":\"Votes on a community poll" +
-            ".\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the co" +
-            "mmunity whose poll is being voted.\",\"required\":true,\"format\":\"int32\",\"location\":" +
-            "\"path\"},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of the poll being voted." +
-            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"]," +
-            "\"request\":{\"$ref\":\"CommunityPollVote\"},\"response\":{\"$ref\":\"CommunityPollVote\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"communityPolls\":{\"methods\"" +
-            ":{\"get\":{\"id\":\"orkut.communityPolls.get\",\"path\":\"communities/{communityId}/polls" +
-            "/{pollId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves one specific poll of a co" +
-            "mmunity.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of" +
-            " the community for whose poll will be retrieved.\",\"required\":true,\"format\":\"int3" +
-            "2\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interfa" +
-            "ce language (host language) of your user interface.\",\"location\":\"query\"},\"pollId" +
-            "\":{\"type\":\"string\",\"description\":\"The ID of the poll to get.\",\"required\":true,\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"" +
-            "CommunityPoll\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.g" +
-            "oogleapis.com/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.communityPolls.list\",\"p" +
-            "ath\":\"communities/{communityId}/polls\",\"httpMethod\":\"GET\",\"description\":\"Retriev" +
-            "es the polls of a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"des" +
-            "cription\":\"The ID of the community which polls will be listed.\",\"required\":true," +
-            "\"format\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifi" +
-            "es the interface language (host language) of your user interface.\",\"location\":\"q" +
-            "uery\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of polls" +
-            " to include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"" +
-            "},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token that allows p" +
-            "agination.\",\"location\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$" +
-            "ref\":\"CommunityPollList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"htt" +
-            "ps://www.googleapis.com/auth/orkut.readonly\"]}}},\"communityRelated\":{\"methods\":{" +
-            "\"list\":{\"id\":\"orkut.communityRelated.list\",\"path\":\"communities/{communityId}/rel" +
-            "ated\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the communities related to ano" +
-            "ther one.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID o" +
-            "f the community whose related communities will be listed.\",\"required\":true,\"form" +
+            " URL that points to an image of the poll question.\"}}},\"numberOfVotes\":{\"type\":\"" +
+            "integer\",\"description\":\"The total number of votes that this option received.\",\"f" +
+            "ormat\":\"int32\"},\"optionId\":{\"type\":\"integer\",\"description\":\"The poll option ID\"," +
+            "\"format\":\"int32\"}}},\"OrkutCounterResource\":{\"id\":\"OrkutCounterResource\",\"type\":\"" +
+            "object\",\"properties\":{\"link\":{\"$ref\":\"OrkutLinkResource\",\"description\":\"Link to " +
+            "the collection being counted.\"},\"name\":{\"type\":\"string\",\"description\":\"The name " +
+            "of the counted collection. Currently supported collections are:  \\n- scraps - Th" +
+            "e scraps of the user. \\n- photos - The photos of the user. \\n- videos - The vide" +
+            "os of the user. \\n- pendingTestimonials - The pending testimonials of the user.\"" +
+            "},\"total\":{\"type\":\"integer\",\"description\":\"The number of resources on the counte" +
+            "d collection.\",\"format\":\"int32\"}}},\"OrkutLinkResource\":{\"id\":\"OrkutLinkResource\"" +
+            ",\"type\":\"object\",\"description\":\"Links to resources related to the parent object." +
+            "\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"URL of the link.\"},\"rel\":" +
+            "{\"type\":\"string\",\"description\":\"Relation between the resource and the parent obj" +
+            "ect.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of the link.\"},\"type\":{\"typ" +
+            "e\":\"string\",\"description\":\"Media type of the link.\"}}},\"Visibility\":{\"id\":\"Visib" +
+            "ility\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Iden" +
+            "tifies this resource as a visibility item. Value: \\\"orkut#visibility\\\"\",\"default" +
+            "\":\"orkut#visibility\"},\"links\":{\"type\":\"array\",\"description\":\"List of resources f" +
+            "or the visibility item.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"visibility\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The visibility of the resource. Possible values are:" +
+            "  \\n- default: not hidden by the user \\n- hidden: hidden\"}}}},\"resources\":{\"acl\"" +
+            ":{\"methods\":{\"delete\":{\"id\":\"orkut.acl.delete\",\"path\":\"activities/{activityId}/a" +
+            "cl/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Excludes an element from the A" +
+            "CL of the activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"" +
+            "ID of the activity.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string" +
+            "\",\"description\":\"ID of the user to be removed from the activity.\",\"required\":tru" +
+            "e,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\",\"userId\"],\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/orkut\"]}}},\"activities\":{\"methods\":{\"delete\":{\"id\":\"or" +
+            "kut.activities.delete\",\"path\":\"activities/{activityId}\",\"httpMethod\":\"DELETE\",\"d" +
+            "escription\":\"Deletes an existing activity, if the access controls allow it.\",\"pa" +
+            "rameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID of the activity to re" +
+            "move.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\"],\"scop" +
+            "es\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.activities.li" +
+            "st\",\"path\":\"people/{userId}/activities/{collection}\",\"httpMethod\":\"GET\",\"descrip" +
+            "tion\":\"Retrieves a list of activities.\",\"parameters\":{\"collection\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The collection of activities to list.\",\"required\":true,\"enum\"" +
+            ":[\"all\",\"scraps\",\"stream\"],\"enumDescriptions\":[\"All activities created by the sp" +
+            "ecified user that the authenticated user is authorized to view.\",\"The specified " +
+            "user\'s scrapbook.\",\"The specified user\'s stream feed, intended for consumption. " +
+            "This includes activities posted by people that the user is following, and activi" +
+            "ties in which the user has been mentioned.\"],\"location\":\"path\"},\"hl\":{\"type\":\"st" +
+            "ring\",\"description\":\"Specifies the interface language (host language) of your us" +
+            "er interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":" +
+            "\"The maximum number of activities to include in the response.\",\"format\":\"uint32\"" +
+            ",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\"," +
+            "\"description\":\"A continuation token that allows pagination.\",\"location\":\"query\"}" +
+            ",\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user whose activities wi" +
+            "ll be listed. Can be me to refer to the viewer (i.e. the authenticated user).\",\"" +
+            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"collection\"],\"res" +
+            "ponse\":{\"$ref\":\"ActivityList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"" +
+            ",\"https://www.googleapis.com/auth/orkut.readonly\"]}}},\"activityVisibility\":{\"met" +
+            "hods\":{\"get\":{\"id\":\"orkut.activityVisibility.get\",\"path\":\"activities/{activityId" +
+            "}/visibility\",\"httpMethod\":\"GET\",\"description\":\"Gets the visibility of an existi" +
+            "ng activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID of t" +
+            "he activity to get the visibility.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"activityId\"],\"response\":{\"$ref\":\"Visibility\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"p" +
+            "atch\":{\"id\":\"orkut.activityVisibility.patch\",\"path\":\"activities/{activityId}/vis" +
+            "ibility\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the visibility of an existi" +
+            "ng activity. This method supports patch semantics.\",\"parameters\":{\"activityId\":{" +
+            "\"type\":\"string\",\"description\":\"ID of the activity.\",\"required\":true,\"location\":\"" +
+            "path\"}},\"parameterOrder\":[\"activityId\"],\"request\":{\"$ref\":\"Visibility\"},\"respons" +
+            "e\":{\"$ref\":\"Visibility\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"up" +
+            "date\":{\"id\":\"orkut.activityVisibility.update\",\"path\":\"activities/{activityId}/vi" +
+            "sibility\",\"httpMethod\":\"PUT\",\"description\":\"Updates the visibility of an existin" +
+            "g activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID of th" +
+            "e activity.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\"]" +
+            ",\"request\":{\"$ref\":\"Visibility\"},\"response\":{\"$ref\":\"Visibility\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/orkut\"]}}},\"badges\":{\"methods\":{\"get\":{\"id\":\"orkut." +
+            "badges.get\",\"path\":\"people/{userId}/badges/{badgeId}\",\"httpMethod\":\"GET\",\"descri" +
+            "ption\":\"Retrieves a badge from a user.\",\"parameters\":{\"badgeId\":{\"type\":\"string\"" +
+            ",\"description\":\"The ID of the badge that will be retrieved.\",\"required\":true,\"fo" +
+            "rmat\":\"int64\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID" +
+            " of the user whose badges will be listed. Can be me to refer to caller.\",\"requir" +
+            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"badgeId\"],\"response\":{\"" +
+            "$ref\":\"Badge\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.go" +
+            "ogleapis.com/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.badges.list\",\"path\":\"peo" +
+            "ple/{userId}/badges\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of vis" +
+            "ible badges of a user.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"description\":\"T" +
+            "he id of the user whose badges will be listed. Can be me to refer to caller.\",\"r" +
+            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\"" +
+            ":\"BadgeList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.goo" +
+            "gleapis.com/auth/orkut.readonly\"]}}},\"comments\":{\"methods\":{\"delete\":{\"id\":\"orku" +
+            "t.comments.delete\",\"path\":\"comments/{commentId}\",\"httpMethod\":\"DELETE\",\"descript" +
+            "ion\":\"Deletes an existing comment.\",\"parameters\":{\"commentId\":{\"type\":\"string\",\"" +
+            "description\":\"ID of the comment to remove.\",\"required\":true,\"location\":\"path\"}}," +
+            "\"parameterOrder\":[\"commentId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"" +
+            "]},\"get\":{\"id\":\"orkut.comments.get\",\"path\":\"comments/{commentId}\",\"httpMethod\":\"" +
+            "GET\",\"description\":\"Retrieves an existing comment.\",\"parameters\":{\"commentId\":{\"" +
+            "type\":\"string\",\"description\":\"ID of the comment to get.\",\"required\":true,\"locati" +
+            "on\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface languag" +
+            "e (host language) of your user interface.\",\"location\":\"query\"}},\"parameterOrder\"" +
+            ":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapis.c" +
+            "om/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"insert\":{\"id\"" +
+            ":\"orkut.comments.insert\",\"path\":\"activities/{activityId}/comments\",\"httpMethod\":" +
+            "\"POST\",\"description\":\"Inserts a new comment to an activity.\",\"parameters\":{\"acti" +
+            "vityId\":{\"type\":\"string\",\"description\":\"The ID of the activity to contain the ne" +
+            "w comment.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\"]," +
+            "\"request\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.comments.list\",\"path\":\"activi" +
+            "ties/{activityId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list o" +
+            "f comments, possibly filtered.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"des" +
+            "cription\":\"The ID of the activity containing the comments.\",\"required\":true,\"loc" +
+            "ation\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface lang" +
+            "uage (host language) of your user interface.\",\"location\":\"query\"},\"maxResults\":{" +
+            "\"type\":\"integer\",\"description\":\"The maximum number of activities to include in t" +
+            "he response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"orderBy\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Sort search results.\",\"default\":\"DESCENDING_SORT\",\"e" +
+            "num\":[\"ascending\",\"descending\"],\"enumDescriptions\":[\"Use ascending sort order.\"," +
+            "\"Use descending sort order.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"" +
+            "description\":\"A continuation token that allows pagination.\",\"location\":\"query\"}}" +
+            ",\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"CommentList\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.read" +
+            "only\"]}}},\"communities\":{\"methods\":{\"get\":{\"id\":\"orkut.communities.get\",\"path\":\"" +
+            "communities/{communityId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the basic" +
+            " information (aka. profile) of a community.\",\"parameters\":{\"communityId\":{\"type\"" +
+            ":\"integer\",\"description\":\"The ID of the community to get.\",\"required\":true,\"form" +
             "at\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies th" +
             "e interface language (host language) of your user interface.\",\"location\":\"query\"" +
-            "}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut" +
-            ".readonly\"]}}},\"communityTopics\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityTopi" +
-            "cs.delete\",\"path\":\"communities/{communityId}/topics/{topicId}\",\"httpMethod\":\"DEL" +
-            "ETE\",\"description\":\"Moves a topic of the community to the trash folder.\",\"parame" +
-            "ters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community wh" +
-            "ose topic will be moved to the trash folder.\",\"required\":true,\"format\":\"int32\",\"" +
-            "location\":\"path\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic " +
-            "to be moved to the trash folder.\",\"required\":true,\"format\":\"int64\",\"location\":\"p" +
-            "ath\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/orkut\"]},\"get\":{\"id\":\"orkut.communityTopics.get\",\"path\":\"communitie" +
-            "s/{communityId}/topics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a " +
-            "topic of a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descriptio" +
-            "n\":\"The ID of the community whose topic will be retrieved.\",\"required\":true,\"for" +
-            "mat\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies t" +
-            "he interface language (host language) of your user interface.\",\"location\":\"query" +
-            "\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic to get.\",\"requi" +
-            "red\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"" +
-            "topicId\"],\"response\":{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"insert\":{\"i" +
-            "d\":\"orkut.communityTopics.insert\",\"path\":\"communities/{communityId}/topics\",\"htt" +
-            "pMethod\":\"POST\",\"description\":\"Adds a topic to a given community.\",\"parameters\":" +
-            "{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community the topi" +
-            "c should be added to.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"isSh" +
-            "out\":{\"type\":\"boolean\",\"description\":\"Whether this topic is a shout.\",\"location\"" +
-            ":\"query\"}},\"parameterOrder\":[\"communityId\"],\"request\":{\"$ref\":\"CommunityTopic\"}," +
-            "\"response\":{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "orkut\"]},\"list\":{\"id\":\"orkut.communityTopics.list\",\"path\":\"communities/{communit" +
-            "yId}/topics\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the topics of a communi" +
-            "ty.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the " +
-            "community which topics will be listed.\",\"required\":true,\"format\":\"int32\",\"locati" +
-            "on\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface languag" +
-            "e (host language) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"The maximum number of topics to include in the resp" +
-            "onse.\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"page" +
-            "Token\":{\"type\":\"string\",\"description\":\"A continuation token that allows paginati" +
-            "on.\",\"location\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"C" +
-            "ommunityTopicList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://w" +
-            "ww.googleapis.com/auth/orkut.readonly\"]}}},\"counters\":{\"methods\":{\"list\":{\"id\":\"" +
-            "orkut.counters.list\",\"path\":\"people/{userId}/counters\",\"httpMethod\":\"GET\",\"descr" +
-            "iption\":\"Retrieves the counters of a user.\",\"parameters\":{\"userId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The ID of the user whose counters will be listed. Can be me t" +
-            "o refer to caller.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userI" +
-            "d\"],\"response\":{\"$ref\":\"Counters\"},\"scopes\":[\"https://www.googleapis.com/auth/or" +
-            "kut\",\"https://www.googleapis.com/auth/orkut.readonly\"]}}},\"scraps\":{\"methods\":{\"" +
-            "insert\":{\"id\":\"orkut.scraps.insert\",\"path\":\"activities/scraps\",\"httpMethod\":\"POS" +
-            "T\",\"description\":\"Creates a new scrap.\",\"request\":{\"$ref\":\"Activity\"},\"response\"" +
-            ":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}}}}";
+            "}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"Community\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.rea" +
+            "donly\"]},\"list\":{\"id\":\"orkut.communities.list\",\"path\":\"people/{userId}/communiti" +
+            "es\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of communities the curr" +
+            "ent user is a member of.\",\"parameters\":{\"hl\":{\"type\":\"string\",\"description\":\"Spe" +
+            "cifies the interface language (host language) of your user interface.\",\"location" +
+            "\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of c" +
+            "ommunities to include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"locatio" +
+            "n\":\"query\"},\"orderBy\":{\"type\":\"string\",\"description\":\"How to order the communiti" +
+            "es by.\",\"enum\":[\"id\",\"ranked\"],\"enumDescriptions\":[\"Returns the communities sort" +
+            "ed by a fixed, natural order.\",\"Returns the communities ranked accordingly to ho" +
+            "w they are displayed on the orkut web application.\"],\"location\":\"query\"},\"userId" +
+            "\":{\"type\":\"string\",\"description\":\"The ID of the user whose communities will be l" +
+            "isted. Can be me to refer to caller.\",\"required\":true,\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"userId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\":[\"https://www" +
+            ".googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]}}}" +
+            ",\"communityFollow\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityFollow.delete\",\"pa" +
+            "th\":\"communities/{communityId}/followers/{userId}\",\"httpMethod\":\"DELETE\",\"descri" +
+            "ption\":\"Removes a user from the followers of a community.\",\"parameters\":{\"commun" +
+            "ityId\":{\"type\":\"integer\",\"description\":\"ID of the community.\",\"required\":true,\"f" +
+            "ormat\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of" +
+            " the user.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\"," +
+            "\"userId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"insert\":{\"id\":\"or" +
+            "kut.communityFollow.insert\",\"path\":\"communities/{communityId}/followers/{userId}" +
+            "\",\"httpMethod\":\"POST\",\"description\":\"Adds a user as a follower of a community.\"," +
+            "\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID of the community" +
+            ".\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"string\"" +
+            ",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
+            "rder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMembers\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/orkut\"]}}},\"communityMembers\":{\"methods\":{\"dele" +
+            "te\":{\"id\":\"orkut.communityMembers.delete\",\"path\":\"communities/{communityId}/memb" +
+            "ers/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Makes the user leave a commun" +
+            "ity.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID of the com" +
+            "munity.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"s" +
+            "tring\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}},\"para" +
+            "meterOrder\":[\"communityId\",\"userId\"],\"scopes\":[\"https://www.googleapis.com/auth/" +
+            "orkut\"]},\"get\":{\"id\":\"orkut.communityMembers.get\",\"path\":\"communities/{community" +
+            "Id}/members/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the relationsh" +
+            "ip between a user and a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer" +
+            "\",\"description\":\"ID of the community.\",\"required\":true,\"format\":\"int32\",\"locatio" +
+            "n\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language" +
+            " (host language) of your user interface.\",\"location\":\"query\"},\"userId\":{\"type\":\"" +
+            "string\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}},\"par" +
+            "ameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMembers\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/" +
+            "orkut.readonly\"]},\"insert\":{\"id\":\"orkut.communityMembers.insert\",\"path\":\"communi" +
+            "ties/{communityId}/members/{userId}\",\"httpMethod\":\"POST\",\"description\":\"Makes th" +
+            "e user join a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"ID of the community.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}" +
+            ",\"userId\":{\"type\":\"string\",\"description\":\"ID of the user.\",\"required\":true,\"loca" +
+            "tion\":\"path\"}},\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"Com" +
+            "munityMembers\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\"" +
+            ":\"orkut.communityMembers.list\",\"path\":\"communities/{communityId}/members\",\"httpM" +
+            "ethod\":\"GET\",\"description\":\"Lists members of a community. Use the pagination tok" +
+            "ens to retrieve the full list; do not rely on the member count available in the " +
+            "community profile information to know when to stop iterating, as that count may " +
+            "be approximate.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"Th" +
+            "e ID of the community whose members will be listed.\",\"required\":true,\"format\":\"i" +
+            "nt32\",\"location\":\"path\"},\"friendsOnly\":{\"type\":\"boolean\",\"description\":\"Whether " +
+            "to list only community members who are friends of the user.\",\"location\":\"query\"}" +
+            ",\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language (host lan" +
+            "guage) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"intege" +
+            "r\",\"description\":\"The maximum number of members to include in the response.\",\"fo" +
+            "rmat\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"d" +
+            "escription\":\"A continuation token that allows pagination.\",\"location\":\"query\"}}," +
+            "\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityMembersList\"},\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/o" +
+            "rkut.readonly\"]}}},\"communityMessages\":{\"methods\":{\"delete\":{\"id\":\"orkut.communi" +
+            "tyMessages.delete\",\"path\":\"communities/{communityId}/topics/{topicId}/messages/{" +
+            "messageId}\",\"httpMethod\":\"DELETE\",\"description\":\"Moves a message of the communit" +
+            "y to the trash folder.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"The ID of the community whose message will be moved to the trash folder.\",\"" +
+            "required\":true,\"format\":\"int32\",\"location\":\"path\"},\"messageId\":{\"type\":\"string\"," +
+            "\"description\":\"The ID of the message to be moved to the trash folder.\",\"required" +
+            "\":true,\"format\":\"int64\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The ID of the topic whose message will be moved to the trash folder.\",\"requ" +
+            "ired\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\"," +
+            "\"topicId\",\"messageId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"inse" +
+            "rt\":{\"id\":\"orkut.communityMessages.insert\",\"path\":\"communities/{communityId}/top" +
+            "ics/{topicId}/messages\",\"httpMethod\":\"POST\",\"description\":\"Adds a message to a g" +
+            "iven community topic.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descriptio" +
+            "n\":\"The ID of the community the message should be added to.\",\"required\":true,\"fo" +
+            "rmat\":\"int32\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\",\"description\":\"The I" +
+            "D of the topic the message should be added to.\",\"required\":true,\"format\":\"int64\"" +
+            ",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"request\":{\"$ref" +
+            "\":\"CommunityMessage\"},\"response\":{\"$ref\":\"CommunityMessage\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.communityMessages.list\",\"pa" +
+            "th\":\"communities/{communityId}/topics/{topicId}/messages\",\"httpMethod\":\"GET\",\"de" +
+            "scription\":\"Retrieves the messages of a topic of a community.\",\"parameters\":{\"co" +
+            "mmunityId\":{\"type\":\"integer\",\"description\":\"The ID of the community which messag" +
+            "es will be listed.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"hl\":{\"t" +
+            "ype\":\"string\",\"description\":\"Specifies the interface language (host language) of" +
+            " your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descr" +
+            "iption\":\"The maximum number of messages to include in the response.\",\"format\":\"u" +
+            "int32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"st" +
+            "ring\",\"description\":\"A continuation token that allows pagination.\",\"location\":\"q" +
+            "uery\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic which messa" +
+            "ges will be listed.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"communityId\",\"topicId\"],\"response\":{\"$ref\":\"CommunityMessageList\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/au" +
+            "th/orkut.readonly\"]}}},\"communityPollComments\":{\"methods\":{\"insert\":{\"id\":\"orkut" +
+            ".communityPollComments.insert\",\"path\":\"communities/{communityId}/polls/{pollId}/" +
+            "comments\",\"httpMethod\":\"POST\",\"description\":\"Adds a comment on a community poll." +
+            "\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the com" +
+            "munity whose poll is being commented.\",\"required\":true,\"format\":\"int32\",\"locatio" +
+            "n\":\"path\"},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of the poll being com" +
+            "mented.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"po" +
+            "llId\"],\"request\":{\"$ref\":\"CommunityPollComment\"},\"response\":{\"$ref\":\"CommunityPo" +
+            "llComment\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"or" +
+            "kut.communityPollComments.list\",\"path\":\"communities/{communityId}/polls/{pollId}" +
+            "/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the comments of a communi" +
+            "ty poll.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of" +
+            " the community whose poll is having its comments listed.\",\"required\":true,\"forma" +
+            "t\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the" +
+            " interface language (host language) of your user interface.\",\"location\":\"query\"}" +
+            ",\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of comments to" +
+            " include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"" +
+            "pageToken\":{\"type\":\"string\",\"description\":\"A continuation token that allows pagi" +
+            "nation.\",\"location\":\"query\"},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of " +
+            "the community whose polls will be listed.\",\"required\":true,\"location\":\"path\"}},\"" +
+            "parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"CommunityPollCommen" +
+            "tList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapi" +
+            "s.com/auth/orkut.readonly\"]}}},\"communityPollVotes\":{\"methods\":{\"insert\":{\"id\":\"" +
+            "orkut.communityPollVotes.insert\",\"path\":\"communities/{communityId}/polls/{pollId" +
+            "}/votes\",\"httpMethod\":\"POST\",\"description\":\"Votes on a community poll.\",\"paramet" +
+            "ers\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community who" +
+            "se poll is being voted.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"po" +
+            "llId\":{\"type\":\"string\",\"description\":\"The ID of the poll being voted.\",\"required" +
+            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"request\":{" +
+            "\"$ref\":\"CommunityPollVote\"},\"response\":{\"$ref\":\"CommunityPollVote\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/orkut\"]}}},\"communityPolls\":{\"methods\":{\"get\":{\"i" +
+            "d\":\"orkut.communityPolls.get\",\"path\":\"communities/{communityId}/polls/{pollId}\"," +
+            "\"httpMethod\":\"GET\",\"description\":\"Retrieves one specific poll of a community.\",\"" +
+            "parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the commun" +
+            "ity for whose poll will be retrieved.\",\"required\":true,\"format\":\"int32\",\"locatio" +
+            "n\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language" +
+            " (host language) of your user interface.\",\"location\":\"query\"},\"pollId\":{\"type\":\"" +
+            "string\",\"description\":\"The ID of the poll to get.\",\"required\":true,\"location\":\"p" +
+            "ath\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"CommunityPo" +
+            "ll\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.c" +
+            "om/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.communityPolls.list\",\"path\":\"commu" +
+            "nities/{communityId}/polls\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the poll" +
+            "s of a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"" +
+            "The ID of the community which polls will be listed.\",\"required\":true,\"format\":\"i" +
+            "nt32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the inte" +
+            "rface language (host language) of your user interface.\",\"location\":\"query\"},\"max" +
+            "Results\":{\"type\":\"integer\",\"description\":\"The maximum number of polls to include" +
+            " in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"pageToke" +
+            "n\":{\"type\":\"string\",\"description\":\"A continuation token that allows pagination.\"" +
+            ",\"location\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"Commu" +
+            "nityPollList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.go" +
+            "ogleapis.com/auth/orkut.readonly\"]}}},\"communityRelated\":{\"methods\":{\"list\":{\"id" +
+            "\":\"orkut.communityRelated.list\",\"path\":\"communities/{communityId}/related\",\"http" +
+            "Method\":\"GET\",\"description\":\"Retrieves the communities related to another one.\"," +
+            "\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the commu" +
+            "nity whose related communities will be listed.\",\"required\":true,\"format\":\"int32\"" +
+            ",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface" +
+            " language (host language) of your user interface.\",\"location\":\"query\"}},\"paramet" +
+            "erOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]" +
+            "}}},\"communityTopics\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityTopics.delete\"," +
+            "\"path\":\"communities/{communityId}/topics/{topicId}\",\"httpMethod\":\"DELETE\",\"descr" +
+            "iption\":\"Moves a topic of the community to the trash folder.\",\"parameters\":{\"com" +
+            "munityId\":{\"type\":\"integer\",\"description\":\"The ID of the community whose topic w" +
+            "ill be moved to the trash folder.\",\"required\":true,\"format\":\"int32\",\"location\":\"" +
+            "path\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic to be moved" +
+            " to the trash folder.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"par" +
+            "ameterOrder\":[\"communityId\",\"topicId\"],\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/orkut\"]},\"get\":{\"id\":\"orkut.communityTopics.get\",\"path\":\"communities/{communit" +
+            "yId}/topics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a topic of a " +
+            "community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID " +
+            "of the community whose topic will be retrieved.\",\"required\":true,\"format\":\"int32" +
+            "\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interfac" +
+            "e language (host language) of your user interface.\",\"location\":\"query\"},\"topicId" +
+            "\":{\"type\":\"string\",\"description\":\"The ID of the topic to get.\",\"required\":true,\"" +
+            "format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"" +
+            "response\":{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis.com/auth/o" +
+            "rkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"insert\":{\"id\":\"orkut.c" +
+            "ommunityTopics.insert\",\"path\":\"communities/{communityId}/topics\",\"httpMethod\":\"P" +
+            "OST\",\"description\":\"Adds a topic to a given community.\",\"parameters\":{\"community" +
+            "Id\":{\"type\":\"integer\",\"description\":\"The ID of the community the topic should be" +
+            " added to.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"isShout\":{\"type" +
+            "\":\"boolean\",\"description\":\"Whether this topic is a shout.\",\"location\":\"query\"}}," +
+            "\"parameterOrder\":[\"communityId\"],\"request\":{\"$ref\":\"CommunityTopic\"},\"response\":" +
+            "{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"l" +
+            "ist\":{\"id\":\"orkut.communityTopics.list\",\"path\":\"communities/{communityId}/topics" +
+            "\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the topics of a community.\",\"param" +
+            "eters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community w" +
+            "hich topics will be listed.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}" +
+            ",\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language (host lan" +
+            "guage) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"intege" +
+            "r\",\"description\":\"The maximum number of topics to include in the response.\",\"for" +
+            "mat\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"ty" +
+            "pe\":\"string\",\"description\":\"A continuation token that allows pagination.\",\"locat" +
+            "ion\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityTop" +
+            "icList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleap" +
+            "is.com/auth/orkut.readonly\"]}}},\"counters\":{\"methods\":{\"list\":{\"id\":\"orkut.count" +
+            "ers.list\",\"path\":\"people/{userId}/counters\",\"httpMethod\":\"GET\",\"description\":\"Re" +
+            "trieves the counters of a user.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The ID of the user whose counters will be listed. Can be me to refer to " +
+            "caller.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"respon" +
+            "se\":{\"$ref\":\"Counters\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https" +
+            "://www.googleapis.com/auth/orkut.readonly\"]}}},\"scraps\":{\"methods\":{\"insert\":{\"i" +
+            "d\":\"orkut.scraps.insert\",\"path\":\"activities/scraps\",\"httpMethod\":\"POST\",\"descrip" +
+            "tion\":\"Creates a new scrap.\",\"request\":{\"$ref\":\"Activity\"},\"response\":{\"$ref\":\"A" +
+            "ctivity\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}}}}";
         
         public const string Version = "v2";
         

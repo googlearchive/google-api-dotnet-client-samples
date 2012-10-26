@@ -1038,374 +1038,375 @@ namespace Google.Apis.Storage.v1beta1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"storage:v1beta1" +
-            "\",\"name\":\"storage\",\"version\":\"v1beta1\",\"revision\":\"20120806\",\"title\":\"Cloud Stor" +
-            "age API\",\"description\":\"Lets you store and retrieve potentially-large, immutable" +
-            " data objects.\",\"icons\":{\"x16\":\"https://www.google.com/images/icons/product/clou" +
-            "d_storage-16.png\",\"x32\":\"https://www.google.com/images/icons/product/cloud_stora" +
-            "ge-32.png\"},\"documentationLink\":\"https://developers.google.com/storage/docs/json" +
-            "_api/\",\"labels\":[\"limited_availability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://ww" +
-            "w.googleapis.com/storage/v1beta1/\",\"basePath\":\"/storage/v1beta1/\",\"rootUrl\":\"htt" +
-            "ps://www.googleapis.com/\",\"servicePath\":\"storage/v1beta1/\",\"batchPath\":\"batch\",\"" +
-            "parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response." +
-            "\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-T" +
-            "ype of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Selector specifying which fields to include in a partial response.\",\"loca" +
-            "tion\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key ident" +
-            "ifies your project and provides you with API access, quota, and reports. Require" +
-            "d unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"ty" +
-            "pe\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"q" +
-            "uery\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with inde" +
-            "ntations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Available to use for quota purposes for server-side " +
-            "applications. Can be any arbitrary string assigned to a user, but should not exc" +
-            "eed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"" +
-            "userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request" +
-            " originates. Use this if you want to enforce per-user limits.\",\"location\":\"query" +
-            "\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.full" +
-            "_control\":{\"description\":\"Manage your data and permissions in Google Cloud Stora" +
-            "ge\"},\"https://www.googleapis.com/auth/devstorage.read_only\":{\"description\":\"View" +
-            " your data in Google Cloud Storage\"},\"https://www.googleapis.com/auth/devstorage" +
-            ".read_write\":{\"description\":\"Manage your data in Google Cloud Storage\"}}}},\"sche" +
-            "mas\":{\"Bucket\":{\"id\":\"Bucket\",\"type\":\"object\",\"description\":\"A bucket.\",\"propert" +
-            "ies\":{\"acl\":{\"type\":\"array\",\"description\":\"Access controls on the bucket.\",\"item" +
-            "s\":{\"$ref\":\"BucketAccessControl\"},\"annotations\":{\"required\":[\"storage.buckets.up" +
-            "date\"]}},\"defaultObjectAcl\":{\"type\":\"array\",\"description\":\"Default access contro" +
-            "ls to apply to new objects when no ACL is provided.\",\"items\":{\"$ref\":\"ObjectAcce" +
-            "ssControl\"}},\"id\":{\"type\":\"string\",\"description\":\"The name of the bucket.\",\"anno" +
-            "tations\":{\"required\":[\"storage.buckets.insert\"]}},\"kind\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The kind of item this is. For buckets, this is always storage#bucket.\"," +
-            "\"default\":\"storage#bucket\"},\"location\":{\"type\":\"string\",\"description\":\"The locat" +
-            "ion of the bucket. Object data for objects in the bucket resides in physical sto" +
-            "rage in this location. Can be US or EU. Defaults to US.\"},\"owner\":{\"type\":\"objec" +
-            "t\",\"description\":\"The owner of the bucket. This will always be the project team\'" +
-            "s owner group.\",\"properties\":{\"entity\":{\"type\":\"string\",\"description\":\"The entit" +
-            "y, in the form group-groupId.\"},\"entityId\":{\"type\":\"string\",\"description\":\"The I" +
-            "D for the entity.\"}}},\"projectId\":{\"type\":\"string\",\"description\":\"The project th" +
-            "e bucket belongs to.\",\"format\":\"uint64\",\"annotations\":{\"required\":[\"storage.buck" +
-            "ets.insert\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"The URI of this bucket" +
-            ".\"},\"timeCreated\":{\"type\":\"string\",\"description\":\"Creation time of the bucket in" +
-            " RFC 3339 format.\",\"format\":\"date-time\"},\"website\":{\"type\":\"object\",\"description" +
-            "\":\"The bucket\'s website configuration.\",\"properties\":{\"mainPageSuffix\":{\"type\":\"" +
-            "string\",\"description\":\"Behaves as the bucket\'s directory index where missing obj" +
-            "ects are treated as potential directories.\"},\"notFoundPage\":{\"type\":\"string\",\"de" +
-            "scription\":\"The custom object to return when a requested resource is not found.\"" +
-            "}}}}},\"BucketAccessControl\":{\"id\":\"BucketAccessControl\",\"type\":\"object\",\"descrip" +
-            "tion\":\"An access-control entry.\",\"properties\":{\"bucket\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The name of the bucket.\"},\"domain\":{\"type\":\"string\",\"description\":\"The d" +
-            "omain associated with the entity, if any.\"},\"email\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The email address associated with the entity, if any.\"},\"entity\":{\"type\":\"st" +
-            "ring\",\"description\":\"The entity holding the permission, in one of the following " +
-            "forms: \\n- user-userId \\n- user-email \\n- group-groupId \\n- group-email \\n- allU" +
-            "sers \\n- allAuthenticatedUsers\",\"annotations\":{\"required\":[\"storage.bucketAccess" +
-            "Controls.insert\"]}},\"entityId\":{\"type\":\"string\",\"description\":\"The ID for the en" +
-            "tity, if any.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the access-contro" +
-            "l entry.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of item this is. For " +
-            "bucket access control entries, this is always storage#bucketAccessControl.\",\"def" +
-            "ault\":\"storage#bucketAccessControl\"},\"role\":{\"type\":\"string\",\"description\":\"The " +
-            "access permission for the entity. Can be READER, WRITER, or OWNER.\",\"annotations" +
-            "\":{\"required\":[\"storage.bucketAccessControls.insert\"]}},\"selfLink\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The link to this access-control entry.\"}}},\"BucketAccessContr" +
-            "ols\":{\"id\":\"BucketAccessControls\",\"type\":\"object\",\"description\":\"An access-contr" +
-            "ol list.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of items" +
-            ".\",\"items\":{\"$ref\":\"BucketAccessControl\"}},\"kind\":{\"type\":\"string\",\"description\"" +
-            ":\"The kind of item this is. For lists of bucket access control entries, this is " +
-            "always storage#bucketAccessControls.\",\"default\":\"storage#bucketAccessControls\"}}" +
-            "},\"Buckets\":{\"id\":\"Buckets\",\"type\":\"object\",\"description\":\"A list of buckets.\",\"" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/1N7R4ew" +
+            "UiEfRymB_9IwE3tEWoXM\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"storage:v1beta1\",\"name\":\"s" +
+            "torage\",\"version\":\"v1beta1\",\"revision\":\"20120806\",\"title\":\"Cloud Storage API\",\"d" +
+            "escription\":\"Lets you store and retrieve potentially-large, immutable data objec" +
+            "ts.\",\"icons\":{\"x16\":\"https://www.google.com/images/icons/product/cloud_storage-1" +
+            "6.png\",\"x32\":\"https://www.google.com/images/icons/product/cloud_storage-32.png\"}" +
+            ",\"documentationLink\":\"https://developers.google.com/storage/docs/json_api/\",\"lab" +
+            "els\":[\"limited_availability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapi" +
+            "s.com/storage/v1beta1/\",\"basePath\":\"/storage/v1beta1/\",\"rootUrl\":\"https://www.go" +
+            "ogleapis.com/\",\"servicePath\":\"storage/v1beta1/\",\"batchPath\":\"batch\",\"parameters\"" +
+            ":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\"" +
+            ":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of appl" +
+            "ication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Sele" +
+            "ctor specifying which fields to include in a partial response.\",\"location\":\"quer" +
+            "y\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your " +
+            "project and provides you with API access, quota, and reports. Required unless yo" +
+            "u provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string" +
+            "\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"pre" +
+            "ttyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations an" +
+            "d line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string" +
+            "\",\"description\":\"Available to use for quota purposes for server-side application" +
+            "s. Can be any arbitrary string assigned to a user, but should not exceed 40 char" +
+            "acters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"t" +
+            "ype\":\"string\",\"description\":\"IP address of the site where the request originates" +
+            ". Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":" +
+            "{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.full_control\":{" +
+            "\"description\":\"Manage your data and permissions in Google Cloud Storage\"},\"https" +
+            "://www.googleapis.com/auth/devstorage.read_only\":{\"description\":\"View your data " +
+            "in Google Cloud Storage\"},\"https://www.googleapis.com/auth/devstorage.read_write" +
+            "\":{\"description\":\"Manage your data in Google Cloud Storage\"}}}},\"schemas\":{\"Buck" +
+            "et\":{\"id\":\"Bucket\",\"type\":\"object\",\"description\":\"A bucket.\",\"properties\":{\"acl\"" +
+            ":{\"type\":\"array\",\"description\":\"Access controls on the bucket.\",\"items\":{\"$ref\":" +
+            "\"BucketAccessControl\"},\"annotations\":{\"required\":[\"storage.buckets.update\"]}},\"d" +
+            "efaultObjectAcl\":{\"type\":\"array\",\"description\":\"Default access controls to apply" +
+            " to new objects when no ACL is provided.\",\"items\":{\"$ref\":\"ObjectAccessControl\"}" +
+            "},\"id\":{\"type\":\"string\",\"description\":\"The name of the bucket.\",\"annotations\":{\"" +
+            "required\":[\"storage.buckets.insert\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Th" +
+            "e kind of item this is. For buckets, this is always storage#bucket.\",\"default\":\"" +
+            "storage#bucket\"},\"location\":{\"type\":\"string\",\"description\":\"The location of the " +
+            "bucket. Object data for objects in the bucket resides in physical storage in thi" +
+            "s location. Can be US or EU. Defaults to US.\"},\"owner\":{\"type\":\"object\",\"descrip" +
+            "tion\":\"The owner of the bucket. This will always be the project team\'s owner gro" +
+            "up.\",\"properties\":{\"entity\":{\"type\":\"string\",\"description\":\"The entity, in the f" +
+            "orm group-groupId.\"},\"entityId\":{\"type\":\"string\",\"description\":\"The ID for the e" +
+            "ntity.\"}}},\"projectId\":{\"type\":\"string\",\"description\":\"The project the bucket be" +
+            "longs to.\",\"format\":\"uint64\",\"annotations\":{\"required\":[\"storage.buckets.insert\"" +
+            "]}},\"selfLink\":{\"type\":\"string\",\"description\":\"The URI of this bucket.\"},\"timeCr" +
+            "eated\":{\"type\":\"string\",\"description\":\"Creation time of the bucket in RFC 3339 f" +
+            "ormat.\",\"format\":\"date-time\"},\"website\":{\"type\":\"object\",\"description\":\"The buck" +
+            "et\'s website configuration.\",\"properties\":{\"mainPageSuffix\":{\"type\":\"string\",\"de" +
+            "scription\":\"Behaves as the bucket\'s directory index where missing objects are tr" +
+            "eated as potential directories.\"},\"notFoundPage\":{\"type\":\"string\",\"description\":" +
+            "\"The custom object to return when a requested resource is not found.\"}}}}},\"Buck" +
+            "etAccessControl\":{\"id\":\"BucketAccessControl\",\"type\":\"object\",\"description\":\"An a" +
+            "ccess-control entry.\",\"properties\":{\"bucket\":{\"type\":\"string\",\"description\":\"The" +
+            " name of the bucket.\"},\"domain\":{\"type\":\"string\",\"description\":\"The domain assoc" +
+            "iated with the entity, if any.\"},\"email\":{\"type\":\"string\",\"description\":\"The ema" +
+            "il address associated with the entity, if any.\"},\"entity\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The entity holding the permission, in one of the following forms: \\n- " +
+            "user-userId \\n- user-email \\n- group-groupId \\n- group-email \\n- allUsers \\n- al" +
+            "lAuthenticatedUsers\",\"annotations\":{\"required\":[\"storage.bucketAccessControls.in" +
+            "sert\"]}},\"entityId\":{\"type\":\"string\",\"description\":\"The ID for the entity, if an" +
+            "y.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the access-control entry.\"}," +
+            "\"kind\":{\"type\":\"string\",\"description\":\"The kind of item this is. For bucket acce" +
+            "ss control entries, this is always storage#bucketAccessControl.\",\"default\":\"stor" +
+            "age#bucketAccessControl\"},\"role\":{\"type\":\"string\",\"description\":\"The access perm" +
+            "ission for the entity. Can be READER, WRITER, or OWNER.\",\"annotations\":{\"require" +
+            "d\":[\"storage.bucketAccessControls.insert\"]}},\"selfLink\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The link to this access-control entry.\"}}},\"BucketAccessControls\":{\"id\":" +
+            "\"BucketAccessControls\",\"type\":\"object\",\"description\":\"An access-control list.\",\"" +
             "properties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of items.\",\"items\":" +
-            "{\"$ref\":\"Bucket\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind of item this " +
-            "is. For lists of buckets, this is always storage#buckets.\",\"default\":\"storage#bu" +
-            "ckets\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The continuation token, " +
-            "used to page through large result sets. Provide this value in a subsequent reque" +
-            "st to return the next page of results.\"}}},\"Object\":{\"id\":\"Object\",\"type\":\"objec" +
-            "t\",\"description\":\"An object.\",\"properties\":{\"acl\":{\"type\":\"array\",\"description\":" +
-            "\"Access controls on the object.\",\"items\":{\"$ref\":\"ObjectAccessControl\"},\"annotat" +
-            "ions\":{\"required\":[\"storage.objects.update\"]}},\"bucket\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The bucket containing this object.\"},\"cacheControl\":{\"type\":\"string\",\"de" +
-            "scription\":\"Cache-Control directive for the object data.\"},\"contentDisposition\":" +
-            "{\"type\":\"string\",\"description\":\"Content-Disposition of the object data.\"},\"conte" +
-            "ntEncoding\":{\"type\":\"string\",\"description\":\"Content-Encoding of the object data." +
-            "\"},\"contentLanguage\":{\"type\":\"string\",\"description\":\"Content-Language of the obj" +
-            "ect data.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the object.\"},\"kind\":" +
-            "{\"type\":\"string\",\"description\":\"The kind of item this is. For objects, this is a" +
-            "lways storage#object.\",\"default\":\"storage#object\"},\"media\":{\"type\":\"object\",\"des" +
-            "cription\":\"Object media data. Provided on your behalf when uploading raw media o" +
-            "r multipart/related with an auxiliary media part.\",\"properties\":{\"algorithm\":{\"t" +
-            "ype\":\"string\",\"description\":\"Hash algorithm used. Currently only MD5 is supporte" +
-            "d. Required if a hash is provided.\"},\"contentType\":{\"type\":\"string\",\"description" +
-            "\":\"Content-Type of the object data.\",\"annotations\":{\"required\":[\"storage.objects" +
-            ".insert\",\"storage.objects.update\"]}},\"data\":{\"type\":\"string\",\"description\":\"URL-" +
-            "safe Base64-encoded data. This property can be used to insert objects under 64KB" +
-            " in size, and will only be returned in response to the get method for objects so" +
-            " created. When this resource is returned in response to the list method, this pr" +
-            "operty is omitted.\",\"format\":\"byte\",\"annotations\":{\"required\":[\"storage.objects." +
-            "insert\"]}},\"hash\":{\"type\":\"string\",\"description\":\"Hash of the data. Required if " +
-            "a hash algorithm is provided.\"},\"length\":{\"type\":\"string\",\"description\":\"Content" +
-            "-Length of the data in bytes.\",\"format\":\"int64\"},\"link\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Media download link.\"},\"timeCreated\":{\"type\":\"string\",\"description\":\"Cre" +
-            "ation time of the data in RFC 3339 format.\",\"format\":\"date-time\"}}},\"metadata\":{" +
-            "\"type\":\"object\",\"description\":\"User-provided metadata, in key/value pairs.\",\"add" +
-            "itionalProperties\":{\"type\":\"string\",\"description\":\"An individual metadata entry." +
-            "\"}},\"name\":{\"type\":\"string\",\"description\":\"The name of this object. Required if " +
-            "not specified by URL parameter.\"},\"owner\":{\"type\":\"object\",\"description\":\"The ow" +
-            "ner of the object. This will always be the uploader of the object.\",\"properties\"" +
-            ":{\"entity\":{\"type\":\"string\",\"description\":\"The entity, in the form user-userId.\"" +
-            "},\"entityId\":{\"type\":\"string\",\"description\":\"The ID for the entity.\"}}},\"selfLin" +
-            "k\":{\"type\":\"string\",\"description\":\"The link to this object.\"}}},\"ObjectAccessCon" +
-            "trol\":{\"id\":\"ObjectAccessControl\",\"type\":\"object\",\"description\":\"An access-contr" +
-            "ol entry.\",\"properties\":{\"bucket\":{\"type\":\"string\",\"description\":\"The name of th" +
-            "e bucket.\"},\"domain\":{\"type\":\"string\",\"description\":\"The domain associated with " +
-            "the entity, if any.\"},\"email\":{\"type\":\"string\",\"description\":\"The email address " +
-            "associated with the entity, if any.\"},\"entity\":{\"type\":\"string\",\"description\":\"T" +
-            "he entity holding the permission, in one of the following forms: \\n- user-userId" +
-            " \\n- user-email \\n- group-groupId \\n- group-email \\n- allUsers \\n- allAuthentica" +
-            "tedUsers\",\"annotations\":{\"required\":[\"storage.objectAccessControls.insert\"]}},\"e" +
-            "ntityId\":{\"type\":\"string\",\"description\":\"The ID for the entity, if any.\"},\"id\":{" +
-            "\"type\":\"string\",\"description\":\"The ID of the access-control entry.\"},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The kind of item this is. For object access control " +
-            "entries, this is always storage#objectAccessControl.\",\"default\":\"storage#objectA" +
-            "ccessControl\"},\"object\":{\"type\":\"string\",\"description\":\"The name of the object.\"" +
-            "},\"role\":{\"type\":\"string\",\"description\":\"The access permission for the entity. C" +
-            "an be READER or OWNER.\",\"annotations\":{\"required\":[\"storage.objectAccessControls" +
-            ".insert\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"The link to this access-c" +
-            "ontrol entry.\"}}},\"ObjectAccessControls\":{\"id\":\"ObjectAccessControls\",\"type\":\"ob" +
-            "ject\",\"description\":\"An access-control list.\",\"properties\":{\"items\":{\"type\":\"arr" +
-            "ay\",\"description\":\"The list of items.\",\"items\":{\"$ref\":\"ObjectAccessControl\"}},\"" +
-            "kind\":{\"type\":\"string\",\"description\":\"The kind of item this is. For lists of obj" +
-            "ect access control entries, this is always storage#objectAccessControls.\",\"defau" +
-            "lt\":\"storage#objectAccessControls\"}}},\"Objects\":{\"id\":\"Objects\",\"type\":\"object\"," +
-            "\"description\":\"A list of objects.\",\"properties\":{\"items\":{\"type\":\"array\",\"descri" +
-            "ption\":\"The list of items.\",\"items\":{\"$ref\":\"Object\"}},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"The kind of item this is. For lists of objects, this is always sto" +
-            "rage#objects.\",\"default\":\"storage#objects\"},\"nextPageToken\":{\"type\":\"string\",\"de" +
-            "scription\":\"The continuation token, used to page through large result sets. Prov" +
-            "ide this value in a subsequent request to return the next page of results.\"},\"pr" +
-            "efixes\":{\"type\":\"array\",\"description\":\"The list of prefixes of objects matching-" +
-            "but-not-listed up to and including the requested delimiter.\",\"items\":{\"type\":\"st" +
-            "ring\"}}}}},\"resources\":{\"bucketAccessControls\":{\"methods\":{\"delete\":{\"id\":\"stora" +
-            "ge.bucketAccessControls.delete\",\"path\":\"b/{bucket}/acl/{entity}\",\"httpMethod\":\"D" +
-            "ELETE\",\"description\":\"Deletes the ACL entry for the specified entity on the spec" +
-            "ified bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of a " +
-            "bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The entity holding the permission. Can be user-userId, group-groupId, allUs" +
-            "ers, or allAuthenticatedUsers.\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"bucket\",\"entity\"],\"scopes\":[\"https://www.googleapis.com/auth/devstorage.f" +
-            "ull_control\"]},\"get\":{\"id\":\"storage.bucketAccessControls.get\",\"path\":\"b/{bucket}" +
-            "/acl/{entity}\",\"httpMethod\":\"GET\",\"description\":\"Returns the ACL entry for the s" +
-            "pecified entity on the specified bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string" +
-            "\",\"description\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":" +
-            "{\"type\":\"string\",\"description\":\"The entity holding the permission. Can be user-u" +
-            "serId, group-groupId, allUsers, or allAuthenticatedUsers.\",\"required\":true,\"loca" +
-            "tion\":\"path\"}},\"parameterOrder\":[\"bucket\",\"entity\"],\"response\":{\"$ref\":\"BucketAc" +
-            "cessControl\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control" +
-            "\"]},\"insert\":{\"id\":\"storage.bucketAccessControls.insert\",\"path\":\"b/{bucket}/acl\"" +
-            ",\"httpMethod\":\"POST\",\"description\":\"Creates a new ACL entry on the specified buc" +
-            "ket.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of a bucket.\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"bucket\"],\"request\":{\"$ref" +
-            "\":\"BucketAccessControl\"},\"response\":{\"$ref\":\"BucketAccessControl\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/devstorage.full_control\"]},\"list\":{\"id\":\"storage.b" +
-            "ucketAccessControls.list\",\"path\":\"b/{bucket}/acl\",\"httpMethod\":\"GET\",\"descriptio" +
-            "n\":\"Retrieves ACL entries on the specified bucket.\",\"parameters\":{\"bucket\":{\"typ" +
-            "e\":\"string\",\"description\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"bucket\"],\"response\":{\"$ref\":\"BucketAccessControls\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/devstorage.full_control\"]},\"patch\":{\"id\":\"st" +
-            "orage.bucketAccessControls.patch\",\"path\":\"b/{bucket}/acl/{entity}\",\"httpMethod\":" +
-            "\"PATCH\",\"description\":\"Updates an ACL entry on the specified bucket. This method" +
-            " supports patch semantics.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description" +
-            "\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"type\":\"strin" +
-            "g\",\"description\":\"The entity holding the permission. Can be user-userId, group-g" +
-            "roupId, allUsers, or allAuthenticatedUsers.\",\"required\":true,\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"bucket\",\"entity\"],\"request\":{\"$ref\":\"BucketAccessControl\"},\"" +
-            "response\":{\"$ref\":\"BucketAccessControl\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/devstorage.full_control\"]},\"update\":{\"id\":\"storage.bucketAccessControls.upda" +
-            "te\",\"path\":\"b/{bucket}/acl/{entity}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a" +
-            "n ACL entry on the specified bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"d" +
+            "{\"$ref\":\"BucketAccessControl\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind " +
+            "of item this is. For lists of bucket access control entries, this is always stor" +
+            "age#bucketAccessControls.\",\"default\":\"storage#bucketAccessControls\"}}},\"Buckets\"" +
+            ":{\"id\":\"Buckets\",\"type\":\"object\",\"description\":\"A list of buckets.\",\"properties\"" +
+            ":{\"items\":{\"type\":\"array\",\"description\":\"The list of items.\",\"items\":{\"$ref\":\"Bu" +
+            "cket\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind of item this is. For lis" +
+            "ts of buckets, this is always storage#buckets.\",\"default\":\"storage#buckets\"},\"ne" +
+            "xtPageToken\":{\"type\":\"string\",\"description\":\"The continuation token, used to pag" +
+            "e through large result sets. Provide this value in a subsequent request to retur" +
+            "n the next page of results.\"}}},\"Object\":{\"id\":\"Object\",\"type\":\"object\",\"descrip" +
+            "tion\":\"An object.\",\"properties\":{\"acl\":{\"type\":\"array\",\"description\":\"Access con" +
+            "trols on the object.\",\"items\":{\"$ref\":\"ObjectAccessControl\"},\"annotations\":{\"req" +
+            "uired\":[\"storage.objects.update\"]}},\"bucket\":{\"type\":\"string\",\"description\":\"The" +
+            " bucket containing this object.\"},\"cacheControl\":{\"type\":\"string\",\"description\":" +
+            "\"Cache-Control directive for the object data.\"},\"contentDisposition\":{\"type\":\"st" +
+            "ring\",\"description\":\"Content-Disposition of the object data.\"},\"contentEncoding\"" +
+            ":{\"type\":\"string\",\"description\":\"Content-Encoding of the object data.\"},\"content" +
+            "Language\":{\"type\":\"string\",\"description\":\"Content-Language of the object data.\"}" +
+            ",\"id\":{\"type\":\"string\",\"description\":\"The ID of the object.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"The kind of item this is. For objects, this is always stora" +
+            "ge#object.\",\"default\":\"storage#object\"},\"media\":{\"type\":\"object\",\"description\":\"" +
+            "Object media data. Provided on your behalf when uploading raw media or multipart" +
+            "/related with an auxiliary media part.\",\"properties\":{\"algorithm\":{\"type\":\"strin" +
+            "g\",\"description\":\"Hash algorithm used. Currently only MD5 is supported. Required" +
+            " if a hash is provided.\"},\"contentType\":{\"type\":\"string\",\"description\":\"Content-" +
+            "Type of the object data.\",\"annotations\":{\"required\":[\"storage.objects.insert\",\"s" +
+            "torage.objects.update\"]}},\"data\":{\"type\":\"string\",\"description\":\"URL-safe Base64" +
+            "-encoded data. This property can be used to insert objects under 64KB in size, a" +
+            "nd will only be returned in response to the get method for objects so created. W" +
+            "hen this resource is returned in response to the list method, this property is o" +
+            "mitted.\",\"format\":\"byte\",\"annotations\":{\"required\":[\"storage.objects.insert\"]}}," +
+            "\"hash\":{\"type\":\"string\",\"description\":\"Hash of the data. Required if a hash algo" +
+            "rithm is provided.\"},\"length\":{\"type\":\"string\",\"description\":\"Content-Length of " +
+            "the data in bytes.\",\"format\":\"int64\"},\"link\":{\"type\":\"string\",\"description\":\"Med" +
+            "ia download link.\"},\"timeCreated\":{\"type\":\"string\",\"description\":\"Creation time " +
+            "of the data in RFC 3339 format.\",\"format\":\"date-time\"}}},\"metadata\":{\"type\":\"obj" +
+            "ect\",\"description\":\"User-provided metadata, in key/value pairs.\",\"additionalProp" +
+            "erties\":{\"type\":\"string\",\"description\":\"An individual metadata entry.\"}},\"name\":" +
+            "{\"type\":\"string\",\"description\":\"The name of this object. Required if not specifi" +
+            "ed by URL parameter.\"},\"owner\":{\"type\":\"object\",\"description\":\"The owner of the " +
+            "object. This will always be the uploader of the object.\",\"properties\":{\"entity\":" +
+            "{\"type\":\"string\",\"description\":\"The entity, in the form user-userId.\"},\"entityId" +
+            "\":{\"type\":\"string\",\"description\":\"The ID for the entity.\"}}},\"selfLink\":{\"type\":" +
+            "\"string\",\"description\":\"The link to this object.\"}}},\"ObjectAccessControl\":{\"id\"" +
+            ":\"ObjectAccessControl\",\"type\":\"object\",\"description\":\"An access-control entry.\"," +
+            "\"properties\":{\"bucket\":{\"type\":\"string\",\"description\":\"The name of the bucket.\"}" +
+            ",\"domain\":{\"type\":\"string\",\"description\":\"The domain associated with the entity," +
+            " if any.\"},\"email\":{\"type\":\"string\",\"description\":\"The email address associated " +
+            "with the entity, if any.\"},\"entity\":{\"type\":\"string\",\"description\":\"The entity h" +
+            "olding the permission, in one of the following forms: \\n- user-userId \\n- user-e" +
+            "mail \\n- group-groupId \\n- group-email \\n- allUsers \\n- allAuthenticatedUsers\",\"" +
+            "annotations\":{\"required\":[\"storage.objectAccessControls.insert\"]}},\"entityId\":{\"" +
+            "type\":\"string\",\"description\":\"The ID for the entity, if any.\"},\"id\":{\"type\":\"str" +
+            "ing\",\"description\":\"The ID of the access-control entry.\"},\"kind\":{\"type\":\"string" +
+            "\",\"description\":\"The kind of item this is. For object access control entries, th" +
+            "is is always storage#objectAccessControl.\",\"default\":\"storage#objectAccessContro" +
+            "l\"},\"object\":{\"type\":\"string\",\"description\":\"The name of the object.\"},\"role\":{\"" +
+            "type\":\"string\",\"description\":\"The access permission for the entity. Can be READE" +
+            "R or OWNER.\",\"annotations\":{\"required\":[\"storage.objectAccessControls.insert\"]}}" +
+            ",\"selfLink\":{\"type\":\"string\",\"description\":\"The link to this access-control entr" +
+            "y.\"}}},\"ObjectAccessControls\":{\"id\":\"ObjectAccessControls\",\"type\":\"object\",\"desc" +
+            "ription\":\"An access-control list.\",\"properties\":{\"items\":{\"type\":\"array\",\"descri" +
+            "ption\":\"The list of items.\",\"items\":{\"$ref\":\"ObjectAccessControl\"}},\"kind\":{\"typ" +
+            "e\":\"string\",\"description\":\"The kind of item this is. For lists of object access " +
+            "control entries, this is always storage#objectAccessControls.\",\"default\":\"storag" +
+            "e#objectAccessControls\"}}},\"Objects\":{\"id\":\"Objects\",\"type\":\"object\",\"descriptio" +
+            "n\":\"A list of objects.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The" +
+            " list of items.\",\"items\":{\"$ref\":\"Object\"}},\"kind\":{\"type\":\"string\",\"description" +
+            "\":\"The kind of item this is. For lists of objects, this is always storage#object" +
+            "s.\",\"default\":\"storage#objects\"},\"nextPageToken\":{\"type\":\"string\",\"description\":" +
+            "\"The continuation token, used to page through large result sets. Provide this va" +
+            "lue in a subsequent request to return the next page of results.\"},\"prefixes\":{\"t" +
+            "ype\":\"array\",\"description\":\"The list of prefixes of objects matching-but-not-lis" +
+            "ted up to and including the requested delimiter.\",\"items\":{\"type\":\"string\"}}}}}," +
+            "\"resources\":{\"bucketAccessControls\":{\"methods\":{\"delete\":{\"id\":\"storage.bucketAc" +
+            "cessControls.delete\",\"path\":\"b/{bucket}/acl/{entity}\",\"httpMethod\":\"DELETE\",\"des" +
+            "cription\":\"Deletes the ACL entry for the specified entity on the specified bucke" +
+            "t.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of a bucket.\",\"r" +
+            "equired\":true,\"location\":\"path\"},\"entity\":{\"type\":\"string\",\"description\":\"The en" +
+            "tity holding the permission. Can be user-userId, group-groupId, allUsers, or all" +
+            "AuthenticatedUsers.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"buck" +
+            "et\",\"entity\"],\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control" +
+            "\"]},\"get\":{\"id\":\"storage.bucketAccessControls.get\",\"path\":\"b/{bucket}/acl/{entit" +
+            "y}\",\"httpMethod\":\"GET\",\"description\":\"Returns the ACL entry for the specified en" +
+            "tity on the specified bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"type\":\"st" +
+            "ring\",\"description\":\"The entity holding the permission. Can be user-userId, grou" +
+            "p-groupId, allUsers, or allAuthenticatedUsers.\",\"required\":true,\"location\":\"path" +
+            "\"}},\"parameterOrder\":[\"bucket\",\"entity\"],\"response\":{\"$ref\":\"BucketAccessControl" +
+            "\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\"]},\"insert" +
+            "\":{\"id\":\"storage.bucketAccessControls.insert\",\"path\":\"b/{bucket}/acl\",\"httpMetho" +
+            "d\":\"POST\",\"description\":\"Creates a new ACL entry on the specified bucket.\",\"para" +
+            "meters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of a bucket.\",\"required\":" +
+            "true,\"location\":\"path\"}},\"parameterOrder\":[\"bucket\"],\"request\":{\"$ref\":\"BucketAc" +
+            "cessControl\"},\"response\":{\"$ref\":\"BucketAccessControl\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/devstorage.full_control\"]},\"list\":{\"id\":\"storage.bucketAccess" +
+            "Controls.list\",\"path\":\"b/{bucket}/acl\",\"httpMethod\":\"GET\",\"description\":\"Retriev" +
+            "es ACL entries on the specified bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string\"" +
+            ",\"description\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"}},\"paramete" +
+            "rOrder\":[\"bucket\"],\"response\":{\"$ref\":\"BucketAccessControls\"},\"scopes\":[\"https:/" +
+            "/www.googleapis.com/auth/devstorage.full_control\"]},\"patch\":{\"id\":\"storage.bucke" +
+            "tAccessControls.patch\",\"path\":\"b/{bucket}/acl/{entity}\",\"httpMethod\":\"PATCH\",\"de" +
+            "scription\":\"Updates an ACL entry on the specified bucket. This method supports p" +
+            "atch semantics.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of " +
+            "a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The entity holding the permission. Can be user-userId, group-groupId, all" +
+            "Users, or allAuthenticatedUsers.\",\"required\":true,\"location\":\"path\"}},\"parameter" +
+            "Order\":[\"bucket\",\"entity\"],\"request\":{\"$ref\":\"BucketAccessControl\"},\"response\":{" +
+            "\"$ref\":\"BucketAccessControl\"},\"scopes\":[\"https://www.googleapis.com/auth/devstor" +
+            "age.full_control\"]},\"update\":{\"id\":\"storage.bucketAccessControls.update\",\"path\":" +
+            "\"b/{bucket}/acl/{entity}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an ACL entry" +
+            " on the specified bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\"" +
+            ":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"type\":\"string" +
+            "\",\"description\":\"The entity holding the permission. Can be user-userId, group-gr" +
+            "oupId, allUsers, or allAuthenticatedUsers.\",\"required\":true,\"location\":\"path\"}}," +
+            "\"parameterOrder\":[\"bucket\",\"entity\"],\"request\":{\"$ref\":\"BucketAccessControl\"},\"r" +
+            "esponse\":{\"$ref\":\"BucketAccessControl\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/devstorage.full_control\"]}}},\"buckets\":{\"methods\":{\"delete\":{\"id\":\"storage.bu" +
+            "ckets.delete\",\"path\":\"b/{bucket}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a" +
+            "n empty bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of " +
+            "a bucket.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"bucket\"],\"scop" +
+            "es\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"https://www.goog" +
+            "leapis.com/auth/devstorage.read_write\"]},\"get\":{\"id\":\"storage.buckets.get\",\"path" +
+            "\":\"b/{bucket}\",\"httpMethod\":\"GET\",\"description\":\"Returns metadata for the specif" +
+            "ied bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of a bu" +
+            "cket.\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Set of properties to return. Defaults to no_acl.\",\"enum\":[\"full\",\"no_acl\"" +
+            "],\"enumDescriptions\":[\"Include all properties.\",\"Omit acl and defaultObjectAcl p" +
+            "roperties.\"],\"location\":\"query\"}},\"parameterOrder\":[\"bucket\"],\"response\":{\"$ref\"" +
+            ":\"Bucket\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"" +
+            "https://www.googleapis.com/auth/devstorage.read_only\",\"https://www.googleapis.co" +
+            "m/auth/devstorage.read_write\"]},\"insert\":{\"id\":\"storage.buckets.insert\",\"path\":\"" +
+            "b\",\"httpMethod\":\"POST\",\"description\":\"Creates a new bucket.\",\"parameters\":{\"proj" +
+            "ection\":{\"type\":\"string\",\"description\":\"Set of properties to return. Defaults to" +
+            " no_acl, unless the bucket resource specifies acl or defaultObjectAcl properties" +
+            ", when it defaults to full.\",\"enum\":[\"full\",\"no_acl\"],\"enumDescriptions\":[\"Inclu" +
+            "de all properties.\",\"Omit acl and defaultObjectAcl properties.\"],\"location\":\"que" +
+            "ry\"}},\"request\":{\"$ref\":\"Bucket\"},\"response\":{\"$ref\":\"Bucket\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/devstorage.full_control\",\"https://www.googleapis.com/a" +
+            "uth/devstorage.read_write\"]},\"list\":{\"id\":\"storage.buckets.list\",\"path\":\"b\",\"htt" +
+            "pMethod\":\"GET\",\"description\":\"Retrieves a list of buckets for a given project.\"," +
+            "\"parameters\":{\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number of b" +
+            "uckets to return.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToke" +
+            "n\":{\"type\":\"string\",\"description\":\"A previously-returned page token representing" +
+            " part of the larger set of results to view.\",\"location\":\"query\"},\"projectId\":{\"t" +
+            "ype\":\"string\",\"description\":\"A valid API project identifier.\",\"required\":true,\"f" +
+            "ormat\":\"uint64\",\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"description\":" +
+            "\"Set of properties to return. Defaults to no_acl.\",\"enum\":[\"full\",\"no_acl\"],\"enu" +
+            "mDescriptions\":[\"Include all properties.\",\"Omit acl and defaultObjectAcl propert" +
+            "ies.\"],\"location\":\"query\"}},\"parameterOrder\":[\"projectId\"],\"response\":{\"$ref\":\"B" +
+            "uckets\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"ht" +
+            "tps://www.googleapis.com/auth/devstorage.read_only\",\"https://www.googleapis.com/" +
+            "auth/devstorage.read_write\"]},\"patch\":{\"id\":\"storage.buckets.patch\",\"path\":\"b/{b" +
+            "ucket}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a bucket. This method suppor" +
+            "ts patch semantics.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name" +
+            " of a bucket.\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string\"," +
+            "\"description\":\"Set of properties to return. Defaults to full.\",\"enum\":[\"full\",\"n" +
+            "o_acl\"],\"enumDescriptions\":[\"Include all properties.\",\"Omit acl and defaultObjec" +
+            "tAcl properties.\"],\"location\":\"query\"}},\"parameterOrder\":[\"bucket\"],\"request\":{\"" +
+            "$ref\":\"Bucket\"},\"response\":{\"$ref\":\"Bucket\"},\"scopes\":[\"https://www.googleapis.c" +
+            "om/auth/devstorage.full_control\",\"https://www.googleapis.com/auth/devstorage.rea" +
+            "d_write\"]},\"update\":{\"id\":\"storage.buckets.update\",\"path\":\"b/{bucket}\",\"httpMeth" +
+            "od\":\"PUT\",\"description\":\"Updates a bucket.\",\"parameters\":{\"bucket\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"projec" +
+            "tion\":{\"type\":\"string\",\"description\":\"Set of properties to return. Defaults to f" +
+            "ull.\",\"enum\":[\"full\",\"no_acl\"],\"enumDescriptions\":[\"Include all properties.\",\"Om" +
+            "it acl and defaultObjectAcl properties.\"],\"location\":\"query\"}},\"parameterOrder\":" +
+            "[\"bucket\"],\"request\":{\"$ref\":\"Bucket\"},\"response\":{\"$ref\":\"Bucket\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/devstorage.full_control\",\"https://www.googleapis." +
+            "com/auth/devstorage.read_write\"]}}},\"objectAccessControls\":{\"methods\":{\"delete\":" +
+            "{\"id\":\"storage.objectAccessControls.delete\",\"path\":\"b/{bucket}/o/{object}/acl/{e" +
+            "ntity}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the ACL entry for the speci" +
+            "fied entity on the specified object.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"d" +
             "escription\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"ty" +
             "pe\":\"string\",\"description\":\"The entity holding the permission. Can be user-userI" +
             "d, group-groupId, allUsers, or allAuthenticatedUsers.\",\"required\":true,\"location" +
-            "\":\"path\"}},\"parameterOrder\":[\"bucket\",\"entity\"],\"request\":{\"$ref\":\"BucketAccessC" +
-            "ontrol\"},\"response\":{\"$ref\":\"BucketAccessControl\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/devstorage.full_control\"]}}},\"buckets\":{\"methods\":{\"delete\":{\"id\":" +
-            "\"storage.buckets.delete\",\"path\":\"b/{bucket}\",\"httpMethod\":\"DELETE\",\"description\"" +
-            ":\"Deletes an empty bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description" +
-            "\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"buc" +
-            "ket\"],\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"https" +
-            "://www.googleapis.com/auth/devstorage.read_write\"]},\"get\":{\"id\":\"storage.buckets" +
-            ".get\",\"path\":\"b/{bucket}\",\"httpMethod\":\"GET\",\"description\":\"Returns metadata for" +
-            " the specified bucket.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"N" +
-            "ame of a bucket.\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"strin" +
-            "g\",\"description\":\"Set of properties to return. Defaults to no_acl.\",\"enum\":[\"ful" +
-            "l\",\"no_acl\"],\"enumDescriptions\":[\"Include all properties.\",\"Omit acl and default" +
-            "ObjectAcl properties.\"],\"location\":\"query\"}},\"parameterOrder\":[\"bucket\"],\"respon" +
-            "se\":{\"$ref\":\"Bucket\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full" +
-            "_control\",\"https://www.googleapis.com/auth/devstorage.read_only\",\"https://www.go" +
-            "ogleapis.com/auth/devstorage.read_write\"]},\"insert\":{\"id\":\"storage.buckets.inser" +
-            "t\",\"path\":\"b\",\"httpMethod\":\"POST\",\"description\":\"Creates a new bucket.\",\"paramet" +
-            "ers\":{\"projection\":{\"type\":\"string\",\"description\":\"Set of properties to return. " +
-            "Defaults to no_acl, unless the bucket resource specifies acl or defaultObjectAcl" +
-            " properties, when it defaults to full.\",\"enum\":[\"full\",\"no_acl\"],\"enumDescriptio" +
-            "ns\":[\"Include all properties.\",\"Omit acl and defaultObjectAcl properties.\"],\"loc" +
-            "ation\":\"query\"}},\"request\":{\"$ref\":\"Bucket\"},\"response\":{\"$ref\":\"Bucket\"},\"scope" +
-            "s\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"https://www.googl" +
-            "eapis.com/auth/devstorage.read_write\"]},\"list\":{\"id\":\"storage.buckets.list\",\"pat" +
-            "h\":\"b\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of buckets for a given" +
-            " project.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum " +
-            "number of buckets to return.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"" +
-            "},\"pageToken\":{\"type\":\"string\",\"description\":\"A previously-returned page token r" +
-            "epresenting part of the larger set of results to view.\",\"location\":\"query\"},\"pro" +
-            "jectId\":{\"type\":\"string\",\"description\":\"A valid API project identifier.\",\"requir" +
-            "ed\":true,\"format\":\"uint64\",\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"de" +
-            "scription\":\"Set of properties to return. Defaults to no_acl.\",\"enum\":[\"full\",\"no" +
-            "_acl\"],\"enumDescriptions\":[\"Include all properties.\",\"Omit acl and defaultObject" +
-            "Acl properties.\"],\"location\":\"query\"}},\"parameterOrder\":[\"projectId\"],\"response\"" +
-            ":{\"$ref\":\"Buckets\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_c" +
-            "ontrol\",\"https://www.googleapis.com/auth/devstorage.read_only\",\"https://www.goog" +
-            "leapis.com/auth/devstorage.read_write\"]},\"patch\":{\"id\":\"storage.buckets.patch\",\"" +
-            "path\":\"b/{bucket}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a bucket. This me" +
-            "thod supports patch semantics.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type" +
-            "\":\"string\",\"description\":\"Set of properties to return. Defaults to full.\",\"enum\"" +
-            ":[\"full\",\"no_acl\"],\"enumDescriptions\":[\"Include all properties.\",\"Omit acl and d" +
-            "efaultObjectAcl properties.\"],\"location\":\"query\"}},\"parameterOrder\":[\"bucket\"],\"" +
-            "request\":{\"$ref\":\"Bucket\"},\"response\":{\"$ref\":\"Bucket\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/devstorage.full_control\",\"https://www.googleapis.com/auth/dev" +
-            "storage.read_write\"]},\"update\":{\"id\":\"storage.buckets.update\",\"path\":\"b/{bucket}" +
-            "\",\"httpMethod\":\"PUT\",\"description\":\"Updates a bucket.\",\"parameters\":{\"bucket\":{\"" +
-            "type\":\"string\",\"description\":\"Name of a bucket.\",\"required\":true,\"location\":\"pat" +
-            "h\"},\"projection\":{\"type\":\"string\",\"description\":\"Set of properties to return. De" +
-            "faults to full.\",\"enum\":[\"full\",\"no_acl\"],\"enumDescriptions\":[\"Include all prope" +
-            "rties.\",\"Omit acl and defaultObjectAcl properties.\"],\"location\":\"query\"}},\"param" +
-            "eterOrder\":[\"bucket\"],\"request\":{\"$ref\":\"Bucket\"},\"response\":{\"$ref\":\"Bucket\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"https://www." +
-            "googleapis.com/auth/devstorage.read_write\"]}}},\"objectAccessControls\":{\"methods\"" +
-            ":{\"delete\":{\"id\":\"storage.objectAccessControls.delete\",\"path\":\"b/{bucket}/o/{obj" +
-            "ect}/acl/{entity}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the ACL entry fo" +
-            "r the specified entity on the specified object.\",\"parameters\":{\"bucket\":{\"type\":" +
-            "\"string\",\"description\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"e" +
-            "ntity\":{\"type\":\"string\",\"description\":\"The entity holding the permission. Can be" +
-            " user-userId, group-groupId, allUsers, or allAuthenticatedUsers.\",\"required\":tru" +
-            "e,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"description\":\"Name of the object" +
-            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"bucket\",\"object\",\"enti" +
-            "ty\"],\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\"]},\"get\"" +
-            ":{\"id\":\"storage.objectAccessControls.get\",\"path\":\"b/{bucket}/o/{object}/acl/{ent" +
-            "ity}\",\"httpMethod\":\"GET\",\"description\":\"Returns the ACL entry for the specified " +
-            "entity on the specified object.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"type\":\"" +
-            "string\",\"description\":\"The entity holding the permission. Can be user-userId, gr" +
-            "oup-groupId, allUsers, or allAuthenticatedUsers.\",\"required\":true,\"location\":\"pa" +
-            "th\"},\"object\":{\"type\":\"string\",\"description\":\"Name of the object.\",\"required\":tr" +
-            "ue,\"location\":\"path\"}},\"parameterOrder\":[\"bucket\",\"object\",\"entity\"],\"response\":" +
-            "{\"$ref\":\"ObjectAccessControl\"},\"scopes\":[\"https://www.googleapis.com/auth/devsto" +
-            "rage.full_control\"]},\"insert\":{\"id\":\"storage.objectAccessControls.insert\",\"path\"" +
-            ":\"b/{bucket}/o/{object}/acl\",\"httpMethod\":\"POST\",\"description\":\"Creates a new AC" +
-            "L entry on the specified object.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"object\":{\"type\":" +
-            "\"string\",\"description\":\"Name of the object.\",\"required\":true,\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"bucket\",\"object\"],\"request\":{\"$ref\":\"ObjectAccessControl\"},\"" +
-            "response\":{\"$ref\":\"ObjectAccessControl\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/devstorage.full_control\"]},\"list\":{\"id\":\"storage.objectAccessControls.list\"," +
-            "\"path\":\"b/{bucket}/o/{object}/acl\",\"httpMethod\":\"GET\",\"description\":\"Retrieves A" +
-            "CL entries on the specified object.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"de" +
-            "scription\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"object\":{\"typ" +
-            "e\":\"string\",\"description\":\"Name of the object.\",\"required\":true,\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"bucket\",\"object\"],\"response\":{\"$ref\":\"ObjectAccessControl" +
-            "s\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\"]},\"patch" +
-            "\":{\"id\":\"storage.objectAccessControls.patch\",\"path\":\"b/{bucket}/o/{object}/acl/{" +
-            "entity}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an ACL entry on the specifi" +
-            "ed object. This method supports patch semantics.\",\"parameters\":{\"bucket\":{\"type\"" +
-            ":\"string\",\"description\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"" +
-            "entity\":{\"type\":\"string\",\"description\":\"The entity holding the permission. Can b" +
-            "e user-userId, group-groupId, allUsers, or allAuthenticatedUsers.\",\"required\":tr" +
-            "ue,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"description\":\"Name of the objec" +
-            "t.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"bucket\",\"object\",\"ent" +
-            "ity\"],\"request\":{\"$ref\":\"ObjectAccessControl\"},\"response\":{\"$ref\":\"ObjectAccessC" +
-            "ontrol\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\"]},\"" +
-            "update\":{\"id\":\"storage.objectAccessControls.update\",\"path\":\"b/{bucket}/o/{object" +
-            "}/acl/{entity}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an ACL entry on the sp" +
-            "ecified object.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of " +
-            "a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The entity holding the permission. Can be user-userId, group-groupId, all" +
-            "Users, or allAuthenticatedUsers.\",\"required\":true,\"location\":\"path\"},\"object\":{\"" +
-            "type\":\"string\",\"description\":\"Name of the object.\",\"required\":true,\"location\":\"p" +
-            "ath\"}},\"parameterOrder\":[\"bucket\",\"object\",\"entity\"],\"request\":{\"$ref\":\"ObjectAc" +
-            "cessControl\"},\"response\":{\"$ref\":\"ObjectAccessControl\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/devstorage.full_control\"]}}},\"objects\":{\"methods\":{\"delete\":{" +
-            "\"id\":\"storage.objects.delete\",\"path\":\"b/{bucket}/o/{object}\",\"httpMethod\":\"DELET" +
-            "E\",\"description\":\"Deletes data blobs and associated metadata.\",\"parameters\":{\"bu" +
-            "cket\":{\"type\":\"string\",\"description\":\"Name of the bucket in which the object res" +
-            "ides.\",\"required\":true,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"description" +
-            "\":\"Name of the object.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"b" +
-            "ucket\",\"object\"],\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_cont" +
-            "rol\",\"https://www.googleapis.com/auth/devstorage.read_write\"]},\"get\":{\"id\":\"stor" +
-            "age.objects.get\",\"path\":\"b/{bucket}/o/{object}\",\"httpMethod\":\"GET\",\"description\"" +
-            ":\"Retrieves objects or their associated metadata.\",\"parameters\":{\"bucket\":{\"type" +
-            "\":\"string\",\"description\":\"Name of the bucket in which the object resides.\",\"requ" +
-            "ired\":true,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"description\":\"Name of t" +
-            "he object.\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string\",\"de" +
-            "scription\":\"Set of properties to return. Defaults to no_acl.\",\"enum\":[\"full\",\"no" +
-            "_acl\"],\"enumDescriptions\":[\"Include all properties.\",\"Omit the acl property.\"],\"" +
-            "location\":\"query\"}},\"parameterOrder\":[\"bucket\",\"object\"],\"response\":{\"$ref\":\"Obj" +
-            "ect\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"https" +
-            "://www.googleapis.com/auth/devstorage.read_only\",\"https://www.googleapis.com/aut" +
-            "h/devstorage.read_write\"],\"supportsMediaDownload\":true},\"insert\":{\"id\":\"storage." +
-            "objects.insert\",\"path\":\"b/{bucket}/o\",\"httpMethod\":\"POST\",\"description\":\"Stores " +
-            "new data blobs and associated metadata.\",\"parameters\":{\"bucket\":{\"type\":\"string\"" +
-            ",\"description\":\"Name of the bucket in which to store the new object. Overrides t" +
-            "he provided object metadata\'s bucket value, if any.\",\"required\":true,\"location\":" +
-            "\"path\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the object. Required when" +
-            " the object metadata is not otherwise provided. Overrides the object metadata\'s " +
-            "name value, if any.\",\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Set of properties to return. Defaults to no_acl, unless the object resourc" +
-            "e specifies the acl property, when it defaults to full.\",\"enum\":[\"full\",\"no_acl\"" +
-            "],\"enumDescriptions\":[\"Include all properties.\",\"Omit the acl property.\"],\"locat" +
-            "ion\":\"query\"}},\"parameterOrder\":[\"bucket\"],\"request\":{\"$ref\":\"Object\"},\"response" +
-            "\":{\"$ref\":\"Object\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_c" +
-            "ontrol\",\"https://www.googleapis.com/auth/devstorage.read_write\"],\"supportsMediaU" +
-            "pload\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"protocols\":{\"simple\":{\"multipart\":t" +
-            "rue,\"path\":\"/upload/storage/v1beta1/b/{bucket}/o\"},\"resumable\":{\"multipart\":true" +
-            ",\"path\":\"/resumable/upload/storage/v1beta1/b/{bucket}/o\"}}}},\"list\":{\"id\":\"stora" +
-            "ge.objects.list\",\"path\":\"b/{bucket}/o\",\"httpMethod\":\"GET\",\"description\":\"Retriev" +
-            "es a list of objects matching the criteria.\",\"parameters\":{\"bucket\":{\"type\":\"str" +
-            "ing\",\"description\":\"Name of the bucket in which to look for objects.\",\"required\"" +
-            ":true,\"location\":\"path\"},\"delimiter\":{\"type\":\"string\",\"description\":\"Returns res" +
-            "ults in a directory-like mode. items will contain only objects whose names, asid" +
-            "e from the prefix, do not contain delimiter. Objects whose names, aside from the" +
-            " prefix, contain delimiter will have their name, truncated after the delimiter, " +
-            "returned in prefixes. Duplicate prefixes are omitted.\",\"location\":\"query\"},\"max-" +
-            "results\":{\"type\":\"integer\",\"description\":\"Maximum number of items plus prefixes " +
-            "to return. As duplicate prefixes are omitted, fewer total results may be returne" +
-            "d than requested.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToke" +
-            "n\":{\"type\":\"string\",\"description\":\"A previously-returned page token representing" +
-            " part of the larger set of results to view.\",\"location\":\"query\"},\"prefix\":{\"type" +
-            "\":\"string\",\"description\":\"Filter results to objects whose names begin with this " +
-            "prefix.\",\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"description\":\"Set of" +
-            " properties to return. Defaults to no_acl.\",\"enum\":[\"full\",\"no_acl\"],\"enumDescri" +
-            "ptions\":[\"Include all properties.\",\"Omit the acl property.\"],\"location\":\"query\"}" +
-            "},\"parameterOrder\":[\"bucket\"],\"response\":{\"$ref\":\"Objects\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/devstorage.full_control\",\"https://www.googleapis.com/auth" +
-            "/devstorage.read_only\",\"https://www.googleapis.com/auth/devstorage.read_write\"]," +
-            "\"supportsSubscription\":true},\"patch\":{\"id\":\"storage.objects.patch\",\"path\":\"b/{bu" +
-            "cket}/o/{object}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a data blob\'s asso" +
-            "ciated metadata. This method supports patch semantics.\",\"parameters\":{\"bucket\":{" +
-            "\"type\":\"string\",\"description\":\"Name of the bucket in which the object resides.\"," +
-            "\"required\":true,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"description\":\"Name" +
-            " of the object.\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string" +
-            "\",\"description\":\"Set of properties to return. Defaults to full.\",\"enum\":[\"full\"," +
-            "\"no_acl\"],\"enumDescriptions\":[\"Include all properties.\",\"Omit the acl property.\"" +
-            "],\"location\":\"query\"}},\"parameterOrder\":[\"bucket\",\"object\"],\"request\":{\"$ref\":\"O" +
-            "bject\"},\"response\":{\"$ref\":\"Object\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "devstorage.full_control\",\"https://www.googleapis.com/auth/devstorage.read_write\"" +
-            "]},\"update\":{\"id\":\"storage.objects.update\",\"path\":\"b/{bucket}/o/{object}\",\"httpM" +
-            "ethod\":\"PUT\",\"description\":\"Updates a data blob\'s associated metadata.\",\"paramet" +
-            "ers\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of the bucket in which the o" +
-            "bject resides.\",\"required\":true,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"de" +
-            "scription\":\"Name of the object.\",\"required\":true,\"location\":\"path\"},\"projection\"" +
-            ":{\"type\":\"string\",\"description\":\"Set of properties to return. Defaults to full.\"" +
-            ",\"enum\":[\"full\",\"no_acl\"],\"enumDescriptions\":[\"Include all properties.\",\"Omit th" +
-            "e acl property.\"],\"location\":\"query\"}},\"parameterOrder\":[\"bucket\",\"object\"],\"req" +
-            "uest\":{\"$ref\":\"Object\"},\"response\":{\"$ref\":\"Object\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/devstorage.full_control\",\"https://www.googleapis.com/auth/devsto" +
-            "rage.read_write\"]}}}}}";
+            "\":\"path\"},\"object\":{\"type\":\"string\",\"description\":\"Name of the object.\",\"require" +
+            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"bucket\",\"object\",\"entity\"],\"scope" +
+            "s\":[\"https://www.googleapis.com/auth/devstorage.full_control\"]},\"get\":{\"id\":\"sto" +
+            "rage.objectAccessControls.get\",\"path\":\"b/{bucket}/o/{object}/acl/{entity}\",\"http" +
+            "Method\":\"GET\",\"description\":\"Returns the ACL entry for the specified entity on t" +
+            "he specified object.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Nam" +
+            "e of a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"type\":\"string\",\"de" +
+            "scription\":\"The entity holding the permission. Can be user-userId, group-groupId" +
+            ", allUsers, or allAuthenticatedUsers.\",\"required\":true,\"location\":\"path\"},\"objec" +
+            "t\":{\"type\":\"string\",\"description\":\"Name of the object.\",\"required\":true,\"locatio" +
+            "n\":\"path\"}},\"parameterOrder\":[\"bucket\",\"object\",\"entity\"],\"response\":{\"$ref\":\"Ob" +
+            "jectAccessControl\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_c" +
+            "ontrol\"]},\"insert\":{\"id\":\"storage.objectAccessControls.insert\",\"path\":\"b/{bucket" +
+            "}/o/{object}/acl\",\"httpMethod\":\"POST\",\"description\":\"Creates a new ACL entry on " +
+            "the specified object.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Na" +
+            "me of a bucket.\",\"required\":true,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"d" +
+            "escription\":\"Name of the object.\",\"required\":true,\"location\":\"path\"}},\"parameter" +
+            "Order\":[\"bucket\",\"object\"],\"request\":{\"$ref\":\"ObjectAccessControl\"},\"response\":{" +
+            "\"$ref\":\"ObjectAccessControl\"},\"scopes\":[\"https://www.googleapis.com/auth/devstor" +
+            "age.full_control\"]},\"list\":{\"id\":\"storage.objectAccessControls.list\",\"path\":\"b/{" +
+            "bucket}/o/{object}/acl\",\"httpMethod\":\"GET\",\"description\":\"Retrieves ACL entries " +
+            "on the specified object.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":" +
+            "\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"object\":{\"type\":\"string\"" +
+            ",\"description\":\"Name of the object.\",\"required\":true,\"location\":\"path\"}},\"parame" +
+            "terOrder\":[\"bucket\",\"object\"],\"response\":{\"$ref\":\"ObjectAccessControls\"},\"scopes" +
+            "\":[\"https://www.googleapis.com/auth/devstorage.full_control\"]},\"patch\":{\"id\":\"st" +
+            "orage.objectAccessControls.patch\",\"path\":\"b/{bucket}/o/{object}/acl/{entity}\",\"h" +
+            "ttpMethod\":\"PATCH\",\"description\":\"Updates an ACL entry on the specified object. " +
+            "This method supports patch semantics.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"" +
+            "description\":\"Name of a bucket.\",\"required\":true,\"location\":\"path\"},\"entity\":{\"t" +
+            "ype\":\"string\",\"description\":\"The entity holding the permission. Can be user-user" +
+            "Id, group-groupId, allUsers, or allAuthenticatedUsers.\",\"required\":true,\"locatio" +
+            "n\":\"path\"},\"object\":{\"type\":\"string\",\"description\":\"Name of the object.\",\"requir" +
+            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"bucket\",\"object\",\"entity\"],\"requ" +
+            "est\":{\"$ref\":\"ObjectAccessControl\"},\"response\":{\"$ref\":\"ObjectAccessControl\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/devstorage.full_control\"]},\"update\":{\"i" +
+            "d\":\"storage.objectAccessControls.update\",\"path\":\"b/{bucket}/o/{object}/acl/{enti" +
+            "ty}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an ACL entry on the specified obj" +
+            "ect.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"description\":\"Name of a bucket.\"," +
+            "\"required\":true,\"location\":\"path\"},\"entity\":{\"type\":\"string\",\"description\":\"The " +
+            "entity holding the permission. Can be user-userId, group-groupId, allUsers, or a" +
+            "llAuthenticatedUsers.\",\"required\":true,\"location\":\"path\"},\"object\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Name of the object.\",\"required\":true,\"location\":\"path\"}},\"par" +
+            "ameterOrder\":[\"bucket\",\"object\",\"entity\"],\"request\":{\"$ref\":\"ObjectAccessControl" +
+            "\"},\"response\":{\"$ref\":\"ObjectAccessControl\"},\"scopes\":[\"https://www.googleapis.c" +
+            "om/auth/devstorage.full_control\"]}}},\"objects\":{\"methods\":{\"delete\":{\"id\":\"stora" +
+            "ge.objects.delete\",\"path\":\"b/{bucket}/o/{object}\",\"httpMethod\":\"DELETE\",\"descrip" +
+            "tion\":\"Deletes data blobs and associated metadata.\",\"parameters\":{\"bucket\":{\"typ" +
+            "e\":\"string\",\"description\":\"Name of the bucket in which the object resides.\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"description\":\"Name of " +
+            "the object.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"bucket\",\"obj" +
+            "ect\"],\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"https" +
+            "://www.googleapis.com/auth/devstorage.read_write\"]},\"get\":{\"id\":\"storage.objects" +
+            ".get\",\"path\":\"b/{bucket}/o/{object}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves" +
+            " objects or their associated metadata.\",\"parameters\":{\"bucket\":{\"type\":\"string\"," +
+            "\"description\":\"Name of the bucket in which the object resides.\",\"required\":true," +
+            "\"location\":\"path\"},\"object\":{\"type\":\"string\",\"description\":\"Name of the object.\"" +
+            ",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string\",\"description\":" +
+            "\"Set of properties to return. Defaults to no_acl.\",\"enum\":[\"full\",\"no_acl\"],\"enu" +
+            "mDescriptions\":[\"Include all properties.\",\"Omit the acl property.\"],\"location\":\"" +
+            "query\"}},\"parameterOrder\":[\"bucket\",\"object\"],\"response\":{\"$ref\":\"Object\"},\"scop" +
+            "es\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"https://www.goog" +
+            "leapis.com/auth/devstorage.read_only\",\"https://www.googleapis.com/auth/devstorag" +
+            "e.read_write\"],\"supportsMediaDownload\":true},\"insert\":{\"id\":\"storage.objects.ins" +
+            "ert\",\"path\":\"b/{bucket}/o\",\"httpMethod\":\"POST\",\"description\":\"Stores new data bl" +
+            "obs and associated metadata.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Name of the bucket in which to store the new object. Overrides the provided" +
+            " object metadata\'s bucket value, if any.\",\"required\":true,\"location\":\"path\"},\"na" +
+            "me\":{\"type\":\"string\",\"description\":\"Name of the object. Required when the object" +
+            " metadata is not otherwise provided. Overrides the object metadata\'s name value," +
+            " if any.\",\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"description\":\"Set o" +
+            "f properties to return. Defaults to no_acl, unless the object resource specifies" +
+            " the acl property, when it defaults to full.\",\"enum\":[\"full\",\"no_acl\"],\"enumDesc" +
+            "riptions\":[\"Include all properties.\",\"Omit the acl property.\"],\"location\":\"query" +
+            "\"}},\"parameterOrder\":[\"bucket\"],\"request\":{\"$ref\":\"Object\"},\"response\":{\"$ref\":\"" +
+            "Object\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.full_control\",\"ht" +
+            "tps://www.googleapis.com/auth/devstorage.read_write\"],\"supportsMediaUpload\":true" +
+            ",\"mediaUpload\":{\"accept\":[\"*/*\"],\"protocols\":{\"simple\":{\"multipart\":true,\"path\":" +
+            "\"/upload/storage/v1beta1/b/{bucket}/o\"},\"resumable\":{\"multipart\":true,\"path\":\"/r" +
+            "esumable/upload/storage/v1beta1/b/{bucket}/o\"}}}},\"list\":{\"id\":\"storage.objects." +
+            "list\",\"path\":\"b/{bucket}/o\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list o" +
+            "f objects matching the criteria.\",\"parameters\":{\"bucket\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Name of the bucket in which to look for objects.\",\"required\":true,\"loca" +
+            "tion\":\"path\"},\"delimiter\":{\"type\":\"string\",\"description\":\"Returns results in a d" +
+            "irectory-like mode. items will contain only objects whose names, aside from the " +
+            "prefix, do not contain delimiter. Objects whose names, aside from the prefix, co" +
+            "ntain delimiter will have their name, truncated after the delimiter, returned in" +
+            " prefixes. Duplicate prefixes are omitted.\",\"location\":\"query\"},\"max-results\":{\"" +
+            "type\":\"integer\",\"description\":\"Maximum number of items plus prefixes to return. " +
+            "As duplicate prefixes are omitted, fewer total results may be returned than requ" +
+            "ested.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":" +
+            "\"string\",\"description\":\"A previously-returned page token representing part of th" +
+            "e larger set of results to view.\",\"location\":\"query\"},\"prefix\":{\"type\":\"string\"," +
+            "\"description\":\"Filter results to objects whose names begin with this prefix.\",\"l" +
+            "ocation\":\"query\"},\"projection\":{\"type\":\"string\",\"description\":\"Set of properties" +
+            " to return. Defaults to no_acl.\",\"enum\":[\"full\",\"no_acl\"],\"enumDescriptions\":[\"I" +
+            "nclude all properties.\",\"Omit the acl property.\"],\"location\":\"query\"}},\"paramete" +
+            "rOrder\":[\"bucket\"],\"response\":{\"$ref\":\"Objects\"},\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/devstorage.full_control\",\"https://www.googleapis.com/auth/devstorage" +
+            ".read_only\",\"https://www.googleapis.com/auth/devstorage.read_write\"],\"supportsSu" +
+            "bscription\":true},\"patch\":{\"id\":\"storage.objects.patch\",\"path\":\"b/{bucket}/o/{ob" +
+            "ject}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a data blob\'s associated meta" +
+            "data. This method supports patch semantics.\",\"parameters\":{\"bucket\":{\"type\":\"str" +
+            "ing\",\"description\":\"Name of the bucket in which the object resides.\",\"required\":" +
+            "true,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"description\":\"Name of the obj" +
+            "ect.\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Set of properties to return. Defaults to full.\",\"enum\":[\"full\",\"no_acl\"],\"" +
+            "enumDescriptions\":[\"Include all properties.\",\"Omit the acl property.\"],\"location" +
+            "\":\"query\"}},\"parameterOrder\":[\"bucket\",\"object\"],\"request\":{\"$ref\":\"Object\"},\"re" +
+            "sponse\":{\"$ref\":\"Object\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage." +
+            "full_control\",\"https://www.googleapis.com/auth/devstorage.read_write\"]},\"update\"" +
+            ":{\"id\":\"storage.objects.update\",\"path\":\"b/{bucket}/o/{object}\",\"httpMethod\":\"PUT" +
+            "\",\"description\":\"Updates a data blob\'s associated metadata.\",\"parameters\":{\"buck" +
+            "et\":{\"type\":\"string\",\"description\":\"Name of the bucket in which the object resid" +
+            "es.\",\"required\":true,\"location\":\"path\"},\"object\":{\"type\":\"string\",\"description\":" +
+            "\"Name of the object.\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"s" +
+            "tring\",\"description\":\"Set of properties to return. Defaults to full.\",\"enum\":[\"f" +
+            "ull\",\"no_acl\"],\"enumDescriptions\":[\"Include all properties.\",\"Omit the acl prope" +
+            "rty.\"],\"location\":\"query\"}},\"parameterOrder\":[\"bucket\",\"object\"],\"request\":{\"$re" +
+            "f\":\"Object\"},\"response\":{\"$ref\":\"Object\"},\"scopes\":[\"https://www.googleapis.com/" +
+            "auth/devstorage.full_control\",\"https://www.googleapis.com/auth/devstorage.read_w" +
+            "rite\"]}}}}}";
         
         public const string Version = "v1beta1";
         

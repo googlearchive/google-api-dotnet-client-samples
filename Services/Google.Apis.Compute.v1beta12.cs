@@ -3161,472 +3161,572 @@ namespace Google.Apis.Compute.v1beta12 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"compute:v1beta1" +
-            "2\",\"name\":\"compute\",\"version\":\"v1beta12\",\"revision\":\"20120712\",\"title\":\"Compute " +
-            "Engine API\",\"description\":\"API for the Google Compute Engine service.\",\"icons\":{" +
-            "\"x16\":\"http://www.google.com/images/icons/product/compute_engine-16.png\",\"x32\":\"" +
-            "http://www.google.com/images/icons/product/compute_engine-32.png\"},\"documentatio" +
-            "nLink\":\"https://developers.google.com/compute/docs/reference/v1beta12\",\"labels\":" +
-            "[\"limited_availability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com" +
-            "/compute/v1beta12/projects/\",\"basePath\":\"/compute/v1beta12/projects/\",\"rootUrl\":" +
-            "\"https://www.googleapis.com/\",\"servicePath\":\"compute/v1beta12/projects/\",\"batchP" +
-            "ath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for" +
-            " the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses " +
-            "with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"st" +
-            "ring\",\"description\":\"Selector specifying which fields to include in a partial re" +
-            "sponse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your" +
-            " API key identifies your project and provides you with API access, quota, and re" +
-            "ports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oau" +
-            "th_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\"" +
-            ",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns resp" +
-            "onse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"q" +
-            "uotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes fo" +
-            "r server-side applications. Can be any arbitrary string assigned to a user, but " +
-            "should not exceed 40 characters. Overrides userIp if both are provided.\",\"locati" +
-            "on\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site whe" +
-            "re the request originates. Use this if you want to enforce per-user limits.\",\"lo" +
-            "cation\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/c" +
-            "ompute\":{\"description\":\"View and manage your Google Compute Engine resources\"},\"" +
-            "https://www.googleapis.com/auth/compute.readonly\":{\"description\":\"View your Goog" +
-            "le Compute Engine resources\"},\"https://www.googleapis.com/auth/devstorage.read_o" +
-            "nly\":{\"description\":\"View your data in Google Cloud Storage\"}}}},\"schemas\":{\"Acc" +
-            "essConfig\":{\"id\":\"AccessConfig\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"st" +
-            "ring\",\"description\":\"Type of the resource.\",\"default\":\"compute#accessConfig\"},\"n" +
-            "ame\":{\"type\":\"string\",\"description\":\"Name of this access configuration.\"},\"natIP" +
-            "\":{\"type\":\"string\",\"description\":\"An external IP address associated with this in" +
-            "stance. Specify an unused static IP address available to the project. If left bl" +
-            "ank, the external IP will be drawn from a shared ephemeral pool.\"},\"type\":{\"type" +
-            "\":\"string\",\"description\":\"Type of configuration. Must be set to \\\"ONE_TO_ONE_NAT" +
-            "\\\". This configures port-for-port NAT to the internet.\",\"default\":\"ONE_TO_ONE_NA" +
-            "T\"}}},\"AttachedDisk\":{\"id\":\"AttachedDisk\",\"type\":\"object\",\"properties\":{\"deleteO" +
-            "nTerminate\":{\"type\":\"boolean\",\"description\":\"Persistent disk only; If true, dele" +
-            "te the disk and all its data when the associated instance is deleted. This prope" +
-            "rty defaults to false if not specified.\"},\"deviceName\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Persistent disk only; must be unique within the instance when specified. " +
-            "This represents a unique device name that is reflected into the /dev/ tree of a " +
-            "Linux operating system running within the instance. If not specified, a default " +
-            "will be chosen by the system.\"},\"index\":{\"type\":\"integer\",\"description\":\"A zero-" +
-            "based index to assign to this disk, where 0 is reserved for the boot disk. If no" +
-            "t specified, the server will choose an appropriate value.\",\"format\":\"int32\"},\"ki" +
-            "nd\":{\"type\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#at" +
-            "tachedDisk\"},\"mode\":{\"type\":\"string\",\"description\":\"The mode in which to attach " +
-            "this disk, either \\\"READ_WRITE\\\" or \\\"READ_ONLY\\\".\"},\"source\":{\"type\":\"string\",\"" +
-            "description\":\"Persistent disk only; the URL of the persistent disk resource.\"},\"" +
-            "type\":{\"type\":\"string\",\"description\":\"Type of the disk, either \\\"EPHEMERAL\\\" or " +
-            "\\\"PERSISTENT\\\". Note that persistent disks must be created before you can specif" +
-            "y them here.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}}},\"Disk\":" +
-            "{\"id\":\"Disk\",\"type\":\"object\",\"properties\":{\"creationTimestamp\":{\"type\":\"string\"," +
-            "\"description\":\"Creation timestamp in RFC3339 text format (output only).\"},\"descr" +
-            "iption\":{\"type\":\"string\",\"description\":\"An optional textual description of the r" +
-            "esource; provided by the client when the resource is created.\"},\"id\":{\"type\":\"st" +
-            "ring\",\"description\":\"Unique identifier for the resource; defined by the server (" +
-            "output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of" +
-            " the resource.\",\"default\":\"compute#disk\"},\"name\":{\"type\":\"string\",\"description\":" +
-            "\"Name of the resource; provided by the client when the resource is created. The " +
-            "name must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:" +
-            "[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}}," +
-            "\"options\":{\"type\":\"string\",\"description\":\"Internal use only.\"},\"selfLink\":{\"type" +
-            "\":\"string\",\"description\":\"Server defined URL for the resource (output only).\"},\"" +
-            "sizeGb\":{\"type\":\"string\",\"description\":\"Size of the persistent disk, specified i" +
-            "n GB.\",\"format\":\"int64\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}},\"so" +
-            "urceSnapshot\":{\"type\":\"string\",\"description\":\"The source snapshot used to create" +
-            " this disk. Once the source snapshot has been deleted from the system, this fiel" +
-            "d will be cleared, and will not be set even if a snapshot with the same name has" +
-            " been re-created.\"},\"sourceSnapshotId\":{\"type\":\"string\",\"description\":\"The \'id\' " +
-            "value of the snapshot used to create this disk. This value may be used to determ" +
-            "ine whether the disk was created from the current or a previous instance of a gi" +
-            "ven disk snapshot.\"},\"status\":{\"type\":\"string\",\"description\":\"The status of disk" +
-            " creation (output only).\"},\"zone\":{\"type\":\"string\",\"description\":\"URL for the zo" +
-            "ne where the persistent disk resides; provided by the client when the disk is cr" +
-            "eated. A persistent disk must reside in the same zone as the instance to which i" +
-            "t is attached.\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}}}},\"DiskList" +
-            "\":{\"id\":\"DiskList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Unique identifier for the resource; defined by the server (output only).\"}" +
-            ",\"items\":{\"type\":\"array\",\"description\":\"The persistent disk resources.\",\"items\":" +
-            "{\"$ref\":\"Disk\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"defa" +
-            "ult\":\"compute#diskList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token" +
-            " used to continue a truncated list request (output only).\"},\"selfLink\":{\"type\":\"" +
-            "string\",\"description\":\"Server defined URL for this resource (output only).\"}}},\"" +
-            "Firewall\":{\"id\":\"Firewall\",\"type\":\"object\",\"properties\":{\"allowed\":{\"type\":\"arra" +
-            "y\",\"description\":\"The list of rules specified by this firewall. Each rule specif" +
-            "ies a protocol and port-range tuple that describes a permitted connection.\",\"ite" +
-            "ms\":{\"type\":\"object\",\"properties\":{\"IPProtocol\":{\"type\":\"string\",\"description\":\"" +
-            "Required; this is the IP protocol that is allowed for this rule. This can either" +
-            " be a well known protocol string (tcp, udp or icmp) or the IP protocol number.\"}" +
-            ",\"ports\":{\"type\":\"array\",\"description\":\"An optional list of ports which are allo" +
-            "wed. It is an error to specify this for any protocol that isn\'t UDP or TCP. Each" +
-            " entry must be either an integer or a range. If not specified, connections throu" +
-            "gh any port are allowed.\\nExample inputs include: [\\\"22\\\"], [\\\"80,\\\"443\\\"] and [" +
-            "\\\"12345-12349\\\"].\",\"items\":{\"type\":\"string\"}}}}},\"creationTimestamp\":{\"type\":\"st" +
-            "ring\",\"description\":\"Creation timestamp in RFC3339 text format (output only).\"}," +
-            "\"description\":{\"type\":\"string\",\"description\":\"An optional textual description of" +
-            " the resource; provided by the client when the resource is created.\"},\"id\":{\"typ" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/KxI1gEH" +
+            "p1zG2MdIykn0ADcAitM4\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"compute:v1beta12\",\"name\":\"" +
+            "compute\",\"version\":\"v1beta12\",\"revision\":\"20120712\",\"title\":\"Compute Engine API\"" +
+            ",\"description\":\"API for the Google Compute Engine service.\",\"icons\":{\"x16\":\"http" +
+            "://www.google.com/images/icons/product/compute_engine-16.png\",\"x32\":\"http://www." +
+            "google.com/images/icons/product/compute_engine-32.png\"},\"documentationLink\":\"htt" +
+            "ps://developers.google.com/compute/docs/reference/v1beta12\",\"labels\":[\"limited_a" +
+            "vailability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/compute/v1" +
+            "beta12/projects/\",\"basePath\":\"/compute/v1beta12/projects/\",\"rootUrl\":\"https://ww" +
+            "w.googleapis.com/\",\"servicePath\":\"compute/v1beta12/projects/\",\"batchPath\":\"batch" +
+            "\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respon" +
+            "se.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Conten" +
+            "t-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Selector specifying which fields to include in a partial response.\",\"l" +
+            "ocation\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key id" +
+            "entifies your project and provides you with API access, quota, and reports. Requ" +
+            "ired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{" +
+            "\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\"" +
+            ":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with i" +
+            "ndentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{" +
+            "\"type\":\"string\",\"description\":\"Available to use for quota purposes for server-si" +
+            "de applications. Can be any arbitrary string assigned to a user, but should not " +
+            "exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"" +
+            "},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the requ" +
+            "est originates. Use this if you want to enforce per-user limits.\",\"location\":\"qu" +
+            "ery\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/compute\":{\"d" +
+            "escription\":\"View and manage your Google Compute Engine resources\"},\"https://www" +
+            ".googleapis.com/auth/compute.readonly\":{\"description\":\"View your Google Compute " +
+            "Engine resources\"},\"https://www.googleapis.com/auth/devstorage.read_only\":{\"desc" +
+            "ription\":\"View your data in Google Cloud Storage\"}}}},\"schemas\":{\"AccessConfig\":" +
+            "{\"id\":\"AccessConfig\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Type of the resource.\",\"default\":\"compute#accessConfig\"},\"name\":{\"type" +
+            "\":\"string\",\"description\":\"Name of this access configuration.\"},\"natIP\":{\"type\":\"" +
+            "string\",\"description\":\"An external IP address associated with this instance. Spe" +
+            "cify an unused static IP address available to the project. If left blank, the ex" +
+            "ternal IP will be drawn from a shared ephemeral pool.\"},\"type\":{\"type\":\"string\"," +
+            "\"description\":\"Type of configuration. Must be set to \\\"ONE_TO_ONE_NAT\\\". This co" +
+            "nfigures port-for-port NAT to the internet.\",\"default\":\"ONE_TO_ONE_NAT\"}}},\"Atta" +
+            "chedDisk\":{\"id\":\"AttachedDisk\",\"type\":\"object\",\"properties\":{\"deleteOnTerminate\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Persistent disk only; If true, delete the disk" +
+            " and all its data when the associated instance is deleted. This property default" +
+            "s to false if not specified.\"},\"deviceName\":{\"type\":\"string\",\"description\":\"Pers" +
+            "istent disk only; must be unique within the instance when specified. This repres" +
+            "ents a unique device name that is reflected into the /dev/ tree of a Linux opera" +
+            "ting system running within the instance. If not specified, a default will be cho" +
+            "sen by the system.\"},\"index\":{\"type\":\"integer\",\"description\":\"A zero-based index" +
+            " to assign to this disk, where 0 is reserved for the boot disk. If not specified" +
+            ", the server will choose an appropriate value.\",\"format\":\"int32\"},\"kind\":{\"type\"" +
+            ":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#attachedDisk\"" +
+            "},\"mode\":{\"type\":\"string\",\"description\":\"The mode in which to attach this disk, " +
+            "either \\\"READ_WRITE\\\" or \\\"READ_ONLY\\\".\"},\"source\":{\"type\":\"string\",\"description" +
+            "\":\"Persistent disk only; the URL of the persistent disk resource.\"},\"type\":{\"typ" +
+            "e\":\"string\",\"description\":\"Type of the disk, either \\\"EPHEMERAL\\\" or \\\"PERSISTEN" +
+            "T\\\". Note that persistent disks must be created before you can specify them here" +
+            ".\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}}},\"Disk\":{\"id\":\"Disk" +
+            "\",\"type\":\"object\",\"properties\":{\"creationTimestamp\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Creation timestamp in RFC3339 text format (output only).\"},\"description\":{\"t" +
+            "ype\":\"string\",\"description\":\"An optional textual description of the resource; pr" +
+            "ovided by the client when the resource is created.\"},\"id\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Unique identifier for the resource; defined by the server (output only" +
+            ").\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resour" +
+            "ce.\",\"default\":\"compute#disk\"},\"name\":{\"type\":\"string\",\"description\":\"Name of th" +
+            "e resource; provided by the client when the resource is created. The name must b" +
+            "e 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0" +
+            ",61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}},\"options\":{" +
+            "\"type\":\"string\",\"description\":\"Internal use only.\"},\"selfLink\":{\"type\":\"string\"," +
+            "\"description\":\"Server defined URL for the resource (output only).\"},\"sizeGb\":{\"t" +
+            "ype\":\"string\",\"description\":\"Size of the persistent disk, specified in GB.\",\"for" +
+            "mat\":\"int64\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}},\"sourceSnapsho" +
+            "t\":{\"type\":\"string\",\"description\":\"The source snapshot used to create this disk." +
+            " Once the source snapshot has been deleted from the system, this field will be c" +
+            "leared, and will not be set even if a snapshot with the same name has been re-cr" +
+            "eated.\"},\"sourceSnapshotId\":{\"type\":\"string\",\"description\":\"The \'id\' value of th" +
+            "e snapshot used to create this disk. This value may be used to determine whether" +
+            " the disk was created from the current or a previous instance of a given disk sn" +
+            "apshot.\"},\"status\":{\"type\":\"string\",\"description\":\"The status of disk creation (" +
+            "output only).\"},\"zone\":{\"type\":\"string\",\"description\":\"URL for the zone where th" +
+            "e persistent disk resides; provided by the client when the disk is created. A pe" +
+            "rsistent disk must reside in the same zone as the instance to which it is attach" +
+            "ed.\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}}}},\"DiskList\":{\"id\":\"Di" +
+            "skList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Uniqu" +
+            "e identifier for the resource; defined by the server (output only).\"},\"items\":{\"" +
+            "type\":\"array\",\"description\":\"The persistent disk resources.\",\"items\":{\"$ref\":\"Di" +
+            "sk\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"default\":\"compu" +
+            "te#diskList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to co" +
+            "ntinue a truncated list request (output only).\"},\"selfLink\":{\"type\":\"string\",\"de" +
+            "scription\":\"Server defined URL for this resource (output only).\"}}},\"Firewall\":{" +
+            "\"id\":\"Firewall\",\"type\":\"object\",\"properties\":{\"allowed\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"The list of rules specified by this firewall. Each rule specifies a proto" +
+            "col and port-range tuple that describes a permitted connection.\",\"items\":{\"type\"" +
+            ":\"object\",\"properties\":{\"IPProtocol\":{\"type\":\"string\",\"description\":\"Required; t" +
+            "his is the IP protocol that is allowed for this rule. This can either be a well " +
+            "known protocol string (tcp, udp or icmp) or the IP protocol number.\"},\"ports\":{\"" +
+            "type\":\"array\",\"description\":\"An optional list of ports which are allowed. It is " +
+            "an error to specify this for any protocol that isn\'t UDP or TCP. Each entry must" +
+            " be either an integer or a range. If not specified, connections through any port" +
+            " are allowed.\\nExample inputs include: [\\\"22\\\"], [\\\"80,\\\"443\\\"] and [\\\"12345-123" +
+            "49\\\"].\",\"items\":{\"type\":\"string\"}}}}},\"creationTimestamp\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Creation timestamp in RFC3339 text format (output only).\"},\"descriptio" +
+            "n\":{\"type\":\"string\",\"description\":\"An optional textual description of the resour" +
+            "ce; provided by the client when the resource is created.\"},\"id\":{\"type\":\"string\"" +
+            ",\"description\":\"Unique identifier for the resource; defined by the server (outpu" +
+            "t only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the " +
+            "resource.\",\"default\":\"compute#firewall\"},\"name\":{\"type\":\"string\",\"description\":\"" +
+            "Name of the resource; provided by the client when the resource is created. The n" +
+            "ame must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[" +
+            "-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.firewalls.insert\"," +
+            "\"compute.firewalls.patch\"]}},\"network\":{\"type\":\"string\",\"description\":\"URL of th" +
+            "e network to which this firewall is applied; provided by the client when the fir" +
+            "ewall is created.\",\"annotations\":{\"required\":[\"compute.firewalls.insert\",\"comput" +
+            "e.firewalls.patch\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined " +
+            "URL for the resource (output only).\"},\"sourceRanges\":{\"type\":\"array\",\"descriptio" +
+            "n\":\"A list of IP address blocks expressed in CIDR format which this rule applies" +
+            " to. One or both of sourceRanges and sourceTags may be set; an inbound connectio" +
+            "n is allowed if either the range or the tag of the source matches.\",\"items\":{\"ty" +
+            "pe\":\"string\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9]{1,3}){3}/[0-9]{1,2}\"}},\"sourceTags" +
+            "\":{\"type\":\"array\",\"description\":\"A list of instance tags which this rule applies" +
+            " to. One or both of sourceRanges and sourceTags may be set; an inbound connectio" +
+            "n is allowed if either the range or the tag of the source matches.\",\"items\":{\"ty" +
+            "pe\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"}},\"targetTags\":{\"type" +
+            "\":\"array\",\"description\":\"A list of instance tags indicating sets of instances lo" +
+            "cated on network which may make network connections as specified in allowed. If " +
+            "no targetTags are specified, the firewall rule applies to all instances on the s" +
+            "pecified network.\",\"items\":{\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a" +
+            "-z0-9])?\"}}}},\"FirewallList\":{\"id\":\"FirewallList\",\"type\":\"object\",\"properties\":{" +
+            "\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined" +
+            " by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The firew" +
+            "all resources.\",\"items\":{\"$ref\":\"Firewall\"}},\"kind\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Type of resource.\",\"default\":\"compute#firewallList\"},\"nextPageToken\":{\"type\"" +
+            ":\"string\",\"description\":\"A token used to continue a truncated list request (outp" +
+            "ut only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for th" +
+            "is resource (output only).\"}}},\"Image\":{\"id\":\"Image\",\"type\":\"object\",\"properties" +
+            "\":{\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC" +
+            "3339 text format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"" +
+            "Textual description of the resource; provided by the client when the resource is" +
+            " created.\"},\"diskSnapshot\":{\"type\":\"object\",\"description\":\"Not yet implemented.\"" +
+            ",\"properties\":{\"source\":{\"type\":\"string\",\"description\":\"URL of the disk snapshot" +
+            ".\",\"annotations\":{\"required\":[\"compute.images.insert\"]}}}},\"id\":{\"type\":\"string\"" +
+            ",\"description\":\"Unique identifier for the resource; defined by the server (outpu" +
+            "t only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the " +
+            "resource.\",\"default\":\"compute#image\"},\"name\":{\"type\":\"string\",\"description\":\"Nam" +
+            "e of the resource; provided by the client when the resource is created. The name" +
+            " must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-" +
+            "z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.images.insert\"]}},\"pr" +
+            "eferredKernel\":{\"type\":\"string\",\"description\":\"An optional URL of the preferred " +
+            "kernel for use with this disk image. If not specified, a server defined default " +
+            "kernel will be used.\"},\"rawDisk\":{\"type\":\"object\",\"description\":\"The raw disk im" +
+            "age parameters.\",\"properties\":{\"containerType\":{\"type\":\"string\",\"description\":\"T" +
+            "he format used to encode and transmit the block device. Should be TAR. This is j" +
+            "ust a container and transmission format and not a runtime format. Provided by th" +
+            "e client when the disk image is created.\",\"default\":\"TAR\",\"annotations\":{\"requir" +
+            "ed\":[\"compute.images.insert\"]}},\"sha1Checksum\":{\"type\":\"string\",\"description\":\"A" +
+            "n optional SHA1 checksum of the disk image before unpackaging; provided by the c" +
+            "lient when the disk image is created.\",\"pattern\":\"[a-f0-9]{40}\"},\"source\":{\"type" +
+            "\":\"string\",\"description\":\"The full Google Cloud Storage URL where the disk image" +
+            " is stored; provided by the client when the disk image is created.\",\"annotations" +
+            "\":{\"required\":[\"compute.images.insert\"]}}}},\"selfLink\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Server defined URL for the resource (output only).\"},\"sourceType\":{\"type\"" +
+            ":\"string\",\"description\":\"Must be \\\"RAW\\\"; provided by the client when the disk i" +
+            "mage is created.\",\"default\":\"RAW\",\"annotations\":{\"required\":[\"compute.images.ins" +
+            "ert\"]}}}},\"ImageList\":{\"id\":\"ImageList\",\"type\":\"object\",\"properties\":{\"id\":{\"typ" +
+            "e\":\"string\",\"description\":\"Unique identifier for the resource; defined by the se" +
+            "rver (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The disk image reso" +
+            "urces.\",\"items\":{\"$ref\":\"Image\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of" +
+            " resource.\",\"default\":\"compute#imageList\"},\"nextPageToken\":{\"type\":\"string\",\"des" +
+            "cription\":\"A token used to continue a truncated list request (output only).\"},\"s" +
+            "elfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this resource (o" +
+            "utput only).\"}}},\"Instance\":{\"id\":\"Instance\",\"type\":\"object\",\"properties\":{\"crea" +
+            "tionTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339 tex" +
+            "t format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"An optio" +
+            "nal textual description of the resource; provided by the client when the resourc" +
+            "e is created.\"},\"disks\":{\"type\":\"array\",\"description\":\"Array of disks associated" +
+            " with this instance. Persistent disks must be created before you can assign them" +
+            ".\",\"items\":{\"$ref\":\"AttachedDisk\"}},\"id\":{\"type\":\"string\",\"description\":\"Unique " +
+            "identifier for the resource; defined by the server (output only).\",\"format\":\"uin" +
+            "t64\"},\"image\":{\"type\":\"string\",\"description\":\"An optional URL of the disk image " +
+            "resource to be to be installed on this instance; provided by the client when the" +
+            " instance is created. If not specified, the server will choose a default image.\"" +
+            ",\"annotations\":{\"required\":[\"compute.instances.insert\"]}},\"kind\":{\"type\":\"string" +
+            "\",\"description\":\"Type of the resource.\",\"default\":\"compute#instance\"},\"machineTy" +
+            "pe\":{\"type\":\"string\",\"description\":\"URL of the machine type resource describing " +
+            "which machine type to use to host the instance; provided by the client when the " +
+            "instance is created.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}},\"" +
+            "metadata\":{\"$ref\":\"Metadata\",\"description\":\"Metadata key/value pairs assigned to" +
+            " this instance. Consists of custom metadata or predefined keys; see Instance doc" +
+            "umentation for more information.\"},\"name\":{\"type\":\"string\",\"description\":\"Name o" +
+            "f the resource; provided by the client when the resource is created. The name mu" +
+            "st be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-z0-" +
+            "9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}},\"ne" +
+            "tworkInterfaces\":{\"type\":\"array\",\"description\":\"Array of configurations for this" +
+            " interface. This specifies how this interface is configured to interact with oth" +
+            "er network services, such as connecting to the internet. Currently, ONE_TO_ONE_N" +
+            "AT is the only access config supported. If there are no accessConfigs specified," +
+            " then this instance will have no external internet access.\",\"items\":{\"$ref\":\"Net" +
+            "workInterface\"}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL f" +
+            "or the resource (output only).\"},\"serviceAccounts\":{\"type\":\"array\",\"description\"" +
+            ":\"A list of service accounts each with specified scopes, for which access tokens" +
+            " are to be made available to the instance through metadata queries.\",\"items\":{\"$" +
+            "ref\":\"ServiceAccount\"}},\"status\":{\"type\":\"string\",\"description\":\"Instance status" +
+            ". One of the following values: \\\"PROVISIONING\\\", \\\"STAGING\\\", \\\"RUNNING\\\" (outpu" +
+            "t only).\"},\"statusMessage\":{\"type\":\"string\",\"description\":\"An optional, human-re" +
+            "adable explanation of the status (output only).\"},\"tags\":{\"type\":\"array\",\"descri" +
+            "ption\":\"An optional set of tags applied to this instance. Used to identify valid" +
+            " sources or targets for network firewalls. Provided by the client when the insta" +
+            "nce is created. Each tag must be 1-63 characters long, and comply with RFC1035.\"" +
+            ",\"items\":{\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"}},\"zone\"" +
+            ":{\"type\":\"string\",\"description\":\"URL of the zone resource describing where this " +
+            "instance should be hosted; provided by the client when the instance is created.\"" +
+            ",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}}},\"InstanceList\":{\"id\"" +
+            ":\"InstanceList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description" +
+            "\":\"Unique identifier for the resource; defined by the server (output only).\"},\"i" +
+            "tems\":{\"type\":\"array\",\"description\":\"A list of instance resources.\",\"items\":{\"$r" +
+            "ef\":\"Instance\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"defa" +
+            "ult\":\"compute#instanceList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A t" +
+            "oken used to continue a truncated list request (output only).\"},\"selfLink\":{\"typ" +
+            "e\":\"string\",\"description\":\"Server defined URL for this resource (output only).\"}" +
+            "}},\"Kernel\":{\"id\":\"Kernel\",\"type\":\"object\",\"properties\":{\"creationTimestamp\":{\"t" +
+            "ype\":\"string\",\"description\":\"Creation timestamp in RFC3339 text format (output o" +
+            "nly).\"},\"description\":{\"type\":\"string\",\"description\":\"An optional textual descri" +
+            "ption of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier " +
+            "for the resource; defined by the server (output only).\",\"format\":\"uint64\"},\"kind" +
+            "\":{\"type\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#kern" +
+            "el\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the resource.\",\"pattern\":\"[a" +
+            "-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Ser" +
+            "ver defined URL for the resource (output only).\"}}},\"KernelList\":{\"id\":\"KernelLi" +
+            "st\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique id" +
+            "entifier for the resource; defined by the server (output only).\"},\"items\":{\"type" +
+            "\":\"array\",\"description\":\"The kernel resources.\",\"items\":{\"$ref\":\"Kernel\"}},\"kind" +
+            "\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"default\":\"compute#kernelLi" +
+            "st\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to continue a " +
+            "truncated list request (output only).\"},\"selfLink\":{\"type\":\"string\",\"description" +
+            "\":\"Server defined URL for this resource (output only).\"}}},\"MachineType\":{\"id\":\"" +
+            "MachineType\",\"type\":\"object\",\"properties\":{\"availableZone\":{\"type\":\"array\",\"desc" +
+            "ription\":\"The zones that this machine type can run in.\",\"items\":{\"type\":\"any\"}}," +
+            "\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC333" +
+            "9 text format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"An " +
+            "optional textual description of the resource.\"},\"ephemeralDisks\":{\"type\":\"array\"" +
+            ",\"description\":\"List of extended ephemeral disks assigned to the instance.\",\"ite" +
+            "ms\":{\"type\":\"object\",\"properties\":{\"diskGb\":{\"type\":\"integer\",\"description\":\"Siz" +
+            "e of the ephemeral disk, defined in GB.\",\"format\":\"int32\"}}}},\"guestCpus\":{\"type" +
+            "\":\"integer\",\"description\":\"Count of CPUs exposed to the instance.\",\"format\":\"int" +
+            "32\"},\"hostCpus\":{\"type\":\"integer\",\"description\":\"Count of physical CPUs reserved" +
+            " on the virtual machine host. Deprecated.\",\"format\":\"int32\"},\"id\":{\"type\":\"strin" +
+            "g\",\"description\":\"Unique identifier for the resource; defined by the server (out" +
+            "put only).\",\"format\":\"uint64\"},\"imageSpaceGb\":{\"type\":\"integer\",\"description\":\"S" +
+            "pace allotted for the image, defined in GB.\",\"format\":\"int32\"},\"kind\":{\"type\":\"s" +
+            "tring\",\"description\":\"Type of the resource.\",\"default\":\"compute#machineType\"},\"m" +
+            "aximumPersistentDisks\":{\"type\":\"integer\",\"description\":\"Maximum persistent disks" +
+            " allowed.\",\"format\":\"int32\"},\"maximumPersistentDisksSizeGb\":{\"type\":\"string\",\"de" +
+            "scription\":\"Maximum total persistent disks size (GB) allowed.\",\"format\":\"int64\"}" +
+            ",\"memoryMb\":{\"type\":\"integer\",\"description\":\"Physical memory assigned to the ins" +
+            "tance, defined in MB.\",\"format\":\"int32\"},\"name\":{\"type\":\"string\",\"description\":\"" +
+            "Name of the resource.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"},\"selfLink\"" +
+            ":{\"type\":\"string\",\"description\":\"Server defined URL for the resource (output onl" +
+            "y).\"}}},\"MachineTypeList\":{\"id\":\"MachineTypeList\",\"type\":\"object\",\"properties\":{" +
+            "\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined" +
+            " by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The machi" +
+            "ne type resources.\",\"items\":{\"$ref\":\"MachineType\"}},\"kind\":{\"type\":\"string\",\"des" +
+            "cription\":\"Type of resource.\",\"default\":\"compute#machineTypeList\"},\"nextPageToke" +
+            "n\":{\"type\":\"string\",\"description\":\"A token used to continue a truncated list req" +
+            "uest (output only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined " +
+            "URL for this resource (output only).\"}}},\"Metadata\":{\"id\":\"Metadata\",\"type\":\"obj" +
+            "ect\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Array of key/value pai" +
+            "rs. The total size of all keys and values must be less than 512 KB.\",\"items\":{\"t" +
+            "ype\":\"object\",\"properties\":{\"key\":{\"type\":\"string\",\"description\":\"Key for the me" +
+            "tadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be " +
+            "less than 128 bytes in length. This is reflected as part of a URL in the metadat" +
+            "a server. Additionally, to avoid ambiguity, keys must be unique.\",\"pattern\":\"[a-" +
+            "zA-Z0-9-_]{1,128}\",\"annotations\":{\"required\":[\"compute.instances.insert\",\"comput" +
+            "e.projects.setCommonInstanceMetadata\"]}},\"value\":{\"type\":\"string\",\"description\":" +
+            "\"Value for the metadata entry. These are free-form strings, and only have meanin" +
+            "g as interpreted by the image running in the instance. The only restriction plac" +
+            "ed on values is that their size must be less than or equal to 15000 bytes.\",\"ann" +
+            "otations\":{\"required\":[\"compute.instances.insert\",\"compute.projects.setCommonIns" +
+            "tanceMetadata\"]}}}}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource" +
+            ".\",\"default\":\"compute#metadata\"}}},\"Network\":{\"id\":\"Network\",\"type\":\"object\",\"pr" +
+            "operties\":{\"IPv4Range\":{\"type\":\"string\",\"description\":\"Required; The range of in" +
+            "ternal addresses that are legal on this network. This range is a CIDR specificat" +
+            "ion, for example: 192.168.0.0/16. Provided by the client when the network is cre" +
+            "ated.\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9]{1,3}){3}/[0-9]{1,2}\",\"annotations\":{\"req" +
+            "uired\":[\"compute.networks.insert\"]}},\"creationTimestamp\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Creation timestamp in RFC3339 text format (output only).\"},\"description" +
+            "\":{\"type\":\"string\",\"description\":\"An optional textual description of the resourc" +
+            "e; provided by the client when the resource is created.\"},\"gatewayIPv4\":{\"type\":" +
+            "\"string\",\"description\":\"An optional address that is used for default routing to " +
+            "other networks. This must be within the range specified by IPv4Range, and is typ" +
+            "ically the first usable address in that range. If not specified, the default val" +
+            "ue is the first usable address in IPv4Range.\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9]{1" +
+            ",3}){3}\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resourc" +
+            "e; defined by the server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Type of the resource.\",\"default\":\"compute#network\"},\"name\":{\"" +
+            "type\":\"string\",\"description\":\"Name of the resource; provided by the client when " +
+            "the resource is created. The name must be 1-63 characters long, and comply with " +
+            "RFC1035.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required" +
+            "\":[\"compute.networks.insert\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"Serve" +
+            "r defined URL for the resource (output only).\"}}},\"NetworkInterface\":{\"id\":\"Netw" +
+            "orkInterface\",\"type\":\"object\",\"properties\":{\"accessConfigs\":{\"type\":\"array\",\"des" +
+            "cription\":\"Array of configurations for this interface. This specifies how this i" +
+            "nterface is configured to interact with other network services, such as connecti" +
+            "ng to the internet. Currently, ONE_TO_ONE_NAT is the only access config supporte" +
+            "d. If there are no accessConfigs specified, then this instance will have no exte" +
+            "rnal internet access.\",\"items\":{\"$ref\":\"AccessConfig\"}},\"kind\":{\"type\":\"string\"," +
+            "\"description\":\"Type of the resource.\",\"default\":\"compute#networkInterface\"},\"nam" +
+            "e\":{\"type\":\"string\",\"description\":\"Name of the resource, determined by the serve" +
+            "r; for network devices, these are e.g. eth0, eth1, etc. (output only).\"},\"networ" +
+            "k\":{\"type\":\"string\",\"description\":\"URL of the network resource attached to this " +
+            "interface.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}},\"networkIP\"" +
+            ":{\"type\":\"string\",\"description\":\"An optional IPV4 internal network address to as" +
+            "sign to this instance. If not specified, one will be assigned from the available" +
+            " range.\"}}},\"NetworkList\":{\"id\":\"NetworkList\",\"type\":\"object\",\"properties\":{\"id\"" +
+            ":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined by " +
+            "the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The network r" +
+            "esources.\",\"items\":{\"$ref\":\"Network\"}},\"kind\":{\"type\":\"string\",\"description\":\"Ty" +
+            "pe of resource.\",\"default\":\"compute#networkList\"},\"nextPageToken\":{\"type\":\"strin" +
+            "g\",\"description\":\"A token used to continue a truncated list request (output only" +
+            ").\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this reso" +
+            "urce (output only).\"}}},\"Operation\":{\"id\":\"Operation\",\"type\":\"object\",\"propertie" +
+            "s\":{\"clientOperationId\":{\"type\":\"string\",\"description\":\"An optional identifier s" +
+            "pecified by the client when the mutation was initiated. Must be unique for all o" +
+            "peration resources in the project (output only).\"},\"creationTimestamp\":{\"type\":\"" +
+            "string\",\"description\":\"Creation timestamp in RFC3339 text format (output only).\"" +
+            "},\"endTime\":{\"type\":\"string\",\"description\":\"The time that this operation was com" +
+            "pleted. This is in RFC 3339 format (output only).\"},\"error\":{\"type\":\"object\",\"de" +
+            "scription\":\"If errors occurred during processing of this operation, this field w" +
+            "ill be populated (output only).\",\"properties\":{\"errors\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"The array of errors encountered while processing this operation.\",\"items\"" +
+            ":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\":\"The error" +
+            " type identifier for this error.\"},\"location\":{\"type\":\"string\",\"description\":\"In" +
+            "dicates the field in the request which caused the error. This property is option" +
+            "al.\"},\"message\":{\"type\":\"string\",\"description\":\"An optional, human-readable erro" +
+            "r message.\"}}}}}},\"httpErrorMessage\":{\"type\":\"string\",\"description\":\"If operatio" +
+            "n fails, the HTTP error message returned, e.g. NOT FOUND. (output only).\"},\"http" +
+            "ErrorStatusCode\":{\"type\":\"integer\",\"description\":\"If operation fails, the HTTP e" +
+            "rror status code returned, e.g. 404. (output only).\",\"format\":\"int32\"},\"id\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Unique identifier for the resource; defined by the s" +
+            "erver (output only).\",\"format\":\"uint64\"},\"insertTime\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The time that this operation was requested. This is in RFC 3339 format (ou" +
+            "tput only).\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource.\",\"def" +
+            "ault\":\"compute#operation\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the re" +
+            "source.\"},\"operationType\":{\"type\":\"string\",\"description\":\"Type of the operation." +
+            " Examples include \\\"insert\\\", \\\"update\\\", and \\\"delete\\\" (output only).\"},\"progr" +
+            "ess\":{\"type\":\"integer\",\"description\":\"An optional progress indicator that ranges" +
+            " from 0 to 100. There is no requirement that this be linear or support any granu" +
+            "larity of operations. This should not be used to guess at when the operation wil" +
+            "l be complete. This number should be monotonically increasing as the operation p" +
+            "rogresses (output only).\",\"format\":\"int32\"},\"selfLink\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Server defined URL for the resource (output only).\"},\"startTime\":{\"type\":" +
+            "\"string\",\"description\":\"The time that this operation was started by the server. " +
+            "This is in RFC 3339 format (output only).\"},\"status\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Status of the operation. Can be one of the following: \\\"PENDING\\\", \\\"RUNNIN" +
+            "G\\\", or \\\"DONE\\\" (output only).\"},\"statusMessage\":{\"type\":\"string\",\"description\"" +
+            ":\"An optional textual description of the current status of the operation (output" +
+            " only).\"},\"targetId\":{\"type\":\"string\",\"description\":\"Unique target id which iden" +
+            "tifies a particular incarnation of the target (output only).\",\"format\":\"uint64\"}" +
+            ",\"targetLink\":{\"type\":\"string\",\"description\":\"URL of the resource the operation " +
+            "is mutating (output only).\"},\"user\":{\"type\":\"string\",\"description\":\"User who req" +
+            "uested the operation, for example \\\"user@example.com\\\" (output only).\"}}},\"Opera" +
+            "tionList\":{\"id\":\"OperationList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Unique identifier for the resource; defined by the server (ou" +
+            "tput only).\"},\"items\":{\"type\":\"array\",\"description\":\"The operation resources.\",\"" +
+            "items\":{\"$ref\":\"Operation\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of reso" +
+            "urce.\",\"default\":\"compute#operationList\"},\"nextPageToken\":{\"type\":\"string\",\"desc" +
+            "ription\":\"A token used to continue a truncated list request (output only).\"},\"se" +
+            "lfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this resource (ou" +
+            "tput only).\"}}},\"Project\":{\"id\":\"Project\",\"type\":\"object\",\"properties\":{\"commonI" +
+            "nstanceMetadata\":{\"$ref\":\"Metadata\",\"description\":\"Metadata key/value pairs avai" +
+            "lable to all instances contained in this project.\"},\"creationTimestamp\":{\"type\":" +
+            "\"string\",\"description\":\"Creation timestamp in RFC3339 text format (output only)." +
+            "\"},\"description\":{\"type\":\"string\",\"description\":\"An optional textual description" +
+            " of the resource.\"},\"externalIpAddresses\":{\"type\":\"array\",\"description\":\"Interne" +
+            "t available IP addresses available for use in this project.\",\"items\":{\"type\":\"st" +
+            "ring\"}},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource;" +
+            " defined by the server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string" +
+            "\",\"description\":\"Type of the resource.\",\"default\":\"compute#project\"},\"name\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Name of the resource.\"},\"quotas\":{\"type\":\"array\",\"de" +
+            "scription\":\"Quotas assigned to this project.\",\"items\":{\"type\":\"object\",\"properti" +
+            "es\":{\"limit\":{\"type\":\"number\",\"description\":\"Quota limit for this metric.\",\"form" +
+            "at\":\"double\"},\"metric\":{\"type\":\"string\",\"description\":\"Name of the quota metric." +
+            "\"},\"usage\":{\"type\":\"number\",\"description\":\"Current usage of this metric.\",\"forma" +
+            "t\":\"double\"}}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL fo" +
+            "r the resource (output only).\"}}},\"ServiceAccount\":{\"id\":\"ServiceAccount\",\"type\"" +
+            ":\"object\",\"properties\":{\"email\":{\"type\":\"string\",\"description\":\"Email address of" +
+            " the service account.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resou" +
+            "rce.\",\"default\":\"compute#serviceAccount\"},\"scopes\":{\"type\":\"array\",\"description\"" +
+            ":\"The list of scopes to be made available for this service account.\",\"items\":{\"t" +
+            "ype\":\"string\"}}}},\"Snapshot\":{\"id\":\"Snapshot\",\"type\":\"object\",\"properties\":{\"cre" +
+            "ationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339 te" +
+            "xt format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"An opti" +
+            "onal textual description of the resource; provided by the client when the resour" +
+            "ce is created.\"},\"diskSizeGb\":{\"type\":\"string\",\"description\":\"Size of the persis" +
+            "tent disk snapshot, specified in GB (output only).\",\"format\":\"int64\"},\"id\":{\"typ" +
             "e\":\"string\",\"description\":\"Unique identifier for the resource; defined by the se" +
             "rver (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"T" +
-            "ype of the resource.\",\"default\":\"compute#firewall\"},\"name\":{\"type\":\"string\",\"des" +
+            "ype of the resource.\",\"default\":\"compute#snapshot\"},\"name\":{\"type\":\"string\",\"des" +
             "cription\":\"Name of the resource; provided by the client when the resource is cre" +
             "ated. The name must be 1-63 characters long, and comply with RFC1035.\",\"pattern\"" +
-            ":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.firewal" +
-            "ls.insert\",\"compute.firewalls.patch\"]}},\"network\":{\"type\":\"string\",\"description\"" +
-            ":\"URL of the network to which this firewall is applied; provided by the client w" +
-            "hen the firewall is created.\",\"annotations\":{\"required\":[\"compute.firewalls.inse" +
-            "rt\",\"compute.firewalls.patch\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"Serv" +
-            "er defined URL for the resource (output only).\"},\"sourceRanges\":{\"type\":\"array\"," +
-            "\"description\":\"A list of IP address blocks expressed in CIDR format which this r" +
-            "ule applies to. One or both of sourceRanges and sourceTags may be set; an inboun" +
-            "d connection is allowed if either the range or the tag of the source matches.\",\"" +
-            "items\":{\"type\":\"string\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9]{1,3}){3}/[0-9]{1,2}\"}}," +
-            "\"sourceTags\":{\"type\":\"array\",\"description\":\"A list of instance tags which this r" +
-            "ule applies to. One or both of sourceRanges and sourceTags may be set; an inboun" +
-            "d connection is allowed if either the range or the tag of the source matches.\",\"" +
-            "items\":{\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"}},\"targetT" +
-            "ags\":{\"type\":\"array\",\"description\":\"A list of instance tags indicating sets of i" +
-            "nstances located on network which may make network connections as specified in a" +
-            "llowed. If no targetTags are specified, the firewall rule applies to all instanc" +
-            "es on the specified network.\",\"items\":{\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0" +
-            "-9]{0,61}[a-z0-9])?\"}}}},\"FirewallList\":{\"id\":\"FirewallList\",\"type\":\"object\",\"pr" +
-            "operties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resour" +
-            "ce; defined by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\"" +
-            ":\"The firewall resources.\",\"items\":{\"$ref\":\"Firewall\"}},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"Type of resource.\",\"default\":\"compute#firewallList\"},\"nextPageTok" +
-            "en\":{\"type\":\"string\",\"description\":\"A token used to continue a truncated list re" +
-            "quest (output only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined" +
-            " URL for this resource (output only).\"}}},\"Image\":{\"id\":\"Image\",\"type\":\"object\"," +
-            "\"properties\":{\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation times" +
-            "tamp in RFC3339 text format (output only).\"},\"description\":{\"type\":\"string\",\"des" +
-            "cription\":\"Textual description of the resource; provided by the client when the " +
-            "resource is created.\"},\"diskSnapshot\":{\"type\":\"object\",\"description\":\"Not yet im" +
-            "plemented.\",\"properties\":{\"source\":{\"type\":\"string\",\"description\":\"URL of the di" +
-            "sk snapshot.\",\"annotations\":{\"required\":[\"compute.images.insert\"]}}}},\"id\":{\"typ" +
-            "e\":\"string\",\"description\":\"Unique identifier for the resource; defined by the se" +
-            "rver (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"T" +
-            "ype of the resource.\",\"default\":\"compute#image\"},\"name\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Name of the resource; provided by the client when the resource is create" +
-            "d. The name must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[" +
-            "a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.images.ins" +
-            "ert\"]}},\"preferredKernel\":{\"type\":\"string\",\"description\":\"An optional URL of the" +
-            " preferred kernel for use with this disk image. If not specified, a server defin" +
-            "ed default kernel will be used.\"},\"rawDisk\":{\"type\":\"object\",\"description\":\"The " +
-            "raw disk image parameters.\",\"properties\":{\"containerType\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The format used to encode and transmit the block device. Should be TAR" +
-            ". This is just a container and transmission format and not a runtime format. Pro" +
-            "vided by the client when the disk image is created.\",\"default\":\"TAR\",\"annotation" +
-            "s\":{\"required\":[\"compute.images.insert\"]}},\"sha1Checksum\":{\"type\":\"string\",\"desc" +
-            "ription\":\"An optional SHA1 checksum of the disk image before unpackaging; provid" +
-            "ed by the client when the disk image is created.\",\"pattern\":\"[a-f0-9]{40}\"},\"sou" +
-            "rce\":{\"type\":\"string\",\"description\":\"The full Google Cloud Storage URL where the" +
-            " disk image is stored; provided by the client when the disk image is created.\",\"" +
-            "annotations\":{\"required\":[\"compute.images.insert\"]}}}},\"selfLink\":{\"type\":\"strin" +
-            "g\",\"description\":\"Server defined URL for the resource (output only).\"},\"sourceTy" +
-            "pe\":{\"type\":\"string\",\"description\":\"Must be \\\"RAW\\\"; provided by the client when" +
-            " the disk image is created.\",\"default\":\"RAW\",\"annotations\":{\"required\":[\"compute" +
-            ".images.insert\"]}}}},\"ImageList\":{\"id\":\"ImageList\",\"type\":\"object\",\"properties\":" +
-            "{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; define" +
-            "d by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The disk" +
-            " image resources.\",\"items\":{\"$ref\":\"Image\"}},\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Type of resource.\",\"default\":\"compute#imageList\"},\"nextPageToken\":{\"type\":\"s" +
-            "tring\",\"description\":\"A token used to continue a truncated list request (output " +
-            "only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this " +
-            "resource (output only).\"}}},\"Instance\":{\"id\":\"Instance\",\"type\":\"object\",\"propert" +
-            "ies\":{\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in " +
-            "RFC3339 text format (output only).\"},\"description\":{\"type\":\"string\",\"description" +
-            "\":\"An optional textual description of the resource; provided by the client when " +
-            "the resource is created.\"},\"disks\":{\"type\":\"array\",\"description\":\"Array of disks" +
-            " associated with this instance. Persistent disks must be created before you can " +
-            "assign them.\",\"items\":{\"$ref\":\"AttachedDisk\"}},\"id\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Unique identifier for the resource; defined by the server (output only).\",\"f" +
-            "ormat\":\"uint64\"},\"image\":{\"type\":\"string\",\"description\":\"An optional URL of the " +
-            "disk image resource to be to be installed on this instance; provided by the clie" +
-            "nt when the instance is created. If not specified, the server will choose a defa" +
-            "ult image.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#instance\"}" +
-            ",\"machineType\":{\"type\":\"string\",\"description\":\"URL of the machine type resource " +
-            "describing which machine type to use to host the instance; provided by the clien" +
-            "t when the instance is created.\",\"annotations\":{\"required\":[\"compute.instances.i" +
-            "nsert\"]}},\"metadata\":{\"$ref\":\"Metadata\",\"description\":\"Metadata key/value pairs " +
-            "assigned to this instance. Consists of custom metadata or predefined keys; see I" +
-            "nstance documentation for more information.\"},\"name\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Name of the resource; provided by the client when the resource is created. " +
-            "The name must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z" +
-            "](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.instances.ins" +
-            "ert\"]}},\"networkInterfaces\":{\"type\":\"array\",\"description\":\"Array of configuratio" +
-            "ns for this interface. This specifies how this interface is configured to intera" +
-            "ct with other network services, such as connecting to the internet. Currently, O" +
-            "NE_TO_ONE_NAT is the only access config supported. If there are no accessConfigs" +
-            " specified, then this instance will have no external internet access.\",\"items\":{" +
-            "\"$ref\":\"NetworkInterface\"}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server de" +
-            "fined URL for the resource (output only).\"},\"serviceAccounts\":{\"type\":\"array\",\"d" +
-            "escription\":\"A list of service accounts each with specified scopes, for which ac" +
-            "cess tokens are to be made available to the instance through metadata queries.\"," +
-            "\"items\":{\"$ref\":\"ServiceAccount\"}},\"status\":{\"type\":\"string\",\"description\":\"Inst" +
-            "ance status. One of the following values: \\\"PROVISIONING\\\", \\\"STAGING\\\", \\\"RUNNI" +
-            "NG\\\" (output only).\"},\"statusMessage\":{\"type\":\"string\",\"description\":\"An optiona" +
-            "l, human-readable explanation of the status (output only).\"},\"tags\":{\"type\":\"arr" +
-            "ay\",\"description\":\"An optional set of tags applied to this instance. Used to ide" +
-            "ntify valid sources or targets for network firewalls. Provided by the client whe" +
-            "n the instance is created. Each tag must be 1-63 characters long, and comply wit" +
-            "h RFC1035.\",\"items\":{\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])" +
-            "?\"}},\"zone\":{\"type\":\"string\",\"description\":\"URL of the zone resource describing " +
-            "where this instance should be hosted; provided by the client when the instance i" +
-            "s created.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}}},\"Instance" +
-            "List\":{\"id\":\"InstanceList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"" +
-            "description\":\"Unique identifier for the resource; defined by the server (output " +
-            "only).\"},\"items\":{\"type\":\"array\",\"description\":\"A list of instance resources.\",\"" +
-            "items\":{\"$ref\":\"Instance\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resou" +
-            "rce.\",\"default\":\"compute#instanceList\"},\"nextPageToken\":{\"type\":\"string\",\"descri" +
-            "ption\":\"A token used to continue a truncated list request (output only).\"},\"self" +
-            "Link\":{\"type\":\"string\",\"description\":\"Server defined URL for this resource (outp" +
-            "ut only).\"}}},\"Kernel\":{\"id\":\"Kernel\",\"type\":\"object\",\"properties\":{\"creationTim" +
-            "estamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339 text forma" +
-            "t (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"An optional tex" +
-            "tual description of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique " +
-            "identifier for the resource; defined by the server (output only).\",\"format\":\"uin" +
-            "t64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"c" +
-            "ompute#kernel\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the resource.\",\"p" +
-            "attern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"},\"selfLink\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Server defined URL for the resource (output only).\"}}},\"KernelList\":{\"id" +
-            "\":\"KernelList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\"" +
+            ":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.snapsho" +
+            "ts.insert\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for " +
+            "the resource (output only).\"},\"sourceDisk\":{\"type\":\"string\",\"description\":\"The s" +
+            "ource disk used to create this snapshot. Once the source disk has been deleted f" +
+            "rom the system, this field will be cleared, and will not be set even if a disk w" +
+            "ith the same name has been re-created.\"},\"sourceDiskId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The \'id\' value of the disk used to create this snapshot. This value may " +
+            "be used to determine whether the snapshot was taken from the current or a previo" +
+            "us instance of a given disk name.\"},\"status\":{\"type\":\"string\",\"description\":\"The" +
+            " status of the persistent disk snapshot (output only).\"}}},\"SnapshotList\":{\"id\":" +
+            "\"SnapshotList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\"" +
             ":\"Unique identifier for the resource; defined by the server (output only).\"},\"it" +
-            "ems\":{\"type\":\"array\",\"description\":\"The kernel resources.\",\"items\":{\"$ref\":\"Kern" +
-            "el\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"default\":\"compu" +
-            "te#kernelList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to " +
-            "continue a truncated list request (output only).\"},\"selfLink\":{\"type\":\"string\",\"" +
-            "description\":\"Server defined URL for this resource (output only).\"}}},\"MachineTy" +
-            "pe\":{\"id\":\"MachineType\",\"type\":\"object\",\"properties\":{\"availableZone\":{\"type\":\"a" +
-            "rray\",\"description\":\"The zones that this machine type can run in.\",\"items\":{\"typ" +
-            "e\":\"any\"}},\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestam" +
-            "p in RFC3339 text format (output only).\"},\"description\":{\"type\":\"string\",\"descri" +
-            "ption\":\"An optional textual description of the resource.\"},\"ephemeralDisks\":{\"ty" +
-            "pe\":\"array\",\"description\":\"List of extended ephemeral disks assigned to the inst" +
-            "ance.\",\"items\":{\"type\":\"object\",\"properties\":{\"diskGb\":{\"type\":\"integer\",\"descri" +
-            "ption\":\"Size of the ephemeral disk, defined in GB.\",\"format\":\"int32\"}}}},\"guestC" +
-            "pus\":{\"type\":\"integer\",\"description\":\"Count of CPUs exposed to the instance.\",\"f" +
-            "ormat\":\"int32\"},\"hostCpus\":{\"type\":\"integer\",\"description\":\"Count of physical CP" +
-            "Us reserved on the virtual machine host. Deprecated.\",\"format\":\"int32\"},\"id\":{\"t" +
-            "ype\":\"string\",\"description\":\"Unique identifier for the resource; defined by the " +
-            "server (output only).\",\"format\":\"uint64\"},\"imageSpaceGb\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"Space allotted for the image, defined in GB.\",\"format\":\"int32\"},\"kind\"" +
-            ":{\"type\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#machi" +
-            "neType\"},\"maximumPersistentDisks\":{\"type\":\"integer\",\"description\":\"Maximum persi" +
-            "stent disks allowed.\",\"format\":\"int32\"},\"maximumPersistentDisksSizeGb\":{\"type\":\"" +
-            "string\",\"description\":\"Maximum total persistent disks size (GB) allowed.\",\"forma" +
-            "t\":\"int64\"},\"memoryMb\":{\"type\":\"integer\",\"description\":\"Physical memory assigned" +
-            " to the instance, defined in MB.\",\"format\":\"int32\"},\"name\":{\"type\":\"string\",\"des" +
-            "cription\":\"Name of the resource.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"}" +
-            ",\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for the resource " +
-            "(output only).\"}}},\"MachineTypeList\":{\"id\":\"MachineTypeList\",\"type\":\"object\",\"pr" +
-            "operties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resour" +
-            "ce; defined by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\"" +
-            ":\"The machine type resources.\",\"items\":{\"$ref\":\"MachineType\"}},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Type of resource.\",\"default\":\"compute#machineTypeList\"},\"n" +
-            "extPageToken\":{\"type\":\"string\",\"description\":\"A token used to continue a truncat" +
-            "ed list request (output only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Serv" +
-            "er defined URL for this resource (output only).\"}}},\"Metadata\":{\"id\":\"Metadata\"," +
-            "\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Array of ke" +
-            "y/value pairs. The total size of all keys and values must be less than 512 KB.\"," +
-            "\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\",\"description\":\"Key" +
-            " for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_" +
-            "]+, and be less than 128 bytes in length. This is reflected as part of a URL in " +
-            "the metadata server. Additionally, to avoid ambiguity, keys must be unique.\",\"pa" +
-            "ttern\":\"[a-zA-Z0-9-_]{1,128}\",\"annotations\":{\"required\":[\"compute.instances.inse" +
-            "rt\",\"compute.projects.setCommonInstanceMetadata\"]}},\"value\":{\"type\":\"string\",\"de" +
-            "scription\":\"Value for the metadata entry. These are free-form strings, and only " +
-            "have meaning as interpreted by the image running in the instance. The only restr" +
-            "iction placed on values is that their size must be less than or equal to 15000 b" +
-            "ytes.\",\"annotations\":{\"required\":[\"compute.instances.insert\",\"compute.projects.s" +
-            "etCommonInstanceMetadata\"]}}}}},\"kind\":{\"type\":\"string\",\"description\":\"Type of t" +
-            "he resource.\",\"default\":\"compute#metadata\"}}},\"Network\":{\"id\":\"Network\",\"type\":\"" +
-            "object\",\"properties\":{\"IPv4Range\":{\"type\":\"string\",\"description\":\"Required; The " +
-            "range of internal addresses that are legal on this network. This range is a CIDR" +
-            " specification, for example: 192.168.0.0/16. Provided by the client when the net" +
-            "work is created.\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9]{1,3}){3}/[0-9]{1,2}\",\"annotat" +
-            "ions\":{\"required\":[\"compute.networks.insert\"]}},\"creationTimestamp\":{\"type\":\"str" +
-            "ing\",\"description\":\"Creation timestamp in RFC3339 text format (output only).\"},\"" +
-            "description\":{\"type\":\"string\",\"description\":\"An optional textual description of " +
-            "the resource; provided by the client when the resource is created.\"},\"gatewayIPv" +
-            "4\":{\"type\":\"string\",\"description\":\"An optional address that is used for default " +
-            "routing to other networks. This must be within the range specified by IPv4Range," +
-            " and is typically the first usable address in that range. If not specified, the " +
-            "default value is the first usable address in IPv4Range.\",\"pattern\":\"[0-9]{1,3}(?" +
-            ":\\\\.[0-9]{1,3}){3}\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for " +
-            "the resource; defined by the server (output only).\",\"format\":\"uint64\"},\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#network\"" +
-            "},\"name\":{\"type\":\"string\",\"description\":\"Name of the resource; provided by the c" +
-            "lient when the resource is created. The name must be 1-63 characters long, and c" +
-            "omply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\"" +
-            ":{\"required\":[\"compute.networks.insert\"]}},\"selfLink\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Server defined URL for the resource (output only).\"}}},\"NetworkInterface\":" +
-            "{\"id\":\"NetworkInterface\",\"type\":\"object\",\"properties\":{\"accessConfigs\":{\"type\":\"" +
-            "array\",\"description\":\"Array of configurations for this interface. This specifies" +
-            " how this interface is configured to interact with other network services, such " +
-            "as connecting to the internet. Currently, ONE_TO_ONE_NAT is the only access conf" +
-            "ig supported. If there are no accessConfigs specified, then this instance will h" +
-            "ave no external internet access.\",\"items\":{\"$ref\":\"AccessConfig\"}},\"kind\":{\"type" +
-            "\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#networkInter" +
-            "face\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the resource, determined b" +
-            "y the server; for network devices, these are e.g. eth0, eth1, etc. (output only)" +
-            ".\"},\"network\":{\"type\":\"string\",\"description\":\"URL of the network resource attach" +
-            "ed to this interface.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}," +
-            "\"networkIP\":{\"type\":\"string\",\"description\":\"An optional IPV4 internal network ad" +
-            "dress to assign to this instance. If not specified, one will be assigned from th" +
-            "e available range.\"}}},\"NetworkList\":{\"id\":\"NetworkList\",\"type\":\"object\",\"proper" +
-            "ties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; " +
-            "defined by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"Th" +
-            "e network resources.\",\"items\":{\"$ref\":\"Network\"}},\"kind\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Type of resource.\",\"default\":\"compute#networkList\"},\"nextPageToken\":{\"t" +
-            "ype\":\"string\",\"description\":\"A token used to continue a truncated list request (" +
-            "output only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL fo" +
-            "r this resource (output only).\"}}},\"Operation\":{\"id\":\"Operation\",\"type\":\"object\"" +
-            ",\"properties\":{\"clientOperationId\":{\"type\":\"string\",\"description\":\"An optional i" +
-            "dentifier specified by the client when the mutation was initiated. Must be uniqu" +
-            "e for all operation resources in the project (output only).\"},\"creationTimestamp" +
-            "\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339 text format (out" +
-            "put only).\"},\"endTime\":{\"type\":\"string\",\"description\":\"The time that this operat" +
-            "ion was completed. This is in RFC 3339 format (output only).\"},\"error\":{\"type\":\"" +
-            "object\",\"description\":\"If errors occurred during processing of this operation, t" +
-            "his field will be populated (output only).\",\"properties\":{\"errors\":{\"type\":\"arra" +
-            "y\",\"description\":\"The array of errors encountered while processing this operatio" +
-            "n.\",\"items\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\"" +
-            ":\"The error type identifier for this error.\"},\"location\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Indicates the field in the request which caused the error. This propert" +
-            "y is optional.\"},\"message\":{\"type\":\"string\",\"description\":\"An optional, human-re" +
-            "adable error message.\"}}}}}},\"httpErrorMessage\":{\"type\":\"string\",\"description\":\"" +
-            "If operation fails, the HTTP error message returned, e.g. NOT FOUND. (output onl" +
-            "y).\"},\"httpErrorStatusCode\":{\"type\":\"integer\",\"description\":\"If operation fails," +
-            " the HTTP error status code returned, e.g. 404. (output only).\",\"format\":\"int32\"" +
-            "},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defin" +
-            "ed by the server (output only).\",\"format\":\"uint64\"},\"insertTime\":{\"type\":\"string" +
-            "\",\"description\":\"The time that this operation was requested. This is in RFC 3339" +
-            " format (output only).\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the reso" +
-            "urce.\",\"default\":\"compute#operation\"},\"name\":{\"type\":\"string\",\"description\":\"Nam" +
-            "e of the resource.\"},\"operationType\":{\"type\":\"string\",\"description\":\"Type of the" +
-            " operation. Examples include \\\"insert\\\", \\\"update\\\", and \\\"delete\\\" (output only" +
-            ").\"},\"progress\":{\"type\":\"integer\",\"description\":\"An optional progress indicator " +
-            "that ranges from 0 to 100. There is no requirement that this be linear or suppor" +
-            "t any granularity of operations. This should not be used to guess at when the op" +
-            "eration will be complete. This number should be monotonically increasing as the " +
-            "operation progresses (output only).\",\"format\":\"int32\"},\"selfLink\":{\"type\":\"strin" +
-            "g\",\"description\":\"Server defined URL for the resource (output only).\"},\"startTim" +
-            "e\":{\"type\":\"string\",\"description\":\"The time that this operation was started by t" +
-            "he server. This is in RFC 3339 format (output only).\"},\"status\":{\"type\":\"string\"" +
-            ",\"description\":\"Status of the operation. Can be one of the following: \\\"PENDING\\" +
-            "\", \\\"RUNNING\\\", or \\\"DONE\\\" (output only).\"},\"statusMessage\":{\"type\":\"string\",\"d" +
-            "escription\":\"An optional textual description of the current status of the operat" +
-            "ion (output only).\"},\"targetId\":{\"type\":\"string\",\"description\":\"Unique target id" +
-            " which identifies a particular incarnation of the target (output only).\",\"format" +
-            "\":\"uint64\"},\"targetLink\":{\"type\":\"string\",\"description\":\"URL of the resource the" +
-            " operation is mutating (output only).\"},\"user\":{\"type\":\"string\",\"description\":\"U" +
-            "ser who requested the operation, for example \\\"user@example.com\\\" (output only)." +
-            "\"}}},\"OperationList\":{\"id\":\"OperationList\",\"type\":\"object\",\"properties\":{\"id\":{\"" +
-            "type\":\"string\",\"description\":\"Unique identifier for the resource; defined by the" +
-            " server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The operation re" +
-            "sources.\",\"items\":{\"$ref\":\"Operation\"}},\"kind\":{\"type\":\"string\",\"description\":\"T" +
-            "ype of resource.\",\"default\":\"compute#operationList\"},\"nextPageToken\":{\"type\":\"st" +
+            "ems\":{\"type\":\"array\",\"description\":\"The persistent snapshot resources.\",\"items\":" +
+            "{\"$ref\":\"Snapshot\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"" +
+            "default\":\"compute#snapshotList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":" +
+            "\"A token used to continue a truncated list request (output only).\"},\"selfLink\":{" +
+            "\"type\":\"string\",\"description\":\"Server defined URL for this resource (output only" +
+            ").\"}}},\"Zone\":{\"id\":\"Zone\",\"type\":\"object\",\"properties\":{\"availableMachineType\":" +
+            "{\"type\":\"array\",\"description\":\"The machine types that can be used in this zone (" +
+            "output only).\",\"items\":{\"type\":\"any\"}},\"creationTimestamp\":{\"type\":\"string\",\"des" +
+            "cription\":\"Creation timestamp in RFC3339 text format (output only).\"},\"descripti" +
+            "on\":{\"type\":\"string\",\"description\":\"Textual description of the resource.\"},\"id\":" +
+            "{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined by t" +
+            "he server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Type of the resource.\",\"default\":\"compute#zone\"},\"maintenanceWindows\":{\"type" +
+            "\":\"array\",\"description\":\"Scheduled maintenance windows for the zone. When the zo" +
+            "ne is in a maintenance window, all resources which reside in the zone will be un" +
+            "available.\",\"items\":{\"type\":\"object\",\"properties\":{\"beginTime\":{\"type\":\"string\"," +
+            "\"description\":\"Begin time of the maintenance window, in RFC 3339 format.\"},\"desc" +
+            "ription\":{\"type\":\"string\",\"description\":\"Textual description of the maintenance " +
+            "window.\"},\"endTime\":{\"type\":\"string\",\"description\":\"End time of the maintenance " +
+            "window, in RFC 3339 format.\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the" +
+            " maintenance window.\"}}}},\"name\":{\"type\":\"string\",\"description\":\"Name of the res" +
+            "ource.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for the r" +
+            "esource (output only).\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the " +
+            "zone. \\\"UP\\\" or \\\"DOWN\\\".\"}}},\"ZoneList\":{\"id\":\"ZoneList\",\"type\":\"object\",\"prope" +
+            "rties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource;" +
+            " defined by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"T" +
+            "he zone resources.\",\"items\":{\"$ref\":\"Zone\"}},\"kind\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Type of resource.\",\"default\":\"compute#zoneList\"},\"nextPageToken\":{\"type\":\"st" +
             "ring\",\"description\":\"A token used to continue a truncated list request (output o" +
             "nly).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this r" +
-            "esource (output only).\"}}},\"Project\":{\"id\":\"Project\",\"type\":\"object\",\"properties" +
-            "\":{\"commonInstanceMetadata\":{\"$ref\":\"Metadata\",\"description\":\"Metadata key/value" +
-            " pairs available to all instances contained in this project.\"},\"creationTimestam" +
-            "p\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339 text format (ou" +
-            "tput only).\"},\"description\":{\"type\":\"string\",\"description\":\"An optional textual " +
-            "description of the resource.\"},\"externalIpAddresses\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"Internet available IP addresses available for use in this project.\",\"items\":" +
-            "{\"type\":\"string\"}},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for th" +
-            "e resource; defined by the server (output only).\",\"format\":\"uint64\"},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#project\"}," +
-            "\"name\":{\"type\":\"string\",\"description\":\"Name of the resource.\"},\"quotas\":{\"type\":" +
-            "\"array\",\"description\":\"Quotas assigned to this project.\",\"items\":{\"type\":\"object" +
-            "\",\"properties\":{\"limit\":{\"type\":\"number\",\"description\":\"Quota limit for this met" +
-            "ric.\",\"format\":\"double\"},\"metric\":{\"type\":\"string\",\"description\":\"Name of the qu" +
-            "ota metric.\"},\"usage\":{\"type\":\"number\",\"description\":\"Current usage of this metr" +
-            "ic.\",\"format\":\"double\"}}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server def" +
-            "ined URL for the resource (output only).\"}}},\"ServiceAccount\":{\"id\":\"ServiceAcco" +
-            "unt\",\"type\":\"object\",\"properties\":{\"email\":{\"type\":\"string\",\"description\":\"Email" +
-            " address of the service account.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type o" +
-            "f the resource.\",\"default\":\"compute#serviceAccount\"},\"scopes\":{\"type\":\"array\",\"d" +
-            "escription\":\"The list of scopes to be made available for this service account.\"," +
-            "\"items\":{\"type\":\"string\"}}}},\"Snapshot\":{\"id\":\"Snapshot\",\"type\":\"object\",\"proper" +
-            "ties\":{\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in" +
-            " RFC3339 text format (output only).\"},\"description\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"An optional textual description of the resource; provided by the client when" +
-            " the resource is created.\"},\"diskSizeGb\":{\"type\":\"string\",\"description\":\"Size of" +
-            " the persistent disk snapshot, specified in GB (output only).\",\"format\":\"int64\"}" +
-            ",\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; define" +
-            "d by the server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Type of the resource.\",\"default\":\"compute#snapshot\"},\"name\":{\"type\":\"s" +
-            "tring\",\"description\":\"Name of the resource; provided by the client when the reso" +
-            "urce is created. The name must be 1-63 characters long, and comply with RFC1035." +
-            "\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"comp" +
-            "ute.snapshots.insert\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defin" +
-            "ed URL for the resource (output only).\"},\"sourceDisk\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The source disk used to create this snapshot. Once the source disk has bee" +
-            "n deleted from the system, this field will be cleared, and will not be set even " +
-            "if a disk with the same name has been re-created.\"},\"sourceDiskId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The \'id\' value of the disk used to create this snapshot. This" +
-            " value may be used to determine whether the snapshot was taken from the current " +
-            "or a previous instance of a given disk name.\"},\"status\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The status of the persistent disk snapshot (output only).\"}}},\"SnapshotL" +
-            "ist\":{\"id\":\"SnapshotList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"d" +
-            "escription\":\"Unique identifier for the resource; defined by the server (output o" +
-            "nly).\"},\"items\":{\"type\":\"array\",\"description\":\"The persistent snapshot resources" +
-            ".\",\"items\":{\"$ref\":\"Snapshot\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of r" +
-            "esource.\",\"default\":\"compute#snapshotList\"},\"nextPageToken\":{\"type\":\"string\",\"de" +
-            "scription\":\"A token used to continue a truncated list request (output only).\"},\"" +
-            "selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this resource (" +
-            "output only).\"}}},\"Zone\":{\"id\":\"Zone\",\"type\":\"object\",\"properties\":{\"availableMa" +
-            "chineType\":{\"type\":\"array\",\"description\":\"The machine types that can be used in " +
-            "this zone (output only).\",\"items\":{\"type\":\"any\"}},\"creationTimestamp\":{\"type\":\"s" +
-            "tring\",\"description\":\"Creation timestamp in RFC3339 text format (output only).\"}" +
-            ",\"description\":{\"type\":\"string\",\"description\":\"Textual description of the resour" +
-            "ce.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; d" +
-            "efined by the server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"Type of the resource.\",\"default\":\"compute#zone\"},\"maintenanceWind" +
-            "ows\":{\"type\":\"array\",\"description\":\"Scheduled maintenance windows for the zone. " +
-            "When the zone is in a maintenance window, all resources which reside in the zone" +
-            " will be unavailable.\",\"items\":{\"type\":\"object\",\"properties\":{\"beginTime\":{\"type" +
-            "\":\"string\",\"description\":\"Begin time of the maintenance window, in RFC 3339 form" +
-            "at.\"},\"description\":{\"type\":\"string\",\"description\":\"Textual description of the m" +
-            "aintenance window.\"},\"endTime\":{\"type\":\"string\",\"description\":\"End time of the m" +
-            "aintenance window, in RFC 3339 format.\"},\"name\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the maintenance window.\"}}}},\"name\":{\"type\":\"string\",\"description\":\"Name" +
-            " of the resource.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined UR" +
-            "L for the resource (output only).\"},\"status\":{\"type\":\"string\",\"description\":\"Sta" +
-            "tus of the zone. \\\"UP\\\" or \\\"DOWN\\\".\"}}},\"ZoneList\":{\"id\":\"ZoneList\",\"type\":\"obj" +
-            "ect\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for th" +
-            "e resource; defined by the server (output only).\"},\"items\":{\"type\":\"array\",\"desc" +
-            "ription\":\"The zone resources.\",\"items\":{\"$ref\":\"Zone\"}},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"Type of resource.\",\"default\":\"compute#zoneList\"},\"nextPageToken\":" +
-            "{\"type\":\"string\",\"description\":\"A token used to continue a truncated list reques" +
-            "t (output only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL" +
-            " for this resource (output only).\"}}}},\"resources\":{\"disks\":{\"methods\":{\"delete\"" +
-            ":{\"id\":\"compute.disks.delete\",\"path\":\"{project}/disks/{disk}\",\"httpMethod\":\"DELE" +
-            "TE\",\"description\":\"Deletes the specified persistent disk resource.\",\"parameters\"" +
-            ":{\"disk\":{\"type\":\"string\",\"description\":\"Name of the persistent disk resource to" +
-            " delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"locatio" +
-            "n\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping" +
-            " this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:" +
-            "[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?" +
-            "))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"disk\"],\"response\":{\"$ref\":\"" +
-            "Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"c" +
-            "ompute.disks.get\",\"path\":\"{project}/disks/{disk}\",\"httpMethod\":\"GET\",\"descriptio" +
-            "n\":\"Returns the specified persistent disk resource.\",\"parameters\":{\"disk\":{\"type" +
-            "\":\"string\",\"description\":\"Name of the persistent disk resource to return.\",\"requ" +
-            "ired\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"pro" +
-            "ject\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\"" +
-            ",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}" +
-            "[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":" +
-            "\"path\"}},\"parameterOrder\":[\"project\",\"disk\"],\"response\":{\"$ref\":\"Disk\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.d" +
-            "isks.insert\",\"path\":\"{project}/disks\",\"httpMethod\":\"POST\",\"description\":\"Creates" +
-            " a persistent disk resource in the specified project using the data included in " +
-            "the request.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of th" +
-            "e project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63" +
-            "}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9" +
-            "]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":" +
-            "{\"$ref\":\"Disk\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/compute\"]},\"list\":{\"id\":\"compute.disks.list\",\"path\":\"{project}/disks\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of persistent disk resourc" +
-            "es contained within the specified project.\",\"parameters\":{\"filter\":{\"type\":\"stri" +
+            "esource (output only).\"}}}},\"resources\":{\"disks\":{\"methods\":{\"delete\":{\"id\":\"com" +
+            "pute.disks.delete\",\"path\":\"{project}/disks/{disk}\",\"httpMethod\":\"DELETE\",\"descri" +
+            "ption\":\"Deletes the specified persistent disk resource.\",\"parameters\":{\"disk\":{\"" +
+            "type\":\"string\",\"description\":\"Name of the persistent disk resource to delete.\",\"" +
+            "required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"}," +
+            "\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping this reque" +
+            "st.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0" +
+            ",61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"locati" +
+            "on\":\"path\"}},\"parameterOrder\":[\"project\",\"disk\"],\"response\":{\"$ref\":\"Operation\"}" +
+            ",\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.disk" +
+            "s.get\",\"path\":\"{project}/disks/{disk}\",\"httpMethod\":\"GET\",\"description\":\"Returns" +
+            " the specified persistent disk resource.\",\"parameters\":{\"disk\":{\"type\":\"string\"," +
+            "\"description\":\"Name of the persistent disk resource to return.\",\"required\":true," +
+            "\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"typ" +
+            "e\":\"string\",\"description\":\"Name of the project scoping this request.\",\"required\"" +
+            ":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)" +
+            ":)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"p" +
+            "arameterOrder\":[\"project\",\"disk\"],\"response\":{\"$ref\":\"Disk\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.disks.insert" +
+            "\",\"path\":\"{project}/disks\",\"httpMethod\":\"POST\",\"description\":\"Creates a persiste" +
+            "nt disk resource in the specified project using the data included in the request" +
+            ".\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the project s" +
+            "coping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a" +
+            "-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z" +
+            "0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Di" +
+            "sk\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
+            "compute\"]},\"list\":{\"id\":\"compute.disks.list\",\"path\":\"{project}/disks\",\"httpMetho" +
+            "d\":\"GET\",\"description\":\"Retrieves the list of persistent disk resources containe" +
+            "d within the specified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Optional. Filter expression for filtering listed resources.\",\"location\":" +
+            "\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum count o" +
+            "f results to be returned. Maximum and default value is 100.\",\"default\":\"100\",\"fo" +
+            "rmat\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"t" +
+            "ype\":\"string\",\"description\":\"Optional. Tag returned by a previous list request t" +
+            "runcated by maxResults. Used to continue a previous list request.\",\"location\":\"q" +
+            "uery\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping thi" +
+            "s request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-" +
+            "z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\"," +
+            "\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"DiskList\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]}}},\"firewalls\":{\"m" +
+            "ethods\":{\"delete\":{\"id\":\"compute.firewalls.delete\",\"path\":\"{project}/firewalls/{" +
+            "firewall}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the specified firewall r" +
+            "esource.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"description\":\"Name of the f" +
+            "irewall resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[" +
+            "a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of " +
+            "the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1," +
+            "63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0" +
+            "-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"firewall" +
+            "\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/co" +
+            "mpute\"]},\"get\":{\"id\":\"compute.firewalls.get\",\"path\":\"{project}/firewalls/{firewa" +
+            "ll}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified firewall resource.\"" +
+            ",\"parameters\":{\"firewall\":{\"type\":\"string\",\"description\":\"Name of the firewall r" +
+            "esource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?" +
+            "\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the proje" +
+            "ct scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(" +
+            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}" +
+            "[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"firewall\"],\"respo" +
+            "nse\":{\"$ref\":\"Firewall\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.read" +
+            "only\"]},\"insert\":{\"id\":\"compute.firewalls.insert\",\"path\":\"{project}/firewalls\",\"" +
+            "httpMethod\":\"POST\",\"description\":\"Creates a firewall resource in the specified p" +
+            "roject using the data included in the request.\",\"parameters\":{\"project\":{\"type\":" +
+            "\"string\",\"description\":\"Name of the project scoping this request.\",\"required\":tr" +
+            "ue,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?" +
+            "(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"para" +
+            "meterOrder\":[\"project\"],\"request\":{\"$ref\":\"Firewall\"},\"response\":{\"$ref\":\"Operat" +
+            "ion\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"list\":{\"id\":\"comput" +
+            "e.firewalls.list\",\"path\":\"{project}/firewalls\",\"httpMethod\":\"GET\",\"description\":" +
+            "\"Retrieves the list of firewall resources available to the specified project.\",\"" +
+            "parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter expressio" +
+            "n for filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"int" +
+            "eger\",\"description\":\"Optional. Maximum count of results to be returned. Maximum " +
+            "and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maxi" +
+            "mum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optio" +
+            "nal. Tag returned by a previous list request truncated by maxResults. Used to co" +
+            "ntinue a previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\"," +
+            "\"description\":\"Name of the project scoping this request.\",\"required\":true,\"patte" +
+            "rn\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{" +
+            "1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrde" +
+            "r\":[\"project\"],\"response\":{\"$ref\":\"FirewallList\"},\"scopes\":[\"https://www.googlea" +
+            "pis.com/auth/compute.readonly\"]},\"patch\":{\"id\":\"compute.firewalls.patch\",\"path\":" +
+            "\"{project}/firewalls/{firewall}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the" +
+            " specified firewall resource with the data included in the request. This method " +
+            "supports patch semantics.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Name of the firewall resource to update.\",\"required\":true,\"pattern\":\"[a-z](?" +
+            ":[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(" +
+            "?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|" +
+            "(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"p" +
+            "roject\",\"firewall\"],\"request\":{\"$ref\":\"Firewall\"},\"response\":{\"$ref\":\"Operation\"" +
+            "},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"update\":{\"id\":\"compute." +
+            "firewalls.update\",\"path\":\"{project}/firewalls/{firewall}\",\"httpMethod\":\"PUT\",\"de" +
+            "scription\":\"Updates the specified firewall resource with the data included in th" +
+            "e request.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"description\":\"Name of the" +
+            " firewall resource to update.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61" +
+            "}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name o" +
+            "f the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{" +
+            "1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-" +
+            "z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"firewa" +
+            "ll\"],\"request\":{\"$ref\":\"Firewall\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/compute\"]}}},\"images\":{\"methods\":{\"delete\":{\"id\":\"" +
+            "compute.images.delete\",\"path\":\"{project}/images/{image}\",\"httpMethod\":\"DELETE\",\"" +
+            "description\":\"Deletes the specified image resource.\",\"parameters\":{\"image\":{\"typ" +
+            "e\":\"string\",\"description\":\"Name of the image resource to delete.\",\"required\":tru" +
+            "e,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"t" +
+            "ype\":\"string\",\"description\":\"Name of the project scoping this request.\",\"require" +
+            "d\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])" +
+            "?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}}," +
+            "\"parameterOrder\":[\"project\",\"image\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"" +
+            "https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.images.get\",\"pat" +
+            "h\":\"{project}/images/{image}\",\"httpMethod\":\"GET\",\"description\":\"Returns the spec" +
+            "ified image resource.\",\"parameters\":{\"image\":{\"type\":\"string\",\"description\":\"Nam" +
+            "e of the image resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]" +
+            "{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"N" +
+            "ame of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z" +
+            "0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?" +
+            ":[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"i" +
+            "mage\"],\"response\":{\"$ref\":\"Image\"},\"scopes\":[\"https://www.googleapis.com/auth/co" +
+            "mpute.readonly\"]},\"insert\":{\"id\":\"compute.images.insert\",\"path\":\"{project}/image" +
+            "s\",\"httpMethod\":\"POST\",\"description\":\"Creates an image resource in the specified" +
+            " project using the data included in the request.\",\"parameters\":{\"project\":{\"type" +
+            "\":\"string\",\"description\":\"Name of the project scoping this request.\",\"required\":" +
+            "true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):" +
+            ")?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"pa" +
+            "rameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Image\"},\"response\":{\"$ref\":\"Operati" +
+            "on\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\",\"https://www.googleapis" +
+            ".com/auth/devstorage.read_only\"]},\"list\":{\"id\":\"compute.images.list\",\"path\":\"{pr" +
+            "oject}/images\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of image res" +
+            "ources available to the specified project.\",\"parameters\":{\"filter\":{\"type\":\"stri" +
             "ng\",\"description\":\"Optional. Filter expression for filtering listed resources.\"," +
             "\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. Maxi" +
             "mum count of results to be returned. Maximum and default value is 100.\",\"default" +
@@ -3637,158 +3737,105 @@ namespace Google.Apis.Compute.v1beta12 {
             "scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[" +
             "a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-" +
             "z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"" +
-            "DiskList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]}}},\"fir" +
-            "ewalls\":{\"methods\":{\"delete\":{\"id\":\"compute.firewalls.delete\",\"path\":\"{project}/" +
-            "firewalls/{firewall}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the specified" +
-            " firewall resource.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"description\":\"Na" +
-            "me of the firewall resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z" +
-            "0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description" +
-            "\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[" +
-            "-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-" +
-            "z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project" +
-            "\",\"firewall\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/compute\"]},\"get\":{\"id\":\"compute.firewalls.get\",\"path\":\"{project}/firewa" +
-            "lls/{firewall}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified firewall" +
-            " resource.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"description\":\"Name of the" +
-            " firewall resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61" +
-            "}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name o" +
-            "f the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{" +
-            "1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-" +
-            "z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"firewa" +
-            "ll\"],\"response\":{\"$ref\":\"Firewall\"},\"scopes\":[\"https://www.googleapis.com/auth/c" +
-            "ompute.readonly\"]},\"insert\":{\"id\":\"compute.firewalls.insert\",\"path\":\"{project}/f" +
-            "irewalls\",\"httpMethod\":\"POST\",\"description\":\"Creates a firewall resource in the " +
-            "specified project using the data included in the request.\",\"parameters\":{\"projec" +
-            "t\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"r" +
-            "equired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-" +
-            "z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"pa" +
-            "th\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Firewall\"},\"response\":{\"$r" +
-            "ef\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"list\":{\"" +
-            "id\":\"compute.firewalls.list\",\"path\":\"{project}/firewalls\",\"httpMethod\":\"GET\",\"de" +
-            "scription\":\"Retrieves the list of firewall resources available to the specified " +
-            "project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filte" +
-            "r expression for filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{" +
-            "\"type\":\"integer\",\"description\":\"Optional. Maximum count of results to be returne" +
-            "d. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum" +
-            "\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Optional. Tag returned by a previous list request truncated by maxResults." +
-            " Used to continue a previous list request.\",\"location\":\"query\"},\"project\":{\"type" +
-            "\":\"string\",\"description\":\"Name of the project scoping this request.\",\"required\":" +
-            "true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):" +
-            ")?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"project\"],\"response\":{\"$ref\":\"FirewallList\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/compute.readonly\"]},\"patch\":{\"id\":\"compute.firewalls.pat" +
-            "ch\",\"path\":\"{project}/firewalls/{firewall}\",\"httpMethod\":\"PATCH\",\"description\":\"" +
-            "Updates the specified firewall resource with the data included in the request. T" +
-            "his method supports patch semantics.\",\"parameters\":{\"firewall\":{\"type\":\"string\"," +
-            "\"description\":\"Name of the firewall resource to update.\",\"required\":true,\"patter" +
-            "n\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"str" +
-            "ing\",\"description\":\"Name of the project scoping this request.\",\"required\":true,\"" +
-            "pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[" +
-            "0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"paramete" +
-            "rOrder\":[\"project\",\"firewall\"],\"request\":{\"$ref\":\"Firewall\"},\"response\":{\"$ref\":" +
-            "\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"update\":{\"id" +
-            "\":\"compute.firewalls.update\",\"path\":\"{project}/firewalls/{firewall}\",\"httpMethod" +
-            "\":\"PUT\",\"description\":\"Updates the specified firewall resource with the data inc" +
-            "luded in the request.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the firewall resource to update.\",\"required\":true,\"pattern\":\"[a-z](?:[-a" +
-            "-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?" +
-            ":[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[" +
-            "a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"proje" +
-            "ct\",\"firewall\"],\"request\":{\"$ref\":\"Firewall\"},\"response\":{\"$ref\":\"Operation\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/compute\"]}}},\"images\":{\"methods\":{\"dele" +
-            "te\":{\"id\":\"compute.images.delete\",\"path\":\"{project}/images/{image}\",\"httpMethod\"" +
-            ":\"DELETE\",\"description\":\"Deletes the specified image resource.\",\"parameters\":{\"i" +
-            "mage\":{\"type\":\"string\",\"description\":\"Name of the image resource to delete.\",\"re" +
-            "quired\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"p" +
-            "roject\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request" +
-            ".\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,6" +
-            "1}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location" +
-            "\":\"path\"}},\"parameterOrder\":[\"project\",\"image\"],\"response\":{\"$ref\":\"Operation\"}," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.image" +
-            "s.get\",\"path\":\"{project}/images/{image}\",\"httpMethod\":\"GET\",\"description\":\"Retur" +
-            "ns the specified image resource.\",\"parameters\":{\"image\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Name of the image resource to return.\",\"required\":true,\"pattern\":\"[a-z](" +
-            "?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"" +
-            "(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}" +
-            "|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"" +
-            "project\",\"image\"],\"response\":{\"$ref\":\"Image\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.images.insert\",\"path\":\"{pro" +
-            "ject}/images\",\"httpMethod\":\"POST\",\"description\":\"Creates an image resource in th" +
-            "e specified project using the data included in the request.\",\"parameters\":{\"proj" +
-            "ect\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\"," +
-            "\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[" +
-            "a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Image\"},\"response\":{\"$re" +
-            "f\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\",\"https://www" +
-            ".googleapis.com/auth/devstorage.read_only\"]},\"list\":{\"id\":\"compute.images.list\"," +
-            "\"path\":\"{project}/images\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list o" +
-            "f image resources available to the specified project.\",\"parameters\":{\"filter\":{\"" +
-            "type\":\"string\",\"description\":\"Optional. Filter expression for filtering listed r" +
-            "esources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Opt" +
-            "ional. Maximum count of results to be returned. Maximum and default value is 100" +
-            ".\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"q" +
-            "uery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag returned by a p" +
-            "revious list request truncated by maxResults. Used to continue a previous list r" +
-            "equest.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name of t" +
-            "he project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,6" +
-            "3}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-" +
-            "9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response" +
-            "\":{\"$ref\":\"ImageList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readon" +
-            "ly\"]}}},\"instances\":{\"methods\":{\"addAccessConfig\":{\"id\":\"compute.instances.addAc" +
-            "cessConfig\",\"path\":\"{project}/instances/{instance}/add-access-config\",\"httpMetho" +
-            "d\":\"POST\",\"description\":\"Adds an access config to an instance\'s network interfac" +
-            "e.\",\"parameters\":{\"instance\":{\"type\":\"string\",\"description\":\"Instance name.\",\"re" +
-            "quired\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"n" +
-            "etwork_interface\":{\"type\":\"string\",\"description\":\"Network interface name.\",\"requ" +
-            "ired\":true,\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Project" +
-            " name.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9" +
-            "]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"loc" +
-            "ation\":\"path\"}},\"parameterOrder\":[\"project\",\"instance\",\"network_interface\"],\"req" +
-            "uest\":{\"$ref\":\"AccessConfig\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/compute\"]},\"delete\":{\"id\":\"compute.instances.delete\",\"p" +
-            "ath\":\"{project}/instances/{instance}\",\"httpMethod\":\"DELETE\",\"description\":\"Delet" +
-            "es the specified instance resource.\",\"parameters\":{\"instance\":{\"type\":\"string\",\"" +
-            "description\":\"Name of the instance resource to delete.\",\"required\":true,\"pattern" +
-            "\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Name of the project scoping this request.\",\"required\":true,\"p" +
-            "attern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0" +
-            "-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameter" +
-            "Order\":[\"project\",\"instance\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/compute\"]},\"deleteAccessConfig\":{\"id\":\"compute.instance" +
-            "s.deleteAccessConfig\",\"path\":\"{project}/instances/{instance}/delete-access-confi" +
-            "g\",\"httpMethod\":\"POST\",\"description\":\"Deletes an access config from an instance\'" +
-            "s network interface.\",\"parameters\":{\"access_config\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Access config name.\",\"required\":true,\"location\":\"query\"},\"instance\":{\"type\":" +
-            "\"string\",\"description\":\"Instance name.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z" +
-            "0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"network_interface\":{\"type\":\"string\",\"d" +
-            "escription\":\"Network interface name.\",\"required\":true,\"location\":\"query\"},\"proje" +
-            "ct\":{\"type\":\"string\",\"description\":\"Project name.\",\"required\":true,\"pattern\":\"(?" +
+            "ImageList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]}}},\"in" +
+            "stances\":{\"methods\":{\"addAccessConfig\":{\"id\":\"compute.instances.addAccessConfig\"" +
+            ",\"path\":\"{project}/instances/{instance}/add-access-config\",\"httpMethod\":\"POST\",\"" +
+            "description\":\"Adds an access config to an instance\'s network interface.\",\"parame" +
+            "ters\":{\"instance\":{\"type\":\"string\",\"description\":\"Instance name.\",\"required\":tru" +
+            "e,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"network_inte" +
+            "rface\":{\"type\":\"string\",\"description\":\"Network interface name.\",\"required\":true," +
+            "\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Project name.\",\"re" +
+            "quired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z" +
+            "0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"pat" +
+            "h\"}},\"parameterOrder\":[\"project\",\"instance\",\"network_interface\"],\"request\":{\"$re" +
+            "f\":\"AccessConfig\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.google" +
+            "apis.com/auth/compute\"]},\"delete\":{\"id\":\"compute.instances.delete\",\"path\":\"{proj" +
+            "ect}/instances/{instance}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the spec" +
+            "ified instance resource.\",\"parameters\":{\"instance\":{\"type\":\"string\",\"description" +
+            "\":\"Name of the instance resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:" +
+            "[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?" +
             ":(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
             "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"pr" +
-            "oject\",\"instance\",\"access_config\",\"network_interface\"],\"response\":{\"$ref\":\"Opera" +
-            "tion\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"comput" +
-            "e.instances.get\",\"path\":\"{project}/instances/{instance}\",\"httpMethod\":\"GET\",\"des" +
-            "cription\":\"Returns the specified instance resource.\",\"parameters\":{\"instance\":{\"" +
-            "type\":\"string\",\"description\":\"Name of the instance resource to return.\",\"require" +
-            "d\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"projec" +
+            "oject\",\"instance\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.google" +
+            "apis.com/auth/compute\"]},\"deleteAccessConfig\":{\"id\":\"compute.instances.deleteAcc" +
+            "essConfig\",\"path\":\"{project}/instances/{instance}/delete-access-config\",\"httpMet" +
+            "hod\":\"POST\",\"description\":\"Deletes an access config from an instance\'s network i" +
+            "nterface.\",\"parameters\":{\"access_config\":{\"type\":\"string\",\"description\":\"Access " +
+            "config name.\",\"required\":true,\"location\":\"query\"},\"instance\":{\"type\":\"string\",\"d" +
+            "escription\":\"Instance name.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[" +
+            "a-z0-9])?\",\"location\":\"path\"},\"network_interface\":{\"type\":\"string\",\"description\"" +
+            ":\"Network interface name.\",\"required\":true,\"location\":\"query\"},\"project\":{\"type\"" +
+            ":\"string\",\"description\":\"Project name.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-" +
+            "9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[" +
+            "-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"ins" +
+            "tance\",\"access_config\",\"network_interface\"],\"response\":{\"$ref\":\"Operation\"},\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.instances" +
+            ".get\",\"path\":\"{project}/instances/{instance}\",\"httpMethod\":\"GET\",\"description\":\"" +
+            "Returns the specified instance resource.\",\"parameters\":{\"instance\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Name of the instance resource to return.\",\"required\":true,\"pa" +
+            "ttern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":" +
+            "\"string\",\"description\":\"Name of the project scoping this request.\",\"required\":tr" +
+            "ue,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?" +
+            "(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"para" +
+            "meterOrder\":[\"project\",\"instance\"],\"response\":{\"$ref\":\"Instance\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.instanc" +
+            "es.insert\",\"path\":\"{project}/instances\",\"httpMethod\":\"POST\",\"description\":\"Creat" +
+            "es an instance resource in the specified project using the data included in the " +
+            "request.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the pr" +
+            "oject scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\." +
+            ")*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0," +
+            "61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$r" +
+            "ef\":\"Instance\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/compute\"]},\"list\":{\"id\":\"compute.instances.list\",\"path\":\"{project}/in" +
+            "stances\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of instance resour" +
+            "ces contained within the specified project.\",\"parameters\":{\"filter\":{\"type\":\"str" +
+            "ing\",\"description\":\"Optional. Filter expression for filtering listed resources.\"" +
+            ",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. Max" +
+            "imum count of results to be returned. Maximum and default value is 100.\",\"defaul" +
+            "t\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pa" +
+            "geToken\":{\"type\":\"string\",\"description\":\"Optional. Tag returned by a previous li" +
+            "st request truncated by maxResults. Used to continue a previous list request.\",\"" +
+            "location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project" +
+            " scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:" +
+            "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a" +
+            "-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":" +
+            "\"InstanceList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]}}}" +
+            ",\"kernels\":{\"methods\":{\"get\":{\"id\":\"compute.kernels.get\",\"path\":\"{project}/kerne" +
+            "ls/{kernel}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified kernel reso" +
+            "urce.\",\"parameters\":{\"kernel\":{\"type\":\"string\",\"description\":\"Name of the kernel" +
+            " resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9]" +
+            ")?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the pro" +
+            "ject scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)" +
+            "*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,6" +
+            "1}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"kernel\"],\"respo" +
+            "nse\":{\"$ref\":\"Kernel\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readon" +
+            "ly\"]},\"list\":{\"id\":\"compute.kernels.list\",\"path\":\"{project}/kernels\",\"httpMethod" +
+            "\":\"GET\",\"description\":\"Retrieves the list of kernel resources available to the s" +
+            "pecified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Option" +
+            "al. Filter expression for filtering listed resources.\",\"location\":\"query\"},\"maxR" +
+            "esults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum count of results to b" +
+            "e returned. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\"" +
+            ",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\"," +
+            "\"description\":\"Optional. Tag returned by a previous list request truncated by ma" +
+            "xResults. Used to continue a previous list request.\",\"location\":\"query\"},\"projec" +
             "t\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"r" +
             "equired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-" +
             "z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"pa" +
-            "th\"}},\"parameterOrder\":[\"project\",\"instance\"],\"response\":{\"$ref\":\"Instance\"},\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"comp" +
-            "ute.instances.insert\",\"path\":\"{project}/instances\",\"httpMethod\":\"POST\",\"descript" +
-            "ion\":\"Creates an instance resource in the specified project using the data inclu" +
-            "ded in the request.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Nam" +
-            "e of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-" +
-            "9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[" +
-            "-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"re" +
-            "quest\":{\"$ref\":\"Instance\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/compute\"]},\"list\":{\"id\":\"compute.instances.list\",\"path\":\"{" +
-            "project}/instances\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of inst" +
-            "ance resources contained within the specified project.\",\"parameters\":{\"filter\":{" +
+            "th\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"KernelList\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/compute.readonly\"]}}},\"machineTypes\":{\"methods\":{" +
+            "\"get\":{\"id\":\"compute.machineTypes.get\",\"path\":\"{project}/machine-types/{machineT" +
+            "ype}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified machine type resou" +
+            "rce.\",\"parameters\":{\"machineType\":{\"type\":\"string\",\"description\":\"Name of the ma" +
+            "chine type resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,6" +
+            "1}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name " +
+            "of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]" +
+            "{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a" +
+            "-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"machi" +
+            "neType\"],\"response\":{\"$ref\":\"MachineType\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/compute.readonly\"]},\"list\":{\"id\":\"compute.machineTypes.list\",\"path\":\"{proj" +
+            "ect}/machine-types\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of mach" +
+            "ine type resources available to the specified project.\",\"parameters\":{\"filter\":{" +
             "\"type\":\"string\",\"description\":\"Optional. Filter expression for filtering listed " +
             "resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Op" +
             "tional. Maximum count of results to be returned. Maximum and default value is 10" +
@@ -3799,203 +3846,157 @@ namespace Google.Apis.Compute.v1beta12 {
             "the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1," +
             "63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0" +
             "-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"respons" +
-            "e\":{\"$ref\":\"InstanceList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.re" +
-            "adonly\"]}}},\"kernels\":{\"methods\":{\"get\":{\"id\":\"compute.kernels.get\",\"path\":\"{pro" +
-            "ject}/kernels/{kernel}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified " +
-            "kernel resource.\",\"parameters\":{\"kernel\":{\"type\":\"string\",\"description\":\"Name of" +
-            " the kernel resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0," +
-            "61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name" +
-            " of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9" +
-            "]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-" +
-            "a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"kern" +
-            "el\"],\"response\":{\"$ref\":\"Kernel\"},\"scopes\":[\"https://www.googleapis.com/auth/com" +
-            "pute.readonly\"]},\"list\":{\"id\":\"compute.kernels.list\",\"path\":\"{project}/kernels\"," +
-            "\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of kernel resources availab" +
-            "le to the specified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Optional. Filter expression for filtering listed resources.\",\"location\":\"qu" +
-            "ery\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum count of r" +
-            "esults to be returned. Maximum and default value is 100.\",\"default\":\"100\",\"forma" +
-            "t\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type" +
-            "\":\"string\",\"description\":\"Optional. Tag returned by a previous list request trun" +
-            "cated by maxResults. Used to continue a previous list request.\",\"location\":\"quer" +
-            "y\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping this r" +
-            "equest.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-" +
-            "9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"lo" +
-            "cation\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"KernelList\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]}}},\"machineTypes\":{" +
-            "\"methods\":{\"get\":{\"id\":\"compute.machineTypes.get\",\"path\":\"{project}/machine-type" +
-            "s/{machineType}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified machine" +
-            " type resource.\",\"parameters\":{\"machineType\":{\"type\":\"string\",\"description\":\"Nam" +
-            "e of the machine type resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-" +
-            "a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(" +
-            "?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:" +
-            "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"proj" +
-            "ect\",\"machineType\"],\"response\":{\"$ref\":\"MachineType\"},\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/compute.readonly\"]},\"list\":{\"id\":\"compute.machineTypes.list\",\"p" +
-            "ath\":\"{project}/machine-types\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the l" +
-            "ist of machine type resources available to the specified project.\",\"parameters\":" +
-            "{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter expression for filter" +
-            "ing listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"Optional. Maximum count of results to be returned. Maximum and default " +
-            "value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"" +
-            "location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag ret" +
-            "urned by a previous list request truncated by maxResults. Used to continue a pre" +
-            "vious list request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description" +
-            "\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[" +
-            "-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-" +
-            "z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project" +
-            "\"],\"response\":{\"$ref\":\"MachineTypeList\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/compute.readonly\"]}}},\"networks\":{\"methods\":{\"delete\":{\"id\":\"compute.network" +
-            "s.delete\",\"path\":\"{project}/networks/{network}\",\"httpMethod\":\"DELETE\",\"descripti" +
-            "on\":\"Deletes the specified network resource.\",\"parameters\":{\"network\":{\"type\":\"s" +
-            "tring\",\"description\":\"Name of the network resource to delete.\",\"required\":true,\"" +
-            "pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type" +
-            "\":\"string\",\"description\":\"Name of the project scoping this request.\",\"required\":" +
-            "true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):" +
-            ")?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"project\",\"network\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.networks.get\",\"pa" +
-            "th\":\"{project}/networks/{network}\",\"httpMethod\":\"GET\",\"description\":\"Returns the" +
-            " specified network resource.\",\"parameters\":{\"network\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Name of the network resource to return.\",\"required\":true,\"pattern\":\"[a-z](" +
-            "?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"" +
-            "(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}" +
-            "|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"" +
-            "project\",\"network\"],\"response\":{\"$ref\":\"Network\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.networks.insert\",\"path\"" +
-            ":\"{project}/networks\",\"httpMethod\":\"POST\",\"description\":\"Creates a network resou" +
-            "rce in the specified project using the data included in the request.\",\"parameter" +
-            "s\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping this r" +
-            "equest.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-" +
-            "9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"lo" +
-            "cation\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Network\"},\"resp" +
-            "onse\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]}" +
-            ",\"list\":{\"id\":\"compute.networks.list\",\"path\":\"{project}/networks\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Retrieves the list of network resources available to the spe" +
-            "cified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional" +
-            ". Filter expression for filtering listed resources.\",\"location\":\"query\"},\"maxRes" +
-            "ults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum count of results to be " +
-            "returned. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"" +
-            "minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"d" +
-            "escription\":\"Optional. Tag returned by a previous list request truncated by maxR" +
-            "esults. Used to continue a previous list request.\",\"location\":\"query\"},\"project\"" +
-            ":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"req" +
-            "uired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0" +
-            "-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"NetworkList\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/compute.readonly\"]}}},\"operations\":{\"methods\":{\"de" +
-            "lete\":{\"id\":\"compute.operations.delete\",\"path\":\"{project}/operations/{operation}" +
-            "\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the specified operation resource." +
-            "\",\"parameters\":{\"operation\":{\"type\":\"string\",\"description\":\"Name of the operatio" +
-            "n resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9" +
-            "])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the pr" +
-            "oject scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\." +
-            ")*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0," +
-            "61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"operation\"],\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.operati" +
-            "ons.get\",\"path\":\"{project}/operations/{operation}\",\"httpMethod\":\"GET\",\"descripti" +
-            "on\":\"Retrieves the specified operation resource.\",\"parameters\":{\"operation\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Name of the operation resource to return.\",\"required" +
-            "\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project" +
-            "\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"re" +
-            "quired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z" +
-            "0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"project\",\"operation\"],\"response\":{\"$ref\":\"Operation\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/compute.readonly\"]},\"list\":{\"id\":\"compu" +
-            "te.operations.list\",\"path\":\"{project}/operations\",\"httpMethod\":\"GET\",\"descriptio" +
-            "n\":\"Retrieves the list of operation resources contained within the specified pro" +
-            "ject.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter e" +
-            "xpression for filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"Optional. Maximum count of results to be returned. " +
-            "Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"" +
-            "0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description" +
-            "\":\"Optional. Tag returned by a previous list request truncated by maxResults. Us" +
-            "ed to continue a previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"" +
+            "e\":{\"$ref\":\"MachineTypeList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute" +
+            ".readonly\"]}}},\"networks\":{\"methods\":{\"delete\":{\"id\":\"compute.networks.delete\",\"" +
+            "path\":\"{project}/networks/{network}\",\"httpMethod\":\"DELETE\",\"description\":\"Delete" +
+            "s the specified network resource.\",\"parameters\":{\"network\":{\"type\":\"string\",\"des" +
+            "cription\":\"Name of the network resource to delete.\",\"required\":true,\"pattern\":\"[" +
+            "a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\"," +
+            "\"description\":\"Name of the project scoping this request.\",\"required\":true,\"patte" +
+            "rn\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{" +
+            "1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrde" +
+            "r\":[\"project\",\"network\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.networks.get\",\"path\":\"{proje" +
+            "ct}/networks/{network}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified " +
+            "network resource.\",\"parameters\":{\"network\":{\"type\":\"string\",\"description\":\"Name " +
+            "of the network resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]" +
+            "{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"N" +
+            "ame of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z" +
+            "0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?" +
+            ":[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"n" +
+            "etwork\"],\"response\":{\"$ref\":\"Network\"},\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/compute.readonly\"]},\"insert\":{\"id\":\"compute.networks.insert\",\"path\":\"{project}" +
+            "/networks\",\"httpMethod\":\"POST\",\"description\":\"Creates a network resource in the " +
+            "specified project using the data included in the request.\",\"parameters\":{\"projec" +
+            "t\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"r" +
+            "equired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-" +
+            "z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"pa" +
+            "th\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Network\"},\"response\":{\"$re" +
+            "f\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"list\":{\"i" +
+            "d\":\"compute.networks.list\",\"path\":\"{project}/networks\",\"httpMethod\":\"GET\",\"descr" +
+            "iption\":\"Retrieves the list of network resources available to the specified proj" +
+            "ect.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter ex" +
+            "pression for filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"typ" +
+            "e\":\"integer\",\"description\":\"Optional. Maximum count of results to be returned. M" +
+            "aximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0" +
+            "\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\"" +
+            ":\"Optional. Tag returned by a previous list request truncated by maxResults. Use" +
+            "d to continue a previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"s" +
+            "tring\",\"description\":\"Name of the project scoping this request.\",\"required\":true" +
+            ",\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?" +
+            ":[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parame" +
+            "terOrder\":[\"project\"],\"response\":{\"$ref\":\"NetworkList\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/compute.readonly\"]}}},\"operations\":{\"methods\":{\"delete\":{\"id\"" +
+            ":\"compute.operations.delete\",\"path\":\"{project}/operations/{operation}\",\"httpMeth" +
+            "od\":\"DELETE\",\"description\":\"Deletes the specified operation resource.\",\"paramete" +
+            "rs\":{\"operation\":{\"type\":\"string\",\"description\":\"Name of the operation resource " +
+            "to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"locat" +
+            "ion\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scopi" +
+            "ng this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](" +
+            "?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9]" +
+            ")?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"operation\"],\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.operations.get\",\"p" +
+            "ath\":\"{project}/operations/{operation}\",\"httpMethod\":\"GET\",\"description\":\"Retrie" +
+            "ves the specified operation resource.\",\"parameters\":{\"operation\":{\"type\":\"string" +
+            "\",\"description\":\"Name of the operation resource to return.\",\"required\":true,\"pat" +
+            "tern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"" +
             "string\",\"description\":\"Name of the project scoping this request.\",\"required\":tru" +
             "e,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(" +
             "?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"project\"],\"response\":{\"$ref\":\"OperationList\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/compute.readonly\"]}}},\"projects\":{\"methods\":{\"get\":{\"id\":\"" +
-            "compute.projects.get\",\"path\":\"{project}\",\"httpMethod\":\"GET\",\"description\":\"Retur" +
-            "ns the specified project resource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"de" +
-            "scription\":\"Name of the project resource to retrieve.\",\"required\":true,\"pattern\"" +
+            "eterOrder\":[\"project\",\"operation\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/compute.readonly\"]},\"list\":{\"id\":\"compute.operatio" +
+            "ns.list\",\"path\":\"{project}/operations\",\"httpMethod\":\"GET\",\"description\":\"Retriev" +
+            "es the list of operation resources contained within the specified project.\",\"par" +
+            "ameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter expression f" +
+            "or filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"intege" +
+            "r\",\"description\":\"Optional. Maximum count of results to be returned. Maximum and" +
+            " default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum" +
+            "\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional" +
+            ". Tag returned by a previous list request truncated by maxResults. Used to conti" +
+            "nue a previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"de" +
+            "scription\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\"" +
             ":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,1" +
             "9}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"project\"],\"response\":{\"$ref\":\"Project\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/compute.readonly\"]},\"setCommonInstanceMetadata\":{\"id\":\"compute.projects.set" +
-            "CommonInstanceMetadata\",\"path\":\"{project}/set-common-instance-metadata\",\"httpMet" +
-            "hod\":\"POST\",\"description\":\"Sets metadata common to all instances within the spec" +
-            "ified project using the data included in the request.\",\"parameters\":{\"project\":{" +
-            "\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"requi" +
-            "red\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9" +
-            "])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Metadata\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/compute\"]}}},\"snapshots\":{\"methods\":{\"delete\":{\"id\":\"com" +
-            "pute.snapshots.delete\",\"path\":\"{project}/snapshots/{snapshot}\",\"httpMethod\":\"DEL" +
-            "ETE\",\"description\":\"Deletes the specified persistent disk snapshot resource.\",\"p" +
-            "arameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the project scopin" +
-            "g this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?" +
-            ":[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])" +
-            "?))\",\"location\":\"path\"},\"snapshot\":{\"type\":\"string\",\"description\":\"Name of the p" +
-            "ersistent disk snapshot resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:" +
-            "[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"snap" +
-            "shot\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/compute\"]},\"get\":{\"id\":\"compute.snapshots.get\",\"path\":\"{project}/snapshots/{sn" +
-            "apshot}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified persistent disk" +
-            " snapshot resource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Nam" +
-            "e of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-" +
-            "9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[" +
-            "-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"},\"snapshot\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Name of the persistent disk snapshot resource to return.\",\"required\":t" +
-            "rue,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"}},\"parameter" +
-            "Order\":[\"project\",\"snapshot\"],\"response\":{\"$ref\":\"Snapshot\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.snapshots.in" +
-            "sert\",\"path\":\"{project}/snapshots\",\"httpMethod\":\"POST\",\"description\":\"Creates a " +
-            "persistent disk snapshot resource in the specified project using the data includ" +
-            "ed in the request.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name" +
+            "[\"project\"],\"response\":{\"$ref\":\"OperationList\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/compute.readonly\"]}}},\"projects\":{\"methods\":{\"get\":{\"id\":\"compute.pro" +
+            "jects.get\",\"path\":\"{project}\",\"httpMethod\":\"GET\",\"description\":\"Returns the spec" +
+            "ified project resource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":" +
+            "\"Name of the project resource to retrieve.\",\"required\":true,\"pattern\":\"(?:(?:[-a" +
+            "-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z]" +
+            "(?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"]" +
+            ",\"response\":{\"$ref\":\"Project\"},\"scopes\":[\"https://www.googleapis.com/auth/comput" +
+            "e.readonly\"]},\"setCommonInstanceMetadata\":{\"id\":\"compute.projects.setCommonInsta" +
+            "nceMetadata\",\"path\":\"{project}/set-common-instance-metadata\",\"httpMethod\":\"POST\"" +
+            ",\"description\":\"Sets metadata common to all instances within the specified proje" +
+            "ct using the data included in the request.\",\"parameters\":{\"project\":{\"type\":\"str" +
+            "ing\",\"description\":\"Name of the project scoping this request.\",\"required\":true,\"" +
+            "pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[" +
+            "0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"paramete" +
+            "rOrder\":[\"project\"],\"request\":{\"$ref\":\"Metadata\"},\"scopes\":[\"https://www.googlea" +
+            "pis.com/auth/compute\"]}}},\"snapshots\":{\"methods\":{\"delete\":{\"id\":\"compute.snapsh" +
+            "ots.delete\",\"path\":\"{project}/snapshots/{snapshot}\",\"httpMethod\":\"DELETE\",\"descr" +
+            "iption\":\"Deletes the specified persistent disk snapshot resource.\",\"parameters\":" +
+            "{\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping this requ" +
+            "est.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{" +
+            "0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"locat" +
+            "ion\":\"path\"},\"snapshot\":{\"type\":\"string\",\"description\":\"Name of the persistent d" +
+            "isk snapshot resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0" +
+            ",61}[a-z0-9])?\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"snapshot\"],\"res" +
+            "ponse\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]" +
+            "},\"get\":{\"id\":\"compute.snapshots.get\",\"path\":\"{project}/snapshots/{snapshot}\",\"h" +
+            "ttpMethod\":\"GET\",\"description\":\"Returns the specified persistent disk snapshot r" +
+            "esource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the pr" +
+            "oject scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\." +
+            ")*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0," +
+            "61}[a-z0-9])?))\",\"location\":\"path\"},\"snapshot\":{\"type\":\"string\",\"description\":\"N" +
+            "ame of the persistent disk snapshot resource to return.\",\"required\":true,\"patter" +
+            "n\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"}},\"parameterOrder\":[\"pr" +
+            "oject\",\"snapshot\"],\"response\":{\"$ref\":\"Snapshot\"},\"scopes\":[\"https://www.googlea" +
+            "pis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.snapshots.insert\",\"path" +
+            "\":\"{project}/snapshots\",\"httpMethod\":\"POST\",\"description\":\"Creates a persistent " +
+            "disk snapshot resource in the specified project using the data included in the r" +
+            "equest.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the pro" +
+            "ject scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)" +
+            "*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,6" +
+            "1}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$re" +
+            "f\":\"Snapshot\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/compute\"]},\"list\":{\"id\":\"compute.snapshots.list\",\"path\":\"{project}/sna" +
+            "pshots\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of persistent disk " +
+            "snapshot resources contained within the specified project.\",\"parameters\":{\"filte" +
+            "r\":{\"type\":\"string\",\"description\":\"Optional. Filter expression for filtering lis" +
+            "ted resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\"" +
+            ":\"Optional. Maximum count of results to be returned. Maximum and default value i" +
+            "s 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"locatio" +
+            "n\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag returned b" +
+            "y a previous list request truncated by maxResults. Used to continue a previous l" +
+            "ist request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name" +
             " of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9" +
             "]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-" +
-            "a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"req" +
-            "uest\":{\"$ref\":\"Snapshot\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/compute\"]},\"list\":{\"id\":\"compute.snapshots.list\",\"path\":\"{p" +
-            "roject}/snapshots\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of persi" +
-            "stent disk snapshot resources contained within the specified project.\",\"paramete" +
-            "rs\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter expression for fi" +
-            "ltering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"d" +
-            "escription\":\"Optional. Maximum count of results to be returned. Maximum and defa" +
-            "ult value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"10" +
-            "0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag" +
-            " returned by a previous list request truncated by maxResults. Used to continue a" +
-            " previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:" +
-            "(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?" +
-            ":[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"pro" +
-            "ject\"],\"response\":{\"$ref\":\"SnapshotList\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/compute.readonly\"]}}},\"zones\":{\"methods\":{\"get\":{\"id\":\"compute.zones.get\",\"" +
-            "path\":\"{project}/zones/{zone}\",\"httpMethod\":\"GET\",\"description\":\"Returns the spe" +
-            "cified zone resource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"N" +
-            "ame of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z" +
-            "0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?" +
-            ":[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"},\"zone\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Name of the zone resource to return.\",\"required\":true,\"pattern\":\"[a-z](?" +
-            ":[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"zon" +
-            "e\"],\"response\":{\"$ref\":\"Zone\"},\"scopes\":[\"https://www.googleapis.com/auth/comput" +
-            "e.readonly\"]},\"list\":{\"id\":\"compute.zones.list\",\"path\":\"{project}/zones\",\"httpMe" +
-            "thod\":\"GET\",\"description\":\"Retrieves the list of zone resources available to the" +
-            " specified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Opti" +
-            "onal. Filter expression for filtering listed resources.\",\"location\":\"query\"},\"ma" +
-            "xResults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum count of results to" +
-            " be returned. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint3" +
-            "2\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string" +
-            "\",\"description\":\"Optional. Tag returned by a previous list request truncated by " +
-            "maxResults. Used to continue a previous list request.\",\"location\":\"query\"},\"proj" +
-            "ect\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\"," +
-            "\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[" +
-            "a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"ZoneList\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/compute.readonly\"]}}}}}";
+            "a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"res" +
+            "ponse\":{\"$ref\":\"SnapshotList\"},\"scopes\":[\"https://www.googleapis.com/auth/comput" +
+            "e.readonly\"]}}},\"zones\":{\"methods\":{\"get\":{\"id\":\"compute.zones.get\",\"path\":\"{pro" +
+            "ject}/zones/{zone}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified zone" +
+            " resource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the " +
+            "project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\" +
+            "\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{" +
+            "0,61}[a-z0-9])?))\",\"location\":\"path\"},\"zone\":{\"type\":\"string\",\"description\":\"Nam" +
+            "e of the zone resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{" +
+            "0,61}[a-z0-9])?\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"zone\"],\"respon" +
+            "se\":{\"$ref\":\"Zone\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"" +
+            "]},\"list\":{\"id\":\"compute.zones.list\",\"path\":\"{project}/zones\",\"httpMethod\":\"GET\"" +
+            ",\"description\":\"Retrieves the list of zone resources available to the specified " +
+            "project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filte" +
+            "r expression for filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{" +
+            "\"type\":\"integer\",\"description\":\"Optional. Maximum count of results to be returne" +
+            "d. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum" +
+            "\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Optional. Tag returned by a previous list request truncated by maxResults." +
+            " Used to continue a previous list request.\",\"location\":\"query\"},\"project\":{\"type" +
+            "\":\"string\",\"description\":\"Name of the project scoping this request.\",\"required\":" +
+            "true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):" +
+            ")?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"pa" +
+            "rameterOrder\":[\"project\"],\"response\":{\"$ref\":\"ZoneList\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/compute.readonly\"]}}}}}";
         
         public const string Version = "v1beta12";
         

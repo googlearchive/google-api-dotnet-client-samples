@@ -123,46 +123,47 @@ namespace Google.Apis.Webfonts.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"webfonts:v1\",\"n" +
-            "ame\":\"webfonts\",\"version\":\"v1\",\"revision\":\"20120614\",\"title\":\"Google Web Fonts D" +
-            "eveloper API\",\"description\":\"The Google Web Fonts Developer API.\",\"icons\":{\"x16\"" +
-            ":\"http://www.google.com/images/icons/feature/font_api-16.png\",\"x32\":\"http://www." +
-            "google.com/images/icons/feature/font_api-32.gif\"},\"documentationLink\":\"http://co" +
-            "de.google.com/apis/webfonts/docs/developer_api.html\",\"protocol\":\"rest\",\"baseUrl\"" +
-            ":\"https://www.googleapis.com/webfonts/v1/\",\"basePath\":\"/webfonts/v1/\",\"rootUrl\":" +
-            "\"https://www.googleapis.com/\",\"servicePath\":\"webfonts/v1/\",\"batchPath\":\"batch\",\"" +
-            "parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response." +
-            "\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-T" +
-            "ype of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Selector specifying which fields to include in a partial response.\",\"loca" +
-            "tion\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key ident" +
-            "ifies your project and provides you with API access, quota, and reports. Require" +
-            "d unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"ty" +
-            "pe\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"q" +
-            "uery\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with inde" +
-            "ntations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Available to use for quota purposes for server-side " +
-            "applications. Can be any arbitrary string assigned to a user, but should not exc" +
-            "eed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"" +
-            "userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request" +
-            " originates. Use this if you want to enforce per-user limits.\",\"location\":\"query" +
-            "\"}},\"schemas\":{\"Webfont\":{\"id\":\"Webfont\",\"type\":\"object\",\"properties\":{\"family\":" +
-            "{\"type\":\"any\",\"description\":\"The name of the font.\"},\"kind\":{\"type\":\"string\",\"de" +
-            "scription\":\"This kind represents a webfont object in the webfonts service.\",\"def" +
-            "ault\":\"webfonts#webfont\"},\"subsets\":{\"type\":\"any\",\"description\":\"The scripts sup" +
-            "ported by the font.\"},\"variants\":{\"type\":\"any\",\"description\":\"The available vari" +
-            "ants for the font.\"}}},\"WebfontList\":{\"id\":\"WebfontList\",\"type\":\"object\",\"proper" +
-            "ties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of fonts currently served" +
-            " by the Google Fonts API.\",\"items\":{\"$ref\":\"Webfont\"}},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"This kind represents a list of webfont objects in the webfonts ser" +
-            "vice.\",\"default\":\"webfonts#webfontList\"}}}},\"resources\":{\"webfonts\":{\"methods\":{" +
-            "\"list\":{\"id\":\"webfonts.webfonts.list\",\"path\":\"webfonts\",\"httpMethod\":\"GET\",\"desc" +
-            "ription\":\"Retrieves the list of fonts currently served by the Google Web Fonts D" +
-            "eveloper API\",\"parameters\":{\"sort\":{\"type\":\"string\",\"description\":\"Enables sorti" +
-            "ng of the list\",\"enum\":[\"alpha\",\"date\",\"popularity\",\"style\",\"trending\"],\"enumDes" +
-            "criptions\":[\"Sort alphabetically\",\"Sort by date added\",\"Sort by popularity\",\"Sor" +
-            "t by number of styles\",\"Sort by trending\"],\"location\":\"query\"}},\"response\":{\"$re" +
-            "f\":\"WebfontList\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/-NYZzVN" +
+            "scWryV-b3u6PRKwWChcc\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"webfonts:v1\",\"name\":\"webfo" +
+            "nts\",\"version\":\"v1\",\"revision\":\"20120614\",\"title\":\"Google Web Fonts Developer AP" +
+            "I\",\"description\":\"The Google Web Fonts Developer API.\",\"icons\":{\"x16\":\"http://ww" +
+            "w.google.com/images/icons/feature/font_api-16.png\",\"x32\":\"http://www.google.com/" +
+            "images/icons/feature/font_api-32.gif\"},\"documentationLink\":\"http://code.google.c" +
+            "om/apis/webfonts/docs/developer_api.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://w" +
+            "ww.googleapis.com/webfonts/v1/\",\"basePath\":\"/webfonts/v1/\",\"rootUrl\":\"https://ww" +
+            "w.googleapis.com/\",\"servicePath\":\"webfonts/v1/\",\"batchPath\":\"batch\",\"parameters\"" +
+            ":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\"" +
+            ":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of appl" +
+            "ication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Sele" +
+            "ctor specifying which fields to include in a partial response.\",\"location\":\"quer" +
+            "y\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your " +
+            "project and provides you with API access, quota, and reports. Required unless yo" +
+            "u provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string" +
+            "\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"pre" +
+            "ttyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations an" +
+            "d line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string" +
+            "\",\"description\":\"Available to use for quota purposes for server-side application" +
+            "s. Can be any arbitrary string assigned to a user, but should not exceed 40 char" +
+            "acters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"t" +
+            "ype\":\"string\",\"description\":\"IP address of the site where the request originates" +
+            ". Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"schema" +
+            "s\":{\"Webfont\":{\"id\":\"Webfont\",\"type\":\"object\",\"properties\":{\"family\":{\"type\":\"an" +
+            "y\",\"description\":\"The name of the font.\"},\"kind\":{\"type\":\"string\",\"description\":" +
+            "\"This kind represents a webfont object in the webfonts service.\",\"default\":\"webf" +
+            "onts#webfont\"},\"subsets\":{\"type\":\"any\",\"description\":\"The scripts supported by t" +
+            "he font.\"},\"variants\":{\"type\":\"any\",\"description\":\"The available variants for th" +
+            "e font.\"}}},\"WebfontList\":{\"id\":\"WebfontList\",\"type\":\"object\",\"properties\":{\"ite" +
+            "ms\":{\"type\":\"array\",\"description\":\"The list of fonts currently served by the Goo" +
+            "gle Fonts API.\",\"items\":{\"$ref\":\"Webfont\"}},\"kind\":{\"type\":\"string\",\"description" +
+            "\":\"This kind represents a list of webfont objects in the webfonts service.\",\"def" +
+            "ault\":\"webfonts#webfontList\"}}}},\"resources\":{\"webfonts\":{\"methods\":{\"list\":{\"id" +
+            "\":\"webfonts.webfonts.list\",\"path\":\"webfonts\",\"httpMethod\":\"GET\",\"description\":\"R" +
+            "etrieves the list of fonts currently served by the Google Web Fonts Developer AP" +
+            "I\",\"parameters\":{\"sort\":{\"type\":\"string\",\"description\":\"Enables sorting of the l" +
+            "ist\",\"enum\":[\"alpha\",\"date\",\"popularity\",\"style\",\"trending\"],\"enumDescriptions\":" +
+            "[\"Sort alphabetically\",\"Sort by date added\",\"Sort by popularity\",\"Sort by number" +
+            " of styles\",\"Sort by trending\"],\"location\":\"query\"}},\"response\":{\"$ref\":\"Webfont" +
+            "List\"}}}}}}";
         
         public const string Version = "v1";
         

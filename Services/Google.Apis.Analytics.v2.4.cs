@@ -28,125 +28,126 @@ namespace Google.Apis.Analytics.v2_4 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"analytics:v2.4\"" +
-            ",\"name\":\"analytics\",\"version\":\"v2.4\",\"revision\":\"20121007\",\"title\":\"Google Analy" +
-            "tics API\",\"description\":\"View and manage your Google Analytics data\",\"icons\":{\"x" +
-            "16\":\"http://www.google.com/images/icons/product/analytics-16.png\",\"x32\":\"http://" +
-            "www.google.com/images/icons/product/analytics-32.png\"},\"documentationLink\":\"http" +
-            "s://developers.google.com/analytics/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.g" +
-            "oogleapis.com/analytics/v2.4/\",\"basePath\":\"/analytics/v2.4/\",\"rootUrl\":\"https://" +
-            "www.googleapis.com/\",\"servicePath\":\"analytics/v2.4/\",\"batchPath\":\"batch\",\"parame" +
-            "ters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"def" +
-            "ault\":\"atom\",\"enum\":[\"atom\"],\"enumDescriptions\":[\"Responses with Content-Type of" +
-            " application/atom+xml\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Selector specifying which fields to include in a partial response.\",\"locati" +
-            "on\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identif" +
-            "ies your project and provides you with API access, quota, and reports. Required " +
-            "unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type" +
-            "\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"que" +
-            "ry\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indent" +
-            "ations and line breaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"typ" +
-            "e\":\"string\",\"description\":\"Available to use for quota purposes for server-side a" +
-            "pplications. Can be any arbitrary string assigned to a user, but should not exce" +
-            "ed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"u" +
-            "serIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request " +
-            "originates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"" +
-            "}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/analytics\":{\"des" +
-            "cription\":\"View and manage your Google Analytics data\"},\"https://www.googleapis." +
-            "com/auth/analytics.readonly\":{\"description\":\"View your Google Analytics data\"}}}" +
-            "},\"resources\":{\"data\":{\"methods\":{\"get\":{\"id\":\"analytics.data.get\",\"path\":\"data\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Returns Analytics report data for a profile.\"" +
-            ",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A comma-separated li" +
-            "st of Analytics dimensions. E.g., \'ga:browser,ga:city\'.\",\"pattern\":\"(ga:.+)?\",\"l" +
-            "ocation\":\"query\"},\"end-date\":{\"type\":\"string\",\"description\":\"End date for fetchi" +
-            "ng report data. All requests should specify an end date formatted as YYYY-MM-DD." +
-            "\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"fi" +
-            "lters\":{\"type\":\"string\",\"description\":\"A comma-separated list of dimension or me" +
-            "tric filters to be applied to the report data.\",\"pattern\":\"ga:.+\",\"location\":\"qu" +
-            "ery\"},\"ids\":{\"type\":\"string\",\"description\":\"Unique table ID for retrieving repor" +
-            "t data. Table ID is of the form ga:XXXX, where XXXX is the Analytics profile ID." +
-            "\",\"required\":true,\"pattern\":\"ga:[0-9]+\",\"location\":\"query\"},\"max-results\":{\"type" +
-            "\":\"integer\",\"description\":\"The maximum number of entries to include in this feed" +
-            ".\",\"format\":\"int32\",\"location\":\"query\"},\"metrics\":{\"type\":\"string\",\"description\"" +
-            ":\"A comma-separated list of Analytics metrics. E.g., \'ga:visits,ga:pageviews\'. A" +
-            "t least one metric must be specified to retrieve a valid Analytics report.\",\"req" +
-            "uired\":true,\"pattern\":\"ga:.+\",\"location\":\"query\"},\"segment\":{\"type\":\"string\",\"de" +
-            "scription\":\"An Analytics advanced segment to be applied to the report data.\",\"lo" +
-            "cation\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"A comma-separated list o" +
-            "f dimensions or metrics that determine the sort order for the report data.\",\"pat" +
-            "tern\":\"(-)?ga:.+\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"description" +
-            "\":\"Start date for fetching report data. All requests should specify a start date" +
-            " formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}" +
-            "\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of" +
-            " the first entity to retrieve. Use this parameter as a pagination mechanism alon" +
-            "g with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"qu" +
-            "ery\"}},\"parameterOrder\":[\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analyti" +
-            "cs.readonly\"]}}},\"management\":{\"resources\":{\"accounts\":{\"methods\":{\"list\":{\"id\":" +
-            "\"analytics.management.accounts.list\",\"path\":\"management/accounts\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Lists all accounts to which the user has access.\",\"parameter" +
-            "s\":{\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum number of account" +
-            "s to include in this response.\",\"format\":\"int32\",\"location\":\"query\"},\"start-inde" +
-            "x\":{\"type\":\"integer\",\"description\":\"An index of the first account to retrieve. U" +
-            "se this parameter as a pagination mechanism along with the max-results parameter" +
-            ".\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"scopes\":[\"https://www.go" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/yWbFOw3" +
+            "WnmZsZ7VHFrwoI-vrUeg\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"analytics:v2.4\",\"name\":\"an" +
+            "alytics\",\"version\":\"v2.4\",\"revision\":\"20121022\",\"title\":\"Google Analytics API\",\"" +
+            "description\":\"View and manage your Google Analytics data\",\"icons\":{\"x16\":\"http:/" +
+            "/www.google.com/images/icons/product/analytics-16.png\",\"x32\":\"http://www.google." +
+            "com/images/icons/product/analytics-32.png\"},\"documentationLink\":\"https://develop" +
+            "ers.google.com/analytics/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.c" +
+            "om/analytics/v2.4/\",\"basePath\":\"/analytics/v2.4/\",\"rootUrl\":\"https://www.googlea" +
+            "pis.com/\",\"servicePath\":\"analytics/v2.4/\",\"batchPath\":\"batch\",\"parameters\":{\"alt" +
+            "\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"atom" +
+            "\",\"enum\":[\"atom\"],\"enumDescriptions\":[\"Responses with Content-Type of applicatio" +
+            "n/atom+xml\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Select" +
+            "or specifying which fields to include in a partial response.\",\"location\":\"query\"" +
+            "},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your pr" +
+            "oject and provides you with API access, quota, and reports. Required unless you " +
+            "provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\"," +
+            "\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prett" +
+            "yPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and " +
+            "line breaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\"" +
+            ",\"description\":\"Available to use for quota purposes for server-side applications" +
+            ". Can be any arbitrary string assigned to a user, but should not exceed 40 chara" +
+            "cters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"ty" +
+            "pe\":\"string\",\"description\":\"IP address of the site where the request originates." +
+            " Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{" +
+            "\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/analytics\":{\"description\":\"" +
+            "View and manage your Google Analytics data\"},\"https://www.googleapis.com/auth/an" +
+            "alytics.readonly\":{\"description\":\"View your Google Analytics data\"}}}},\"resource" +
+            "s\":{\"data\":{\"methods\":{\"get\":{\"id\":\"analytics.data.get\",\"path\":\"data\",\"httpMetho" +
+            "d\":\"GET\",\"description\":\"Returns Analytics report data for a profile.\",\"parameter" +
+            "s\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A comma-separated list of Analy" +
+            "tics dimensions. E.g., \'ga:browser,ga:city\'.\",\"pattern\":\"(ga:.+)?\",\"location\":\"q" +
+            "uery\"},\"end-date\":{\"type\":\"string\",\"description\":\"End date for fetching report d" +
+            "ata. All requests should specify an end date formatted as YYYY-MM-DD.\",\"required" +
+            "\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"filters\":{\"ty" +
+            "pe\":\"string\",\"description\":\"A comma-separated list of dimension or metric filter" +
+            "s to be applied to the report data.\",\"pattern\":\"ga:.+\",\"location\":\"query\"},\"ids\"" +
+            ":{\"type\":\"string\",\"description\":\"Unique table ID for retrieving report data. Tab" +
+            "le ID is of the form ga:XXXX, where XXXX is the Analytics profile ID.\",\"required" +
+            "\":true,\"pattern\":\"ga:[0-9]+\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\"" +
+            ",\"description\":\"The maximum number of entries to include in this feed.\",\"format\"" +
+            ":\"int32\",\"location\":\"query\"},\"metrics\":{\"type\":\"string\",\"description\":\"A comma-s" +
+            "eparated list of Analytics metrics. E.g., \'ga:visits,ga:pageviews\'. At least one" +
+            " metric must be specified to retrieve a valid Analytics report.\",\"required\":true" +
+            ",\"pattern\":\"ga:.+\",\"location\":\"query\"},\"segment\":{\"type\":\"string\",\"description\":" +
+            "\"An Analytics advanced segment to be applied to the report data.\",\"location\":\"qu" +
+            "ery\"},\"sort\":{\"type\":\"string\",\"description\":\"A comma-separated list of dimension" +
+            "s or metrics that determine the sort order for the report data.\",\"pattern\":\"(-)?" +
+            "ga:.+\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"description\":\"Start da" +
+            "te for fetching report data. All requests should specify a start date formatted " +
+            "as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location" +
+            "\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the first " +
+            "entity to retrieve. Use this parameter as a pagination mechanism along with the " +
+            "max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"par" +
+            "ameterOrder\":[\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"scopes\":[\"https://www.go" +
             "ogleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly" +
-            "\"]}}},\"goals\":{\"methods\":{\"list\":{\"id\":\"analytics.management.goals.list\",\"path\":" +
-            "\"management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profile" +
-            "Id}/goals\",\"httpMethod\":\"GET\",\"description\":\"Lists goals to which the user has a" +
-            "ccess.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to " +
-            "retrieve goals for. Can either be a specific account ID or \'~all\', which refers " +
-            "to all the accounts that user has access to.\",\"required\":true,\"location\":\"path\"}" +
-            ",\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum number of goals to i" +
-            "nclude in this response.\",\"format\":\"int32\",\"location\":\"query\"},\"profileId\":{\"typ" +
-            "e\":\"string\",\"description\":\"Profile ID to retrieve goals for. Can either be a spe" +
-            "cific profile ID or \'~all\', which refers to all the profiles that user has acces" +
-            "s to.\",\"required\":true,\"location\":\"path\"},\"start-index\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"An index of the first goal to retrieve. Use this parameter as a paginat" +
-            "ion mechanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":" +
-            "\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web prop" +
-            "erty ID to retrieve goals for. Can either be a specific web property ID or \'~all" +
-            "\', which refers to all the web properties that user has access to.\",\"required\":t" +
-            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropertyId\",\"profileId" +
-            "\"],\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googleapis" +
-            ".com/auth/analytics.readonly\"]}}},\"profiles\":{\"methods\":{\"list\":{\"id\":\"analytics" +
-            ".management.profiles.list\",\"path\":\"management/accounts/{accountId}/webproperties" +
-            "/{webPropertyId}/profiles\",\"httpMethod\":\"GET\",\"description\":\"Lists profiles to w" +
-            "hich the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Account ID for the profiles to retrieve. Can either be a specific account I" +
-            "D or \'~all\', which refers to all the accounts to which the user has access.\",\"re" +
-            "quired\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"T" +
-            "he maximum number of profiles to include in this response.\",\"format\":\"int32\",\"lo" +
-            "cation\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the " +
-            "first entity to retrieve. Use this parameter as a pagination mechanism along wit" +
-            "h the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}" +
-            ",\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID for the profile" +
-            "s to retrieve. Can either be a specific web property ID or \'~all\', which refers " +
-            "to all the web properties to which the user has access.\",\"required\":true,\"locati" +
-            "on\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropertyId\"],\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.rea" +
-            "donly\"]}}},\"segments\":{\"methods\":{\"list\":{\"id\":\"analytics.management.segments.li" +
-            "st\",\"path\":\"management/segments\",\"httpMethod\":\"GET\",\"description\":\"Lists advance" +
-            "d segments to which the user has access.\",\"parameters\":{\"max-results\":{\"type\":\"i" +
-            "nteger\",\"description\":\"The maximum number of advanced segments to include in thi" +
-            "s response.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer" +
-            "\",\"description\":\"An index of the first advanced segment to retrieve. Use this pa" +
-            "rameter as a pagination mechanism along with the max-results parameter.\",\"format" +
-            "\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"web" +
-            "properties\":{\"methods\":{\"list\":{\"id\":\"analytics.management.webproperties.list\",\"" +
-            "path\":\"management/accounts/{accountId}/webproperties\",\"httpMethod\":\"GET\",\"descri" +
-            "ption\":\"Lists web properties to which the user has access.\",\"parameters\":{\"accou" +
-            "ntId\":{\"type\":\"string\",\"description\":\"Account ID to retrieve web properties for." +
-            " Can either be a specific account ID or \'~all\', which refers to all the accounts" +
-            " that user has access to.\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"The maximum number of web properties to include in " +
-            "this response.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"inte" +
-            "ger\",\"description\":\"An index of the first entity to retrieve. Use this parameter" +
-            " as a pagination mechanism along with the max-results parameter.\",\"format\":\"int3" +
-            "2\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"accountId\"],\"scopes\":[\"" +
-            "https://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/anal" +
-            "ytics.readonly\"]}}}}}}}";
+            "\"]}}},\"management\":{\"resources\":{\"accounts\":{\"methods\":{\"list\":{\"id\":\"analytics." +
+            "management.accounts.list\",\"path\":\"management/accounts\",\"httpMethod\":\"GET\",\"descr" +
+            "iption\":\"Lists all accounts to which the user has access.\",\"parameters\":{\"max-re" +
+            "sults\":{\"type\":\"integer\",\"description\":\"The maximum number of accounts to includ" +
+            "e in this response.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":" +
+            "\"integer\",\"description\":\"An index of the first account to retrieve. Use this par" +
+            "ameter as a pagination mechanism along with the max-results parameter.\",\"format\"" +
+            ":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"scopes\":[\"https://www.googleapis.co" +
+            "m/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"goal" +
+            "s\":{\"methods\":{\"list\":{\"id\":\"analytics.management.goals.list\",\"path\":\"management" +
+            "/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals\"," +
+            "\"httpMethod\":\"GET\",\"description\":\"Lists goals to which the user has access.\",\"pa" +
+            "rameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to retrieve go" +
+            "als for. Can either be a specific account ID or \'~all\', which refers to all the " +
+            "accounts that user has access to.\",\"required\":true,\"location\":\"path\"},\"max-resul" +
+            "ts\":{\"type\":\"integer\",\"description\":\"The maximum number of goals to include in t" +
+            "his response.\",\"format\":\"int32\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\"" +
+            ",\"description\":\"Profile ID to retrieve goals for. Can either be a specific profi" +
+            "le ID or \'~all\', which refers to all the profiles that user has access to.\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An" +
+            " index of the first goal to retrieve. Use this parameter as a pagination mechani" +
+            "sm along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"locati" +
+            "on\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID to " +
+            "retrieve goals for. Can either be a specific web property ID or \'~all\', which re" +
+            "fers to all the web properties that user has access to.\",\"required\":true,\"locati" +
+            "on\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropertyId\",\"profileId\"],\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/a" +
+            "nalytics.readonly\"]}}},\"profiles\":{\"methods\":{\"list\":{\"id\":\"analytics.management" +
+            ".profiles.list\",\"path\":\"management/accounts/{accountId}/webproperties/{webProper" +
+            "tyId}/profiles\",\"httpMethod\":\"GET\",\"description\":\"Lists profiles to which the us" +
+            "er has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Accoun" +
+            "t ID for the profiles to retrieve. Can either be a specific account ID or \'~all\'" +
+            ", which refers to all the accounts to which the user has access.\",\"required\":tru" +
+            "e,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum " +
+            "number of profiles to include in this response.\",\"format\":\"int32\",\"location\":\"qu" +
+            "ery\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the first entit" +
+            "y to retrieve. Use this parameter as a pagination mechanism along with the max-r" +
+            "esults parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webProper" +
+            "tyId\":{\"type\":\"string\",\"description\":\"Web property ID for the profiles to retrie" +
+            "ve. Can either be a specific web property ID or \'~all\', which refers to all the " +
+            "web properties to which the user has access.\",\"required\":true,\"location\":\"path\"}" +
+            "},\"parameterOrder\":[\"accountId\",\"webPropertyId\"],\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}}," +
+            "\"segments\":{\"methods\":{\"list\":{\"id\":\"analytics.management.segments.list\",\"path\":" +
+            "\"management/segments\",\"httpMethod\":\"GET\",\"description\":\"Lists advanced segments " +
+            "to which the user has access.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"de" +
+            "scription\":\"The maximum number of advanced segments to include in this response." +
+            "\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"An index of the first advanced segment to retrieve. Use this parameter as " +
+            "a pagination mechanism along with the max-results parameter.\",\"format\":\"int32\",\"" +
+            "minimum\":\"1\",\"location\":\"query\"}},\"scopes\":[\"https://www.googleapis.com/auth/ana" +
+            "lytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"webproperties\"" +
+            ":{\"methods\":{\"list\":{\"id\":\"analytics.management.webproperties.list\",\"path\":\"mana" +
+            "gement/accounts/{accountId}/webproperties\",\"httpMethod\":\"GET\",\"description\":\"Lis" +
+            "ts web properties to which the user has access.\",\"parameters\":{\"accountId\":{\"typ" +
+            "e\":\"string\",\"description\":\"Account ID to retrieve web properties for. Can either" +
+            " be a specific account ID or \'~all\', which refers to all the accounts that user " +
+            "has access to.\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"intege" +
+            "r\",\"description\":\"The maximum number of web properties to include in this respon" +
+            "se.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"descr" +
+            "iption\":\"An index of the first entity to retrieve. Use this parameter as a pagin" +
+            "ation mechanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum" +
+            "\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"accountId\"],\"scopes\":[\"https://www" +
+            ".googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.reado" +
+            "nly\"]}}}}}}}";
         
         public const string Version = "v2.4";
         

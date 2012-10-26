@@ -686,137 +686,138 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"pagespeedonline" +
-            ":v1\",\"name\":\"pagespeedonline\",\"version\":\"v1\",\"revision\":\"20120827\",\"title\":\"Page" +
-            " Speed Online API\",\"description\":\"Lets you analyze the performance of a web page" +
-            " and get tailored suggestions to make that page faster.\",\"icons\":{\"x16\":\"http://" +
-            "www.google.com/images/icons/product/pagespeed-16.png\",\"x32\":\"http://www.google.c" +
-            "om/images/icons/product/pagespeed-32.png\"},\"documentationLink\":\"https://develope" +
-            "rs.google.com/speed/docs/insights/v1/getting_started\",\"protocol\":\"rest\",\"baseUrl" +
-            "\":\"https://www.googleapis.com/pagespeedonline/v1/\",\"basePath\":\"/pagespeedonline/" +
-            "v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"pagespeedonline/v1/\"" +
-            ",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data fo" +
-            "rmat for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Re" +
-            "sponses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"t" +
-            "ype\":\"string\",\"description\":\"Selector specifying which fields to include in a pa" +
-            "rtial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API k" +
-            "ey. Your API key identifies your project and provides you with API access, quota" +
-            ", and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"quer" +
-            "y\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the curren" +
-            "t user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Retu" +
-            "rns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"qu" +
-            "ery\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota pur" +
-            "poses for server-side applications. Can be any arbitrary string assigned to a us" +
-            "er, but should not exceed 40 characters. Overrides userIp if both are provided.\"" +
-            ",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the " +
-            "site where the request originates. Use this if you want to enforce per-user limi" +
-            "ts.\",\"location\":\"query\"}},\"schemas\":{\"Result\":{\"id\":\"Result\",\"type\":\"object\",\"pr" +
-            "operties\":{\"formattedResults\":{\"type\":\"object\",\"description\":\"Localized Page Spe" +
-            "ed results. Contains a ruleResults entry for each Page Speed rule instantiated a" +
-            "nd run by the server.\",\"properties\":{\"locale\":{\"type\":\"string\",\"description\":\"Th" +
-            "e locale of the formattedResults, e.g. \\\"en_US\\\".\"},\"ruleResults\":{\"type\":\"objec" +
-            "t\",\"description\":\"Dictionary of formatted rule results, with one entry for each " +
-            "Page Speed rule instantiated and run by the server.\",\"additionalProperties\":{\"ty" +
-            "pe\":\"object\",\"description\":\"The enum-like identifier for this rule. For instance" +
-            " \\\"EnableKeepAlive\\\" or \\\"AvoidCssImport\\\". Not localized.\",\"properties\":{\"local" +
-            "izedRuleName\":{\"type\":\"string\",\"description\":\"Localized name of the rule, intend" +
-            "ed for presentation to a user.\"},\"ruleImpact\":{\"type\":\"number\",\"description\":\"Th" +
-            "e impact (unbounded floating point value) that implementing the suggestions for " +
-            "this rule would have on making the page faster. Impact is comparable between rul" +
-            "es to determine which rule\'s suggestions would have a higher or lower impact on " +
-            "making a page faster. For instance, if enabling compression would save 1MB, whil" +
-            "e optimizing images would save 500kB, the enable compression rule would have 2x " +
-            "the impact of the image optimization rule, all other things being equal.\",\"forma" +
-            "t\":\"double\"},\"ruleScore\":{\"type\":\"integer\",\"description\":\"The score (0-100) for " +
-            "this rule. The rule score indicates how well a page implements the recommendatio" +
-            "ns for the given rule. For instance, if none of the compressible resources on a " +
-            "page are compressed, the rule score would be 0, while if all of the compressible" +
-            " resources on a page are compressed, the rule score would be 100.\",\"format\":\"int" +
-            "32\"},\"urlBlocks\":{\"type\":\"array\",\"description\":\"List of blocks of URLs. Each blo" +
-            "ck may contain a heading and a list of URLs. Each URL may optionally include add" +
-            "itional details.\",\"items\":{\"type\":\"object\",\"properties\":{\"header\":{\"type\":\"objec" +
-            "t\",\"description\":\"Heading to be displayed with the list of URLs.\",\"properties\":{" +
-            "\"args\":{\"type\":\"array\",\"description\":\"List of arguments for the format string.\"," +
-            "\"items\":{\"type\":\"object\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"Ty" +
-            "pe of argument. One of URL, STRING_LITERAL, INT_LITERAL, BYTES, or DURATION.\"},\"" +
-            "value\":{\"type\":\"string\",\"description\":\"Argument value, as a localized string.\"}}" +
-            "}},\"format\":{\"type\":\"string\",\"description\":\"A localized format string with $N pl" +
-            "aceholders, where N is the 1-indexed argument number, e.g. \'Minifying the follow" +
-            "ing $1 resources would save a total of $2 bytes\'.\"}}},\"urls\":{\"type\":\"array\",\"de" +
-            "scription\":\"List of entries that provide information about URLs in the url block" +
-            ". Optional.\",\"items\":{\"type\":\"object\",\"properties\":{\"details\":{\"type\":\"array\",\"d" +
-            "escription\":\"List of entries that provide additional details about a single URL." +
-            " Optional.\",\"items\":{\"type\":\"object\",\"properties\":{\"args\":{\"type\":\"array\",\"descr" +
-            "iption\":\"List of arguments for the format string.\",\"items\":{\"type\":\"object\",\"pro" +
-            "perties\":{\"type\":{\"type\":\"string\",\"description\":\"Type of argument. One of URL, S" +
-            "TRING_LITERAL, INT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Argument value, as a localized string.\"}}}},\"format\":{\"type\":\"string\"," +
-            "\"description\":\"A localized format string with $N placeholders, where N is the 1-" +
-            "indexed argument number, e.g. \'Unnecessary metadata for this resource adds an ad" +
-            "ditional $1 bytes to its download size\'.\"}}}},\"result\":{\"type\":\"object\",\"descrip" +
-            "tion\":\"A format string that gives information about the URL, and a list of argum" +
-            "ents for that format string.\",\"properties\":{\"args\":{\"type\":\"array\",\"description\"" +
-            ":\"List of arguments for the format string.\",\"items\":{\"type\":\"object\",\"properties" +
-            "\":{\"type\":{\"type\":\"string\",\"description\":\"Type of argument. One of URL, STRING_L" +
-            "ITERAL, INT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"description" +
-            "\":\"Argument value, as a localized string.\"}}}},\"format\":{\"type\":\"string\",\"descri" +
-            "ption\":\"A localized format string with $N placeholders, where N is the 1-indexed" +
-            " argument number, e.g. \'Minifying the resource at URL $1 can save $2 bytes\'.\"}}}" +
-            "}}}}}}}}}}},\"id\":{\"type\":\"string\",\"description\":\"Canonicalized and final URL for" +
-            " the document, after following page redirects (if any).\"},\"invalidRules\":{\"type\"" +
-            ":\"array\",\"description\":\"List of rules that were specified in the request, but wh" +
-            "ich the server did not know how to instantiate.\",\"items\":{\"type\":\"string\"}},\"kin" +
-            "d\":{\"type\":\"string\",\"description\":\"Kind of result.\",\"default\":\"pagespeedonline#r" +
-            "esult\"},\"pageStats\":{\"type\":\"object\",\"description\":\"Summary statistics for the p" +
-            "age, such as number of JavaScript bytes, number of HTML bytes, etc.\",\"properties" +
-            "\":{\"cssResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed res" +
-            "ponse bytes for CSS resources on the page.\",\"format\":\"int64\"},\"flashResponseByte" +
-            "s\":{\"type\":\"string\",\"description\":\"Number of response bytes for flash resources " +
-            "on the page.\",\"format\":\"int64\"},\"htmlResponseBytes\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Number of uncompressed response bytes for the main HTML document and all ifr" +
-            "ames on the page.\",\"format\":\"int64\"},\"imageResponseBytes\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Number of response bytes for image resources on the page.\",\"format\":\"i" +
-            "nt64\"},\"javascriptResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncom" +
-            "pressed response bytes for JS resources on the page.\",\"format\":\"int64\"},\"numberC" +
-            "ssResources\":{\"type\":\"integer\",\"description\":\"Number of CSS resources referenced" +
-            " by the page.\",\"format\":\"int32\"},\"numberHosts\":{\"type\":\"integer\",\"description\":\"" +
-            "Number of unique hosts referenced by the page.\",\"format\":\"int32\"},\"numberJsResou" +
-            "rces\":{\"type\":\"integer\",\"description\":\"Number of JavaScript resources referenced" +
-            " by the page.\",\"format\":\"int32\"},\"numberResources\":{\"type\":\"integer\",\"descriptio" +
-            "n\":\"Number of HTTP resources loaded by the page.\",\"format\":\"int32\"},\"numberStati" +
-            "cResources\":{\"type\":\"integer\",\"description\":\"Number of static (i.e. cacheable) r" +
-            "esources on the page.\",\"format\":\"int32\"},\"otherResponseBytes\":{\"type\":\"string\",\"" +
-            "description\":\"Number of response bytes for other resources on the page.\",\"format" +
-            "\":\"int64\"},\"textResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompr" +
-            "essed response bytes for text resources not covered by other statistics (i.e non" +
-            "-HTML, non-script, non-CSS resources) on the page.\",\"format\":\"int64\"},\"totalRequ" +
-            "estBytes\":{\"type\":\"string\",\"description\":\"Total size of all request bytes sent b" +
-            "y the page.\",\"format\":\"int64\"}}},\"responseCode\":{\"type\":\"integer\",\"description\":" +
-            "\"Response code for the document. 200 indicates a normal page load. 4xx/5xx indic" +
-            "ates an error.\",\"format\":\"int32\"},\"score\":{\"type\":\"integer\",\"description\":\"The P" +
-            "age Speed Score (0-100), which indicates how much faster a page could be. A high" +
-            " score indicates little room for improvement, while a lower score indicates more" +
-            " room for improvement.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"description\"" +
-            ":\"Title of the page, as displayed in the browser\'s title bar.\"},\"version\":{\"type" +
-            "\":\"object\",\"description\":\"The version of the Page Speed SDK used to generate the" +
-            "se results.\",\"properties\":{\"major\":{\"type\":\"integer\",\"description\":\"The major ve" +
-            "rsion number of the Page Speed SDK used to generate these results.\",\"format\":\"in" +
-            "t32\"},\"minor\":{\"type\":\"integer\",\"description\":\"The minor version number of the P" +
-            "age Speed SDK used to generate these results.\",\"format\":\"int32\"}}}}}},\"resources" +
-            "\":{\"pagespeedapi\":{\"methods\":{\"runpagespeed\":{\"id\":\"pagespeedonline.pagespeedapi" +
-            ".runpagespeed\",\"path\":\"runPagespeed\",\"httpMethod\":\"GET\",\"description\":\"Runs Page" +
-            " Speed analysis on the page at the specified URL, and returns a Page Speed score" +
-            ", a list of suggestions to make that page faster, and other information.\",\"param" +
-            "eters\":{\"locale\":{\"type\":\"string\",\"description\":\"The locale used to localize for" +
-            "matted results\",\"pattern\":\"[a-zA-Z]+(_[a-zA-Z]+)?\",\"location\":\"query\"},\"rule\":{\"" +
-            "type\":\"string\",\"description\":\"A Page Speed rule to run; if none are given, all r" +
-            "ules are run\",\"pattern\":\"[a-zA-Z]+\",\"repeated\":true,\"location\":\"query\"},\"strateg" +
-            "y\":{\"type\":\"string\",\"description\":\"The analysis strategy to use\",\"enum\":[\"deskto" +
-            "p\",\"mobile\"],\"enumDescriptions\":[\"Fetch and analyze the URL for desktop browsers" +
-            "\",\"Fetch and analyze the URL for mobile devices\"],\"location\":\"query\"},\"url\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The URL to fetch and analyze\",\"required\":true,\"patte" +
-            "rn\":\"http(s)?://.*\",\"location\":\"query\"}},\"parameterOrder\":[\"url\"],\"response\":{\"$" +
-            "ref\":\"Result\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/6-BFiu6" +
+            "8A96TLwM7VIrcHdw1dCU\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"pagespeedonline:v1\",\"name\"" +
+            ":\"pagespeedonline\",\"version\":\"v1\",\"revision\":\"20120827\",\"title\":\"Page Speed Onli" +
+            "ne API\",\"description\":\"Lets you analyze the performance of a web page and get ta" +
+            "ilored suggestions to make that page faster.\",\"icons\":{\"x16\":\"http://www.google." +
+            "com/images/icons/product/pagespeed-16.png\",\"x32\":\"http://www.google.com/images/i" +
+            "cons/product/pagespeed-32.png\"},\"documentationLink\":\"https://developers.google.c" +
+            "om/speed/docs/insights/v1/getting_started\",\"protocol\":\"rest\",\"baseUrl\":\"https://" +
+            "www.googleapis.com/pagespeedonline/v1/\",\"basePath\":\"/pagespeedonline/v1/\",\"rootU" +
+            "rl\":\"https://www.googleapis.com/\",\"servicePath\":\"pagespeedonline/v1/\",\"batchPath" +
+            "\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for th" +
+            "e response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses wit" +
+            "h Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"strin" +
+            "g\",\"description\":\"Selector specifying which fields to include in a partial respo" +
+            "nse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your AP" +
+            "I key identifies your project and provides you with API access, quota, and repor" +
+            "ts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_" +
+            "token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"l" +
+            "ocation\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respons" +
+            "e with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quot" +
+            "aUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for s" +
+            "erver-side applications. Can be any arbitrary string assigned to a user, but sho" +
+            "uld not exceed 40 characters. Overrides userIp if both are provided.\",\"location\"" +
+            ":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where " +
+            "the request originates. Use this if you want to enforce per-user limits.\",\"locat" +
+            "ion\":\"query\"}},\"schemas\":{\"Result\":{\"id\":\"Result\",\"type\":\"object\",\"properties\":{" +
+            "\"formattedResults\":{\"type\":\"object\",\"description\":\"Localized Page Speed results." +
+            " Contains a ruleResults entry for each Page Speed rule instantiated and run by t" +
+            "he server.\",\"properties\":{\"locale\":{\"type\":\"string\",\"description\":\"The locale of" +
+            " the formattedResults, e.g. \\\"en_US\\\".\"},\"ruleResults\":{\"type\":\"object\",\"descrip" +
+            "tion\":\"Dictionary of formatted rule results, with one entry for each Page Speed " +
+            "rule instantiated and run by the server.\",\"additionalProperties\":{\"type\":\"object" +
+            "\",\"description\":\"The enum-like identifier for this rule. For instance \\\"EnableKe" +
+            "epAlive\\\" or \\\"AvoidCssImport\\\". Not localized.\",\"properties\":{\"localizedRuleNam" +
+            "e\":{\"type\":\"string\",\"description\":\"Localized name of the rule, intended for pres" +
+            "entation to a user.\"},\"ruleImpact\":{\"type\":\"number\",\"description\":\"The impact (u" +
+            "nbounded floating point value) that implementing the suggestions for this rule w" +
+            "ould have on making the page faster. Impact is comparable between rules to deter" +
+            "mine which rule\'s suggestions would have a higher or lower impact on making a pa" +
+            "ge faster. For instance, if enabling compression would save 1MB, while optimizin" +
+            "g images would save 500kB, the enable compression rule would have 2x the impact " +
+            "of the image optimization rule, all other things being equal.\",\"format\":\"double\"" +
+            "},\"ruleScore\":{\"type\":\"integer\",\"description\":\"The score (0-100) for this rule. " +
+            "The rule score indicates how well a page implements the recommendations for the " +
+            "given rule. For instance, if none of the compressible resources on a page are co" +
+            "mpressed, the rule score would be 0, while if all of the compressible resources " +
+            "on a page are compressed, the rule score would be 100.\",\"format\":\"int32\"},\"urlBl" +
+            "ocks\":{\"type\":\"array\",\"description\":\"List of blocks of URLs. Each block may cont" +
+            "ain a heading and a list of URLs. Each URL may optionally include additional det" +
+            "ails.\",\"items\":{\"type\":\"object\",\"properties\":{\"header\":{\"type\":\"object\",\"descrip" +
+            "tion\":\"Heading to be displayed with the list of URLs.\",\"properties\":{\"args\":{\"ty" +
+            "pe\":\"array\",\"description\":\"List of arguments for the format string.\",\"items\":{\"t" +
+            "ype\":\"object\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"Type of argum" +
+            "ent. One of URL, STRING_LITERAL, INT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Argument value, as a localized string.\"}}}},\"format\"" +
+            ":{\"type\":\"string\",\"description\":\"A localized format string with $N placeholders," +
+            " where N is the 1-indexed argument number, e.g. \'Minifying the following $1 reso" +
+            "urces would save a total of $2 bytes\'.\"}}},\"urls\":{\"type\":\"array\",\"description\":" +
+            "\"List of entries that provide information about URLs in the url block. Optional." +
+            "\",\"items\":{\"type\":\"object\",\"properties\":{\"details\":{\"type\":\"array\",\"description\"" +
+            ":\"List of entries that provide additional details about a single URL. Optional.\"" +
+            ",\"items\":{\"type\":\"object\",\"properties\":{\"args\":{\"type\":\"array\",\"description\":\"Li" +
+            "st of arguments for the format string.\",\"items\":{\"type\":\"object\",\"properties\":{\"" +
+            "type\":{\"type\":\"string\",\"description\":\"Type of argument. One of URL, STRING_LITER" +
+            "AL, INT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"description\":\"A" +
+            "rgument value, as a localized string.\"}}}},\"format\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"A localized format string with $N placeholders, where N is the 1-indexed arg" +
+            "ument number, e.g. \'Unnecessary metadata for this resource adds an additional $1" +
+            " bytes to its download size\'.\"}}}},\"result\":{\"type\":\"object\",\"description\":\"A fo" +
+            "rmat string that gives information about the URL, and a list of arguments for th" +
+            "at format string.\",\"properties\":{\"args\":{\"type\":\"array\",\"description\":\"List of a" +
+            "rguments for the format string.\",\"items\":{\"type\":\"object\",\"properties\":{\"type\":{" +
+            "\"type\":\"string\",\"description\":\"Type of argument. One of URL, STRING_LITERAL, INT" +
+            "_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"description\":\"Argument" +
+            " value, as a localized string.\"}}}},\"format\":{\"type\":\"string\",\"description\":\"A l" +
+            "ocalized format string with $N placeholders, where N is the 1-indexed argument n" +
+            "umber, e.g. \'Minifying the resource at URL $1 can save $2 bytes\'.\"}}}}}}}}}}}}}}" +
+            ",\"id\":{\"type\":\"string\",\"description\":\"Canonicalized and final URL for the docume" +
+            "nt, after following page redirects (if any).\"},\"invalidRules\":{\"type\":\"array\",\"d" +
+            "escription\":\"List of rules that were specified in the request, but which the ser" +
+            "ver did not know how to instantiate.\",\"items\":{\"type\":\"string\"}},\"kind\":{\"type\":" +
+            "\"string\",\"description\":\"Kind of result.\",\"default\":\"pagespeedonline#result\"},\"pa" +
+            "geStats\":{\"type\":\"object\",\"description\":\"Summary statistics for the page, such a" +
+            "s number of JavaScript bytes, number of HTML bytes, etc.\",\"properties\":{\"cssResp" +
+            "onseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed response bytes" +
+            " for CSS resources on the page.\",\"format\":\"int64\"},\"flashResponseBytes\":{\"type\":" +
+            "\"string\",\"description\":\"Number of response bytes for flash resources on the page" +
+            ".\",\"format\":\"int64\"},\"htmlResponseBytes\":{\"type\":\"string\",\"description\":\"Number " +
+            "of uncompressed response bytes for the main HTML document and all iframes on the" +
+            " page.\",\"format\":\"int64\"},\"imageResponseBytes\":{\"type\":\"string\",\"description\":\"N" +
+            "umber of response bytes for image resources on the page.\",\"format\":\"int64\"},\"jav" +
+            "ascriptResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed res" +
+            "ponse bytes for JS resources on the page.\",\"format\":\"int64\"},\"numberCssResources" +
+            "\":{\"type\":\"integer\",\"description\":\"Number of CSS resources referenced by the pag" +
+            "e.\",\"format\":\"int32\"},\"numberHosts\":{\"type\":\"integer\",\"description\":\"Number of u" +
+            "nique hosts referenced by the page.\",\"format\":\"int32\"},\"numberJsResources\":{\"typ" +
+            "e\":\"integer\",\"description\":\"Number of JavaScript resources referenced by the pag" +
+            "e.\",\"format\":\"int32\"},\"numberResources\":{\"type\":\"integer\",\"description\":\"Number " +
+            "of HTTP resources loaded by the page.\",\"format\":\"int32\"},\"numberStaticResources\"" +
+            ":{\"type\":\"integer\",\"description\":\"Number of static (i.e. cacheable) resources on" +
+            " the page.\",\"format\":\"int32\"},\"otherResponseBytes\":{\"type\":\"string\",\"description" +
+            "\":\"Number of response bytes for other resources on the page.\",\"format\":\"int64\"}," +
+            "\"textResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed respo" +
+            "nse bytes for text resources not covered by other statistics (i.e non-HTML, non-" +
+            "script, non-CSS resources) on the page.\",\"format\":\"int64\"},\"totalRequestBytes\":{" +
+            "\"type\":\"string\",\"description\":\"Total size of all request bytes sent by the page." +
+            "\",\"format\":\"int64\"}}},\"responseCode\":{\"type\":\"integer\",\"description\":\"Response c" +
+            "ode for the document. 200 indicates a normal page load. 4xx/5xx indicates an err" +
+            "or.\",\"format\":\"int32\"},\"score\":{\"type\":\"integer\",\"description\":\"The Page Speed S" +
+            "core (0-100), which indicates how much faster a page could be. A high score indi" +
+            "cates little room for improvement, while a lower score indicates more room for i" +
+            "mprovement.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"description\":\"Title of " +
+            "the page, as displayed in the browser\'s title bar.\"},\"version\":{\"type\":\"object\"," +
+            "\"description\":\"The version of the Page Speed SDK used to generate these results." +
+            "\",\"properties\":{\"major\":{\"type\":\"integer\",\"description\":\"The major version numbe" +
+            "r of the Page Speed SDK used to generate these results.\",\"format\":\"int32\"},\"mino" +
+            "r\":{\"type\":\"integer\",\"description\":\"The minor version number of the Page Speed S" +
+            "DK used to generate these results.\",\"format\":\"int32\"}}}}}},\"resources\":{\"pagespe" +
+            "edapi\":{\"methods\":{\"runpagespeed\":{\"id\":\"pagespeedonline.pagespeedapi.runpagespe" +
+            "ed\",\"path\":\"runPagespeed\",\"httpMethod\":\"GET\",\"description\":\"Runs Page Speed anal" +
+            "ysis on the page at the specified URL, and returns a Page Speed score, a list of" +
+            " suggestions to make that page faster, and other information.\",\"parameters\":{\"lo" +
+            "cale\":{\"type\":\"string\",\"description\":\"The locale used to localize formatted resu" +
+            "lts\",\"pattern\":\"[a-zA-Z]+(_[a-zA-Z]+)?\",\"location\":\"query\"},\"rule\":{\"type\":\"stri" +
+            "ng\",\"description\":\"A Page Speed rule to run; if none are given, all rules are ru" +
+            "n\",\"pattern\":\"[a-zA-Z]+\",\"repeated\":true,\"location\":\"query\"},\"strategy\":{\"type\":" +
+            "\"string\",\"description\":\"The analysis strategy to use\",\"enum\":[\"desktop\",\"mobile\"" +
+            "],\"enumDescriptions\":[\"Fetch and analyze the URL for desktop browsers\",\"Fetch an" +
+            "d analyze the URL for mobile devices\"],\"location\":\"query\"},\"url\":{\"type\":\"string" +
+            "\",\"description\":\"The URL to fetch and analyze\",\"required\":true,\"pattern\":\"http(s" +
+            ")?://.*\",\"location\":\"query\"}},\"parameterOrder\":[\"url\"],\"response\":{\"$ref\":\"Resul" +
+            "t\"}}}}}}";
         
         public const string Version = "v1";
         

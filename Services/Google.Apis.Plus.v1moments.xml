@@ -140,7 +140,7 @@
             <summary>Worst possible rating value.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.Moment.Id">
-            <summary>The frame ID.</summary>
+            <summary>The moment ID.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.Moment.Kind">
             <summary>Identifies this resource as a moment.</summary>
@@ -160,7 +160,7 @@
         <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMe">
             <summary>Know who you are on Google</summary>
         </member>
-        <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMomentsReadwrite">
+        <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMomentsWrite">
             <summary>Send your activity to your private Google+ history</summary>
         </member>
         <member name="M:Google.Apis.Plus.v1moments.MomentsResource.Insert(Google.Apis.Plus.v1moments.Data.Moment,System.String,Google.Apis.Plus.v1moments.MomentsResource.Collection)">

@@ -371,95 +371,96 @@ namespace Google.Apis.Urlshortener.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"urlshortener:v1" +
-            "\",\"name\":\"urlshortener\",\"version\":\"v1\",\"title\":\"URL Shortener API\",\"description\"" +
-            ":\"Lets you create, inspect, and manage goo.gl short URLs\",\"icons\":{\"x16\":\"http:/" +
-            "/www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com" +
-            "/images/icons/product/search-32.gif\"},\"documentationLink\":\"http://code.google.co" +
-            "m/apis/urlshortener/v1/getting_started.html\",\"protocol\":\"rest\",\"baseUrl\":\"https:" +
-            "//www.googleapis.com/urlshortener/v1/\",\"basePath\":\"/urlshortener/v1/\",\"rootUrl\":" +
-            "\"https://www.googleapis.com/\",\"servicePath\":\"urlshortener/v1/\",\"batchPath\":\"batc" +
-            "h\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respo" +
-            "nse.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Conte" +
-            "nt-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"des" +
-            "cription\":\"Selector specifying which fields to include in a partial response.\",\"" +
-            "location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key i" +
-            "dentifies your project and provides you with API access, quota, and reports. Req" +
-            "uired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":" +
-            "{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location" +
-            "\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with " +
-            "indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":" +
-            "{\"type\":\"string\",\"description\":\"Available to use for quota purposes for server-s" +
-            "ide applications. Can be any arbitrary string assigned to a user, but should not" +
-            " exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query" +
-            "\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the req" +
-            "uest originates. Use this if you want to enforce per-user limits.\",\"location\":\"q" +
-            "uery\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/urlshortene" +
-            "r\":{\"description\":\"Manage your goo.gl short URLs\"}}}},\"schemas\":{\"AnalyticsSnaps" +
-            "hot\":{\"id\":\"AnalyticsSnapshot\",\"type\":\"object\",\"properties\":{\"browsers\":{\"type\":" +
-            "\"array\",\"description\":\"Top browsers, e.g. \\\"Chrome\\\"; sorted by (descending) cli" +
-            "ck counts. Only present if this data is available.\",\"items\":{\"$ref\":\"StringCount" +
-            "\"}},\"countries\":{\"type\":\"array\",\"description\":\"Top countries (expressed as count" +
-            "ry codes), e.g. \\\"US\\\" or \\\"DE\\\"; sorted by (descending) click counts. Only pres" +
-            "ent if this data is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"longUrlClicks\":" +
-            "{\"type\":\"string\",\"description\":\"Number of clicks on all goo.gl short URLs pointi" +
-            "ng to this long URL.\",\"format\":\"int64\"},\"platforms\":{\"type\":\"array\",\"description" +
-            "\":\"Top platforms or OSes, e.g. \\\"Windows\\\"; sorted by (descending) click counts." +
-            " Only present if this data is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"refer" +
-            "rers\":{\"type\":\"array\",\"description\":\"Top referring hosts, e.g. \\\"www.google.com\\" +
-            "\"; sorted by (descending) click counts. Only present if this data is available.\"" +
-            ",\"items\":{\"$ref\":\"StringCount\"}},\"shortUrlClicks\":{\"type\":\"string\",\"description\"" +
-            ":\"Number of clicks on this short URL.\",\"format\":\"int64\"}}},\"AnalyticsSummary\":{\"" +
-            "id\":\"AnalyticsSummary\",\"type\":\"object\",\"properties\":{\"allTime\":{\"$ref\":\"Analytic" +
-            "sSnapshot\",\"description\":\"Click analytics over all time.\"},\"day\":{\"$ref\":\"Analyt" +
-            "icsSnapshot\",\"description\":\"Click analytics over the last day.\"},\"month\":{\"$ref\"" +
-            ":\"AnalyticsSnapshot\",\"description\":\"Click analytics over the last month.\"},\"twoH" +
-            "ours\":{\"$ref\":\"AnalyticsSnapshot\",\"description\":\"Click analytics over the last t" +
-            "wo hours.\"},\"week\":{\"$ref\":\"AnalyticsSnapshot\",\"description\":\"Click analytics ov" +
-            "er the last week.\"}}},\"StringCount\":{\"id\":\"StringCount\",\"type\":\"object\",\"propert" +
-            "ies\":{\"count\":{\"type\":\"string\",\"description\":\"Number of clicks for this top entr" +
-            "y, e.g. for this particular country or browser.\",\"format\":\"int64\"},\"id\":{\"type\":" +
-            "\"string\",\"description\":\"Label assigned to this top entry, e.g. \\\"US\\\" or \\\"Chrom" +
-            "e\\\".\"}}},\"Url\":{\"id\":\"Url\",\"type\":\"object\",\"properties\":{\"analytics\":{\"$ref\":\"An" +
-            "alyticsSummary\",\"description\":\"A summary of the click analytics for the short an" +
-            "d long URL. Might not be present if not requested or currently unavailable.\"},\"c" +
-            "reated\":{\"type\":\"string\",\"description\":\"Time the short URL was created; ISO 8601" +
-            " representation using the yyyy-MM-dd\'T\'HH:mm:ss.SSSZZ format, e.g. \\\"2010-10-14T" +
-            "19:01:24.944+00:00\\\".\"},\"id\":{\"type\":\"string\",\"description\":\"Short URL, e.g. \\\"h" +
-            "ttp://goo.gl/l6MS\\\".\"},\"kind\":{\"type\":\"string\",\"description\":\"The fixed string \\" +
-            "\"urlshortener#url\\\".\",\"default\":\"urlshortener#url\"},\"longUrl\":{\"type\":\"string\",\"" +
-            "description\":\"Long URL, e.g. \\\"http://www.google.com/\\\". Might not be present if" +
-            " the status is \\\"REMOVED\\\".\"},\"status\":{\"type\":\"string\",\"description\":\"Status of" +
-            " the target URL. Possible values: \\\"OK\\\", \\\"MALWARE\\\", \\\"PHISHING\\\", or \\\"REMOVE" +
-            "D\\\". A URL might be marked \\\"REMOVED\\\" if it was flagged as spam, for example.\"}" +
-            "}},\"UrlHistory\":{\"id\":\"UrlHistory\",\"type\":\"object\",\"properties\":{\"items\":{\"type\"" +
-            ":\"array\",\"description\":\"A list of URL resources.\",\"items\":{\"$ref\":\"Url\"}},\"items" +
-            "PerPage\":{\"type\":\"integer\",\"description\":\"Number of items returned with each ful" +
-            "l \\\"page\\\" of results. Note that the last page could have fewer items than the \\" +
-            "\"itemsPerPage\\\" value.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"The fixed string \\\"urlshortener#urlHistory\\\".\",\"default\":\"urlshortener#urlHisto" +
-            "ry\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token to provide to get t" +
-            "he next page of results.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total n" +
-            "umber of short URLs associated with this user (may be approximate).\",\"format\":\"i" +
-            "nt32\"}}}},\"resources\":{\"url\":{\"methods\":{\"get\":{\"id\":\"urlshortener.url.get\",\"pat" +
-            "h\":\"url\",\"httpMethod\":\"GET\",\"description\":\"Expands a short URL or gets creation " +
-            "time and analytics.\",\"parameters\":{\"projection\":{\"type\":\"string\",\"description\":\"" +
-            "Additional information to return.\",\"enum\":[\"ANALYTICS_CLICKS\",\"ANALYTICS_TOP_STR" +
-            "INGS\",\"FULL\"],\"enumDescriptions\":[\"Returns only click counts.\",\"Returns only top" +
-            " string counts.\",\"Returns the creation timestamp and all available analytics.\"]," +
-            "\"location\":\"query\"},\"shortUrl\":{\"type\":\"string\",\"description\":\"The short URL, in" +
-            "cluding the protocol.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"s" +
-            "hortUrl\"],\"response\":{\"$ref\":\"Url\"}},\"insert\":{\"id\":\"urlshortener.url.insert\",\"p" +
-            "ath\":\"url\",\"httpMethod\":\"POST\",\"description\":\"Creates a new short URL.\",\"request" +
-            "\":{\"$ref\":\"Url\"},\"response\":{\"$ref\":\"Url\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/urlshortener\"]},\"list\":{\"id\":\"urlshortener.url.list\",\"path\":\"url/history\"," +
-            "\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of URLs shortened by a user.\"" +
-            ",\"parameters\":{\"projection\":{\"type\":\"string\",\"description\":\"Additional informati" +
-            "on to return.\",\"enum\":[\"ANALYTICS_CLICKS\",\"FULL\"],\"enumDescriptions\":[\"Returns s" +
-            "hort URL click counts.\",\"Returns short URL click counts.\"],\"location\":\"query\"},\"" +
-            "start-token\":{\"type\":\"string\",\"description\":\"Token for requesting successive pag" +
-            "es of results.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"UrlHistory\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/urlshortener\"]}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/0MOFQ6j" +
+            "BwyogxEWX4FW8QZIeEDM\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"urlshortener:v1\",\"name\":\"u" +
+            "rlshortener\",\"version\":\"v1\",\"title\":\"URL Shortener API\",\"description\":\"Lets you " +
+            "create, inspect, and manage goo.gl short URLs\",\"icons\":{\"x16\":\"http://www.google" +
+            ".com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com/images/ico" +
+            "ns/product/search-32.gif\"},\"documentationLink\":\"http://code.google.com/apis/urls" +
+            "hortener/v1/getting_started.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googl" +
+            "eapis.com/urlshortener/v1/\",\"basePath\":\"/urlshortener/v1/\",\"rootUrl\":\"https://ww" +
+            "w.googleapis.com/\",\"servicePath\":\"urlshortener/v1/\",\"batchPath\":\"batch\",\"paramet" +
+            "ers\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"defa" +
+            "ult\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of " +
+            "application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"" +
+            "Selector specifying which fields to include in a partial response.\",\"location\":\"" +
+            "query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies y" +
+            "our project and provides you with API access, quota, and reports. Required unles" +
+            "s you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"st" +
+            "ring\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"}," +
+            "\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentation" +
+            "s and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"st" +
+            "ring\",\"description\":\"Available to use for quota purposes for server-side applica" +
+            "tions. Can be any arbitrary string assigned to a user, but should not exceed 40 " +
+            "characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\"" +
+            ":{\"type\":\"string\",\"description\":\"IP address of the site where the request origin" +
+            "ates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"au" +
+            "th\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/urlshortener\":{\"descri" +
+            "ption\":\"Manage your goo.gl short URLs\"}}}},\"schemas\":{\"AnalyticsSnapshot\":{\"id\":" +
+            "\"AnalyticsSnapshot\",\"type\":\"object\",\"properties\":{\"browsers\":{\"type\":\"array\",\"de" +
+            "scription\":\"Top browsers, e.g. \\\"Chrome\\\"; sorted by (descending) click counts. " +
+            "Only present if this data is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"countr" +
+            "ies\":{\"type\":\"array\",\"description\":\"Top countries (expressed as country codes), " +
+            "e.g. \\\"US\\\" or \\\"DE\\\"; sorted by (descending) click counts. Only present if this" +
+            " data is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"longUrlClicks\":{\"type\":\"st" +
+            "ring\",\"description\":\"Number of clicks on all goo.gl short URLs pointing to this " +
+            "long URL.\",\"format\":\"int64\"},\"platforms\":{\"type\":\"array\",\"description\":\"Top plat" +
+            "forms or OSes, e.g. \\\"Windows\\\"; sorted by (descending) click counts. Only prese" +
+            "nt if this data is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"referrers\":{\"typ" +
+            "e\":\"array\",\"description\":\"Top referring hosts, e.g. \\\"www.google.com\\\"; sorted b" +
+            "y (descending) click counts. Only present if this data is available.\",\"items\":{\"" +
+            "$ref\":\"StringCount\"}},\"shortUrlClicks\":{\"type\":\"string\",\"description\":\"Number of" +
+            " clicks on this short URL.\",\"format\":\"int64\"}}},\"AnalyticsSummary\":{\"id\":\"Analyt" +
+            "icsSummary\",\"type\":\"object\",\"properties\":{\"allTime\":{\"$ref\":\"AnalyticsSnapshot\"," +
+            "\"description\":\"Click analytics over all time.\"},\"day\":{\"$ref\":\"AnalyticsSnapshot" +
+            "\",\"description\":\"Click analytics over the last day.\"},\"month\":{\"$ref\":\"Analytics" +
+            "Snapshot\",\"description\":\"Click analytics over the last month.\"},\"twoHours\":{\"$re" +
+            "f\":\"AnalyticsSnapshot\",\"description\":\"Click analytics over the last two hours.\"}" +
+            ",\"week\":{\"$ref\":\"AnalyticsSnapshot\",\"description\":\"Click analytics over the last" +
+            " week.\"}}},\"StringCount\":{\"id\":\"StringCount\",\"type\":\"object\",\"properties\":{\"coun" +
+            "t\":{\"type\":\"string\",\"description\":\"Number of clicks for this top entry, e.g. for" +
+            " this particular country or browser.\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"d" +
+            "escription\":\"Label assigned to this top entry, e.g. \\\"US\\\" or \\\"Chrome\\\".\"}}},\"U" +
+            "rl\":{\"id\":\"Url\",\"type\":\"object\",\"properties\":{\"analytics\":{\"$ref\":\"AnalyticsSumm" +
+            "ary\",\"description\":\"A summary of the click analytics for the short and long URL." +
+            " Might not be present if not requested or currently unavailable.\"},\"created\":{\"t" +
+            "ype\":\"string\",\"description\":\"Time the short URL was created; ISO 8601 representa" +
+            "tion using the yyyy-MM-dd\'T\'HH:mm:ss.SSSZZ format, e.g. \\\"2010-10-14T19:01:24.94" +
+            "4+00:00\\\".\"},\"id\":{\"type\":\"string\",\"description\":\"Short URL, e.g. \\\"http://goo.g" +
+            "l/l6MS\\\".\"},\"kind\":{\"type\":\"string\",\"description\":\"The fixed string \\\"urlshorten" +
+            "er#url\\\".\",\"default\":\"urlshortener#url\"},\"longUrl\":{\"type\":\"string\",\"description" +
+            "\":\"Long URL, e.g. \\\"http://www.google.com/\\\". Might not be present if the status" +
+            " is \\\"REMOVED\\\".\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the target" +
+            " URL. Possible values: \\\"OK\\\", \\\"MALWARE\\\", \\\"PHISHING\\\", or \\\"REMOVED\\\". A URL " +
+            "might be marked \\\"REMOVED\\\" if it was flagged as spam, for example.\"}}},\"UrlHist" +
+            "ory\":{\"id\":\"UrlHistory\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"d" +
+            "escription\":\"A list of URL resources.\",\"items\":{\"$ref\":\"Url\"}},\"itemsPerPage\":{\"" +
+            "type\":\"integer\",\"description\":\"Number of items returned with each full \\\"page\\\" " +
+            "of results. Note that the last page could have fewer items than the \\\"itemsPerPa" +
+            "ge\\\" value.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"The fixed " +
+            "string \\\"urlshortener#urlHistory\\\".\",\"default\":\"urlshortener#urlHistory\"},\"nextP" +
+            "ageToken\":{\"type\":\"string\",\"description\":\"A token to provide to get the next pag" +
+            "e of results.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of sh" +
+            "ort URLs associated with this user (may be approximate).\",\"format\":\"int32\"}}}},\"" +
+            "resources\":{\"url\":{\"methods\":{\"get\":{\"id\":\"urlshortener.url.get\",\"path\":\"url\",\"h" +
+            "ttpMethod\":\"GET\",\"description\":\"Expands a short URL or gets creation time and an" +
+            "alytics.\",\"parameters\":{\"projection\":{\"type\":\"string\",\"description\":\"Additional " +
+            "information to return.\",\"enum\":[\"ANALYTICS_CLICKS\",\"ANALYTICS_TOP_STRINGS\",\"FULL" +
+            "\"],\"enumDescriptions\":[\"Returns only click counts.\",\"Returns only top string cou" +
+            "nts.\",\"Returns the creation timestamp and all available analytics.\"],\"location\":" +
+            "\"query\"},\"shortUrl\":{\"type\":\"string\",\"description\":\"The short URL, including the" +
+            " protocol.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"shortUrl\"],\"" +
+            "response\":{\"$ref\":\"Url\"}},\"insert\":{\"id\":\"urlshortener.url.insert\",\"path\":\"url\"," +
+            "\"httpMethod\":\"POST\",\"description\":\"Creates a new short URL.\",\"request\":{\"$ref\":\"" +
+            "Url\"},\"response\":{\"$ref\":\"Url\"},\"scopes\":[\"https://www.googleapis.com/auth/urlsh" +
+            "ortener\"]},\"list\":{\"id\":\"urlshortener.url.list\",\"path\":\"url/history\",\"httpMethod" +
+            "\":\"GET\",\"description\":\"Retrieves a list of URLs shortened by a user.\",\"parameter" +
+            "s\":{\"projection\":{\"type\":\"string\",\"description\":\"Additional information to retur" +
+            "n.\",\"enum\":[\"ANALYTICS_CLICKS\",\"FULL\"],\"enumDescriptions\":[\"Returns short URL cl" +
+            "ick counts.\",\"Returns short URL click counts.\"],\"location\":\"query\"},\"start-token" +
+            "\":{\"type\":\"string\",\"description\":\"Token for requesting successive pages of resul" +
+            "ts.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"UrlHistory\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/urlshortener\"]}}}}}";
         
         public const string Version = "v1";
         

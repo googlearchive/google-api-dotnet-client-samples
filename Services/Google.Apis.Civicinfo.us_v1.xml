@@ -127,6 +127,15 @@
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.PrimaryParty">
             <summary>If this is a partisan election, the name of the party it is for.</summary>
         </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.ReferendumSubtitle">
+            <summary>A brief description of the referendum. This field is only populated for contests of type &apos;Referendum&apos;.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.ReferendumTitle">
+            <summary>The title of the referendum. (e.g. &apos;Proposition 42&apos;) This field is only populated for contests of type &apos;Referendum&apos;.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.ReferendumUrl">
+            <summary>A link the referendum. This field is only populated for contests of type &apos;Referendum&apos;.</summary>
+        </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Sources">
             <summary>A list of sources for this contest. If multiple sources are listed, the data has been aggregated from those sources.</summary>
         </member>
@@ -134,7 +143,7 @@
             <summary>&quot;Yes&quot; or &quot;No&quot; depending on whether this a contest being held outside the normal election cycle.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Type">
-            <summary>The type of contest. Usually this will be General, Primary, or Run-off.</summary>
+            <summary>The type of contest. Usually this will be &apos;General&apos;, &apos;Primary&apos;, or &apos;Run-off&apos; for contests with candidates. For referenda this will be &apos;Referendum&apos;.</summary>
         </member>
         <member name="T:Google.Apis.Civicinfo.us_v1.Data.Election">
             <summary>Information about the election that was queried.</summary>

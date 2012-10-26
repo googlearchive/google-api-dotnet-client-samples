@@ -391,152 +391,153 @@ namespace Google.Apis.Taskqueue.v1beta2 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"taskqueue:v1bet" +
-            "a2\",\"name\":\"taskqueue\",\"version\":\"v1beta2\",\"revision\":\"20120501\",\"title\":\"TaskQu" +
-            "eue API\",\"description\":\"Lets you access a Google App Engine Pull Task Queue over" +
-            " REST.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/app_engine-16" +
-            ".png\",\"x32\":\"http://www.google.com/images/icons/product/app_engine-32.png\"},\"doc" +
-            "umentationLink\":\"http://code.google.com/appengine/docs/python/taskqueue/rest.htm" +
-            "l\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/taskqueue/v1beta2/pro" +
-            "jects/\",\"basePath\":\"/taskqueue/v1beta2/projects/\",\"rootUrl\":\"https://www.googlea" +
-            "pis.com/\",\"servicePath\":\"taskqueue/v1beta2/projects/\",\"batchPath\":\"batch\",\"param" +
-            "eters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"de" +
-            "fault\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type o" +
-            "f application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\"" +
-            ":\"Selector specifying which fields to include in a partial response.\",\"location\"" +
-            ":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies" +
-            " your project and provides you with API access, quota, and reports. Required unl" +
-            "ess you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"" +
-            "string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"" +
-            "},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentati" +
-            "ons and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"" +
-            "string\",\"description\":\"Available to use for quota purposes for server-side appli" +
-            "cations. Can be any arbitrary string assigned to a user, but should not exceed 4" +
-            "0 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userI" +
-            "p\":{\"type\":\"string\",\"description\":\"IP address of the site where the request orig" +
-            "inates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"" +
-            "auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/taskqueue\":{\"descrip" +
-            "tion\":\"Manage your Tasks and Taskqueues\"},\"https://www.googleapis.com/auth/taskq" +
-            "ueue.consumer\":{\"description\":\"Consume Tasks from your Taskqueues\"}}}},\"schemas\"" +
-            ":{\"Task\":{\"id\":\"Task\",\"type\":\"object\",\"properties\":{\"enqueueTimestamp\":{\"type\":\"" +
-            "string\",\"description\":\"Time (in seconds since the epoch) at which the task was e" +
-            "nqueued.\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"description\":\"Name of the tas" +
-            "k.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of object returned, in this" +
-            " case set to task.\",\"default\":\"taskqueues#task\"},\"leaseTimestamp\":{\"type\":\"strin" +
-            "g\",\"description\":\"Time (in seconds since the epoch) at which the task lease will" +
-            " expire. This value is 0 if the task isnt currently leased out to a worker.\",\"fo" +
-            "rmat\":\"int64\"},\"payloadBase64\":{\"type\":\"string\",\"description\":\"A bag of bytes wh" +
-            "ich is the task payload. The payload on the JSON side is always Base64 encoded.\"" +
-            "},\"queueName\":{\"type\":\"string\",\"description\":\"Name of the queue that the task is" +
-            " in.\"},\"tag\":{\"type\":\"string\",\"description\":\"Tag for the task, could be used lat" +
-            "er to lease tasks grouped by a specific tag.\"}}},\"TaskQueue\":{\"id\":\"TaskQueue\",\"" +
-            "type\":\"object\",\"properties\":{\"acl\":{\"type\":\"object\",\"description\":\"ACLs that are" +
-            " applicable to this TaskQueue object.\",\"properties\":{\"adminEmails\":{\"type\":\"arra" +
-            "y\",\"description\":\"Email addresses of users who are \\\"admins\\\" of the TaskQueue. " +
-            "This means they can control the queue, eg set ACLs for the queue.\",\"items\":{\"typ" +
-            "e\":\"string\"}},\"consumerEmails\":{\"type\":\"array\",\"description\":\"Email addresses of" +
-            " users who can \\\"consume\\\" tasks from the TaskQueue. This means they can Dequeue" +
-            " and Delete tasks from the queue.\",\"items\":{\"type\":\"string\"}},\"producerEmails\":{" +
-            "\"type\":\"array\",\"description\":\"Email addresses of users who can \\\"produce\\\" tasks" +
-            " into the TaskQueue. This means they can Insert tasks into the queue.\",\"items\":{" +
-            "\"type\":\"string\"}}}},\"id\":{\"type\":\"string\",\"description\":\"Name of the taskqueue.\"" +
-            "},\"kind\":{\"type\":\"string\",\"description\":\"The kind of REST object returned, in th" +
-            "is case taskqueue.\",\"default\":\"taskqueues#taskqueue\"},\"maxLeases\":{\"type\":\"integ" +
-            "er\",\"description\":\"The number of times we should lease out tasks before giving u" +
-            "p on them. If unset we lease them out forever until a worker deletes the task.\"," +
-            "\"format\":\"int32\"},\"stats\":{\"type\":\"object\",\"description\":\"Statistics for the Tas" +
-            "kQueue object in question.\",\"properties\":{\"leasedLastHour\":{\"type\":\"string\",\"des" +
-            "cription\":\"Number of tasks leased in the last hour.\",\"format\":\"int64\"},\"leasedLa" +
-            "stMinute\":{\"type\":\"string\",\"description\":\"Number of tasks leased in the last min" +
-            "ute.\",\"format\":\"int64\"},\"oldestTask\":{\"type\":\"string\",\"description\":\"The timesta" +
-            "mp (in seconds since the epoch) of the oldest unfinished task.\",\"format\":\"int64\"" +
-            "},\"totalTasks\":{\"type\":\"integer\",\"description\":\"Number of tasks in the queue.\",\"" +
-            "format\":\"int32\"}}}}},\"Tasks\":{\"id\":\"Tasks\",\"type\":\"object\",\"properties\":{\"items\"" +
-            ":{\"type\":\"array\",\"description\":\"The actual list of tasks returned as a result of" +
-            " the lease operation.\",\"items\":{\"$ref\":\"Task\"}},\"kind\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The kind of object returned, a list of tasks.\",\"default\":\"taskqueue#tasks" +
-            "\"}}},\"Tasks2\":{\"id\":\"Tasks2\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"arra" +
-            "y\",\"description\":\"The actual list of tasks currently active in the TaskQueue.\",\"" +
-            "items\":{\"$ref\":\"Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind of objec" +
-            "t returned, a list of tasks.\",\"default\":\"taskqueues#tasks\"}}}},\"resources\":{\"tas" +
-            "kqueues\":{\"methods\":{\"get\":{\"id\":\"taskqueue.taskqueues.get\",\"path\":\"{project}/ta" +
-            "skqueues/{taskqueue}\",\"httpMethod\":\"GET\",\"description\":\"Get detailed information" +
-            " about a TaskQueue.\",\"parameters\":{\"getStats\":{\"type\":\"boolean\",\"description\":\"W" +
-            "hether to get stats. Optional.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"" +
-            "description\":\"The project under which the queue lies.\",\"required\":true,\"location" +
-            "\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The id of the taskqueue to" +
-            " get the properties of.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
-            "project\",\"taskqueue\"],\"response\":{\"$ref\":\"TaskQueue\"},\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"" +
-            "]}}},\"tasks\":{\"methods\":{\"delete\":{\"id\":\"taskqueue.tasks.delete\",\"path\":\"{projec" +
-            "t}/taskqueues/{taskqueue}/tasks/{task}\",\"httpMethod\":\"DELETE\",\"description\":\"Del" +
-            "ete a task from a TaskQueue.\",\"parameters\":{\"project\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The project under which the queue lies.\",\"required\":true,\"location\":\"path\"" +
-            "},\"task\":{\"type\":\"string\",\"description\":\"The id of the task to delete.\",\"require" +
-            "d\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The taskq" +
-            "ueue to delete a task from.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder" +
-            "\":[\"project\",\"taskqueue\",\"task\"],\"scopes\":[\"https://www.googleapis.com/auth/task" +
-            "queue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"]},\"get\":{\"id\":\"taskq" +
-            "ueue.tasks.get\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks/{task}\",\"httpMeth" +
-            "od\":\"GET\",\"description\":\"Get a particular task from a TaskQueue.\",\"parameters\":{" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/q03i16q" +
+            "cwHr1-zUMI_XxU3jXwjA\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"taskqueue:v1beta2\",\"name\":" +
+            "\"taskqueue\",\"version\":\"v1beta2\",\"revision\":\"20120501\",\"title\":\"TaskQueue API\",\"d" +
+            "escription\":\"Lets you access a Google App Engine Pull Task Queue over REST.\",\"ic" +
+            "ons\":{\"x16\":\"http://www.google.com/images/icons/product/app_engine-16.png\",\"x32\"" +
+            ":\"http://www.google.com/images/icons/product/app_engine-32.png\"},\"documentationL" +
+            "ink\":\"http://code.google.com/appengine/docs/python/taskqueue/rest.html\",\"protoco" +
+            "l\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/taskqueue/v1beta2/projects/\",\"ba" +
+            "sePath\":\"/taskqueue/v1beta2/projects/\",\"rootUrl\":\"https://www.googleapis.com/\",\"" +
+            "servicePath\":\"taskqueue/v1beta2/projects/\",\"batchPath\":\"batch\",\"parameters\":{\"al" +
+            "t\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"jso" +
+            "n\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applicati" +
+            "on/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector " +
+            "specifying which fields to include in a partial response.\",\"location\":\"query\"},\"" +
+            "key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your proje" +
+            "ct and provides you with API access, quota, and reports. Required unless you pro" +
+            "vide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"de" +
+            "scription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPr" +
+            "int\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and lin" +
+            "e breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"de" +
+            "scription\":\"Available to use for quota purposes for server-side applications. Ca" +
+            "n be any arbitrary string assigned to a user, but should not exceed 40 character" +
+            "s. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":" +
+            "\"string\",\"description\":\"IP address of the site where the request originates. Use" +
+            " this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oau" +
+            "th2\":{\"scopes\":{\"https://www.googleapis.com/auth/taskqueue\":{\"description\":\"Mana" +
+            "ge your Tasks and Taskqueues\"},\"https://www.googleapis.com/auth/taskqueue.consum" +
+            "er\":{\"description\":\"Consume Tasks from your Taskqueues\"}}}},\"schemas\":{\"Task\":{\"" +
+            "id\":\"Task\",\"type\":\"object\",\"properties\":{\"enqueueTimestamp\":{\"type\":\"string\",\"de" +
+            "scription\":\"Time (in seconds since the epoch) at which the task was enqueued.\",\"" +
+            "format\":\"int64\"},\"id\":{\"type\":\"string\",\"description\":\"Name of the task.\"},\"kind\"" +
+            ":{\"type\":\"string\",\"description\":\"The kind of object returned, in this case set t" +
+            "o task.\",\"default\":\"taskqueues#task\"},\"leaseTimestamp\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Time (in seconds since the epoch) at which the task lease will expire. Th" +
+            "is value is 0 if the task isnt currently leased out to a worker.\",\"format\":\"int6" +
+            "4\"},\"payloadBase64\":{\"type\":\"string\",\"description\":\"A bag of bytes which is the " +
+            "task payload. The payload on the JSON side is always Base64 encoded.\"},\"queueNam" +
+            "e\":{\"type\":\"string\",\"description\":\"Name of the queue that the task is in.\"},\"tag" +
+            "\":{\"type\":\"string\",\"description\":\"Tag for the task, could be used later to lease" +
+            " tasks grouped by a specific tag.\"}}},\"TaskQueue\":{\"id\":\"TaskQueue\",\"type\":\"obje" +
+            "ct\",\"properties\":{\"acl\":{\"type\":\"object\",\"description\":\"ACLs that are applicable" +
+            " to this TaskQueue object.\",\"properties\":{\"adminEmails\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"Email addresses of users who are \\\"admins\\\" of the TaskQueue. This means " +
+            "they can control the queue, eg set ACLs for the queue.\",\"items\":{\"type\":\"string\"" +
+            "}},\"consumerEmails\":{\"type\":\"array\",\"description\":\"Email addresses of users who " +
+            "can \\\"consume\\\" tasks from the TaskQueue. This means they can Dequeue and Delete" +
+            " tasks from the queue.\",\"items\":{\"type\":\"string\"}},\"producerEmails\":{\"type\":\"arr" +
+            "ay\",\"description\":\"Email addresses of users who can \\\"produce\\\" tasks into the T" +
+            "askQueue. This means they can Insert tasks into the queue.\",\"items\":{\"type\":\"str" +
+            "ing\"}}}},\"id\":{\"type\":\"string\",\"description\":\"Name of the taskqueue.\"},\"kind\":{\"" +
+            "type\":\"string\",\"description\":\"The kind of REST object returned, in this case tas" +
+            "kqueue.\",\"default\":\"taskqueues#taskqueue\"},\"maxLeases\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"The number of times we should lease out tasks before giving up on them. " +
+            "If unset we lease them out forever until a worker deletes the task.\",\"format\":\"i" +
+            "nt32\"},\"stats\":{\"type\":\"object\",\"description\":\"Statistics for the TaskQueue obje" +
+            "ct in question.\",\"properties\":{\"leasedLastHour\":{\"type\":\"string\",\"description\":\"" +
+            "Number of tasks leased in the last hour.\",\"format\":\"int64\"},\"leasedLastMinute\":{" +
+            "\"type\":\"string\",\"description\":\"Number of tasks leased in the last minute.\",\"form" +
+            "at\":\"int64\"},\"oldestTask\":{\"type\":\"string\",\"description\":\"The timestamp (in seco" +
+            "nds since the epoch) of the oldest unfinished task.\",\"format\":\"int64\"},\"totalTas" +
+            "ks\":{\"type\":\"integer\",\"description\":\"Number of tasks in the queue.\",\"format\":\"in" +
+            "t32\"}}}}},\"Tasks\":{\"id\":\"Tasks\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"a" +
+            "rray\",\"description\":\"The actual list of tasks returned as a result of the lease " +
+            "operation.\",\"items\":{\"$ref\":\"Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"The " +
+            "kind of object returned, a list of tasks.\",\"default\":\"taskqueue#tasks\"}}},\"Tasks" +
+            "2\":{\"id\":\"Tasks2\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"The actual list of tasks currently active in the TaskQueue.\",\"items\":{\"$r" +
+            "ef\":\"Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind of object returned," +
+            " a list of tasks.\",\"default\":\"taskqueues#tasks\"}}}},\"resources\":{\"taskqueues\":{\"" +
+            "methods\":{\"get\":{\"id\":\"taskqueue.taskqueues.get\",\"path\":\"{project}/taskqueues/{t" +
+            "askqueue}\",\"httpMethod\":\"GET\",\"description\":\"Get detailed information about a Ta" +
+            "skQueue.\",\"parameters\":{\"getStats\":{\"type\":\"boolean\",\"description\":\"Whether to g" +
+            "et stats. Optional.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description" +
+            "\":\"The project under which the queue lies.\",\"required\":true,\"location\":\"path\"},\"" +
+            "taskqueue\":{\"type\":\"string\",\"description\":\"The id of the taskqueue to get the pr" +
+            "operties of.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"t" +
+            "askqueue\"],\"response\":{\"$ref\":\"TaskQueue\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"]}}},\"tasks" +
+            "\":{\"methods\":{\"delete\":{\"id\":\"taskqueue.tasks.delete\",\"path\":\"{project}/taskqueu" +
+            "es/{taskqueue}/tasks/{task}\",\"httpMethod\":\"DELETE\",\"description\":\"Delete a task " +
+            "from a TaskQueue.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"The p" +
+            "roject under which the queue lies.\",\"required\":true,\"location\":\"path\"},\"task\":{\"" +
+            "type\":\"string\",\"description\":\"The id of the task to delete.\",\"required\":true,\"lo" +
+            "cation\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The taskqueue to del" +
+            "ete a task from.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project" +
+            "\",\"taskqueue\",\"task\"],\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\",\"htt" +
+            "ps://www.googleapis.com/auth/taskqueue.consumer\"]},\"get\":{\"id\":\"taskqueue.tasks." +
+            "get\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks/{task}\",\"httpMethod\":\"GET\",\"" +
+            "description\":\"Get a particular task from a TaskQueue.\",\"parameters\":{\"project\":{" +
+            "\"type\":\"string\",\"description\":\"The project under which the queue lies.\",\"require" +
+            "d\":true,\"location\":\"path\"},\"task\":{\"type\":\"string\",\"description\":\"The task to ge" +
+            "t properties of.\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string" +
+            "\",\"description\":\"The taskqueue in which the task belongs.\",\"required\":true,\"loca" +
+            "tion\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue\",\"task\"],\"response\":{\"$ref" +
+            "\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\",\"https://www.goo" +
+            "gleapis.com/auth/taskqueue.consumer\"]},\"insert\":{\"id\":\"taskqueue.tasks.insert\",\"" +
+            "path\":\"{project}/taskqueues/{taskqueue}/tasks\",\"httpMethod\":\"POST\",\"description\"" +
+            ":\"Insert a new task in a TaskQueue\",\"parameters\":{\"project\":{\"type\":\"string\",\"de" +
+            "scription\":\"The project under which the queue lies\",\"required\":true,\"location\":\"" +
+            "path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The taskqueue to insert the t" +
+            "ask into\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"taskq" +
+            "ueue\"],\"request\":{\"$ref\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.con" +
+            "sumer\"]},\"lease\":{\"id\":\"taskqueue.tasks.lease\",\"path\":\"{project}/taskqueues/{tas" +
+            "kqueue}/tasks/lease\",\"httpMethod\":\"POST\",\"description\":\"Lease 1 or more tasks fr" +
+            "om a TaskQueue.\",\"parameters\":{\"groupByTag\":{\"type\":\"boolean\",\"description\":\"Whe" +
+            "n true, all returned tasks will have the same tag\",\"location\":\"query\"},\"leaseSec" +
+            "s\":{\"type\":\"integer\",\"description\":\"The lease in seconds.\",\"required\":true,\"form" +
+            "at\":\"int32\",\"location\":\"query\"},\"numTasks\":{\"type\":\"integer\",\"description\":\"The " +
+            "number of tasks to lease.\",\"required\":true,\"format\":\"int32\",\"location\":\"query\"}," +
             "\"project\":{\"type\":\"string\",\"description\":\"The project under which the queue lies" +
-            ".\",\"required\":true,\"location\":\"path\"},\"task\":{\"type\":\"string\",\"description\":\"The" +
-            " task to get properties of.\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The taskqueue in which the task belongs.\",\"required\"" +
-            ":true,\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue\",\"task\"],\"respo" +
-            "nse\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\",\"http" +
-            "s://www.googleapis.com/auth/taskqueue.consumer\"]},\"insert\":{\"id\":\"taskqueue.task" +
-            "s.insert\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks\",\"httpMethod\":\"POST\",\"d" +
-            "escription\":\"Insert a new task in a TaskQueue\",\"parameters\":{\"project\":{\"type\":\"" +
-            "string\",\"description\":\"The project under which the queue lies\",\"required\":true,\"" +
-            "location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The taskqueue to i" +
-            "nsert the task into\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"proj" +
-            "ect\",\"taskqueue\"],\"request\":{\"$ref\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/ta" +
-            "skqueue.consumer\"]},\"lease\":{\"id\":\"taskqueue.tasks.lease\",\"path\":\"{project}/task" +
-            "queues/{taskqueue}/tasks/lease\",\"httpMethod\":\"POST\",\"description\":\"Lease 1 or mo" +
-            "re tasks from a TaskQueue.\",\"parameters\":{\"groupByTag\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"When true, all returned tasks will have the same tag\",\"location\":\"query\"" +
-            "},\"leaseSecs\":{\"type\":\"integer\",\"description\":\"The lease in seconds.\",\"required\"" +
-            ":true,\"format\":\"int32\",\"location\":\"query\"},\"numTasks\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"The number of tasks to lease.\",\"required\":true,\"format\":\"int32\",\"location" +
-            "\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"The project under which the" +
-            " queue lies.\",\"required\":true,\"location\":\"path\"},\"tag\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The tag allowed for tasks in the response. Must only be specified if grou" +
-            "p_by_tag is true. If group_by_tag is true and tag is not specified the tag will " +
-            "be that of the oldest task by eta, i.e. the first available tag\",\"location\":\"que" +
-            "ry\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The taskqueue to lease a task f" +
-            "rom.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue" +
-            "\",\"numTasks\",\"leaseSecs\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"" +
-            "]},\"list\":{\"id\":\"taskqueue.tasks.list\",\"path\":\"{project}/taskqueues/{taskqueue}/" +
-            "tasks\",\"httpMethod\":\"GET\",\"description\":\"List Tasks in a TaskQueue\",\"parameters\"" +
-            ":{\"project\":{\"type\":\"string\",\"description\":\"The project under which the queue li" +
-            "es.\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The id of the taskqueue to list tasks from.\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"project\",\"taskqueue\"],\"response\":{\"$ref\":\"Tasks2\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/aut" +
-            "h/taskqueue.consumer\"]},\"patch\":{\"id\":\"taskqueue.tasks.patch\",\"path\":\"{project}/" +
-            "taskqueues/{taskqueue}/tasks/{task}\",\"httpMethod\":\"PATCH\",\"description\":\"Update " +
-            "tasks that are leased out of a TaskQueue. This method supports patch semantics.\"" +
-            ",\"parameters\":{\"newLeaseSeconds\":{\"type\":\"integer\",\"description\":\"The new lease " +
-            "in seconds.\",\"required\":true,\"format\":\"int32\",\"location\":\"query\"},\"project\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The project under which the queue lies.\",\"required\":" +
-            "true,\"location\":\"path\"},\"task\":{\"type\":\"string\",\"required\":true,\"location\":\"path" +
-            "\"},\"taskqueue\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"project\",\"taskqueue\",\"task\",\"newLeaseSeconds\"],\"request\":{\"$ref\":\"Task\"}," +
-            "\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\"" +
-            ",\"https://www.googleapis.com/auth/taskqueue.consumer\"]},\"update\":{\"id\":\"taskqueu" +
-            "e.tasks.update\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks/{task}\",\"httpMeth" +
-            "od\":\"POST\",\"description\":\"Update tasks that are leased out of a TaskQueue.\",\"par" +
-            "ameters\":{\"newLeaseSeconds\":{\"type\":\"integer\",\"description\":\"The new lease in se" +
-            "conds.\",\"required\":true,\"format\":\"int32\",\"location\":\"query\"},\"project\":{\"type\":\"" +
-            "string\",\"description\":\"The project under which the queue lies.\",\"required\":true," +
-            "\"location\":\"path\"},\"task\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"t" +
-            "askqueue\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"project\",\"taskqueue\",\"task\",\"newLeaseSeconds\"],\"request\":{\"$ref\":\"Task\"},\"resp" +
-            "onse\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\",\"htt" +
-            "ps://www.googleapis.com/auth/taskqueue.consumer\"]}}}}}";
+            ".\",\"required\":true,\"location\":\"path\"},\"tag\":{\"type\":\"string\",\"description\":\"The " +
+            "tag allowed for tasks in the response. Must only be specified if group_by_tag is" +
+            " true. If group_by_tag is true and tag is not specified the tag will be that of " +
+            "the oldest task by eta, i.e. the first available tag\",\"location\":\"query\"},\"taskq" +
+            "ueue\":{\"type\":\"string\",\"description\":\"The taskqueue to lease a task from.\",\"requ" +
+            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue\",\"numTasks" +
+            "\",\"leaseSecs\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"]},\"list\":{" +
+            "\"id\":\"taskqueue.tasks.list\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks\",\"htt" +
+            "pMethod\":\"GET\",\"description\":\"List Tasks in a TaskQueue\",\"parameters\":{\"project\"" +
+            ":{\"type\":\"string\",\"description\":\"The project under which the queue lies.\",\"requi" +
+            "red\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The id " +
+            "of the taskqueue to list tasks from.\",\"required\":true,\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"project\",\"taskqueue\"],\"response\":{\"$ref\":\"Tasks2\"},\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue" +
+            ".consumer\"]},\"patch\":{\"id\":\"taskqueue.tasks.patch\",\"path\":\"{project}/taskqueues/" +
+            "{taskqueue}/tasks/{task}\",\"httpMethod\":\"PATCH\",\"description\":\"Update tasks that " +
+            "are leased out of a TaskQueue. This method supports patch semantics.\",\"parameter" +
+            "s\":{\"newLeaseSeconds\":{\"type\":\"integer\",\"description\":\"The new lease in seconds." +
+            "\",\"required\":true,\"format\":\"int32\",\"location\":\"query\"},\"project\":{\"type\":\"string" +
+            "\",\"description\":\"The project under which the queue lies.\",\"required\":true,\"locat" +
+            "ion\":\"path\"},\"task\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"taskque" +
+            "ue\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"proj" +
+            "ect\",\"taskqueue\",\"task\",\"newLeaseSeconds\"],\"request\":{\"$ref\":\"Task\"},\"response\":" +
+            "{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\",\"https://w" +
+            "ww.googleapis.com/auth/taskqueue.consumer\"]},\"update\":{\"id\":\"taskqueue.tasks.upd" +
+            "ate\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks/{task}\",\"httpMethod\":\"POST\"," +
+            "\"description\":\"Update tasks that are leased out of a TaskQueue.\",\"parameters\":{\"" +
+            "newLeaseSeconds\":{\"type\":\"integer\",\"description\":\"The new lease in seconds.\",\"re" +
+            "quired\":true,\"format\":\"int32\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"de" +
+            "scription\":\"The project under which the queue lies.\",\"required\":true,\"location\":" +
+            "\"path\"},\"task\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{" +
+            "\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project\"," +
+            "\"taskqueue\",\"task\",\"newLeaseSeconds\"],\"request\":{\"$ref\":\"Task\"},\"response\":{\"$re" +
+            "f\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\",\"https://www.go" +
+            "ogleapis.com/auth/taskqueue.consumer\"]}}}}}";
         
         public const string Version = "v1beta2";
         

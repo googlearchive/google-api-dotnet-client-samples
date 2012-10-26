@@ -98,9 +98,33 @@ namespace Google.Apis.Freebase.v1.Data {
     
     public class TopicPropertyvalue {
         
+        private System.Nullable<double> _count;
+        
+        private string _status;
+        
         private System.Collections.Generic.IList<TopicValue> _values;
         
         private string _valuetype;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("count")]
+        public virtual System.Nullable<double> Count {
+            get {
+                return this._count;
+            }
+            set {
+                this._count = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("status")]
+        public virtual string Status {
+            get {
+                return this._status;
+            }
+            set {
+                this._status = value;
+            }
+        }
         
         [Newtonsoft.Json.JsonPropertyAttribute("values")]
         public virtual System.Collections.Generic.IList<TopicValue> Values {
@@ -267,6 +291,8 @@ namespace Google.Apis.Freebase.v1.Data {
         
         private string _text;
         
+        private string _timestamp;
+        
         private string _value;
         
         [Newtonsoft.Json.JsonPropertyAttribute("creator")]
@@ -319,6 +345,16 @@ namespace Google.Apis.Freebase.v1.Data {
             }
         }
         
+        [Newtonsoft.Json.JsonPropertyAttribute("timestamp")]
+        public virtual string Timestamp {
+            get {
+                return this._timestamp;
+            }
+            set {
+                this._timestamp = value;
+            }
+        }
+        
         [Newtonsoft.Json.JsonPropertyAttribute("value")]
         public virtual string Value {
             get {
@@ -347,123 +383,125 @@ namespace Google.Apis.Freebase.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"freebase:v1\",\"n" +
-            "ame\":\"freebase\",\"version\":\"v1\",\"revision\":\"20120807\",\"title\":\"Freebase API\",\"des" +
-            "cription\":\"Lets you access the Freebase repository of open data.\",\"icons\":{\"x16\"" +
-            ":\"http://www.google.com/images/icons/product/freebase-16.png\",\"x32\":\"http://www." +
-            "google.com/images/icons/product/freebase-32.png\"},\"documentationLink\":\"http://wi" +
-            "ki.freebase.com/wiki/API\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.co" +
-            "m/freebase/v1/\",\"basePath\":\"/freebase/v1/\",\"rootUrl\":\"https://www.googleapis.com" +
-            "/\",\"servicePath\":\"freebase/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":" +
-            "\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[" +
-            "\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"" +
-            "location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying " +
-            "which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type" +
-            "\":\"string\",\"description\":\"API key. Your API key identifies your project and prov" +
-            "ides you with API access, quota, and reports. Required unless you provide an OAu" +
-            "th 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":" +
-            "\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type" +
-            "\":\"boolean\",\"description\":\"Returns response with indentations and line breaks.\"," +
-            "\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":" +
-            "\"Available to use for quota purposes for server-side applications. Can be any ar" +
-            "bitrary string assigned to a user, but should not exceed 40 characters. Override" +
-            "s userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"d" +
-            "escription\":\"IP address of the site where the request originates. Use this if yo" +
-            "u want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scop" +
-            "es\":{\"https://www.googleapis.com/auth/freebase\":{\"description\":\"Sign in to Freeb" +
-            "ase with your account\"}}}},\"schemas\":{\"ContentserviceGet\":{\"id\":\"ContentserviceG" +
-            "et\",\"type\":\"object\",\"properties\":{\"result\":{\"type\":\"string\",\"description\":\"The t" +
-            "ext requested.\"}}},\"TopicLookup\":{\"id\":\"TopicLookup\",\"type\":\"object\",\"properties" +
-            "\":{\"id\":{\"type\":\"string\"},\"property\":{\"type\":\"object\",\"properties\":{\"/freebase/o" +
-            "bject_profile/linkcount\":{\"$ref\":\"TopicStatslinkcount\"}},\"additionalProperties\":" +
-            "{\"$ref\":\"TopicPropertyvalue\"}}}},\"TopicPropertyvalue\":{\"id\":\"TopicPropertyvalue\"" +
-            ",\"type\":\"object\",\"properties\":{\"values\":{\"type\":\"array\",\"items\":{\"$ref\":\"TopicVa" +
-            "lue\"}},\"valuetype\":{\"type\":\"string\"}}},\"TopicStatslinkcount\":{\"id\":\"TopicStatsli" +
-            "nkcount\",\"type\":\"object\",\"properties\":{\"type\":{\"type\":\"string\",\"default\":\"custom" +
-            "\"},\"values\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"count\":{\"typ" +
-            "e\":\"integer\",\"format\":\"int32\"},\"id\":{\"type\":\"string\"},\"values\":{\"type\":\"array\",\"" +
-            "items\":{\"type\":\"object\",\"properties\":{\"count\":{\"type\":\"integer\",\"format\":\"int32\"" +
-            "},\"id\":{\"type\":\"string\"},\"values\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"prop" +
-            "erties\":{\"count\":{\"type\":\"integer\",\"format\":\"int32\"},\"id\":{\"type\":\"string\"}}}}}}" +
-            "}}}}}},\"TopicValue\":{\"id\":\"TopicValue\",\"type\":\"object\",\"properties\":{\"creator\":{" +
-            "\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"lang\":{\"type\":\"string\"},\"property\":{\"ty" +
-            "pe\":\"object\",\"additionalProperties\":{\"$ref\":\"TopicPropertyvalue\"}},\"text\":{\"type" +
-            "\":\"string\"},\"value\":{\"type\":\"any\"}}}},\"methods\":{\"image\":{\"id\":\"freebase.image\"," +
-            "\"path\":\"image{/id*}\",\"httpMethod\":\"GET\",\"description\":\"Returns the scaled/croppe" +
-            "d image attached to a freebase node.\",\"parameters\":{\"fallbackid\":{\"type\":\"string" +
-            "\",\"description\":\"Use the image associated with this secondary id if no image is " +
-            "associated with the primary id.\",\"default\":\"/freebase/no_image_png\",\"pattern\":\"/" +
-            "[^.]*$\",\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"Freebase entity" +
-            " or content id, mid, or guid.\",\"required\":true,\"repeated\":true,\"location\":\"path\"" +
-            "},\"maxheight\":{\"type\":\"integer\",\"description\":\"Maximum height in pixels for resu" +
-            "lting image.\",\"format\":\"uint32\",\"maximum\":\"4096\",\"location\":\"query\"},\"maxwidth\":" +
-            "{\"type\":\"integer\",\"description\":\"Maximum width in pixels for resulting image.\",\"" +
-            "format\":\"uint32\",\"maximum\":\"4096\",\"location\":\"query\"},\"mode\":{\"type\":\"string\",\"d" +
-            "escription\":\"Method used to scale or crop image.\",\"default\":\"fit\",\"enum\":[\"fill\"" +
-            ",\"fillcrop\",\"fillcropmid\",\"fit\"],\"enumDescriptions\":[\"Fill rectangle completely " +
-            "with image, relax constraint on one dimension if necessary.\",\"Fill rectangle wit" +
-            "h image, crop image to maintain rectangle dimensions.\",\"Fill rectangle with imag" +
-            "e, center horizontally, crop left and right.\",\"Fit image inside rectangle, leave" +
-            " empty space in one dimension if necessary.\"],\"location\":\"query\"},\"pad\":{\"type\":" +
-            "\"boolean\",\"description\":\"A boolean specifying whether the resulting image should" +
-            " be padded up to the requested dimensions.\",\"default\":\"false\",\"location\":\"query\"" +
-            "}},\"parameterOrder\":[\"id\"],\"supportsMediaDownload\":true},\"mqlread\":{\"id\":\"freeba" +
-            "se.mqlread\",\"path\":\"mqlread\",\"httpMethod\":\"GET\",\"description\":\"Performs MQL Quer" +
-            "ies.\",\"parameters\":{\"as_of_time\":{\"type\":\"string\",\"description\":\"Run the query a" +
-            "s it would\'ve been run at the specified point in time.\",\"location\":\"query\"},\"cal" +
-            "lback\":{\"type\":\"string\",\"description\":\"JS method name for JSONP callbacks.\",\"pat" +
-            "tern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"},\"cost\":{\"type\":\"boolean\",\"" +
-            "description\":\"Show the costs or not.\",\"default\":\"false\",\"location\":\"query\"},\"cur" +
-            "sor\":{\"type\":\"string\",\"description\":\"The mql cursor.\",\"location\":\"query\"},\"datel" +
-            "ine\":{\"type\":\"string\",\"description\":\"The dateline that you get in a mqlwrite res" +
-            "ponse to ensure consistent results.\",\"location\":\"query\"},\"html_escape\":{\"type\":\"" +
-            "boolean\",\"description\":\"Whether or not to escape entities.\",\"default\":\"true\",\"lo" +
-            "cation\":\"query\"},\"indent\":{\"type\":\"integer\",\"description\":\"How many spaces to in" +
-            "dent the json.\",\"default\":\"0\",\"format\":\"uint32\",\"maximum\":\"10\",\"location\":\"query" +
-            "\"},\"lang\":{\"type\":\"string\",\"description\":\"The language of the results - an id of" +
-            " a /type/lang object.\",\"default\":\"/lang/en\",\"location\":\"query\"},\"query\":{\"type\":" +
-            "\"string\",\"description\":\"An envelope containing a single MQL query.\",\"required\":t" +
-            "rue,\"location\":\"query\"},\"uniqueness_failure\":{\"type\":\"string\",\"description\":\"How" +
-            " MQL responds to uniqueness failures.\",\"default\":\"hard\",\"enum\":[\"hard\",\"soft\"],\"" +
-            "enumDescriptions\":[\"Be strict - throw an error.\",\"Just return the first encounte" +
-            "red object.\"],\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"supportsMediaDown" +
-            "load\":true},\"mqlwrite\":{\"id\":\"freebase.mqlwrite\",\"path\":\"mqlwrite\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"Performs MQL Write Operations.\",\"parameters\":{\"callback\":{\"" +
-            "type\":\"string\",\"description\":\"JS method name for JSONP callbacks.\",\"pattern\":\"([" +
-            "A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"},\"dateline\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The dateline that you get in a mqlwrite response to ensure consistent re" +
-            "sults.\",\"location\":\"query\"},\"indent\":{\"type\":\"integer\",\"description\":\"How many s" +
-            "paces to indent the json.\",\"default\":\"0\",\"format\":\"uint32\",\"maximum\":\"10\",\"locat" +
-            "ion\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"An MQL query with write di" +
-            "rectives.\",\"required\":true,\"location\":\"query\"},\"use_permission_of\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Use the same permission node of the object with the specified" +
-            " id.\",\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/freebase\"],\"supportsMediaDownload\":true}},\"resources\":{\"text\":{" +
-            "\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"text{/id*}\",\"httpMethod\":\"GET" +
-            "\",\"description\":\"Returns blob attached to node at specified id as HTML\",\"paramet" +
-            "ers\":{\"format\":{\"type\":\"string\",\"description\":\"Sanitizing transformation.\",\"defa" +
-            "ult\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescriptions\":[\"Return valid, sa" +
-            "nitized html.\",\"Return plain text - strip html tags.\",\"Return the entire content" +
-            " as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id of the" +
-            " item that you want data about\",\"required\":true,\"repeated\":true,\"location\":\"path" +
-            "\"},\"maxlength\":{\"type\":\"integer\",\"description\":\"The max number of characters to " +
-            "return. Valid only for \'plain\' format.\",\"format\":\"uint32\",\"location\":\"query\"}},\"" +
-            "parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"ContentserviceGet\"}}}},\"topic\":{\"meth" +
-            "ods\":{\"lookup\":{\"id\":\"freebase.topic.lookup\",\"path\":\"topic{/id*}\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Get properties and meta-data about a topic.\",\"parameters\":{\"" +
-            "dateline\":{\"type\":\"string\",\"description\":\"Determines how up-to-date the data ret" +
-            "urned is. A unix epoch time, a guid or a \'now\'\",\"location\":\"query\"},\"filter\":{\"t" +
-            "ype\":\"string\",\"description\":\"A frebase domain, type or property id, \'suggest\', \'" +
-            "commons\', or \'all\'. Filter the results and returns only appropriate properties.\"" +
-            ",\"repeated\":true,\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id" +
-            " of the item that you want data about.\",\"required\":true,\"repeated\":true,\"locatio" +
-            "n\":\"path\"},\"lang\":{\"type\":\"string\",\"description\":\"The language you \'d like the c" +
-            "ontent in - a freebase /type/lang language key.\",\"default\":\"en\",\"location\":\"quer" +
-            "y\"},\"limit\":{\"type\":\"integer\",\"description\":\"The maximum number of property valu" +
-            "es to return for each property.\",\"default\":\"10\",\"format\":\"uint32\",\"location\":\"qu" +
-            "ery\"},\"raw\":{\"type\":\"boolean\",\"description\":\"Do not apply any constraints, or ge" +
-            "t any names.\",\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"re" +
-            "sponse\":{\"$ref\":\"TopicLookup\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/twR9Yup" +
+            "jCKeg461WYqcRRxa059M\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"freebase:v1\",\"name\":\"freeb" +
+            "ase\",\"version\":\"v1\",\"revision\":\"20121013\",\"title\":\"Freebase API\",\"description\":\"" +
+            "Lets you access the Freebase repository of open data.\",\"icons\":{\"x16\":\"http://ww" +
+            "w.google.com/images/icons/product/freebase-16.png\",\"x32\":\"http://www.google.com/" +
+            "images/icons/product/freebase-32.png\"},\"documentationLink\":\"http://wiki.freebase" +
+            ".com/wiki/API\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/freebase/" +
+            "v1/\",\"basePath\":\"/freebase/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"service" +
+            "Path\":\"freebase/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"d" +
+            "escription\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"en" +
+            "umDescriptions\":[\"Responses with Content-Type of application/json\"],\"location\":\"" +
+            "query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which field" +
+            "s to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\"," +
+            "\"description\":\"API key. Your API key identifies your project and provides you wi" +
+            "th API access, quota, and reports. Required unless you provide an OAuth 2.0 toke" +
+            "n.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 " +
+            "token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\"" +
+            ",\"description\":\"Returns response with indentations and line breaks.\",\"default\":\"" +
+            "true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available " +
+            "to use for quota purposes for server-side applications. Can be any arbitrary str" +
+            "ing assigned to a user, but should not exceed 40 characters. Overrides userIp if" +
+            " both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\"" +
+            ":\"IP address of the site where the request originates. Use this if you want to e" +
+            "nforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https" +
+            "://www.googleapis.com/auth/freebase\":{\"description\":\"Sign in to Freebase with yo" +
+            "ur account\"}}}},\"schemas\":{\"ContentserviceGet\":{\"id\":\"ContentserviceGet\",\"type\":" +
+            "\"object\",\"properties\":{\"result\":{\"type\":\"string\",\"description\":\"The text request" +
+            "ed.\"}}},\"TopicLookup\":{\"id\":\"TopicLookup\",\"type\":\"object\",\"properties\":{\"id\":{\"t" +
+            "ype\":\"string\"},\"property\":{\"type\":\"object\",\"properties\":{\"/freebase/object_profi" +
+            "le/linkcount\":{\"$ref\":\"TopicStatslinkcount\"}},\"additionalProperties\":{\"$ref\":\"To" +
+            "picPropertyvalue\"}}}},\"TopicPropertyvalue\":{\"id\":\"TopicPropertyvalue\",\"type\":\"ob" +
+            "ject\",\"properties\":{\"count\":{\"type\":\"number\",\"format\":\"double\"},\"status\":{\"type\"" +
+            ":\"string\"},\"values\":{\"type\":\"array\",\"items\":{\"$ref\":\"TopicValue\"}},\"valuetype\":{" +
+            "\"type\":\"string\"}}},\"TopicStatslinkcount\":{\"id\":\"TopicStatslinkcount\",\"type\":\"obj" +
+            "ect\",\"properties\":{\"type\":{\"type\":\"string\",\"default\":\"custom\"},\"values\":{\"type\":" +
+            "\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"count\":{\"type\":\"integer\",\"format" +
+            "\":\"int32\"},\"id\":{\"type\":\"string\"},\"values\":{\"type\":\"array\",\"items\":{\"type\":\"obje" +
+            "ct\",\"properties\":{\"count\":{\"type\":\"integer\",\"format\":\"int32\"},\"id\":{\"type\":\"stri" +
+            "ng\"},\"values\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"count\":{\"t" +
+            "ype\":\"integer\",\"format\":\"int32\"},\"id\":{\"type\":\"string\"}}}}}}}}}}}},\"TopicValue\":" +
+            "{\"id\":\"TopicValue\",\"type\":\"object\",\"properties\":{\"creator\":{\"type\":\"string\"},\"id" +
+            "\":{\"type\":\"string\"},\"lang\":{\"type\":\"string\"},\"property\":{\"type\":\"object\",\"additi" +
+            "onalProperties\":{\"$ref\":\"TopicPropertyvalue\"}},\"text\":{\"type\":\"string\"},\"timesta" +
+            "mp\":{\"type\":\"string\"},\"value\":{\"type\":\"any\"}}}},\"methods\":{\"image\":{\"id\":\"freeba" +
+            "se.image\",\"path\":\"image{/id*}\",\"httpMethod\":\"GET\",\"description\":\"Returns the sca" +
+            "led/cropped image attached to a freebase node.\",\"parameters\":{\"fallbackid\":{\"typ" +
+            "e\":\"string\",\"description\":\"Use the image associated with this secondary id if no" +
+            " image is associated with the primary id.\",\"default\":\"/freebase/no_image_png\",\"p" +
+            "attern\":\"/[^.]*$\",\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"Freeb" +
+            "ase entity or content id, mid, or guid.\",\"required\":true,\"repeated\":true,\"locati" +
+            "on\":\"path\"},\"maxheight\":{\"type\":\"integer\",\"description\":\"Maximum height in pixel" +
+            "s for resulting image.\",\"format\":\"uint32\",\"maximum\":\"4096\",\"location\":\"query\"},\"" +
+            "maxwidth\":{\"type\":\"integer\",\"description\":\"Maximum width in pixels for resulting" +
+            " image.\",\"format\":\"uint32\",\"maximum\":\"4096\",\"location\":\"query\"},\"mode\":{\"type\":\"" +
+            "string\",\"description\":\"Method used to scale or crop image.\",\"default\":\"fit\",\"enu" +
+            "m\":[\"fill\",\"fillcrop\",\"fillcropmid\",\"fit\"],\"enumDescriptions\":[\"Fill rectangle c" +
+            "ompletely with image, relax constraint on one dimension if necessary.\",\"Fill rec" +
+            "tangle with image, crop image to maintain rectangle dimensions.\",\"Fill rectangle" +
+            " with image, center horizontally, crop left and right.\",\"Fit image inside rectan" +
+            "gle, leave empty space in one dimension if necessary.\"],\"location\":\"query\"},\"pad" +
+            "\":{\"type\":\"boolean\",\"description\":\"A boolean specifying whether the resulting im" +
+            "age should be padded up to the requested dimensions.\",\"default\":\"false\",\"locatio" +
+            "n\":\"query\"}},\"parameterOrder\":[\"id\"],\"supportsMediaDownload\":true},\"mqlread\":{\"i" +
+            "d\":\"freebase.mqlread\",\"path\":\"mqlread\",\"httpMethod\":\"GET\",\"description\":\"Perform" +
+            "s MQL Queries.\",\"parameters\":{\"as_of_time\":{\"type\":\"string\",\"description\":\"Run t" +
+            "he query as it would\'ve been run at the specified point in time.\",\"location\":\"qu" +
+            "ery\"},\"callback\":{\"type\":\"string\",\"description\":\"JS method name for JSONP callba" +
+            "cks.\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"},\"cost\":{\"type\":\"" +
+            "boolean\",\"description\":\"Show the costs or not.\",\"default\":\"false\",\"location\":\"qu" +
+            "ery\"},\"cursor\":{\"type\":\"string\",\"description\":\"The mql cursor.\",\"location\":\"quer" +
+            "y\"},\"dateline\":{\"type\":\"string\",\"description\":\"The dateline that you get in a mq" +
+            "lwrite response to ensure consistent results.\",\"location\":\"query\"},\"html_escape\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Whether or not to escape entities.\",\"default\":" +
+            "\"true\",\"location\":\"query\"},\"indent\":{\"type\":\"integer\",\"description\":\"How many sp" +
+            "aces to indent the json.\",\"default\":\"0\",\"format\":\"uint32\",\"maximum\":\"10\",\"locati" +
+            "on\":\"query\"},\"lang\":{\"type\":\"string\",\"description\":\"The language of the results " +
+            "- an id of a /type/lang object.\",\"default\":\"/lang/en\",\"location\":\"query\"},\"query" +
+            "\":{\"type\":\"string\",\"description\":\"An envelope containing a single MQL query.\",\"r" +
+            "equired\":true,\"location\":\"query\"},\"uniqueness_failure\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"How MQL responds to uniqueness failures.\",\"default\":\"hard\",\"enum\":[\"hard\"" +
+            ",\"soft\"],\"enumDescriptions\":[\"Be strict - throw an error.\",\"Just return the firs" +
+            "t encountered object.\"],\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"support" +
+            "sMediaDownload\":true},\"mqlwrite\":{\"id\":\"freebase.mqlwrite\",\"path\":\"mqlwrite\",\"ht" +
+            "tpMethod\":\"GET\",\"description\":\"Performs MQL Write Operations.\",\"parameters\":{\"ca" +
+            "llback\":{\"type\":\"string\",\"description\":\"JS method name for JSONP callbacks.\",\"pa" +
+            "ttern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"},\"dateline\":{\"type\":\"strin" +
+            "g\",\"description\":\"The dateline that you get in a mqlwrite response to ensure con" +
+            "sistent results.\",\"location\":\"query\"},\"indent\":{\"type\":\"integer\",\"description\":\"" +
+            "How many spaces to indent the json.\",\"default\":\"0\",\"format\":\"uint32\",\"maximum\":\"" +
+            "10\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"An MQL query wit" +
+            "h write directives.\",\"required\":true,\"location\":\"query\"},\"use_permission_of\":{\"t" +
+            "ype\":\"string\",\"description\":\"Use the same permission node of the object with the" +
+            " specified id.\",\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/freebase\"],\"supportsMediaDownload\":true}},\"resources\"" +
+            ":{\"text\":{\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"text{/id*}\",\"httpMe" +
+            "thod\":\"GET\",\"description\":\"Returns blob attached to node at specified id as HTML" +
+            "\",\"parameters\":{\"format\":{\"type\":\"string\",\"description\":\"Sanitizing transformati" +
+            "on.\",\"default\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescriptions\":[\"Return" +
+            " valid, sanitized html.\",\"Return plain text - strip html tags.\",\"Return the enti" +
+            "re content as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The" +
+            " id of the item that you want data about\",\"required\":true,\"repeated\":true,\"locat" +
+            "ion\":\"path\"},\"maxlength\":{\"type\":\"integer\",\"description\":\"The max number of char" +
+            "acters to return. Valid only for \'plain\' format.\",\"format\":\"uint32\",\"location\":\"" +
+            "query\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"ContentserviceGet\"}}}},\"top" +
+            "ic\":{\"methods\":{\"lookup\":{\"id\":\"freebase.topic.lookup\",\"path\":\"topic{/id*}\",\"htt" +
+            "pMethod\":\"GET\",\"description\":\"Get properties and meta-data about a topic.\",\"para" +
+            "meters\":{\"dateline\":{\"type\":\"string\",\"description\":\"Determines how up-to-date th" +
+            "e data returned is. A unix epoch time, a guid or a \'now\'\",\"location\":\"query\"},\"f" +
+            "ilter\":{\"type\":\"string\",\"description\":\"A frebase domain, type or property id, \'s" +
+            "uggest\', \'commons\', or \'all\'. Filter the results and returns only appropriate pr" +
+            "operties.\",\"repeated\":true,\"location\":\"query\"},\"id\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The id of the item that you want data about.\",\"required\":true,\"repeated\":tru" +
+            "e,\"location\":\"path\"},\"lang\":{\"type\":\"string\",\"description\":\"The language you \'d " +
+            "like the content in - a freebase /type/lang language key.\",\"default\":\"en\",\"locat" +
+            "ion\":\"query\"},\"limit\":{\"type\":\"integer\",\"description\":\"The maximum number of pro" +
+            "perty values to return for each property.\",\"default\":\"10\",\"format\":\"uint32\",\"loc" +
+            "ation\":\"query\"},\"raw\":{\"type\":\"boolean\",\"description\":\"Do not apply any constrai" +
+            "nts, or get any names.\",\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":" +
+            "[\"id\"],\"response\":{\"$ref\":\"TopicLookup\"}}}}}}";
         
         public const string Version = "v1";
         

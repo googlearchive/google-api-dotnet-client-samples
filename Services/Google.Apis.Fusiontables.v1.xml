@@ -458,62 +458,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
-        <member name="M:Google.Apis.Fusiontables.v1.ImportResource.Insert(System.String)">
-            <summary>Import more rows into a table.</summary>
-            <param name="tableId">Required - The table into which new rows are being imported.</param>
-        </member>
-        <member name="M:Google.Apis.Fusiontables.v1.ImportResource.Insert(System.String,System.IO.Stream,System.String)">
-            <summary>Import more rows into a table.</summary>
-            <param name="tableId">Required - The table into which new rows are being imported.</param>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.Oauth_token">
-            <summary>OAuth 2.0 token for the current user.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.PrettyPrint">
-            <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.Delimiter">
-            <summary>The delimiter used to separate cell values. Default is ','.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.Encoding">
-            <summary>The encoding of the content. Default is UTF-8.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.EndLine">
-            <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then it is equivalent to N + endLine, where N is the number of lines in the file.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.IsStrict">
-            <summary>Whether the CSV will be parsed strictly or not. Default is true.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.StartLine">
-            <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.TableId">
-            <summary>The table into which new rows are being imported.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.Oauth_token">
-            <summary>OAuth 2.0 token for the current user.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.PrettyPrint">
-            <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.Delimiter">
-            <summary>The delimiter used to separate cell values. Default is ','.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.Encoding">
-            <summary>The encoding of the content. Default is UTF-8.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.EndLine">
-            <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then it is equivalent to N + endLine, where N is the number of lines in the file.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.IsStrict">
-            <summary>Whether the CSV will be parsed strictly or not. Default is true.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.StartLine">
-            <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.TableId">
-            <summary>The table into which new rows are being imported.</summary>
-        </member>
         <member name="M:Google.Apis.Fusiontables.v1.QueryResource.Sql(System.String)">
             <summary>Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE/CREATE statement.</summary>
             <param name="sqlValue">sql - Required - An SQL SELECT/SHOW/DESCRIBE/INSERT/UPDATE/DELETE/CREATE statement.</param>
@@ -673,6 +617,14 @@
             <summary>Retrieves a specific table by its id.</summary>
             <param name="tableId">Required - Identifier(ID) for the table being requested.</param>
         </member>
+        <member name="M:Google.Apis.Fusiontables.v1.TableResource.ImportRows(System.String)">
+            <summary>Import more rows into a table.</summary>
+            <param name="tableId">Required - The table into which new rows are being imported.</param>
+        </member>
+        <member name="M:Google.Apis.Fusiontables.v1.TableResource.ImportRows(System.String,System.IO.Stream,System.String)">
+            <summary>Import more rows into a table.</summary>
+            <param name="tableId">Required - The table into which new rows are being imported.</param>
+        </member>
         <member name="M:Google.Apis.Fusiontables.v1.TableResource.Insert(Google.Apis.Fusiontables.v1.Data.Table)">
             <summary>Creates a new table.</summary>
         </member>
@@ -713,6 +665,54 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.GetRequest.TableId">
             <summary>Identifier(ID) for the table being requested.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsRequest.Delimiter">
+            <summary>The delimiter used to separate cell values. This can only consist of a single character. Default is ','.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsRequest.Encoding">
+            <summary>The encoding of the content. Default is UTF-8. Use 'auto-detect' if you are unsure of the encoding.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsRequest.EndLine">
+            <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then the imported content will exclude the last endLine lines. That is, if endline is negative, no line will be imported whose index is greater than N + endLine where N is the number of lines in the file, and the number of imported lines will be N + endLine - startLine.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsRequest.IsStrict">
+            <summary>Whether the CSV must have the same number of values for each row. If false, rows with fewer values will be padded with empty values. Default is true.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsRequest.StartLine">
+            <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsRequest.TableId">
+            <summary>The table into which new rows are being imported.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsMediaUpload.Delimiter">
+            <summary>The delimiter used to separate cell values. This can only consist of a single character. Default is ','.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsMediaUpload.Encoding">
+            <summary>The encoding of the content. Default is UTF-8. Use 'auto-detect' if you are unsure of the encoding.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsMediaUpload.EndLine">
+            <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then the imported content will exclude the last endLine lines. That is, if endline is negative, no line will be imported whose index is greater than N + endLine where N is the number of lines in the file, and the number of imported lines will be N + endLine - startLine.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsMediaUpload.IsStrict">
+            <summary>Whether the CSV must have the same number of values for each row. If false, rows with fewer values will be padded with empty values. Default is true.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsMediaUpload.StartLine">
+            <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsMediaUpload.TableId">
+            <summary>The table into which new rows are being imported.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

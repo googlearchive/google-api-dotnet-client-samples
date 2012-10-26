@@ -194,114 +194,115 @@ namespace Google.Apis.Licensing.v1 {
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"licensing:v1\",\"" +
-            "name\":\"licensing\",\"version\":\"v1\",\"revision\":\"20120724\",\"title\":\"Enterprise Licen" +
-            "se Manager API\",\"description\":\"Licensing API to view and manage license for your" +
-            " domain.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.g" +
-            "if\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documenta" +
-            "tionLink\":\"https://developers.google.com/google-apps/licensing/\",\"protocol\":\"res" +
-            "t\",\"baseUrl\":\"https://www.googleapis.com/apps/licensing/v1/product/\",\"basePath\":" +
-            "\"/apps/licensing/v1/product/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePa" +
-            "th\":\"apps/licensing/v1/product/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\"" +
-            ":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":" +
-            "[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"]," +
-            "\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying" +
-            " which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"typ" +
-            "e\":\"string\",\"description\":\"API key. Your API key identifies your project and pro" +
-            "vides you with API access, quota, and reports. Required unless you provide an OA" +
-            "uth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\"" +
-            ":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"typ" +
-            "e\":\"boolean\",\"description\":\"Returns response with indentations and line breaks.\"" +
-            ",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\"" +
-            ":\"Available to use for quota purposes for server-side applications. Can be any a" +
-            "rbitrary string assigned to a user, but should not exceed 40 characters. Overrid" +
-            "es userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"" +
-            "description\":\"IP address of the site where the request originates. Use this if y" +
-            "ou want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"LicenseAss" +
-            "ignment\":{\"id\":\"LicenseAssignment\",\"type\":\"object\",\"description\":\"Template for L" +
-            "iscenseAssignment Resource\",\"properties\":{\"etags\":{\"type\":\"string\",\"description\"" +
-            ":\"ETag of the resource.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies the " +
-            "resource as a LicenseAssignment.\",\"default\":\"licensing#licenseAssignment\"},\"prod" +
-            "uctId\":{\"type\":\"string\",\"description\":\"Name of the product.\",\"annotations\":{\"req" +
-            "uired\":[\"licensing.licenseAssignments.update\"]}},\"selfLink\":{\"type\":\"string\",\"de" +
-            "scription\":\"Link to this page.\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name of" +
-            " the sku of the product.\",\"annotations\":{\"required\":[\"licensing.licenseAssignmen" +
-            "ts.update\"]}},\"userId\":{\"type\":\"string\",\"description\":\"Email id of the user.\",\"a" +
-            "nnotations\":{\"required\":[\"licensing.licenseAssignments.update\"]}}}},\"LicenseAssi" +
-            "gnmentInsert\":{\"id\":\"LicenseAssignmentInsert\",\"type\":\"object\",\"description\":\"Tem" +
-            "plate for LicenseAssignment Insert request\",\"properties\":{\"userId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Email id of the user\",\"annotations\":{\"required\":[\"licensing.l" +
-            "icenseAssignments.insert\"]}}}},\"LicenseAssignmentList\":{\"id\":\"LicenseAssignmentL" +
-            "ist\",\"type\":\"object\",\"description\":\"LicesnseAssignment List for a given product/" +
-            "sku for a customer.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag o" +
-            "f the resource.\"},\"items\":{\"type\":\"array\",\"description\":\"The LicenseAssignments " +
-            "in this page of results.\",\"items\":{\"$ref\":\"LicenseAssignment\"}},\"kind\":{\"type\":\"" +
-            "string\",\"description\":\"Identifies the resource as a collection of LicenseAssignm" +
-            "ents.\",\"default\":\"licensing#licenseAssignmentList\"},\"nextPageToken\":{\"type\":\"str" +
-            "ing\",\"description\":\"The continuation token, used to page through large result se" +
-            "ts. Provide this value in a subsequent request to return the next page of result" +
-            "s.\"}}}},\"resources\":{\"licenseAssignments\":{\"methods\":{\"delete\":{\"id\":\"licensing." +
-            "licenseAssignments.delete\",\"path\":\"{productId}/sku/{skuId}/user/{userId}\",\"httpM" +
-            "ethod\":\"DELETE\",\"description\":\"Revoke License.\",\"parameters\":{\"productId\":{\"type" +
-            "\":\"string\",\"description\":\"Name for product\",\"required\":true,\"location\":\"path\"},\"" +
-            "skuId\":{\"type\":\"string\",\"description\":\"Name for sku\",\"required\":true,\"location\":" +
-            "\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"email id or unique Id of the us" +
-            "er\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"u" +
-            "serId\"]},\"get\":{\"id\":\"licensing.licenseAssignments.get\",\"path\":\"{productId}/sku/" +
-            "{skuId}/user/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Get license assignment " +
-            "of a particular product and sku for a user\",\"parameters\":{\"productId\":{\"type\":\"s" +
-            "tring\",\"description\":\"Name for product\",\"required\":true,\"location\":\"path\"},\"skuI" +
-            "d\":{\"type\":\"string\",\"description\":\"Name for sku\",\"required\":true,\"location\":\"pat" +
-            "h\"},\"userId\":{\"type\":\"string\",\"description\":\"email id or unique Id of the user\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"userI" +
-            "d\"],\"response\":{\"$ref\":\"LicenseAssignment\"}},\"insert\":{\"id\":\"licensing.licenseAs" +
-            "signments.insert\",\"path\":\"{productId}/sku/{skuId}/user\",\"httpMethod\":\"POST\",\"des" +
-            "cription\":\"Assign License.\",\"parameters\":{\"productId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Name for product\",\"required\":true,\"location\":\"path\"},\"skuId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Name for sku\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"productId\",\"skuId\"],\"request\":{\"$ref\":\"LicenseAssignmentInsert\"},\"respon" +
-            "se\":{\"$ref\":\"LicenseAssignment\"}},\"listForProduct\":{\"id\":\"licensing.licenseAssig" +
-            "nments.listForProduct\",\"path\":\"{productId}/users\",\"httpMethod\":\"GET\",\"descriptio" +
-            "n\":\"List license assignments for given product of the customer.\",\"parameters\":{\"" +
-            "customerId\":{\"type\":\"string\",\"description\":\"CustomerId represents the customer f" +
-            "or whom licenseassignments are queried\",\"required\":true,\"location\":\"query\"},\"max" +
-            "Results\":{\"type\":\"integer\",\"description\":\"Maximum number of campaigns to return " +
-            "at one time. Must be positive. Optional. Default value is 100.\",\"default\":\"100\"," +
-            "\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location\":\"query\"},\"pageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"Token to fetch the next page.Optional. By defau" +
-            "lt server will return first page\",\"default\":\"\",\"location\":\"query\"},\"productId\":{" +
-            "\"type\":\"string\",\"description\":\"Name for product\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"productId\",\"customerId\"],\"response\":{\"$ref\":\"LicenseAssi" +
-            "gnmentList\"}},\"listForProductAndSku\":{\"id\":\"licensing.licenseAssignments.listFor" +
-            "ProductAndSku\",\"path\":\"{productId}/sku/{skuId}/users\",\"httpMethod\":\"GET\",\"descri" +
-            "ption\":\"List license assignments for given product and sku of the customer.\",\"pa" +
-            "rameters\":{\"customerId\":{\"type\":\"string\",\"description\":\"CustomerId represents th" +
-            "e customer for whom licenseassignments are queried\",\"required\":true,\"location\":\"" +
-            "query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of campaign" +
-            "s to return at one time. Must be positive. Optional. Default value is 100.\",\"def" +
-            "ault\":\"100\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location\":\"query\"}" +
-            ",\"pageToken\":{\"type\":\"string\",\"description\":\"Token to fetch the next page.Option" +
-            "al. By default server will return first page\",\"default\":\"\",\"location\":\"query\"},\"" +
-            "productId\":{\"type\":\"string\",\"description\":\"Name for product\",\"required\":true,\"lo" +
-            "cation\":\"path\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name for sku\",\"required\"" +
-            ":true,\"location\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"customerId\"],\"r" +
-            "esponse\":{\"$ref\":\"LicenseAssignmentList\"}},\"patch\":{\"id\":\"licensing.licenseAssig" +
-            "nments.patch\",\"path\":\"{productId}/sku/{skuId}/user/{userId}\",\"httpMethod\":\"PATCH" +
-            "\",\"description\":\"Assign License. This method supports patch semantics.\",\"paramet" +
-            "ers\":{\"productId\":{\"type\":\"string\",\"description\":\"Name for product\",\"required\":t" +
-            "rue,\"location\":\"path\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name for sku for " +
-            "which license would be revoked\",\"required\":true,\"location\":\"path\"},\"userId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"email id or unique Id of the user\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"userId\"],\"request\":{\"$" +
-            "ref\":\"LicenseAssignment\"},\"response\":{\"$ref\":\"LicenseAssignment\"}},\"update\":{\"id" +
-            "\":\"licensing.licenseAssignments.update\",\"path\":\"{productId}/sku/{skuId}/user/{us" +
-            "erId}\",\"httpMethod\":\"PUT\",\"description\":\"Assign License.\",\"parameters\":{\"product" +
-            "Id\":{\"type\":\"string\",\"description\":\"Name for product\",\"required\":true,\"location\"" +
-            ":\"path\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name for sku for which license " +
-            "would be revoked\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"" +
-            "description\":\"email id or unique Id of the user\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"userId\"],\"request\":{\"$ref\":\"LicenseA" +
-            "ssignment\"},\"response\":{\"$ref\":\"LicenseAssignment\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"oZqOFf-aKzMvpID-BwBAFJLe7Pk/CUdlpVg" +
+            "13O3x8WTTIinSF07MIK4\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"licensing:v1\",\"name\":\"lice" +
+            "nsing\",\"version\":\"v1\",\"revision\":\"20120724\",\"title\":\"Enterprise License Manager " +
+            "API\",\"description\":\"Licensing API to view and manage license for your domain.\",\"" +
+            "icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"" +
+            "http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink\":\"" +
+            "https://developers.google.com/google-apps/licensing/\",\"protocol\":\"rest\",\"baseUrl" +
+            "\":\"https://www.googleapis.com/apps/licensing/v1/product/\",\"basePath\":\"/apps/lice" +
+            "nsing/v1/product/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"apps/l" +
+            "icensing/v1/product/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"" +
+            "description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"e" +
+            "numDescriptions\":[\"Responses with Content-Type of application/json\"],\"location\":" +
+            "\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fiel" +
+            "ds to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\"" +
+            ",\"description\":\"API key. Your API key identifies your project and provides you w" +
+            "ith API access, quota, and reports. Required unless you provide an OAuth 2.0 tok" +
+            "en.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0" +
+            " token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean" +
+            "\",\"description\":\"Returns response with indentations and line breaks.\",\"default\":" +
+            "\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available" +
+            " to use for quota purposes for server-side applications. Can be any arbitrary st" +
+            "ring assigned to a user, but should not exceed 40 characters. Overrides userIp i" +
+            "f both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description" +
+            "\":\"IP address of the site where the request originates. Use this if you want to " +
+            "enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"LicenseAssignment\":{\"" +
+            "id\":\"LicenseAssignment\",\"type\":\"object\",\"description\":\"Template for LiscenseAssi" +
+            "gnment Resource\",\"properties\":{\"etags\":{\"type\":\"string\",\"description\":\"ETag of t" +
+            "he resource.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resource as" +
+            " a LicenseAssignment.\",\"default\":\"licensing#licenseAssignment\"},\"productId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Name of the product.\",\"annotations\":{\"required\":[\"li" +
+            "censing.licenseAssignments.update\"]}},\"selfLink\":{\"type\":\"string\",\"description\":" +
+            "\"Link to this page.\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name of the sku of" +
+            " the product.\",\"annotations\":{\"required\":[\"licensing.licenseAssignments.update\"]" +
+            "}},\"userId\":{\"type\":\"string\",\"description\":\"Email id of the user.\",\"annotations\"" +
+            ":{\"required\":[\"licensing.licenseAssignments.update\"]}}}},\"LicenseAssignmentInser" +
+            "t\":{\"id\":\"LicenseAssignmentInsert\",\"type\":\"object\",\"description\":\"Template for L" +
+            "icenseAssignment Insert request\",\"properties\":{\"userId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Email id of the user\",\"annotations\":{\"required\":[\"licensing.licenseAssig" +
+            "nments.insert\"]}}}},\"LicenseAssignmentList\":{\"id\":\"LicenseAssignmentList\",\"type\"" +
+            ":\"object\",\"description\":\"LicesnseAssignment List for a given product/sku for a c" +
+            "ustomer.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resou" +
+            "rce.\"},\"items\":{\"type\":\"array\",\"description\":\"The LicenseAssignments in this pag" +
+            "e of results.\",\"items\":{\"$ref\":\"LicenseAssignment\"}},\"kind\":{\"type\":\"string\",\"de" +
+            "scription\":\"Identifies the resource as a collection of LicenseAssignments.\",\"def" +
+            "ault\":\"licensing#licenseAssignmentList\"},\"nextPageToken\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The continuation token, used to page through large result sets. Provide" +
+            " this value in a subsequent request to return the next page of results.\"}}}},\"re" +
+            "sources\":{\"licenseAssignments\":{\"methods\":{\"delete\":{\"id\":\"licensing.licenseAssi" +
+            "gnments.delete\",\"path\":\"{productId}/sku/{skuId}/user/{userId}\",\"httpMethod\":\"DEL" +
+            "ETE\",\"description\":\"Revoke License.\",\"parameters\":{\"productId\":{\"type\":\"string\"," +
+            "\"description\":\"Name for product\",\"required\":true,\"location\":\"path\"},\"skuId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Name for sku\",\"required\":true,\"location\":\"path\"},\"us" +
+            "erId\":{\"type\":\"string\",\"description\":\"email id or unique Id of the user\",\"requir" +
+            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"userId\"]},\"g" +
+            "et\":{\"id\":\"licensing.licenseAssignments.get\",\"path\":\"{productId}/sku/{skuId}/use" +
+            "r/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Get license assignment of a partic" +
+            "ular product and sku for a user\",\"parameters\":{\"productId\":{\"type\":\"string\",\"des" +
+            "cription\":\"Name for product\",\"required\":true,\"location\":\"path\"},\"skuId\":{\"type\":" +
+            "\"string\",\"description\":\"Name for sku\",\"required\":true,\"location\":\"path\"},\"userId" +
+            "\":{\"type\":\"string\",\"description\":\"email id or unique Id of the user\",\"required\":" +
+            "true,\"location\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"userId\"],\"respon" +
+            "se\":{\"$ref\":\"LicenseAssignment\"}},\"insert\":{\"id\":\"licensing.licenseAssignments.i" +
+            "nsert\",\"path\":\"{productId}/sku/{skuId}/user\",\"httpMethod\":\"POST\",\"description\":\"" +
+            "Assign License.\",\"parameters\":{\"productId\":{\"type\":\"string\",\"description\":\"Name " +
+            "for product\",\"required\":true,\"location\":\"path\"},\"skuId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Name for sku\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"pro" +
+            "ductId\",\"skuId\"],\"request\":{\"$ref\":\"LicenseAssignmentInsert\"},\"response\":{\"$ref\"" +
+            ":\"LicenseAssignment\"}},\"listForProduct\":{\"id\":\"licensing.licenseAssignments.list" +
+            "ForProduct\",\"path\":\"{productId}/users\",\"httpMethod\":\"GET\",\"description\":\"List li" +
+            "cense assignments for given product of the customer.\",\"parameters\":{\"customerId\"" +
+            ":{\"type\":\"string\",\"description\":\"CustomerId represents the customer for whom lic" +
+            "enseassignments are queried\",\"required\":true,\"location\":\"query\"},\"maxResults\":{\"" +
+            "type\":\"integer\",\"description\":\"Maximum number of campaigns to return at one time" +
+            ". Must be positive. Optional. Default value is 100.\",\"default\":\"100\",\"format\":\"u" +
+            "int32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"s" +
+            "tring\",\"description\":\"Token to fetch the next page.Optional. By default server w" +
+            "ill return first page\",\"default\":\"\",\"location\":\"query\"},\"productId\":{\"type\":\"str" +
+            "ing\",\"description\":\"Name for product\",\"required\":true,\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"productId\",\"customerId\"],\"response\":{\"$ref\":\"LicenseAssignmentList\"" +
+            "}},\"listForProductAndSku\":{\"id\":\"licensing.licenseAssignments.listForProductAndS" +
+            "ku\",\"path\":\"{productId}/sku/{skuId}/users\",\"httpMethod\":\"GET\",\"description\":\"Lis" +
+            "t license assignments for given product and sku of the customer.\",\"parameters\":{" +
+            "\"customerId\":{\"type\":\"string\",\"description\":\"CustomerId represents the customer " +
+            "for whom licenseassignments are queried\",\"required\":true,\"location\":\"query\"},\"ma" +
+            "xResults\":{\"type\":\"integer\",\"description\":\"Maximum number of campaigns to return" +
+            " at one time. Must be positive. Optional. Default value is 100.\",\"default\":\"100\"" +
+            ",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location\":\"query\"},\"pageToken" +
+            "\":{\"type\":\"string\",\"description\":\"Token to fetch the next page.Optional. By defa" +
+            "ult server will return first page\",\"default\":\"\",\"location\":\"query\"},\"productId\":" +
+            "{\"type\":\"string\",\"description\":\"Name for product\",\"required\":true,\"location\":\"pa" +
+            "th\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name for sku\",\"required\":true,\"loca" +
+            "tion\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"customerId\"],\"response\":{\"" +
+            "$ref\":\"LicenseAssignmentList\"}},\"patch\":{\"id\":\"licensing.licenseAssignments.patc" +
+            "h\",\"path\":\"{productId}/sku/{skuId}/user/{userId}\",\"httpMethod\":\"PATCH\",\"descript" +
+            "ion\":\"Assign License. This method supports patch semantics.\",\"parameters\":{\"prod" +
+            "uctId\":{\"type\":\"string\",\"description\":\"Name for product\",\"required\":true,\"locati" +
+            "on\":\"path\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name for sku for which licen" +
+            "se would be revoked\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string" +
+            "\",\"description\":\"email id or unique Id of the user\",\"required\":true,\"location\":\"" +
+            "path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"userId\"],\"request\":{\"$ref\":\"Licen" +
+            "seAssignment\"},\"response\":{\"$ref\":\"LicenseAssignment\"}},\"update\":{\"id\":\"licensin" +
+            "g.licenseAssignments.update\",\"path\":\"{productId}/sku/{skuId}/user/{userId}\",\"htt" +
+            "pMethod\":\"PUT\",\"description\":\"Assign License.\",\"parameters\":{\"productId\":{\"type\"" +
+            ":\"string\",\"description\":\"Name for product\",\"required\":true,\"location\":\"path\"},\"s" +
+            "kuId\":{\"type\":\"string\",\"description\":\"Name for sku for which license would be re" +
+            "voked\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description" +
+            "\":\"email id or unique Id of the user\",\"required\":true,\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"productId\",\"skuId\",\"userId\"],\"request\":{\"$ref\":\"LicenseAssignment\"}" +
+            ",\"response\":{\"$ref\":\"LicenseAssignment\"}}}}}}";
         
         public const string Version = "v1";
         
