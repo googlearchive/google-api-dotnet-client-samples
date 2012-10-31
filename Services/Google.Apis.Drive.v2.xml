@@ -997,6 +997,9 @@
         <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.FileId">
             <summary>The ID of the file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.IncludeDeleted">
+            <summary>If set, this will succeed when retrieving a deleted comment, and will include any deleted replies.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
@@ -1019,7 +1022,7 @@
             <summary>The ID of the file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.IncludeDeleted">
-            <summary>If set, all comments, including deleted comments (with content stripped) will be returned.</summary>
+            <summary>If set, all comments and replies, including deleted comments and replies (with content stripped) will be returned.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.MaxResults">
             <summary>The maximum number of discussions to include in the response, used for paging.</summary>
@@ -1644,6 +1647,9 @@
         <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.FileId">
             <summary>The ID of the file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.IncludeDeleted">
+            <summary>If set, this will succeed when retrieving a deleted reply.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.ReplyId">
             <summary>The ID of the reply.</summary>
         </member>
@@ -1673,6 +1679,9 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.FileId">
             <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.IncludeDeleted">
+            <summary>If set, all replies, including deleted replies (with content stripped) will be returned.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.MaxResults">
             <summary>The maximum number of replies to include in the response, used for paging.</summary>

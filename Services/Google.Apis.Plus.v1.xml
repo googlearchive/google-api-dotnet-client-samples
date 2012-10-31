@@ -159,7 +159,7 @@
             <summary>A URL that points to a thumbnail photo of the original actor.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Content">
-            <summary>If the attachment is an article, this property contains a snippet of text from the article. It may also include descriptions for other types.</summary>
+            <summary>If the attachment is an article, this property contains a snippet of text from the article. It can also include descriptions for other types.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.DisplayName">
             <summary>The title of the attachment (such as a photo caption or an article title).</summary>
@@ -435,7 +435,7 @@
             <summary>The title of this collection of people.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.TotalItems">
-            <summary>The total number of people available in this list. The number of people in a response may be smaller due to paging. This may not be set for all collections.</summary>
+            <summary>The total number of people available in this list. The number of people in a response might be smaller due to paging. This might not be set for all collections.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.AboutMe">
             <summary>A short biography for this person.</summary>

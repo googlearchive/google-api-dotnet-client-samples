@@ -175,6 +175,9 @@
         <member name="P:Google.Apis.Prediction.v1_5.Data.Training.ModelInfo">
             <summary>Model metadata.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.Data.Training.ModelType">
+            <summary>Type of predictive model (classification or regression)</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.Data.Training.SelfLink">
             <summary>A URL to re-request this resource.</summary>
         </member>
@@ -189,6 +192,9 @@
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.Data.Training.TrainingComplete">
             <summary>Training completion time (as a RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.Data.Training.TrainingInstances">
+            <summary>Instances to train model on.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.Data.Training.TrainingStatus">
             <summary>The current status of the training job. This can be one of following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND</summary>
@@ -217,6 +223,12 @@
         <member name="P:Google.Apis.Prediction.v1_5.Data.Training.ModelInfoData.NumberLabels">
             <summary>Number of class labels in the trained model [Categorical models only].</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.Data.Training.TrainingInstancesData.CsvInstance">
+            <summary>The input features for this instance</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.Data.Training.TrainingInstancesData.Output">
+            <summary>The generic output value - could be regression or class label</summary>
+        </member>
         <member name="T:Google.Apis.Prediction.v1_5.Data.Training.UtilityData">
             <summary>Class label (string).</summary>
         </member>
@@ -225,6 +237,9 @@
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.Data.Update.Label">
             <summary>The class label of this instance</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.Data.Update.Output">
+            <summary>The generic output value - could be regression value or class label</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.PredictionService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
