@@ -66,6 +66,7 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.Verb">
              <summary>This activity&apos;s verb, indicating what action was performed. Possible values are:  
+            - &quot;checkin&quot; - Check in to a location. 
             - &quot;post&quot; - Publish content to the stream. 
             - &quot;share&quot; - Reshare an activity.</summary>
         </member>

@@ -567,6 +567,9 @@
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.FacetsInclude">
             <summary>Facets to include (applies when useGcsConfig == false)</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.FacetsIncludeEmptyBuckets">
+            <summary>Return empty facet buckets.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.FacetsUseGcsConfig">
             <summary>Whether to return facet information as configured in the GCS account</summary>
         </member>

@@ -202,11 +202,26 @@
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelContentDetails">
             <summary>Details about the content of a channel.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.PrivacyStatus">
-            <summary>Privacy status of the channel.</summary>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylists">
+            <summary>Auto-generated playlists associated with the channel</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.Uploads">
+        <member name="T:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData">
+            <summary>Auto-generated playlists associated with the channel</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.Favorites">
+            <summary>The ID of the playlist containing the favorites of this channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.Likes">
+            <summary>The ID of the playlist containing the liked videos of this channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.Uploads">
             <summary>The ID of the playlist containing the uploads of this channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.WatchHistory">
+            <summary>The ID of the playlist of the watch history of this channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.WatchLater">
+            <summary>The ID of the watch later playlist for this channel</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelListResponse">
             <summary>A paginated list of channels returned as the response to a youtube.channels.list call.</summary>
@@ -1048,6 +1063,9 @@
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.ChannelId">
+            <summary>Flag indicating only return the playlists of the specified channel ID.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.Id">
             <summary>Comma-separated YouTube IDs of the playlists to be returned.</summary>
         </member>
@@ -1106,8 +1124,11 @@
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.Any">
             <summary>No filter on the release date</summary>
         </member>
-        <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.ThisWeek">
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.ThisMonth">
             <summary>Videos uploaded this month</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.ThisWeek">
+            <summary>Videos uploaded this week</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.Today">
             <summary>Videos uploaded today</summary>

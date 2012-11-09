@@ -139,6 +139,102 @@
         <member name="P:Google.Apis.Coordinate.v1.Data.Location.Lng">
             <summary>Longitude.</summary>
         </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.LocationListResponse">
+            <summary>Response from a List Locations request.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationListResponse.Items">
+            <summary>Locations in the collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationListResponse.Kind">
+            <summary>Identifies this object as a list of locations.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationListResponse.NextPageToken">
+            <summary>A token to provide to get the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationListResponse.PageInfo">
+            <summary>Page information.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationListResponse.TokenPagination">
+            <summary>Pagination information.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.LocationRecord">
+            <summary>Recorded location of a worker.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationRecord.CollectionTime">
+            <summary>The collection time in milliseconds since the epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationRecord.ConfidenceRadius">
+            <summary>The location accuracy in meters. This is the radius of a 95% confidence interval around the location measurement.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationRecord.Kind">
+            <summary>Identifies this object as a location.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationRecord.Latitude">
+            <summary>Latitude.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.LocationRecord.Longitude">
+            <summary>Longitude.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.PageInfo">
+            <summary>Page information.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.PageInfo.Kind">
+            <summary>Identifies this object as page information.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.PageInfo.ResultPerPage">
+            <summary>Number of results per page.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.PageInfo.StartIndex">
+            <summary>Page start index.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.PageInfo.TotalResults">
+            <summary>Number of results available.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.Schedule">
+            <summary>Job schedule.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Schedule.AllDay">
+            <summary>Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Schedule.EndTime">
+            <summary>Scheduled end time in milliseconds since epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Schedule.Kind">
+            <summary>Identifies this object as a job schedule.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Schedule.StartTime">
+            <summary>Scheduled start time in milliseconds since epoch.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.TokenPagination">
+            <summary>Pagination information.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.TokenPagination.Kind">
+            <summary>Identifies this object as pagination information.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.TokenPagination.NextPageToken">
+            <summary>A token to provide to get the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.TokenPagination.PreviousPageToken">
+            <summary>A token to provide to get the previous page of results.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.Worker">
+            <summary>A worker in a Coordinate team.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Worker.Id">
+            <summary>Worker email address.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Worker.Kind">
+            <summary>Identifies this object as a worker.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.WorkerListResponse">
+            <summary>Response from a List Workers request.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.WorkerListResponse.Items">
+            <summary>Workers in the collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.WorkerListResponse.Kind">
+            <summary>Identifies this object as a list of workers.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.CoordinateService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
@@ -367,6 +463,115 @@
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.LocationResource.List(System.String,System.String,System.String)">
+            <summary>Retrieves a list of locations for a worker.</summary>
+            <param name="teamId">Required - Team ID</param>
+            <param name="workerEmail">Required - Worker email address.</param>
+            <param name="startTimestampMs">Required - Start timestamp in milliseconds since the epoch.</param>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.StartTimestampMs">
+            <summary>Start timestamp in milliseconds since the epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.TeamId">
+            <summary>Team ID</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.WorkerEmail">
+            <summary>Worker email address.</summary>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.ScheduleResource.Get(System.String,System.String)">
+            <summary>Retrieves the schedule for a job.</summary>
+            <param name="teamId">Required - Team ID</param>
+            <param name="jobId">Required - Job number</param>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.ScheduleResource.Patch(Google.Apis.Coordinate.v1.Data.Schedule,System.String,System.String)">
+            <summary>Replaces the schedule of a job with the provided schedule. This method supports patch semantics.</summary>
+            <param name="teamId">Required - Team ID</param>
+            <param name="jobId">Required - Job number</param>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.ScheduleResource.Update(Google.Apis.Coordinate.v1.Data.Schedule,System.String,System.String)">
+            <summary>Replaces the schedule of a job with the provided schedule.</summary>
+            <param name="teamId">Required - Team ID</param>
+            <param name="jobId">Required - Job number</param>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.JobId">
+            <summary>Job number</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.TeamId">
+            <summary>Team ID</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.AllDay">
+            <summary>Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.EndTime">
+            <summary>Scheduled end time in milliseconds since epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.JobId">
+            <summary>Job number</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.StartTime">
+            <summary>Scheduled start time in milliseconds since epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.TeamId">
+            <summary>Team ID</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.AllDay">
+            <summary>Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.EndTime">
+            <summary>Scheduled end time in milliseconds since epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.JobId">
+            <summary>Job number</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.StartTime">
+            <summary>Scheduled start time in milliseconds since epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.TeamId">
+            <summary>Team ID</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.WorkerResource.List(System.String)">
+            <summary>Retrieves a list of workers in a team.</summary>
+            <param name="teamId">Required - Team ID</param>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.TeamId">
+            <summary>Team ID</summary>
         </member>
     </members>
 </doc>

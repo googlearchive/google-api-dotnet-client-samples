@@ -380,6 +380,9 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.AlternateLink">
             <summary>A link for opening the file in using a relevant Google editor or viewer.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.AppDataContents">
+            <summary>Whether this file is in the appdata folder.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.CreatedDate">
             <summary>Create time for this file (formatted ISO8601 timestamp).</summary>
         </member>
@@ -806,7 +809,7 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.IncludeSubscribed">
-            <summary>Whether to include subscribed items when calculating the number of remaining change IDs</summary>
+            <summary>When calculating the number of remaining change IDs, whether to include shared files and public files the user has opened. When set to false, this counts only change IDs for owned files and any shared or public files that the user has explictly added to a folder in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.MaxChangeIdCount">
             <summary>Maximum number of remaining change IDs to count</summary>
@@ -862,7 +865,7 @@
             <summary>Whether to include deleted items.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.IncludeSubscribed">
-            <summary>Whether to include subscribed items.</summary>
+            <summary>Whether to include shared files and public files the user has opened. When set to false, the list will include owned files plus any shared or public files the user has explictly added to a folder in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.MaxResults">
             <summary>Maximum number of changes to return.</summary>

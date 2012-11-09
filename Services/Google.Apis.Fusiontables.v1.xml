@@ -214,9 +214,6 @@
         <member name="T:Google.Apis.Fusiontables.v1.Data.StyleSetting">
             <summary>Represents a complete StyleSettings object. The primary key is a combination of the tableId and a styleId.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.Data.StyleSetting.IsDefaultForTable">
-            <summary>Is this the default style for the table.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.Data.StyleSetting.Kind">
             <summary>Type name: an individual style setting. A StyleSetting contains the style defintions for points, lines, and polygons in a table. Since a table can have any one or all of them, a style definition can have point, line and polygon style definitions.</summary>
         </member>
@@ -306,9 +303,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.Data.Template.Body">
             <summary>Body of the template. It contains HTML with {column_name} to insert values from a particular column. The body is sanitized to remove certain tags, e.g., script. Only one of body or automaticColumns can be specified.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.Data.Template.IsDefaultForTable">
-            <summary>Is this the default template for the table.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.Data.Template.Kind">
             <summary>Type name: a template for the info window contents. The template can either include an HTML body or a list of columns from which the template is computed automatically.</summary>
