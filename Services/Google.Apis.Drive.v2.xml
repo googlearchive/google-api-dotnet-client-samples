@@ -380,9 +380,6 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.AlternateLink">
             <summary>A link for opening the file in using a relevant Google editor or viewer.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.Data.File.AppDataContents">
-            <summary>Whether this file is in the appdata folder.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.CreatedDate">
             <summary>Create time for this file (formatted ISO8601 timestamp).</summary>
         </member>
@@ -412,6 +409,9 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.FileSize">
             <summary>The size of the file in bytes. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.IconLink">
+            <summary>A link to the file&apos;s icon.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.Id">
             <summary>The id of the file.</summary>
@@ -480,6 +480,9 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.WebContentLink">
             <summary>A link for downloading the content of the file in a browser using cookie based authentication. In cases where the content is shared publicly, the content can be downloaded without any credentials.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.WebViewLink">
+            <summary>A link providing access to static web assets (HTML, CSS, JS, etc) in a public folder hierarchy using filenames in a relative path.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.WritersCanShare">
             <summary>Whether writers can share the document with other users.</summary>
         </member>
@@ -498,8 +501,17 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.CameraModel">
             <summary>The model of the camera used to create the photo.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.ColorSpace">
+            <summary>The color space of the photo.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Date">
             <summary>The date and time the photo was taken (EXIF format timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.ExposureBias">
+            <summary>The exposure bias of the photo (APEX value).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.ExposureMode">
+            <summary>The exposure mode used to create the photo.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.ExposureTime">
             <summary>The length of the exposure, in seconds.</summary>
@@ -516,11 +528,29 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.IsoSpeed">
             <summary>The ISO speed used to create the photo.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Lens">
+            <summary>The lens used to create the photo.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Location">
             <summary>Geographic location information stored in the image.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.MaxApertureValue">
+            <summary>The smallest f-number of the lens at the focal length used to create the photo (APEX value).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.MeteringMode">
+            <summary>The metering mode used to create the photo.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Rotation">
             <summary>The rotation in clockwise degrees from the image&apos;s original orientation.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Sensor">
+            <summary>The type of sensor used to create the photo.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.SubjectDistance">
+            <summary>The distance to the subject of the photo, in meters.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.WhiteBalance">
+            <summary>The white balance mode used to create the photo.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Width">
             <summary>The width of the image in pixels.</summary>

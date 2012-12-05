@@ -177,13 +177,6 @@
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Image">
             <summary>The preview image for photos or videos.</summary>
         </member>
-        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ObjectType">
-             <summary>The type of media object. Possible values are:  
-            - &quot;photo&quot; - A photo. 
-            - &quot;album&quot; - A photo album. 
-            - &quot;video&quot; - A video. 
-            - &quot;article&quot; - An article, specified by a link.</summary>
-        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Thumbnails">
             <summary>If the attachment is an album, potential additional thumbnails from the album.</summary>
         </member>
@@ -444,6 +437,12 @@
         <member name="P:Google.Apis.Plus.v1.Data.Person.Birthday">
             <summary>The person&apos;s date of birth, represented as YYYY-MM-DD.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.CircledByCount">
+            <summary>If a Google+ Page and for followers who are visible, the number of people who have added this page to a circle.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.Cover">
+            <summary>The cover photo content.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.CurrentLocation">
             <summary>The current location for this person.</summary>
         </member>
@@ -472,7 +471,7 @@
             <summary>The representation of the person&apos;s profile photo.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.IsPlusUser">
-            <summary>Whether this user has signed up for G+.</summary>
+            <summary>Whether this user has signed up for Google+.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Kind">
             <summary>Identifies this resource as a person. Value: &quot;plus#person&quot;.</summary>
@@ -494,6 +493,9 @@
         <member name="P:Google.Apis.Plus.v1.Data.Person.PlacesLived">
             <summary>A list of places where this person has lived.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.PlusOneCount">
+            <summary>If a Google+ Page, the number of people who have +1&apos;ed this page.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.RelationshipStatus">
              <summary>The person&apos;s relationship status. Possible values are:  
             - &quot;single&quot; - Person is single. 
@@ -514,6 +516,43 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Urls">
             <summary>A list of URLs for this person.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.Verified">
+            <summary>If a Google+ Page, whether it has been verified.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.Data.Person.CoverData">
+            <summary>The cover photo content.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.CoverData.CoverInfo">
+            <summary>Extra information about the cover photo.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.CoverData.CoverPhoto">
+            <summary>The person&apos;s primary cover image.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.CoverData.Layout">
+             <summary>The layout of the cover art. Possible values are:  
+            - &quot;banner&quot; - One large image banner.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.Data.Person.CoverData.CoverInfoData">
+            <summary>Extra information about the cover photo.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.CoverData.CoverInfoData.LeftImageOffset">
+            <summary>The difference between the left position of the image cover and the actual displayed cover image. Only valid for BANNER layout.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.CoverData.CoverInfoData.TopImageOffset">
+            <summary>The difference between the top position of the image cover and the actual displayed cover image. Only valid for BANNER layout.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.Data.Person.CoverData.CoverPhotoData">
+            <summary>The person&apos;s primary cover image.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.CoverData.CoverPhotoData.Height">
+            <summary>The height to the image.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.CoverData.CoverPhotoData.Url">
+            <summary>The url to the image.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.CoverData.CoverPhotoData.Width">
+            <summary>The width to the image.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.EmailsData.Primary">
             <summary>If &quot;true&quot;, indicates this email address is the person&apos;s primary one.</summary>

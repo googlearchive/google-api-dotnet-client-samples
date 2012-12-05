@@ -5,19 +5,19 @@
     </assembly>
     <members>
         <member name="T:Google.Apis.Youtube.v3.Data.Activity">
-            <summary>An activity resource contains information about an action that a channel has taken on YouTube.</summary>
+            <summary>An activity resource contains information about an action that a particular channel, or user, has taken on YouTube. The actions reported in activity feeds include rating a video, sharing a video, marking a video as a favorite, commenting on a video, uploading a video, and so forth. Each activity resource identifies the type of action, the channel associated with the action, and the resource(s) associated with the action, such as the video that was rated or uploaded.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Activity.ContentDetails">
             <summary>Details about the content of an activity: the video that was shared, the channel that was subscribed to, etc.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Activity.ETag">
-            <summary>The eTag of the activity.</summary>
+            <summary>The ETag of the activity resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Activity.Id">
-            <summary>The unique ID of the activity.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Activity.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API resource. For activity resources, the value will be youtube#activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Activity.Snippet">
             <summary>Basic details about an activity, including title, description, thumbnails, activity type and group.</summary>
@@ -26,70 +26,73 @@
             <summary>Details about the content of an activity: the video that was shared, the channel that was subscribed to, etc.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.Bulletin">
-            <summary>Only present if the type is &quot;bulletin&quot;.</summary>
+            <summary>The bulletin object contains details about a channel bulletin post. This object is only present if the snippet.type is bulletin.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.Comment">
-            <summary>Only present if the type is &quot;comment&quot;.</summary>
+            <summary>The comment object contains information about a resource that received a comment. This property is only present if the snippet.type is comment.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.Favorite">
-            <summary>Only present if the type is &quot;favorite&quot;.</summary>
+            <summary>The favorite object contains information about a video that was marked as a favorite video. This property is only present if the snippet.type is favorite.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.Like">
-            <summary>Only present if the type is &quot;like&quot;.</summary>
+            <summary>The like object contains information about a resource that received a positive (like) rating. This property is only present if the snippet.type is like.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.PlaylistItem">
-            <summary>Only present if the type is &quot;playlistItem&quot;.</summary>
+            <summary>The playlistItem object contains information about a new playlist item. This property is only present if the snippet.type is playlistItem.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.Recommendation">
-            <summary>Only set if the type is &quot;recommendation&quot;.</summary>
+            <summary>The recommendation object contains information about a recommended resource. This property is only present if the snippet.type is recommendation.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.Social">
-            <summary>Only present if the type is &quot;social&quot;.</summary>
+            <summary>The social object contains details about a social network post. This property is only present if the snippet.type is social.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.Subscription">
-            <summary>Only present if the type is &quot;subscription&quot;.</summary>
+            <summary>The subscription object contains information about a channel that a user subscribed to. This property is only present if the snippet.type is subscription.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.Upload">
-            <summary>Only present if the type is &quot;upload&quot;.</summary>
+            <summary>The upload object contains information about the uploaded video. This property is only present if the snippet.type is upload.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityContentDetails.BulletinData">
-            <summary>Only present if the type is &quot;bulletin&quot;.</summary>
+            <summary>The bulletin object contains details about a channel bulletin post. This object is only present if the snippet.type is bulletin.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.BulletinData.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityContentDetails.CommentData">
-            <summary>Only present if the type is &quot;comment&quot;.</summary>
+            <summary>The comment object contains information about a resource that received a comment. This property is only present if the snippet.type is comment.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.CommentData.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityContentDetails.FavoriteData">
-            <summary>Only present if the type is &quot;favorite&quot;.</summary>
+            <summary>The favorite object contains information about a video that was marked as a favorite video. This property is only present if the snippet.type is favorite.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.FavoriteData.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityContentDetails.LikeData">
-            <summary>Only present if the type is &quot;like&quot;.</summary>
+            <summary>The like object contains information about a resource that received a positive (like) rating. This property is only present if the snippet.type is like.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.LikeData.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityContentDetails.PlaylistItemData">
-            <summary>Only present if the type is &quot;playlistItem&quot;.</summary>
+            <summary>The playlistItem object contains information about a new playlist item. This property is only present if the snippet.type is playlistItem.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.PlaylistItemData.PlaylistId">
-            <summary>ID of the playlist the resource was added to.</summary>
+            <summary>The value that YouTube uses to uniquely identify the playlist.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.PlaylistItemData.PlaylistItemId">
+            <summary>ID of the item within the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.PlaylistItemData.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityContentDetails.RecommendationData">
-            <summary>Only set if the type is &quot;recommendation&quot;.</summary>
+            <summary>The recommendation object contains information about a recommended resource. This property is only present if the snippet.type is recommendation.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.RecommendationData.Reason">
-            <summary>Reason for which the video was recommended.</summary>
+            <summary>The reason that the resource is recommended to the user.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.RecommendationData.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
@@ -98,103 +101,106 @@
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityContentDetails.SocialData">
-            <summary>Only present if the type is &quot;social&quot;.</summary>
+            <summary>The social object contains details about a social network post. This property is only present if the snippet.type is social.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.SocialData.Author">
-            <summary>Author of the post.</summary>
+            <summary>The author of the social network post.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.SocialData.ImageUrl">
-            <summary>Image of the post author.</summary>
+            <summary>An image of the post&apos;s author.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.SocialData.ReferenceUrl">
-            <summary>Url of the social post.</summary>
+            <summary>The URL of the social network post.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.SocialData.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.SocialData.Type">
-            <summary>Type of the social network.</summary>
+            <summary>The name of the social network.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityContentDetails.SubscriptionData">
-            <summary>Only present if the type is &quot;subscription&quot;.</summary>
+            <summary>The subscription object contains information about a channel that a user subscribed to. This property is only present if the snippet.type is subscription.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.SubscriptionData.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityContentDetails.UploadData">
-            <summary>Only present if the type is &quot;upload&quot;.</summary>
+            <summary>The upload object contains information about the uploaded video. This property is only present if the snippet.type is upload.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityContentDetails.UploadData.VideoId">
-            <summary>ID of the uploaded video.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the uploaded video.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivityListResponse">
             <summary>A paginated list of activities returned as a response to youtube.activities.list calls.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityListResponse.ETag">
-            <summary>The eTag of the response.</summary>
+            <summary>The ETag of the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityListResponse.Items">
-            <summary>List of activities matching the request criteria.</summary>
+            <summary>A list of activities, or events, that match the request criteria.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityListResponse.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#activityListResponse.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityListResponse.NextPageToken">
-            <summary>Token to the next page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityListResponse.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivityListResponse.PrevPageToken">
-            <summary>Token to the previous page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivitySnippet">
             <summary>Basic details about an activity, including title, description, thumbnails, activity type and group.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.ChannelId">
-            <summary>Channel publishing the activity.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the channel associated with the activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.Description">
-            <summary>Description of the activity.</summary>
+            <summary>The description of the resource primarily associated with the activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.GroupId">
-            <summary>Id of the group that this activity is part of.</summary>
+            <summary>The group ID associated with the activity. A group ID identifies user events that are associated with the same user and resource. For example, if a user rates a video and marks the same video as a favorite, the entries for those events would have the same group ID in the user&apos;s activity feed. In your user interface, you can avoid repetition by grouping events with the same groupId value.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.PublishedAt">
-            <summary>Date and time the activity was published at.</summary>
+            <summary>The date and time that the activity occurred. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.Thumbnails">
-            <summary>Activity thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the resource that is primarily associated with the activity. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.Title">
-            <summary>Title of the activity.</summary>
+            <summary>The title of the resource primarily associated with the activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.Type">
-            <summary>Type of the activity.</summary>
+            <summary>The type of activity that the resource describes.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ActivitySnippet.ThumbnailsData">
-            <summary>Activity thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the resource that is primarily associated with the activity. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.Channel">
-            <summary>A channel resource contains information about a single YouTube channel.</summary>
+            <summary>A channel resource contains information about a YouTube channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Channel.ContentDetails">
             <summary>Details about the content of a channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Channel.ETag">
-            <summary>The eTag of the channel.</summary>
+            <summary>The ETag for the channel resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Channel.Id">
-            <summary>The unique ID of the channel.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Channel.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API resource. For channel resources, the value will be youtube#channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Channel.Snippet">
             <summary>Basic details about a channel, including title, description and thumbnails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Channel.Statistics">
             <summary>Statistics about a channel: number of subscribers, number of videos in the channel, etc.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Channel.Status">
+            <summary>JSON template for the status part of a channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Channel.TopicDetails">
             <summary>Freebase topic information related to the channel.</summary>
@@ -203,100 +209,118 @@
             <summary>Details about the content of a channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylists">
-            <summary>Auto-generated playlists associated with the channel</summary>
+            <summary>The relatedPlaylists object is a map that identifies playlists associated with the channel, such as the channel&apos;s uploaded videos or favorite videos. You can retrieve any of these playlists using the playlists.list method.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData">
-            <summary>Auto-generated playlists associated with the channel</summary>
+            <summary>The relatedPlaylists object is a map that identifies playlists associated with the channel, such as the channel&apos;s uploaded videos or favorite videos. You can retrieve any of these playlists using the playlists.list method.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.Favorites">
-            <summary>The ID of the playlist containing the favorites of this channel.</summary>
+            <summary>The ID of the playlist that contains the channel&apos;s favorite videos. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.Likes">
-            <summary>The ID of the playlist containing the liked videos of this channel.</summary>
+            <summary>The ID of the playlist that contains the channel&apos;s liked videos. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.Uploads">
-            <summary>The ID of the playlist containing the uploads of this channel.</summary>
+            <summary>The ID of the playlist that contains the channel&apos;s uploaded videos. Use the videos.insert method to upload new videos and the videos.delete method to delete previously uploaded videos.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.WatchHistory">
-            <summary>The ID of the playlist of the watch history of this channel.</summary>
+            <summary>The ID of the playlist that contains the channel&apos;s watch history. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelContentDetails.RelatedPlaylistsData.WatchLater">
-            <summary>The ID of the watch later playlist for this channel</summary>
+            <summary>The ID of the channel&apos;s watch later playlist. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelListResponse">
             <summary>A paginated list of channels returned as the response to a youtube.channels.list call.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelListResponse.ETag">
-            <summary>The eTag of the response.</summary>
+            <summary>The ETag for the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelListResponse.Items">
-            <summary>List of channels matching the request criteria.</summary>
+            <summary>A list of channels that match the request criteria.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelListResponse.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#channelListResponse.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelListResponse.NextPageToken">
-            <summary>Token to the next page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelListResponse.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelListResponse.PrevPageToken">
-            <summary>Token to the previous page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelSnippet">
             <summary>Basic details about a channel, including title, description and thumbnails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelSnippet.ChannelId">
-            <summary>Id of the channel.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelSnippet.Description">
-            <summary>Description of the channel.</summary>
+            <summary>The channel&apos;s description.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelSnippet.PublishedAt">
-            <summary>Date and time the channel was published at.</summary>
+            <summary>The date and time that the channel was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelSnippet.Thumbnails">
-            <summary>Channel thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the channel. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelSnippet.Title">
-            <summary>Title of the channel.</summary>
+            <summary>The channel&apos;s title.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelSnippet.ThumbnailsData">
-            <summary>Channel thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the channel. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelStatistics">
             <summary>Statistics about a channel: number of subscribers, number of videos in the channel, etc.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelStatistics.CommentCount">
-            <summary>Number of comments for this channel.</summary>
+            <summary>The number of comments for the channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelStatistics.SubscriberCount">
-            <summary>Number of subscribers to this channel.</summary>
+            <summary>The number of subscribers that the channel has.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelStatistics.VideoCount">
-            <summary>Number of videos in the channel.</summary>
+            <summary>The number of videos uploaded to the channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelStatistics.ViewCount">
-            <summary>Number of times the channel has been viewed.</summary>
+            <summary>The number of times the channel has been viewed.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.ChannelStatus">
+            <summary>JSON template for the status part of a channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelStatus.PrivacyStatus">
+            <summary>Privacy status of the channel.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelTopicDetails">
             <summary>Freebase topic information related to the channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelTopicDetails.TopicIds">
-            <summary>List of topic ids for this channel *</summary>
+            <summary>A list of Freebase topic IDs associated with the channel. You can retrieve information about each topic using the Freebase Topic API.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.GeoPoint">
+            <summary>A geoPoint holds geo location information associated with a YouTube resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.GeoPoint.Elevation">
+            <summary>Altitude above the Earth, in meters.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.GeoPoint.Latitude">
+            <summary>Latitude in degrees.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.GeoPoint.Longitude">
+            <summary>Longitude in degrees.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.GuideCategory">
-            <summary>A guideCategory resource identifies a category that YouTube assigns based on a channel&apos;s content or other indicators, such as the channel&apos;s popularity.</summary>
+            <summary>A guideCategory resource identifies a category that YouTube algorithmically assigns based on a channel&apos;s content or other indicators, such as the channel&apos;s popularity. The list is similar to video categories, with the difference being that a video&apos;s uploader can assign a video category but only YouTube can assign a channel category.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategory.ETag">
-            <summary>The eTag of the guide category.</summary>
+            <summary>The ETag of the guideCategory resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategory.Id">
-            <summary>The unique ID of the guide category.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the guide category.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategory.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API resource. For guideCategory resources, the value will be youtube#guideCategory/code&gt;.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategory.Snippet">
             <summary>Basic details about a guide category.</summary>
@@ -305,43 +329,52 @@
             <summary>A paginated list of guide categories returned as the response to a youtube.guideCategories.list call.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategoryListResponse.ETag">
-            <summary>The eTag of the response.</summary>
+            <summary>The ETag of the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategoryListResponse.Items">
-            <summary>List of categories matching the request criteria.</summary>
+            <summary>A list of categories that can be associated with YouTube channels. In this map, the category ID is the map key, and its value is the corresponding guideCategory resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategoryListResponse.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#guideCategoryListResponse.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.GuideCategorySnippet">
             <summary>Basic details about a guide category.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategorySnippet.ChannelId">
-            <summary>Channel publishing the guide category.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the channel publishing the guide category.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategorySnippet.Title">
-            <summary>Title of the guide category.</summary>
+            <summary>The category&apos;s title.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PageInfo.ResultsPerPage">
-            <summary>The number of results to display for each page.</summary>
+            <summary>The number of results included in the API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PageInfo.TotalResults">
-            <summary>The total number of results.</summary>
+            <summary>The total number of results in the result set.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.Playlist">
-            <summary>A playlist resource represents a single YouTube playlist.</summary>
+             <summary>A playlist resource represents a YouTube playlist. A playlist is a collection of videos that can be viewed sequentially and shared with other users. A playlist can contain up to 200 videos, and YouTube does not limit the number of playlists that each user creates. By default, playlists are publicly visible to other users, but playlists can be public or private.
+            
+            YouTube also uses playlists to identify special collections of videos for a channel, such as:  
+            - uploaded videos 
+            - favorite videos 
+            - positively rated (liked) videos 
+            - watch history 
+            - watch later  To be more specific, these lists are associated with a channel, which is a collection of a person, group, or company&apos;s videos, playlists, and other YouTube information. You can retrieve the playlist IDs for each of these lists from the channel resource for a given channel.
+            
+            You can then use the playlistItems.list method to retrieve any of those lists. You can also add or remove items from those lists by calling the playlistItems.insert and playlistItems.delete methods.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Playlist.ETag">
-            <summary>The eTag of the playlist.</summary>
+            <summary>The ETag for the playlist resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Playlist.Id">
-            <summary>The unique id of the playlist.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Playlist.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API resource. For video resources, the value will be youtube#playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Playlist.Snippet">
             <summary>Basic details about a playlist, including title, description and thumbnails.</summary>
@@ -350,19 +383,28 @@
             <summary>The status details of a playlist describes whether the playlist is private.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistItem">
-            <summary>A playlistItem resource refers to another resource, such as a video, that is included in a playlist.</summary>
+             <summary>A playlistItem resource identifies another resource, such as a video, that is included in a playlist. In addition, the playlistItem resource contains details about the included resource that pertain specifically to how that resource is used in that playlist.
+            
+            YouTube uses playlists to identify special collections of videos for a channel, such as:  
+            - uploaded videos 
+            - favorite videos 
+            - positively rated (liked) videos 
+            - watch history 
+            - watch later  To be more specific, these lists are associated with a channel, which is a collection of a person, group, or company&apos;s videos, playlists, and other YouTube information.
+            
+            You can retrieve the playlist IDs for each of these lists from the channel resource for a given channel. You can then use the playlistItems.list method to retrieve any of those lists. You can also add or remove items from those lists by calling the playlistItems.insert and playlistItems.delete methods. For example, if a user gives a positive rating to a video, you would insert that video into the liked videos playlist for that user&apos;s channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItem.ContentDetails">
             <summary>Details about the content of a playlist item, such as the video or the video fragment start and end time included in the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItem.ETag">
-            <summary>The eTag of the playlist item.</summary>
+            <summary>The ETag for the playlist item resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItem.Id">
-            <summary>The unique id of the playlist item.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the playlist item.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItem.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API resource. For playlist item resources, the value will be youtube#playlistItem.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItem.Snippet">
             <summary>Basic details about an item included in a playlist, including title, description, thumbnails, playlist the item is part of and position of the item inside the playlist.</summary>
@@ -371,163 +413,163 @@
             <summary>Details about the content of a playlist item, such as the video or the video fragment start and end time included in the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemContentDetails.EndAt">
-            <summary>The time video playback ends.</summary>
+            <summary>The time, measured in seconds from the start of the video, when the video should stop playing. (The playlist owner can specify the times when the video should start and stop playing when the video is played in the context of the playlist.) By default, assume that the video.endTime is the end of the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemContentDetails.Note">
-            <summary>The user-generated note for this item.</summary>
+            <summary>A user-generated note for this item.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemContentDetails.StartAt">
-            <summary>The time video playback begins.</summary>
+            <summary>The time, measured in seconds from the start of the video, when the video should start playing. (The playlist owner can specify the times when the video should start and stop playing when the video is played in the context of the playlist.) The default value is 0.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemContentDetails.VideoId">
-            <summary>ID of the video.</summary>
+            <summary>The ID that YouTube uses to uniquely identify a video. To retrieve the video resource, set the id query parameter to this value in your API request.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistItemListResponse">
             <summary>A paginated list of playlist items returned as the response to a youtube.playlistItems.list call.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemListResponse.ETag">
-            <summary>The eTag of the response.</summary>
+            <summary>The ETag for the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemListResponse.Items">
-            <summary>List of playlist items matching the request criteria.</summary>
+            <summary>A list of playlist items that match the request criteria.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemListResponse.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#playlistItemListResponse.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemListResponse.NextPageToken">
-            <summary>Token to the next page.</summary>
+            <summary>A token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemListResponse.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemListResponse.PrevPageToken">
-            <summary>Token to the previous page.</summary>
+            <summary>A token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet">
             <summary>Basic details about an item included in a playlist, including title, description, thumbnails, playlist the item is part of and position of the item inside the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet.ChannelId">
-            <summary>Channel publishing the playlist item.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the user that added the item to the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet.Description">
-            <summary>Description of the playlist item.</summary>
+            <summary>The item&apos;s description.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet.PlaylistId">
-            <summary>The playlist the item is part of.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the playlist that the playlist item is in.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet.Position">
-            <summary>The position of the item within the playlist.</summary>
+            <summary>The order in which the item appears in the playlist. The value uses a zero-based index, so the first item has a position of 0, the second item has a position of 1, and so forth.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet.PublishedAt">
-            <summary>Date and time the playlist item was published at.</summary>
+            <summary>The date and time that the item was added to the playlist. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet.Thumbnails">
-            <summary>Playlist item thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the playlist item. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet.Title">
-            <summary>Title of the playlist item.</summary>
+            <summary>The item&apos;s title.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistItemSnippet.ThumbnailsData">
-            <summary>Playlist item thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the playlist item. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistListResponse">
             <summary>A paginated list of playlists returned as the response to a youtube.playlists.list call.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistListResponse.ETag">
-            <summary>The eTag of the response.</summary>
+            <summary>The ETag of the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistListResponse.Items">
-            <summary>List of playlists matching the request criteria.</summary>
+            <summary>A list of playlists that match the request criteria.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistListResponse.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#playlistListResponse.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistListResponse.NextPageToken">
-            <summary>Token to the next page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistListResponse.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistListResponse.PrevPageToken">
-            <summary>Token to the previous page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistSnippet">
             <summary>Basic details about a playlist, including title, description and thumbnails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.ChannelId">
-            <summary>Channel publishing the playlist.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the channel that published the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.Description">
-            <summary>Description of the playlist.</summary>
+            <summary>The playlist&apos;s description.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.PublishedAt">
-            <summary>Date and time the playlist was published at.</summary>
+            <summary>The date and time that the playlist was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.Thumbnails">
-            <summary>Playlist thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the playlist. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.Title">
-            <summary>Title of the playlist.</summary>
+            <summary>The playlist&apos;s title.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistSnippet.ThumbnailsData">
-            <summary>Playlist thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the playlist. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistStatus">
             <summary>The status details of a playlist describes whether the playlist is private.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistStatus.PrivacyStatus">
-            <summary>Privacy of the playlist.</summary>
+            <summary>The playlist&apos;s privacy status.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ResourceId.ChannelId">
-            <summary>ID of the referred channel. Present only when type is &quot;CHANNEL&quot;.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a channel. This property is only present if the resourceId.kind value is youtube#channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ResourceId.Kind">
-            <summary>The kind of the referred resource.</summary>
+            <summary>The kind, or type, of the referred resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ResourceId.PlaylistId">
-            <summary>ID of the referred playlist. Present only when type is &quot;PLAYLIST&quot;.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a playlist. This property is only present if the resourceId.kind value is youtube#playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ResourceId.VideoId">
-            <summary>ID of the referred video. Present only when type is &quot;VIDEO&quot;.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a video. This property is only present if the resourceId.kind value is youtube#video.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.SearchListResponse">
             <summary>A paginated list of search results returned as the response to a youtube.search.list call.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchListResponse.ETag">
-            <summary>The eTag of the response.</summary>
+            <summary>The ETag for the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchListResponse.Items">
-            <summary>List of results matching the request criteria.</summary>
+            <summary>A list of results that match the search criteria.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchListResponse.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#searchListResponse.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchListResponse.NextPageToken">
-            <summary>Token to the next page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchListResponse.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchListResponse.PrevPageToken">
-            <summary>Token to the previous page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.SearchResult">
-            <summary>A search result contains information about a YouTube video, channel, or playlist that matches the search parameters specified in an API request.</summary>
+            <summary>A search result contains information about a YouTube video, channel, or playlist that matches the search parameters specified in an API request. While a search result points to a uniquely identifiable resource, like a video, it does not have its own persistent data.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResult.ETag">
-            <summary>The eTag of the search result.</summary>
+            <summary>The ETag of the search result.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResult.Id">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResult.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API response. For this resource, the value will be youtube#searchResult.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResult.Snippet">
             <summary>Basic details about a search result, including title, description and thumbnails of the item referenced by the search result.</summary>
@@ -536,37 +578,37 @@
             <summary>Basic details about a search result, including title, description and thumbnails of the item referenced by the search result.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResultSnippet.ChannelId">
-            <summary>Channel publishing the found resource.</summary>
+            <summary>The value that YouTube uses to uniquely identify the channel that published the resource that the search result identifies.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResultSnippet.Description">
-            <summary>Description of the found resource.</summary>
+            <summary>A description of the search result.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResultSnippet.PublishedAt">
-            <summary>Date and time the found resource was published at.</summary>
+            <summary>The creation date and time of the resource that the search result identifies. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResultSnippet.Thumbnails">
-            <summary>Thumbnails for the found resource.</summary>
+            <summary>A map of thumbnail images associated with the search result. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResultSnippet.Title">
-            <summary>Title of the found resource.</summary>
+            <summary>The title to display for the search result.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.SearchResultSnippet.ThumbnailsData">
-            <summary>Thumbnails for the found resource.</summary>
+            <summary>A map of thumbnail images associated with the search result. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.Subscription">
-            <summary>A subscription resource contains information about a YouTube user subscription.</summary>
+            <summary>A subscription resource contains information about a YouTube user subscription. A subscription notifies a user when new videos are added to a channel or when another user takes one of several actions on YouTube, such as uploading a video, rating a video, or commenting on a video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Subscription.ContentDetails">
             <summary>Details about the content to witch a subscription refers.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Subscription.ETag">
-            <summary>The eTag of the subscription.</summary>
+            <summary>The ETag of the subscription resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Subscription.Id">
-            <summary>The unique id of the subscription.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the subscription.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Subscription.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API resource. For subscription resources, the value will be youtube#subscription.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Subscription.Snippet">
             <summary>Basic details about a subscription, including title, description and thumbnails of the subscribed item.</summary>
@@ -575,79 +617,82 @@
             <summary>Details about the content to witch a subscription refers.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionContentDetails.NewItemCount">
-            <summary>Number of new items in the subscription since its content was last read.</summary>
+            <summary>The number of new items in the subscription since its content was last read.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionContentDetails.TotalItemCount">
-            <summary>Approximate total number of items the subscription points to.</summary>
+            <summary>The approximate number of items that the subscription points to.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.SubscriptionListResponse">
             <summary>A paginated list of subscriptions returned as the response to a youtube.subscriptions.list call.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionListResponse.ETag">
-            <summary>The eTag of the response.</summary>
+            <summary>The ETag of the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionListResponse.Items">
-            <summary>List of subscriptions matching the request criteria.</summary>
+            <summary>A list of subscriptions that match the request criteria.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionListResponse.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#subscriptionListResponse.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionListResponse.NextPageToken">
-            <summary>Token to the next page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionListResponse.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionListResponse.PrevPageToken">
-            <summary>Token to the previous page.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.SubscriptionSnippet">
             <summary>Basic details about a subscription, including title, description and thumbnails of the subscribed item.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionSnippet.ChannelId">
-            <summary>Channel publishing the subscription.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the subscriber&apos;s channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionSnippet.Description">
-            <summary>Description of the subscription.</summary>
+            <summary>The subscription&apos;s details.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionSnippet.PublishedAt">
-            <summary>Date and time the subscription was published at.</summary>
+            <summary>The date and time that the subscription was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionSnippet.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionSnippet.Thumbnails">
-            <summary>Subscription thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the subscription. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SubscriptionSnippet.Title">
-            <summary>Title of the subscription.</summary>
+            <summary>The subscription&apos;s title.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.SubscriptionSnippet.ThumbnailsData">
-            <summary>Subscription thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the subscription. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.Thumbnail">
             <summary>A thumbnail is an image representing a YouTube resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Thumbnail.Url">
-            <summary>The URL for the thumbnail.</summary>
+            <summary>The thumbnail image&apos;s URL.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.Video">
-            <summary>A video resource represents a single YouTube video.</summary>
+            <summary>A video resource represents a YouTube video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Video.ContentDetails">
             <summary>Details about the media content of a YouTube video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Video.ETag">
-            <summary>The eTag of the video.</summary>
+            <summary>The ETag of the video resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Video.Id">
-            <summary>The unique id of the video.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Video.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API resource. For video resources, the value will be youtube#video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Video.Player">
             <summary>Player to be used for a video playback.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Video.RecordingDetails">
+            <summary>Recording information associated with the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Video.Snippet">
             <summary>Basic details about a video, including title, description, uploader, thumbnails and category.</summary>
@@ -665,13 +710,13 @@
             <summary>A videoCategory resource identifies a category that has been or could be associated with uploaded videos.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategory.ETag">
-            <summary>The eTag of the video.</summary>
+            <summary>The ETag of the videoCategory resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategory.Id">
-            <summary>The unique id of the video category.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the video category.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategory.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API resource. For video category resources, the value will be youtube#videoCategory.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategory.Snippet">
             <summary>Basic details about a video category, such as its localized title.</summary>
@@ -680,124 +725,136 @@
             <summary>A paginated list of video categories returned as the response to a youtube.videoCategory.list call.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategoryListResponse.ETag">
-            <summary>The eTag of the response.</summary>
+            <summary>The ETag of the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategoryListResponse.Items">
-            <summary>List of video categories matching the request criteria.</summary>
+            <summary>A list of video categories that can be associated with YouTube videos. In this map, the video category ID is the map key, and its value is the corresponding videoCategory resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategoryListResponse.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#videoCategoryListResponse.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoCategorySnippet">
             <summary>Basic details about a video category, such as its localized title.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategorySnippet.ChannelId">
-            <summary>Channel publishing the video category.</summary>
+            <summary>The YouTube channel that created the video category.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategorySnippet.Title">
-            <summary>Title of the video category.</summary>
+            <summary>The video category&apos;s title.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoContentDetails">
             <summary>Details about the media content of a YouTube video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoContentDetails.Duration">
-            <summary>Duration of the video.</summary>
+            <summary>The length of the video. The tag value is an ISO 8601 duration in the format PT#M#S, in which the letters PT indicate that the value specifies a period of time, and the letters M and S refer to length in minutes and seconds, respectively. The # characters preceding the M and S letters are both integers that specify the number of minutes (or seconds) of the video. For example, a value of PT15M51S indicates that the video is 15 minutes and 51 seconds long.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoContentDetails.RegionRestriction">
-            <summary>Region restriction of the video.</summary>
+            <summary>The regionRestriction object contains information about the countries where a video is (or is not) viewable. The object will contain either the contentDetails.regionRestriction.allowed property or the contentDetails.regionRestriction.blocked property.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoContentDetails.RegionRestrictionData">
-            <summary>Region restriction of the video.</summary>
+            <summary>The regionRestriction object contains information about the countries where a video is (or is not) viewable. The object will contain either the contentDetails.regionRestriction.allowed property or the contentDetails.regionRestriction.blocked property.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoContentDetails.RegionRestrictionData.Allowed">
-            <summary>List of allowed region codes.</summary>
+            <summary>A list of region codes that identify countries where the video is viewable. If this property is present and a country is not listed in its value, then the video is blocked from appearing in that country. If this property is present and contains an empty list, the video is blocked in all countries.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoContentDetails.RegionRestrictionData.Blocked">
-            <summary>List of blocked region codes.</summary>
+            <summary>A list of region codes that identify countries where the video is blocked. If this property is present and a country is not listed in its value, then the video is viewable in that country. If this property is present and contains an empty list, the video is viewable in all countries.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoListResponse">
             <summary>A paginated list of videos returned as the response to a youtube.videos.list call.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoListResponse.ETag">
-            <summary>The eTag of the response.</summary>
+            <summary>The ETag of the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoListResponse.Items">
-            <summary>List of videos matching the request criteria.</summary>
+            <summary>A list of videos that match the request criteria.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoListResponse.Kind">
-            <summary>The type of this API response.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#videoListResponse.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoPlayer">
             <summary>Player to be used for a video playback.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoPlayer.EmbedHtml">
-            <summary>Iframe embed for the video.</summary>
+            <summary>An &lt;iframe&gt; tag that embeds a player that will play the video.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.VideoRecordingDetails">
+            <summary>Recording information associated with the video.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.VideoRecordingDetails.Location">
+            <summary>A geoPoint holds geo location information associated with a YouTube resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.VideoRecordingDetails.LocationDescription">
+            <summary>The text description of the location where the video was recorded.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.VideoRecordingDetails.RecordingDate">
+            <summary>The date and time when the video was recorded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoSnippet">
             <summary>Basic details about a video, including title, description, uploader, thumbnails and category.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.CategoryId">
-            <summary>Video category the video belongs to.</summary>
+            <summary>The YouTube video category associated with the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.ChannelId">
-            <summary>Channel publishing the video.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the channel that the video was uploaded to.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.Description">
-            <summary>Description of the video.</summary>
+            <summary>The video&apos;s description.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.PublishedAt">
-            <summary>Date and time the video was published at.</summary>
+            <summary>The date and time that the video was uploaded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.Tags">
-            <summary>Textual tags associated with the video.</summary>
+            <summary>A list of keyword tags associated with the video. Tags may contain spaces. This field is only visible to the video&apos;s uploader.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.Thumbnails">
-            <summary>Video thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the video. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.Title">
-            <summary>Title of the video.</summary>
+            <summary>The video&apos;s title.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoSnippet.ThumbnailsData">
-            <summary>Video thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the video. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoStatistics">
             <summary>Statistics about the video, such as the number of times the video was viewed or liked.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoStatistics.CommentCount">
-            <summary>Number of comments for this video.</summary>
+            <summary>The number of comments for the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoStatistics.DislikeCount">
-            <summary>Number of times the video was disliked.</summary>
+            <summary>The number of users who have indicated that they disliked the video by giving it a negative rating.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoStatistics.FavoriteCount">
-            <summary>Number of times the video was added to a user&apos;s favorites list.</summary>
+            <summary>The number of users who currently have the video marked as a favorite video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoStatistics.LikeCount">
-            <summary>Number of times the video was liked.</summary>
+            <summary>The number of users who have indicated that they liked the video by giving it a positive rating.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoStatistics.ViewCount">
-            <summary>Number of times the video was viewed.</summary>
+            <summary>The number of times the video has been viewed.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoStatus">
             <summary>The status of a video details the video&apos;s upload status and privacy status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoStatus.FailureReason">
-            <summary>Present only if the uploadStatus indicates a failed upload.</summary>
+            <summary>This value explains why a video failed to upload. This property is only present if the uploadStatus property indicates that the upload failed.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoStatus.PrivacyStatus">
-            <summary>Privacy of the video.</summary>
+            <summary>The video&apos;s privacy status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoStatus.RejectionReason">
-            <summary>Present only if the uploadStatus indicates a rejected upload.</summary>
+            <summary>This value explains why YouTube rejected an uploaded video. This property is only present if the uploadStatus property indicates that the upload was rejected.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoStatus.UploadStatus">
-            <summary>Status of the video upload.</summary>
+            <summary>The status of the uploaded video.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoTopicDetails">
             <summary>Freebase topic information related to the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoTopicDetails.TopicIds">
-            <summary>List of topic ids for this video *</summary>
+            <summary>A list of Freebase topic IDs associated with the video. You can retrieve information about each topic using the Freebase Topic API.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.YoutubeService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -818,12 +875,16 @@
             <summary>View and manage your assets and associated content on YouTube</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.ActivitiesResource.Insert(Google.Apis.Youtube.v3.Data.Activity,System.String)">
-            <summary>Post a channel bulletin.</summary>
-            <param name="part">Required - One or more parts to return on the current request.</param>
+             <summary>Posts a bulletin for a specific channel. (The user submitting the request must be authorized to act on the channel&apos;s behalf.)</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and contentDetails.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.ActivitiesResource.List(System.String)">
-            <summary>Browse the YouTube channel activity collection.</summary>
-            <param name="part">Required - Activity parts to include in the returned response. Valid values are: id, snippet and contentDetails.</param>
+             <summary>Returns a list of channel activity events that match the request criteria. For example, you can retrieve events associated with a particular channel, events associated with the user&apos;s subscriptions and Google+ friends, or the YouTube home page feed, which is customized for each user.</summary>
+             <param name="part">Required - The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, and contentDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a activity resource, the snippet property contains other properties that identify the type of activity, a display title for the activity, and so forth. If you set part=snippet, the API response will also contain all of those nested properties.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -831,11 +892,10 @@
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.InsertRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.InsertRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and contentDetails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -847,35 +907,36 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.ListRequest.ChannelId">
-            <summary>YouTube ID of the channel.</summary>
+            <summary>The channelId parameter specifies a unique YouTube channel ID. The API will then return a list of that channel's activities.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.ListRequest.Home">
-            <summary>Flag indicating to return user's homepage feed.</summary>
+            <summary>Set this parameter's value to true to retrieve the activity feed that displays on the YouTube home page for the currently authenticated user.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.ListRequest.MaxResults">
-            <summary>Maximum number of results to return</summary>
+            <summary>USE_DESCRIPTION --- channels:list:maxResults</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.ListRequest.Mine">
-            <summary>Flag indicating to return user's activities.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>Set this parameter's value to true to retrieve a feed of the authenticated user's activities.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.ListRequest.PageToken">
-            <summary>Token for the page selection.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:pageToken</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.ListRequest.Part">
-            <summary>Activity parts to include in the returned response. Valid values are: id, snippet and contentDetails.</summary>
+             <summary>The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, and contentDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a activity resource, the snippet property contains other properties that identify the type of activity, a display title for the activity, and so forth. If you set part=snippet, the API response will also contain all of those nested properties.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.ListRequest.PublishedAfter">
-            <summary>Only return activities published after given date (inclusive).</summary>
+            <summary>The publishedAfter parameter specifies the earliest date and time that an activity could have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be included in the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ActivitiesResource.ListRequest.PublishedBefore">
-            <summary>Only return activities published before given date (exclusive).</summary>
+            <summary>The publishedBefore parameter specifies the date and time before which an activity must have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be excluded from the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.ChannelsResource.List(System.String)">
-            <summary>Browse the YouTube channel collection. Either the &apos;id&apos; or &apos;mine&apos; parameter must be set.</summary>
-            <param name="part">Required - Channel parts to include in the returned response. Valid values are: id, snippet, contentDetails and topicDetails.</param>
+             <summary>Returns a collection of zero or more channel resources that match the request criteria.</summary>
+             <param name="part">Required - The part parameter specifies a comma-separated list of one or more channel resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, statistics, and topicDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channel resource, the contentDetails property contains other properties, such as the uploads properties. As such, if you set part=contentDetails, the API response will also contain all of those nested properties.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -884,32 +945,33 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.CategoryId">
-            <summary>Filter to retrieve the channels within the given category ID.</summary>
+            <summary>The categoryId parameter specifies a YouTube guide category, thereby requesting YouTube channels associated with that category.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.Id">
-            <summary>YouTube IDs of the channels to be returned.</summary>
+            <summary>The id parameter specifies a comma-separated list of the YouTube channel ID(s) for the resource(s) that are being retrieved. In a channel resource, the id property specifies the channel's YouTube channel ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.MaxResults">
-            <summary>Maximum number of results to return</summary>
+            <summary>The maxResults parameter specifies the maximum number of items that should be returned in the result set.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.Mine">
-            <summary>Filter to only channels owned by authenticated user.</summary>
+            <summary>Set this parameter's value to true to instruct the API to only return channels owned by the authenticated user.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.MySubscribers">
-            <summary>Filter to channels that subscribed to the channel of the authenticated user.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>Set this parameter's value to true to retrieve a list of channels that subscribed to the authenticated user's channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.PageToken">
-            <summary>Token for the page selection.</summary>
+            <summary>The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.Part">
-            <summary>Channel parts to include in the returned response. Valid values are: id, snippet, contentDetails and topicDetails.</summary>
+             <summary>The part parameter specifies a comma-separated list of one or more channel resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, statistics, and topicDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channel resource, the contentDetails property contains other properties, such as the uploads properties. As such, if you set part=contentDetails, the API response will also contain all of those nested properties.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.GuideCategoriesResource.List(System.String)">
-            <summary>Browse the YouTube guide category collection.</summary>
-            <param name="part">Required - Guide category parts to include in the returned response. Valid values are: id and snippet.</param>
+             <summary>Returns a list of categories that can be associated with YouTube channels.</summary>
+             <param name="part">Required - The part parameter specifies a comma-separated list of one or more guideCategory resource properties that the API response will include. The part names that you can include in the parameter value are id and snippet.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a guideCategory resource, the snippet property contains other properties, such as the category&apos;s title. If you set part=snippet, the API response will also contain all of those nested properties.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3.GuideCategoriesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -918,35 +980,42 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.GuideCategoriesResource.ListRequest.Hl">
-            <summary>Language for the returned channelCategories.</summary>
+            <summary>The hl parameter specifies the language that will be used for text values in the API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.GuideCategoriesResource.ListRequest.Id">
-            <summary>Comma-separated YouTube IDs of the channelCategories to be returned.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.GuideCategoriesResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>The id parameter specifies a comma-separated list of the YouTube channel category ID(s) for the resource(s) that are being retrieved. In a guideCategory resource, the id property specifies the YouTube channel category ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.GuideCategoriesResource.ListRequest.Part">
-            <summary>Guide category parts to include in the returned response. Valid values are: id and snippet.</summary>
+             <summary>The part parameter specifies a comma-separated list of one or more guideCategory resource properties that the API response will include. The part names that you can include in the parameter value are id and snippet.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a guideCategory resource, the snippet property contains other properties, such as the category's title. If you set part=snippet, the API response will also contain all of those nested properties.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.GuideCategoriesResource.ListRequest.RegionCode">
-            <summary>Return the channelCategories in the given region code.</summary>
+            <summary>The regionCode parameter instructs the API to return the list of guide categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.PlaylistItemsResource.Delete(System.String)">
-            <summary>Deletes playlist items by IDs.</summary>
-            <param name="id">Required - YouTube IDs of the playlist items to be deleted.</param>
+            <summary>Deletes a playlist item.</summary>
+            <param name="id">Required - The id parameter specifies the YouTube playlist item ID for the playlist item that is being deleted. In a playlistItem resource, the id property specifies the playlist item&apos;s ID.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.PlaylistItemsResource.Insert(Google.Apis.Youtube.v3.Data.PlaylistItem,System.String)">
-            <summary>Insert a resource into a playlist.</summary>
-            <param name="part">Required - One or more parts to return on the current request.</param>
+             <summary>Adds a resource to a playlist.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and contentDetails.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.PlaylistItemsResource.List(System.String)">
-            <summary>Browse the YouTube playlist collection.</summary>
-            <param name="part">Required - Playlist item parts to include in the returned response. Valid values are: id, snippet and contentDetails.</param>
+             <summary>Returns a collection of playlist items that match the API request parameters. You can retrieve all of the playlist items in a specified playlist or retrieve one or more playlist items by their unique IDs.</summary>
+             <param name="part">Required - The part parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, and contentDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part=snippet, the API response will contain all of those properties.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.PlaylistItemsResource.Update(Google.Apis.Youtube.v3.Data.PlaylistItem,System.String)">
-            <summary>Update a playlist item.</summary>
-            <param name="part">Required - One or more parts to return on the current request.</param>
+             <summary>Modifies a playlist item. For example, you could update the item&apos;s position in the playlist.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and contentDetails.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a playlist item can specify a start time and end time, which identify the times portion of the video that should play when users watch the video in the playlist. If your request is updating a playlist item that sets these values, and the request&apos;s part parameter value includes the contentDetails part, the playlist item&apos;s start and end times will be updated to whatever value the request body specifies. If the request body does not specify values, the existing start and end times will be removed and replaced with the default settings.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -955,10 +1024,7 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.DeleteRequest.Id">
-            <summary>YouTube IDs of the playlist items to be deleted.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.DeleteRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>The id parameter specifies the YouTube playlist item ID for the playlist item that is being deleted. In a playlistItem resource, the id property specifies the playlist item's ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -966,11 +1032,10 @@
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.InsertRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.InsertRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and contentDetails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -982,22 +1047,21 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.ListRequest.Id">
-            <summary>YouTube IDs of the playlist items to be returned.</summary>
+            <summary>The id parameter specifies a comma-separated list of one or more unique playlist item IDs.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.ListRequest.MaxResults">
-            <summary>Maximum number of results to return</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:maxResults</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.ListRequest.PageToken">
-            <summary>Token for the page selection.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:pageToken</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.ListRequest.Part">
-            <summary>Playlist item parts to include in the returned response. Valid values are: id, snippet and contentDetails.</summary>
+             <summary>The part parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, and contentDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part=snippet, the API response will contain all of those properties.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.ListRequest.PlaylistId">
-            <summary>Retrieves playlist items from the given playlist id.</summary>
+            <summary>The playlistId parameter specifies the unique ID of the playlist for which you want to retrieve playlist items. Note that even though this is an optional parameter, every request to retrieve playlist items must specify a value for either the id parameter or the playlistId parameter.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1005,30 +1069,39 @@
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.UpdateRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.UpdateRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and contentDetails.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a playlist item can specify a start time and end time, which identify the times portion of the video that should play when users watch the video in the playlist. If your request is updating a playlist item that sets these values, and the request's part parameter value includes the contentDetails part, the playlist item's start and end times will be updated to whatever value the request body specifies. If the request body does not specify values, the existing start and end times will be removed and replaced with the default settings.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistItemsResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.PlaylistsResource.Delete(System.String)">
-            <summary>Deletes playlists by IDs.</summary>
-            <param name="id">Required - YouTube IDs of the playlists to be deleted.</param>
+            <summary>Deletes a playlist.</summary>
+            <param name="id">Required - The id parameter specifies the YouTube playlist ID for the playlist that is being deleted. In a playlist resource, the id property specifies the playlist&apos;s ID.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.PlaylistsResource.Insert(Google.Apis.Youtube.v3.Data.Playlist,System.String)">
-            <summary>Create a playlist.</summary>
-            <param name="part">Required - One or more parts to return on the current request.</param>
+             <summary>Creates a playlist.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and status.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.PlaylistsResource.List(System.String)">
-            <summary>Browse the YouTube playlist collection.</summary>
-            <param name="part">Required - Playlist parts to include in the returned response. Valid values are: id, snippet and status.</param>
+             <summary>Returns a collection of playlists that match the API request parameters. For example, you can retrieve all playlists that the authenticated user owns, or you can retrieve one or more playlists by their unique IDs.</summary>
+             <param name="part">Required - The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, and status.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.PlaylistsResource.Update(Google.Apis.Youtube.v3.Data.Playlist,System.String)">
-            <summary>Update a playlist.</summary>
-            <param name="part">Required - One or more parts to return on the current request.</param>
+             <summary>Modifies a playlist. For example, you could change a playlist&apos;s title, description, or privacy status.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and status.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a playlist&apos;s privacy setting is contained in the status part. As such, if your request is updating a private playlist, and the request&apos;s part parameter value includes the status part, the playlist&apos;s privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the playlist will revert to the default privacy setting.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1037,10 +1110,7 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.DeleteRequest.Id">
-            <summary>YouTube IDs of the playlists to be deleted.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.DeleteRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>The id parameter specifies the YouTube playlist ID for the playlist that is being deleted. In a playlist resource, the id property specifies the playlist's ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1048,11 +1118,10 @@
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.InsertRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.InsertRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -1064,25 +1133,24 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.ChannelId">
-            <summary>Flag indicating only return the playlists of the specified channel ID.</summary>
+            <summary>This value indicates that the API should only return the specified channel's playlists.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.Id">
-            <summary>Comma-separated YouTube IDs of the playlists to be returned.</summary>
+            <summary>The id parameter specifies a comma-separated list of the YouTube playlist ID(s) for the resource(s) that are being retrieved. In a playlist resource, the id property specifies the playlist's YouTube playlist ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.MaxResults">
-            <summary>Maximum number of results to return</summary>
+            <summary>USE_DESCRIPTION --- channels:list:maxResults</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.Mine">
-            <summary>Flag indicating only return the playlists of the authenticated user.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>Set this parameter's value to true to instruct the API to only return playlists owned by the authenticated user.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.PageToken">
-            <summary>Token for the page selection.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:pageToken</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.ListRequest.Part">
-            <summary>Playlist parts to include in the returned response. Valid values are: id, snippet and status.</summary>
+             <summary>The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, and status.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1090,111 +1158,114 @@
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.UpdateRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.UpdateRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and status.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a playlist's privacy setting is contained in the status part. As such, if your request is updating a private playlist, and the request's part parameter value includes the status part, the playlist's privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the playlist will revert to the default privacy setting.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.PlaylistsResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.SearchResource.List(System.String)">
-            <summary>Universal search for youtube.</summary>
-            <param name="part">Required - Search result parts to include in the returned response. Valid values are: id and snippet.</param>
+             <summary>Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource.</summary>
+             <param name="part">Required - The part parameter specifies a comma-separated list of one or more search resource properties that the API response will include. The part names that you can include in the parameter value are id and snippet.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a search result, the snippet property contains other properties that identify the result&apos;s title, description, and so forth. If you set part=snippet, the API response will also contain all of those nested properties.</param>
         </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.Order">
-            <summary>Sort order.</summary>
+            <summary>The order parameter specifies the method that will be used to order resources in the API response.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Order.Date">
-            <summary>Sort according to the date.</summary>
+            <summary>Resources are sorted in reverse chronological order based on the date they were created.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Order.Rating">
-            <summary>Sort according to the rating.</summary>
+            <summary>Resources are sorted from highest to lowest rating.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Order.Relevance">
-            <summary>Sort according to the relevance.</summary>
+            <summary>Resources are sorted based on their relevance to the search query. This is the default value for this parameter.</summary>
         </member>
-        <member name="F:Google.Apis.Youtube.v3.SearchResource.Order.View_count">
-            <summary>Sort according to the view count.</summary>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.Order.ViewCount">
+            <summary>Resources are sorted from highest to lowest number of views.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.Published">
-            <summary>Only search for resources uploaded at a specific pediod</summary>
+            <summary>The published parameter indicates that the API response should only contain resources created within the specified time period.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.Any">
-            <summary>No filter on the release date</summary>
+            <summary>Do not filter results based on their creation date. This is the default value.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.ThisMonth">
-            <summary>Videos uploaded this month</summary>
+            <summary>Return videos that were uploaded within the past month.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.ThisWeek">
-            <summary>Videos uploaded this week</summary>
+            <summary>Return videos that were uploaded within the past week.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.Today">
-            <summary>Videos uploaded today</summary>
+            <summary>Return videos that were uploaded today.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoCaption">
-            <summary>Add a filter on the the presence of captions on the videos.</summary>
+            <summary>The videoCaption parameter indicates whether the API should filter video search results based on whether they have captions.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoCaption.Any">
-            <summary>No filter on the captions.</summary>
+            <summary>Do not filter results based on caption availability.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoCaption.ClosedCaption">
-            <summary>Videos with closed captions.</summary>
+            <summary>Only include videos that have captions.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoCaption.None">
-            <summary>Videos without captions.</summary>
+            <summary>Only include videos that do not have captions.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoDefinition">
-            <summary>Add a filter for the definition of the videos.</summary>
+            <summary>The videoDefinition parameter lets you restrict a search to only include either high definition (HD) or standard definition (SD) videos. HD videos are available for playback in at least 720p, though higher resolutions, like 1080p, might also be available.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDefinition.Any">
-            <summary>No filter on the definition.</summary>
+            <summary>Return all videos, regardless of their resolution.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDefinition.High">
-            <summary>Videos in high definition.</summary>
+            <summary>Only retrieve HD videos.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDefinition.Standard">
-            <summary>Videos in standard definition.</summary>
+            <summary>Only retrieve videos in standard definition.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoDimension">
-            <summary>Add a filter for the number of dimensions in the videos.</summary>
+            <summary>The videoDimension parameter lets you restrict a search to only retrieve 2D or 3D videos.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDimension.D">
-            <summary>Videos in two dimensions.</summary>
+            <summary>Restrict search results to exclude 3D videos.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDimension.DValue">
-            <summary>Videos in three dimensions.</summary>
+            <summary>Restrict search results to only include 3D videos.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDimension.Any">
-            <summary>No filter on the dimension.</summary>
+            <summary>Include both 3D and non-3D videos in returned results. This is the default value.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoDuration">
-            <summary>Add a filter on the duration of the videos.</summary>
+            <summary>The videoDuration parameter filters video search results based on their duration.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDuration.Any">
-            <summary>No filter on the duration.</summary>
+            <summary>Do not filter video search results based on their duration. This is the default value.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDuration.Long">
-            <summary>Videos with a duration longer than 20 minutes.</summary>
+            <summary>Only include videos longer than 20 minutes.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDuration.Medium">
-            <summary>Videos with a duration between 4 and 20 minutes.</summary>
+            <summary>Only include videos that are between four and 20 minutes long (inclusive).</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDuration.Short">
-            <summary>Videos with a duration under 4 minutes.</summary>
+            <summary>Only include videos that are less than four minutes long.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoLicense">
-            <summary>Add a filter on the licensing of the videos.</summary>
+            <summary>The videoLicense parameter filters search results to only include videos with a particular license. YouTube lets video uploaders choose to attach either the Creative Commons license or the standard YouTube license to each of their videos.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoLicense.Any">
-            <summary>No filter on the license.</summary>
+            <summary>Return all videos, regardless of which license they have, that match the query parameters.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoLicense.CreativeCommon">
-            <summary>Videos under the Creative Common license.</summary>
+            <summary>Only return videos that have a Creative Commons license. Users can reuse videos with this license in other videos that they create. Learn more.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoLicense.Youtube">
-            <summary>Videos under the YouTube license.</summary>
+            <summary>Only return videos that have the standard YouTube license.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1203,67 +1274,70 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.MaxResults">
-            <summary>Maximum number of search results to return per page.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:maxResults</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Order">
-            <summary>Sort order.</summary>
+            <summary>The order parameter specifies the method that will be used to order resources in the API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.PageToken">
-            <summary>Token for the page selection.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:pageToken</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Part">
-            <summary>Search result parts to include in the returned response. Valid values are: id and snippet.</summary>
+             <summary>The part parameter specifies a comma-separated list of one or more search resource properties that the API response will include. The part names that you can include in the parameter value are id and snippet.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a search result, the snippet property contains other properties that identify the result's title, description, and so forth. If you set part=snippet, the API response will also contain all of those nested properties.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Published">
-            <summary>Only search for resources uploaded at a specific pediod</summary>
+            <summary>The published parameter indicates that the API response should only contain resources created within the specified time period.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Q">
-            <summary>Query to search in Youtube.</summary>
+            <summary>The q parameter specifies the query term to search for.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.RelatedToVideo">
-            <summary>Search for resources related to this video. Need to be used with type set to 'video'</summary>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.RelatedToVideoId">
+            <summary>The relatedToVideoId parameter retrieves a list of videos that are related to the video that the parameter value identifies. The parameter value must be set to a YouTube video ID and, if you are using this parameter, the type parameter must be set to video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.TopicId">
-            <summary>Only search for resources with the specified topic</summary>
+            <summary>The topicId parameter indicates that the API response should only contain resources associated with the specified topic. The value identifies a Freebase topic ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Type">
-            <summary>Type of resource to search.</summary>
+            <summary>The type parameter restricts a search query to only retrieve a particular type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoCaption">
-            <summary>Add a filter on the the presence of captions on the videos.</summary>
+            <summary>The videoCaption parameter indicates whether the API should filter video search results based on whether they have captions.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoDefinition">
-            <summary>Add a filter for the definition of the videos.</summary>
+            <summary>The videoDefinition parameter lets you restrict a search to only include either high definition (HD) or standard definition (SD) videos. HD videos are available for playback in at least 720p, though higher resolutions, like 1080p, might also be available.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoDimension">
-            <summary>Add a filter for the number of dimensions in the videos.</summary>
+            <summary>The videoDimension parameter lets you restrict a search to only retrieve 2D or 3D videos.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoDuration">
-            <summary>Add a filter on the duration of the videos.</summary>
+            <summary>The videoDuration parameter filters video search results based on their duration.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoLicense">
-            <summary>Add a filter on the licensing of the videos.</summary>
+            <summary>The videoLicense parameter filters search results to only include videos with a particular license. YouTube lets video uploaders choose to attach either the Creative Commons license or the standard YouTube license to each of their videos.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.SubscriptionsResource.Delete(System.String)">
-            <summary>Deletes subscriptions by IDs.</summary>
-            <param name="id">Required - YouTube IDs of the subscription to be deleted.</param>
+            <summary>Deletes a subscription.</summary>
+            <param name="id">Required - The id parameter specifies the YouTube subscription ID for the resource that is being deleted. In a subscription resource, the id property specifies the YouTube subscription ID.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.SubscriptionsResource.Insert(Google.Apis.Youtube.v3.Data.Subscription,System.String)">
-            <summary>Insert a subscription.</summary>
-            <param name="part">Required - One or more parts to return on the current request.</param>
+             <summary>Adds a subscription for the authenticated user&apos;s channel.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and contentDetails.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.SubscriptionsResource.List(System.String)">
-            <summary>Browses the subscriptions collection.</summary>
-            <param name="part">Required - Subscription parts to include in the returned response. Valid values are: id, snippet and contentDetails.</param>
+             <summary>Returns subscription resources that match the API request criteria.</summary>
+             <param name="part">Required - The part parameter specifies a comma-separated list of one or more subscription resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, and contentDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a subscription resource, the snippet property contains other properties, such as a display title for the subscription. If you set part=snippet, the API response will also contain all of those nested properties.</param>
         </member>
         <member name="T:Google.Apis.Youtube.v3.SubscriptionsResource.Order">
-            <summary>Sort order.</summary>
+            <summary>The order parameter specifies the method that will be used to sort resources in the API response.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SubscriptionsResource.Order.Alphabetical">
-            <summary>Sort alphabetically</summary>
+            <summary>Sort alphabetically.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.SubscriptionsResource.Order.Relevance">
             <summary>Sort by relevance.</summary>
@@ -1278,10 +1352,7 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.DeleteRequest.Id">
-            <summary>YouTube IDs of the subscription to be deleted.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.DeleteRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>The id parameter specifies the YouTube subscription ID for the resource that is being deleted. In a subscription resource, the id property specifies the YouTube subscription ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1289,11 +1360,10 @@
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.InsertRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.InsertRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet and contentDetails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -1305,35 +1375,34 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.ListRequest.ChannelId">
-            <summary>Only return subscriptions to given channelId.</summary>
+            <summary>The channelId parameter specifies a YouTube channel ID. The API will only return that channel's subscriptions.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.ListRequest.ForChannelId">
-            <summary>Comma separated list of channel IDs to return subscriptions for.</summary>
+            <summary>The forChannelId parameter specifies a comma-separated list of channel IDs. The API response will then only contain subscriptions matching those channels.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.ListRequest.Id">
-            <summary>YouTube IDs of the subscriptions to be returned.</summary>
+            <summary>The id parameter specifies a comma-separated list of the YouTube subscription ID(s) for the resource(s) that are being retrieved. In a subscription resource, the id property specifies the YouTube subscription ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.ListRequest.MaxResults">
-            <summary>Maximum number of search results to return per page.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:maxResults</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.ListRequest.Mine">
-            <summary>Flag indicating only return the subscriptions of the authenticated user.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>Set this parameter's value to true to retrieve a feed of the authenticated user's subscriptions.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.ListRequest.Order">
-            <summary>Sort order.</summary>
+            <summary>The order parameter specifies the method that will be used to sort resources in the API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.ListRequest.PageToken">
-            <summary>Token for the page selection.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:pageToken</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SubscriptionsResource.ListRequest.Part">
-            <summary>Subscription parts to include in the returned response. Valid values are: id, snippet and contentDetails.</summary>
+             <summary>The part parameter specifies a comma-separated list of one or more subscription resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, and contentDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a subscription resource, the snippet property contains other properties, such as a display title for the subscription. If you set part=snippet, the API response will also contain all of those nested properties.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.VideoCategoriesResource.List(System.String)">
-            <summary>Browse list of video categories.</summary>
-            <param name="part">Required - Video category parts to include in the returned response. Valid values are: id and snippet.</param>
+            <summary>Returns a list of categories that can be associated with YouTube videos.</summary>
+            <param name="part">Required - The part parameter specifies the videoCategory resource parts that the API response will include. Supported values are id and snippet.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideoCategoriesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1342,40 +1411,49 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideoCategoriesResource.ListRequest.Hl">
-            <summary>Language used for the title of the categories.</summary>
+            <summary>The hl parameter specifies the language that should be used for text values in the API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideoCategoriesResource.ListRequest.Id">
-            <summary>IDs of the categories to be returned.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.VideoCategoriesResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>The id parameter specifies a comma-separated list of video category IDs for the resources that you are retrieving.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideoCategoriesResource.ListRequest.Part">
-            <summary>Video category parts to include in the returned response. Valid values are: id and snippet.</summary>
+            <summary>The part parameter specifies the videoCategory resource parts that the API response will include. Supported values are id and snippet.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideoCategoriesResource.ListRequest.RegionCode">
-            <summary>Return all the categories in this region.</summary>
+            <summary>The regionCode parameter instructs the API to return the list of video categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.VideosResource.Delete(System.String)">
-            <summary>Delete a YouTube video.</summary>
-            <param name="id">Required - YouTube ID of the video to be deleted.</param>
+            <summary>Deletes a YouTube video.</summary>
+            <param name="id">Required - The id parameter specifies the YouTube video ID for the resource that is being deleted. In a video resource, the id property specifies the video&apos;s ID.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.VideosResource.Insert(Google.Apis.Youtube.v3.Data.Video,System.String)">
-            <summary>Upload a video to YouTube.</summary>
-            <param name="part">Required - One or more parts to return on the current request.</param>
+             <summary>Uploads a video to YouTube and optionally sets the video&apos;s metadata.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet, contentDetails, player, statistics, status, and topicDetails. However, not all of those parts contain properties that can be set when setting or updating a video&apos;s metadata. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.VideosResource.Insert(Google.Apis.Youtube.v3.Data.Video,System.String,System.IO.Stream,System.String)">
-            <summary>Upload a video to YouTube.</summary>
-            <param name="part">Required - One or more parts to return on the current request.</param>
+             <summary>Uploads a video to YouTube and optionally sets the video&apos;s metadata.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet, contentDetails, player, statistics, status, and topicDetails. However, not all of those parts contain properties that can be set when setting or updating a video&apos;s metadata. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.VideosResource.List(System.String,System.String)">
-            <summary>Browse the YouTube video collection.</summary>
-            <param name="id">Required - YouTube IDs of the videos to be returned.</param>
-            <param name="part">Required - Video parts to include in the returned response. Valid values are: id, snippet, contentDetails, player, statistics, status and topicDetails.</param>
+             <summary>Returns a list of videos that match the API request parameters.</summary>
+             <param name="id">Required - The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) that are being retrieved. In a video resource, the id property specifies the video&apos;s ID.</param>
+             <param name="part">Required - The part parameter specifies a comma-separated list of one or more video resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, player, statistics, status, and topicDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a video resource, the snippet property contains the channelId, title, description, tags, and categoryId properties. As such, if you set part=snippet, the API response will contain all of those properties.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.VideosResource.Update(Google.Apis.Youtube.v3.Data.Video,System.String)">
-            <summary>Update a video.</summary>
-            <param name="part">Required - One or more parts to return on the current request.</param>
+             <summary>Updates a video&apos;s metadata.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet, contentDetails, player, statistics, status, and topicDetails.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a video&apos;s privacy setting is contained in the status part. As such, if your request is updating a private video, and the request&apos;s part parameter value includes the status part, the video&apos;s privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the video will revert to the default privacy setting.
+            
+            In addition, not all of those parts contain properties that can be set when setting or updating a video&apos;s metadata. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1384,10 +1462,7 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.DeleteRequest.Id">
-            <summary>YouTube ID of the video to be deleted.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.VideosResource.DeleteRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>The id parameter specifies the YouTube video ID for the resource that is being deleted. In a video resource, the id property specifies the video's ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1395,11 +1470,10 @@
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet, contentDetails, player, statistics, status, and topicDetails. However, not all of those parts contain properties that can be set when setting or updating a video's metadata. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -1410,11 +1484,10 @@
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertMediaUpload.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertMediaUpload.Part">
-            <summary>One or more parts to return on the current request.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet, contentDetails, player, statistics, status, and topicDetails. However, not all of those parts contain properties that can be set when setting or updating a video's metadata. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1423,13 +1496,12 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.ListRequest.Id">
-            <summary>YouTube IDs of the videos to be returned.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.VideosResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
+            <summary>The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) that are being retrieved. In a video resource, the id property specifies the video's ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.ListRequest.Part">
-            <summary>Video parts to include in the returned response. Valid values are: id, snippet, contentDetails, player, statistics, status and topicDetails.</summary>
+             <summary>The part parameter specifies a comma-separated list of one or more video resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, player, statistics, status, and topicDetails.
+            
+            If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a video resource, the snippet property contains the channelId, title, description, tags, and categoryId properties. As such, if you set part=snippet, the API response will contain all of those properties.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1437,11 +1509,14 @@
         <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.OnBehalfOfContentOwner">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part names that you can include in the parameter value are snippet, contentDetails, player, statistics, status, and topicDetails.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a video's privacy setting is contained in the status part. As such, if your request is updating a private video, and the request's part parameter value includes the status part, the video's privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the video will revert to the default privacy setting.
+            
+            In addition, not all of those parts contain properties that can be set when setting or updating a video's metadata. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>

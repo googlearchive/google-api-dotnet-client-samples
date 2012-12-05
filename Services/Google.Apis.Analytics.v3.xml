@@ -682,6 +682,9 @@
         <member name="P:Google.Apis.Analytics.v3.Data.Profile.Timezone">
             <summary>Time zone for which this profile has been configured.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.Type">
+            <summary>Profile type. Supported types: WEB or APP.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Profile.Updated">
             <summary>Time this profile was last modified.</summary>
         </member>

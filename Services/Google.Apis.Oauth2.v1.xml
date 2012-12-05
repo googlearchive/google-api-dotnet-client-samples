@@ -55,6 +55,9 @@
         <member name="P:Google.Apis.Oauth2.v1.Data.Userinfo.Given_name">
             <summary>The user&apos;s first name.</summary>
         </member>
+        <member name="P:Google.Apis.Oauth2.v1.Data.Userinfo.Hd">
+            <summary>The hosted domain e.g. example.com if the user is Google apps user.</summary>
+        </member>
         <member name="P:Google.Apis.Oauth2.v1.Data.Userinfo.Id">
             <summary>The focus obfuscated gaia id of the user.</summary>
         </member>

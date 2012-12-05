@@ -226,6 +226,9 @@
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelDebugJsonV1.BackendTimesData.ServerMillis">
             <summary>Google internal</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelExtrasJsonV1.RankingRules">
+            <summary>Names of boost (ranking) rules applicable to this search.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Attributes">
             <summary>Attributes of product (available only with a cx source).</summary>
         </member>
@@ -557,6 +560,12 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.Currency">
             <summary>Currency restriction (ISO 4217)</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ExtrasEnabled">
+            <summary>Whether to return extra information.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ExtrasInfo">
+            <summary>What extra information to return.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.FacetsDiscover">
             <summary>Facets to discover</summary>
