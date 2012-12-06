@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discovery.FieldsParameter",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdSense.Sample", "AdSense.Sample\AdSense.Sample.csproj", "{AFB9D510-C39D-42D0-9672-D494D0397F12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdSenseHost.Sample", "AdSenseHost.Sample\AdSenseHost.Sample.csproj", "{6429E606-F032-4294-89D4-E380CF1CB671}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,10 @@ Global
 		{AFB9D510-C39D-42D0-9672-D494D0397F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFB9D510-C39D-42D0-9672-D494D0397F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFB9D510-C39D-42D0-9672-D494D0397F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6429E606-F032-4294-89D4-E380CF1CB671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6429E606-F032-4294-89D4-E380CF1CB671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6429E606-F032-4294-89D4-E380CF1CB671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6429E606-F032-4294-89D4-E380CF1CB671}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
