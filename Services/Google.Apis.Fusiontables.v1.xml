@@ -639,6 +639,9 @@
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.CopyRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.CopyRequest.CopyPresentation">
+            <summary>Whether to also copy tabs, styles, and templates. Default is false.</summary>
+        </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.CopyRequest.TableId">
             <summary>ID of the table that is being copied.</summary>
         </member>

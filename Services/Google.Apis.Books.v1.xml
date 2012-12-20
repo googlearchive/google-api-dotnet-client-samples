@@ -421,6 +421,9 @@
         <member name="P:Google.Apis.Books.v1.Data.Volume.Kind">
             <summary>Resource type for a volume. (In LITE projection.)</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.RecommendedInfo">
+            <summary>Recommendation related information for this volume.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.SaleInfo">
             <summary>Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries).</summary>
         </member>
@@ -492,6 +495,12 @@
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.AccessInfoData.PdfData.IsAvailable">
             <summary>Is a scanned image pdf available either as public domain or for purchase. (In LITE projection.)</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.Data.Volume.RecommendedInfoData">
+            <summary>Recommendation related information for this volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.RecommendedInfoData.Explanation">
+            <summary>A text explaining why this volume is recommended.</summary>
         </member>
         <member name="T:Google.Apis.Books.v1.Data.Volume.SaleInfoData">
             <summary>Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries).</summary>

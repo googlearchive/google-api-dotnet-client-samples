@@ -481,7 +481,7 @@
             <summary>A link for downloading the content of the file in a browser using cookie based authentication. In cases where the content is shared publicly, the content can be downloaded without any credentials.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.WebViewLink">
-            <summary>A link providing access to static web assets (HTML, CSS, JS, etc) in a public folder hierarchy using filenames in a relative path.</summary>
+            <summary>A link only available on public folders for viewing their static web assets (HTML, CSS, JS, etc) via Google Drive&apos;s Website Hosting.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.WritersCanShare">
             <summary>Whether writers can share the document with other users.</summary>

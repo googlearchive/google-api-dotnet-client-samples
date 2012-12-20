@@ -1,0 +1,1706 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.YoutubePartner.v1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AdBreak.MidrollSeconds">
+            <summary>The time of the ad break specified as the number of seconds after the start of the video when the break occurs.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AdBreak.Position">
+            <summary>The point at which the break occurs during the video playback.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AdBreak.Slot">
+            <summary>A list of ad slots that occur in an ad break. Ad slots let you specify the number of ads that should run in each break.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AdSlot.Id">
+            <summary>A value that identifies the ad slot to the ad server.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AdSlot.Type">
+            <summary>The type of ad that runs in the slot. The value may affect YouTube&apos;s fallback behavior if the third-party platform does not return ads.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AllowedAdvertisingOptions.AdsOnEmbeds">
+            <summary>This setting indicates whether the partner can display ads when videos run in an embedded player.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AllowedAdvertisingOptions.Kind">
+            <summary>This property identifies the resource type. Its value is youtubePartner#allowedAdvertisingOptions.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AllowedAdvertisingOptions.LicAdFormats">
+            <summary>A list of ad formats that the partner is allowed to use for its uploaded videos.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AllowedAdvertisingOptions.UgcAdFormats">
+            <summary>A list of ad formats that the partner is allowed to use for claimed, user-uploaded content.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Asset.AliasId">
+            <summary>A list of asset IDs that can be used to refer to the asset. The list contains values if the asset represents multiple constituent assets that have been merged. In that case, any of the asset IDs originally assigned to the constituent assets could be used to update the master, or synthesized, asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Asset.Id">
+            <summary>An ID that YouTube assigns and uses to uniquely identify the asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Asset.Kind">
+            <summary>The type of the API resource. For asset resources, the value is youtubePartner#asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Asset.Status">
+            <summary>The asset&apos;s status.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Asset.Type">
+            <summary>The asset&apos;s type. This value determines the metadata fields that you can set for the asset. In addition, certain API functions may only be supported for specific types of assets. For example, composition assets may have more complex ownership data than other types of assets.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetListResponse.Items">
+            <summary>A list of asset resources that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetListResponse.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#assetList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetRelationship.ChildAssetId">
+            <summary>The ID of the child (contained) asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetRelationship.Id">
+            <summary>A value that YouTube assigns and uses to uniquely identify the asset relationship.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetRelationship.Kind">
+            <summary>The type of the API resource. For this resource, the value is youtubePartner#assetRelationship.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetRelationship.ParentAssetId">
+            <summary>The ID of the parent (containing) asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetRelationshipListResponse.Items">
+            <summary>A list of assetRelationship resources that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetRelationshipListResponse.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#assetRelationshipList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetRelationshipListResponse.NextPageToken">
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSearchResponse.Items">
+            <summary>A list of asset resources that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSearchResponse.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#assetSnippetList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSearchResponse.NextPageToken">
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSnippet.CustomId">
+            <summary>Custom ID assigned by the content owner to this asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSnippet.Id">
+            <summary>An ID that YouTube assigns and uses to uniquely identify the asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSnippet.Isrc">
+            <summary>The ISRC (International Standard Recording Code) for this asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSnippet.Iswc">
+            <summary>The ISWC (International Standard Musical Work Code) for this asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSnippet.Kind">
+            <summary>The type of the API resource. For this operation, the value is youtubePartner#assetSnippet.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSnippet.Title">
+            <summary>Title of this asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.AssetSnippet.Type">
+            <summary>The asset&apos;s type. This value determines which metadata fields might be included in the metadata object.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Claim.AssetId">
+            <summary>The unique YouTube asset ID that identifies the asset associated with the claim.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Claim.ContentType">
+            <summary>This value indicates whether the claim covers the audio, video, or audiovisual portion of the claimed content.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Claim.Id">
+            <summary>The ID that YouTube assigns and uses to uniquely identify the claim.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Claim.Kind">
+            <summary>The type of the API resource. For claim resources, this value is youtubePartner#claim.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Claim.Status">
+            <summary>The claim&apos;s status. When updating a claim, you can update its status from active to inactive to effectively release the claim, but the API does not support other updates to a claim&apos;s status.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Claim.VideoId">
+            <summary>The unique YouTube video ID that identifies the video associated with the claim.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ClaimListResponse.Items">
+            <summary>A list of claims that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ClaimListResponse.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#claimList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ClaimListResponse.NextPageToken">
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ClaimListResponse.PreviousPageToken">
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ClaimedVideoDefaults.ChannelOverride">
+            <summary>Set this property to true to indicate that the channel&apos;s claimedVideoOptions can override the content owner&apos;s claimedVideoOptions.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ClaimedVideoDefaults.Kind">
+            <summary>Identifies this resource as default options for newly claimed video. Value: &quot;youtubePartner#claimedVideoDefaults&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ClaimedVideoDefaults.NewVideoDefaults">
+            <summary>A list of ad formats that could be used as the default settings for a newly claimed video. The first partner that claims the video sets its default advertising options to that video.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Conditions.ContentMatchType">
+            <summary>This match condition specifies whether the user- or partner-uploaded content needs to match the audio, video or audiovisual content of a reference file for the rule to apply.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Conditions.MatchDuration">
+            <summary>This match condition specifies an amount of time that the user- or partner- uploaded content needs to match a reference file for the rule to apply.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Conditions.MatchPercent">
+            <summary>This match condition specifies a percentage of the user- or partner-uploaded content that needs to match a reference file for the rule to apply.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Conditions.ReferenceDuration">
+            <summary>This match condition indicates that the reference must be a certain duration for the rule to apply.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Conditions.ReferencePercent">
+            <summary>This match condition indicates that the specified percentage of a reference file must match the user- or partner-uploaded content for the rule to apply.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwner.ConflictNotificationEmail">
+            <summary>The email address visible to other partners for use in managing asset ownership conflicts.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwner.DisplayName">
+            <summary>The content owner&apos;s display name.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwner.DisputeNotificationEmails">
+            <summary>The email address(es) to which YouTube sends claim dispute notifications and possible claim notifications.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwner.FingerprintReportNotificationEmails">
+            <summary>The email address(es) to which YouTube sends fingerprint reports.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwner.Id">
+            <summary>A unique ID that YouTube uses to identify the content owner.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwner.Kind">
+            <summary>The type of the API resource. For content owner resources, the value is youtubePartner#contentOwner.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwner.PrimaryNotificationEmails">
+            <summary>The email address(es) to which YouTube sends CMS account details and report notifications.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwnerAdvertisingOption.Id">
+            <summary>The value that YouTube uses to uniquely identify the content owner.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwnerAdvertisingOption.Kind">
+            <summary>The type of the API resource. For this resource, the value is youtubePartner#contentOwnerAdvertisingOption.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwnerListResponse.Items">
+            <summary>A list of content owners that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ContentOwnerListResponse.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#contentOwnerList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.CountriesRestriction.AdFormats">
+            <summary>A list of ad formats that can be used in the specified countries.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.CountriesRestriction.Territories">
+            <summary>A list of ISO 3166-1 alpha-2 country codes that identify the countries where ads are enabled.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Date.Day">
+            <summary>The date&apos;s day. The value should be an integer between 1 and 31. Note that some day-month combinations are not valid.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Date.Month">
+            <summary>The date&apos;s month. The value should be an integer between 1 and 12.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Date.Year">
+            <summary>The date&apos;s year in the Gregorian Calendar. Assumed to be A.D.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.DateRange.Kind">
+            <summary>Identifies this resource as order date range. Value: &quot;youtubePartner#dateRange&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.IntervalCondition.High">
+            <summary>The maximum (inclusive) allowed value for the condition to be satisfied. The default value is âˆž.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.IntervalCondition.Low">
+            <summary>The minimum (inclusive) allowed value for the condition to be satisfied. The default value is -âˆž.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Actor">
+            <summary>A list that identifies actors associated with the asset. You can specify up to 50 actors for an asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Album">
+            <summary>The album on which a sound recording asset is included. This field is only valid for sound recording assets and has a maximum length of 255 bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Artist">
+            <summary>The artist associated with a music video or sound recording asset. This field is only valid for music video and sound recording assets. It is required for sound recordings included in the AudioSwap program.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Broadcaster">
+            <summary>Identifies the network or channel that originally broadcast a show or a season of a show. This field should only be included for an asset if the broadcaster associated with the asset is different from the partner uploading the asset to YouTube. Note that a show may have multiple broadcasters; for example, a show may switch networks between seasons.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Category">
+            <summary>Category of this asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.ContentType">
+             <summary>The type of video content that the asset represents. This field is only valid for movie and episode assets, and is required for the following types of those assets:  
+            - Episode assets that are linked to a show 
+            - Movie assets that appear in YouTube&apos;s Movies category</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.CustomId">
+            <summary>A unique value that you, the metadata provider, use to identify an asset. The value could be a unique ID that you created for the asset or a standard identifier, such as an ISRC. The value has a maximum length of 64 bytes and may contain alphanumeric characters, hyphens (-), underscores (_), periods (.), &quot;at&quot; symbols (@), or forward slashes (/).</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Description">
+            <summary>A description of the asset. The description may be displayed on YouTube or in CMS. This field has a maximum length of 5,000 bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Director">
+            <summary>A list that identifies directors associated with the asset. You can specify up to 50 directors for an asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Eidr">
+            <summary>The Entertainment Identifier Registry (EIDR) assigned to an asset. This value is only used for episode and movie assets and is optional in both cases. The value contains a standard prefix for EIDR registry, followed by a forward slash, a 20-character hexadecimal string, and an alphanumeric (0-9A-Z) check character.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.EndYear">
+            <summary>The last year that a television show aired. This value is only used for show assets, for which it is optional. Do not specify a value if new show episodes are still being created.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.EpisodeNumber">
+            <summary>The episode number associated with an episode asset. This field is required for and only used for episode assets that are linked to show assets. It has a maximum length of 5 bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.EpisodesAreUntitled">
+            <summary>This value indicates that the episodes associated with a particular show asset or a particular season asset are untitled. An untitled show (or season) has episodes which are identified by their episode number or date. If this field is set to true, then YouTube will optimize the title displayed for associated episodes.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Genre">
+             <summary>This field specifies a genre that can be used to categorize an asset. Assets may be categorized in more than one genre, and YouTube uses different sets of genres to categorize different types of assets. For example, Soaps might be a valid genre for a show but not for a movie or sound recording.  
+            - Show assets 
+            - Movie assets that appear in YouTube&apos;s Movies category 
+            - Sound recordings included in the AudioSwap program</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Grid">
+            <summary>The GRID (Global Release Identifier) of a music video or sound recording. This field&apos;s value must contain exactly 18 alphanumeric characters.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Hfa">
+            <summary>The six-character Harry Fox Agency (HFA) song code issued to uniquely identify a composition. This value is only valid for composition assets.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.InfoUrl">
+            <summary>An official URL associated with the asset. This field has a maximum length of 1536 bytes. Please do not submit a 1537-byte URL. Your efforts would be futile.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Isan">
+             <summary>The ISAN (International Standard Audiovisual Number) for the asset. This value is only used for episode and movie assets and is optional in both cases. The value contains 26 characters, which includes the 24 hexadecimal characters of the ISAN as well as two check characters, in the following format:  
+            - The first 16 characters in the tag value contain hexadecimal characters specifying the &apos;root&apos; and &apos;episode&apos; components of the ISAN. 
+            - The seventeenth character is a check character (a letter from A-Z). 
+            - Characters 18 to 25 are the remaining eight characters of the ISAN, which specify the &apos;version&apos; component of the ISAN. 
+            - The twenty-sixth character is another check character (A-Z).</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Isrc">
+            <summary>The ISRC (International Standard Recording Code) of a music video or sound recording asset. This field&apos;s value must contain exactly 12 alphanumeric characters.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Iswc">
+            <summary>The ISWC (International Standard Musical Work Code) for a composition asset. The field&apos;s value must contain exactly 11 characters in the format of a letter (T) followed by 10 digits.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Keyword">
+            <summary>A list of up to 100 keywords associated with a show asset. This field is required for and also only used for show assets.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Label">
+            <summary>The record label that released a sound recording asset. This field is only valid for sound recording assets and has a maximum length of 255 bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Notes">
+            <summary>Additional information that does not map directly to one of the other metadata fields. This field has a maximum length of 255 bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.OriginalReleaseMedium">
+             <summary>The method by which people first had the opportunity to see a video asset. This value is only used for episode and movie assets. It is required for the assets listed below and otherwise optional:  
+            - Episode assets that are linked to a show 
+            - Movie assets that appear in YouTube&apos;s Movies category</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Producer">
+            <summary>A list that identifies producers of the asset. You can specify up to 50 producers for an asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Ratings">
+            <summary>A list of ratings that an asset received. The rating must be valid under the specified rating system.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.SeasonNumber">
+            <summary>The season number that identifies a season asset, or the season number that is associated with an episode asset. This field has a maximum length of 5 bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.ShowCustomId">
+            <summary>The customId of the show asset that a season or episode asset is associated with. It is required for season and episode assets that appear in the Shows category on YouTube, and it is not valid for other types of assets. This field has a maximum length of 64 bytes and may contain alphanumeric characters, hyphens (-), underscores (_), periods (.), &quot;at&quot; symbols (@), or forward slashes (/).</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.ShowTitle">
+            <summary>The name of the show that an episode asset is associated with. Note: This tag is only used for and valid for episodes that are not associated with show assets and enables those assets to still display a show title in the asset metadata section of CMS. This field has a maximum length of 120 bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.SpokenLanguage">
+            <summary>The video&apos;s primary spoken language. The value can be any ISO 639-1 two-letter language code. This value is only used for episode and movie assets and is not valid for other types of assets.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.StartYear">
+            <summary>The first year that a television show aired. This value is required for and also only used for show assets.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.SubtitledLanguage">
+            <summary>A list of languages for which the video has either a separate caption track or burnt-in captions that are part of the video. Each value in the list should be an ISO 639-1 two-letter language code. This value is only used for episode and movie assets and is not valid for other types of assets.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Title">
+             <summary>The asset&apos;s title or name. The value has a maximum length of 255 bytes. This value is required for the assets listed below and optional for all other assets:  
+            - Show assets 
+            - Episode assets that are linked to a show 
+            - Movie assets that appear in YouTube&apos;s Movies category 
+            - Sound recordings included in the AudioSwap program</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.TmsId">
+            <summary>TMS (Tribune Media Systems) ID for the asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.TotalEpisodesExpected">
+            <summary>Specifies the total number of full-length episodes in the season. This value is used only for season assets.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Upc">
+            <summary>The UPC (Universal Product Code) associated with the asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Metadata.Writer">
+            <summary>A list that identifies writers associated with the asset. You can specify up to 50 writers for an asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.MetadataHistory.Kind">
+            <summary>The type of the API resource. For metadata history resources, the value is youtubePartner#metadataHistory.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.MetadataHistory.TimeProvidedMs">
+            <summary>The time the metadata was provided.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.MetadataHistoryListResponse.Items">
+            <summary>A list of metadata history (youtubePartner#metadataHistory) resources that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.MetadataHistoryListResponse.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#metadataHistoryList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.AvailGroupId">
+            <summary>Links an order to the avails associated with it.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.ChannelId">
+            <summary>Channel ID - identifies the channel this order and video are associated with</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.ContentType">
+             <summary>Type of content possible values are 
+            - MOVIE
+            - SHOW</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.Country">
+            <summary>Two letter country code for the order only countries where YouTube does transactional business are allowed.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.CustomId">
+            <summary>Secondary id to be used to identify content in other systems like partner database</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.Events">
+            <summary>History log of events for this order</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.Id">
+            <summary>Order Id unique identifier for an order.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.Kind">
+            <summary>Identifies this resource as order. Value: &quot;youtubePartner#order&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.Movie">
+            <summary>Title if the order is type movie.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.Priority">
+            <summary>The priority for the order in the QC review queue once the content is ready for QC.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.ProductionHouse">
+            <summary>Post production house that is to process this order</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.PurchaseOrder">
+            <summary>Youtube purchase order reference for the post production house.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.Status">
+            <summary>The order&apos;s status.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Order.VideoId">
+            <summary>Video ID the video that this order is associated with if any.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.OrderListResponse.Items">
+            <summary>A list of orders that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.OrderListResponse.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#orderList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.OrderListResponse.NextPageToken">
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.OrderListResponse.PreviousPageToken">
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Origination.Owner">
+            <summary>The content owner who provided the metadata or ownership information.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Origination.Source">
+            <summary>The mechanism by which the piece of metadata, ownership or relationship information was provided.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.OwnershipHistoryListResponse.Items">
+            <summary>A list of ownership history (youtubePartner#ownershipHistory) resources that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.OwnershipHistoryListResponse.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#ownershipHistoryList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PageInfo.ResultsPerPage">
+            <summary>The number of results included in the API response.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PageInfo.StartIndex">
+            <summary>The index of the first item in the API response.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PageInfo.TotalResults">
+            <summary>The total number of results in the result set.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Policy.Description">
+            <summary>The policy&apos;s description.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Policy.Id">
+            <summary>A value that YouTube assigns and uses to uniquely identify the policy.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Policy.Kind">
+            <summary>Identifies this as a policy. Value: &quot;youtubePartner#policy&quot; The type of the API resource. The asset match policy is a type of policy, so for this resource, the value is youtubePartner#policy.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Policy.Name">
+            <summary>The policy&apos;s name.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Policy.Rule">
+            <summary>A list of rules that specify the circumstances under which the policy is enforced.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Policy.Rules">
+            <summary>A list of rules that collectively define the policy that the content owner wants to apply to user-uploaded videos that match the asset. Each rule specifies the action that YouTube should take and may optionally specify conditions under which that action is enforced.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PolicyList.Items">
+            <summary>A list of saved policies.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PolicyList.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#policyList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PolicyRule.Action">
+            <summary>The policy that YouTube should enforce if the rule&apos;s conditions are all valid for an asset or for an attempt to view that asset on YouTube.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PolicyRule.Subaction">
+            <summary>A list of additional actions that YouTube should take if the conditions in the rule are met.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Publisher.CaeNumber">
+            <summary>The publisher&apos;s unique CAE (Compositeur, Auteur and Editeur) number.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Publisher.Id">
+            <summary>A value that YouTube assigns and uses to uniquely identify the publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Publisher.IpiNumber">
+            <summary>The publisher&apos;s unique IPI (Interested Parties Information) code.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Publisher.Kind">
+            <summary>The type of the API resource. For this resource, the value is youtubePartner#publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Publisher.Name">
+            <summary>The publisher&apos;s name.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PublisherList.Items">
+            <summary>A list of publishers that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PublisherList.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#publisherList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.PublisherList.NextPageToken">
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Rating.RatingValue">
+            <summary>The rating that the asset received.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Rating.RatingSystem">
+            <summary>The rating system associated with the rating.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.AssetId">
+            <summary>The ID that uniquely identifies the asset that the reference is associated with.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.AudioswapEnabled">
+            <summary>Set this field&apos;s value to true to indicate that the reference content should be included in YouTube&apos;s AudioSwap program.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.ContentType">
+            <summary>The type of content that the reference represents.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.DuplicateLeader">
+            <summary>The ID that uniquely identifies the reference that this reference duplicates. This field is only present if the reference&apos;s status is duplicate_on_hold.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.FpDirect">
+            <summary>When uploading a reference, set this value to true to indicate that the reference is a pre-generated fingerprint.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.HashCode">
+            <summary>The MD5 hashcode of the reference content.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.Id">
+            <summary>A value that YouTube assigns and uses to uniquely identify a reference.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.IgnoreFpMatch">
+            <summary>Set this value to true to indicate that the reference should not be used to generate claims. This field is only used on AudioSwap references.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.Kind">
+            <summary>The type of the API resource. For reference resources, the value is youtubePartner#reference.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.Length">
+            <summary>The length of the reference in seconds.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.Status">
+            <summary>The reference&apos;s status.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.StatusReason">
+            <summary>An explanation of how a reference entered its current state. This value is only present if the reference&apos;s status is either inactive or deleted.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.Urgent">
+             <summary>Set this value to true to indicate that YouTube should prioritize Content ID processing for a video file. YouTube processes urgent video files before other files that are not marked as urgent. This setting is primarily used for videos of live events or other videos that require time-sensitive processing. The sooner YouTube completes Content ID processing for a video, the sooner YouTube can match user-uploaded videos to that video.
+            
+            Note that marking all of your files as urgent could delay processing for those files.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Reference.VideoId">
+            <summary>This field is present if the reference was created by associating an asset with an existing YouTube video that was uploaded to a YouTube channel linked to your CMS account. In that case, this field contains the ID of the source video.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ReferenceListResponse.Items">
+            <summary>A list of references that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ReferenceListResponse.Kind">
+            <summary>The type of the API response. For this operation, the value is youtubePartner#referenceList.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ReferenceListResponse.NextPageToken">
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Requirements.Caption">
+            <summary>This value indicates whether the order requires closed captions.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Requirements.HdTranscode">
+            <summary>This value indicates whether the order requires HD-quality video.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Requirements.PosterArt">
+            <summary>This value indicates whether the order requires poster artwork.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Requirements.SpotlightArt">
+            <summary>This value indicates whether the order requires spotlight artwork.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Requirements.SpotlightReview">
+            <summary>This value indicates whether the spotlight artwork for the order needs to be reviewed.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.Requirements.Trailer">
+            <summary>This value indicates whether the order requires a trailer.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.RightsOwnership.General">
+             <summary>A list that identifies the owners of an asset and the territories where each owner has ownership. General asset ownership is used for all types of assets and is the only type of ownership data that can be provided for assets that are not compositions.
+            
+            Note: You cannot specify general ownership rights and also specify either mechanical, performance, or synchronization rights.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.RightsOwnership.Kind">
+            <summary>The type of the API resource. For rightsOwnership resources, the value is youtubePartner#rightsOwnership.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.RightsOwnership.Mechanical">
+            <summary>A list that identifies owners of the mechanical rights for a composition asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.RightsOwnership.Performance">
+            <summary>A list that identifies owners of the performance rights for a composition asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.RightsOwnership.Synchronization">
+            <summary>A list that identifies owners of the synchronization rights for a composition asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.RightsOwnershipHistory.Kind">
+            <summary>The type of the API resource. For ownership history resources, the value is youtubePartner#rightsOwnershipHistory.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.RightsOwnershipHistory.TimeProvidedMs">
+            <summary>The time that the ownership data was provided.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ShowDetails.EpisodeNumber">
+            <summary>The episode number associated with the episode.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ShowDetails.EpisodeTitle">
+            <summary>The episode&apos;s title.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ShowDetails.SeasonNumber">
+            <summary>The season number associated with the episode.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.ShowDetails.Title">
+            <summary>The show&apos;s title</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.StateCompleted.State">
+            <summary>The state that the order entered.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.StateCompleted.TimeCompleted">
+            <summary>The time that the state transition occurred.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.TerritoryCondition.Territories">
+            <summary>A list of territories. Each territory is an ISO 3166 two-letter country code..</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.TerritoryCondition.Type">
+            <summary>This field indicates whether the associated policy rule is or is not valid in the specified territories.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.TerritoryOwners.Owner">
+            <summary>The name of the asset&apos;s owner or rights administrator.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.TerritoryOwners.Publisher">
+            <summary>The name of the asset&apos;s publisher. This field is only used for composition assets, and it is used when the asset owner is not known to have a formal relationship established with YouTube.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.TerritoryOwners.Ratio">
+            <summary>The percentage of the asset that the owner controls or administers. For composition assets, the value can be any decimal value between 0 and 100 inclusive. For all other assets, the only valid values are 100, which indicates that the owner completely owns the asset in the specified territories, and 0, which indicates that you are removing ownership of the asset in the specified territories.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.TerritoryOwners.Territories">
+            <summary>A list of territories where the owner owns (or does not own) the asset. Each territory is an ISO 3166 two-letter country code..</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.TerritoryOwners.Type">
+            <summary>This field indicates whether the ownership data applies or does not apply in the specified territories.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption.AdBreaks">
+            <summary>A list of times when YouTube can show an in-stream advertisement during playback of the video.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption.AdFormats">
+            <summary>A list of ad formats that the video is allowed to show.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption.BreakPosition">
+            <summary>The point at which the break occurs during the video playback.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption.Id">
+            <summary>The ID that YouTube uses to uniquely identify the video associated with the advertising settings.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption.Kind">
+            <summary>The type of the API resource. For this resource, the value is youtubePartner#videoAdvertisingOption.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption.TpAdServerVideoId">
+            <summary>A value that uniquely identifies the video to the third-party ad server.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption.TpTargetingUrl">
+            <summary>The base URL for a third-party ad server from which YouTube can retrieve in-stream ads for the video.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption.TpUrlParameters">
+            <summary>A parameter string to append to the end of the request to the third-party ad server.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOptionGetEnabledAdsResponse.AdBreaks">
+            <summary>A list of ad breaks that occur in a claimed YouTube video.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOptionGetEnabledAdsResponse.AdsOnEmbeds">
+            <summary>This field indicates whether YouTube can show ads when the video is played in an embedded player.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOptionGetEnabledAdsResponse.CountriesRestriction">
+            <summary>A list that identifies the countries where ads can run and the types of ads allowed in those countries.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOptionGetEnabledAdsResponse.Id">
+            <summary>The ID that YouTube uses to uniquely identify the claimed video.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOptionGetEnabledAdsResponse.Kind">
+            <summary>The type of the API resource. For this resource, the value is youtubePartner#videoAdvertisingOptionGetEnabledAds.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.YoutubePartnerService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.YoutubePartner.v1.YoutubePartnerService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.YoutubePartnerService.Scopes.Youtubepartner">
+            <summary>View and manage your assets and associated content on YouTube</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.Get(System.String)">
+            <summary>Retrieves the match policy assigned to the specified asset by the content owner associated with the authenticated user. This information is only accessible to an owner of the asset.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving the match policy.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.Patch(Google.Apis.YoutubePartner.v1.Data.Policy,System.String)">
+            <summary>Updates the asset&apos;s match policy. If an asset has multiple owners, each owner may set its own match policy for the asset. YouTube then computes the match policy that is actually applied for the asset based on the territories where each owner owns the asset. This method supports patch semantics.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving the match policy.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.Update(Google.Apis.YoutubePartner.v1.Data.Policy,System.String)">
+            <summary>Updates the asset&apos;s match policy. If an asset has multiple owners, each owner may set its own match policy for the asset. YouTube then computes the match policy that is actually applied for the asset based on the territories where each owner owns the asset.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving the match policy.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.GetRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving the match policy.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.PatchRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving the match policy.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.PatchRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.UpdateRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving the match policy.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetMatchPolicyResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.Delete(System.String)">
+            <summary>Deletes a relationship between two assets.</summary>
+            <param name="assetRelationshipId">Required - The assetRelationshipId parameter specifies a value that uniquely identifies the relationship you are deleting.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.Insert(Google.Apis.YoutubePartner.v1.Data.AssetRelationship)">
+            <summary>Creates a relationship that links two assets.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.List(System.String)">
+            <summary>Retrieves a list of relationships for a given asset. The list contains relationships where the specified asset is either the parent (embedding) or child (embedded) asset in the relationship.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the asset ID of the asset for which you are retrieving relationships.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.DeleteRequest.AssetRelationshipId">
+            <summary>The assetRelationshipId parameter specifies a value that uniquely identifies the relationship you are deleting.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.DeleteRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.InsertRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.ListRequest.AssetId">
+            <summary>The assetId parameter specifies the asset ID of the asset for which you are retrieving relationships.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetRelationshipsResource.ListRequest.PageToken">
+            <summary>The pageToken parameter specifies a token that identifies a particular page of results to return. Set this parameter to the value of the nextPageToken value from the previous API response to retrieve the next page of search results.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetSearchResource.List">
+            <summary>Searches for assets based on asset metadata. The method can retrieve all assets or only assets owned by the content owner. This method mimics the functionality of the advanced search feature on the Assets page in CMS.</summary>
+        </member>
+        <member name="T:Google.Apis.YoutubePartner.v1.AssetSearchResource.OwnershipRestriction">
+            <summary>The ownershipRestriction parameter specifies the ownership filtering option for the search. By default the search is performed in the assets owned by currently authenticated user only.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetSearchResource.OwnershipRestriction.Mine">
+            <summary>Find assets owned by the current user that match the search query. This is the default behavior.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetSearchResource.OwnershipRestriction.None">
+            <summary>Find all assets that match the search query, regardless of owner.</summary>
+        </member>
+        <member name="T:Google.Apis.YoutubePartner.v1.AssetSearchResource.Sort">
+            <summary>The sort parameter specifies how the search results should be sorted. Note that results are always sorted in descending order.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetSearchResource.Sort.Claims">
+            <summary>Sort by the number of claims for each asset.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetSearchResource.Sort.Time">
+            <summary>Sort by the modification time for each asset. This is the default value.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetSearchResource.Sort.Views">
+            <summary>Sort by the approximate daily views for each asset.</summary>
+        </member>
+        <member name="T:Google.Apis.YoutubePartner.v1.AssetSearchResource.Type">
+            <summary>The type parameter specifies the types of assets that you want to retrieve. The parameter value is a comma-separated list of asset types.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetSearchResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetSearchResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetSearchResource.ListRequest.HasConflicts">
+            <summary>The hasConflicts parameter enables you to only retrieve assets that have ownership conflicts. The only valid value is true. Setting the parameter value to false does not affect the results.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetSearchResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetSearchResource.ListRequest.OwnershipRestriction">
+            <summary>The ownershipRestriction parameter specifies the ownership filtering option for the search. By default the search is performed in the assets owned by currently authenticated user only.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetSearchResource.ListRequest.PageToken">
+            <summary>The pageToken parameter specifies a token that identifies a particular page of results to return. Set this parameter to the value of the nextPageToken value from the previous API response to retrieve the next page of search results.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetSearchResource.ListRequest.Q">
+            <summary>The q parameter specifies the query term to search for.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetSearchResource.ListRequest.Sort">
+            <summary>The sort parameter specifies how the search results should be sorted. Note that results are always sorted in descending order.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetSearchResource.ListRequest.Type">
+            <summary>The type parameter specifies the types of assets that you want to retrieve. The parameter value is a comma-separated list of asset types.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetsResource.Get(System.String)">
+            <summary>Retrieves the metadata for the specified asset. Note that if the request identifies an asset that has been merged with another asset, meaning that YouTube identified the requested asset as a duplicate, then the request retrieves the merged, or synthesized, asset.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset being retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetsResource.Insert(Google.Apis.YoutubePartner.v1.Data.Asset)">
+            <summary>Inserts an asset with the specified metadata. After inserting an asset, you can set its ownership data and match policy.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetsResource.List">
+             <summary>Retrieves a list of assets based on asset metadata. The method can retrieve all assets or only assets owned by the content owner.
+            
+            Note that in cases where duplicate assets have been merged, the API response only contains the synthesized asset. (It does not contain the constituent assets that were merged into the synthesized asset.)</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetsResource.Patch(Google.Apis.YoutubePartner.v1.Data.Asset,System.String)">
+            <summary>Updates the metadata for the specified asset. This method supports patch semantics.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset being updated.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.AssetsResource.Update(Google.Apis.YoutubePartner.v1.Data.Asset,System.String)">
+            <summary>Updates the metadata for the specified asset.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset being updated.</param>
+        </member>
+        <member name="T:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMatchPolicy">
+            <summary>The fetchMatchPolicy parameter specifies the version of the asset&apos;s match policy that should be returned in the API response.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMatchPolicy.Mine">
+            <summary>Retrieve the match policy set by the default content owner for the currently authenticated user.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMatchPolicy.None">
+            <summary>Do not retrieve the asset&apos;s match policy. This is the default value.</summary>
+        </member>
+        <member name="T:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMetadata">
+            <summary>The fetchMetadata parameter specifies the version of the asset&apos;s metadata that should be returned in the API response. In some cases, YouTube receives metadata for an asset from multiple sources, such as when different partners own the asset in different territories.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMetadata.Canonical">
+            <summary>Retrieve the asset metadata that YouTube has algorithmically determined is the most accurate description of the asset. Even if a request retrieves the canonical version of an asset&apos;s metadata, the metadata still specifies the metadata.customId value provided by the API user.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMetadata.Mine">
+            <summary>Retrieve the asset metadata provided by the default content owner associated with the currently authenticated user.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMetadata.None">
+            <summary>Do not retrieve any metadata. This is the default value.</summary>
+        </member>
+        <member name="T:Google.Apis.YoutubePartner.v1.AssetsResource.FetchOwnership">
+            <summary>The fetchOwnership parameter specifies the version of the asset&apos;s ownership data that should be returned in the API response. As with asset metadata, YouTube can receive asset ownership data from multiple sources.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchOwnership.Canonical">
+            <summary>Retrieve the ownership data that YouTube has algorithmically determined is the most accurate for the asset.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchOwnership.Mine">
+            <summary>Retrieve the ownership data provided by the default content owner associated with the currently authenticated user.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchOwnership.None">
+            <summary>Do not retrieve any ownership data. This is the default value.</summary>
+        </member>
+        <member name="T:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMetadataEnum">
+            <summary>The fetchMetadata parameter specifies the version of the asset&apos;s metadata that should be returned in the API response. In some cases, YouTube receives metadata for an asset from multiple sources, such as when different partners own the asset in different territories.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMetadataEnum.Canonical">
+            <summary>Retrieve the asset metadata that YouTube has algorithmically determined is the most accurate description of the asset. Even if a request retrieves the canonical version of an asset&apos;s metadata, the metadata still specifies the metadata.customId value provided by the API user.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMetadataEnum.Mine">
+            <summary>Retrieve the asset metadata provided by the API user.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubePartner.v1.AssetsResource.FetchMetadataEnum.None">
+            <summary>Do not retrieve any metadata. This is the default value.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.GetRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset being retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.GetRequest.FetchMatchPolicy">
+            <summary>The fetchMatchPolicy parameter specifies the version of the asset's match policy that should be returned in the API response.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.GetRequest.FetchMetadata">
+            <summary>The fetchMetadata parameter specifies the version of the asset's metadata that should be returned in the API response. In some cases, YouTube receives metadata for an asset from multiple sources, such as when different partners own the asset in different territories.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.GetRequest.FetchOwnership">
+            <summary>The fetchOwnership parameter specifies the version of the asset's ownership data that should be returned in the API response. As with asset metadata, YouTube can receive asset ownership data from multiple sources.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.InsertRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.ListRequest.FetchMatchPolicy">
+            <summary>The fetchMatchPolicy parameter specifies the version of the asset's match policy that should be returned in the API response.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.ListRequest.FetchMetadata">
+            <summary>The fetchMetadata parameter specifies the version of the asset's metadata that should be returned in the API response. In some cases, YouTube receives metadata for an asset from multiple sources, such as when different partners own the asset in different territories.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.ListRequest.FetchOwnership">
+            <summary>The fetchOwnership parameter specifies the version of the asset's ownership data that should be returned in the API response. As with asset metadata, YouTube can receive asset ownership data from multiple sources.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.ListRequest.Id">
+             <summary>The id parameter specifies a comma-separated list of YouTube Asset IDs that identify the assets you want to retrieve. As noted in the method description, if you try to retrieve an asset that YouTube identified as a duplicate and merged with another asset, the API response only returns the synthesized asset. In that case, the aliasId property in the asset resource specifies a list of other asset IDs that can be used to identify that asset.
+            
+            Also note that the API response does not contain duplicates. As such, if your request identifies three asset IDs, and all of those have been merged into a single asset, then the API response identifies one matching asset.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.PatchRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.PatchRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.UpdateRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.AssetsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ClaimsResource.Get(System.String)">
+            <summary>Retrieves a specific claim by ID.</summary>
+            <param name="claimId">Required - The claimId parameter specifies the claim ID of the claim being retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ClaimsResource.Insert(Google.Apis.YoutubePartner.v1.Data.Claim)">
+             <summary>Creates a claim. The video being claimed must have been uploaded to a channel associated with the same content owner as the API user sending the request. You can set the claim&apos;s policy in any of the following ways:
+            - Use the claim resource&apos;s policy property to identify a saved policy by its unique ID.
+            - Use the claim resource&apos;s policy property to specify a custom set of rules.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ClaimsResource.List">
+            <summary>Retrieves a list of claims administered by the content owner associated with the currently authenticated user. Results are sorted in descending order of creation time.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ClaimsResource.Patch(Google.Apis.YoutubePartner.v1.Data.Claim,System.String)">
+            <summary>Updates an existing claim by either changing its policy or its status. You can update a claim&apos;s status from active to inactive to effectively release the claim. This method supports patch semantics.</summary>
+            <param name="claimId">Required - The claimId parameter specifies the claim ID of the claim being updated.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ClaimsResource.Update(Google.Apis.YoutubePartner.v1.Data.Claim,System.String)">
+            <summary>Updates an existing claim by either changing its policy or its status. You can update a claim&apos;s status from active to inactive to effectively release the claim.</summary>
+            <param name="claimId">Required - The claimId parameter specifies the claim ID of the claim being updated.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.GetRequest.ClaimId">
+            <summary>The claimId parameter specifies the claim ID of the claim being retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.InsertRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.ListRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving claims.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.ListRequest.Id">
+            <summary>The id parameter specifies a list of comma-separated YouTube claim IDs to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.ListRequest.PageToken">
+            <summary>The pageToken parameter specifies a token that identifies a particular page of results to return. For example, set this parameter to the value of the nextPageToken value from the previous API response to retrieve the next page of search results.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.ListRequest.Q">
+            <summary>The q parameter specifies the query string to use to filter search results. YouTube searches for the query string in the following claim fields: video_title, video_keywords, user_name, isrc, iswc, grid, custom_id, encrypted claim_id, video_id, asset_id.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.ListRequest.VideoId">
+            <summary>The assetId parameter specifies a list of comma-separated YouTube video IDs for which you are retrieving claims.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.PatchRequest.ClaimId">
+            <summary>The claimId parameter specifies the claim ID of the claim being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.PatchRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.UpdateRequest.ClaimId">
+            <summary>The claimId parameter specifies the claim ID of the claim being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ClaimsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.Get">
+            <summary>Retrieves advertising options for the content owner associated with the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.Patch(Google.Apis.YoutubePartner.v1.Data.ContentOwnerAdvertisingOption)">
+            <summary>Updates advertising options for the content owner associated with the authenticated API user. This method supports patch semantics.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.Update(Google.Apis.YoutubePartner.v1.Data.ContentOwnerAdvertisingOption)">
+            <summary>Updates advertising options for the content owner associated with the authenticated API user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.PatchRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnerAdvertisingOptionsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ContentOwnersResource.Get(System.String)">
+            <summary>Retrieves information about the specified content owner.</summary>
+            <param name="contentOwnerId">Required - The contentOwnerId parameter specifies a value that uniquely identifies the content owner.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ContentOwnersResource.List">
+            <summary>Retrieves a list of content owners that match the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnersResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnersResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnersResource.GetRequest.ContentOwnerId">
+            <summary>The contentOwnerId parameter specifies a value that uniquely identifies the content owner.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnersResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnersResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnersResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnersResource.ListRequest.FetchMine">
+            <summary>The fetchMine parameter restricts the result set to content owners associated with the currently authenticated API user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnersResource.ListRequest.Id">
+            <summary>The id parameter specifies a comma-separated list of YouTube content owner IDs to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ContentOwnersResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.MetadataHistoryResource.List(System.String)">
+            <summary>Retrieves a list of all metadata provided for an asset, regardless of which content owner provided the data.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving a metadata history.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.MetadataHistoryResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.MetadataHistoryResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.MetadataHistoryResource.ListRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving a metadata history.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.MetadataHistoryResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OrdersResource.Delete(System.String)">
+            <summary>Delete an order, which moves orders to inactive state and removes any associated video.</summary>
+            <param name="orderId">Required - Id of the order to delete.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OrdersResource.Get(System.String)">
+            <summary>Retrieve the details of an existing order.</summary>
+            <param name="orderId">Required - The id of the order.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OrdersResource.Insert(Google.Apis.YoutubePartner.v1.Data.Order)">
+            <summary>Creates a new basic order entry in the YouTube premium asset order management system. You must supply at least a country and channel in the new order.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OrdersResource.List">
+            <summary>Return a list of orders, filtered by the parameters below, may return more than a single page of results.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OrdersResource.Patch(Google.Apis.YoutubePartner.v1.Data.Order,System.String)">
+            <summary>Update the values in an existing order. This method supports patch semantics.</summary>
+            <param name="orderId">Required - The id of the order.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OrdersResource.Update(Google.Apis.YoutubePartner.v1.Data.Order,System.String)">
+            <summary>Update the values in an existing order.</summary>
+            <param name="orderId">Required - The id of the order.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.DeleteRequest.OnBehalfOfContentOwner">
+            <summary>ContentOnwerId that super admin acts in behalf of.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.DeleteRequest.OrderId">
+            <summary>Id of the order to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>ContentOnwerId that super admin acts in behalf of.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.GetRequest.OrderId">
+            <summary>The id of the order.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.InsertRequest.OnBehalfOfContentOwner">
+            <summary>ContentOnwerId that super admin acts in behalf of.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.ChannelId">
+            <summary>Filter results to only a specific channel ( use encrypted ID).</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.ContentType">
+            <summary>Filter the results by type, possible values are SHOW or MOVIE.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.Country">
+            <summary>Filter results by country, two letter ISO country codes are used.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.CustomId">
+            <summary>Filter result by orders that have this custom ID.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>ContentOnwerId that super admin acts in behalf of.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.PageToken">
+             <summary>The continuation token is an optional value that is only used to page through large result sets.
+            
+            - To retrieve the next page of results for a request, set this parameter to the value of the nextPageToken value from the previous response.
+            - To get the previous page of results, set this parameter to the value of the previousPageToken value from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.Priority">
+            <summary>Filter results by priority. P0, P1, P2, P3 and P4 are the acceptable options.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.ProductionHouse">
+            <summary>Filter results by a particular production house. Specified by the name of the production house.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.Q">
+            <summary>Filter results to only orders that contain this string in the title.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.Status">
+            <summary>Filter results to have this status, available options are STATUS_AVAILED, STATUS_ORDERED, STATUS_RECEIVED, STATUS_READY_FOR_QC, STATUS_MOC_FIX, STATUS_PARTNER_FIX, STATUS_YOUTUBE_FIX, STATUS_QC_APPROVED, STATUS_INACTIVE, STATUS_INGESTION_COMPLETE, STATUS_REORDERED</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.ListRequest.VideoId">
+            <summary>Filter results to orders that are associated with this YouTube external video id.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.PatchRequest.OnBehalfOfContentOwner">
+            <summary>ContentOwnerId that super admin acts in behalf of.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.PatchRequest.OrderId">
+            <summary>The id of the order.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>ContentOwnerId that super admin acts in behalf of.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.UpdateRequest.OrderId">
+            <summary>The id of the order.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OrdersResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OwnershipResource.Get(System.String)">
+            <summary>Retrieves the ownership data provided for the specified asset by the content owner associated with the authenticated user.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID for which you are retrieving ownership data.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OwnershipResource.Patch(Google.Apis.YoutubePartner.v1.Data.RightsOwnership,System.String)">
+            <summary>Provides new ownership information for the specified asset. Note that YouTube may receive ownership information from multiple sources. For example, if an asset has multiple owners, each owner might send ownership data for the asset. YouTube algorithmically combines the ownership data received from all of those sources to generate the asset&apos;s canonical ownership data, which should provide the most comprehensive and accurate representation of the asset&apos;s ownership. This method supports patch semantics.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset being updated.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OwnershipResource.Update(Google.Apis.YoutubePartner.v1.Data.RightsOwnership,System.String)">
+            <summary>Provides new ownership information for the specified asset. Note that YouTube may receive ownership information from multiple sources. For example, if an asset has multiple owners, each owner might send ownership data for the asset. YouTube algorithmically combines the ownership data received from all of those sources to generate the asset&apos;s canonical ownership data, which should provide the most comprehensive and accurate representation of the asset&apos;s ownership.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset being updated.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.GetRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID for which you are retrieving ownership data.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.PatchRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.PatchRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.UpdateRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.OwnershipHistoryResource.List(System.String)">
+            <summary>Retrieves a list of all ownership data provided for an asset, regardless of which content owner provided the data.</summary>
+            <param name="assetId">Required - The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving an ownership data history.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipHistoryResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipHistoryResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipHistoryResource.ListRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving an ownership data history.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.OwnershipHistoryResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.PoliciesResource.Get(System.String)">
+            <summary>Retrieves the specified saved policy.</summary>
+            <param name="policyId">Required - The policyId parameter specifies a value that uniquely identifies the policy being retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.PoliciesResource.Insert(Google.Apis.YoutubePartner.v1.Data.Policy)">
+            <summary>Creates a saved policy.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.PoliciesResource.List">
+            <summary>Retrieves a list of the content owner&apos;s saved policies.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.PoliciesResource.Patch(Google.Apis.YoutubePartner.v1.Data.Policy,System.String)">
+            <summary>Updates the specified saved policy. This method supports patch semantics.</summary>
+            <param name="policyId">Required - The policyId parameter specifies a value that uniquely identifies the policy being updated.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.PoliciesResource.Update(Google.Apis.YoutubePartner.v1.Data.Policy,System.String)">
+            <summary>Updates the specified saved policy.</summary>
+            <param name="policyId">Required - The policyId parameter specifies a value that uniquely identifies the policy being updated.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.GetRequest.PolicyId">
+            <summary>The policyId parameter specifies a value that uniquely identifies the policy being retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.InsertRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.ListRequest.Id">
+            <summary>Comma-separated list of saved policy IDs to retrieve. Only policies belonging to the currently authenticated content owner will be available.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.PatchRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.PatchRequest.PolicyId">
+            <summary>The policyId parameter specifies a value that uniquely identifies the policy being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.UpdateRequest.PolicyId">
+            <summary>The policyId parameter specifies a value that uniquely identifies the policy being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PoliciesResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.PublishersResource.Get(System.String)">
+            <summary>Retrieves information about the specified publisher.</summary>
+            <param name="publisherId">Required - The publisherId parameter specifies a publisher ID that uniquely identifies the publisher being retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.PublishersResource.Insert(Google.Apis.YoutubePartner.v1.Data.Publisher)">
+            <summary>Creates a publisher.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.PublishersResource.List">
+            <summary>Retrieves a list of publishers that match the request criteria. This method is analogous to a publisher search function.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.GetRequest.PublisherId">
+            <summary>The publisherId parameter specifies a publisher ID that uniquely identifies the publisher being retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.InsertRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.ListRequest.CaeNumber">
+            <summary>The caeNumber parameter specifies the CAE number of the publisher that you want to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.ListRequest.Id">
+            <summary>The id parameter specifies a comma-separated list of YouTube publisher IDs to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.ListRequest.IpiNumber">
+            <summary>The ipiNumber parameter specifies the IPI number of the publisher that you want to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.ListRequest.MaxResults">
+            <summary>The maxResults parameter specifies the maximum number of results to return per page.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.ListRequest.NamePrefix">
+            <summary>The namePrefix parameter indicates that the API should only return publishers whose name starts with this prefix.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.PublishersResource.ListRequest.PageToken">
+            <summary>The pageToken parameter specifies a token that identifies a particular page of results to return. Set this parameter to the value of the nextPageToken value from the previous API response to retrieve the next page of search results.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ReferencesResource.Get(System.String)">
+            <summary>Retrieves information about the specified reference.</summary>
+            <param name="referenceId">Required - The referenceId parameter specifies the YouTube reference ID of the reference being retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ReferencesResource.Insert(Google.Apis.YoutubePartner.v1.Data.Reference)">
+             <summary>Creates a reference in one of the following ways:
+            - If your request is uploading a reference file, YouTube creates the reference from the provided content. In this flow, you can use either the multipart or resumable upload flows to provide the reference content.
+            - If you want to create a reference using a claimed video as the reference content, use the claimId parameter to identify the claim.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ReferencesResource.Insert(Google.Apis.YoutubePartner.v1.Data.Reference,System.IO.Stream,System.String)">
+             <summary>Creates a reference in one of the following ways:
+            - If your request is uploading a reference file, YouTube creates the reference from the provided content. In this flow, you can use either the multipart or resumable upload flows to provide the reference content.
+            - If you want to create a reference using a claimed video as the reference content, use the claimId parameter to identify the claim.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ReferencesResource.List">
+            <summary>Retrieves a list of references by ID or the list of references for the specified asset.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ReferencesResource.Patch(Google.Apis.YoutubePartner.v1.Data.Reference,System.String)">
+            <summary>Updates a reference. This method supports patch semantics.</summary>
+            <param name="referenceId">Required - The referenceId parameter specifies the YouTube reference ID of the reference being updated.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.ReferencesResource.Update(Google.Apis.YoutubePartner.v1.Data.Reference,System.String)">
+            <summary>Updates a reference.</summary>
+            <param name="referenceId">Required - The referenceId parameter specifies the YouTube reference ID of the reference being updated.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.GetRequest.ReferenceId">
+            <summary>The referenceId parameter specifies the YouTube reference ID of the reference being retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.InsertRequest.ClaimId">
+            <summary>The claimId parameter specifies the YouTube claim ID of an existing claim from which a reference should be created. (The claimed video is used as the reference content.)</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.InsertRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.InsertMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.InsertMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.InsertMediaUpload.ClaimId">
+            <summary>The claimId parameter specifies the YouTube claim ID of an existing claim from which a reference should be created. (The claimed video is used as the reference content.)</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.InsertMediaUpload.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.ListRequest.AssetId">
+            <summary>The assetId parameter specifies the YouTube asset ID of the asset for which you are retrieving references.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.ListRequest.Id">
+            <summary>The id parameter specifies a comma-separated list of YouTube reference IDs to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.ListRequest.PageToken">
+            <summary>The pageToken parameter specifies a token that identifies a particular page of results to return. Set this parameter to the value of the nextPageToken value from the previous API response to retrieve the next page of search results.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.PatchRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.PatchRequest.ReferenceId">
+            <summary>The referenceId parameter specifies the YouTube reference ID of the reference being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.PatchRequest.ReleaseClaims">
+            <summary>The releaseClaims parameter indicates that you want to release all match claims associated with this reference. This parameter only works when the claim's status is being updated to 'inactive' - you can then set the parameter's value to true to release all match claims produced by this reference.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.UpdateRequest.ReferenceId">
+            <summary>The referenceId parameter specifies the YouTube reference ID of the reference being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.UpdateRequest.ReleaseClaims">
+            <summary>The releaseClaims parameter indicates that you want to release all match claims associated with this reference. This parameter only works when the claim's status is being updated to 'inactive' - you can then set the parameter's value to true to release all match claims produced by this reference.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.ReferencesResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.Get(System.String)">
+            <summary>Retrieves advertising settings for the specified video.</summary>
+            <param name="videoId">Required - The videoId parameter specifies the YouTube video ID of the video for which you are retrieving advertising settings.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.GetEnabledAds(System.String)">
+            <summary>Retrieves details about the types of allowed ads for a specified partner- or user-uploaded video.</summary>
+            <param name="videoId">Required - The videoId parameter specifies the YouTube video ID of the video for which you are retrieving advertising options.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.Patch(Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption,System.String)">
+            <summary>Updates the advertising settings for the specified video. This method supports patch semantics.</summary>
+            <param name="videoId">Required - The videoId parameter specifies the YouTube video ID of the video for which you are updating advertising settings.</param>
+        </member>
+        <member name="M:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.Update(Google.Apis.YoutubePartner.v1.Data.VideoAdvertisingOption,System.String)">
+            <summary>Updates the advertising settings for the specified video.</summary>
+            <param name="videoId">Required - The videoId parameter specifies the YouTube video ID of the video for which you are updating advertising settings.</param>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.GetRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.GetRequest.VideoId">
+            <summary>The videoId parameter specifies the YouTube video ID of the video for which you are retrieving advertising settings.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.GetEnabledAdsRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.GetEnabledAdsRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.GetEnabledAdsRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.GetEnabledAdsRequest.VideoId">
+            <summary>The videoId parameter specifies the YouTube video ID of the video for which you are retrieving advertising options.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.PatchRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.PatchRequest.VideoId">
+            <summary>The videoId parameter specifies the YouTube video ID of the video for which you are updating advertising settings.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of. This parameter supports users whose accounts are associated with multiple content owners.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.UpdateRequest.VideoId">
+            <summary>The videoId parameter specifies the YouTube video ID of the video for which you are updating advertising settings.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubePartner.v1.VideoAdvertisingOptionsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

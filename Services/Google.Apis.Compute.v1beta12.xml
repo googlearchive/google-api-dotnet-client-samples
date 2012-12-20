@@ -11,7 +11,7 @@
             <summary>Name of this access configuration.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.AccessConfig.NatIP">
-            <summary>An external IP address associated with this instance. Specify an unused static IP address available to the project. If left blank, the external IP will be drawn from a shared ephemeral pool.</summary>
+            <summary>An external IP address associated with this instance. Specify an unused static IP address available to the project. If not specified, the external IP will be drawn from a shared ephemeral pool.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.AccessConfig.Type">
             <summary>Type of configuration. Must be set to &quot;ONE_TO_ONE_NAT&quot;. This configures port-for-port NAT to the internet.</summary>

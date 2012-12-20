@@ -180,6 +180,15 @@
         <member name="P:Google.Apis.Adexchangeseller.v1.AdexchangesellerService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
+        <member name="T:Google.Apis.Adexchangeseller.v1.AdexchangesellerService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Adexchangeseller.v1.AdexchangesellerService.Scopes.AdexchangeSeller">
+            <summary>View and manage your Ad Exchange data</summary>
+        </member>
+        <member name="F:Google.Apis.Adexchangeseller.v1.AdexchangesellerService.Scopes.AdexchangeSellerReadonly">
+            <summary>View your Ad Exchange data</summary>
+        </member>
         <member name="M:Google.Apis.Adexchangeseller.v1.AdclientsResource.List">
             <summary>List all ad clients in this Ad Exchange account.</summary>
         </member>

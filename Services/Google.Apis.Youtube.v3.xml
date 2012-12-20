@@ -367,6 +367,9 @@
             
             You can then use the playlistItems.list method to retrieve any of those lists. You can also add or remove items from those lists by calling the playlistItems.insert and playlistItems.delete methods.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Playlist.ContentDetails">
+            <summary>Details about the content of a playlist, such as the video count.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Playlist.ETag">
             <summary>The ETag for the playlist resource.</summary>
         </member>
@@ -376,11 +379,20 @@
         <member name="P:Google.Apis.Youtube.v3.Data.Playlist.Kind">
             <summary>The type of the API resource. For video resources, the value will be youtube#playlist.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Playlist.Player">
+            <summary>Player to be used for a playlist playback.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Playlist.Snippet">
             <summary>Basic details about a playlist, including title, description and thumbnails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Playlist.Status">
             <summary>The status details of a playlist describes whether the playlist is private.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.PlaylistContentDetails">
+            <summary>Details about the content of a playlist, such as the video count.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlaylistContentDetails.ItemCount">
+            <summary>The number of videos in the playlist.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistItem">
              <summary>A playlistItem resource identifies another resource, such as a video, that is included in a playlist. In addition, the playlistItem resource contains details about the included resource that pertain specifically to how that resource is used in that playlist.
@@ -495,6 +507,12 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistListResponse.PrevPageToken">
             <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.PlaylistPlayer">
+            <summary>Player to be used for a playlist playback.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlaylistPlayer.EmbedHtml">
+            <summary>An &lt;iframe&gt; tag that embeds a player that will play the playlist.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PlaylistSnippet">
             <summary>Basic details about a playlist, including title, description and thumbnails.</summary>
@@ -1189,21 +1207,6 @@
         <member name="F:Google.Apis.Youtube.v3.SearchResource.Order.ViewCount">
             <summary>Resources are sorted from highest to lowest number of views.</summary>
         </member>
-        <member name="T:Google.Apis.Youtube.v3.SearchResource.Published">
-            <summary>The published parameter indicates that the API response should only contain resources created within the specified time period.</summary>
-        </member>
-        <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.Any">
-            <summary>Do not filter results based on their creation date. This is the default value.</summary>
-        </member>
-        <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.ThisMonth">
-            <summary>Return videos that were uploaded within the past month.</summary>
-        </member>
-        <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.ThisWeek">
-            <summary>Return videos that were uploaded within the past week.</summary>
-        </member>
-        <member name="F:Google.Apis.Youtube.v3.SearchResource.Published.Today">
-            <summary>Return videos that were uploaded today.</summary>
-        </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoCaption">
             <summary>The videoCaption parameter indicates whether the API should filter video search results based on whether they have captions.</summary>
         </member>
@@ -1255,6 +1258,15 @@
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoDuration.Short">
             <summary>Only include videos that are less than four minutes long.</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoEmbeddable">
+            <summary>The videoEmbeddable parameter lets you to restrict a search to only videos that can be embedded into a webpage.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoEmbeddable.Any">
+            <summary>Return all videos, embeddable or not.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoEmbeddable.True">
+            <summary>Only retrieve embeddable videos.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoLicense">
             <summary>The videoLicense parameter filters search results to only include videos with a particular license. YouTube lets video uploaders choose to attach either the Creative Commons license or the standard YouTube license to each of their videos.</summary>
         </member>
@@ -1267,11 +1279,23 @@
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoLicense.Youtube">
             <summary>Only return videos that have the standard YouTube license.</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoSyndicated">
+            <summary>The videoSyndicated parameter lets you to restrict a search to only videos that can be played outside youtube.com.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoSyndicated.Any">
+            <summary>Return all videos, syndicated or not.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoSyndicated.True">
+            <summary>Only retrieve syndicated videos.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.ChannelId">
+            <summary>The channelId parameter indicates that the API response should only contain resources created by the channel</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.MaxResults">
             <summary>USE_DESCRIPTION --- channels:list:maxResults</summary>
@@ -1287,8 +1311,11 @@
             
             If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a search result, the snippet property contains other properties that identify the result's title, description, and so forth. If you set part=snippet, the API response will also contain all of those nested properties.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Published">
-            <summary>The published parameter indicates that the API response should only contain resources created within the specified time period.</summary>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.PublishedAfter">
+            <summary>The publishedAfter parameter indicates that the API response should only contain resources created after the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.PublishedBefore">
+            <summary>The publishedBefore parameter indicates that the API response should only contain resources created before the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Q">
             <summary>The q parameter specifies the query term to search for.</summary>
@@ -1305,6 +1332,9 @@
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoCaption">
             <summary>The videoCaption parameter indicates whether the API should filter video search results based on whether they have captions.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoCategoryId">
+            <summary>The videoCategoryId parameter filters video search results based on their category.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoDefinition">
             <summary>The videoDefinition parameter lets you restrict a search to only include either high definition (HD) or standard definition (SD) videos. HD videos are available for playback in at least 720p, though higher resolutions, like 1080p, might also be available.</summary>
         </member>
@@ -1314,8 +1344,14 @@
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoDuration">
             <summary>The videoDuration parameter filters video search results based on their duration.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoEmbeddable">
+            <summary>The videoEmbeddable parameter lets you to restrict a search to only videos that can be embedded into a webpage.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoLicense">
             <summary>The videoLicense parameter filters search results to only include videos with a particular license. YouTube lets video uploaders choose to attach either the Creative Commons license or the standard YouTube license to each of their videos.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoSyndicated">
+            <summary>The videoSyndicated parameter lets you to restrict a search to only videos that can be played outside youtube.com.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.SubscriptionsResource.Delete(System.String)">
             <summary>Deletes a subscription.</summary>

@@ -476,6 +476,12 @@
         <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return in one page.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.PageToken">
+            <summary>Continuation token</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.StartTimestampMs">
             <summary>Start timestamp in milliseconds since the epoch.</summary>
         </member>

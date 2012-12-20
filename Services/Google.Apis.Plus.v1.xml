@@ -177,6 +177,13 @@
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Image">
             <summary>The preview image for photos or videos.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.ObjectType">
+             <summary>The type of media object. Possible values are:  
+            - &quot;photo&quot; - A photo. 
+            - &quot;album&quot; - A photo album. 
+            - &quot;video&quot; - A video. 
+            - &quot;article&quot; - An article, specified by a link.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Thumbnails">
             <summary>If the attachment is an album, potential additional thumbnails from the album.</summary>
         </member>

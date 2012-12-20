@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Groupsmigration.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Groupsmigration.v1.Data.Groups">
+            <summary>JSON response template for groups migration API.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupsmigration.v1.Data.Groups.Kind">
+            <summary>The kind of insert resource this is.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupsmigration.v1.Data.Groups.ResponseCode">
+            <summary>The status of the insert request.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupsmigration.v1.GroupsmigrationService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Groupsmigration.v1.ArchiveResource.Insert(System.String)">
+            <summary>Inserts a new mail into the archive of the Google group.</summary>
+            <param name="groupId">Required - The group ID</param>
+        </member>
+        <member name="M:Google.Apis.Groupsmigration.v1.ArchiveResource.Insert(System.String,System.IO.Stream,System.String)">
+            <summary>Inserts a new mail into the archive of the Google group.</summary>
+            <param name="groupId">Required - The group ID</param>
+        </member>
+        <member name="P:Google.Apis.Groupsmigration.v1.ArchiveResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupsmigration.v1.ArchiveResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupsmigration.v1.ArchiveResource.InsertRequest.GroupId">
+            <summary>The group ID</summary>
+        </member>
+        <member name="P:Google.Apis.Groupsmigration.v1.ArchiveResource.InsertMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupsmigration.v1.ArchiveResource.InsertMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupsmigration.v1.ArchiveResource.InsertMediaUpload.GroupId">
+            <summary>The group ID</summary>
+        </member>
+    </members>
+</doc>

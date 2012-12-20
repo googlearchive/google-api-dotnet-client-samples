@@ -701,7 +701,7 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.InsertRequest.ColorRgbFormat">
-            <summary>Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'color' field will be set to the best matching option automatically. Optional. The default is False.</summary>
+            <summary>Whether to use the 'foregroundColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'colorId' field will be set to the best matching option automatically. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -734,7 +734,7 @@
             <summary>Calendar identifier.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.PatchRequest.ColorRgbFormat">
-            <summary>Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'color' field will be set to the best matching option automatically. Optional. The default is False.</summary>
+            <summary>Whether to use the 'foregroundColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'colorId' field will be set to the best matching option automatically. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -749,7 +749,7 @@
             <summary>Calendar identifier.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.UpdateRequest.ColorRgbFormat">
-            <summary>Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'color' field will be set to the best matching option automatically. Optional. The default is False.</summary>
+            <summary>Whether to use the 'foregroundColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'colorId' field will be set to the best matching option automatically. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
