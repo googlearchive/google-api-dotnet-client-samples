@@ -55,9 +55,6 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Discovery.v1">
-      <HintPath>..\Services\Discovery.v1.dll</HintPath>
-    </Reference>
     <Reference Include="Google.Apis">
       <HintPath>..\Lib\Google.Apis.dll</HintPath>
     </Reference>
@@ -72,7 +69,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
