@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdSenseHost.Sample", "AdSen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plus.ServiceAccount", "Plus.ServiceAccount\Plus.ServiceAccount.csproj", "{1900F27F-4090-440E-A389-6890F37F8812}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DfaReporting.Sample", "DfaReporting.Sample\DfaReporting.Sample.csproj", "{247BE0DF-B175-482C-9949-7A4C42F5A2DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,10 @@ Global
 		{1900F27F-4090-440E-A389-6890F37F8812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1900F27F-4090-440E-A389-6890F37F8812}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1900F27F-4090-440E-A389-6890F37F8812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247BE0DF-B175-482C-9949-7A4C42F5A2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247BE0DF-B175-482C-9949-7A4C42F5A2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247BE0DF-B175-482C-9949-7A4C42F5A2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247BE0DF-B175-482C-9949-7A4C42F5A2DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
