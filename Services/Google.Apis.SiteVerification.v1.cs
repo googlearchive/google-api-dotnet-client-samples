@@ -231,180 +231,67 @@ namespace Google.Apis.SiteVerification.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class SiteVerificationService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/YG5xELn" +
-            "ARaG4eUTdxJ1VwuDIQzA\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"siteVerification:v1\",\"name" +
-            "\":\"siteVerification\",\"version\":\"v1\",\"revision\":\"20120806\",\"title\":\"Google Site V" +
-            "erification API\",\"description\":\"Lets you programatically verify ownership of web" +
-            "sites or domains with Google.\",\"icons\":{\"x16\":\"http://www.google.com/images/icon" +
-            "s/product/search-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/searc" +
-            "h-32.gif\"},\"documentationLink\":\"http://code.google.com/apis/siteverification/\",\"" +
-            "protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/siteVerification/v1/\",\"ba" +
-            "sePath\":\"/siteVerification/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"service" +
-            "Path\":\"siteVerification/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"st" +
-            "ring\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"js" +
-            "on\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"loc" +
-            "ation\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying whi" +
-            "ch fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"" +
-            "string\",\"description\":\"API key. Your API key identifies your project and provide" +
-            "s you with API access, quota, and reports. Required unless you provide an OAuth " +
-            "2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OA" +
-            "uth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"" +
-            "boolean\",\"description\":\"Returns response with indentations and line breaks.\",\"de" +
-            "fault\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"A" +
-            "vailable to use for quota purposes for server-side applications. Can be any arbi" +
-            "trary string assigned to a user, but should not exceed 40 characters. Overrides " +
-            "userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"des" +
-            "cription\":\"IP address of the site where the request originates. Use this if you " +
-            "want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes" +
-            "\":{\"https://www.googleapis.com/auth/siteverification\":{\"description\":\"Manage the" +
-            " list of sites and domains you control\"},\"https://www.googleapis.com/auth/siteve" +
-            "rification.verify_only\":{\"description\":\"Manage your new site verifications with " +
-            "Google\"}}}},\"schemas\":{\"SiteVerificationWebResourceGettokenRequest\":{\"id\":\"SiteV" +
-            "erificationWebResourceGettokenRequest\",\"type\":\"object\",\"properties\":{\"site\":{\"ty" +
-            "pe\":\"object\",\"description\":\"The site for which a verification token will be gene" +
-            "rated.\",\"properties\":{\"identifier\":{\"type\":\"string\",\"description\":\"The site iden" +
-            "tifier. If the type is set to SITE, the identifier is a URL. If the type is set " +
-            "to INET_DOMAIN, the site identifier is a domain name.\"},\"type\":{\"type\":\"string\"," +
-            "\"description\":\"The type of resource to be verified. Can be SITE or INET_DOMAIN (" +
-            "domain name).\"}}},\"verificationMethod\":{\"type\":\"string\",\"description\":\"The verif" +
-            "ication method that will be used to verify this site. For sites, \'FILE\' or \'META" +
-            "\' methods may be used. For domains, only \'DNS\' may be used.\"}}},\"SiteVerificatio" +
-            "nWebResourceGettokenResponse\":{\"id\":\"SiteVerificationWebResourceGettokenResponse" +
-            "\",\"type\":\"object\",\"properties\":{\"method\":{\"type\":\"string\",\"description\":\"The ver" +
-            "ification method to use in conjunction with this token. For FILE, the token shou" +
-            "ld be placed in the top-level directory of the site, stored inside a file of the" +
-            " same name. For META, the token should be placed in the HEAD tag of the default " +
-            "page that is loaded for the site. For DNS, the token should be placed in a TXT r" +
-            "ecord of the domain.\"},\"token\":{\"type\":\"string\",\"description\":\"The verification " +
-            "token. The token must be placed appropriately in order for verification to succe" +
-            "ed.\"}}},\"SiteVerificationWebResourceListResponse\":{\"id\":\"SiteVerificationWebReso" +
-            "urceListResponse\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"The list of sites that are owned by the authenticated user.\",\"items\":{\"$r" +
-            "ef\":\"SiteVerificationWebResourceResource\"}}}},\"SiteVerificationWebResourceResour" +
-            "ce\":{\"id\":\"SiteVerificationWebResourceResource\",\"type\":\"object\",\"properties\":{\"i" +
-            "d\":{\"type\":\"string\",\"description\":\"The string used to identify this site. This v" +
-            "alue should be used in the \\\"id\\\" portion of the REST URL for the Get, Update, a" +
-            "nd Delete operations.\"},\"owners\":{\"type\":\"array\",\"description\":\"The email addres" +
-            "ses of all verified owners.\",\"items\":{\"type\":\"string\"}},\"site\":{\"type\":\"object\"," +
-            "\"description\":\"The address and type of a site that is verified or will be verifi" +
-            "ed.\",\"properties\":{\"identifier\":{\"type\":\"string\",\"description\":\"The site identif" +
-            "ier. If the type is set to SITE, the identifier is a URL. If the type is set to " +
-            "INET_DOMAIN, the site identifier is a domain name.\"},\"type\":{\"type\":\"string\",\"de" +
-            "scription\":\"The site type. Can be SITE or INET_DOMAIN (domain name).\"}}}}}},\"res" +
-            "ources\":{\"webResource\":{\"methods\":{\"delete\":{\"id\":\"siteVerification.webResource." +
-            "delete\",\"path\":\"webResource/{id}\",\"httpMethod\":\"DELETE\",\"description\":\"Relinquis" +
-            "h ownership of a website or domain.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The id of a verified site or domain.\",\"required\":true,\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/siteverific" +
-            "ation\"]},\"get\":{\"id\":\"siteVerification.webResource.get\",\"path\":\"webResource/{id}" +
-            "\",\"httpMethod\":\"GET\",\"description\":\"Get the most current data for a website or d" +
-            "omain.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The id of a verified " +
-            "site or domain.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"re" +
-            "sponse\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/siteverification\"]},\"getToken\":{\"id\":\"siteVerification.webReso" +
-            "urce.getToken\",\"path\":\"token\",\"httpMethod\":\"POST\",\"description\":\"Get a verificat" +
-            "ion token for placing on a website or domain.\",\"request\":{\"$ref\":\"SiteVerificati" +
-            "onWebResourceGettokenRequest\"},\"response\":{\"$ref\":\"SiteVerificationWebResourceGe" +
-            "ttokenResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/siteverification\",\"h" +
-            "ttps://www.googleapis.com/auth/siteverification.verify_only\"]},\"insert\":{\"id\":\"s" +
-            "iteVerification.webResource.insert\",\"path\":\"webResource\",\"httpMethod\":\"POST\",\"de" +
-            "scription\":\"Attempt verification of a website or domain.\",\"parameters\":{\"verific" +
-            "ationMethod\":{\"type\":\"string\",\"description\":\"The method to use for verifying a s" +
-            "ite or domain.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"verifica" +
-            "tionMethod\"],\"request\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"response\"" +
-            ":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/siteverification\",\"https://www.googleapis.com/auth/siteverification.v" +
-            "erify_only\"]},\"list\":{\"id\":\"siteVerification.webResource.list\",\"path\":\"webResour" +
-            "ce\",\"httpMethod\":\"GET\",\"description\":\"Get the list of your verified websites and" +
-            " domains.\",\"response\":{\"$ref\":\"SiteVerificationWebResourceListResponse\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/siteverification\"]},\"patch\":{\"id\":\"siteVerif" +
-            "ication.webResource.patch\",\"path\":\"webResource/{id}\",\"httpMethod\":\"PATCH\",\"descr" +
-            "iption\":\"Modify the list of owners for your website or domain. This method suppo" +
-            "rts patch semantics.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The id " +
-            "of a verified site or domain.\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"id\"],\"request\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"response\":{" +
-            "\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/siteverification\"]},\"update\":{\"id\":\"siteVerification.webResource.update" +
-            "\",\"path\":\"webResource/{id}\",\"httpMethod\":\"PUT\",\"description\":\"Modify the list of" +
-            " owners for your website or domain.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The id of a verified site or domain.\",\"required\":true,\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"SiteVerificationWebResourceResource" +
-            "\"},\"response\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/siteverification\"]}}}}}";
+    public partial class SiteVerificationService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected SiteVerificationService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._webResource = new WebResourceResource(this, _authenticator);
+        public SiteVerificationService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._webResource = new WebResourceResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public SiteVerificationService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public SiteVerificationService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(SiteVerificationService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/siteVerification/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "siteVerification";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/siteVerification/v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "false", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -424,13 +311,13 @@ namespace Google.Apis.SiteVerification.v1 {
         
         private SiteVerificationService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "webResource";
         
-        public WebResourceResource(SiteVerificationService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public WebResourceResource(SiteVerificationService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Relinquish ownership of a website or domain.</summary>
@@ -473,17 +360,48 @@ namespace Google.Apis.SiteVerification.v1 {
             return new UpdateRequest(service, body, id);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -508,6 +426,28 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The id of a verified site or domain.</summary>
             [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
@@ -516,30 +456,79 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "webResource";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "webResource/{id}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _id;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -561,6 +550,28 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -572,30 +583,79 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "webResource";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "webResource/{id}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetTokenRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse> {
+        public class GetTokenRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest _Body;
             
-            public GetTokenRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest body) : 
+            public GetTokenRequest(Google.Apis.Discovery.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -617,6 +677,28 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -630,37 +712,85 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "webResource";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "getToken";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "token";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _verificationMethod;
             
             private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string verificationMethod) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string verificationMethod) : 
                     base(service) {
                 this.Body = body;
                 this._verificationMethod = verificationMethod;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -682,6 +812,28 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -703,82 +855,80 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "webResource";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
-            protected override object GetBody() {
-                return this.Body;
-            }
-        }
-        
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceListResponse> {
-            
-            private string _oauth_token;
-            
-            private System.Nullable<bool> _prettyPrint;
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
-                    base(service) {
-            }
-            
-            /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Oauth_token {
+            public override string HttpMethod {
                 get {
-                    return this._oauth_token;
-                }
-                set {
-                    this._oauth_token = value;
+                    return "POST";
                 }
             }
             
-            /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> PrettyPrint {
-                get {
-                    return this._prettyPrint;
-                }
-                set {
-                    this._prettyPrint = value;
-                }
-            }
-            
-            protected override string ResourcePath {
+            public override string RestPath {
                 get {
                     return "webResource";
                 }
             }
             
-            protected override string MethodName {
-                get {
-                    return "list";
-                }
+            protected override object GetBody() {
+                return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("verificationMethod", Google.Apis.Util.Utilities.CreateRuntimeParameter("verificationMethod", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _id;
+            private string _quotaUser;
             
-            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
+            private string _userIp;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
-                this.Body = body;
-                this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -800,6 +950,149 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "webResource";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "webResource";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _id;
+            
+            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
+            
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
+                    base(service) {
+                this.Body = body;
+                this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -821,37 +1114,86 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "webResource";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "webResource/{id}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _id;
             
             private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -876,6 +1218,28 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The id of a verified site or domain.</summary>
             [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
@@ -894,20 +1258,38 @@ namespace Google.Apis.SiteVerification.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "webResource";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "webResource/{id}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -918,7 +1300,7 @@ namespace Google.Apis.SiteVerification.v1 {
         
         private WebResourceResource _webResource;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

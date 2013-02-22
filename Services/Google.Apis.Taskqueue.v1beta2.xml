@@ -79,9 +79,6 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.Data.Tasks2.Kind">
             <summary>The kind of object returned, a list of tasks.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueueService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Taskqueue.v1beta2.TaskqueueService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -96,11 +93,23 @@
             <param name="project">Required - The project under which the queue lies.</param>
             <param name="taskqueue">Required - The id of the taskqueue to get the properties of.</param>
         </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.GetStats">
             <summary>Whether to get stats. Optional.</summary>
@@ -154,11 +163,23 @@
             <param name="task">Required</param>
             <param name="newLeaseSeconds">Required - The new lease in seconds.</param>
         </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.Project">
             <summary>The project under which the queue lies.</summary>
@@ -169,11 +190,23 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.Taskqueue">
             <summary>The taskqueue to delete a task from.</summary>
         </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.Project">
             <summary>The project under which the queue lies.</summary>
@@ -184,11 +217,23 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.Taskqueue">
             <summary>The taskqueue in which the task belongs.</summary>
         </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.Project">
             <summary>The project under which the queue lies</summary>
@@ -199,11 +244,23 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.GroupByTag">
             <summary>When true, all returned tasks will have the same tag</summary>
@@ -223,11 +280,23 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.Taskqueue">
             <summary>The taskqueue to lease a task from.</summary>
         </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.Project">
             <summary>The project under which the queue lies.</summary>
@@ -235,11 +304,23 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.Taskqueue">
             <summary>The id of the taskqueue to list tasks from.</summary>
         </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.NewLeaseSeconds">
             <summary>The new lease in seconds.</summary>
@@ -250,11 +331,23 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.NewLeaseSeconds">
             <summary>The new lease in seconds.</summary>

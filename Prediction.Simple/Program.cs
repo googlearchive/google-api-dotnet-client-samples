@@ -21,6 +21,7 @@ using DotNetOpenAuth.OAuth2;
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Discovery;
 using Google.Apis.Prediction.v1_3;
 using Google.Apis.Prediction.v1_3.Data;
 using Google.Apis.Samples.Helper;
@@ -47,13 +48,18 @@ namespace Prediction.Simple
             CommandLine.WriteLine();
 
             // Register the authenticator.
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
-            provider.ClientIdentifier = ClientCredentials.ClientID;
-            provider.ClientSecret = ClientCredentials.ClientSecret;
+            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = ClientCredentials.ClientID,
+                    ClientSecret = ClientCredentials.ClientSecret
+                };
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            var service = new PredictionService(auth);
+            var service = new PredictionService(new BaseClientService.Initializer()
+                {
+                    Authenticator = auth
+                });
             RunPrediction(service);
             CommandLine.PressAnyKeyToExit();
         }
@@ -106,7 +112,7 @@ namespace Prediction.Simple
             CommandLine.WriteLine();
             CommandLine.WriteAction("Training complete!");
             CommandLine.WriteLine();
-         
+
             // Make a prediction.
             CommandLine.WriteAction("Performing a prediction...");
             string text = "mucho bueno";

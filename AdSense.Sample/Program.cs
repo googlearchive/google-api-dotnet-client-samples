@@ -15,11 +15,14 @@ limitations under the License.
 */
 
 using System;
+
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Adsense.v1_1;
 using Google.Apis.Adsense.v1_1.Data;
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Util;
 
@@ -58,14 +61,19 @@ namespace AdSense.Sample
             CommandLine.DisplayGoogleSampleHeader("AdSense Management API Command Line Sample");
 
             // Register the authenticator.
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             var credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
+            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = credentials.ClientId,
+                    ClientSecret = credentials.ClientSecret
+                };
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            var service = new AdsenseService(auth);
+            var service = new AdsenseService(new BaseClientService.Initializer()
+                {
+                    Authenticator = auth
+                });
 
             var accounts = GetAllAccounts.Run(service, MaxListPageSize);
             if (accounts.Items != null && accounts.Items.Count > 0)

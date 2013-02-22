@@ -82,9 +82,6 @@
         <member name="M:Google.Apis.Oauth2.v1.Oauth2Service.Tokeninfo">
             <summary>Get token info</summary>
         </member>
-        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Oauth2.v1.Oauth2Service.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -97,11 +94,23 @@
         <member name="F:Google.Apis.Oauth2.v1.Oauth2Service.Scopes.UserinfoProfile">
             <summary>View basic information about your account</summary>
         </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.Access_token">
             <summary>The oauth2 access token</summary>
@@ -115,17 +124,41 @@
         <member name="M:Google.Apis.Oauth2.v1.UserinfoResource.V2Resource.MeResource.Get">
             <summary>Get user info</summary>
         </member>
+        <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.V2Resource.MeResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.V2Resource.MeResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.V2Resource.MeResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.V2Resource.MeResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.V2Resource.MeResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.V2Resource.MeResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
     </members>
 </doc>

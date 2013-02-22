@@ -15,6 +15,8 @@ limitations under the License.
 */
 
 using System;
+
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Shopping.v1;
 using Google.Apis.Shopping.v1.Data;
@@ -35,7 +37,10 @@ namespace Shopping.ListProducts
             CommandLine.DisplayGoogleSampleHeader("Shopping API: List products");
 
             // Create the service.
-            var service = new ShoppingService { Key = GetApiKey() };
+            var service = new ShoppingService(new BaseClientService.Initializer()
+                {
+                    ApiKey = GetApiKey()
+                });
             RunSample(service);
             CommandLine.PressAnyKeyToExit();
         }
@@ -52,7 +57,7 @@ namespace Shopping.ListProducts
             CommandLine.RequestUserInput("Product to search for", ref query);
             CommandLine.WriteLine();
             CommandLine.WriteAction("Executing request ...");
-            
+
             var request = service.Products.List("public");
             request.Country = "us";
             request.Q = query;

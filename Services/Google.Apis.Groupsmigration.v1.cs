@@ -63,117 +63,67 @@ namespace Google.Apis.Groupsmigration.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class GroupsmigrationService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/9bAbLP8" +
-            "lBFrC8xKVRuGadCRcu_k\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"groupsmigration:v1\",\"name\"" +
-            ":\"groupsmigration\",\"version\":\"v1\",\"revision\":\"20121207\",\"title\":\"Groups Migratio" +
-            "n API\",\"description\":\"Groups Migration Api.\",\"icons\":{\"x16\":\"http://www.google.c" +
-            "om/images/icons/product/discussions-16.gif\",\"x32\":\"http://www.google.com/images/" +
-            "icons/product/discussions-32.gif\"},\"documentationLink\":\"https://developers.googl" +
-            "e.com/google-apps/groups-migration/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.go" +
-            "ogleapis.com/groups/v1/groups/\",\"basePath\":\"/groups/v1/groups/\",\"rootUrl\":\"https" +
-            "://www.googleapis.com/\",\"servicePath\":\"groups/v1/groups/\",\"batchPath\":\"batch\",\"p" +
-            "arameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\"" +
-            ",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Ty" +
-            "pe of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Selector specifying which fields to include in a partial response.\",\"locat" +
-            "ion\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identi" +
-            "fies your project and provides you with API access, quota, and reports. Required" +
-            " unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"typ" +
-            "e\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"qu" +
-            "ery\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with inden" +
-            "tations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"typ" +
-            "e\":\"string\",\"description\":\"Available to use for quota purposes for server-side a" +
-            "pplications. Can be any arbitrary string assigned to a user, but should not exce" +
-            "ed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"u" +
-            "serIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request " +
-            "originates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"" +
-            "}},\"schemas\":{\"Groups\":{\"id\":\"Groups\",\"type\":\"object\",\"description\":\"JSON respon" +
-            "se template for groups migration API.\",\"properties\":{\"kind\":{\"type\":\"string\",\"de" +
-            "scription\":\"The kind of insert resource this is.\",\"default\":\"groupsmigration#gro" +
-            "ups\"},\"responseCode\":{\"type\":\"string\",\"description\":\"The status of the insert re" +
-            "quest.\"}}}},\"resources\":{\"archive\":{\"methods\":{\"insert\":{\"id\":\"groupsmigration.a" +
-            "rchive.insert\",\"path\":\"{groupId}/archive\",\"httpMethod\":\"POST\",\"description\":\"Ins" +
-            "erts a new mail into the archive of the Google group.\",\"parameters\":{\"groupId\":{" +
-            "\"type\":\"string\",\"description\":\"The group ID\",\"required\":true,\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"groupId\"],\"response\":{\"$ref\":\"Groups\"},\"supportsMediaUpload\"" +
-            ":true,\"mediaUpload\":{\"accept\":[\"message/rfc822\"],\"maxSize\":\"16MB\",\"protocols\":{\"" +
-            "simple\":{\"multipart\":true,\"path\":\"/upload/groups/v1/groups/{groupId}/archive\"},\"" +
-            "resumable\":{\"multipart\":true,\"path\":\"/resumable/upload/groups/v1/groups/{groupId" +
-            "}/archive\"}}}}}}}}";
+    public partial class GroupsmigrationService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected GroupsmigrationService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._archive = new ArchiveResource(this, _authenticator);
+        public GroupsmigrationService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._archive = new ArchiveResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public GroupsmigrationService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public GroupsmigrationService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(GroupsmigrationService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/groups/v1/groups/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "groupsmigration";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/groups/v1/groups/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -181,13 +131,13 @@ namespace Google.Apis.Groupsmigration.v1 {
         
         private GroupsmigrationService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "archive";
         
-        public ArchiveResource(GroupsmigrationService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ArchiveResource(GroupsmigrationService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Inserts a new mail into the archive of the Google group.</summary>
@@ -202,17 +152,48 @@ namespace Google.Apis.Groupsmigration.v1 {
             return new InsertMediaUpload(service, groupId, stream, contentType);
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Groupsmigration.v1.Data.Groups> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Groupsmigration.v1.Data.Groups> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _groupId;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, string groupId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, string groupId) : 
                     base(service) {
                 this._groupId = groupId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -234,6 +215,28 @@ namespace Google.Apis.Groupsmigration.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -245,31 +248,79 @@ namespace Google.Apis.Groupsmigration.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "archive";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{groupId}/archive";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("groupId", Google.Apis.Util.Utilities.CreateRuntimeParameter("groupId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
         public class InsertMediaUpload : Google.Apis.Upload.ResumableUpload<string, Google.Apis.Groupsmigration.v1.Data.Groups> {
             
+            private string _alt;
+            
+            private string _fields;
+            
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _groupId;
             
-            public InsertMediaUpload(Google.Apis.Discovery.IRequestProvider service, string groupId, System.IO.Stream stream, string contentType) : 
+            public InsertMediaUpload(Google.Apis.Discovery.IClientService service, string groupId, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/groups/v1/groups/{groupId}/archive", "POST", stream, contentType) {
                 this.Authenticator = service.Authenticator;
                 this._groupId = groupId;
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -291,6 +342,28 @@ namespace Google.Apis.Groupsmigration.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -310,7 +383,7 @@ namespace Google.Apis.Groupsmigration.v1 {
         
         private ArchiveResource _archive;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

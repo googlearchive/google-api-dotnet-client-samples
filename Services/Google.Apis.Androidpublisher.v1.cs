@@ -89,137 +89,67 @@ namespace Google.Apis.Androidpublisher.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class AndroidpublisherService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/w4oNsm9" +
-            "WYapQlRAudY0Tr7UlWAU\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"androidpublisher:v1\",\"name" +
-            "\":\"androidpublisher\",\"version\":\"v1\",\"revision\":\"20120608\",\"title\":\"Google Play A" +
-            "ndroid Developer API\",\"description\":\"Lets Android application developers access " +
-            "their Google Play accounts.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/" +
-            "product/android-16.png\",\"x32\":\"http://www.google.com/images/icons/product/androi" +
-            "d-32.png\"},\"documentationLink\":\"https://developers.google.com/android-publisher\"" +
-            ",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/androidpublisher/v1/app" +
-            "lications/\",\"basePath\":\"/androidpublisher/v1/applications/\",\"rootUrl\":\"https://w" +
-            "ww.googleapis.com/\",\"servicePath\":\"androidpublisher/v1/applications/\",\"batchPath" +
-            "\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for th" +
-            "e response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses wit" +
-            "h Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"strin" +
-            "g\",\"description\":\"Selector specifying which fields to include in a partial respo" +
-            "nse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your AP" +
-            "I key identifies your project and provides you with API access, quota, and repor" +
-            "ts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_" +
-            "token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"l" +
-            "ocation\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respons" +
-            "e with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quot" +
-            "aUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for s" +
-            "erver-side applications. Can be any arbitrary string assigned to a user, but sho" +
-            "uld not exceed 40 characters. Overrides userIp if both are provided.\",\"location\"" +
-            ":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where " +
-            "the request originates. Use this if you want to enforce per-user limits.\",\"locat" +
-            "ion\":\"query\"}},\"schemas\":{\"SubscriptionPurchase\":{\"id\":\"SubscriptionPurchase\",\"t" +
-            "ype\":\"object\",\"description\":\"A Purchase resource indicates the status of a user\'" +
-            "s subscription purchase.\",\"properties\":{\"autoRenewing\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"Whether the subscription will automatically be renewed when it reaches i" +
-            "ts current expiry time.\"},\"initiationTimestampMsec\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Time at which the subscription was granted, in milliseconds since Epoch.\",\"f" +
-            "ormat\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"This kind represents a su" +
-            "bscriptionPurchase object in the androidpublisher service.\",\"default\":\"androidpu" +
-            "blisher#subscriptionPurchase\"},\"validUntilTimestampMsec\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Time at which the subscription will expire, in milliseconds since Epoch" +
-            ".\",\"format\":\"int64\"}}}},\"resources\":{\"purchases\":{\"methods\":{\"cancel\":{\"id\":\"and" +
-            "roidpublisher.purchases.cancel\",\"path\":\"{packageName}/subscriptions/{subscriptio" +
-            "nId}/purchases/{token}/cancel\",\"httpMethod\":\"POST\",\"description\":\"Cancels a user" +
-            "\'s subscription purchase. The subscription remains valid until its expiration ti" +
-            "me.\",\"parameters\":{\"packageName\":{\"type\":\"string\",\"description\":\"The package nam" +
-            "e of the application for which this subscription was purchased (for example, \'co" +
-            "m.some.thing\').\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":{\"type\":\"st" +
-            "ring\",\"description\":\"The purchased subscription ID (for example, \'monthly001\').\"" +
-            ",\"required\":true,\"location\":\"path\"},\"token\":{\"type\":\"string\",\"description\":\"The " +
-            "token provided to the user\'s device when the subscription was purchased.\",\"requi" +
-            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"packageName\",\"subscriptionId\",\"" +
-            "token\"]},\"get\":{\"id\":\"androidpublisher.purchases.get\",\"path\":\"{packageName}/subs" +
-            "criptions/{subscriptionId}/purchases/{token}\",\"httpMethod\":\"GET\",\"description\":\"" +
-            "Checks whether a user\'s subscription purchase is valid and returns its expiry ti" +
-            "me.\",\"parameters\":{\"packageName\":{\"type\":\"string\",\"description\":\"The package nam" +
-            "e of the application for which this subscription was purchased (for example, \'co" +
-            "m.some.thing\').\",\"required\":true,\"location\":\"path\"},\"subscriptionId\":{\"type\":\"st" +
-            "ring\",\"description\":\"The purchased subscription ID (for example, \'monthly001\').\"" +
-            ",\"required\":true,\"location\":\"path\"},\"token\":{\"type\":\"string\",\"description\":\"The " +
-            "token provided to the user\'s device when the subscription was purchased.\",\"requi" +
-            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"packageName\",\"subscriptionId\",\"" +
-            "token\"],\"response\":{\"$ref\":\"SubscriptionPurchase\"}}}}}}";
+    public partial class AndroidpublisherService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected AndroidpublisherService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._purchases = new PurchasesResource(this, _authenticator);
+        public AndroidpublisherService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._purchases = new PurchasesResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public AndroidpublisherService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public AndroidpublisherService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AndroidpublisherService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/androidpublisher/v1/applications/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "androidpublisher";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/androidpublisher/v1/applications/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -227,13 +157,13 @@ namespace Google.Apis.Androidpublisher.v1 {
         
         private AndroidpublisherService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "purchases";
         
-        public PurchasesResource(AndroidpublisherService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public PurchasesResource(AndroidpublisherService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Cancels a user&apos;s subscription purchase. The subscription remains valid until its expiration time.</summary>
@@ -252,11 +182,19 @@ namespace Google.Apis.Androidpublisher.v1 {
             return new GetRequest(service, packageName, subscriptionId, token);
         }
         
-        public class CancelRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class CancelRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _packageName;
             
@@ -264,11 +202,34 @@ namespace Google.Apis.Androidpublisher.v1 {
             
             private string _token;
             
-            public CancelRequest(Google.Apis.Discovery.IRequestProvider service, string packageName, string subscriptionId, string token) : 
+            public CancelRequest(Google.Apis.Discovery.IClientService service, string packageName, string subscriptionId, string token) : 
                     base(service) {
                 this._packageName = packageName;
                 this._subscriptionId = subscriptionId;
                 this._token = token;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -290,6 +251,28 @@ namespace Google.Apis.Androidpublisher.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -317,24 +300,52 @@ namespace Google.Apis.Androidpublisher.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "purchases";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "cancel";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{packageName}/subscriptions/{subscriptionId}/purchases/{token}/cancel";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("packageName", Google.Apis.Util.Utilities.CreateRuntimeParameter("packageName", true, "path", null, null, new string[0]));
+                parameters.Add("subscriptionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("subscriptionId", true, "path", null, null, new string[0]));
+                parameters.Add("token", Google.Apis.Util.Utilities.CreateRuntimeParameter("token", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Androidpublisher.v1.Data.SubscriptionPurchase> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Androidpublisher.v1.Data.SubscriptionPurchase> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _packageName;
             
@@ -342,11 +353,34 @@ namespace Google.Apis.Androidpublisher.v1 {
             
             private string _token;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string packageName, string subscriptionId, string token) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string packageName, string subscriptionId, string token) : 
                     base(service) {
                 this._packageName = packageName;
                 this._subscriptionId = subscriptionId;
                 this._token = token;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -368,6 +402,28 @@ namespace Google.Apis.Androidpublisher.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -395,16 +451,36 @@ namespace Google.Apis.Androidpublisher.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "purchases";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{packageName}/subscriptions/{subscriptionId}/purchases/{token}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("packageName", Google.Apis.Util.Utilities.CreateRuntimeParameter("packageName", true, "path", null, null, new string[0]));
+                parameters.Add("subscriptionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("subscriptionId", true, "path", null, null, new string[0]));
+                parameters.Add("token", Google.Apis.Util.Utilities.CreateRuntimeParameter("token", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -415,7 +491,7 @@ namespace Google.Apis.Androidpublisher.v1 {
         
         private PurchasesResource _purchases;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

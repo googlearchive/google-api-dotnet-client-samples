@@ -118,158 +118,68 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
     using Google.Apis.Discovery;
     
     
-    public partial class YoutubeAnalyticsService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/gcEwxpD" +
-            "PO0rIiLbaeLoHnbk1_XM\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"youtubeAnalytics:v1beta1\"," +
-            "\"name\":\"youtubeAnalytics\",\"version\":\"v1beta1\",\"revision\":\"20121108\",\"title\":\"You" +
-            "Tube Analytics API\",\"description\":\"Retrieve your YouTube Analytics reports.\",\"ic" +
-            "ons\":{\"x16\":\"http://www.google.com/images/icons/product/youtube-16.png\",\"x32\":\"h" +
-            "ttp://www.google.com/images/icons/product/youtube-32.png\"},\"documentationLink\":\"" +
-            "http://developers.google.com/youtube/analytics/\",\"labels\":[\"graduated\"],\"protoco" +
-            "l\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/youtube/analytics/v1beta1/\",\"bas" +
-            "ePath\":\"/youtube/analytics/v1beta1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"se" +
-            "rvicePath\":\"youtube/analytics/v1beta1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":" +
-            "{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\"," +
-            "\"enum\":[\"csv\",\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of text/c" +
-            "sv\",\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fiel" +
-            "ds\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to include " +
-            "in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\"" +
-            ":\"API key. Your API key identifies your project and provides you with API access" +
-            ", quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"location" +
-            "\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the" +
-            " current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description" +
-            "\":\"Returns response with indentations and line breaks.\",\"default\":\"true\",\"locati" +
-            "on\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for qu" +
-            "ota purposes for server-side applications. Can be any arbitrary string assigned " +
-            "to a user, but should not exceed 40 characters. Overrides userIp if both are pro" +
-            "vided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address " +
-            "of the site where the request originates. Use this if you want to enforce per-us" +
-            "er limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.google" +
-            "apis.com/auth/yt-analytics.readonly\":{\"description\":\"View YouTube Analytics repo" +
-            "rts for your YouTube content\"}}}},\"schemas\":{\"ResultTable\":{\"id\":\"ResultTable\",\"" +
-            "type\":\"object\",\"description\":\"Contains a single result table. The table is retur" +
-            "ned as an array of rows that contain the values for the cells of the table. Depe" +
-            "nding on the metric or dimension, the cell can contain a string (video ID, count" +
-            "ry code) or a number (number of views or number of likes).\",\"properties\":{\"colum" +
-            "nHeaders\":{\"type\":\"array\",\"description\":\"Contains information about the columns " +
-            "returned in the \\\"rows\\\" fields. The order of the elements matches the order of " +
-            "the corresponding columns in \\\"rows\\\" field.\",\"items\":{\"type\":\"object\",\"properti" +
-            "es\":{\"columnType\":{\"type\":\"string\",\"description\":\"The type of the column (DIMENS" +
-            "ION, METRIC).\"},\"dataType\":{\"type\":\"string\",\"description\":\"Type of the data in t" +
-            "he column (STRING, INTEGER, FLOAT).\"},\"name\":{\"type\":\"string\",\"description\":\"The" +
-            " name of the dimension or metric.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"Id" +
-            "entifier used to mark the structure as a result table.\",\"default\":\"youtubeAnalyt" +
-            "ics#resultTable\"},\"rows\":{\"type\":\"array\",\"description\":\"Contains all rows of the" +
-            " result table. Each row contains an array with the values for the columns. The o" +
-            "rder matches the order of the column information provided in the \\\"columnHeaders" +
-            "\\\" field. If no data is available for the given query, the \\\"rows\\\" element will" +
-            " be omitted from the response. The response for a query with the day dimension w" +
-            "ill not contain rows for the most recent days.\",\"items\":{\"type\":\"array\",\"items\":" +
-            "{\"type\":\"any\"}}}}}},\"resources\":{\"reports\":{\"methods\":{\"query\":{\"id\":\"youtubeAna" +
-            "lytics.reports.query\",\"path\":\"reports\",\"httpMethod\":\"GET\",\"description\":\"Retriev" +
-            "e your YouTube Analytics reports.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"" +
-            "description\":\"A comma-separated list of YouTube Analytics dimensions. E.g., \'vid" +
-            "eo\', or \'ageGroup,gender\'.\",\"pattern\":\"[0-9a-zA-Z,]+\",\"location\":\"query\"},\"end-d" +
-            "ate\":{\"type\":\"string\",\"description\":\"End date for fetching YouTube Analytics dat" +
-            "a. All requests should specify an end date formatted as YYYY-MM-DD.\",\"required\":" +
-            "true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"filters\":{\"type" +
-            "\":\"string\",\"description\":\"A list of dimension filters to be applied to YouTube A" +
-            "nalytics data. Multiple filters can be joined together with the \';\' character. T" +
-            "he returned result table will satisfy both filters. E.g., video==dMH0bHeiRNg;cou" +
-            "ntry==IT will restrict the returned stats to the given video and the country Ita" +
-            "ly.\",\"location\":\"query\"},\"ids\":{\"type\":\"string\",\"description\":\"Unique channel or" +
-            " content owner ID for retrieving YouTube Analytics data. Either channel==C or co" +
-            "ntentOwner==O where \'C\' is the encrypted channel ID and \'O\' is the content owner" +
-            " name.\",\"required\":true,\"pattern\":\"[a-zA-Z]+==[a-zA-Z0-9_+-]+\",\"location\":\"query" +
-            "\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum number of rows to " +
-            "include in the response.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"me" +
-            "trics\":{\"type\":\"string\",\"description\":\"A comma-separated list of YouTube Analyti" +
-            "cs metrics. E.g., \'views\' or \'likes,dislikes\'\",\"required\":true,\"pattern\":\"[0-9a-" +
-            "zA-Z,]+\",\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"A comma-sepa" +
-            "rated list of dimensions or metrics that determine the sort order for YouTube An" +
-            "alytics data. By default the sort order is ascending, \'-\' prefix causes descendi" +
-            "ng sort order.\",\"pattern\":\"(-)?[0-9a-zA-Z,]+\",\"location\":\"query\"},\"start-date\":{" +
-            "\"type\":\"string\",\"description\":\"Start date for fetching YouTube Analytics data. A" +
-            "ll requests should specify a start date formatted as YYYY-MM-DD.\",\"required\":tru" +
-            "e,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"start-index\":{\"typ" +
-            "e\":\"integer\",\"description\":\"An index of the first entity to retrieve. Use this p" +
-            "arameter as a pagination mechanism along with the max-results parameter (one-bas" +
-            "ed, inclusive).\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterO" +
-            "rder\":[\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"response\":{\"$ref\":\"ResultTable\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/yt-analytics.readonly\"]}}}}}";
+    public partial class YoutubeAnalyticsService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1beta1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected YoutubeAnalyticsService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._reports = new ReportsResource(this, _authenticator);
+        public YoutubeAnalyticsService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._reports = new ReportsResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public YoutubeAnalyticsService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public YoutubeAnalyticsService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(YoutubeAnalyticsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/youtube/analytics/v1beta1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "youtubeAnalytics";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/youtube/analytics/v1beta1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "csv",
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -285,13 +195,13 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
         
         private YoutubeAnalyticsService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "reports";
         
-        public ReportsResource(YoutubeAnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ReportsResource(YoutubeAnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieve your YouTube Analytics reports.</summary>
@@ -303,11 +213,19 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
             return new QueryRequest(service, ids, startDate, endDate, metrics);
         }
         
-        public class QueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.YoutubeAnalytics.v1beta1.Data.ResultTable> {
+        public class QueryRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.YoutubeAnalytics.v1beta1.Data.ResultTable> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _dimensions;
             
@@ -327,12 +245,35 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
             
             private System.Nullable<long> _startIndex;
             
-            public QueryRequest(Google.Apis.Discovery.IRequestProvider service, string ids, string startDate, string endDate, string metrics) : 
+            public QueryRequest(Google.Apis.Discovery.IClientService service, string ids, string startDate, string endDate, string metrics) : 
                     base(service) {
                 this._ids = ids;
                 this._startDate = startDate;
                 this._endDate = endDate;
                 this._metrics = metrics;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -354,6 +295,28 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -444,16 +407,42 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "reports";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "query";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "reports";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("dimensions", Google.Apis.Util.Utilities.CreateRuntimeParameter("dimensions", false, "query", null, "[0-9a-zA-Z,]+", new string[0]));
+                parameters.Add("end-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("end-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                parameters.Add("filters", Google.Apis.Util.Utilities.CreateRuntimeParameter("filters", false, "query", null, null, new string[0]));
+                parameters.Add("ids", Google.Apis.Util.Utilities.CreateRuntimeParameter("ids", true, "query", null, "[a-zA-Z]+==[a-zA-Z0-9_+-]+", new string[0]));
+                parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                parameters.Add("metrics", Google.Apis.Util.Utilities.CreateRuntimeParameter("metrics", true, "query", null, "[0-9a-zA-Z,]+", new string[0]));
+                parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, "(-)?[0-9a-zA-Z,]+", new string[0]));
+                parameters.Add("start-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -464,7 +453,7 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
         
         private ReportsResource _reports;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

@@ -235,9 +235,6 @@
         <member name="P:Google.Apis.Coordinate.v1.Data.WorkerListResponse.Kind">
             <summary>Identifies this object as a list of workers.</summary>
         </member>
-        <member name="P:Google.Apis.Coordinate.v1.CoordinateService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Coordinate.v1.CoordinateService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -251,11 +248,23 @@
             <summary>Retrieves a list of custom field definitions for a team.</summary>
             <param name="teamId">Required - Team ID</param>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.TeamId">
             <summary>Team ID</summary>
@@ -305,11 +314,23 @@
         <member name="F:Google.Apis.Coordinate.v1.JobsResource.Progress.OBSOLETE">
             <summary>Obsolete</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.JobId">
             <summary>Job number</summary>
@@ -317,11 +338,23 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.TeamId">
             <summary>Team ID</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Address">
             <summary>Job address as newline (Unix) separated string</summary>
@@ -356,11 +389,23 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return in one page.</summary>
@@ -374,11 +419,23 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.TeamId">
             <summary>Team ID</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Address">
             <summary>Job address as newline (Unix) separated string</summary>
@@ -419,11 +476,23 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Address">
             <summary>Job address as newline (Unix) separated string</summary>
@@ -470,11 +539,23 @@
             <param name="workerEmail">Required - Worker email address.</param>
             <param name="startTimestampMs">Required - Start timestamp in milliseconds since the epoch.</param>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.LocationResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return in one page.</summary>
@@ -506,11 +587,23 @@
             <param name="teamId">Required - Team ID</param>
             <param name="jobId">Required - Job number</param>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.JobId">
             <summary>Job number</summary>
@@ -518,11 +611,23 @@
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.GetRequest.TeamId">
             <summary>Team ID</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.AllDay">
             <summary>Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.</summary>
@@ -542,11 +647,23 @@
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.ScheduleResource.UpdateRequest.AllDay">
             <summary>Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.</summary>
@@ -570,11 +687,23 @@
             <summary>Retrieves a list of workers in a team.</summary>
             <param name="teamId">Required - Team ID</param>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.WorkerResource.ListRequest.TeamId">
             <summary>Team ID</summary>

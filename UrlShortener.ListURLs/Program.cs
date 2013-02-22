@@ -15,10 +15,13 @@ limitations under the License.
 */
 
 using System;
+
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
@@ -42,14 +45,19 @@ namespace UrlShortener.ListURLs
             CommandLine.DisplayGoogleSampleHeader("URLShortener -- List URLs");
 
             // Register the authenticator.
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
+            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = credentials.ClientId,
+                    ClientSecret = credentials.ClientSecret,
+                };
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
 
             // Create the service.
-            var service = new UrlshortenerService(auth);
+            var service = new UrlshortenerService(new BaseClientService.Initializer()
+                {
+                    Authenticator = auth
+                });
 
             // List all shortened URLs:
             CommandLine.WriteAction("Retrieving list of shortened urls...");

@@ -680,212 +680,67 @@ namespace Google.Apis.Pagespeedonline.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class PagespeedonlineService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/6-BFiu6" +
-            "8A96TLwM7VIrcHdw1dCU\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"pagespeedonline:v1\",\"name\"" +
-            ":\"pagespeedonline\",\"version\":\"v1\",\"revision\":\"20120827\",\"title\":\"Page Speed Onli" +
-            "ne API\",\"description\":\"Lets you analyze the performance of a web page and get ta" +
-            "ilored suggestions to make that page faster.\",\"icons\":{\"x16\":\"http://www.google." +
-            "com/images/icons/product/pagespeed-16.png\",\"x32\":\"http://www.google.com/images/i" +
-            "cons/product/pagespeed-32.png\"},\"documentationLink\":\"https://developers.google.c" +
-            "om/speed/docs/insights/v1/getting_started\",\"protocol\":\"rest\",\"baseUrl\":\"https://" +
-            "www.googleapis.com/pagespeedonline/v1/\",\"basePath\":\"/pagespeedonline/v1/\",\"rootU" +
-            "rl\":\"https://www.googleapis.com/\",\"servicePath\":\"pagespeedonline/v1/\",\"batchPath" +
-            "\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for th" +
-            "e response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses wit" +
-            "h Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"strin" +
-            "g\",\"description\":\"Selector specifying which fields to include in a partial respo" +
-            "nse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your AP" +
-            "I key identifies your project and provides you with API access, quota, and repor" +
-            "ts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_" +
-            "token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"l" +
-            "ocation\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respons" +
-            "e with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quot" +
-            "aUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for s" +
-            "erver-side applications. Can be any arbitrary string assigned to a user, but sho" +
-            "uld not exceed 40 characters. Overrides userIp if both are provided.\",\"location\"" +
-            ":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where " +
-            "the request originates. Use this if you want to enforce per-user limits.\",\"locat" +
-            "ion\":\"query\"}},\"schemas\":{\"Result\":{\"id\":\"Result\",\"type\":\"object\",\"properties\":{" +
-            "\"formattedResults\":{\"type\":\"object\",\"description\":\"Localized Page Speed results." +
-            " Contains a ruleResults entry for each Page Speed rule instantiated and run by t" +
-            "he server.\",\"properties\":{\"locale\":{\"type\":\"string\",\"description\":\"The locale of" +
-            " the formattedResults, e.g. \\\"en_US\\\".\"},\"ruleResults\":{\"type\":\"object\",\"descrip" +
-            "tion\":\"Dictionary of formatted rule results, with one entry for each Page Speed " +
-            "rule instantiated and run by the server.\",\"additionalProperties\":{\"type\":\"object" +
-            "\",\"description\":\"The enum-like identifier for this rule. For instance \\\"EnableKe" +
-            "epAlive\\\" or \\\"AvoidCssImport\\\". Not localized.\",\"properties\":{\"localizedRuleNam" +
-            "e\":{\"type\":\"string\",\"description\":\"Localized name of the rule, intended for pres" +
-            "entation to a user.\"},\"ruleImpact\":{\"type\":\"number\",\"description\":\"The impact (u" +
-            "nbounded floating point value) that implementing the suggestions for this rule w" +
-            "ould have on making the page faster. Impact is comparable between rules to deter" +
-            "mine which rule\'s suggestions would have a higher or lower impact on making a pa" +
-            "ge faster. For instance, if enabling compression would save 1MB, while optimizin" +
-            "g images would save 500kB, the enable compression rule would have 2x the impact " +
-            "of the image optimization rule, all other things being equal.\",\"format\":\"double\"" +
-            "},\"ruleScore\":{\"type\":\"integer\",\"description\":\"The score (0-100) for this rule. " +
-            "The rule score indicates how well a page implements the recommendations for the " +
-            "given rule. For instance, if none of the compressible resources on a page are co" +
-            "mpressed, the rule score would be 0, while if all of the compressible resources " +
-            "on a page are compressed, the rule score would be 100.\",\"format\":\"int32\"},\"urlBl" +
-            "ocks\":{\"type\":\"array\",\"description\":\"List of blocks of URLs. Each block may cont" +
-            "ain a heading and a list of URLs. Each URL may optionally include additional det" +
-            "ails.\",\"items\":{\"type\":\"object\",\"properties\":{\"header\":{\"type\":\"object\",\"descrip" +
-            "tion\":\"Heading to be displayed with the list of URLs.\",\"properties\":{\"args\":{\"ty" +
-            "pe\":\"array\",\"description\":\"List of arguments for the format string.\",\"items\":{\"t" +
-            "ype\":\"object\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"Type of argum" +
-            "ent. One of URL, STRING_LITERAL, INT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Argument value, as a localized string.\"}}}},\"format\"" +
-            ":{\"type\":\"string\",\"description\":\"A localized format string with $N placeholders," +
-            " where N is the 1-indexed argument number, e.g. \'Minifying the following $1 reso" +
-            "urces would save a total of $2 bytes\'.\"}}},\"urls\":{\"type\":\"array\",\"description\":" +
-            "\"List of entries that provide information about URLs in the url block. Optional." +
-            "\",\"items\":{\"type\":\"object\",\"properties\":{\"details\":{\"type\":\"array\",\"description\"" +
-            ":\"List of entries that provide additional details about a single URL. Optional.\"" +
-            ",\"items\":{\"type\":\"object\",\"properties\":{\"args\":{\"type\":\"array\",\"description\":\"Li" +
-            "st of arguments for the format string.\",\"items\":{\"type\":\"object\",\"properties\":{\"" +
-            "type\":{\"type\":\"string\",\"description\":\"Type of argument. One of URL, STRING_LITER" +
-            "AL, INT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"description\":\"A" +
-            "rgument value, as a localized string.\"}}}},\"format\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"A localized format string with $N placeholders, where N is the 1-indexed arg" +
-            "ument number, e.g. \'Unnecessary metadata for this resource adds an additional $1" +
-            " bytes to its download size\'.\"}}}},\"result\":{\"type\":\"object\",\"description\":\"A fo" +
-            "rmat string that gives information about the URL, and a list of arguments for th" +
-            "at format string.\",\"properties\":{\"args\":{\"type\":\"array\",\"description\":\"List of a" +
-            "rguments for the format string.\",\"items\":{\"type\":\"object\",\"properties\":{\"type\":{" +
-            "\"type\":\"string\",\"description\":\"Type of argument. One of URL, STRING_LITERAL, INT" +
-            "_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"description\":\"Argument" +
-            " value, as a localized string.\"}}}},\"format\":{\"type\":\"string\",\"description\":\"A l" +
-            "ocalized format string with $N placeholders, where N is the 1-indexed argument n" +
-            "umber, e.g. \'Minifying the resource at URL $1 can save $2 bytes\'.\"}}}}}}}}}}}}}}" +
-            ",\"id\":{\"type\":\"string\",\"description\":\"Canonicalized and final URL for the docume" +
-            "nt, after following page redirects (if any).\"},\"invalidRules\":{\"type\":\"array\",\"d" +
-            "escription\":\"List of rules that were specified in the request, but which the ser" +
-            "ver did not know how to instantiate.\",\"items\":{\"type\":\"string\"}},\"kind\":{\"type\":" +
-            "\"string\",\"description\":\"Kind of result.\",\"default\":\"pagespeedonline#result\"},\"pa" +
-            "geStats\":{\"type\":\"object\",\"description\":\"Summary statistics for the page, such a" +
-            "s number of JavaScript bytes, number of HTML bytes, etc.\",\"properties\":{\"cssResp" +
-            "onseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed response bytes" +
-            " for CSS resources on the page.\",\"format\":\"int64\"},\"flashResponseBytes\":{\"type\":" +
-            "\"string\",\"description\":\"Number of response bytes for flash resources on the page" +
-            ".\",\"format\":\"int64\"},\"htmlResponseBytes\":{\"type\":\"string\",\"description\":\"Number " +
-            "of uncompressed response bytes for the main HTML document and all iframes on the" +
-            " page.\",\"format\":\"int64\"},\"imageResponseBytes\":{\"type\":\"string\",\"description\":\"N" +
-            "umber of response bytes for image resources on the page.\",\"format\":\"int64\"},\"jav" +
-            "ascriptResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed res" +
-            "ponse bytes for JS resources on the page.\",\"format\":\"int64\"},\"numberCssResources" +
-            "\":{\"type\":\"integer\",\"description\":\"Number of CSS resources referenced by the pag" +
-            "e.\",\"format\":\"int32\"},\"numberHosts\":{\"type\":\"integer\",\"description\":\"Number of u" +
-            "nique hosts referenced by the page.\",\"format\":\"int32\"},\"numberJsResources\":{\"typ" +
-            "e\":\"integer\",\"description\":\"Number of JavaScript resources referenced by the pag" +
-            "e.\",\"format\":\"int32\"},\"numberResources\":{\"type\":\"integer\",\"description\":\"Number " +
-            "of HTTP resources loaded by the page.\",\"format\":\"int32\"},\"numberStaticResources\"" +
-            ":{\"type\":\"integer\",\"description\":\"Number of static (i.e. cacheable) resources on" +
-            " the page.\",\"format\":\"int32\"},\"otherResponseBytes\":{\"type\":\"string\",\"description" +
-            "\":\"Number of response bytes for other resources on the page.\",\"format\":\"int64\"}," +
-            "\"textResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed respo" +
-            "nse bytes for text resources not covered by other statistics (i.e non-HTML, non-" +
-            "script, non-CSS resources) on the page.\",\"format\":\"int64\"},\"totalRequestBytes\":{" +
-            "\"type\":\"string\",\"description\":\"Total size of all request bytes sent by the page." +
-            "\",\"format\":\"int64\"}}},\"responseCode\":{\"type\":\"integer\",\"description\":\"Response c" +
-            "ode for the document. 200 indicates a normal page load. 4xx/5xx indicates an err" +
-            "or.\",\"format\":\"int32\"},\"score\":{\"type\":\"integer\",\"description\":\"The Page Speed S" +
-            "core (0-100), which indicates how much faster a page could be. A high score indi" +
-            "cates little room for improvement, while a lower score indicates more room for i" +
-            "mprovement.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"description\":\"Title of " +
-            "the page, as displayed in the browser\'s title bar.\"},\"version\":{\"type\":\"object\"," +
-            "\"description\":\"The version of the Page Speed SDK used to generate these results." +
-            "\",\"properties\":{\"major\":{\"type\":\"integer\",\"description\":\"The major version numbe" +
-            "r of the Page Speed SDK used to generate these results.\",\"format\":\"int32\"},\"mino" +
-            "r\":{\"type\":\"integer\",\"description\":\"The minor version number of the Page Speed S" +
-            "DK used to generate these results.\",\"format\":\"int32\"}}}}}},\"resources\":{\"pagespe" +
-            "edapi\":{\"methods\":{\"runpagespeed\":{\"id\":\"pagespeedonline.pagespeedapi.runpagespe" +
-            "ed\",\"path\":\"runPagespeed\",\"httpMethod\":\"GET\",\"description\":\"Runs Page Speed anal" +
-            "ysis on the page at the specified URL, and returns a Page Speed score, a list of" +
-            " suggestions to make that page faster, and other information.\",\"parameters\":{\"lo" +
-            "cale\":{\"type\":\"string\",\"description\":\"The locale used to localize formatted resu" +
-            "lts\",\"pattern\":\"[a-zA-Z]+(_[a-zA-Z]+)?\",\"location\":\"query\"},\"rule\":{\"type\":\"stri" +
-            "ng\",\"description\":\"A Page Speed rule to run; if none are given, all rules are ru" +
-            "n\",\"pattern\":\"[a-zA-Z]+\",\"repeated\":true,\"location\":\"query\"},\"strategy\":{\"type\":" +
-            "\"string\",\"description\":\"The analysis strategy to use\",\"enum\":[\"desktop\",\"mobile\"" +
-            "],\"enumDescriptions\":[\"Fetch and analyze the URL for desktop browsers\",\"Fetch an" +
-            "d analyze the URL for mobile devices\"],\"location\":\"query\"},\"url\":{\"type\":\"string" +
-            "\",\"description\":\"The URL to fetch and analyze\",\"required\":true,\"pattern\":\"http(s" +
-            ")?://.*\",\"location\":\"query\"}},\"parameterOrder\":[\"url\"],\"response\":{\"$ref\":\"Resul" +
-            "t\"}}}}}}";
+    public partial class PagespeedonlineService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected PagespeedonlineService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._pagespeedapi = new PagespeedapiResource(this, _authenticator);
+        public PagespeedonlineService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._pagespeedapi = new PagespeedapiResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public PagespeedonlineService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public PagespeedonlineService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PagespeedonlineService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/pagespeedonline/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "pagespeedonline";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/pagespeedonline/v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -893,13 +748,13 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         private PagespeedonlineService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "pagespeedapi";
         
-        public PagespeedapiResource(PagespeedonlineService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public PagespeedapiResource(PagespeedonlineService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list of suggestions to make that page faster, and other information.</summary>
@@ -921,11 +776,19 @@ namespace Google.Apis.Pagespeedonline.v1 {
             Mobile,
         }
         
-        public class RunpagespeedRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Pagespeedonline.v1.Data.Result> {
+        public class RunpagespeedRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Pagespeedonline.v1.Data.Result> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _locale;
             
@@ -935,9 +798,32 @@ namespace Google.Apis.Pagespeedonline.v1 {
             
             private string _url;
             
-            public RunpagespeedRequest(Google.Apis.Discovery.IRequestProvider service, string url) : 
+            public RunpagespeedRequest(Google.Apis.Discovery.IClientService service, string url) : 
                     base(service) {
                 this._url = url;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -959,6 +845,28 @@ namespace Google.Apis.Pagespeedonline.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1003,16 +911,39 @@ namespace Google.Apis.Pagespeedonline.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "pagespeedapi";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "runpagespeed";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "runPagespeed";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("locale", Google.Apis.Util.Utilities.CreateRuntimeParameter("locale", false, "query", null, "[a-zA-Z]+(_[a-zA-Z]+)?", new string[0]));
+                parameters.Add("rule", Google.Apis.Util.Utilities.CreateRuntimeParameter("rule", false, "query", null, "[a-zA-Z]+", new string[0]));
+                parameters.Add("strategy", Google.Apis.Util.Utilities.CreateRuntimeParameter("strategy", false, "query", null, null, new string[] {
+                                "desktop",
+                                "mobile"}));
+                parameters.Add("url", Google.Apis.Util.Utilities.CreateRuntimeParameter("url", true, "query", null, "http(s)?://.*", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1023,7 +954,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         private PagespeedapiResource _pagespeedapi;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

@@ -22,201 +22,68 @@ namespace Google.Apis.Analytics.v2_4 {
     using Google.Apis.Discovery;
     
     
-    public partial class AnalyticsService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/KuIptIO" +
-            "3WKeB4Ywwd9BjLqFABY4\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"analytics:v2.4\",\"name\":\"an" +
-            "alytics\",\"version\":\"v2.4\",\"revision\":\"20121212\",\"title\":\"Google Analytics API\",\"" +
-            "description\":\"View and manage your Google Analytics data\",\"icons\":{\"x16\":\"http:/" +
-            "/www.google.com/images/icons/product/analytics-16.png\",\"x32\":\"http://www.google." +
-            "com/images/icons/product/analytics-32.png\"},\"documentationLink\":\"https://develop" +
-            "ers.google.com/analytics/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.c" +
-            "om/analytics/v2.4/\",\"basePath\":\"/analytics/v2.4/\",\"rootUrl\":\"https://www.googlea" +
-            "pis.com/\",\"servicePath\":\"analytics/v2.4/\",\"batchPath\":\"batch\",\"parameters\":{\"alt" +
-            "\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"atom" +
-            "\",\"enum\":[\"atom\"],\"enumDescriptions\":[\"Responses with Content-Type of applicatio" +
-            "n/atom+xml\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Select" +
-            "or specifying which fields to include in a partial response.\",\"location\":\"query\"" +
-            "},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your pr" +
-            "oject and provides you with API access, quota, and reports. Required unless you " +
-            "provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\"," +
-            "\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prett" +
-            "yPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and " +
-            "line breaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\"" +
-            ",\"description\":\"Available to use for quota purposes for server-side applications" +
-            ". Can be any arbitrary string assigned to a user, but should not exceed 40 chara" +
-            "cters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"ty" +
-            "pe\":\"string\",\"description\":\"IP address of the site where the request originates." +
-            " Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{" +
-            "\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/analytics\":{\"description\":\"" +
-            "View and manage your Google Analytics data\"},\"https://www.googleapis.com/auth/an" +
-            "alytics.readonly\":{\"description\":\"View your Google Analytics data\"}}}},\"resource" +
-            "s\":{\"data\":{\"methods\":{\"get\":{\"id\":\"analytics.data.get\",\"path\":\"data\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Returns Analytics report data for a profile.\",\"parameter" +
-            "s\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A comma-separated list of Analy" +
-            "tics dimensions. E.g., \'ga:browser,ga:city\'.\",\"pattern\":\"(ga:.+)?\",\"location\":\"q" +
-            "uery\"},\"end-date\":{\"type\":\"string\",\"description\":\"End date for fetching report d" +
-            "ata. All requests should specify an end date formatted as YYYY-MM-DD.\",\"required" +
-            "\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"filters\":{\"ty" +
-            "pe\":\"string\",\"description\":\"A comma-separated list of dimension or metric filter" +
-            "s to be applied to the report data.\",\"pattern\":\"ga:.+\",\"location\":\"query\"},\"ids\"" +
-            ":{\"type\":\"string\",\"description\":\"Unique table ID for retrieving report data. Tab" +
-            "le ID is of the form ga:XXXX, where XXXX is the Analytics profile ID.\",\"required" +
-            "\":true,\"pattern\":\"ga:[0-9]+\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\"" +
-            ",\"description\":\"The maximum number of entries to include in this feed.\",\"format\"" +
-            ":\"int32\",\"location\":\"query\"},\"metrics\":{\"type\":\"string\",\"description\":\"A comma-s" +
-            "eparated list of Analytics metrics. E.g., \'ga:visits,ga:pageviews\'. At least one" +
-            " metric must be specified to retrieve a valid Analytics report.\",\"required\":true" +
-            ",\"pattern\":\"ga:.+\",\"location\":\"query\"},\"segment\":{\"type\":\"string\",\"description\":" +
-            "\"An Analytics advanced segment to be applied to the report data.\",\"location\":\"qu" +
-            "ery\"},\"sort\":{\"type\":\"string\",\"description\":\"A comma-separated list of dimension" +
-            "s or metrics that determine the sort order for the report data.\",\"pattern\":\"(-)?" +
-            "ga:.+\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"description\":\"Start da" +
-            "te for fetching report data. All requests should specify a start date formatted " +
-            "as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location" +
-            "\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the first " +
-            "entity to retrieve. Use this parameter as a pagination mechanism along with the " +
-            "max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"par" +
-            "ameterOrder\":[\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly" +
-            "\"]}}},\"management\":{\"resources\":{\"accounts\":{\"methods\":{\"list\":{\"id\":\"analytics." +
-            "management.accounts.list\",\"path\":\"management/accounts\",\"httpMethod\":\"GET\",\"descr" +
-            "iption\":\"Lists all accounts to which the user has access.\",\"parameters\":{\"max-re" +
-            "sults\":{\"type\":\"integer\",\"description\":\"The maximum number of accounts to includ" +
-            "e in this response.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":" +
-            "\"integer\",\"description\":\"An index of the first account to retrieve. Use this par" +
-            "ameter as a pagination mechanism along with the max-results parameter.\",\"format\"" +
-            ":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"scopes\":[\"https://www.googleapis.co" +
-            "m/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"goal" +
-            "s\":{\"methods\":{\"list\":{\"id\":\"analytics.management.goals.list\",\"path\":\"management" +
-            "/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals\"," +
-            "\"httpMethod\":\"GET\",\"description\":\"Lists goals to which the user has access.\",\"pa" +
-            "rameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to retrieve go" +
-            "als for. Can either be a specific account ID or \'~all\', which refers to all the " +
-            "accounts that user has access to.\",\"required\":true,\"location\":\"path\"},\"max-resul" +
-            "ts\":{\"type\":\"integer\",\"description\":\"The maximum number of goals to include in t" +
-            "his response.\",\"format\":\"int32\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\"" +
-            ",\"description\":\"Profile ID to retrieve goals for. Can either be a specific profi" +
-            "le ID or \'~all\', which refers to all the profiles that user has access to.\",\"req" +
-            "uired\":true,\"location\":\"path\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An" +
-            " index of the first goal to retrieve. Use this parameter as a pagination mechani" +
-            "sm along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"locati" +
-            "on\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID to " +
-            "retrieve goals for. Can either be a specific web property ID or \'~all\', which re" +
-            "fers to all the web properties that user has access to.\",\"required\":true,\"locati" +
-            "on\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropertyId\",\"profileId\"],\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/a" +
-            "nalytics.readonly\"]}}},\"profiles\":{\"methods\":{\"list\":{\"id\":\"analytics.management" +
-            ".profiles.list\",\"path\":\"management/accounts/{accountId}/webproperties/{webProper" +
-            "tyId}/profiles\",\"httpMethod\":\"GET\",\"description\":\"Lists profiles to which the us" +
-            "er has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Accoun" +
-            "t ID for the profiles to retrieve. Can either be a specific account ID or \'~all\'" +
-            ", which refers to all the accounts to which the user has access.\",\"required\":tru" +
-            "e,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum " +
-            "number of profiles to include in this response.\",\"format\":\"int32\",\"location\":\"qu" +
-            "ery\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the first entit" +
-            "y to retrieve. Use this parameter as a pagination mechanism along with the max-r" +
-            "esults parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webProper" +
-            "tyId\":{\"type\":\"string\",\"description\":\"Web property ID for the profiles to retrie" +
-            "ve. Can either be a specific web property ID or \'~all\', which refers to all the " +
-            "web properties to which the user has access.\",\"required\":true,\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"accountId\",\"webPropertyId\"],\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}}," +
-            "\"segments\":{\"methods\":{\"list\":{\"id\":\"analytics.management.segments.list\",\"path\":" +
-            "\"management/segments\",\"httpMethod\":\"GET\",\"description\":\"Lists advanced segments " +
-            "to which the user has access.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"de" +
-            "scription\":\"The maximum number of advanced segments to include in this response." +
-            "\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"An index of the first advanced segment to retrieve. Use this parameter as " +
-            "a pagination mechanism along with the max-results parameter.\",\"format\":\"int32\",\"" +
-            "minimum\":\"1\",\"location\":\"query\"}},\"scopes\":[\"https://www.googleapis.com/auth/ana" +
-            "lytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"webproperties\"" +
-            ":{\"methods\":{\"list\":{\"id\":\"analytics.management.webproperties.list\",\"path\":\"mana" +
-            "gement/accounts/{accountId}/webproperties\",\"httpMethod\":\"GET\",\"description\":\"Lis" +
-            "ts web properties to which the user has access.\",\"parameters\":{\"accountId\":{\"typ" +
-            "e\":\"string\",\"description\":\"Account ID to retrieve web properties for. Can either" +
-            " be a specific account ID or \'~all\', which refers to all the accounts that user " +
-            "has access to.\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"intege" +
-            "r\",\"description\":\"The maximum number of web properties to include in this respon" +
-            "se.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"An index of the first entity to retrieve. Use this parameter as a pagin" +
-            "ation mechanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum" +
-            "\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"accountId\"],\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.reado" +
-            "nly\"]}}}}}}}";
+    public partial class AnalyticsService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v2.4";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected AnalyticsService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._data = new DataResource(this, _authenticator);
-            this._management = new ManagementResource(this, _authenticator);
+        public AnalyticsService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._data = new DataResource(this, Authenticator);
+            this._management = new ManagementResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public AnalyticsService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public AnalyticsService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AnalyticsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/analytics/v2.4/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "analytics";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/analytics/v2.4/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "atom", null, new string[] {
+                            "atom"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "false", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -236,13 +103,13 @@ namespace Google.Apis.Analytics.v2_4 {
         
         private AnalyticsService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "data";
         
-        public DataResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public DataResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns Analytics report data for a profile.</summary>
@@ -254,11 +121,19 @@ namespace Google.Apis.Analytics.v2_4 {
             return new GetRequest(service, ids, startDate, endDate, metrics);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _dimensions;
             
@@ -280,12 +155,35 @@ namespace Google.Apis.Analytics.v2_4 {
             
             private System.Nullable<long> _startIndex;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string ids, string startDate, string endDate, string metrics) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string ids, string startDate, string endDate, string metrics) : 
                     base(service) {
                 this._ids = ids;
                 this._startDate = startDate;
                 this._endDate = endDate;
                 this._metrics = metrics;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -307,6 +205,28 @@ namespace Google.Apis.Analytics.v2_4 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -408,16 +328,43 @@ namespace Google.Apis.Analytics.v2_4 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "data";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "data";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("dimensions", Google.Apis.Util.Utilities.CreateRuntimeParameter("dimensions", false, "query", null, "(ga:.+)?", new string[0]));
+                parameters.Add("end-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("end-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                parameters.Add("filters", Google.Apis.Util.Utilities.CreateRuntimeParameter("filters", false, "query", null, "ga:.+", new string[0]));
+                parameters.Add("ids", Google.Apis.Util.Utilities.CreateRuntimeParameter("ids", true, "query", null, "ga:[0-9]+", new string[0]));
+                parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                parameters.Add("metrics", Google.Apis.Util.Utilities.CreateRuntimeParameter("metrics", true, "query", null, "ga:.+", new string[0]));
+                parameters.Add("segment", Google.Apis.Util.Utilities.CreateRuntimeParameter("segment", false, "query", null, null, new string[0]));
+                parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, "(-)?ga:.+", new string[0]));
+                parameters.Add("start-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -426,7 +373,7 @@ namespace Google.Apis.Analytics.v2_4 {
         
         private AnalyticsService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "management";
         
@@ -440,14 +387,14 @@ namespace Google.Apis.Analytics.v2_4 {
         
         private WebpropertiesResource _webproperties;
         
-        public ManagementResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ManagementResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
-            this._accounts = new AccountsResource(service, _authenticator);
-            this._goals = new GoalsResource(service, _authenticator);
-            this._profiles = new ProfilesResource(service, _authenticator);
-            this._segments = new SegmentsResource(service, _authenticator);
-            this._webproperties = new WebpropertiesResource(service, _authenticator);
+            this.authenticator = authenticator;
+            this._accounts = new AccountsResource(service, authenticator);
+            this._goals = new GoalsResource(service, authenticator);
+            this._profiles = new ProfilesResource(service, authenticator);
+            this._segments = new SegmentsResource(service, authenticator);
+            this._webproperties = new WebpropertiesResource(service, authenticator);
         }
         
         public virtual AccountsResource Accounts {
@@ -484,13 +431,13 @@ namespace Google.Apis.Analytics.v2_4 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.accounts";
             
-            public AccountsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public AccountsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists all accounts to which the user has access.</summary>
@@ -498,18 +445,49 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
                 
+                private string _quotaUser;
+                
+                private string _userIp;
+                
                 private System.Nullable<long> _maxResults;
                 
                 private System.Nullable<long> _startIndex;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service) : 
                         base(service) {
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -531,6 +509,28 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -556,16 +556,35 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.accounts";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -574,13 +593,13 @@ namespace Google.Apis.Analytics.v2_4 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.goals";
             
-            public GoalsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public GoalsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists goals to which the user has access.</summary>
@@ -591,11 +610,19 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service, accountId, webPropertyId, profileId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -607,11 +634,34 @@ namespace Google.Apis.Analytics.v2_4 {
                 
                 private string _webPropertyId;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string profileId) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId, string profileId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
                     this._profileId = profileId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -633,6 +683,28 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -682,16 +754,39 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.goals";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId" +
+                            "}/goals";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, null, new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    parameters.Add("webPropertyId", Google.Apis.Util.Utilities.CreateRuntimeParameter("webPropertyId", true, "path", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -700,13 +795,13 @@ namespace Google.Apis.Analytics.v2_4 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.profiles";
             
-            public ProfilesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public ProfilesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists profiles to which the user has access.</summary>
@@ -716,11 +811,19 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service, accountId, webPropertyId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -730,10 +833,33 @@ namespace Google.Apis.Analytics.v2_4 {
                 
                 private string _webPropertyId;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -755,6 +881,28 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -796,16 +944,37 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.profiles";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, null, new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    parameters.Add("webPropertyId", Google.Apis.Util.Utilities.CreateRuntimeParameter("webPropertyId", true, "path", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -814,13 +983,13 @@ namespace Google.Apis.Analytics.v2_4 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.segments";
             
-            public SegmentsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public SegmentsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists advanced segments to which the user has access.</summary>
@@ -828,18 +997,49 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
                 
+                private string _quotaUser;
+                
+                private string _userIp;
+                
                 private System.Nullable<long> _maxResults;
                 
                 private System.Nullable<long> _startIndex;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service) : 
                         base(service) {
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -861,6 +1061,28 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -886,16 +1108,35 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.segments";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/segments";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -904,13 +1145,13 @@ namespace Google.Apis.Analytics.v2_4 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.webproperties";
             
-            public WebpropertiesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public WebpropertiesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists web properties to which the user has access.</summary>
@@ -919,11 +1160,19 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service, accountId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -931,9 +1180,32 @@ namespace Google.Apis.Analytics.v2_4 {
                 
                 private System.Nullable<long> _startIndex;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId) : 
                         base(service) {
                     this._accountId = accountId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -955,6 +1227,28 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -988,16 +1282,36 @@ namespace Google.Apis.Analytics.v2_4 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.webproperties";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, null, new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -1011,7 +1325,7 @@ namespace Google.Apis.Analytics.v2_4 {
         
         private ManagementResource _management;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

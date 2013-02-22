@@ -46,9 +46,6 @@
         <member name="P:Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource.SiteData.Type">
             <summary>The site type. Can be SITE or INET_DOMAIN (domain name).</summary>
         </member>
-        <member name="P:Google.Apis.SiteVerification.v1.SiteVerificationService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.SiteVerification.v1.SiteVerificationService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -84,14 +81,32 @@
             <summary>Modify the list of owners for your website or domain.</summary>
             <param name="id">Required - The id of a verified site or domain.</param>
         </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.Id">
             <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -99,8 +114,20 @@
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.Id">
             <summary>The id of a verified site or domain.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -108,8 +135,20 @@
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -117,11 +156,23 @@
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.VerificationMethod">
             <summary>The method to use for verifying a site or domain.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -129,11 +180,29 @@
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.Id">
             <summary>The id of a verified site or domain.</summary>
@@ -141,11 +210,23 @@
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.Id">
             <summary>The id of a verified site or domain.</summary>

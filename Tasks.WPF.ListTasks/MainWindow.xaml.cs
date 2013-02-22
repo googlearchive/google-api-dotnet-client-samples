@@ -22,6 +22,7 @@ using DotNetOpenAuth.OAuth2;
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Tasks.v1;
 using Google.Apis.Tasks.v1.Data;
@@ -41,9 +42,11 @@ namespace Tasks.WPF.ListTasks
 
         private static IAuthenticator CreateAuthenticator()
         {
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
-            provider.ClientIdentifier = ClientCredentials.ClientID;
-            provider.ClientSecret = ClientCredentials.ClientSecret;
+            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = ClientCredentials.ClientID,
+                    ClientSecret = ClientCredentials.ClientSecret
+                };
             return new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
         }
 
@@ -100,7 +103,7 @@ namespace Tasks.WPF.ListTasks
             // Add a bold title.
             expander.Header = list.Title;
             expander.FontWeight = FontWeights.Bold;
-            
+
             // Add the taskItems (if applicable).
             if (tasks.Items != null)
             {
@@ -132,7 +135,10 @@ namespace Tasks.WPF.ListTasks
         private void Window_Initialized(object sender, EventArgs e)
         {
             // Create the service.
-            Service = new TasksService(CreateAuthenticator());
+            Service = new TasksService(new BaseClientService.Initializer()
+                {
+                    Authenticator = CreateAuthenticator()
+                });
 
             // Fetch all TaskLists.
             UpdateTaskLists();

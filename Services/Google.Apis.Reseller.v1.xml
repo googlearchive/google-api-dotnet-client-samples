@@ -169,9 +169,6 @@
         <member name="P:Google.Apis.Reseller.v1.Data.Subscriptions.SubscriptionsValue">
             <summary>The subscriptions in this page of results.</summary>
         </member>
-        <member name="P:Google.Apis.Reseller.v1.ResellerService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="M:Google.Apis.Reseller.v1.CustomersResource.Get(System.String)">
             <summary>Gets a customer resource if one exists and is owned by the reseller.</summary>
             <param name="customerId">Required - Id of the Customer</param>
@@ -187,14 +184,32 @@
             <summary>Update a customer resource if one it exists and is owned by the reseller.</summary>
             <param name="customerId">Required - Id of the Customer</param>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.GetRequest.CustomerId">
             <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -202,11 +217,23 @@
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.InsertRequest.CustomerAuthToken">
             <summary>An auth token needed for inserting a customer for which domain already exists. Can be generated at https://www.google.com/a/cpanel//TransferToken. Optional.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -214,17 +241,35 @@
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.PatchRequest.CustomerId">
             <summary>Id of the Customer</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.CustomersResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.CustomersResource.UpdateRequest.CustomerId">
             <summary>Id of the Customer</summary>
@@ -282,11 +327,23 @@
         <member name="F:Google.Apis.Reseller.v1.SubscriptionsResource.DeletionType.Suspend">
             <summary>Suspends the subscriptions for 4 days before cancelling it</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangePlanRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangePlanRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangePlanRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangePlanRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangePlanRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangePlanRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangePlanRequest.CustomerId">
             <summary>Id of the Customer</summary>
@@ -297,11 +354,23 @@
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangePlanRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeRenewalSettingsRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeRenewalSettingsRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeRenewalSettingsRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeRenewalSettingsRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeRenewalSettingsRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeRenewalSettingsRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeRenewalSettingsRequest.CustomerId">
             <summary>Id of the Customer</summary>
@@ -312,11 +381,23 @@
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeRenewalSettingsRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeSeatsRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeSeatsRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeSeatsRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeSeatsRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeSeatsRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeSeatsRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeSeatsRequest.CustomerId">
             <summary>Id of the Customer</summary>
@@ -327,11 +408,23 @@
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ChangeSeatsRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.DeleteRequest.CustomerId">
             <summary>Id of the Customer</summary>
@@ -342,11 +435,23 @@
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.DeleteRequest.SubscriptionId">
             <summary>Id of the subscription, which is unique for a customer</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.GetRequest.CustomerId">
             <summary>Id of the Customer</summary>
@@ -354,11 +459,23 @@
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.GetRequest.SubscriptionId">
             <summary>Id of the subscription, which is unique for a customer</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.InsertRequest.CustomerAuthToken">
             <summary>An auth token needed for transferring a subscription. Can be generated at https://www.google.com/a/cpanel/customer-domain/TransferToken. Optional.</summary>
@@ -369,11 +486,23 @@
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ListRequest.CustomerNamePrefix">
             <summary>Prefix of the customer's domain name by which the subscriptions should be filtered. Optional</summary>
@@ -384,11 +513,23 @@
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.ListRequest.PageToken">
             <summary>Token to specify next page in the list</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.StartPaidServiceRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.StartPaidServiceRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.StartPaidServiceRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.StartPaidServiceRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.StartPaidServiceRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.StartPaidServiceRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Reseller.v1.SubscriptionsResource.StartPaidServiceRequest.CustomerId">
             <summary>Id of the Customer</summary>

@@ -20,6 +20,7 @@ using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Books.v1;
 using Google.Apis.Books.v1.Data;
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Util;
 
@@ -42,14 +43,20 @@ namespace Books.ListMyLibrary
             CommandLine.DisplayGoogleSampleHeader("Books API: List MyLibrary");
 
             // Register the authenticator.
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
+            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = credentials.ClientId,
+                    ClientSecret = credentials.ClientSecret
+                };
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            var service = new BooksService(auth);
+            var service = new BooksService(new BaseClientService.Initializer()
+                {
+                    Authenticator = auth
+                });
+
             ListLibrary(service);
             CommandLine.PressAnyKeyToExit();
         }

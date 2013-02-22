@@ -16,7 +16,9 @@ limitations under the License.
 
 using System;
 using System.Text.RegularExpressions;
+
 using Google;
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
@@ -38,13 +40,14 @@ namespace UrlShortener.ASP.NET
             // If we did not construct the service so far, do it now.
             if (_service == null)
             {
-                _service = new UrlshortenerService();
-
+                BaseClientService.Initializer initializer = new BaseClientService.Initializer();
                 // You can enter your developer key for services requiring a developer key.
-                /* _service.DeveloperKey = "<Insert Developer Key here>"; */
+                /* initializer.ApiKey = "<Insert Developer Key here>"; */
+                _service = new UrlshortenerService(initializer);
+
             }
         }
-        
+
         protected void input_TextChanged(object sender, EventArgs e)
         {
             // Change the text of the button according to the content.
@@ -72,7 +75,7 @@ namespace UrlShortener.ASP.NET
                 else
                 {
                     // Shorten the URL by inserting a new Url.
-                    Url toInsert = new Url { LongUrl = url};
+                    Url toInsert = new Url { LongUrl = url };
                     toInsert = _service.Url.Insert(toInsert).Fetch();
                     resultURL = toInsert.Id;
                 }
@@ -84,7 +87,7 @@ namespace UrlShortener.ASP.NET
             }
         }
 
-        private static readonly Regex ShortUrlRegex = 
+        private static readonly Regex ShortUrlRegex =
                     new Regex("^http[s]?://goo.gl/", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         private static bool IsShortUrl(string url)

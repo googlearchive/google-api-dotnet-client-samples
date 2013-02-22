@@ -2975,763 +2975,82 @@ namespace Google.Apis.Orkut.v2 {
     using Google.Apis.Discovery;
     
     
-    public partial class OrkutService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/VfoS4eN" +
-            "XwnSLQSINLegXe2mt6L0\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"orkut:v2\",\"name\":\"orkut\",\"" +
-            "version\":\"v2\",\"revision\":\"20120223\",\"title\":\"Orkut API\",\"description\":\"Lets you " +
-            "manage activities, comments and badges in Orkut. More stuff coming in time.\",\"ic" +
-            "ons\":{\"x16\":\"http://www.google.com/images/icons/product/orkut-16.png\",\"x32\":\"htt" +
-            "p://www.google.com/images/icons/product/orkut-32.png\"},\"documentationLink\":\"http" +
-            "://code.google.com/apis/orkut/v2/reference.html\",\"protocol\":\"rest\",\"baseUrl\":\"ht" +
-            "tps://www.googleapis.com/orkut/v2/\",\"basePath\":\"/orkut/v2/\",\"rootUrl\":\"https://w" +
-            "ww.googleapis.com/\",\"servicePath\":\"orkut/v2/\",\"batchPath\":\"batch\",\"parameters\":{" +
-            "\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"" +
-            "json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applic" +
-            "ation/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Select" +
-            "or specifying which fields to include in a partial response.\",\"location\":\"query\"" +
-            "},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your pr" +
-            "oject and provides you with API access, quota, and reports. Required unless you " +
-            "provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\"," +
-            "\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prett" +
-            "yPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and " +
-            "line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\"," +
-            "\"description\":\"Available to use for quota purposes for server-side applications." +
-            " Can be any arbitrary string assigned to a user, but should not exceed 40 charac" +
-            "ters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"typ" +
-            "e\":\"string\",\"description\":\"IP address of the site where the request originates. " +
-            "Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"" +
-            "oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/orkut\":{\"description\":\"Manag" +
-            "e your Orkut activity\"},\"https://www.googleapis.com/auth/orkut.readonly\":{\"descr" +
-            "iption\":\"View your Orkut data\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"object\"," +
-            "\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"Human readable descr" +
-            "iption of the access granted.\"},\"items\":{\"type\":\"array\",\"description\":\"The list " +
-            "of ACL entries.\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"d" +
-            "escription\":\"The ID of the entity. For entities of type \\\"person\\\" or \\\"circle\\\"" +
-            ", this is the ID of the resource. For other types, this will be unset.\"},\"type\":" +
-            "{\"type\":\"string\",\"description\":\"The type of entity to whom access is granted.\"}}" +
-            "}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as an access " +
-            "control list. Value: \\\"orkut#acl\\\"\",\"default\":\"orkut#acl\"},\"totalParticipants\":{" +
-            "\"type\":\"integer\",\"description\":\"The total count of participants of the parent re" +
-            "source.\",\"format\":\"int32\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"object\",\"proper" +
-            "ties\":{\"access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has access to see th" +
-            "is activity.\"},\"actor\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The person w" +
-            "ho performed the activity.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID for the" +
-            " activity.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of activity. Always" +
-            " orkut#activity.\",\"default\":\"orkut#activity\"},\"links\":{\"type\":\"array\",\"descripti" +
-            "on\":\"Links to resources related to this activity.\",\"items\":{\"$ref\":\"OrkutLinkRes" +
-            "ource\"}},\"object\":{\"type\":\"object\",\"description\":\"The activity\'s object.\",\"prope" +
-            "rties\":{\"content\":{\"type\":\"string\",\"description\":\"The HTML-formatted content, su" +
-            "itable for display. When updating an activity\'s content, post the changes to thi" +
-            "s property, using the value of originalContent as a starting point. If the updat" +
-            "e is successful, the server adds HTML formatting and responds with this formatte" +
-            "d content.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of additional items" +
-            ".\",\"items\":{\"$ref\":\"OrkutActivityobjectsResource\"}},\"objectType\":{\"type\":\"string" +
-            "\",\"description\":\"The type of the object affected by the activity. Clients can us" +
-            "e this information to style the rendered activity object differently depending o" +
-            "n the content.\"},\"replies\":{\"type\":\"object\",\"description\":\"Comments in reply to " +
-            "this activity.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of" +
-            " comments.\",\"items\":{\"$ref\":\"Comment\"}},\"totalItems\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Total number of comments.\",\"format\":\"uint64\"},\"url\":{\"type\":\"string\",\"descr" +
-            "iption\":\"URL for the collection of comments in reply to this activity.\"}}}}},\"pu" +
-            "blished\":{\"type\":\"string\",\"description\":\"The time at which the activity was init" +
-            "ially published.\",\"format\":\"date-time\"},\"title\":{\"type\":\"string\",\"description\":\"" +
-            "Title of the activity.\"},\"updated\":{\"type\":\"string\",\"description\":\"The time at w" +
-            "hich the activity was last updated.\",\"format\":\"date-time\"},\"verb\":{\"type\":\"strin" +
-            "g\",\"description\":\"This activity\'s verb, indicating what action was performed. Po" +
-            "ssible values are:  \\n- add - User added new content to profile or album, e.g. v" +
-            "ideo, photo. \\n- post - User publish content to the stream, e.g. status, scrap. " +
-            "\\n- update - User commented on an activity. \\n- make-friend - User added a new f" +
-            "riend. \\n- birthday - User has a birthday.\"}}},\"ActivityList\":{\"id\":\"ActivityLis" +
-            "t\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of " +
-            "activities retrieved.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string\",\"des" +
-            "cription\":\"Identifies this resource as a collection of activities. Value: \\\"orku" +
-            "t#activityList\\\"\",\"default\":\"orkut#activityList\"},\"nextPageToken\":{\"type\":\"strin" +
-            "g\",\"description\":\"The value of pageToken query parameter in activities.list requ" +
-            "est to get the next page, if there are more to retrieve.\"}}},\"Badge\":{\"id\":\"Badg" +
-            "e\",\"type\":\"object\",\"properties\":{\"badgeLargeLogo\":{\"type\":\"string\",\"description\"" +
-            ":\"The URL for the 64x64 badge logo.\"},\"badgeSmallLogo\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The URL for the 24x24 badge logo.\"},\"caption\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The name of the badge, suitable for display.\"},\"description\":{\"type\":\"strin" +
-            "g\",\"description\":\"The description for the badge, suitable for display.\"},\"id\":{\"" +
-            "type\":\"string\",\"description\":\"The unique ID for the badge.\",\"format\":\"int64\"},\"k" +
-            "ind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a badge. Value:" +
-            " \\\"orkut#badge\\\"\",\"default\":\"orkut#badge\"},\"sponsorLogo\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The URL for the 32x32 badge sponsor logo.\"},\"sponsorName\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The name of the badge sponsor, suitable for display.\"},\"spons" +
-            "orUrl\":{\"type\":\"string\",\"description\":\"The URL for the badge sponsor.\"}}},\"Badge" +
-            "List\":{\"id\":\"BadgeList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"d" +
-            "escription\":\"List of badges retrieved.\",\"items\":{\"$ref\":\"Badge\"}},\"kind\":{\"type\"" +
-            ":\"string\",\"description\":\"Identifies this resource as a collection of badges. Val" +
-            "ue: \\\"orkut#badgeList\\\"\",\"default\":\"orkut#badgeList\"}}},\"Comment\":{\"id\":\"Comment" +
-            "\",\"type\":\"object\",\"properties\":{\"actor\":{\"$ref\":\"OrkutAuthorResource\",\"descripti" +
-            "on\":\"The person who posted the comment.\"},\"content\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The content of the comment in text/html\"},\"id\":{\"type\":\"string\",\"description" +
-            "\":\"The unique ID for the comment.\"},\"inReplyTo\":{\"type\":\"object\",\"description\":\"" +
-            "Link to the original activity where this comment was posted.\",\"properties\":{\"hre" +
-            "f\":{\"type\":\"string\",\"description\":\"Link to the post on activity stream being com" +
-            "mented.\"},\"ref\":{\"type\":\"string\",\"description\":\"Unique identifier of the post on" +
-            " activity stream being commented.\"},\"rel\":{\"type\":\"string\",\"description\":\"Relati" +
-            "onship between the comment and the post on activity stream being commented. Alwa" +
-            "ys inReplyTo.\",\"default\":\"inReplyTo\"},\"type\":{\"type\":\"string\",\"description\":\"Typ" +
-            "e of the post on activity stream being commented. Always text/html.\"}}},\"kind\":{" +
-            "\"type\":\"string\",\"description\":\"Identifies this resource as a comment. Value: \\\"o" +
-            "rkut#comment\\\"\",\"default\":\"orkut#comment\"},\"links\":{\"type\":\"array\",\"description\"" +
-            ":\"List of resources for the comment.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"pub" +
-            "lished\":{\"type\":\"string\",\"description\":\"The time the comment was initially publi" +
-            "shed, in RFC 3339 format.\",\"format\":\"date-time\"}}},\"CommentList\":{\"id\":\"CommentL" +
-            "ist\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List o" +
-            "f comments retrieved.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Identifies this resource as a collection of comments. Value: \\\"orkut#c" +
-            "ommentList\\\"\",\"default\":\"orkut#commentList\"},\"nextPageToken\":{\"type\":\"string\",\"d" +
-            "escription\":\"The value of pageToken query parameter in comments.list request to " +
-            "get the next page, if there are more to retrieve.\"},\"previousPageToken\":{\"type\":" +
-            "\"string\",\"description\":\"The value of pageToken query parameter in comments.list " +
-            "request to get the previous page, if there are more to retrieve.\"}}},\"Community\"" +
-            ":{\"id\":\"Community\",\"type\":\"object\",\"properties\":{\"category\":{\"type\":\"string\",\"de" +
-            "scription\":\"The category of the community.\"},\"co_owners\":{\"type\":\"array\",\"descri" +
-            "ption\":\"The co-owners of the community.\",\"items\":{\"$ref\":\"OrkutAuthorResource\"}}" +
-            ",\"creation_date\":{\"type\":\"string\",\"description\":\"The time the community was crea" +
-            "ted, in RFC 3339 format.\",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"" +
-            "description\":\"The description of the community.\"},\"id\":{\"type\":\"integer\",\"descri" +
-            "ption\":\"The id of the community.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"des" +
-            "cription\":\"Identifies this resource as a community. Value: \\\"orkut#community\\\"\"," +
-            "\"default\":\"orkut#community\"},\"language\":{\"type\":\"string\",\"description\":\"The offi" +
-            "cial language of the community.\"},\"links\":{\"type\":\"array\",\"description\":\"List of" +
-            " resources for the community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"location\":" +
-            "{\"type\":\"string\",\"description\":\"The location of the community.\"},\"member_count\":" +
-            "{\"type\":\"integer\",\"description\":\"The number of users who are part of the communi" +
-            "ty. This number may be approximate, so do not rely on it for iteration.\",\"format" +
-            "\":\"int32\"},\"moderators\":{\"type\":\"array\",\"description\":\"The list of moderators of" +
-            " the community.\",\"items\":{\"$ref\":\"OrkutAuthorResource\"}},\"name\":{\"type\":\"string\"" +
-            ",\"description\":\"The name of the community.\"},\"owner\":{\"$ref\":\"OrkutAuthorResourc" +
-            "e\",\"description\":\"The person who owns the community.\"},\"photo_url\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The photo of the community.\"}}},\"CommunityList\":{\"id\":\"Commun" +
-            "ityList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Li" +
-            "st of communities retrieved.\",\"items\":{\"$ref\":\"Community\"}},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Identifies this resource as a collection of communities. Valu" +
-            "e: \\\"orkut#communityList\\\"\",\"default\":\"orkut#communityList\"}}},\"CommunityMembers" +
-            "\":{\"id\":\"CommunityMembers\",\"type\":\"object\",\"properties\":{\"communityMembershipSta" +
-            "tus\":{\"$ref\":\"CommunityMembershipStatus\",\"description\":\"Status and permissions o" +
-            "f the user related to the community.\"},\"kind\":{\"type\":\"string\",\"description\":\"Ki" +
-            "nd of this item. Always orkut#communityMembers.\",\"default\":\"orkut#communityMembe" +
-            "rs\"},\"person\":{\"$ref\":\"OrkutActivitypersonResource\",\"description\":\"Description o" +
-            "f the community member.\"}}},\"CommunityMembersList\":{\"id\":\"CommunityMembersList\"," +
-            "\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"T" +
-            "he value of pageToken query parameter in community_members.list request to get t" +
-            "he first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of community member" +
-            "s retrieved.\",\"items\":{\"$ref\":\"CommunityMembers\"}},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Kind of this item. Always orkut#communityMembersList.\",\"default\":\"orku" +
-            "t#communityMembersList\"},\"lastPageToken\":{\"type\":\"string\",\"description\":\"The val" +
-            "ue of pageToken query parameter in community_members.list request to get the las" +
-            "t page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken" +
-            " query parameter in community_members.list request to get the next page, if ther" +
-            "e are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\",\"description\":\"The va" +
-            "lue of pageToken query parameter in community_members.list request to get the pr" +
-            "evious page, if there are more to retrieve.\"}}},\"CommunityMembershipStatus\":{\"id" +
-            "\":\"CommunityMembershipStatus\",\"type\":\"object\",\"properties\":{\"canCreatePoll\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Whether the user can create a poll in this communit" +
-            "y.\"},\"canCreateTopic\":{\"type\":\"boolean\",\"description\":\"Whether the user can crea" +
-            "te a topic in this community.\"},\"canShout\":{\"type\":\"boolean\",\"description\":\"Whet" +
-            "her the user can perform a shout operation in this community.\"},\"isCoOwner\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Whether the session user is a community co-owner.\"}" +
-            ",\"isFollowing\":{\"type\":\"boolean\",\"description\":\"Whether the user is following th" +
-            "is community.\"},\"isModerator\":{\"type\":\"boolean\",\"description\":\"Whether the sessi" +
-            "on user is a community moderator.\"},\"isOwner\":{\"type\":\"boolean\",\"description\":\"W" +
-            "hether the session user is the community owner.\"},\"isRestoreAvailable\":{\"type\":\"" +
-            "boolean\",\"description\":\"Whether the restore operation is available for the commu" +
-            "nity.\"},\"isTakebackAvailable\":{\"type\":\"boolean\",\"description\":\"Whether the take-" +
-            "back operation is available for the community.\"},\"kind\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Kind of this item. Always orkut#communityMembershipStatus.\",\"default\":\"o" +
-            "rkut#communityMembershipStatus\"},\"status\":{\"type\":\"string\",\"description\":\"The st" +
-            "atus of the current link between the community and the user.\"}}},\"CommunityMessa" +
-            "ge\":{\"id\":\"CommunityMessage\",\"type\":\"object\",\"properties\":{\"addedDate\":{\"type\":\"" +
-            "string\",\"description\":\"The timestamp of the date when the message was added, in " +
-            "RFC 3339 format.\",\"format\":\"date-time\"},\"author\":{\"$ref\":\"OrkutAuthorResource\",\"" +
-            "description\":\"The creator of the message. If ommited, the message is annonimous." +
-            "\"},\"body\":{\"type\":\"string\",\"description\":\"The body of the message.\"},\"id\":{\"type" +
-            "\":\"string\",\"description\":\"The ID of the message.\",\"format\":\"int64\"},\"isSpam\":{\"t" +
-            "ype\":\"boolean\",\"description\":\"Whether this post was marked as spam by the viewer" +
-            ", when he/she is not the community owner or one of its moderators.\"},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Identifies this resource as a community message. Val" +
-            "ue: \\\"orkut#communityMessage\\\"\",\"default\":\"orkut#communityMessage\"},\"links\":{\"ty" +
-            "pe\":\"array\",\"description\":\"List of resources for the community message.\",\"items\"" +
-            ":{\"$ref\":\"OrkutLinkResource\"}},\"subject\":{\"type\":\"string\",\"description\":\"The sub" +
-            "ject of the message.\"}}},\"CommunityMessageList\":{\"id\":\"CommunityMessageList\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The " +
-            "value of pageToken query parameter in community_messages.list request to get the" +
-            " first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of messages retrieved" +
-            ".\",\"items\":{\"$ref\":\"CommunityMessage\"}},\"kind\":{\"type\":\"string\",\"description\":\"I" +
-            "dentifies this resource as a collection of community messages. Value: \\\"orkut#co" +
-            "mmunityMessageList\\\"\",\"default\":\"orkut#communityMessageList\"},\"lastPageToken\":{\"" +
-            "type\":\"string\",\"description\":\"The value of pageToken query parameter in communit" +
-            "y_messages.list request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\"" +
-            ",\"description\":\"The value of pageToken query parameter in community_messages.lis" +
-            "t request to get the next page, if there are more to retrieve.\"},\"prevPageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in commu" +
-            "nity_messages.list request to get the previous page, if there are more to retrie" +
-            "ve.\"}}},\"CommunityPoll\":{\"id\":\"CommunityPoll\",\"type\":\"object\",\"properties\":{\"aut" +
-            "hor\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The person who created the pol" +
-            "l.\"},\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community.\",\"f" +
-            "ormat\":\"int32\"},\"creationTime\":{\"type\":\"string\",\"description\":\"The date of creat" +
-            "ion of this poll\",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The poll description.\"},\"endingTime\":{\"type\":\"string\",\"description\":\"The e" +
-            "nding date of this poll or empty if the poll doesn\'t have one.\",\"format\":\"date-t" +
-            "ime\"},\"hasVoted\":{\"type\":\"boolean\",\"description\":\"Whether the user has voted on " +
-            "this poll.\"},\"id\":{\"type\":\"string\",\"description\":\"The poll ID.\"},\"image\":{\"type\"" +
-            ":\"object\",\"description\":\"The image representing the poll. Field is omitted if no" +
-            " image exists.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A URL that p" +
-            "oints to an image of the poll.\"}}},\"isClosed\":{\"type\":\"boolean\",\"description\":\"W" +
-            "hether the poll is not expired if there is an expiration date. A poll is open (t" +
-            "hat is, not closed for voting) if it either is not expired or doesn\'t have an ex" +
-            "piration date at all. Note that just because a poll is open, it doesn\'t mean tha" +
-            "t the requester can vote on it.\"},\"isMultipleAnswers\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Whether this poll allows voting for more than one option.\"},\"isOpenForVot" +
-            "ing\":{\"type\":\"boolean\",\"description\":\"Whether this poll is still opened for voti" +
-            "ng. A poll is open for voting if it is not closed, the user has not yet voted on" +
-            " it and the user has the permission to do so, which happens if he/she is either " +
-            "a community member or the poll is open for everybody.\"},\"isRestricted\":{\"type\":\"" +
-            "boolean\",\"description\":\"Whether this poll is restricted for members only. If a p" +
-            "oll is open but the user can\'t vote on it, it\'s been restricted to members only." +
-            " This information is important to tell this case apart from the one where the us" +
-            "er can\'t vote simply because the poll is already closed.\"},\"isSpam\":{\"type\":\"boo" +
-            "lean\",\"description\":\"Whether the user has marked this poll as spam. This only af" +
-            "fects the poll for this user, not globally.\"},\"isUsersVotePublic\":{\"type\":\"boole" +
-            "an\",\"description\":\"If user has already voted, whether his vote is publicly visib" +
-            "le.\"},\"isVotingAllowedForNonMembers\":{\"type\":\"boolean\",\"description\":\"Whether no" +
-            "n-members of the community can vote on the poll.\"},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Identifies this resource as a community poll. Value: \\\"orkut#community" +
-            "Poll\\\"\",\"default\":\"orkut#communityPoll\"},\"lastUpdate\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The date of the last update of this poll.\",\"format\":\"date-time\"},\"links\":{" +
-            "\"type\":\"array\",\"description\":\"List of resources for the community poll.\",\"items\"" +
-            ":{\"$ref\":\"OrkutLinkResource\"}},\"options\":{\"type\":\"array\",\"description\":\"List of " +
-            "options of this poll.\",\"items\":{\"$ref\":\"OrkutCommunitypolloptionResource\"}},\"que" +
-            "stion\":{\"type\":\"string\",\"description\":\"The poll question.\"},\"totalNumberOfVotes\"" +
-            ":{\"type\":\"integer\",\"description\":\"The total number of votes this poll has receiv" +
-            "ed.\",\"format\":\"int32\"},\"votedOptions\":{\"type\":\"array\",\"description\":\"List of opt" +
-            "ions the user has voted on, if there are any.\",\"items\":{\"type\":\"integer\",\"format" +
-            "\":\"int32\"}}}},\"CommunityPollComment\":{\"id\":\"CommunityPollComment\",\"type\":\"object" +
-            "\",\"properties\":{\"addedDate\":{\"type\":\"string\",\"description\":\"The date when the me" +
-            "ssage was added, in RFC 3339 format.\",\"format\":\"date-time\"},\"author\":{\"$ref\":\"Or" +
-            "kutAuthorResource\",\"description\":\"The creator of the comment.\"},\"body\":{\"type\":\"" +
-            "string\",\"description\":\"The body of the message.\"},\"id\":{\"type\":\"integer\",\"descri" +
-            "ption\":\"The ID of the comment.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Identifies this resource as a community poll comment. Value: \\\"orkut#co" +
-            "mmunityPollComment\\\"\",\"default\":\"orkut#communityPollComment\"}}},\"CommunityPollCo" +
-            "mmentList\":{\"id\":\"CommunityPollCommentList\",\"type\":\"object\",\"properties\":{\"first" +
-            "PageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query paramete" +
-            "r in community_poll_comments.list request to get the first page.\"},\"items\":{\"typ" +
-            "e\":\"array\",\"description\":\"List of community poll comments retrieved.\",\"items\":{\"" +
-            "$ref\":\"CommunityPollComment\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies" +
-            " this resource as a collection of community poll comments. Value: \\\"orkut#Commun" +
-            "ityPollCommentList\\\"\",\"default\":\"orkut#CommunityPollCommentList\"},\"lastPageToken" +
-            "\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in comm" +
-            "unity_poll_comments.list request to get the last page.\"},\"nextPageToken\":{\"type\"" +
-            ":\"string\",\"description\":\"The value of pageToken query parameter in community_pol" +
-            "l_comments.list request to get the next page, if there are more to retrieve.\"},\"" +
-            "prevPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query para" +
-            "meter in community_poll_comments.list request to get the previous page, if there" +
-            " are more to retrieve.\"}}},\"CommunityPollList\":{\"id\":\"CommunityPollList\",\"type\":" +
-            "\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The valu" +
-            "e of pageToken query parameter in community_polls.list request to get the first " +
-            "page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of community polls retrieved" +
-            ".\",\"items\":{\"$ref\":\"CommunityPoll\"}},\"kind\":{\"type\":\"string\",\"description\":\"Iden" +
-            "tifies this resource as a collection of community polls. Value: \\\"orkut#communit" +
-            "yPollList\\\"\",\"default\":\"orkut#communityPollList\"},\"lastPageToken\":{\"type\":\"strin" +
-            "g\",\"description\":\"The value of pageToken query parameter in community_polls.list" +
-            " request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":" +
-            "\"The value of pageToken query parameter in community_polls.list request to get t" +
-            "he next page, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\"," +
-            "\"description\":\"The value of pageToken query parameter in community_polls.list re" +
-            "quest to get the previous page, if there are more to retrieve.\"}}},\"CommunityPol" +
-            "lVote\":{\"id\":\"CommunityPollVote\",\"type\":\"object\",\"properties\":{\"isVotevisible\":{" +
-            "\"type\":\"boolean\",\"description\":\"Whether this vote is visible to other users or n" +
-            "ot.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a commu" +
-            "nity poll vote. Value: \\\"orkut#communityPollVote\\\"\",\"default\":\"orkut#communityPo" +
-            "llVote\"},\"optionIds\":{\"type\":\"array\",\"description\":\"The ids of the voted options" +
-            ".\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}}}},\"CommunityTopic\":{\"id\":\"Commun" +
-            "ityTopic\",\"type\":\"object\",\"properties\":{\"author\":{\"$ref\":\"OrkutAuthorResource\",\"" +
-            "description\":\"The creator of the topic.\"},\"body\":{\"type\":\"string\",\"description\":" +
-            "\"The body of the topic.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the top" +
-            "ic.\",\"format\":\"int64\"},\"isClosed\":{\"type\":\"boolean\",\"description\":\"Whether the t" +
-            "opic is closed for new messages.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identi" +
-            "fies this resource as a community topic. Value: \\\"orkut#communityTopic\\\"\",\"defau" +
-            "lt\":\"orkut#communityTopic\"},\"lastUpdate\":{\"type\":\"string\",\"description\":\"The tim" +
-            "estamp of the last update, in RFC 3339 format.\",\"format\":\"date-time\"},\"latestMes" +
-            "sageSnippet\":{\"type\":\"string\",\"description\":\"Snippet of the last message posted " +
-            "on this topic.\"},\"links\":{\"type\":\"array\",\"description\":\"List of resources for th" +
-            "e community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"messages\":{\"type\":\"array\",\"" +
-            "description\":\"Most recent messages.\",\"items\":{\"$ref\":\"CommunityMessage\"}},\"numbe" +
-            "rOfReplies\":{\"type\":\"integer\",\"description\":\"The total number of replies this to" +
-            "pic has received.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"description\":\"The" +
-            " title of the topic.\"}}},\"CommunityTopicList\":{\"id\":\"CommunityTopicList\",\"type\":" +
-            "\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The valu" +
-            "e of pageToken query parameter in community_topic.list request to get the first " +
-            "page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of topics retrieved.\",\"items" +
-            "\":{\"$ref\":\"CommunityTopic\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies t" +
-            "his resource as a collection of community topics. Value: \\\"orkut#communityTopicL" +
-            "ist\\\"\",\"default\":\"orkut#communityTopicList\"},\"lastPageToken\":{\"type\":\"string\",\"d" +
-            "escription\":\"The value of pageToken query parameter in community_topic.list requ" +
-            "est to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The " +
-            "value of pageToken query parameter in community_topic.list request to get the ne" +
-            "xt page, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The value of pageToken query parameter in community_topic.list request" +
-            " to get the previous page, if there are more to retrieve.\"}}},\"Counters\":{\"id\":\"" +
-            "Counters\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"L" +
-            "ist of counters retrieved.\",\"items\":{\"$ref\":\"OrkutCounterResource\"}},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Identifies this resource as a collection of counters" +
-            ". Value: \\\"orkut#counters\\\"\",\"default\":\"orkut#counters\"}}},\"OrkutActivityobjects" +
-            "Resource\":{\"id\":\"OrkutActivityobjectsResource\",\"type\":\"object\",\"properties\":{\"co" +
-            "mmunity\":{\"$ref\":\"Community\",\"description\":\"The community which is related with " +
-            "this activity, e.g. a joined community.\"},\"content\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The HTML-formatted content, suitable for display. When updating an activity\'" +
-            "s content, post the changes to this property, using the value of originalContent" +
-            " as a starting point. If the update is successful, the server adds HTML formatti" +
-            "ng and responds with this formatted content.\"},\"displayName\":{\"type\":\"string\",\"d" +
-            "escription\":\"The title of the object.\"},\"id\":{\"type\":\"string\",\"description\":\"The" +
-            " ID for the object.\"},\"links\":{\"type\":\"array\",\"description\":\"Links to other reso" +
-            "urces related to this object.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"objectType" +
-            "\":{\"type\":\"string\",\"description\":\"The object type.\"},\"person\":{\"$ref\":\"OrkutActi" +
-            "vitypersonResource\",\"description\":\"The person who is related with this activity," +
-            " e.g. an Added User.\"}}},\"OrkutActivitypersonResource\":{\"id\":\"OrkutActivityperso" +
-            "nResource\",\"type\":\"object\",\"properties\":{\"birthday\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The person\'s date of birth, represented as YYYY-MM-DD.\"},\"gender\":{\"type\":\"s" +
-            "tring\",\"description\":\"The person\'s gender. Values include \\\"male\\\", \\\"female\\\", " +
-            "and \\\"other\\\".\"},\"id\":{\"type\":\"string\",\"description\":\"The person\'s opensocial ID" +
-            ".\"},\"image\":{\"type\":\"object\",\"description\":\"The person\'s profile photo. This is " +
-            "adapted from Google+ and was originaly introduced as extra OpenSocial convenienc" +
-            "e fields.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of the pe" +
-            "rson\'s profile photo.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An object that " +
-            "encapsulates the individual components of a person\'s name.\",\"properties\":{\"famil" +
-            "yName\":{\"type\":\"string\",\"description\":\"The family name (last name) of this perso" +
-            "n.\"},\"givenName\":{\"type\":\"string\",\"description\":\"The given name (first name) of " +
-            "this person.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The person\'s profile url." +
-            " This is adapted from Google+ and was originaly introduced as extra OpenSocial c" +
-            "onvenience fields.\"}}},\"OrkutAuthorResource\":{\"id\":\"OrkutAuthorResource\",\"type\":" +
-            "\"object\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The name of" +
-            " the author, suitable for display.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique" +
-            " identifier of the person who posted the comment. This is the person\'s OpenSocia" +
-            "l ID.\"},\"image\":{\"type\":\"object\",\"description\":\"Image data about the author.\",\"p" +
-            "roperties\":{\"url\":{\"type\":\"string\",\"description\":\"A URL that points to a thumbna" +
-            "il photo of the author.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The URL of the" +
-            " author who posted the comment [not yet implemented]\"}}},\"OrkutCommunitypollopti" +
-            "onResource\":{\"id\":\"OrkutCommunitypolloptionResource\",\"type\":\"object\",\"properties" +
-            "\":{\"description\":{\"type\":\"string\",\"description\":\"The option description.\"},\"imag" +
-            "e\":{\"type\":\"object\",\"description\":\"Image data about the poll option. Field is om" +
-            "itted if no image exists.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A" +
-            " URL that points to an image of the poll question.\"}}},\"numberOfVotes\":{\"type\":\"" +
-            "integer\",\"description\":\"The total number of votes that this option received.\",\"f" +
-            "ormat\":\"int32\"},\"optionId\":{\"type\":\"integer\",\"description\":\"The poll option ID\"," +
-            "\"format\":\"int32\"}}},\"OrkutCounterResource\":{\"id\":\"OrkutCounterResource\",\"type\":\"" +
-            "object\",\"properties\":{\"link\":{\"$ref\":\"OrkutLinkResource\",\"description\":\"Link to " +
-            "the collection being counted.\"},\"name\":{\"type\":\"string\",\"description\":\"The name " +
-            "of the counted collection. Currently supported collections are:  \\n- scraps - Th" +
-            "e scraps of the user. \\n- photos - The photos of the user. \\n- videos - The vide" +
-            "os of the user. \\n- pendingTestimonials - The pending testimonials of the user.\"" +
-            "},\"total\":{\"type\":\"integer\",\"description\":\"The number of resources on the counte" +
-            "d collection.\",\"format\":\"int32\"}}},\"OrkutLinkResource\":{\"id\":\"OrkutLinkResource\"" +
-            ",\"type\":\"object\",\"description\":\"Links to resources related to the parent object." +
-            "\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"URL of the link.\"},\"rel\":" +
-            "{\"type\":\"string\",\"description\":\"Relation between the resource and the parent obj" +
-            "ect.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of the link.\"},\"type\":{\"typ" +
-            "e\":\"string\",\"description\":\"Media type of the link.\"}}},\"Visibility\":{\"id\":\"Visib" +
-            "ility\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Iden" +
-            "tifies this resource as a visibility item. Value: \\\"orkut#visibility\\\"\",\"default" +
-            "\":\"orkut#visibility\"},\"links\":{\"type\":\"array\",\"description\":\"List of resources f" +
-            "or the visibility item.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"visibility\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The visibility of the resource. Possible values are:" +
-            "  \\n- default: not hidden by the user \\n- hidden: hidden\"}}}},\"resources\":{\"acl\"" +
-            ":{\"methods\":{\"delete\":{\"id\":\"orkut.acl.delete\",\"path\":\"activities/{activityId}/a" +
-            "cl/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Excludes an element from the A" +
-            "CL of the activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"" +
-            "ID of the activity.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string" +
-            "\",\"description\":\"ID of the user to be removed from the activity.\",\"required\":tru" +
-            "e,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\",\"userId\"],\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/orkut\"]}}},\"activities\":{\"methods\":{\"delete\":{\"id\":\"or" +
-            "kut.activities.delete\",\"path\":\"activities/{activityId}\",\"httpMethod\":\"DELETE\",\"d" +
-            "escription\":\"Deletes an existing activity, if the access controls allow it.\",\"pa" +
-            "rameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID of the activity to re" +
-            "move.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\"],\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.activities.li" +
-            "st\",\"path\":\"people/{userId}/activities/{collection}\",\"httpMethod\":\"GET\",\"descrip" +
-            "tion\":\"Retrieves a list of activities.\",\"parameters\":{\"collection\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The collection of activities to list.\",\"required\":true,\"enum\"" +
-            ":[\"all\",\"scraps\",\"stream\"],\"enumDescriptions\":[\"All activities created by the sp" +
-            "ecified user that the authenticated user is authorized to view.\",\"The specified " +
-            "user\'s scrapbook.\",\"The specified user\'s stream feed, intended for consumption. " +
-            "This includes activities posted by people that the user is following, and activi" +
-            "ties in which the user has been mentioned.\"],\"location\":\"path\"},\"hl\":{\"type\":\"st" +
-            "ring\",\"description\":\"Specifies the interface language (host language) of your us" +
-            "er interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":" +
-            "\"The maximum number of activities to include in the response.\",\"format\":\"uint32\"" +
-            ",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\"," +
-            "\"description\":\"A continuation token that allows pagination.\",\"location\":\"query\"}" +
-            ",\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user whose activities wi" +
-            "ll be listed. Can be me to refer to the viewer (i.e. the authenticated user).\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"collection\"],\"res" +
-            "ponse\":{\"$ref\":\"ActivityList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"" +
-            ",\"https://www.googleapis.com/auth/orkut.readonly\"]}}},\"activityVisibility\":{\"met" +
-            "hods\":{\"get\":{\"id\":\"orkut.activityVisibility.get\",\"path\":\"activities/{activityId" +
-            "}/visibility\",\"httpMethod\":\"GET\",\"description\":\"Gets the visibility of an existi" +
-            "ng activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID of t" +
-            "he activity to get the visibility.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"activityId\"],\"response\":{\"$ref\":\"Visibility\"},\"scopes\":[\"https://www." +
-            "googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"p" +
-            "atch\":{\"id\":\"orkut.activityVisibility.patch\",\"path\":\"activities/{activityId}/vis" +
-            "ibility\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the visibility of an existi" +
-            "ng activity. This method supports patch semantics.\",\"parameters\":{\"activityId\":{" +
-            "\"type\":\"string\",\"description\":\"ID of the activity.\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"activityId\"],\"request\":{\"$ref\":\"Visibility\"},\"respons" +
-            "e\":{\"$ref\":\"Visibility\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"up" +
-            "date\":{\"id\":\"orkut.activityVisibility.update\",\"path\":\"activities/{activityId}/vi" +
-            "sibility\",\"httpMethod\":\"PUT\",\"description\":\"Updates the visibility of an existin" +
-            "g activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID of th" +
-            "e activity.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\"]" +
-            ",\"request\":{\"$ref\":\"Visibility\"},\"response\":{\"$ref\":\"Visibility\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/orkut\"]}}},\"badges\":{\"methods\":{\"get\":{\"id\":\"orkut." +
-            "badges.get\",\"path\":\"people/{userId}/badges/{badgeId}\",\"httpMethod\":\"GET\",\"descri" +
-            "ption\":\"Retrieves a badge from a user.\",\"parameters\":{\"badgeId\":{\"type\":\"string\"" +
-            ",\"description\":\"The ID of the badge that will be retrieved.\",\"required\":true,\"fo" +
-            "rmat\":\"int64\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID" +
-            " of the user whose badges will be listed. Can be me to refer to caller.\",\"requir" +
-            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"badgeId\"],\"response\":{\"" +
-            "$ref\":\"Badge\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.go" +
-            "ogleapis.com/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.badges.list\",\"path\":\"peo" +
-            "ple/{userId}/badges\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of vis" +
-            "ible badges of a user.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"description\":\"T" +
-            "he id of the user whose badges will be listed. Can be me to refer to caller.\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\"" +
-            ":\"BadgeList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.goo" +
-            "gleapis.com/auth/orkut.readonly\"]}}},\"comments\":{\"methods\":{\"delete\":{\"id\":\"orku" +
-            "t.comments.delete\",\"path\":\"comments/{commentId}\",\"httpMethod\":\"DELETE\",\"descript" +
-            "ion\":\"Deletes an existing comment.\",\"parameters\":{\"commentId\":{\"type\":\"string\",\"" +
-            "description\":\"ID of the comment to remove.\",\"required\":true,\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"commentId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"" +
-            "]},\"get\":{\"id\":\"orkut.comments.get\",\"path\":\"comments/{commentId}\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Retrieves an existing comment.\",\"parameters\":{\"commentId\":{\"" +
-            "type\":\"string\",\"description\":\"ID of the comment to get.\",\"required\":true,\"locati" +
-            "on\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface languag" +
-            "e (host language) of your user interface.\",\"location\":\"query\"}},\"parameterOrder\"" +
-            ":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"insert\":{\"id\"" +
-            ":\"orkut.comments.insert\",\"path\":\"activities/{activityId}/comments\",\"httpMethod\":" +
-            "\"POST\",\"description\":\"Inserts a new comment to an activity.\",\"parameters\":{\"acti" +
-            "vityId\":{\"type\":\"string\",\"description\":\"The ID of the activity to contain the ne" +
-            "w comment.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\"]," +
-            "\"request\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.comments.list\",\"path\":\"activi" +
-            "ties/{activityId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list o" +
-            "f comments, possibly filtered.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The ID of the activity containing the comments.\",\"required\":true,\"loc" +
-            "ation\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface lang" +
-            "uage (host language) of your user interface.\",\"location\":\"query\"},\"maxResults\":{" +
-            "\"type\":\"integer\",\"description\":\"The maximum number of activities to include in t" +
-            "he response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"orderBy\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Sort search results.\",\"default\":\"DESCENDING_SORT\",\"e" +
-            "num\":[\"ascending\",\"descending\"],\"enumDescriptions\":[\"Use ascending sort order.\"," +
-            "\"Use descending sort order.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"" +
-            "description\":\"A continuation token that allows pagination.\",\"location\":\"query\"}}" +
-            ",\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"CommentList\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.read" +
-            "only\"]}}},\"communities\":{\"methods\":{\"get\":{\"id\":\"orkut.communities.get\",\"path\":\"" +
-            "communities/{communityId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the basic" +
-            " information (aka. profile) of a community.\",\"parameters\":{\"communityId\":{\"type\"" +
-            ":\"integer\",\"description\":\"The ID of the community to get.\",\"required\":true,\"form" +
-            "at\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies th" +
-            "e interface language (host language) of your user interface.\",\"location\":\"query\"" +
-            "}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"Community\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.rea" +
-            "donly\"]},\"list\":{\"id\":\"orkut.communities.list\",\"path\":\"people/{userId}/communiti" +
-            "es\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of communities the curr" +
-            "ent user is a member of.\",\"parameters\":{\"hl\":{\"type\":\"string\",\"description\":\"Spe" +
-            "cifies the interface language (host language) of your user interface.\",\"location" +
-            "\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of c" +
-            "ommunities to include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"locatio" +
-            "n\":\"query\"},\"orderBy\":{\"type\":\"string\",\"description\":\"How to order the communiti" +
-            "es by.\",\"enum\":[\"id\",\"ranked\"],\"enumDescriptions\":[\"Returns the communities sort" +
-            "ed by a fixed, natural order.\",\"Returns the communities ranked accordingly to ho" +
-            "w they are displayed on the orkut web application.\"],\"location\":\"query\"},\"userId" +
-            "\":{\"type\":\"string\",\"description\":\"The ID of the user whose communities will be l" +
-            "isted. Can be me to refer to caller.\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"userId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]}}}" +
-            ",\"communityFollow\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityFollow.delete\",\"pa" +
-            "th\":\"communities/{communityId}/followers/{userId}\",\"httpMethod\":\"DELETE\",\"descri" +
-            "ption\":\"Removes a user from the followers of a community.\",\"parameters\":{\"commun" +
-            "ityId\":{\"type\":\"integer\",\"description\":\"ID of the community.\",\"required\":true,\"f" +
-            "ormat\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of" +
-            " the user.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\"," +
-            "\"userId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"insert\":{\"id\":\"or" +
-            "kut.communityFollow.insert\",\"path\":\"communities/{communityId}/followers/{userId}" +
-            "\",\"httpMethod\":\"POST\",\"description\":\"Adds a user as a follower of a community.\"," +
-            "\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID of the community" +
-            ".\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"string\"" +
-            ",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMembers\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/orkut\"]}}},\"communityMembers\":{\"methods\":{\"dele" +
-            "te\":{\"id\":\"orkut.communityMembers.delete\",\"path\":\"communities/{communityId}/memb" +
-            "ers/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Makes the user leave a commun" +
-            "ity.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID of the com" +
-            "munity.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"s" +
-            "tring\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}},\"para" +
-            "meterOrder\":[\"communityId\",\"userId\"],\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "orkut\"]},\"get\":{\"id\":\"orkut.communityMembers.get\",\"path\":\"communities/{community" +
-            "Id}/members/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the relationsh" +
-            "ip between a user and a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer" +
-            "\",\"description\":\"ID of the community.\",\"required\":true,\"format\":\"int32\",\"locatio" +
-            "n\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language" +
-            " (host language) of your user interface.\",\"location\":\"query\"},\"userId\":{\"type\":\"" +
-            "string\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMembers\"},\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/" +
-            "orkut.readonly\"]},\"insert\":{\"id\":\"orkut.communityMembers.insert\",\"path\":\"communi" +
-            "ties/{communityId}/members/{userId}\",\"httpMethod\":\"POST\",\"description\":\"Makes th" +
-            "e user join a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"ID of the community.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}" +
-            ",\"userId\":{\"type\":\"string\",\"description\":\"ID of the user.\",\"required\":true,\"loca" +
-            "tion\":\"path\"}},\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"Com" +
-            "munityMembers\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\"" +
-            ":\"orkut.communityMembers.list\",\"path\":\"communities/{communityId}/members\",\"httpM" +
-            "ethod\":\"GET\",\"description\":\"Lists members of a community. Use the pagination tok" +
-            "ens to retrieve the full list; do not rely on the member count available in the " +
-            "community profile information to know when to stop iterating, as that count may " +
-            "be approximate.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"Th" +
-            "e ID of the community whose members will be listed.\",\"required\":true,\"format\":\"i" +
-            "nt32\",\"location\":\"path\"},\"friendsOnly\":{\"type\":\"boolean\",\"description\":\"Whether " +
-            "to list only community members who are friends of the user.\",\"location\":\"query\"}" +
-            ",\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language (host lan" +
-            "guage) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"intege" +
-            "r\",\"description\":\"The maximum number of members to include in the response.\",\"fo" +
-            "rmat\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"d" +
-            "escription\":\"A continuation token that allows pagination.\",\"location\":\"query\"}}," +
-            "\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityMembersList\"},\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/o" +
-            "rkut.readonly\"]}}},\"communityMessages\":{\"methods\":{\"delete\":{\"id\":\"orkut.communi" +
-            "tyMessages.delete\",\"path\":\"communities/{communityId}/topics/{topicId}/messages/{" +
-            "messageId}\",\"httpMethod\":\"DELETE\",\"description\":\"Moves a message of the communit" +
-            "y to the trash folder.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"The ID of the community whose message will be moved to the trash folder.\",\"" +
-            "required\":true,\"format\":\"int32\",\"location\":\"path\"},\"messageId\":{\"type\":\"string\"," +
-            "\"description\":\"The ID of the message to be moved to the trash folder.\",\"required" +
-            "\":true,\"format\":\"int64\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The ID of the topic whose message will be moved to the trash folder.\",\"requ" +
-            "ired\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\"," +
-            "\"topicId\",\"messageId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"inse" +
-            "rt\":{\"id\":\"orkut.communityMessages.insert\",\"path\":\"communities/{communityId}/top" +
-            "ics/{topicId}/messages\",\"httpMethod\":\"POST\",\"description\":\"Adds a message to a g" +
-            "iven community topic.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descriptio" +
-            "n\":\"The ID of the community the message should be added to.\",\"required\":true,\"fo" +
-            "rmat\":\"int32\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\",\"description\":\"The I" +
-            "D of the topic the message should be added to.\",\"required\":true,\"format\":\"int64\"" +
-            ",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"request\":{\"$ref" +
-            "\":\"CommunityMessage\"},\"response\":{\"$ref\":\"CommunityMessage\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.communityMessages.list\",\"pa" +
-            "th\":\"communities/{communityId}/topics/{topicId}/messages\",\"httpMethod\":\"GET\",\"de" +
-            "scription\":\"Retrieves the messages of a topic of a community.\",\"parameters\":{\"co" +
-            "mmunityId\":{\"type\":\"integer\",\"description\":\"The ID of the community which messag" +
-            "es will be listed.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"hl\":{\"t" +
-            "ype\":\"string\",\"description\":\"Specifies the interface language (host language) of" +
-            " your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"The maximum number of messages to include in the response.\",\"format\":\"u" +
-            "int32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"A continuation token that allows pagination.\",\"location\":\"q" +
-            "uery\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic which messa" +
-            "ges will be listed.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"communityId\",\"topicId\"],\"response\":{\"$ref\":\"CommunityMessageList\"}," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/au" +
-            "th/orkut.readonly\"]}}},\"communityPollComments\":{\"methods\":{\"insert\":{\"id\":\"orkut" +
-            ".communityPollComments.insert\",\"path\":\"communities/{communityId}/polls/{pollId}/" +
-            "comments\",\"httpMethod\":\"POST\",\"description\":\"Adds a comment on a community poll." +
-            "\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the com" +
-            "munity whose poll is being commented.\",\"required\":true,\"format\":\"int32\",\"locatio" +
-            "n\":\"path\"},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of the poll being com" +
-            "mented.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"po" +
-            "llId\"],\"request\":{\"$ref\":\"CommunityPollComment\"},\"response\":{\"$ref\":\"CommunityPo" +
-            "llComment\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"or" +
-            "kut.communityPollComments.list\",\"path\":\"communities/{communityId}/polls/{pollId}" +
-            "/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the comments of a communi" +
-            "ty poll.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of" +
-            " the community whose poll is having its comments listed.\",\"required\":true,\"forma" +
-            "t\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the" +
-            " interface language (host language) of your user interface.\",\"location\":\"query\"}" +
-            ",\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of comments to" +
-            " include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"" +
-            "pageToken\":{\"type\":\"string\",\"description\":\"A continuation token that allows pagi" +
-            "nation.\",\"location\":\"query\"},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of " +
-            "the community whose polls will be listed.\",\"required\":true,\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"CommunityPollCommen" +
-            "tList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapi" +
-            "s.com/auth/orkut.readonly\"]}}},\"communityPollVotes\":{\"methods\":{\"insert\":{\"id\":\"" +
-            "orkut.communityPollVotes.insert\",\"path\":\"communities/{communityId}/polls/{pollId" +
-            "}/votes\",\"httpMethod\":\"POST\",\"description\":\"Votes on a community poll.\",\"paramet" +
-            "ers\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community who" +
-            "se poll is being voted.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"po" +
-            "llId\":{\"type\":\"string\",\"description\":\"The ID of the poll being voted.\",\"required" +
-            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"request\":{" +
-            "\"$ref\":\"CommunityPollVote\"},\"response\":{\"$ref\":\"CommunityPollVote\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/orkut\"]}}},\"communityPolls\":{\"methods\":{\"get\":{\"i" +
-            "d\":\"orkut.communityPolls.get\",\"path\":\"communities/{communityId}/polls/{pollId}\"," +
-            "\"httpMethod\":\"GET\",\"description\":\"Retrieves one specific poll of a community.\",\"" +
-            "parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the commun" +
-            "ity for whose poll will be retrieved.\",\"required\":true,\"format\":\"int32\",\"locatio" +
-            "n\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language" +
-            " (host language) of your user interface.\",\"location\":\"query\"},\"pollId\":{\"type\":\"" +
-            "string\",\"description\":\"The ID of the poll to get.\",\"required\":true,\"location\":\"p" +
-            "ath\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"CommunityPo" +
-            "ll\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.c" +
-            "om/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.communityPolls.list\",\"path\":\"commu" +
-            "nities/{communityId}/polls\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the poll" +
-            "s of a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"" +
-            "The ID of the community which polls will be listed.\",\"required\":true,\"format\":\"i" +
-            "nt32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the inte" +
-            "rface language (host language) of your user interface.\",\"location\":\"query\"},\"max" +
-            "Results\":{\"type\":\"integer\",\"description\":\"The maximum number of polls to include" +
-            " in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"pageToke" +
-            "n\":{\"type\":\"string\",\"description\":\"A continuation token that allows pagination.\"" +
-            ",\"location\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"Commu" +
-            "nityPollList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.go" +
-            "ogleapis.com/auth/orkut.readonly\"]}}},\"communityRelated\":{\"methods\":{\"list\":{\"id" +
-            "\":\"orkut.communityRelated.list\",\"path\":\"communities/{communityId}/related\",\"http" +
-            "Method\":\"GET\",\"description\":\"Retrieves the communities related to another one.\"," +
-            "\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the commu" +
-            "nity whose related communities will be listed.\",\"required\":true,\"format\":\"int32\"" +
-            ",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface" +
-            " language (host language) of your user interface.\",\"location\":\"query\"}},\"paramet" +
-            "erOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]" +
-            "}}},\"communityTopics\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityTopics.delete\"," +
-            "\"path\":\"communities/{communityId}/topics/{topicId}\",\"httpMethod\":\"DELETE\",\"descr" +
-            "iption\":\"Moves a topic of the community to the trash folder.\",\"parameters\":{\"com" +
-            "munityId\":{\"type\":\"integer\",\"description\":\"The ID of the community whose topic w" +
-            "ill be moved to the trash folder.\",\"required\":true,\"format\":\"int32\",\"location\":\"" +
-            "path\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic to be moved" +
-            " to the trash folder.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"communityId\",\"topicId\"],\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/orkut\"]},\"get\":{\"id\":\"orkut.communityTopics.get\",\"path\":\"communities/{communit" +
-            "yId}/topics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a topic of a " +
-            "community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID " +
-            "of the community whose topic will be retrieved.\",\"required\":true,\"format\":\"int32" +
-            "\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interfac" +
-            "e language (host language) of your user interface.\",\"location\":\"query\"},\"topicId" +
-            "\":{\"type\":\"string\",\"description\":\"The ID of the topic to get.\",\"required\":true,\"" +
-            "format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"" +
-            "response\":{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis.com/auth/o" +
-            "rkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"insert\":{\"id\":\"orkut.c" +
-            "ommunityTopics.insert\",\"path\":\"communities/{communityId}/topics\",\"httpMethod\":\"P" +
-            "OST\",\"description\":\"Adds a topic to a given community.\",\"parameters\":{\"community" +
-            "Id\":{\"type\":\"integer\",\"description\":\"The ID of the community the topic should be" +
-            " added to.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"isShout\":{\"type" +
-            "\":\"boolean\",\"description\":\"Whether this topic is a shout.\",\"location\":\"query\"}}," +
-            "\"parameterOrder\":[\"communityId\"],\"request\":{\"$ref\":\"CommunityTopic\"},\"response\":" +
-            "{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"l" +
-            "ist\":{\"id\":\"orkut.communityTopics.list\",\"path\":\"communities/{communityId}/topics" +
-            "\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the topics of a community.\",\"param" +
-            "eters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community w" +
-            "hich topics will be listed.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}" +
-            ",\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language (host lan" +
-            "guage) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"intege" +
-            "r\",\"description\":\"The maximum number of topics to include in the response.\",\"for" +
-            "mat\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"ty" +
-            "pe\":\"string\",\"description\":\"A continuation token that allows pagination.\",\"locat" +
-            "ion\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityTop" +
-            "icList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleap" +
-            "is.com/auth/orkut.readonly\"]}}},\"counters\":{\"methods\":{\"list\":{\"id\":\"orkut.count" +
-            "ers.list\",\"path\":\"people/{userId}/counters\",\"httpMethod\":\"GET\",\"description\":\"Re" +
-            "trieves the counters of a user.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The ID of the user whose counters will be listed. Can be me to refer to " +
-            "caller.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"respon" +
-            "se\":{\"$ref\":\"Counters\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https" +
-            "://www.googleapis.com/auth/orkut.readonly\"]}}},\"scraps\":{\"methods\":{\"insert\":{\"i" +
-            "d\":\"orkut.scraps.insert\",\"path\":\"activities/scraps\",\"httpMethod\":\"POST\",\"descrip" +
-            "tion\":\"Creates a new scrap.\",\"request\":{\"$ref\":\"Activity\"},\"response\":{\"$ref\":\"A" +
-            "ctivity\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}}}}";
+    public partial class OrkutService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v2";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected OrkutService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._acl = new AclResource(this, _authenticator);
-            this._activities = new ActivitiesResource(this, _authenticator);
-            this._activityVisibility = new ActivityVisibilityResource(this, _authenticator);
-            this._badges = new BadgesResource(this, _authenticator);
-            this._comments = new CommentsResource(this, _authenticator);
-            this._communities = new CommunitiesResource(this, _authenticator);
-            this._communityFollow = new CommunityFollowResource(this, _authenticator);
-            this._communityMembers = new CommunityMembersResource(this, _authenticator);
-            this._communityMessages = new CommunityMessagesResource(this, _authenticator);
-            this._communityPollComments = new CommunityPollCommentsResource(this, _authenticator);
-            this._communityPollVotes = new CommunityPollVotesResource(this, _authenticator);
-            this._communityPolls = new CommunityPollsResource(this, _authenticator);
-            this._communityRelated = new CommunityRelatedResource(this, _authenticator);
-            this._communityTopics = new CommunityTopicsResource(this, _authenticator);
-            this._counters = new CountersResource(this, _authenticator);
-            this._scraps = new ScrapsResource(this, _authenticator);
+        public OrkutService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._acl = new AclResource(this, Authenticator);
+            this._activities = new ActivitiesResource(this, Authenticator);
+            this._activityVisibility = new ActivityVisibilityResource(this, Authenticator);
+            this._badges = new BadgesResource(this, Authenticator);
+            this._comments = new CommentsResource(this, Authenticator);
+            this._communities = new CommunitiesResource(this, Authenticator);
+            this._communityFollow = new CommunityFollowResource(this, Authenticator);
+            this._communityMembers = new CommunityMembersResource(this, Authenticator);
+            this._communityMessages = new CommunityMessagesResource(this, Authenticator);
+            this._communityPollComments = new CommunityPollCommentsResource(this, Authenticator);
+            this._communityPollVotes = new CommunityPollVotesResource(this, Authenticator);
+            this._communityPolls = new CommunityPollsResource(this, Authenticator);
+            this._communityRelated = new CommunityRelatedResource(this, Authenticator);
+            this._communityTopics = new CommunityTopicsResource(this, Authenticator);
+            this._counters = new CountersResource(this, Authenticator);
+            this._scraps = new ScrapsResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public OrkutService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public OrkutService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(OrkutService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/orkut/v2/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "orkut";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/orkut/v2/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -3751,13 +3070,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "acl";
         
-        public AclResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public AclResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Excludes an element from the ACL of the activity.</summary>
@@ -3767,20 +3086,51 @@ namespace Google.Apis.Orkut.v2 {
             return new DeleteRequest(service, activityId, userId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _activityId;
             
             private string _userId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string activityId, string userId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string activityId, string userId) : 
                     base(service) {
                 this._activityId = activityId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3805,6 +3155,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>ID of the activity.</summary>
             [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
@@ -3821,16 +3193,35 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "acl";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}/acl/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -3839,13 +3230,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "activities";
         
-        public ActivitiesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ActivitiesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes an existing activity, if the access controls allow it.</summary>
@@ -3878,17 +3269,48 @@ namespace Google.Apis.Orkut.v2 {
             Stream,
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _activityId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3910,6 +3332,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3921,24 +3365,50 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.ActivityList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.ActivityList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private Collection _collection;
             
@@ -3950,10 +3420,33 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Collection collection) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string userId, Collection collection) : 
                     base(service) {
                 this._userId = userId;
                 this._collection = collection;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3975,6 +3468,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4027,16 +3542,41 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}/activities/{collection}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("collection", Google.Apis.Util.Utilities.CreateRuntimeParameter("collection", true, "path", null, null, new string[] {
+                                "all",
+                                "scraps",
+                                "stream"}));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4045,13 +3585,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "activityVisibility";
         
-        public ActivityVisibilityResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ActivityVisibilityResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Gets the visibility of an existing activity.</summary>
@@ -4072,17 +3612,48 @@ namespace Google.Apis.Orkut.v2 {
             return new UpdateRequest(service, body, activityId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _activityId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4104,6 +3675,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4115,33 +3708,82 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activityVisibility";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}/visibility";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _activityId;
             
             private Google.Apis.Orkut.v2.Data.Visibility _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
                     base(service) {
                 this.Body = body;
                 this._activityId = activityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4166,6 +3808,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>ID of the activity.</summary>
             [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
@@ -4184,37 +3848,86 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activityVisibility";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}/visibility";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _activityId;
             
             private Google.Apis.Orkut.v2.Data.Visibility _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
                     base(service) {
                 this.Body = body;
                 this._activityId = activityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4239,6 +3952,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>ID of the activity.</summary>
             [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
@@ -4257,20 +3992,38 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activityVisibility";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}/visibility";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4279,13 +4032,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "badges";
         
-        public BadgesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public BadgesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves a badge from a user.</summary>
@@ -4301,20 +4054,51 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, userId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Badge> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.Badge> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _badgeId;
             
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string badgeId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string userId, string badgeId) : 
                     base(service) {
                 this._userId = userId;
                 this._badgeId = badgeId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4336,6 +4120,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4355,30 +4161,80 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "badges";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}/badges/{badgeId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("badgeId", Google.Apis.Util.Utilities.CreateRuntimeParameter("badgeId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.BadgeList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.BadgeList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4403,6 +4259,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The id of the user whose badges will be listed. Can be me to refer to caller.</summary>
             [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
@@ -4411,16 +4289,34 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "badges";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}/badges";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4429,13 +4325,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "comments";
         
-        public CommentsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommentsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes an existing comment.</summary>
@@ -4475,17 +4371,48 @@ namespace Google.Apis.Orkut.v2 {
             Descending,
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _commentId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string commentId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string commentId) : 
                     base(service) {
                 this._commentId = commentId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4507,6 +4434,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4518,32 +4467,81 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "comments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "comments/{commentId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("commentId", Google.Apis.Util.Utilities.CreateRuntimeParameter("commentId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _commentId;
             
             private string _hl;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string commentId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string commentId) : 
                     base(service) {
                 this._commentId = commentId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4565,6 +4563,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4587,33 +4607,83 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "comments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "comments/{commentId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("commentId", Google.Apis.Util.Utilities.CreateRuntimeParameter("commentId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _activityId;
             
             private Google.Apis.Orkut.v2.Data.Comment _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.Comment body, string activityId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.Comment body, string activityId) : 
                     base(service) {
                 this.Body = body;
                 this._activityId = activityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4635,6 +4705,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4656,28 +4748,54 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "comments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}/comments";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommentList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommentList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _activityId;
             
@@ -4689,9 +4807,32 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4713,6 +4854,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4768,16 +4931,40 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "comments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}/comments";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("orderBy", Google.Apis.Util.Utilities.CreateRuntimeParameter("orderBy", false, "query", "DESCENDING_SORT", null, new string[] {
+                                "ascending",
+                                "descending"}));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4786,13 +4973,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "communities";
         
-        public CommunitiesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommunitiesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves the basic information (aka. profile) of a community.</summary>
@@ -4820,19 +5007,50 @@ namespace Google.Apis.Orkut.v2 {
             Ranked,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Community> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.Community> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _communityId;
             
             private string _hl;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4854,6 +5072,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4876,24 +5116,51 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _hl;
             
@@ -4903,9 +5170,32 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4927,6 +5217,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4971,16 +5283,39 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}/communities";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("orderBy", Google.Apis.Util.Utilities.CreateRuntimeParameter("orderBy", false, "query", null, null, new string[] {
+                                "id",
+                                "ranked"}));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4989,13 +5324,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "communityFollow";
         
-        public CommunityFollowResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommunityFollowResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Removes a user from the followers of a community.</summary>
@@ -5012,20 +5347,51 @@ namespace Google.Apis.Orkut.v2 {
             return new InsertRequest(service, communityId, userId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _communityId;
             
             private string _userId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5050,6 +5416,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>ID of the community.</summary>
             [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
@@ -5066,33 +5454,83 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityFollow";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/followers/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _communityId;
             
             private string _userId;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5117,6 +5555,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>ID of the community.</summary>
             [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
@@ -5133,16 +5593,35 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityFollow";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/followers/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5151,13 +5630,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "communityMembers";
         
-        public CommunityMembersResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommunityMembersResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Makes the user leave a community.</summary>
@@ -5187,20 +5666,51 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _communityId;
             
             private string _userId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5222,6 +5732,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5241,24 +5773,51 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityMembers";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/members/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -5266,10 +5825,33 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5291,6 +5873,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5321,33 +5925,84 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityMembers";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/members/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _communityId;
             
             private string _userId;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5369,6 +6024,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5388,24 +6065,51 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityMembers";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/members/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembersList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembersList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -5417,9 +6121,32 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5441,6 +6168,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5496,16 +6245,38 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityMembers";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/members";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("friendsOnly", Google.Apis.Util.Utilities.CreateRuntimeParameter("friendsOnly", false, "query", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5514,13 +6285,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "communityMessages";
         
-        public CommunityMessagesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommunityMessagesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Moves a message of the community to the trash folder.</summary>
@@ -5545,11 +6316,19 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId, topicId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -5557,11 +6336,34 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _topicId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string topicId, string messageId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, long communityId, string topicId, string messageId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._topicId = topicId;
                 this._messageId = messageId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5583,6 +6385,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5610,24 +6434,52 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityMessages";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/topics/{topicId}/messages/{messageId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("messageId", Google.Apis.Util.Utilities.CreateRuntimeParameter("messageId", true, "path", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessage> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessage> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -5635,11 +6487,34 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.CommunityMessage _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.CommunityMessage body, long communityId, string topicId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.CommunityMessage body, long communityId, string topicId) : 
                     base(service) {
                 this.Body = body;
                 this._communityId = communityId;
                 this._topicId = topicId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5661,6 +6536,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5690,28 +6587,55 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityMessages";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/topics/{topicId}/messages";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessageList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessageList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -5723,10 +6647,33 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _topicId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string topicId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId, string topicId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._topicId = topicId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5748,6 +6695,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5800,16 +6769,38 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityMessages";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/topics/{topicId}/messages";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5818,13 +6809,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "communityPollComments";
         
-        public CommunityPollCommentsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommunityPollCommentsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Adds a comment on a community poll.</summary>
@@ -5841,11 +6832,19 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId, pollId);
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollComment> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollComment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -5853,11 +6852,34 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.CommunityPollComment _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.CommunityPollComment body, long communityId, string pollId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.CommunityPollComment body, long communityId, string pollId) : 
                     base(service) {
                 this.Body = body;
                 this._communityId = communityId;
                 this._pollId = pollId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5879,6 +6901,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5908,28 +6952,55 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityPollComments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/polls/{pollId}/comments";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("pollId", Google.Apis.Util.Utilities.CreateRuntimeParameter("pollId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollCommentList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollCommentList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -5941,10 +7012,33 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pollId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string pollId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId, string pollId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._pollId = pollId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5966,6 +7060,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6018,16 +7134,38 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityPollComments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/polls/{pollId}/comments";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("pollId", Google.Apis.Util.Utilities.CreateRuntimeParameter("pollId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6036,13 +7174,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "communityPollVotes";
         
-        public CommunityPollVotesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommunityPollVotesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Votes on a community poll.</summary>
@@ -6052,11 +7190,19 @@ namespace Google.Apis.Orkut.v2 {
             return new InsertRequest(service, body, communityId, pollId);
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollVote> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollVote> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -6064,11 +7210,34 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.CommunityPollVote _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.CommunityPollVote body, long communityId, string pollId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.CommunityPollVote body, long communityId, string pollId) : 
                     base(service) {
                 this.Body = body;
                 this._communityId = communityId;
                 this._pollId = pollId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6090,6 +7259,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6119,20 +7310,39 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityPollVotes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/polls/{pollId}/votes";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("pollId", Google.Apis.Util.Utilities.CreateRuntimeParameter("pollId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6141,13 +7351,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "communityPolls";
         
-        public CommunityPollsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommunityPollsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves one specific poll of a community.</summary>
@@ -6163,11 +7373,19 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPoll> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPoll> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -6175,10 +7393,33 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pollId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string pollId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, long communityId, string pollId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._pollId = pollId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6200,6 +7441,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6230,24 +7493,52 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityPolls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/polls/{pollId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("pollId", Google.Apis.Util.Utilities.CreateRuntimeParameter("pollId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -6257,9 +7548,32 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6281,6 +7595,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6325,16 +7661,37 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityPolls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/polls";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6343,13 +7700,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "communityRelated";
         
-        public CommunityRelatedResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommunityRelatedResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves the communities related to another one.</summary>
@@ -6358,19 +7715,50 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _communityId;
             
             private string _hl;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6395,6 +7783,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The ID of the community whose related communities will be listed.</summary>
             [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
@@ -6414,16 +7824,35 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityRelated";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/related";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6432,13 +7861,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "communityTopics";
         
-        public CommunityTopicsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommunityTopicsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Moves a topic of the community to the trash folder.</summary>
@@ -6467,20 +7896,51 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _communityId;
             
             private string _topicId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string topicId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, long communityId, string topicId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._topicId = topicId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6502,6 +7962,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6521,24 +8003,51 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityTopics";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/topics/{topicId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -6546,10 +8055,33 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _topicId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string topicId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, long communityId, string topicId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._topicId = topicId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6571,6 +8103,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6601,24 +8155,52 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityTopics";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/topics/{topicId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -6626,10 +8208,33 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.CommunityTopic _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.CommunityTopic body, long communityId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.CommunityTopic body, long communityId) : 
                     base(service) {
                 this.Body = body;
                 this._communityId = communityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6651,6 +8256,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6683,28 +8310,55 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityTopics";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/topics";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("isShout", Google.Apis.Util.Utilities.CreateRuntimeParameter("isShout", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopicList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopicList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _communityId;
             
@@ -6714,9 +8368,32 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6738,6 +8415,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6782,16 +8481,37 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "communityTopics";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "communities/{communityId}/topics";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("communityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("communityId", true, "path", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6800,13 +8520,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "counters";
         
-        public CountersResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CountersResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves the counters of a user.</summary>
@@ -6815,17 +8535,48 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, userId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Counters> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.Counters> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6847,6 +8598,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6858,16 +8631,34 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "counters";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}/counters";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6876,13 +8667,13 @@ namespace Google.Apis.Orkut.v2 {
         
         private OrkutService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "scraps";
         
-        public ScrapsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ScrapsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Creates a new scrap.</summary>
@@ -6890,17 +8681,48 @@ namespace Google.Apis.Orkut.v2 {
             return new InsertRequest(service, body);
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Activity> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Orkut.v2.Data.Activity> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private Google.Apis.Orkut.v2.Data.Activity _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.Activity body) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.Activity body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6922,6 +8744,28 @@ namespace Google.Apis.Orkut.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6935,20 +8779,37 @@ namespace Google.Apis.Orkut.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "scraps";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/scraps";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6989,7 +8850,7 @@ namespace Google.Apis.Orkut.v2 {
         
         private ScrapsResource _scraps;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

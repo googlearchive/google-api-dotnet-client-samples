@@ -874,9 +874,6 @@
         <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.ParentLinkData.Type">
             <summary>Type of the parent link. Its value is &quot;analytics#account&quot;.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v3.AnalyticsService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Analytics.v3.AnalyticsService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -893,11 +890,23 @@
             <param name="endDate">end-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - End date for fetching Analytics data. All requests should specify an end date formatted as YYYY-MM-DD.</param>
             <param name="metrics">Required - Must match pattern ga:.+ - A comma-separated list of Analytics metrics. E.g., &apos;ga:visits,ga:pageviews&apos;. At least one metric must be specified.</param>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.Dimensions">
             <summary>A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'.</summary>
@@ -936,11 +945,23 @@
             <param name="endDate">end-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - End date for fetching Analytics data. All requests should specify an end date formatted as YYYY-MM-DD.</param>
             <param name="metrics">Required - Must match pattern mcf:.+ - A comma-separated list of Multi-Channel Funnels metrics. E.g., &apos;mcf:totalConversions,mcf:totalConversionValue&apos;. At least one metric must be specified.</param>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.Dimensions">
             <summary>A comma-separated list of Multi-Channel Funnels dimensions. E.g., 'mcf:source,mcf:medium'.</summary>
@@ -972,11 +993,23 @@
         <member name="M:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.List">
             <summary>Lists all accounts to which the user has access.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.MaxResults">
             <summary>The maximum number of accounts to include in this response.</summary>
@@ -989,11 +1022,23 @@
             <param name="accountId">Required - Must match pattern \d+ - Account Id for the custom data sources to retrieve.</param>
             <param name="webPropertyId">Required - Must match pattern UA-(\d+)-(\d+) - Web property Id for the custom data sources to retrieve.</param>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.CustomDataSourcesResource.ListRequest.AccountId">
             <summary>Account Id for the custom data sources to retrieve.</summary>
@@ -1047,11 +1092,23 @@
         <member name="F:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.Type.Cost">
             <summary>Value for specifying cost data upload.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.AccountId">
             <summary>Account Id associated with daily upload delete.</summary>
@@ -1068,11 +1125,23 @@
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.DeleteRequest.WebPropertyId">
             <summary>Web property Id associated with daily upload delete.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.AccountId">
             <summary>Account Id for the daily uploads to retrieve.</summary>
@@ -1095,11 +1164,23 @@
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.ListRequest.WebPropertyId">
             <summary>Web property Id for the daily uploads to retrieve.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.AccountId">
             <summary>Account Id associated with daily upload.</summary>
@@ -1122,11 +1203,23 @@
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadRequest.WebPropertyId">
             <summary>Web property Id associated with daily upload.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.DailyUploadsResource.UploadMediaUpload.AccountId">
             <summary>Account Id associated with daily upload.</summary>
@@ -1155,11 +1248,23 @@
             <param name="webPropertyId">Required - Web property ID to retrieve goals for. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties that user has access to.</param>
             <param name="profileId">Required - Profile ID to retrieve goals for. Can either be a specific profile ID or &apos;~all&apos;, which refers to all the profiles that user has access to.</param>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.AccountId">
             <summary>Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
@@ -1181,11 +1286,23 @@
             <param name="accountId">Required - Account ID for the profiles to retrieve. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts to which the user has access.</param>
             <param name="webPropertyId">Required - Web property ID for the profiles to retrieve. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties to which the user has access.</param>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.AccountId">
             <summary>Account ID for the profiles to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.</summary>
@@ -1202,11 +1319,23 @@
         <member name="M:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.List">
             <summary>Lists advanced segments to which the user has access.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.MaxResults">
             <summary>The maximum number of advanced segments to include in this response.</summary>
@@ -1218,11 +1347,23 @@
             <summary>Lists web properties to which the user has access.</summary>
             <param name="accountId">Required - Account ID to retrieve web properties for. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts that user has access to.</param>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.AccountId">
             <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>

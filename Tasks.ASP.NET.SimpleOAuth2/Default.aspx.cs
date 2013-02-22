@@ -20,12 +20,15 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.UI.WebControls;
+
 using DotNetOpenAuth.Messaging;
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication.OAuth2;
+using Google.Apis.Discovery;
+using Google.Apis.Samples.Helper;
 using Google.Apis.Tasks.v1;
 using Google.Apis.Tasks.v1.Data;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Util;
 
 namespace Tasks.ASP.NET.SimpleOAuth2
@@ -39,7 +42,7 @@ namespace Tasks.ASP.NET.SimpleOAuth2
         private static TasksService _service; // We don't need individual service instances for each client.
         private static OAuth2Authenticator<WebServerClient> _authenticator;
         private IAuthorizationState _state;
-        
+
         /// <summary>
         /// Returns the authorization state which was either cached or set for this session.
         /// </summary>
@@ -50,13 +53,19 @@ namespace Tasks.ASP.NET.SimpleOAuth2
                 return _state ?? HttpContext.Current.Session["AUTH_STATE"] as IAuthorizationState;
             }
         }
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Create the Tasks-Service if it is null.
             if (_service == null)
             {
-                _service = new TasksService(_authenticator = CreateAuthenticator());
+                _authenticator = CreateAuthenticator();
+                _service = new TasksService(new BaseClientService.Initializer()
+                    {
+                        Authenticator = _authenticator
+                    });
+
+
             }
 
             // Check if we received OAuth2 credentials with this request; if yes: parse it.
@@ -75,7 +84,7 @@ namespace Tasks.ASP.NET.SimpleOAuth2
             var provider = new WebServerClient(GoogleAuthenticationServer.Description);
             provider.ClientIdentifier = ClientCredentials.ClientID;
             provider.ClientSecret = ClientCredentials.ClientSecret;
-            var authenticator = 
+            var authenticator =
                 new OAuth2Authenticator<WebServerClient>(provider, GetAuthorization) { NoCaching = true };
             return authenticator;
         }
@@ -138,7 +147,7 @@ namespace Tasks.ASP.NET.SimpleOAuth2
             output.Text += "Showing task lists...<br/>";
             foreach (TaskList list in response.Items)
             {
-                Panel listPanel = new Panel() { BorderWidth = Unit.Pixel(1), BorderColor = Color.Black};
+                Panel listPanel = new Panel() { BorderWidth = Unit.Pixel(1), BorderColor = Color.Black };
                 listPanel.Controls.Add(new Label { Text = list.Title });
                 listPanel.Controls.Add(new Label { Text = "<hr/>" });
                 listPanel.Controls.Add(new Label { Text = FetchTasks(list) });

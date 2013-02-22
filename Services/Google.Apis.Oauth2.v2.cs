@@ -312,145 +312,67 @@ namespace Google.Apis.Oauth2.v2 {
     using Google.Apis.Discovery;
     
     
-    public partial class Oauth2Service : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/DwfLeLN" +
-            "mmGpxWwnzDLWoQMA9GAU\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"oauth2:v2\",\"name\":\"oauth2\"" +
-            ",\"version\":\"v2\",\"revision\":\"20121127\",\"title\":\"Google OAuth2 API\",\"description\":" +
-            "\"Lets you access OAuth2 protocol related APIs.\",\"icons\":{\"x16\":\"http://www.googl" +
-            "e.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com/images/ic" +
-            "ons/product/search-32.gif\"},\"documentationLink\":\"https://developers.google.com/a" +
-            "ccounts/docs/OAuth2\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/\",\"" +
-            "basePath\":\"/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"\",\"batchPat" +
-            "h\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for t" +
-            "he response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses wi" +
-            "th Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Selector specifying which fields to include in a partial resp" +
-            "onse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your A" +
-            "PI key identifies your project and provides you with API access, quota, and repo" +
-            "rts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth" +
-            "_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"" +
-            "location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respon" +
-            "se with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quo" +
-            "taUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for " +
-            "server-side applications. Can be any arbitrary string assigned to a user, but sh" +
-            "ould not exceed 40 characters. Overrides userIp if both are provided.\",\"location" +
-            "\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where" +
-            " the request originates. Use this if you want to enforce per-user limits.\",\"loca" +
-            "tion\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/plu" +
-            "s.me\":{\"description\":\"Know who you are on Google\"},\"https://www.googleapis.com/a" +
-            "uth/userinfo.email\":{\"description\":\"View your email address\"},\"https://www.googl" +
-            "eapis.com/auth/userinfo.profile\":{\"description\":\"View basic information about yo" +
-            "ur account\"}}}},\"schemas\":{\"Tokeninfo\":{\"id\":\"Tokeninfo\",\"type\":\"object\",\"proper" +
-            "ties\":{\"access_type\":{\"type\":\"string\",\"description\":\"The access type granted wit" +
-            "h this token. It can be offline or online.\"},\"audience\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Who is the intended audience for this token. In general the same as issu" +
-            "ed_to.\"},\"email\":{\"type\":\"string\",\"description\":\"The email address of the user. " +
-            "Present only if the email scope is present in the request.\"},\"expires_in\":{\"type" +
-            "\":\"integer\",\"description\":\"The expiry time of the token, as number of seconds le" +
-            "ft until expiry.\",\"format\":\"int32\"},\"issued_to\":{\"type\":\"string\",\"description\":\"" +
-            "To whom was the token issued to. In general the same as audience.\"},\"scope\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The space separated list of scopes granted to this t" +
-            "oken.\"},\"user_id\":{\"type\":\"string\",\"description\":\"The Gaia obfuscated user id.\"}" +
-            ",\"verified_email\":{\"type\":\"boolean\",\"description\":\"Boolean flag which is true if" +
-            " the email address is verified. Present only if the email scope is present in th" +
-            "e request.\"}}},\"Userinfo\":{\"id\":\"Userinfo\",\"type\":\"object\",\"properties\":{\"birthd" +
-            "ay\":{\"type\":\"string\",\"description\":\"The user\'s birthday. The year is not present" +
-            ".\"},\"email\":{\"type\":\"string\",\"description\":\"The user\'s email address.\"},\"family_" +
-            "name\":{\"type\":\"string\",\"description\":\"The user\'s last name.\"},\"gender\":{\"type\":\"" +
-            "string\",\"description\":\"The user\'s gender.\"},\"given_name\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The user\'s first name.\"},\"hd\":{\"type\":\"string\",\"description\":\"The hoste" +
-            "d domain e.g. example.com if the user is Google apps user.\"},\"id\":{\"type\":\"strin" +
-            "g\",\"description\":\"The focus obfuscated gaia id of the user.\"},\"link\":{\"type\":\"st" +
-            "ring\",\"description\":\"URL of the profile page.\"},\"locale\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The user\'s default locale.\"},\"name\":{\"type\":\"string\",\"description\":\"The" +
-            " user\'s full name.\"},\"picture\":{\"type\":\"string\",\"description\":\"URL of the user\'s" +
-            " picture image.\"},\"timezone\":{\"type\":\"string\",\"description\":\"The user\'s default " +
-            "timezone.\"},\"verified_email\":{\"type\":\"boolean\",\"description\":\"Boolean flag which" +
-            " is true if the email address is verified.\"}}}},\"methods\":{\"tokeninfo\":{\"id\":\"oa" +
-            "uth2.tokeninfo\",\"path\":\"oauth2/v2/tokeninfo\",\"httpMethod\":\"POST\",\"parameters\":{\"" +
-            "access_token\":{\"type\":\"string\",\"location\":\"query\"},\"id_token\":{\"type\":\"string\",\"" +
-            "location\":\"query\"}},\"response\":{\"$ref\":\"Tokeninfo\"}}},\"resources\":{\"userinfo\":{\"" +
-            "methods\":{\"get\":{\"id\":\"oauth2.userinfo.get\",\"path\":\"oauth2/v2/userinfo\",\"httpMet" +
-            "hod\":\"GET\",\"response\":{\"$ref\":\"Userinfo\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/plus.me\",\"https://www.googleapis.com/auth/userinfo.email\",\"https://www.goog" +
-            "leapis.com/auth/userinfo.profile\"]}},\"resources\":{\"v2\":{\"resources\":{\"me\":{\"meth" +
-            "ods\":{\"get\":{\"id\":\"oauth2.userinfo.v2.me.get\",\"path\":\"userinfo/v2/me\",\"httpMetho" +
-            "d\":\"GET\",\"response\":{\"$ref\":\"Userinfo\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/plus.me\",\"https://www.googleapis.com/auth/userinfo.email\",\"https://www.google" +
-            "apis.com/auth/userinfo.profile\"]}}}}}}}}}";
+    public partial class Oauth2Service : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v2";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected Oauth2Service(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._userinfo = new UserinfoResource(this, _authenticator);
+        public Oauth2Service(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._userinfo = new UserinfoResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public Oauth2Service() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public Oauth2Service(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(Oauth2Service.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "oauth2";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -474,16 +396,16 @@ namespace Google.Apis.Oauth2.v2 {
         
         private Oauth2Service service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "userinfo";
         
         private V2Resource _v2;
         
-        public UserinfoResource(Oauth2Service service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public UserinfoResource(Oauth2Service service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
-            this._v2 = new V2Resource(service, _authenticator);
+            this.authenticator = authenticator;
+            this._v2 = new V2Resource(service, authenticator);
         }
         
         public virtual V2Resource V2 {
@@ -500,16 +422,16 @@ namespace Google.Apis.Oauth2.v2 {
             
             private Oauth2Service service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "userinfo.v2";
             
             private MeResource _me;
             
-            public V2Resource(Oauth2Service service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public V2Resource(Oauth2Service service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
-                this._me = new MeResource(service, _authenticator);
+                this.authenticator = authenticator;
+                this._me = new MeResource(service, authenticator);
             }
             
             public virtual MeResource Me {
@@ -522,27 +444,58 @@ namespace Google.Apis.Oauth2.v2 {
                 
                 private Oauth2Service service;
                 
-                private Google.Apis.Authentication.IAuthenticator _authenticator;
+                private Google.Apis.Authentication.IAuthenticator authenticator;
                 
                 private const string Resource = "userinfo.v2.me";
                 
-                public MeResource(Oauth2Service service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+                public MeResource(Oauth2Service service, Google.Apis.Authentication.IAuthenticator authenticator) {
                     this.service = service;
-                    this._authenticator = _authenticator;
+                    this.authenticator = authenticator;
                 }
                 
                 public virtual GetRequest Get() {
                     return new GetRequest(service);
                 }
                 
-                public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v2.Data.Userinfo> {
+                public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Oauth2.v2.Data.Userinfo> {
+                    
+                    private string _alt;
+                    
+                    private string _fields;
                     
                     private string _oauth_token;
                     
                     private System.Nullable<bool> _prettyPrint;
                     
-                    public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    private string _quotaUser;
+                    
+                    private string _userIp;
+                    
+                    public GetRequest(Google.Apis.Discovery.IClientService service) : 
                             base(service) {
+                        this.InitParameters();
+                    }
+                    
+                    /// <summary>Data format for the response.</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                    public virtual string Alt {
+                        get {
+                            return this._alt;
+                        }
+                        set {
+                            this._alt = value;
+                        }
+                    }
+                    
+                    /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                    public virtual string Fields {
+                        get {
+                            return this._fields;
+                        }
+                        set {
+                            this._fields = value;
+                        }
                     }
                     
                     /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -567,29 +520,99 @@ namespace Google.Apis.Oauth2.v2 {
                         }
                     }
                     
-                    protected override string ResourcePath {
+                    /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                    public virtual string QuotaUser {
+                        get {
+                            return this._quotaUser;
+                        }
+                        set {
+                            this._quotaUser = value;
+                        }
+                    }
+                    
+                    /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                    public virtual string UserIp {
+                        get {
+                            return this._userIp;
+                        }
+                        set {
+                            this._userIp = value;
+                        }
+                    }
+                    
+                    public override string ResourcePath {
                         get {
                             return "userinfo.v2.me";
                         }
                     }
                     
-                    protected override string MethodName {
+                    public override string MethodName {
                         get {
                             return "get";
                         }
+                    }
+                    
+                    public override string HttpMethod {
+                        get {
+                            return "GET";
+                        }
+                    }
+                    
+                    public override string RestPath {
+                        get {
+                            return "userinfo/v2/me";
+                        }
+                    }
+                    
+                    private void InitParameters() {
+                        System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                        this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                     }
                 }
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v2.Data.Userinfo> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Oauth2.v2.Data.Userinfo> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            public GetRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -614,16 +637,55 @@ namespace Google.Apis.Oauth2.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            public override string ResourcePath {
                 get {
                     return "userinfo";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "oauth2/v2/userinfo";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -634,7 +696,7 @@ namespace Google.Apis.Oauth2.v2 {
         
         private UserinfoResource _userinfo;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }
@@ -650,18 +712,49 @@ namespace Google.Apis.Oauth2.v2 {
             return new TokeninfoRequest(service);
         }
         
-        public class TokeninfoRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v2.Data.Tokeninfo> {
+        public class TokeninfoRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Oauth2.v2.Data.Tokeninfo> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _access_token;
             
             private string _id_token;
             
-            public TokeninfoRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            public TokeninfoRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -683,6 +776,28 @@ namespace Google.Apis.Oauth2.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -706,16 +821,35 @@ namespace Google.Apis.Oauth2.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "tokeninfo";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "oauth2/v2/tokeninfo";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("access_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("access_token", false, "query", null, null, new string[0]));
+                parameters.Add("id_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("id_token", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }

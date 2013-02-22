@@ -253,9 +253,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.Data.Objects.Prefixes">
             <summary>The list of prefixes of objects matching-but-not-listed up to and including the requested delimiter.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.StorageService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Storage.v1beta1.StorageService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -296,11 +293,23 @@
             <param name="bucket">Required - Name of a bucket.</param>
             <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -308,11 +317,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.Entity">
             <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -320,11 +341,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.Entity">
             <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -332,20 +365,44 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.Bucket">
             <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -356,11 +413,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -403,14 +472,32 @@
         <member name="F:Google.Apis.Storage.v1beta1.BucketsResource.Projection.No_acl">
             <summary>Omit acl and defaultObjectAcl properties.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.Bucket">
             <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -418,11 +505,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.Bucket">
             <summary>Name of a bucket.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.Projection">
             <summary>Set of properties to return. Defaults to no_acl.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -430,17 +529,35 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.Projection">
             <summary>Set of properties to return. Defaults to no_acl, unless the bucket resource specifies acl or defaultObjectAcl properties, when it defaults to full.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.MaxResults">
             <summary>Maximum number of buckets to return.</summary>
@@ -454,11 +571,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.Projection">
             <summary>Set of properties to return. Defaults to no_acl.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -469,11 +598,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -518,11 +659,23 @@
             <param name="objectValue">object - Required - Name of the object.</param>
             <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -533,11 +686,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Object">
             <summary>Name of the object.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -548,11 +713,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Object">
             <summary>Name of the object.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -563,11 +740,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -575,11 +764,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.Object">
             <summary>Name of the object.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -593,11 +794,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -652,11 +865,23 @@
         <member name="F:Google.Apis.Storage.v1beta1.ObjectsResource.Projection.No_acl">
             <summary>Omit the acl property.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Bucket">
             <summary>Name of the bucket in which the object resides.</summary>
@@ -664,11 +889,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Object">
             <summary>Name of the object.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Bucket">
             <summary>Name of the bucket in which the object resides.</summary>
@@ -679,11 +916,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Projection">
             <summary>Set of properties to return. Defaults to no_acl.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Bucket">
             <summary>Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.</summary>
@@ -697,11 +946,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Bucket">
             <summary>Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.</summary>
@@ -712,11 +973,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Projection">
             <summary>Set of properties to return. Defaults to no_acl, unless the object resource specifies the acl property, when it defaults to full.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Bucket">
             <summary>Name of the bucket in which to look for objects.</summary>
@@ -736,11 +1009,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Projection">
             <summary>Set of properties to return. Defaults to no_acl.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Bucket">
             <summary>Name of the bucket in which the object resides.</summary>
@@ -754,11 +1039,23 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Bucket">
             <summary>Name of the bucket in which the object resides.</summary>

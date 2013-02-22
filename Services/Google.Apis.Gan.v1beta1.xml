@@ -562,8 +562,32 @@
         <member name="P:Google.Apis.Gan.v1beta1.Data.Publishers.NextPageToken">
             <summary>The &apos;pageToken&apos; to pass to the next request to get the next page, if there are more to retrieve.</summary>
         </member>
-        <member name="P:Google.Apis.Gan.v1beta1.GanService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        <member name="T:Google.Apis.Gan.v1beta1.Data.Report">
+            <summary>A ReportResource representing a report of a certain type either for an advertiser or publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Report.Column_names">
+            <summary>The column names for the report</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Report.End_date">
+            <summary>The end of the date range for this report, exclusive.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Report.Kind">
+            <summary>The kind for a report.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Report.Matching_row_count">
+            <summary>The number of matching rows before paging is applied.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Report.Rows">
+            <summary>The rows of data for the report</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Report.Start_date">
+            <summary>The start of the date range for this report, inclusive.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Report.Totals_rows">
+            <summary>The totals rows for the report</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Report.Type">
+            <summary>The report type.</summary>
         </member>
         <member name="T:Google.Apis.Gan.v1beta1.GanService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -611,11 +635,23 @@
         <member name="F:Google.Apis.Gan.v1beta1.AdvertisersResource.RelationshipStatus.Pending">
             <summary>An advertiser program that you&apos;ve already applied to, but they haven&apos;t yet decided to approve or decline your application.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.AdvertiserId">
             <summary>The ID of the advertiser to look up. Optional.</summary>
@@ -626,11 +662,23 @@
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.RoleId">
             <summary>The ID of the requesting advertiser or publisher.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <!-- Badly formed XML comment ignored for member "P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.AdvertiserCategory" -->
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.MaxResults">
@@ -670,11 +718,23 @@
         <member name="F:Google.Apis.Gan.v1beta1.CcOffersResource.Projection.Summary">
             <summary>Include only the basic fields needed to display an offer.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Advertiser">
             <summary>The advertiser ID of a card issuer whose offers to include. Optional, may be repeated.</summary>
@@ -741,11 +801,23 @@
         <member name="F:Google.Apis.Gan.v1beta1.EventsResource.Type.Transaction">
             <summary>A conversion event, typically an e-commerce transaction. Some advertisers use a transaction to record other types of events, such as magazine subscriptions.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.AdvertiserId">
             <summary>Caret(^) delimited list of advertiser IDs. Filters out all events that do not reference one of the given advertiser IDs. Only used when under publishers role. Optional.</summary>
@@ -838,11 +910,23 @@
         <member name="T:Google.Apis.Gan.v1beta1.LinksResource.RelationshipStatus">
             <summary>The status of the relationship.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.LinkId">
             <summary>The ID of the link to look up.</summary>
@@ -853,11 +937,23 @@
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.RoleId">
             <summary>The ID of the requesting advertiser or publisher.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.Role">
             <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
@@ -868,11 +964,23 @@
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.AdvertiserId">
             <summary>Limits the resulting links to the ones belonging to the listed advertisers.</summary>
@@ -956,11 +1064,23 @@
         <member name="F:Google.Apis.Gan.v1beta1.PublishersResource.RelationshipStatus.Pending">
             <summary>Publishers that have applied to your program. We recommend reviewing and deciding on pending publishers on a weekly basis.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.PublisherId">
             <summary>The ID of the publisher to look up. Optional.</summary>
@@ -971,11 +1091,23 @@
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.RoleId">
             <summary>The ID of the requesting advertiser or publisher.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.MaxResults">
             <summary>Max number of items to return in this page. Optional. Defaults to 20.</summary>
@@ -1003,6 +1135,111 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.RoleId">
             <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.ReportsResource.Get(Google.Apis.Gan.v1beta1.ReportsResource.Role,System.String,Google.Apis.Gan.v1beta1.ReportsResource.ReportType)">
+            <summary>Retrieves a report of the specified type.</summary>
+            <param name="role">Required - Must be one of the following values [advertisers, publishers] - The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</param>
+            <param name="roleId">Required - The ID of the requesting advertiser or publisher.</param>
+            <param name="reportType">Required - Must be one of the following values [order_delta] - The type of report being requested. Valid values: &apos;order_delta&apos;. Required.</param>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.ReportsResource.EventType">
+            <summary>Filters out all events that are not of the given type. Valid values: &apos;action&apos;, &apos;transaction&apos;, or &apos;charge&apos;. Optional.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.ReportsResource.EventType.Action">
+            <summary>Event type is action.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.ReportsResource.EventType.Charge">
+            <summary>Event type is charge.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.ReportsResource.EventType.Transaction">
+            <summary>Event type is transaction.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.ReportsResource.ReportType">
+            <summary>The type of report being requested. Valid values: &apos;order_delta&apos;. Required.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.ReportsResource.ReportType.Order_delta">
+            <summary>The order delta report type.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.ReportsResource.Role">
+            <summary>The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.ReportsResource.Role.Advertisers">
+            <summary>The requester is requesting as an advertiser.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.ReportsResource.Role.Publishers">
+            <summary>The requester is requesting as a publisher.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.ReportsResource.Status">
+            <summary>Filters out all events that do not have the given status. Valid values: &apos;active&apos;, &apos;canceled&apos;, or &apos;invalid&apos;. Optional.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.ReportsResource.Status.Active">
+            <summary>Event is currently active.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.ReportsResource.Status.Canceled">
+            <summary>Event is currently canceled.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.ReportsResource.Status.Invalid">
+            <summary>Event is currently invalid.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.AdvertiserId">
+            <summary>The IDs of the advertisers to look up, if applicable.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.CalculateTotals">
+            <summary>Whether or not to calculate totals rows. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.EndDate">
+            <summary>The end date (exclusive), in RFC 3339 format, for the report data to be returned. Defaults to one day after startDate, if that is given, or today. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.EventType">
+            <summary>Filters out all events that are not of the given type. Valid values: 'action', 'transaction', or 'charge'. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.LinkId">
+            <summary>Filters to capture one of given link IDs. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.MaxResults">
+            <summary>Max number of items to return in this page. Optional. Defaults to return all results.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.OrderId">
+            <summary>Filters to capture one of the given order IDs. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.PublisherId">
+            <summary>The IDs of the publishers to look up, if applicable.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.ReportType">
+            <summary>The type of report being requested. Valid values: 'order_delta'. Required.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.Role">
+            <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.RoleId">
+            <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.StartDate">
+            <summary>The start date (inclusive), in RFC 3339 format, for the report data to be returned. Defaults to one day before endDate, if that is given, or yesterday. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.StartIndex">
+            <summary>Offset on which to return results when paging. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.ReportsResource.GetRequest.Status">
+            <summary>Filters out all events that do not have the given status. Valid values: 'active', 'canceled', or 'invalid'. Optional.</summary>
         </member>
     </members>
 </doc>

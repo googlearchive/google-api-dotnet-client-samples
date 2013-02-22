@@ -15,7 +15,9 @@ limitations under the License.
 */
 
 using System;
+
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
@@ -36,7 +38,7 @@ namespace SiteVerification.VerifySite
     internal class Program
     {
         private static readonly string Scope = SiteVerificationService.Scopes.Siteverification.GetStringValue();
-        
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -73,7 +75,7 @@ namespace SiteVerification.VerifySite
             CommandLine.WriteAction("Please enter the URL of the site to verify:");
             CommandLine.RequestUserInput("URL", ref site);
             CommandLine.WriteLine();
-            
+
             // Example of a GetToken call.
             CommandLine.WriteAction("Retrieving a meta token ...");
             var request = service.WebResource.GetToken(new SiteVerificationWebResourceGettokenRequest()

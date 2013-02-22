@@ -188,189 +188,67 @@ namespace Google.Apis.Licensing.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class LicensingService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/CUdlpVg" +
-            "13O3x8WTTIinSF07MIK4\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"licensing:v1\",\"name\":\"lice" +
-            "nsing\",\"version\":\"v1\",\"revision\":\"20120724\",\"title\":\"Enterprise License Manager " +
-            "API\",\"description\":\"Licensing API to view and manage license for your domain.\",\"" +
-            "icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"" +
-            "http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink\":\"" +
-            "https://developers.google.com/google-apps/licensing/\",\"protocol\":\"rest\",\"baseUrl" +
-            "\":\"https://www.googleapis.com/apps/licensing/v1/product/\",\"basePath\":\"/apps/lice" +
-            "nsing/v1/product/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"apps/l" +
-            "icensing/v1/product/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"" +
-            "description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"e" +
-            "numDescriptions\":[\"Responses with Content-Type of application/json\"],\"location\":" +
-            "\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fiel" +
-            "ds to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\"" +
-            ",\"description\":\"API key. Your API key identifies your project and provides you w" +
-            "ith API access, quota, and reports. Required unless you provide an OAuth 2.0 tok" +
-            "en.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0" +
-            " token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean" +
-            "\",\"description\":\"Returns response with indentations and line breaks.\",\"default\":" +
-            "\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available" +
-            " to use for quota purposes for server-side applications. Can be any arbitrary st" +
-            "ring assigned to a user, but should not exceed 40 characters. Overrides userIp i" +
-            "f both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description" +
-            "\":\"IP address of the site where the request originates. Use this if you want to " +
-            "enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"LicenseAssignment\":{\"" +
-            "id\":\"LicenseAssignment\",\"type\":\"object\",\"description\":\"Template for LiscenseAssi" +
-            "gnment Resource\",\"properties\":{\"etags\":{\"type\":\"string\",\"description\":\"ETag of t" +
-            "he resource.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resource as" +
-            " a LicenseAssignment.\",\"default\":\"licensing#licenseAssignment\"},\"productId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Name of the product.\",\"annotations\":{\"required\":[\"li" +
-            "censing.licenseAssignments.update\"]}},\"selfLink\":{\"type\":\"string\",\"description\":" +
-            "\"Link to this page.\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name of the sku of" +
-            " the product.\",\"annotations\":{\"required\":[\"licensing.licenseAssignments.update\"]" +
-            "}},\"userId\":{\"type\":\"string\",\"description\":\"Email id of the user.\",\"annotations\"" +
-            ":{\"required\":[\"licensing.licenseAssignments.update\"]}}}},\"LicenseAssignmentInser" +
-            "t\":{\"id\":\"LicenseAssignmentInsert\",\"type\":\"object\",\"description\":\"Template for L" +
-            "icenseAssignment Insert request\",\"properties\":{\"userId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Email id of the user\",\"annotations\":{\"required\":[\"licensing.licenseAssig" +
-            "nments.insert\"]}}}},\"LicenseAssignmentList\":{\"id\":\"LicenseAssignmentList\",\"type\"" +
-            ":\"object\",\"description\":\"LicesnseAssignment List for a given product/sku for a c" +
-            "ustomer.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resou" +
-            "rce.\"},\"items\":{\"type\":\"array\",\"description\":\"The LicenseAssignments in this pag" +
-            "e of results.\",\"items\":{\"$ref\":\"LicenseAssignment\"}},\"kind\":{\"type\":\"string\",\"de" +
-            "scription\":\"Identifies the resource as a collection of LicenseAssignments.\",\"def" +
-            "ault\":\"licensing#licenseAssignmentList\"},\"nextPageToken\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The continuation token, used to page through large result sets. Provide" +
-            " this value in a subsequent request to return the next page of results.\"}}}},\"re" +
-            "sources\":{\"licenseAssignments\":{\"methods\":{\"delete\":{\"id\":\"licensing.licenseAssi" +
-            "gnments.delete\",\"path\":\"{productId}/sku/{skuId}/user/{userId}\",\"httpMethod\":\"DEL" +
-            "ETE\",\"description\":\"Revoke License.\",\"parameters\":{\"productId\":{\"type\":\"string\"," +
-            "\"description\":\"Name for product\",\"required\":true,\"location\":\"path\"},\"skuId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Name for sku\",\"required\":true,\"location\":\"path\"},\"us" +
-            "erId\":{\"type\":\"string\",\"description\":\"email id or unique Id of the user\",\"requir" +
-            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"userId\"]},\"g" +
-            "et\":{\"id\":\"licensing.licenseAssignments.get\",\"path\":\"{productId}/sku/{skuId}/use" +
-            "r/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Get license assignment of a partic" +
-            "ular product and sku for a user\",\"parameters\":{\"productId\":{\"type\":\"string\",\"des" +
-            "cription\":\"Name for product\",\"required\":true,\"location\":\"path\"},\"skuId\":{\"type\":" +
-            "\"string\",\"description\":\"Name for sku\",\"required\":true,\"location\":\"path\"},\"userId" +
-            "\":{\"type\":\"string\",\"description\":\"email id or unique Id of the user\",\"required\":" +
-            "true,\"location\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"userId\"],\"respon" +
-            "se\":{\"$ref\":\"LicenseAssignment\"}},\"insert\":{\"id\":\"licensing.licenseAssignments.i" +
-            "nsert\",\"path\":\"{productId}/sku/{skuId}/user\",\"httpMethod\":\"POST\",\"description\":\"" +
-            "Assign License.\",\"parameters\":{\"productId\":{\"type\":\"string\",\"description\":\"Name " +
-            "for product\",\"required\":true,\"location\":\"path\"},\"skuId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Name for sku\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"pro" +
-            "ductId\",\"skuId\"],\"request\":{\"$ref\":\"LicenseAssignmentInsert\"},\"response\":{\"$ref\"" +
-            ":\"LicenseAssignment\"}},\"listForProduct\":{\"id\":\"licensing.licenseAssignments.list" +
-            "ForProduct\",\"path\":\"{productId}/users\",\"httpMethod\":\"GET\",\"description\":\"List li" +
-            "cense assignments for given product of the customer.\",\"parameters\":{\"customerId\"" +
-            ":{\"type\":\"string\",\"description\":\"CustomerId represents the customer for whom lic" +
-            "enseassignments are queried\",\"required\":true,\"location\":\"query\"},\"maxResults\":{\"" +
-            "type\":\"integer\",\"description\":\"Maximum number of campaigns to return at one time" +
-            ". Must be positive. Optional. Default value is 100.\",\"default\":\"100\",\"format\":\"u" +
-            "int32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"s" +
-            "tring\",\"description\":\"Token to fetch the next page.Optional. By default server w" +
-            "ill return first page\",\"default\":\"\",\"location\":\"query\"},\"productId\":{\"type\":\"str" +
-            "ing\",\"description\":\"Name for product\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"productId\",\"customerId\"],\"response\":{\"$ref\":\"LicenseAssignmentList\"" +
-            "}},\"listForProductAndSku\":{\"id\":\"licensing.licenseAssignments.listForProductAndS" +
-            "ku\",\"path\":\"{productId}/sku/{skuId}/users\",\"httpMethod\":\"GET\",\"description\":\"Lis" +
-            "t license assignments for given product and sku of the customer.\",\"parameters\":{" +
-            "\"customerId\":{\"type\":\"string\",\"description\":\"CustomerId represents the customer " +
-            "for whom licenseassignments are queried\",\"required\":true,\"location\":\"query\"},\"ma" +
-            "xResults\":{\"type\":\"integer\",\"description\":\"Maximum number of campaigns to return" +
-            " at one time. Must be positive. Optional. Default value is 100.\",\"default\":\"100\"" +
-            ",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location\":\"query\"},\"pageToken" +
-            "\":{\"type\":\"string\",\"description\":\"Token to fetch the next page.Optional. By defa" +
-            "ult server will return first page\",\"default\":\"\",\"location\":\"query\"},\"productId\":" +
-            "{\"type\":\"string\",\"description\":\"Name for product\",\"required\":true,\"location\":\"pa" +
-            "th\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name for sku\",\"required\":true,\"loca" +
-            "tion\":\"path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"customerId\"],\"response\":{\"" +
-            "$ref\":\"LicenseAssignmentList\"}},\"patch\":{\"id\":\"licensing.licenseAssignments.patc" +
-            "h\",\"path\":\"{productId}/sku/{skuId}/user/{userId}\",\"httpMethod\":\"PATCH\",\"descript" +
-            "ion\":\"Assign License. This method supports patch semantics.\",\"parameters\":{\"prod" +
-            "uctId\":{\"type\":\"string\",\"description\":\"Name for product\",\"required\":true,\"locati" +
-            "on\":\"path\"},\"skuId\":{\"type\":\"string\",\"description\":\"Name for sku for which licen" +
-            "se would be revoked\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string" +
-            "\",\"description\":\"email id or unique Id of the user\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"productId\",\"skuId\",\"userId\"],\"request\":{\"$ref\":\"Licen" +
-            "seAssignment\"},\"response\":{\"$ref\":\"LicenseAssignment\"}},\"update\":{\"id\":\"licensin" +
-            "g.licenseAssignments.update\",\"path\":\"{productId}/sku/{skuId}/user/{userId}\",\"htt" +
-            "pMethod\":\"PUT\",\"description\":\"Assign License.\",\"parameters\":{\"productId\":{\"type\"" +
-            ":\"string\",\"description\":\"Name for product\",\"required\":true,\"location\":\"path\"},\"s" +
-            "kuId\":{\"type\":\"string\",\"description\":\"Name for sku for which license would be re" +
-            "voked\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description" +
-            "\":\"email id or unique Id of the user\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"productId\",\"skuId\",\"userId\"],\"request\":{\"$ref\":\"LicenseAssignment\"}" +
-            ",\"response\":{\"$ref\":\"LicenseAssignment\"}}}}}}";
+    public partial class LicensingService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected LicensingService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._licenseAssignments = new LicenseAssignmentsResource(this, _authenticator);
+        public LicensingService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._licenseAssignments = new LicenseAssignmentsResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public LicensingService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public LicensingService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(LicensingService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/apps/licensing/v1/product/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "licensing";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/apps/licensing/v1/product/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -378,13 +256,13 @@ namespace Google.Apis.Licensing.v1 {
         
         private LicensingService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "licenseAssignments";
         
-        public LicenseAssignmentsResource(LicensingService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public LicenseAssignmentsResource(LicensingService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Revoke License.</summary>
@@ -441,11 +319,19 @@ namespace Google.Apis.Licensing.v1 {
             return new UpdateRequest(service, body, productId, skuId, userId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _productId;
             
@@ -453,11 +339,34 @@ namespace Google.Apis.Licensing.v1 {
             
             private string _userId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string productId, string skuId, string userId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string productId, string skuId, string userId) : 
                     base(service) {
                 this._productId = productId;
                 this._skuId = skuId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -479,6 +388,28 @@ namespace Google.Apis.Licensing.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -506,24 +437,52 @@ namespace Google.Apis.Licensing.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "licenseAssignments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{productId}/sku/{skuId}/user/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("productId", Google.Apis.Util.Utilities.CreateRuntimeParameter("productId", true, "path", null, null, new string[0]));
+                parameters.Add("skuId", Google.Apis.Util.Utilities.CreateRuntimeParameter("skuId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignment> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _productId;
             
@@ -531,11 +490,34 @@ namespace Google.Apis.Licensing.v1 {
             
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string productId, string skuId, string userId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string productId, string skuId, string userId) : 
                     base(service) {
                 this._productId = productId;
                 this._skuId = skuId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -557,6 +539,28 @@ namespace Google.Apis.Licensing.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -584,24 +588,52 @@ namespace Google.Apis.Licensing.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "licenseAssignments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{productId}/sku/{skuId}/user/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("productId", Google.Apis.Util.Utilities.CreateRuntimeParameter("productId", true, "path", null, null, new string[0]));
+                parameters.Add("skuId", Google.Apis.Util.Utilities.CreateRuntimeParameter("skuId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignment> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _productId;
             
@@ -609,11 +641,34 @@ namespace Google.Apis.Licensing.v1 {
             
             private Google.Apis.Licensing.v1.Data.LicenseAssignmentInsert _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Licensing.v1.Data.LicenseAssignmentInsert body, string productId, string skuId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Licensing.v1.Data.LicenseAssignmentInsert body, string productId, string skuId) : 
                     base(service) {
                 this.Body = body;
                 this._productId = productId;
                 this._skuId = skuId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -635,6 +690,28 @@ namespace Google.Apis.Licensing.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -664,28 +741,55 @@ namespace Google.Apis.Licensing.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "licenseAssignments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{productId}/sku/{skuId}/user";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("productId", Google.Apis.Util.Utilities.CreateRuntimeParameter("productId", true, "path", null, null, new string[0]));
+                parameters.Add("skuId", Google.Apis.Util.Utilities.CreateRuntimeParameter("skuId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListForProductRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignmentList> {
+        public class ListForProductRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignmentList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _customerId;
             
@@ -695,10 +799,33 @@ namespace Google.Apis.Licensing.v1 {
             
             private string _productId;
             
-            public ListForProductRequest(Google.Apis.Discovery.IRequestProvider service, string productId, string customerId) : 
+            public ListForProductRequest(Google.Apis.Discovery.IClientService service, string productId, string customerId) : 
                     base(service) {
                 this._productId = productId;
                 this._customerId = customerId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -720,6 +847,28 @@ namespace Google.Apis.Licensing.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -761,24 +910,53 @@ namespace Google.Apis.Licensing.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "licenseAssignments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "listForProduct";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{productId}/users";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", "", null, new string[0]));
+                parameters.Add("productId", Google.Apis.Util.Utilities.CreateRuntimeParameter("productId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListForProductAndSkuRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignmentList> {
+        public class ListForProductAndSkuRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignmentList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _customerId;
             
@@ -790,11 +968,34 @@ namespace Google.Apis.Licensing.v1 {
             
             private string _skuId;
             
-            public ListForProductAndSkuRequest(Google.Apis.Discovery.IRequestProvider service, string productId, string skuId, string customerId) : 
+            public ListForProductAndSkuRequest(Google.Apis.Discovery.IClientService service, string productId, string skuId, string customerId) : 
                     base(service) {
                 this._productId = productId;
                 this._skuId = skuId;
                 this._customerId = customerId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -816,6 +1017,28 @@ namespace Google.Apis.Licensing.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -865,24 +1088,54 @@ namespace Google.Apis.Licensing.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "licenseAssignments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "listForProductAndSku";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{productId}/sku/{skuId}/users";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", "", null, new string[0]));
+                parameters.Add("productId", Google.Apis.Util.Utilities.CreateRuntimeParameter("productId", true, "path", null, null, new string[0]));
+                parameters.Add("skuId", Google.Apis.Util.Utilities.CreateRuntimeParameter("skuId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignment> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _productId;
             
@@ -892,12 +1145,35 @@ namespace Google.Apis.Licensing.v1 {
             
             private Google.Apis.Licensing.v1.Data.LicenseAssignment _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Licensing.v1.Data.LicenseAssignment body, string productId, string skuId, string userId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Licensing.v1.Data.LicenseAssignment body, string productId, string skuId, string userId) : 
                     base(service) {
                 this.Body = body;
                 this._productId = productId;
                 this._skuId = skuId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -919,6 +1195,28 @@ namespace Google.Apis.Licensing.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -956,28 +1254,56 @@ namespace Google.Apis.Licensing.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "licenseAssignments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{productId}/sku/{skuId}/user/{userId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("productId", Google.Apis.Util.Utilities.CreateRuntimeParameter("productId", true, "path", null, null, new string[0]));
+                parameters.Add("skuId", Google.Apis.Util.Utilities.CreateRuntimeParameter("skuId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignment> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Licensing.v1.Data.LicenseAssignment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _productId;
             
@@ -987,12 +1313,35 @@ namespace Google.Apis.Licensing.v1 {
             
             private Google.Apis.Licensing.v1.Data.LicenseAssignment _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Licensing.v1.Data.LicenseAssignment body, string productId, string skuId, string userId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Licensing.v1.Data.LicenseAssignment body, string productId, string skuId, string userId) : 
                     base(service) {
                 this.Body = body;
                 this._productId = productId;
                 this._skuId = skuId;
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1014,6 +1363,28 @@ namespace Google.Apis.Licensing.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1051,20 +1422,40 @@ namespace Google.Apis.Licensing.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "licenseAssignments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{productId}/sku/{skuId}/user/{userId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("productId", Google.Apis.Util.Utilities.CreateRuntimeParameter("productId", true, "path", null, null, new string[0]));
+                parameters.Add("skuId", Google.Apis.Util.Utilities.CreateRuntimeParameter("skuId", true, "path", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1075,7 +1466,7 @@ namespace Google.Apis.Licensing.v1 {
         
         private LicenseAssignmentsResource _licenseAssignments;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

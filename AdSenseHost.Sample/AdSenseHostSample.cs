@@ -17,6 +17,7 @@ limitations under the License.
 using System;
 
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Adsensehost.v4_1;
 using Google.Apis.Adsensehost.v4_1.Data;
 using Google.Apis.Authentication.OAuth2;
@@ -26,6 +27,7 @@ using Google.Apis.Util;
 
 using AdSenseHost.Sample.Host;
 using AdSenseHost.Sample.Publisher;
+using Google.Apis.Discovery;
 
 namespace AdSenseHost.Sample
 {
@@ -53,15 +55,20 @@ namespace AdSenseHost.Sample
             CommandLine.DisplayGoogleSampleHeader("AdSense Host API Command Line Sample");
 
             // Register the authenticator.
-            NativeApplicationClient provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
-            OAuth2Authenticator<NativeApplicationClient> auth = 
+            NativeApplicationClient provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = credentials.ClientId,
+                    ClientSecret = credentials.ClientSecret
+                };
+            OAuth2Authenticator<NativeApplicationClient> auth =
                 new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            AdsensehostService service = new AdsensehostService(auth);
+            AdsensehostService service = new AdsensehostService(new BaseClientService.Initializer()
+                {
+                    Authenticator = auth
+                });
 
             // Execute Host calls
             HostApiConsumer hostApiConsumer = new HostApiConsumer(service, MaxListPageSize);
@@ -70,7 +77,7 @@ namespace AdSenseHost.Sample
             // Execute Publisher calls
             PublisherApiConsumer publisherApiConsumer = new PublisherApiConsumer(service, MaxListPageSize);
             publisherApiConsumer.RunCalls();
-            
+
             CommandLine.PressAnyKeyToExit();
         }
 

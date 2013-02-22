@@ -3155,848 +3155,7 @@ namespace Google.Apis.Compute.v1beta12 {
     using Google.Apis.Discovery;
     
     
-    public partial class ComputeService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/V89D-rJ" +
-            "wkrkRXZN5X_7Ri4jiEGY\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"compute:v1beta12\",\"name\":\"" +
-            "compute\",\"version\":\"v1beta12\",\"revision\":\"20121212\",\"title\":\"Compute Engine API\"" +
-            ",\"description\":\"API for the Google Compute Engine service.\",\"icons\":{\"x16\":\"http" +
-            "://www.google.com/images/icons/product/compute_engine-16.png\",\"x32\":\"http://www." +
-            "google.com/images/icons/product/compute_engine-32.png\"},\"documentationLink\":\"htt" +
-            "ps://developers.google.com/compute/docs/reference/v1beta12\",\"labels\":[\"limited_a" +
-            "vailability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/compute/v1" +
-            "beta12/projects/\",\"basePath\":\"/compute/v1beta12/projects/\",\"rootUrl\":\"https://ww" +
-            "w.googleapis.com/\",\"servicePath\":\"compute/v1beta12/projects/\",\"batchPath\":\"batch" +
-            "\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respon" +
-            "se.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Conten" +
-            "t-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Selector specifying which fields to include in a partial response.\",\"l" +
-            "ocation\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key id" +
-            "entifies your project and provides you with API access, quota, and reports. Requ" +
-            "ired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{" +
-            "\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\"" +
-            ":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with i" +
-            "ndentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{" +
-            "\"type\":\"string\",\"description\":\"Available to use for quota purposes for server-si" +
-            "de applications. Can be any arbitrary string assigned to a user, but should not " +
-            "exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"" +
-            "},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the requ" +
-            "est originates. Use this if you want to enforce per-user limits.\",\"location\":\"qu" +
-            "ery\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/compute\":{\"d" +
-            "escription\":\"View and manage your Google Compute Engine resources\"},\"https://www" +
-            ".googleapis.com/auth/compute.readonly\":{\"description\":\"View your Google Compute " +
-            "Engine resources\"},\"https://www.googleapis.com/auth/devstorage.read_only\":{\"desc" +
-            "ription\":\"View your data in Google Cloud Storage\"}}}},\"schemas\":{\"AccessConfig\":" +
-            "{\"id\":\"AccessConfig\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Type of the resource.\",\"default\":\"compute#accessConfig\"},\"name\":{\"type" +
-            "\":\"string\",\"description\":\"Name of this access configuration.\"},\"natIP\":{\"type\":\"" +
-            "string\",\"description\":\"An external IP address associated with this instance. Spe" +
-            "cify an unused static IP address available to the project. If not specified, the" +
-            " external IP will be drawn from a shared ephemeral pool.\"},\"type\":{\"type\":\"strin" +
-            "g\",\"description\":\"Type of configuration. Must be set to \\\"ONE_TO_ONE_NAT\\\". This" +
-            " configures port-for-port NAT to the internet.\",\"default\":\"ONE_TO_ONE_NAT\"}}},\"A" +
-            "ttachedDisk\":{\"id\":\"AttachedDisk\",\"type\":\"object\",\"properties\":{\"deleteOnTermina" +
-            "te\":{\"type\":\"boolean\",\"description\":\"Persistent disk only; If true, delete the d" +
-            "isk and all its data when the associated instance is deleted. This property defa" +
-            "ults to false if not specified.\"},\"deviceName\":{\"type\":\"string\",\"description\":\"P" +
-            "ersistent disk only; must be unique within the instance when specified. This rep" +
-            "resents a unique device name that is reflected into the /dev/ tree of a Linux op" +
-            "erating system running within the instance. If not specified, a default will be " +
-            "chosen by the system.\"},\"index\":{\"type\":\"integer\",\"description\":\"A zero-based in" +
-            "dex to assign to this disk, where 0 is reserved for the boot disk. If not specif" +
-            "ied, the server will choose an appropriate value.\",\"format\":\"int32\"},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#attachedDi" +
-            "sk\"},\"mode\":{\"type\":\"string\",\"description\":\"The mode in which to attach this dis" +
-            "k, either \\\"READ_WRITE\\\" or \\\"READ_ONLY\\\".\"},\"source\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Persistent disk only; the URL of the persistent disk resource.\"},\"type\":{\"" +
-            "type\":\"string\",\"description\":\"Type of the disk, either \\\"EPHEMERAL\\\" or \\\"PERSIS" +
-            "TENT\\\". Note that persistent disks must be created before you can specify them h" +
-            "ere.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}}},\"Disk\":{\"id\":\"D" +
-            "isk\",\"type\":\"object\",\"properties\":{\"creationTimestamp\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Creation timestamp in RFC3339 text format (output only).\"},\"description\":" +
-            "{\"type\":\"string\",\"description\":\"An optional textual description of the resource;" +
-            " provided by the client when the resource is created.\"},\"id\":{\"type\":\"string\",\"d" +
-            "escription\":\"Unique identifier for the resource; defined by the server (output o" +
-            "nly).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the res" +
-            "ource.\",\"default\":\"compute#disk\"},\"name\":{\"type\":\"string\",\"description\":\"Name of" +
-            " the resource; provided by the client when the resource is created. The name mus" +
-            "t be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-z0-9" +
-            "]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}},\"options" +
-            "\":{\"type\":\"string\",\"description\":\"Internal use only.\"},\"selfLink\":{\"type\":\"strin" +
-            "g\",\"description\":\"Server defined URL for the resource (output only).\"},\"sizeGb\":" +
-            "{\"type\":\"string\",\"description\":\"Size of the persistent disk, specified in GB.\",\"" +
-            "format\":\"int64\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}},\"sourceSnap" +
-            "shot\":{\"type\":\"string\",\"description\":\"The source snapshot used to create this di" +
-            "sk. Once the source snapshot has been deleted from the system, this field will b" +
-            "e cleared, and will not be set even if a snapshot with the same name has been re" +
-            "-created.\"},\"sourceSnapshotId\":{\"type\":\"string\",\"description\":\"The \'id\' value of" +
-            " the snapshot used to create this disk. This value may be used to determine whet" +
-            "her the disk was created from the current or a previous instance of a given disk" +
-            " snapshot.\"},\"status\":{\"type\":\"string\",\"description\":\"The status of disk creatio" +
-            "n (output only).\"},\"zone\":{\"type\":\"string\",\"description\":\"URL for the zone where" +
-            " the persistent disk resides; provided by the client when the disk is created. A" +
-            " persistent disk must reside in the same zone as the instance to which it is att" +
-            "ached.\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}}}},\"DiskList\":{\"id\":" +
-            "\"DiskList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Un" +
-            "ique identifier for the resource; defined by the server (output only).\"},\"items\"" +
-            ":{\"type\":\"array\",\"description\":\"The persistent disk resources.\",\"items\":{\"$ref\":" +
-            "\"Disk\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"default\":\"co" +
-            "mpute#diskList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to" +
-            " continue a truncated list request (output only).\"},\"selfLink\":{\"type\":\"string\"," +
-            "\"description\":\"Server defined URL for this resource (output only).\"}}},\"Firewall" +
-            "\":{\"id\":\"Firewall\",\"type\":\"object\",\"properties\":{\"allowed\":{\"type\":\"array\",\"desc" +
-            "ription\":\"The list of rules specified by this firewall. Each rule specifies a pr" +
-            "otocol and port-range tuple that describes a permitted connection.\",\"items\":{\"ty" +
-            "pe\":\"object\",\"properties\":{\"IPProtocol\":{\"type\":\"string\",\"description\":\"Required" +
-            "; this is the IP protocol that is allowed for this rule. This can either be a we" +
-            "ll known protocol string (tcp, udp or icmp) or the IP protocol number.\"},\"ports\"" +
-            ":{\"type\":\"array\",\"description\":\"An optional list of ports which are allowed. It " +
-            "is an error to specify this for any protocol that isn\'t UDP or TCP. Each entry m" +
-            "ust be either an integer or a range. If not specified, connections through any p" +
-            "ort are allowed.\\nExample inputs include: [\\\"22\\\"], [\\\"80,\\\"443\\\"] and [\\\"12345-" +
-            "12349\\\"].\",\"items\":{\"type\":\"string\"}}}}},\"creationTimestamp\":{\"type\":\"string\",\"d" +
-            "escription\":\"Creation timestamp in RFC3339 text format (output only).\"},\"descrip" +
-            "tion\":{\"type\":\"string\",\"description\":\"An optional textual description of the res" +
-            "ource; provided by the client when the resource is created.\"},\"id\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Unique identifier for the resource; defined by the server (ou" +
-            "tput only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of t" +
-            "he resource.\",\"default\":\"compute#firewall\"},\"name\":{\"type\":\"string\",\"description" +
-            "\":\"Name of the resource; provided by the client when the resource is created. Th" +
-            "e name must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](" +
-            "?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.firewalls.inser" +
-            "t\",\"compute.firewalls.patch\"]}},\"network\":{\"type\":\"string\",\"description\":\"URL of" +
-            " the network to which this firewall is applied; provided by the client when the " +
-            "firewall is created.\",\"annotations\":{\"required\":[\"compute.firewalls.insert\",\"com" +
-            "pute.firewalls.patch\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defin" +
-            "ed URL for the resource (output only).\"},\"sourceRanges\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"A list of IP address blocks expressed in CIDR format which this rule appl" +
-            "ies to. One or both of sourceRanges and sourceTags may be set; an inbound connec" +
-            "tion is allowed if either the range or the tag of the source matches.\",\"items\":{" +
-            "\"type\":\"string\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9]{1,3}){3}/[0-9]{1,2}\"}},\"sourceT" +
-            "ags\":{\"type\":\"array\",\"description\":\"A list of instance tags which this rule appl" +
-            "ies to. One or both of sourceRanges and sourceTags may be set; an inbound connec" +
-            "tion is allowed if either the range or the tag of the source matches.\",\"items\":{" +
-            "\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"}},\"targetTags\":{\"t" +
-            "ype\":\"array\",\"description\":\"A list of instance tags indicating sets of instances" +
-            " located on network which may make network connections as specified in allowed. " +
-            "If no targetTags are specified, the firewall rule applies to all instances on th" +
-            "e specified network.\",\"items\":{\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61" +
-            "}[a-z0-9])?\"}}}},\"FirewallList\":{\"id\":\"FirewallList\",\"type\":\"object\",\"properties" +
-            "\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defi" +
-            "ned by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The fi" +
-            "rewall resources.\",\"items\":{\"$ref\":\"Firewall\"}},\"kind\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Type of resource.\",\"default\":\"compute#firewallList\"},\"nextPageToken\":{\"ty" +
-            "pe\":\"string\",\"description\":\"A token used to continue a truncated list request (o" +
-            "utput only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for" +
-            " this resource (output only).\"}}},\"Image\":{\"id\":\"Image\",\"type\":\"object\",\"propert" +
-            "ies\":{\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in " +
-            "RFC3339 text format (output only).\"},\"description\":{\"type\":\"string\",\"description" +
-            "\":\"Textual description of the resource; provided by the client when the resource" +
-            " is created.\"},\"diskSnapshot\":{\"type\":\"object\",\"description\":\"Not yet implemente" +
-            "d.\",\"properties\":{\"source\":{\"type\":\"string\",\"description\":\"URL of the disk snaps" +
-            "hot.\",\"annotations\":{\"required\":[\"compute.images.insert\"]}}}},\"id\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Unique identifier for the resource; defined by the server (ou" +
-            "tput only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of t" +
-            "he resource.\",\"default\":\"compute#image\"},\"name\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the resource; provided by the client when the resource is created. The n" +
-            "ame must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[" +
-            "-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.images.insert\"]}}," +
-            "\"preferredKernel\":{\"type\":\"string\",\"description\":\"An optional URL of the preferr" +
-            "ed kernel for use with this disk image. If not specified, a server defined defau" +
-            "lt kernel will be used.\"},\"rawDisk\":{\"type\":\"object\",\"description\":\"The raw disk" +
-            " image parameters.\",\"properties\":{\"containerType\":{\"type\":\"string\",\"description\"" +
-            ":\"The format used to encode and transmit the block device. Should be TAR. This i" +
-            "s just a container and transmission format and not a runtime format. Provided by" +
-            " the client when the disk image is created.\",\"default\":\"TAR\",\"annotations\":{\"req" +
-            "uired\":[\"compute.images.insert\"]}},\"sha1Checksum\":{\"type\":\"string\",\"description\"" +
-            ":\"An optional SHA1 checksum of the disk image before unpackaging; provided by th" +
-            "e client when the disk image is created.\",\"pattern\":\"[a-f0-9]{40}\"},\"source\":{\"t" +
-            "ype\":\"string\",\"description\":\"The full Google Cloud Storage URL where the disk im" +
-            "age is stored; provided by the client when the disk image is created.\",\"annotati" +
-            "ons\":{\"required\":[\"compute.images.insert\"]}}}},\"selfLink\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Server defined URL for the resource (output only).\"},\"sourceType\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Must be \\\"RAW\\\"; provided by the client when the dis" +
-            "k image is created.\",\"default\":\"RAW\",\"annotations\":{\"required\":[\"compute.images." +
-            "insert\"]}}}},\"ImageList\":{\"id\":\"ImageList\",\"type\":\"object\",\"properties\":{\"id\":{\"" +
-            "type\":\"string\",\"description\":\"Unique identifier for the resource; defined by the" +
-            " server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The disk image r" +
-            "esources.\",\"items\":{\"$ref\":\"Image\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type" +
-            " of resource.\",\"default\":\"compute#imageList\"},\"nextPageToken\":{\"type\":\"string\",\"" +
-            "description\":\"A token used to continue a truncated list request (output only).\"}" +
-            ",\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this resource" +
-            " (output only).\"}}},\"Instance\":{\"id\":\"Instance\",\"type\":\"object\",\"properties\":{\"c" +
-            "reationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339 " +
-            "text format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"An op" +
-            "tional textual description of the resource; provided by the client when the reso" +
-            "urce is created.\"},\"disks\":{\"type\":\"array\",\"description\":\"Array of disks associa" +
-            "ted with this instance. Persistent disks must be created before you can assign t" +
-            "hem.\",\"items\":{\"$ref\":\"AttachedDisk\"}},\"id\":{\"type\":\"string\",\"description\":\"Uniq" +
-            "ue identifier for the resource; defined by the server (output only).\",\"format\":\"" +
-            "uint64\"},\"image\":{\"type\":\"string\",\"description\":\"An optional URL of the disk ima" +
-            "ge resource to be to be installed on this instance; provided by the client when " +
-            "the instance is created. If not specified, the server will choose a default imag" +
-            "e.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"Type of the resource.\",\"default\":\"compute#instance\"},\"machin" +
-            "eType\":{\"type\":\"string\",\"description\":\"URL of the machine type resource describi" +
-            "ng which machine type to use to host the instance; provided by the client when t" +
-            "he instance is created.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}" +
-            "},\"metadata\":{\"$ref\":\"Metadata\",\"description\":\"Metadata key/value pairs assigned" +
-            " to this instance. Consists of custom metadata or predefined keys; see Instance " +
-            "documentation for more information.\"},\"name\":{\"type\":\"string\",\"description\":\"Nam" +
-            "e of the resource; provided by the client when the resource is created. The name" +
-            " must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-" +
-            "z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}," +
-            "\"networkInterfaces\":{\"type\":\"array\",\"description\":\"Array of configurations for t" +
-            "his interface. This specifies how this interface is configured to interact with " +
-            "other network services, such as connecting to the internet. Currently, ONE_TO_ON" +
-            "E_NAT is the only access config supported. If there are no accessConfigs specifi" +
-            "ed, then this instance will have no external internet access.\",\"items\":{\"$ref\":\"" +
-            "NetworkInterface\"}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined UR" +
-            "L for the resource (output only).\"},\"serviceAccounts\":{\"type\":\"array\",\"descripti" +
-            "on\":\"A list of service accounts each with specified scopes, for which access tok" +
-            "ens are to be made available to the instance through metadata queries.\",\"items\":" +
-            "{\"$ref\":\"ServiceAccount\"}},\"status\":{\"type\":\"string\",\"description\":\"Instance sta" +
-            "tus. One of the following values: \\\"PROVISIONING\\\", \\\"STAGING\\\", \\\"RUNNING\\\" (ou" +
-            "tput only).\"},\"statusMessage\":{\"type\":\"string\",\"description\":\"An optional, human" +
-            "-readable explanation of the status (output only).\"},\"tags\":{\"type\":\"array\",\"des" +
-            "cription\":\"An optional set of tags applied to this instance. Used to identify va" +
-            "lid sources or targets for network firewalls. Provided by the client when the in" +
-            "stance is created. Each tag must be 1-63 characters long, and comply with RFC103" +
-            "5.\",\"items\":{\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"}},\"zo" +
-            "ne\":{\"type\":\"string\",\"description\":\"URL of the zone resource describing where th" +
-            "is instance should be hosted; provided by the client when the instance is create" +
-            "d.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}}},\"InstanceList\":{\"" +
-            "id\":\"InstanceList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Unique identifier for the resource; defined by the server (output only).\"}" +
-            ",\"items\":{\"type\":\"array\",\"description\":\"A list of instance resources.\",\"items\":{" +
-            "\"$ref\":\"Instance\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"d" +
-            "efault\":\"compute#instanceList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"" +
-            "A token used to continue a truncated list request (output only).\"},\"selfLink\":{\"" +
-            "type\":\"string\",\"description\":\"Server defined URL for this resource (output only)" +
-            ".\"}}},\"Kernel\":{\"id\":\"Kernel\",\"type\":\"object\",\"properties\":{\"creationTimestamp\":" +
-            "{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339 text format (outpu" +
-            "t only).\"},\"description\":{\"type\":\"string\",\"description\":\"An optional textual des" +
-            "cription of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifi" +
-            "er for the resource; defined by the server (output only).\",\"format\":\"uint64\"},\"k" +
-            "ind\":{\"type\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#k" +
-            "ernel\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the resource.\",\"pattern\":" +
-            "\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"},\"selfLink\":{\"type\":\"string\",\"description\":\"" +
-            "Server defined URL for the resource (output only).\"}}},\"KernelList\":{\"id\":\"Kerne" +
-            "lList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique" +
-            " identifier for the resource; defined by the server (output only).\"},\"items\":{\"t" +
-            "ype\":\"array\",\"description\":\"The kernel resources.\",\"items\":{\"$ref\":\"Kernel\"}},\"k" +
-            "ind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"default\":\"compute#kerne" +
-            "lList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to continue" +
-            " a truncated list request (output only).\"},\"selfLink\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Server defined URL for this resource (output only).\"}}},\"MachineType\":{\"id" +
-            "\":\"MachineType\",\"type\":\"object\",\"properties\":{\"availableZone\":{\"type\":\"array\",\"d" +
-            "escription\":\"The zones that this machine type can run in.\",\"items\":{\"type\":\"any\"" +
-            "}},\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC" +
-            "3339 text format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"" +
-            "An optional textual description of the resource.\"},\"ephemeralDisks\":{\"type\":\"arr" +
-            "ay\",\"description\":\"List of extended ephemeral disks assigned to the instance.\",\"" +
-            "items\":{\"type\":\"object\",\"properties\":{\"diskGb\":{\"type\":\"integer\",\"description\":\"" +
-            "Size of the ephemeral disk, defined in GB.\",\"format\":\"int32\"}}}},\"guestCpus\":{\"t" +
-            "ype\":\"integer\",\"description\":\"Count of CPUs exposed to the instance.\",\"format\":\"" +
-            "int32\"},\"hostCpus\":{\"type\":\"number\",\"description\":\"Count of physical CPUs reserv" +
-            "ed on the virtual machine host. Deprecated.\",\"format\":\"double\"},\"id\":{\"type\":\"st" +
-            "ring\",\"description\":\"Unique identifier for the resource; defined by the server (" +
-            "output only).\",\"format\":\"uint64\"},\"imageSpaceGb\":{\"type\":\"integer\",\"description\"" +
-            ":\"Space allotted for the image, defined in GB.\",\"format\":\"int32\"},\"kind\":{\"type\"" +
-            ":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#machineType\"}" +
-            ",\"maximumPersistentDisks\":{\"type\":\"integer\",\"description\":\"Maximum persistent di" +
-            "sks allowed.\",\"format\":\"int32\"},\"maximumPersistentDisksSizeGb\":{\"type\":\"string\"," +
-            "\"description\":\"Maximum total persistent disks size (GB) allowed.\",\"format\":\"int6" +
-            "4\"},\"memoryMb\":{\"type\":\"integer\",\"description\":\"Physical memory assigned to the " +
-            "instance, defined in MB.\",\"format\":\"int32\"},\"name\":{\"type\":\"string\",\"description" +
-            "\":\"Name of the resource.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"},\"selfLi" +
-            "nk\":{\"type\":\"string\",\"description\":\"Server defined URL for the resource (output " +
-            "only).\"}}},\"MachineTypeList\":{\"id\":\"MachineTypeList\",\"type\":\"object\",\"properties" +
-            "\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defi" +
-            "ned by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The ma" +
-            "chine type resources.\",\"items\":{\"$ref\":\"MachineType\"}},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"Type of resource.\",\"default\":\"compute#machineTypeList\"},\"nextPageT" +
-            "oken\":{\"type\":\"string\",\"description\":\"A token used to continue a truncated list " +
-            "request (output only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defin" +
-            "ed URL for this resource (output only).\"}}},\"Metadata\":{\"id\":\"Metadata\",\"type\":\"" +
-            "object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Array of key/value " +
-            "pairs. The total size of all keys and values must be less than 512 KB.\",\"items\":" +
-            "{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\",\"description\":\"Key for the" +
-            " metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and " +
-            "be less than 128 bytes in length. This is reflected as part of a URL in the meta" +
-            "data server. Additionally, to avoid ambiguity, keys must be unique.\",\"pattern\":\"" +
-            "[a-zA-Z0-9-_]{1,128}\",\"annotations\":{\"required\":[\"compute.instances.insert\",\"com" +
-            "pute.projects.setCommonInstanceMetadata\"]}},\"value\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Value for the metadata entry. These are free-form strings, and only have mea" +
-            "ning as interpreted by the image running in the instance. The only restriction p" +
-            "laced on values is that their size must be less than or equal to 15000 bytes.\",\"" +
-            "annotations\":{\"required\":[\"compute.instances.insert\",\"compute.projects.setCommon" +
-            "InstanceMetadata\"]}}}}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resou" +
-            "rce.\",\"default\":\"compute#metadata\"}}},\"Network\":{\"id\":\"Network\",\"type\":\"object\"," +
-            "\"properties\":{\"IPv4Range\":{\"type\":\"string\",\"description\":\"Required; The range of" +
-            " internal addresses that are legal on this network. This range is a CIDR specifi" +
-            "cation, for example: 192.168.0.0/16. Provided by the client when the network is " +
-            "created.\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9]{1,3}){3}/[0-9]{1,2}\",\"annotations\":{\"" +
-            "required\":[\"compute.networks.insert\"]}},\"creationTimestamp\":{\"type\":\"string\",\"de" +
-            "scription\":\"Creation timestamp in RFC3339 text format (output only).\"},\"descript" +
-            "ion\":{\"type\":\"string\",\"description\":\"An optional textual description of the reso" +
-            "urce; provided by the client when the resource is created.\"},\"gatewayIPv4\":{\"typ" +
-            "e\":\"string\",\"description\":\"An optional address that is used for default routing " +
-            "to other networks. This must be within the range specified by IPv4Range, and is " +
-            "typically the first usable address in that range. If not specified, the default " +
-            "value is the first usable address in IPv4Range.\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9" +
-            "]{1,3}){3}\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the reso" +
-            "urce; defined by the server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Type of the resource.\",\"default\":\"compute#network\"},\"name\"" +
-            ":{\"type\":\"string\",\"description\":\"Name of the resource; provided by the client wh" +
-            "en the resource is created. The name must be 1-63 characters long, and comply wi" +
-            "th RFC1035.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"requi" +
-            "red\":[\"compute.networks.insert\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"Se" +
-            "rver defined URL for the resource (output only).\"}}},\"NetworkInterface\":{\"id\":\"N" +
-            "etworkInterface\",\"type\":\"object\",\"properties\":{\"accessConfigs\":{\"type\":\"array\",\"" +
-            "description\":\"Array of configurations for this interface. This specifies how thi" +
-            "s interface is configured to interact with other network services, such as conne" +
-            "cting to the internet. Currently, ONE_TO_ONE_NAT is the only access config suppo" +
-            "rted. If there are no accessConfigs specified, then this instance will have no e" +
-            "xternal internet access.\",\"items\":{\"$ref\":\"AccessConfig\"}},\"kind\":{\"type\":\"strin" +
-            "g\",\"description\":\"Type of the resource.\",\"default\":\"compute#networkInterface\"},\"" +
-            "name\":{\"type\":\"string\",\"description\":\"Name of the resource, determined by the se" +
-            "rver; for network devices, these are e.g. eth0, eth1, etc. (output only).\"},\"net" +
-            "work\":{\"type\":\"string\",\"description\":\"URL of the network resource attached to th" +
-            "is interface.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}},\"network" +
-            "IP\":{\"type\":\"string\",\"description\":\"An optional IPV4 internal network address to" +
-            " assign to this instance. If not specified, one will be assigned from the availa" +
-            "ble range.\"}}},\"NetworkList\":{\"id\":\"NetworkList\",\"type\":\"object\",\"properties\":{\"" +
-            "id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined " +
-            "by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The networ" +
-            "k resources.\",\"items\":{\"$ref\":\"Network\"}},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"Type of resource.\",\"default\":\"compute#networkList\"},\"nextPageToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"A token used to continue a truncated list request (output o" +
-            "nly).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this r" +
-            "esource (output only).\"}}},\"Operation\":{\"id\":\"Operation\",\"type\":\"object\",\"proper" +
-            "ties\":{\"clientOperationId\":{\"type\":\"string\",\"description\":\"An optional identifie" +
-            "r specified by the client when the mutation was initiated. Must be unique for al" +
-            "l operation resources in the project (output only).\"},\"creationTimestamp\":{\"type" +
-            "\":\"string\",\"description\":\"Creation timestamp in RFC3339 text format (output only" +
-            ").\"},\"endTime\":{\"type\":\"string\",\"description\":\"The time that this operation was " +
-            "completed. This is in RFC 3339 format (output only).\"},\"error\":{\"type\":\"object\"," +
-            "\"description\":\"If errors occurred during processing of this operation, this fiel" +
-            "d will be populated (output only).\",\"properties\":{\"errors\":{\"type\":\"array\",\"desc" +
-            "ription\":\"The array of errors encountered while processing this operation.\",\"ite" +
-            "ms\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\":\"The er" +
-            "ror type identifier for this error.\"},\"location\":{\"type\":\"string\",\"description\":" +
-            "\"Indicates the field in the request which caused the error. This property is opt" +
-            "ional.\"},\"message\":{\"type\":\"string\",\"description\":\"An optional, human-readable e" +
-            "rror message.\"}}}}}},\"httpErrorMessage\":{\"type\":\"string\",\"description\":\"If opera" +
-            "tion fails, the HTTP error message returned, e.g. NOT FOUND. (output only).\"},\"h" +
-            "ttpErrorStatusCode\":{\"type\":\"integer\",\"description\":\"If operation fails, the HTT" +
-            "P error status code returned, e.g. 404. (output only).\",\"format\":\"int32\"},\"id\":{" +
-            "\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined by th" +
-            "e server (output only).\",\"format\":\"uint64\"},\"insertTime\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The time that this operation was requested. This is in RFC 3339 format " +
-            "(output only).\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource.\",\"" +
-            "default\":\"compute#operation\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the" +
-            " resource.\"},\"operationType\":{\"type\":\"string\",\"description\":\"Type of the operati" +
-            "on. Examples include \\\"insert\\\", \\\"update\\\", and \\\"delete\\\" (output only).\"},\"pr" +
-            "ogress\":{\"type\":\"integer\",\"description\":\"An optional progress indicator that ran" +
-            "ges from 0 to 100. There is no requirement that this be linear or support any gr" +
-            "anularity of operations. This should not be used to guess at when the operation " +
-            "will be complete. This number should be monotonically increasing as the operatio" +
-            "n progresses (output only).\",\"format\":\"int32\"},\"selfLink\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Server defined URL for the resource (output only).\"},\"startTime\":{\"typ" +
-            "e\":\"string\",\"description\":\"The time that this operation was started by the serve" +
-            "r. This is in RFC 3339 format (output only).\"},\"status\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Status of the operation. Can be one of the following: \\\"PENDING\\\", \\\"RUN" +
-            "NING\\\", or \\\"DONE\\\" (output only).\"},\"statusMessage\":{\"type\":\"string\",\"descripti" +
-            "on\":\"An optional textual description of the current status of the operation (out" +
-            "put only).\"},\"targetId\":{\"type\":\"string\",\"description\":\"Unique target id which i" +
-            "dentifies a particular incarnation of the target (output only).\",\"format\":\"uint6" +
-            "4\"},\"targetLink\":{\"type\":\"string\",\"description\":\"URL of the resource the operati" +
-            "on is mutating (output only).\"},\"user\":{\"type\":\"string\",\"description\":\"User who " +
-            "requested the operation, for example \\\"user@example.com\\\" (output only).\"}}},\"Op" +
-            "erationList\":{\"id\":\"OperationList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"s" +
-            "tring\",\"description\":\"Unique identifier for the resource; defined by the server " +
-            "(output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The operation resources." +
-            "\",\"items\":{\"$ref\":\"Operation\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of r" +
-            "esource.\",\"default\":\"compute#operationList\"},\"nextPageToken\":{\"type\":\"string\",\"d" +
-            "escription\":\"A token used to continue a truncated list request (output only).\"}," +
-            "\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this resource " +
-            "(output only).\"}}},\"Project\":{\"id\":\"Project\",\"type\":\"object\",\"properties\":{\"comm" +
-            "onInstanceMetadata\":{\"$ref\":\"Metadata\",\"description\":\"Metadata key/value pairs a" +
-            "vailable to all instances contained in this project.\"},\"creationTimestamp\":{\"typ" +
-            "e\":\"string\",\"description\":\"Creation timestamp in RFC3339 text format (output onl" +
-            "y).\"},\"description\":{\"type\":\"string\",\"description\":\"An optional textual descript" +
-            "ion of the resource.\"},\"externalIpAddresses\":{\"type\":\"array\",\"description\":\"Inte" +
-            "rnet available IP addresses available for use in this project.\",\"items\":{\"type\":" +
-            "\"string\"}},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resour" +
-            "ce; defined by the server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"Type of the resource.\",\"default\":\"compute#project\"},\"name\":{" +
-            "\"type\":\"string\",\"description\":\"Name of the resource.\"},\"quotas\":{\"type\":\"array\"," +
-            "\"description\":\"Quotas assigned to this project.\",\"items\":{\"type\":\"object\",\"prope" +
-            "rties\":{\"limit\":{\"type\":\"number\",\"description\":\"Quota limit for this metric.\",\"f" +
-            "ormat\":\"double\"},\"metric\":{\"type\":\"string\",\"description\":\"Name of the quota metr" +
-            "ic.\"},\"usage\":{\"type\":\"number\",\"description\":\"Current usage of this metric.\",\"fo" +
-            "rmat\":\"double\"}}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL" +
-            " for the resource (output only).\"}}},\"ServiceAccount\":{\"id\":\"ServiceAccount\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"email\":{\"type\":\"string\",\"description\":\"Email address" +
-            " of the service account.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the re" +
-            "source.\",\"default\":\"compute#serviceAccount\"},\"scopes\":{\"type\":\"array\",\"descripti" +
-            "on\":\"The list of scopes to be made available for this service account.\",\"items\":" +
-            "{\"type\":\"string\"}}}},\"Snapshot\":{\"id\":\"Snapshot\",\"type\":\"object\",\"properties\":{\"" +
-            "creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339" +
-            " text format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"An o" +
-            "ptional textual description of the resource; provided by the client when the res" +
-            "ource is created.\"},\"diskSizeGb\":{\"type\":\"string\",\"description\":\"Size of the per" +
-            "sistent disk snapshot, specified in GB (output only).\",\"format\":\"int64\"},\"id\":{\"" +
-            "type\":\"string\",\"description\":\"Unique identifier for the resource; defined by the" +
-            " server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\"" +
-            ":\"Type of the resource.\",\"default\":\"compute#snapshot\"},\"name\":{\"type\":\"string\",\"" +
-            "description\":\"Name of the resource; provided by the client when the resource is " +
-            "created. The name must be 1-63 characters long, and comply with RFC1035.\",\"patte" +
-            "rn\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.snap" +
-            "shots.insert\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL f" +
-            "or the resource (output only).\"},\"sourceDisk\":{\"type\":\"string\",\"description\":\"Th" +
-            "e source disk used to create this snapshot. Once the source disk has been delete" +
-            "d from the system, this field will be cleared, and will not be set even if a dis" +
-            "k with the same name has been re-created.\"},\"sourceDiskId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The \'id\' value of the disk used to create this snapshot. This value m" +
-            "ay be used to determine whether the snapshot was taken from the current or a pre" +
-            "vious instance of a given disk name.\"},\"status\":{\"type\":\"string\",\"description\":\"" +
-            "The status of the persistent disk snapshot (output only).\"}}},\"SnapshotList\":{\"i" +
-            "d\":\"SnapshotList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Unique identifier for the resource; defined by the server (output only).\"}," +
-            "\"items\":{\"type\":\"array\",\"description\":\"The persistent snapshot resources.\",\"item" +
-            "s\":{\"$ref\":\"Snapshot\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource." +
-            "\",\"default\":\"compute#snapshotList\"},\"nextPageToken\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"A token used to continue a truncated list request (output only).\"},\"selfLink" +
-            "\":{\"type\":\"string\",\"description\":\"Server defined URL for this resource (output o" +
-            "nly).\"}}},\"Zone\":{\"id\":\"Zone\",\"type\":\"object\",\"properties\":{\"availableMachineTyp" +
-            "e\":{\"type\":\"array\",\"description\":\"The machine types that can be used in this zon" +
-            "e (output only).\",\"items\":{\"type\":\"any\"}},\"creationTimestamp\":{\"type\":\"string\",\"" +
-            "description\":\"Creation timestamp in RFC3339 text format (output only).\"},\"descri" +
-            "ption\":{\"type\":\"string\",\"description\":\"Textual description of the resource.\"},\"i" +
-            "d\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined b" +
-            "y the server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Type of the resource.\",\"default\":\"compute#zone\"},\"maintenanceWindows\":{\"t" +
-            "ype\":\"array\",\"description\":\"Scheduled maintenance windows for the zone. When the" +
-            " zone is in a maintenance window, all resources which reside in the zone will be" +
-            " unavailable.\",\"items\":{\"type\":\"object\",\"properties\":{\"beginTime\":{\"type\":\"strin" +
-            "g\",\"description\":\"Begin time of the maintenance window, in RFC 3339 format.\"},\"d" +
-            "escription\":{\"type\":\"string\",\"description\":\"Textual description of the maintenan" +
-            "ce window.\"},\"endTime\":{\"type\":\"string\",\"description\":\"End time of the maintenan" +
-            "ce window, in RFC 3339 format.\"},\"name\":{\"type\":\"string\",\"description\":\"Name of " +
-            "the maintenance window.\"}}}},\"name\":{\"type\":\"string\",\"description\":\"Name of the " +
-            "resource.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for th" +
-            "e resource (output only).\"},\"status\":{\"type\":\"string\",\"description\":\"Status of t" +
-            "he zone. \\\"UP\\\" or \\\"DOWN\\\".\"}}},\"ZoneList\":{\"id\":\"ZoneList\",\"type\":\"object\",\"pr" +
-            "operties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resour" +
-            "ce; defined by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\"" +
-            ":\"The zone resources.\",\"items\":{\"$ref\":\"Zone\"}},\"kind\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Type of resource.\",\"default\":\"compute#zoneList\"},\"nextPageToken\":{\"type\":" +
-            "\"string\",\"description\":\"A token used to continue a truncated list request (outpu" +
-            "t only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for thi" +
-            "s resource (output only).\"}}}},\"resources\":{\"disks\":{\"methods\":{\"delete\":{\"id\":\"" +
-            "compute.disks.delete\",\"path\":\"{project}/disks/{disk}\",\"httpMethod\":\"DELETE\",\"des" +
-            "cription\":\"Deletes the specified persistent disk resource.\",\"parameters\":{\"disk\"" +
-            ":{\"type\":\"string\",\"description\":\"Name of the persistent disk resource to delete." +
-            "\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path" +
-            "\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping this re" +
-            "quest.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9" +
-            "]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"loc" +
-            "ation\":\"path\"}},\"parameterOrder\":[\"project\",\"disk\"],\"response\":{\"$ref\":\"Operatio" +
-            "n\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.d" +
-            "isks.get\",\"path\":\"{project}/disks/{disk}\",\"httpMethod\":\"GET\",\"description\":\"Retu" +
-            "rns the specified persistent disk resource.\",\"parameters\":{\"disk\":{\"type\":\"strin" +
-            "g\",\"description\":\"Name of the persistent disk resource to return.\",\"required\":tr" +
-            "ue,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"" +
-            "type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"requir" +
-            "ed\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9]" +
-            ")?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"project\",\"disk\"],\"response\":{\"$ref\":\"Disk\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.disks.ins" +
-            "ert\",\"path\":\"{project}/disks\",\"httpMethod\":\"POST\",\"description\":\"Creates a persi" +
-            "stent disk resource in the specified project using the data included in the requ" +
-            "est.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the projec" +
-            "t scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?" +
-            ":[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[" +
-            "a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":" +
-            "\"Disk\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/compute\"]},\"list\":{\"id\":\"compute.disks.list\",\"path\":\"{project}/disks\",\"httpMe" +
-            "thod\":\"GET\",\"description\":\"Retrieves the list of persistent disk resources conta" +
-            "ined within the specified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"des" +
-            "cription\":\"Optional. Filter expression for filtering listed resources.\",\"locatio" +
-            "n\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum coun" +
-            "t of results to be returned. Maximum and default value is 100.\",\"default\":\"100\"," +
-            "\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":" +
-            "{\"type\":\"string\",\"description\":\"Optional. Tag returned by a previous list reques" +
-            "t truncated by maxResults. Used to continue a previous list request.\",\"location\"" +
-            ":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping " +
-            "this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[" +
-            "-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)" +
-            ")\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"DiskList" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]}}},\"firewalls\":" +
-            "{\"methods\":{\"delete\":{\"id\":\"compute.firewalls.delete\",\"path\":\"{project}/firewall" +
-            "s/{firewall}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the specified firewal" +
-            "l resource.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"description\":\"Name of th" +
-            "e firewall resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,6" +
-            "1}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name " +
-            "of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]" +
-            "{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a" +
-            "-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"firew" +
-            "all\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/compute\"]},\"get\":{\"id\":\"compute.firewalls.get\",\"path\":\"{project}/firewalls/{fir" +
-            "ewall}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified firewall resourc" +
-            "e.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"description\":\"Name of the firewal" +
-            "l resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9" +
-            "])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the pr" +
-            "oject scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\." +
-            ")*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0," +
-            "61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"firewall\"],\"re" +
-            "sponse\":{\"$ref\":\"Firewall\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.r" +
-            "eadonly\"]},\"insert\":{\"id\":\"compute.firewalls.insert\",\"path\":\"{project}/firewalls" +
-            "\",\"httpMethod\":\"POST\",\"description\":\"Creates a firewall resource in the specifie" +
-            "d project using the data included in the request.\",\"parameters\":{\"project\":{\"typ" +
-            "e\":\"string\",\"description\":\"Name of the project scoping this request.\",\"required\"" +
-            ":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)" +
-            ":)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Firewall\"},\"response\":{\"$ref\":\"Ope" +
-            "ration\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"list\":{\"id\":\"com" +
-            "pute.firewalls.list\",\"path\":\"{project}/firewalls\",\"httpMethod\":\"GET\",\"descriptio" +
-            "n\":\"Retrieves the list of firewall resources available to the specified project." +
-            "\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter expres" +
-            "sion for filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"" +
-            "integer\",\"description\":\"Optional. Maximum count of results to be returned. Maxim" +
-            "um and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"m" +
-            "aximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Op" +
-            "tional. Tag returned by a previous list request truncated by maxResults. Used to" +
-            " continue a previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"strin" +
-            "g\",\"description\":\"Name of the project scoping this request.\",\"required\":true,\"pa" +
-            "ttern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-" +
-            "9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"project\"],\"response\":{\"$ref\":\"FirewallList\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/compute.readonly\"]},\"patch\":{\"id\":\"compute.firewalls.patch\",\"pat" +
-            "h\":\"{project}/firewalls/{firewall}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates " +
-            "the specified firewall resource with the data included in the request. This meth" +
-            "od supports patch semantics.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Name of the firewall resource to update.\",\"required\":true,\"pattern\":\"[a-z" +
-            "](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"de" +
-            "scription\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\"" +
-            ":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,1" +
-            "9}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"project\",\"firewall\"],\"request\":{\"$ref\":\"Firewall\"},\"response\":{\"$ref\":\"Operati" +
-            "on\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"update\":{\"id\":\"compu" +
-            "te.firewalls.update\",\"path\":\"{project}/firewalls/{firewall}\",\"httpMethod\":\"PUT\"," +
-            "\"description\":\"Updates the specified firewall resource with the data included in" +
-            " the request.\",\"parameters\":{\"firewall\":{\"type\":\"string\",\"description\":\"Name of " +
-            "the firewall resource to update.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0" +
-            ",61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Nam" +
-            "e of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-" +
-            "9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[" +
-            "-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"fir" +
-            "ewall\"],\"request\":{\"$ref\":\"Firewall\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/compute\"]}}},\"images\":{\"methods\":{\"delete\":{\"id" +
-            "\":\"compute.images.delete\",\"path\":\"{project}/images/{image}\",\"httpMethod\":\"DELETE" +
-            "\",\"description\":\"Deletes the specified image resource.\",\"parameters\":{\"image\":{\"" +
-            "type\":\"string\",\"description\":\"Name of the image resource to delete.\",\"required\":" +
-            "true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":" +
-            "{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"requ" +
-            "ired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-" +
-            "9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"" +
-            "}},\"parameterOrder\":[\"project\",\"image\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.images.get\",\"" +
-            "path\":\"{project}/images/{image}\",\"httpMethod\":\"GET\",\"description\":\"Returns the s" +
-            "pecified image resource.\",\"parameters\":{\"image\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the image resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0" +
-            "-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\"" +
-            ":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-" +
-            "a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z" +
-            "](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"" +
-            ",\"image\"],\"response\":{\"$ref\":\"Image\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/compute.readonly\"]},\"insert\":{\"id\":\"compute.images.insert\",\"path\":\"{project}/im" +
-            "ages\",\"httpMethod\":\"POST\",\"description\":\"Creates an image resource in the specif" +
-            "ied project using the data included in the request.\",\"parameters\":{\"project\":{\"t" +
-            "ype\":\"string\",\"description\":\"Name of the project scoping this request.\",\"require" +
-            "d\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])" +
-            "?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Image\"},\"response\":{\"$ref\":\"Oper" +
-            "ation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\",\"https://www.googlea" +
-            "pis.com/auth/devstorage.read_only\"]},\"list\":{\"id\":\"compute.images.list\",\"path\":\"" +
-            "{project}/images\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of image " +
-            "resources available to the specified project.\",\"parameters\":{\"filter\":{\"type\":\"s" +
-            "tring\",\"description\":\"Optional. Filter expression for filtering listed resources" +
-            ".\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. M" +
-            "aximum count of results to be returned. Maximum and default value is 100.\",\"defa" +
-            "ult\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"" +
-            "pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag returned by a previous " +
-            "list request truncated by maxResults. Used to continue a previous list request.\"" +
-            ",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the proje" +
-            "ct scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(" +
-            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}" +
-            "[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref" +
-            "\":\"ImageList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]}}}," +
-            "\"instances\":{\"methods\":{\"addAccessConfig\":{\"id\":\"compute.instances.addAccessConf" +
-            "ig\",\"path\":\"{project}/instances/{instance}/add-access-config\",\"httpMethod\":\"POST" +
-            "\",\"description\":\"Adds an access config to an instance\'s network interface.\",\"par" +
-            "ameters\":{\"instance\":{\"type\":\"string\",\"description\":\"Instance name.\",\"required\":" +
-            "true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"network_i" +
-            "nterface\":{\"type\":\"string\",\"description\":\"Network interface name.\",\"required\":tr" +
-            "ue,\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Project name.\"," +
-            "\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[" +
-            "a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"project\",\"instance\",\"network_interface\"],\"request\":{\"" +
-            "$ref\":\"AccessConfig\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/compute\"]},\"delete\":{\"id\":\"compute.instances.delete\",\"path\":\"{p" +
-            "roject}/instances/{instance}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the s" +
-            "pecified instance resource.\",\"parameters\":{\"instance\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Name of the instance resource to delete.\",\"required\":true,\"pattern\":\"[a-z]" +
-            "(?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"des" +
-            "cription\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":" +
-            "\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19" +
-            "}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[" +
-            "\"project\",\"instance\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/compute\"]},\"deleteAccessConfig\":{\"id\":\"compute.instances.delete" +
-            "AccessConfig\",\"path\":\"{project}/instances/{instance}/delete-access-config\",\"http" +
-            "Method\":\"POST\",\"description\":\"Deletes an access config from an instance\'s networ" +
-            "k interface.\",\"parameters\":{\"access_config\":{\"type\":\"string\",\"description\":\"Acce" +
-            "ss config name.\",\"required\":true,\"location\":\"query\"},\"instance\":{\"type\":\"string\"" +
-            ",\"description\":\"Instance name.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,6" +
-            "1}[a-z0-9])?\",\"location\":\"path\"},\"network_interface\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Network interface name.\",\"required\":true,\"location\":\"query\"},\"project\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Project name.\",\"required\":true,\"pattern\":\"(?:(?:[-a-" +
-            "z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](" +
-            "?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"" +
-            "instance\",\"access_config\",\"network_interface\"],\"response\":{\"$ref\":\"Operation\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.instan" +
-            "ces.get\",\"path\":\"{project}/instances/{instance}\",\"httpMethod\":\"GET\",\"description" +
-            "\":\"Returns the specified instance resource.\",\"parameters\":{\"instance\":{\"type\":\"s" +
-            "tring\",\"description\":\"Name of the instance resource to return.\",\"required\":true," +
-            "\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"typ" +
-            "e\":\"string\",\"description\":\"Name of the project scoping this request.\",\"required\"" +
-            ":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)" +
-            ":)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"project\",\"instance\"],\"response\":{\"$ref\":\"Instance\"},\"scopes\":[\"" +
-            "https://www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.inst" +
-            "ances.insert\",\"path\":\"{project}/instances\",\"httpMethod\":\"POST\",\"description\":\"Cr" +
-            "eates an instance resource in the specified project using the data included in t" +
-            "he request.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the" +
-            " project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}" +
-            "\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]" +
-            "{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{" +
-            "\"$ref\":\"Instance\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/compute\"]},\"list\":{\"id\":\"compute.instances.list\",\"path\":\"{project}" +
-            "/instances\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of instance res" +
-            "ources contained within the specified project.\",\"parameters\":{\"filter\":{\"type\":\"" +
-            "string\",\"description\":\"Optional. Filter expression for filtering listed resource" +
-            "s.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. " +
-            "Maximum count of results to be returned. Maximum and default value is 100.\",\"def" +
-            "ault\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"}," +
-            "\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag returned by a previous" +
-            " list request truncated by maxResults. Used to continue a previous list request." +
-            "\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the proj" +
-            "ect scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*" +
-            "(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61" +
-            "}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$re" +
-            "f\":\"InstanceList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]" +
-            "}}},\"kernels\":{\"methods\":{\"get\":{\"id\":\"compute.kernels.get\",\"path\":\"{project}/ke" +
-            "rnels/{kernel}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified kernel r" +
-            "esource.\",\"parameters\":{\"kernel\":{\"type\":\"string\",\"description\":\"Name of the ker" +
-            "nel resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0" +
-            "-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the " +
-            "project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\" +
-            "\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{" +
-            "0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"kernel\"],\"re" +
-            "sponse\":{\"$ref\":\"Kernel\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.rea" +
-            "donly\"]},\"list\":{\"id\":\"compute.kernels.list\",\"path\":\"{project}/kernels\",\"httpMet" +
-            "hod\":\"GET\",\"description\":\"Retrieves the list of kernel resources available to th" +
-            "e specified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Opt" +
-            "ional. Filter expression for filtering listed resources.\",\"location\":\"query\"},\"m" +
-            "axResults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum count of results t" +
-            "o be returned. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint" +
-            "32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"strin" +
-            "g\",\"description\":\"Optional. Tag returned by a previous list request truncated by" +
-            " maxResults. Used to continue a previous list request.\",\"location\":\"query\"},\"pro" +
-            "ject\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\"" +
-            ",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}" +
-            "[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":" +
-            "\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"KernelList\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/compute.readonly\"]}}},\"machineTypes\":{\"methods" +
-            "\":{\"get\":{\"id\":\"compute.machineTypes.get\",\"path\":\"{project}/machine-types/{machi" +
-            "neType}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified machine type re" +
-            "source.\",\"parameters\":{\"machineType\":{\"type\":\"string\",\"description\":\"Name of the" +
-            " machine type resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{" +
-            "0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Na" +
-            "me of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0" +
-            "-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:" +
-            "[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"ma" +
-            "chineType\"],\"response\":{\"$ref\":\"MachineType\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/compute.readonly\"]},\"list\":{\"id\":\"compute.machineTypes.list\",\"path\":\"{p" +
-            "roject}/machine-types\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of m" +
-            "achine type resources available to the specified project.\",\"parameters\":{\"filter" +
-            "\":{\"type\":\"string\",\"description\":\"Optional. Filter expression for filtering list" +
-            "ed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":" +
-            "\"Optional. Maximum count of results to be returned. Maximum and default value is" +
-            " 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location" +
-            "\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag returned by" +
-            " a previous list request truncated by maxResults. Used to continue a previous li" +
-            "st request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name " +
-            "of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]" +
-            "{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a" +
-            "-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"resp" +
-            "onse\":{\"$ref\":\"MachineTypeList\"},\"scopes\":[\"https://www.googleapis.com/auth/comp" +
-            "ute.readonly\"]}}},\"networks\":{\"methods\":{\"delete\":{\"id\":\"compute.networks.delete" +
-            "\",\"path\":\"{project}/networks/{network}\",\"httpMethod\":\"DELETE\",\"description\":\"Del" +
-            "etes the specified network resource.\",\"parameters\":{\"network\":{\"type\":\"string\",\"" +
-            "description\":\"Name of the network resource to delete.\",\"required\":true,\"pattern\"" +
-            ":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"strin" +
-            "g\",\"description\":\"Name of the project scoping this request.\",\"required\":true,\"pa" +
-            "ttern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-" +
-            "9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"project\",\"network\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.networks.get\",\"path\":\"{pr" +
-            "oject}/networks/{network}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specifi" +
-            "ed network resource.\",\"parameters\":{\"network\":{\"type\":\"string\",\"description\":\"Na" +
-            "me of the network resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0" +
-            "-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\"" +
-            ":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-" +
-            "a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z" +
-            "](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"" +
-            ",\"network\"],\"response\":{\"$ref\":\"Network\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.networks.insert\",\"path\":\"{proje" +
-            "ct}/networks\",\"httpMethod\":\"POST\",\"description\":\"Creates a network resource in t" +
-            "he specified project using the data included in the request.\",\"parameters\":{\"pro" +
-            "ject\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\"" +
-            ",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}" +
-            "[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":" +
-            "\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Network\"},\"response\":{\"" +
-            "$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"list\":" +
-            "{\"id\":\"compute.networks.list\",\"path\":\"{project}/networks\",\"httpMethod\":\"GET\",\"de" +
-            "scription\":\"Retrieves the list of network resources available to the specified p" +
-            "roject.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter" +
-            " expression for filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"" +
-            "type\":\"integer\",\"description\":\"Optional. Maximum count of results to be returned" +
-            ". Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\"" +
-            ":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Optional. Tag returned by a previous list request truncated by maxResults. " +
-            "Used to continue a previous list request.\",\"location\":\"query\"},\"project\":{\"type\"" +
-            ":\"string\",\"description\":\"Name of the project scoping this request.\",\"required\":t" +
-            "rue,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)" +
-            "?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"project\"],\"response\":{\"$ref\":\"NetworkList\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/compute.readonly\"]}}},\"operations\":{\"methods\":{\"delete\":{\"" +
-            "id\":\"compute.operations.delete\",\"path\":\"{project}/operations/{operation}\",\"httpM" +
-            "ethod\":\"DELETE\",\"description\":\"Deletes the specified operation resource.\",\"param" +
-            "eters\":{\"operation\":{\"type\":\"string\",\"description\":\"Name of the operation resour" +
-            "ce to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"lo" +
-            "cation\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project sc" +
-            "oping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-" +
-            "z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0" +
-            "-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"operation\"],\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.operations.get\"" +
-            ",\"path\":\"{project}/operations/{operation}\",\"httpMethod\":\"GET\",\"description\":\"Ret" +
-            "rieves the specified operation resource.\",\"parameters\":{\"operation\":{\"type\":\"str" +
-            "ing\",\"description\":\"Name of the operation resource to return.\",\"required\":true,\"" +
-            "pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type" +
-            "\":\"string\",\"description\":\"Name of the project scoping this request.\",\"required\":" +
-            "true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):" +
-            ")?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"project\",\"operation\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/compute.readonly\"]},\"list\":{\"id\":\"compute.opera" +
-            "tions.list\",\"path\":\"{project}/operations\",\"httpMethod\":\"GET\",\"description\":\"Retr" +
-            "ieves the list of operation resources contained within the specified project.\",\"" +
-            "parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter expressio" +
-            "n for filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"int" +
-            "eger\",\"description\":\"Optional. Maximum count of results to be returned. Maximum " +
-            "and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maxi" +
-            "mum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optio" +
-            "nal. Tag returned by a previous list request truncated by maxResults. Used to co" +
-            "ntinue a previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\"," +
-            "\"description\":\"Name of the project scoping this request.\",\"required\":true,\"patte" +
-            "rn\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{" +
-            "1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"project\"],\"response\":{\"$ref\":\"OperationList\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/compute.readonly\"]}}},\"projects\":{\"methods\":{\"get\":{\"id\":\"compute." +
-            "projects.get\",\"path\":\"{project}\",\"httpMethod\":\"GET\",\"description\":\"Returns the s" +
-            "pecified project resource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Name of the project resource to retrieve.\",\"required\":true,\"pattern\":\"(?:(?:" +
-            "[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a" +
-            "-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"projec" +
-            "t\"],\"response\":{\"$ref\":\"Project\"},\"scopes\":[\"https://www.googleapis.com/auth/com" +
-            "pute.readonly\"]},\"setCommonInstanceMetadata\":{\"id\":\"compute.projects.setCommonIn" +
-            "stanceMetadata\",\"path\":\"{project}/set-common-instance-metadata\",\"httpMethod\":\"PO" +
-            "ST\",\"description\":\"Sets metadata common to all instances within the specified pr" +
-            "oject using the data included in the request.\",\"parameters\":{\"project\":{\"type\":\"" +
-            "string\",\"description\":\"Name of the project scoping this request.\",\"required\":tru" +
-            "e,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(" +
-            "?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"project\"],\"request\":{\"$ref\":\"Metadata\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/compute\"]}}},\"snapshots\":{\"methods\":{\"delete\":{\"id\":\"compute.sna" +
-            "pshots.delete\",\"path\":\"{project}/snapshots/{snapshot}\",\"httpMethod\":\"DELETE\",\"de" +
-            "scription\":\"Deletes the specified persistent disk snapshot resource.\",\"parameter" +
-            "s\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping this r" +
-            "equest.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-" +
-            "9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"lo" +
-            "cation\":\"path\"},\"snapshot\":{\"type\":\"string\",\"description\":\"Name of the persisten" +
-            "t disk snapshot resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9" +
-            "]{0,61}[a-z0-9])?\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"snapshot\"],\"" +
-            "response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/comput" +
-            "e\"]},\"get\":{\"id\":\"compute.snapshots.get\",\"path\":\"{project}/snapshots/{snapshot}\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Returns the specified persistent disk snapsho" +
-            "t resource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the" +
-            " project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}" +
-            "\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]" +
-            "{0,61}[a-z0-9])?))\",\"location\":\"path\"},\"snapshot\":{\"type\":\"string\",\"description\"" +
-            ":\"Name of the persistent disk snapshot resource to return.\",\"required\":true,\"pat" +
-            "tern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"}},\"parameterOrder\":[" +
-            "\"project\",\"snapshot\"],\"response\":{\"$ref\":\"Snapshot\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.snapshots.insert\",\"p" +
-            "ath\":\"{project}/snapshots\",\"httpMethod\":\"POST\",\"description\":\"Creates a persiste" +
-            "nt disk snapshot resource in the specified project using the data included in th" +
-            "e request.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the " +
-            "project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\" +
-            "\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{" +
-            "0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"" +
-            "$ref\":\"Snapshot\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/compute\"]},\"list\":{\"id\":\"compute.snapshots.list\",\"path\":\"{project}/" +
-            "snapshots\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of persistent di" +
-            "sk snapshot resources contained within the specified project.\",\"parameters\":{\"fi" +
-            "lter\":{\"type\":\"string\",\"description\":\"Optional. Filter expression for filtering " +
-            "listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"Optional. Maximum count of results to be returned. Maximum and default valu" +
-            "e is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"loca" +
-            "tion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag returne" +
-            "d by a previous list request truncated by maxResults. Used to continue a previou" +
-            "s list request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"N" +
-            "ame of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z" +
-            "0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?" +
-            ":[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"" +
-            "response\":{\"$ref\":\"SnapshotList\"},\"scopes\":[\"https://www.googleapis.com/auth/com" +
-            "pute.readonly\"]}}},\"zones\":{\"methods\":{\"get\":{\"id\":\"compute.zones.get\",\"path\":\"{" +
-            "project}/zones/{zone}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified z" +
-            "one resource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of t" +
-            "he project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,6" +
-            "3}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-" +
-            "9]{0,61}[a-z0-9])?))\",\"location\":\"path\"},\"zone\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the zone resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-" +
-            "9]{0,61}[a-z0-9])?\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"zone\"],\"res" +
-            "ponse\":{\"$ref\":\"Zone\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readon" +
-            "ly\"]},\"list\":{\"id\":\"compute.zones.list\",\"path\":\"{project}/zones\",\"httpMethod\":\"G" +
-            "ET\",\"description\":\"Retrieves the list of zone resources available to the specifi" +
-            "ed project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Fi" +
-            "lter expression for filtering listed resources.\",\"location\":\"query\"},\"maxResults" +
-            "\":{\"type\":\"integer\",\"description\":\"Optional. Maximum count of results to be retu" +
-            "rned. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"mini" +
-            "mum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Optional. Tag returned by a previous list request truncated by maxResul" +
-            "ts. Used to continue a previous list request.\",\"location\":\"query\"},\"project\":{\"t" +
-            "ype\":\"string\",\"description\":\"Name of the project scoping this request.\",\"require" +
-            "d\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])" +
-            "?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"ZoneList\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/compute.readonly\"]}}}}}";
+    public partial class ComputeService : Google.Apis.Discovery.BaseRequestProvider {
         
         public const string Version = "v1beta12";
         
@@ -4004,8 +3163,11 @@ namespace Google.Apis.Compute.v1beta12 {
         
         private string _Key;
         
-        protected ComputeService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
+        
+        public ComputeService(Google.Apis.Authentication.IAuthenticator _authenticator) {
             this._authenticator = _authenticator;
             this._disks = new DisksResource(this, _authenticator);
             this._firewalls = new FirewallsResource(this, _authenticator);
@@ -4018,32 +3180,11 @@ namespace Google.Apis.Compute.v1beta12 {
             this._projects = new ProjectsResource(this, _authenticator);
             this._snapshots = new SnapshotsResource(this, _authenticator);
             this._zones = new ZonesResource(this, _authenticator);
+            this.InitParameters();
         }
         
         public ComputeService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
-        }
-        
-        public ComputeService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ComputeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/compute/v1beta12/projects/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
-            get {
-                return this._authenticator;
-            }
-        }
-        
-        public virtual string Name {
-            get {
-                return "compute";
-            }
-        }
-        
-        public virtual string BaseUri {
-            get {
-                return "https://www.googleapis.com/compute/v1beta12/projects/";
-            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -4056,25 +3197,55 @@ namespace Google.Apis.Compute.v1beta12 {
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
+        public override System.Collections.Generic.IList<string> Features {
+            get {
+                return new string[0];
+            }
+        }
+        
+        public override string Name {
+            get {
+                return "compute";
+            }
+        }
+        
+        public override string BaseUri {
+            get {
+                return "https://www.googleapis.com/compute/v1beta12/projects/";
+            }
+        }
+        
+        public override Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
+            get {
+                return this._serviceParameters;
+            }
+        }
+        
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(_authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -4147,6 +3318,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._disk = disk;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4187,16 +3359,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "disks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/disks/{disk}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("disk", Google.Apis.Util.Utilities.CreateRuntimeParameter("disk", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4214,6 +3406,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._disk = disk;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4254,16 +3447,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "disks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/disks/{disk}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("disk", Google.Apis.Util.Utilities.CreateRuntimeParameter("disk", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4281,6 +3494,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4323,20 +3537,39 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "disks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/disks";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4357,6 +3590,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4422,16 +3656,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "disks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/disks";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4503,6 +3759,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._firewall = firewall;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4543,16 +3800,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls/{firewall}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("firewall", Google.Apis.Util.Utilities.CreateRuntimeParameter("firewall", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4570,6 +3847,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._firewall = firewall;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4610,16 +3888,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls/{firewall}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("firewall", Google.Apis.Util.Utilities.CreateRuntimeParameter("firewall", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4637,6 +3935,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4679,20 +3978,39 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4713,6 +4031,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4778,16 +4097,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4808,6 +4149,7 @@ namespace Google.Apis.Compute.v1beta12 {
                 this.Body = body;
                 this._project = project;
                 this._firewall = firewall;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4858,20 +4200,40 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls/{firewall}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("firewall", Google.Apis.Util.Utilities.CreateRuntimeParameter("firewall", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4892,6 +4254,7 @@ namespace Google.Apis.Compute.v1beta12 {
                 this.Body = body;
                 this._project = project;
                 this._firewall = firewall;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4942,20 +4305,40 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls/{firewall}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("firewall", Google.Apis.Util.Utilities.CreateRuntimeParameter("firewall", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5013,6 +4396,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._image = image;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5053,16 +4437,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "images";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/images/{image}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("image", Google.Apis.Util.Utilities.CreateRuntimeParameter("image", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5080,6 +4484,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._image = image;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5120,16 +4525,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "images";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/images/{image}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("image", Google.Apis.Util.Utilities.CreateRuntimeParameter("image", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5147,6 +4572,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5189,20 +4615,39 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "images";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/images";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5223,6 +4668,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5288,16 +4734,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "images";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/images";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5378,6 +4846,7 @@ namespace Google.Apis.Compute.v1beta12 {
                 this._project = project;
                 this._instance = instance;
                 this._network_interface = network_interface;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5436,20 +4905,41 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "addAccessConfig";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances/{instance}/add-access-config";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("network_interface", Google.Apis.Util.Utilities.CreateRuntimeParameter("network_interface", true, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5467,6 +4957,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._instance = instance;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5507,16 +4998,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances/{instance}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5540,6 +5051,7 @@ namespace Google.Apis.Compute.v1beta12 {
                 this._instance = instance;
                 this._access_config = access_config;
                 this._network_interface = network_interface;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5596,16 +5108,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "deleteAccessConfig";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances/{instance}/delete-access-config";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("access_config", Google.Apis.Util.Utilities.CreateRuntimeParameter("access_config", true, "query", null, null, new string[0]));
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("network_interface", Google.Apis.Util.Utilities.CreateRuntimeParameter("network_interface", true, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5623,6 +5157,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._instance = instance;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5663,16 +5198,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances/{instance}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5690,6 +5245,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5732,20 +5288,39 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5766,6 +5341,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5831,16 +5407,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5885,6 +5483,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._kernel = kernel;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5925,16 +5524,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "kernels";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/kernels/{kernel}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("kernel", Google.Apis.Util.Utilities.CreateRuntimeParameter("kernel", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5955,6 +5574,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6020,16 +5640,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "kernels";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/kernels";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6074,6 +5716,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._machineType = machineType;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6114,16 +5757,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "machineTypes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/machine-types/{machineType}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("machineType", Google.Apis.Util.Utilities.CreateRuntimeParameter("machineType", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -6144,6 +5807,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6209,16 +5873,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "machineTypes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/machine-types";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6276,6 +5962,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._network = network;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6316,16 +6003,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "networks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/networks/{network}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("network", Google.Apis.Util.Utilities.CreateRuntimeParameter("network", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -6343,6 +6050,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._network = network;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6383,16 +6091,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "networks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/networks/{network}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("network", Google.Apis.Util.Utilities.CreateRuntimeParameter("network", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -6410,6 +6138,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6452,20 +6181,39 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "networks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/networks";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -6486,6 +6234,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6551,16 +6300,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "networks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/networks";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6612,6 +6383,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._operation = operation;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6652,16 +6424,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "operations";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/operations/{operation}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("operation", Google.Apis.Util.Utilities.CreateRuntimeParameter("operation", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -6679,6 +6471,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._operation = operation;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6719,16 +6512,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "operations";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/operations/{operation}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("operation", Google.Apis.Util.Utilities.CreateRuntimeParameter("operation", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -6749,6 +6562,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6814,16 +6628,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "operations";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/operations";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6864,6 +6700,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6896,16 +6733,35 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "projects";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -6923,6 +6779,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6965,20 +6822,39 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "projects";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "setCommonInstanceMetadata";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/set-common-instance-metadata";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -7036,6 +6912,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._snapshot = snapshot;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7076,16 +6953,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "snapshots";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/snapshots/{snapshot}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                parameters.Add("snapshot", Google.Apis.Util.Utilities.CreateRuntimeParameter("snapshot", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -7103,6 +7000,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._snapshot = snapshot;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7143,16 +7041,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "snapshots";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/snapshots/{snapshot}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                parameters.Add("snapshot", Google.Apis.Util.Utilities.CreateRuntimeParameter("snapshot", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -7170,6 +7088,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7212,20 +7131,39 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "snapshots";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/snapshots";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -7246,6 +7184,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7311,16 +7250,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "snapshots";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/snapshots";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -7365,6 +7326,7 @@ namespace Google.Apis.Compute.v1beta12 {
                     base(service) {
                 this._project = project;
                 this._zone = zone;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7405,16 +7367,36 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "zones";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/zones/{zone}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                parameters.Add("zone", Google.Apis.Util.Utilities.CreateRuntimeParameter("zone", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -7435,6 +7417,7 @@ namespace Google.Apis.Compute.v1beta12 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7500,16 +7483,38 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "zones";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/zones";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }

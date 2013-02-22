@@ -17,13 +17,14 @@ limitations under the License.
 using System;
 
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Dfareporting.v1_1;
 using Google.Apis.Dfareporting.v1_1.Data;
 using Google.Apis.Util;
-
 using Google.Apis.Samples.Helper;
+using Google.Apis.Discovery;
 
 namespace DfaReporting.Sample
 {
@@ -71,17 +72,22 @@ namespace DfaReporting.Sample
             // Display the header and initialize the sample.
             CommandLine.EnableExceptionHandling();
             CommandLine.DisplayGoogleSampleHeader("DFA Reporting API Command Line Sample");
-            
+
             // Register the authenticator.
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
+            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = credentials.ClientId,
+                    ClientSecret = credentials.ClientSecret
+                };
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
-            
+
             // Create the service.
-            var service = new DfareportingService(auth);
-            
+            var service = new DfareportingService(new BaseClientService.Initializer
+                {
+                    Authenticator = auth
+                });
+
             // Choose a user profile ID to use in the following samples.
             string userProfileId = GetUserProfileId(service);
 
@@ -90,10 +96,10 @@ namespace DfaReporting.Sample
 
             // Create and run a Floodlight report.
             CreateAndRunFloodlightReport(service, userProfileId);
-            
+
             // List all of the Reports you have access to.
             new GetAllReportsHelper(service).List(userProfileId, MaxReportPageSize);
-            
+
             CommandLine.PressAnyKeyToExit();
         }
 
@@ -159,19 +165,23 @@ namespace DfaReporting.Sample
             // .NET applications can be disassembled using a reflection tool.
             const string STORAGE = "google.samples.dotnet.dfareporting";
             const string KEY = "GV^F*(#$:P_NLOn890HC";
-            
+
             // Check if there is a cached refresh token available.
             IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
-            if (state != null) {
-                try {
+            if (state != null)
+            {
+                try
+                {
                     client.RefreshToken(state);
                     return state;
                     // Yes - we are done.
-                } catch (DotNetOpenAuth.Messaging.ProtocolException ex) {
+                }
+                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
+                {
                     CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
                 }
             }
-            
+
             // Retrieve the authorization from the user.
             state = AuthorizationMgr.RequestNativeAuthorization(client, DfaReportingScope, DevStorageScopeReadOnly);
             AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);

@@ -14,6 +14,36 @@ namespace Google.Apis.Youtube.v3.Data {
     using System.Collections.Generic;
     
     
+    /// <summary>Rights management policy for YouTube resources.</summary>
+    public class AccessPolicy {
+        
+        private System.Nullable<bool> _allowed;
+        
+        private System.Collections.Generic.IList<string> _exception;
+        
+        /// <summary>The value of allowed indicates whether the access to the policy is allowed or denied by default.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("allowed")]
+        public virtual System.Nullable<bool> Allowed {
+            get {
+                return this._allowed;
+            }
+            set {
+                this._allowed = value;
+            }
+        }
+        
+        /// <summary>A list of region codes that identify countries where the default policy do not apply.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("exception")]
+        public virtual System.Collections.Generic.IList<string> Exception {
+            get {
+                return this._exception;
+            }
+            set {
+                this._exception = value;
+            }
+        }
+    }
+    
     /// <summary>An activity resource contains information about an action that a particular channel, or user, has taken on YouTube. The actions reported in activity feeds include rating a video, sharing a video, marking a video as a favorite, commenting on a video, uploading a video, and so forth. Each activity resource identifies the type of action, the channel associated with the action, and the resource(s) associated with the action, such as the video that was rated or uploaded.</summary>
     public class Activity : Google.Apis.Requests.IDirectResponseSchema {
         
@@ -88,6 +118,8 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private ActivityContentDetails.BulletinData _bulletin;
         
+        private ActivityContentDetails.ChannelItemData _channelItem;
+        
         private ActivityContentDetails.CommentData _comment;
         
         private ActivityContentDetails.FavoriteData _favorite;
@@ -112,6 +144,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._bulletin = value;
+            }
+        }
+        
+        /// <summary>The channelItem object contains details about a resource which was added to a channel. This property is only present if the snippet.type is channelItem.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelItem")]
+        public virtual ActivityContentDetails.ChannelItemData ChannelItem {
+            get {
+                return this._channelItem;
+            }
+            set {
+                this._channelItem = value;
             }
         }
         
@@ -205,6 +248,23 @@ namespace Google.Apis.Youtube.v3.Data {
         
         /// <summary>The bulletin object contains details about a channel bulletin post. This object is only present if the snippet.type is bulletin.</summary>
         public class BulletinData {
+            
+            private ResourceId _resourceId;
+            
+            /// <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("resourceId")]
+            public virtual ResourceId ResourceId {
+                get {
+                    return this._resourceId;
+                }
+                set {
+                    this._resourceId = value;
+                }
+            }
+        }
+        
+        /// <summary>The channelItem object contains details about a resource which was added to a channel. This property is only present if the snippet.type is channelItem.</summary>
+        public class ChannelItemData {
             
             private ResourceId _resourceId;
             
@@ -753,7 +813,20 @@ namespace Google.Apis.Youtube.v3.Data {
     /// <summary>Details about the content of a channel.</summary>
     public class ChannelContentDetails {
         
+        private string _googlePlusUserId;
+        
         private ChannelContentDetails.RelatedPlaylistsData _relatedPlaylists;
+        
+        /// <summary>The googlePlusUserId object identifies the Google+ profile ID associated with this channel.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("googlePlusUserId")]
+        public virtual string GooglePlusUserId {
+            get {
+                return this._googlePlusUserId;
+            }
+            set {
+                this._googlePlusUserId = value;
+            }
+        }
         
         /// <summary>The relatedPlaylists object is a map that identifies playlists associated with the channel, such as the channel&apos;s uploaded videos or favorite videos. You can retrieve any of these playlists using the playlists.list method.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("relatedPlaylists")]
@@ -921,8 +994,6 @@ namespace Google.Apis.Youtube.v3.Data {
     /// <summary>Basic details about a channel, including title, description and thumbnails.</summary>
     public class ChannelSnippet {
         
-        private string _channelId;
-        
         private string _description;
         
         private string _publishedAt;
@@ -931,18 +1002,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _title;
         
-        /// <summary>The ID that YouTube uses to uniquely identify the channel.</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
-        public virtual string ChannelId {
-            get {
-                return this._channelId;
-            }
-            set {
-                this._channelId = value;
-            }
-        }
-        
-        /// <summary>The channel&apos;s description.</summary>
+        /// <summary>The description of the channel.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
@@ -1249,6 +1309,893 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._title = value;
+            }
+        }
+    }
+    
+    /// <summary>A live broadcast describes live event configuration.</summary>
+    public class LiveBroadcast : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private LiveBroadcastContentDetails _contentDetails;
+        
+        private string _etag;
+        
+        private string _id;
+        
+        private string _kind;
+        
+        private LiveBroadcastSlateSettings _slateSettings;
+        
+        private LiveBroadcastSnippet _snippet;
+        
+        private LiveBroadcastStatus _status;
+        
+        /// <summary>Slate settings of a broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("contentDetails")]
+        public virtual LiveBroadcastContentDetails ContentDetails {
+            get {
+                return this._contentDetails;
+            }
+            set {
+                this._contentDetails = value;
+            }
+        }
+        
+        /// <summary>The eTag of the broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("etag")]
+        public virtual string ETag {
+            get {
+                return this._etag;
+            }
+            set {
+                this._etag = value;
+            }
+        }
+        
+        /// <summary>The unique id of the broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        /// <summary>The type of this API resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Slate settings of a broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("slateSettings")]
+        public virtual LiveBroadcastSlateSettings SlateSettings {
+            get {
+                return this._slateSettings;
+            }
+            set {
+                this._slateSettings = value;
+            }
+        }
+        
+        /// <summary>Basic details about a live broadcast, including title, description and thumbnails.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("snippet")]
+        public virtual LiveBroadcastSnippet Snippet {
+            get {
+                return this._snippet;
+            }
+            set {
+                this._snippet = value;
+            }
+        }
+        
+        /// <summary>The status of a live broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("status")]
+        public virtual LiveBroadcastStatus Status {
+            get {
+                return this._status;
+            }
+            set {
+                this._status = value;
+            }
+        }
+    }
+    
+    /// <summary>Slate settings of a broadcast.</summary>
+    public class LiveBroadcastContentDetails {
+        
+        private string _boundStreamId;
+        
+        private System.Nullable<bool> _enableArchive;
+        
+        private System.Nullable<bool> _enableContentEncryption;
+        
+        private System.Nullable<bool> _enableDvr;
+        
+        private System.Nullable<bool> _enableEmbed;
+        
+        private LiveBroadcastContentDetails.MonitorStreamData _monitorStream;
+        
+        private System.Nullable<bool> _startWithSlateCuepoint;
+        
+        /// <summary>The id of the stream bound to the broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("boundStreamId")]
+        public virtual string BoundStreamId {
+            get {
+                return this._boundStreamId;
+            }
+            set {
+                this._boundStreamId = value;
+            }
+        }
+        
+        /// <summary>Whether the live event will be archived or not.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("enableArchive")]
+        public virtual System.Nullable<bool> EnableArchive {
+            get {
+                return this._enableArchive;
+            }
+            set {
+                this._enableArchive = value;
+            }
+        }
+        
+        /// <summary>Whether to enable or disable content encryption.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("enableContentEncryption")]
+        public virtual System.Nullable<bool> EnableContentEncryption {
+            get {
+                return this._enableContentEncryption;
+            }
+            set {
+                this._enableContentEncryption = value;
+            }
+        }
+        
+        /// <summary>Whether the dvr (digital video recording) is enabled or not.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("enableDvr")]
+        public virtual System.Nullable<bool> EnableDvr {
+            get {
+                return this._enableDvr;
+            }
+            set {
+                this._enableDvr = value;
+            }
+        }
+        
+        /// <summary>Whether to allow the broadcast to be played in an embedded player.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("enableEmbed")]
+        public virtual System.Nullable<bool> EnableEmbed {
+            get {
+                return this._enableEmbed;
+            }
+            set {
+                this._enableEmbed = value;
+            }
+        }
+        
+        /// <summary>Information about the monitor stream which helps the broadcaster to review the event content before shown to the public.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("monitorStream")]
+        public virtual LiveBroadcastContentDetails.MonitorStreamData MonitorStream {
+            get {
+                return this._monitorStream;
+            }
+            set {
+                this._monitorStream = value;
+            }
+        }
+        
+        /// <summary>Automatically start with a slate cuepoint.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("startWithSlateCuepoint")]
+        public virtual System.Nullable<bool> StartWithSlateCuepoint {
+            get {
+                return this._startWithSlateCuepoint;
+            }
+            set {
+                this._startWithSlateCuepoint = value;
+            }
+        }
+        
+        /// <summary>Information about the monitor stream which helps the broadcaster to review the event content before shown to the public.</summary>
+        public class MonitorStreamData {
+            
+            private System.Nullable<long> _broadcastStreamDelayMs;
+            
+            private string _embedHtml;
+            
+            private System.Nullable<bool> _enableMonitorStream;
+            
+            /// <summary>If enableMonitorStream is true, the public broadcast will be delayed by this value.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("broadcastStreamDelayMs")]
+            public virtual System.Nullable<long> BroadcastStreamDelayMs {
+                get {
+                    return this._broadcastStreamDelayMs;
+                }
+                set {
+                    this._broadcastStreamDelayMs = value;
+                }
+            }
+            
+            /// <summary>The html code of the embedded player for the monitor stream.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("embedHtml")]
+            public virtual string EmbedHtml {
+                get {
+                    return this._embedHtml;
+                }
+                set {
+                    this._embedHtml = value;
+                }
+            }
+            
+            /// <summary>Whether to enable the monitor stream for the broadcast.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("enableMonitorStream")]
+            public virtual System.Nullable<bool> EnableMonitorStream {
+                get {
+                    return this._enableMonitorStream;
+                }
+                set {
+                    this._enableMonitorStream = value;
+                }
+            }
+        }
+    }
+    
+    /// <summary>JSON template for list of broadcasts.</summary>
+    public class LiveBroadcastList : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _etag;
+        
+        private System.Collections.Generic.IList<LiveBroadcast> _items;
+        
+        private string _kind;
+        
+        private string _nextPageToken;
+        
+        private PageInfo _pageInfo;
+        
+        private string _prevPageToken;
+        
+        /// <summary>The eTag of the chart.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("etag")]
+        public virtual string ETag {
+            get {
+                return this._etag;
+            }
+            set {
+                this._etag = value;
+            }
+        }
+        
+        /// <summary>A list of broadcasts that match the request criteria.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<LiveBroadcast> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>The type of this API resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the next page in the result set.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
+        public virtual string NextPageToken {
+            get {
+                return this._nextPageToken;
+            }
+            set {
+                this._nextPageToken = value;
+            }
+        }
+        
+        /// <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("pageInfo")]
+        public virtual PageInfo PageInfo {
+            get {
+                return this._pageInfo;
+            }
+            set {
+                this._pageInfo = value;
+            }
+        }
+        
+        /// <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the previous page in the result set.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
+        public virtual string PrevPageToken {
+            get {
+                return this._prevPageToken;
+            }
+            set {
+                this._prevPageToken = value;
+            }
+        }
+    }
+    
+    /// <summary>Slate settings of a broadcast.</summary>
+    public class LiveBroadcastSlateSettings {
+        
+        private System.Nullable<bool> _enableSlates;
+        
+        private LiveBroadcastSlateSettings.SlatesData _slates;
+        
+        /// <summary>Whether slate is enabled or not.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("enableSlates")]
+        public virtual System.Nullable<bool> EnableSlates {
+            get {
+                return this._enableSlates;
+            }
+            set {
+                this._enableSlates = value;
+            }
+        }
+        
+        /// <summary>Broadcast slates.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("slates")]
+        public virtual LiveBroadcastSlateSettings.SlatesData Slates {
+            get {
+                return this._slates;
+            }
+            set {
+                this._slates = value;
+            }
+        }
+        
+        /// <summary>Broadcast slates.</summary>
+        public class SlatesData : System.Collections.Generic.Dictionary<string, SlatesData.SlatesDataSchema> {
+            
+            /// <summary>Locale code indicating in which region should the slate be displayed.</summary>
+            public class SlatesDataSchema {
+                
+                private string _backgroundUrl;
+                
+                private System.Collections.Generic.IList<string> _textLines;
+                
+                /// <summary>Url of the background image.</summary>
+                [Newtonsoft.Json.JsonPropertyAttribute("backgroundUrl")]
+                public virtual string BackgroundUrl {
+                    get {
+                        return this._backgroundUrl;
+                    }
+                    set {
+                        this._backgroundUrl = value;
+                    }
+                }
+                
+                /// <summary>Multi-line message showing in the slate.</summary>
+                [Newtonsoft.Json.JsonPropertyAttribute("textLines")]
+                public virtual System.Collections.Generic.IList<string> TextLines {
+                    get {
+                        return this._textLines;
+                    }
+                    set {
+                        this._textLines = value;
+                    }
+                }
+            }
+        }
+    }
+    
+    /// <summary>Basic details about a live broadcast, including title, description and thumbnails.</summary>
+    public class LiveBroadcastSnippet {
+        
+        private string _actualEndTime;
+        
+        private string _actualStartTime;
+        
+        private string _channelId;
+        
+        private string _description;
+        
+        private string _publishedAt;
+        
+        private string _scheduledEndTime;
+        
+        private string _scheduledStartTime;
+        
+        private LiveBroadcastSnippet.ThumbnailsData _thumbnails;
+        
+        private string _title;
+        
+        /// <summary>Date and time the broadcast is actual to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("actualEndTime")]
+        public virtual string ActualEndTime {
+            get {
+                return this._actualEndTime;
+            }
+            set {
+                this._actualEndTime = value;
+            }
+        }
+        
+        /// <summary>Date and time the broadcast is actual to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("actualStartTime")]
+        public virtual string ActualStartTime {
+            get {
+                return this._actualStartTime;
+            }
+            set {
+                this._actualStartTime = value;
+            }
+        }
+        
+        /// <summary>Channel publishing the broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
+        public virtual string ChannelId {
+            get {
+                return this._channelId;
+            }
+            set {
+                this._channelId = value;
+            }
+        }
+        
+        /// <summary>Description of the broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this._description;
+            }
+            set {
+                this._description = value;
+            }
+        }
+        
+        /// <summary>Date and time the broadcast was published at. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
+        public virtual string PublishedAt {
+            get {
+                return this._publishedAt;
+            }
+            set {
+                this._publishedAt = value;
+            }
+        }
+        
+        /// <summary>Date and time the broadcast is scheduled to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("scheduledEndTime")]
+        public virtual string ScheduledEndTime {
+            get {
+                return this._scheduledEndTime;
+            }
+            set {
+                this._scheduledEndTime = value;
+            }
+        }
+        
+        /// <summary>Date and time the broadcast is scheduled to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("scheduledStartTime")]
+        public virtual string ScheduledStartTime {
+            get {
+                return this._scheduledStartTime;
+            }
+            set {
+                this._scheduledStartTime = value;
+            }
+        }
+        
+        /// <summary>Video thumbnails.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnails")]
+        public virtual LiveBroadcastSnippet.ThumbnailsData Thumbnails {
+            get {
+                return this._thumbnails;
+            }
+            set {
+                this._thumbnails = value;
+            }
+        }
+        
+        /// <summary>Title of the broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this._title;
+            }
+            set {
+                this._title = value;
+            }
+        }
+        
+        /// <summary>Video thumbnails.</summary>
+        public class ThumbnailsData : System.Collections.Generic.Dictionary<string, Thumbnail> {
+        }
+    }
+    
+    /// <summary>The status of a live broadcast.</summary>
+    public class LiveBroadcastStatus {
+        
+        private string _lifeCycleStatus;
+        
+        private string _privacyStatus;
+        
+        /// <summary>Life status of the live broadcast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("lifeCycleStatus")]
+        public virtual string LifeCycleStatus {
+            get {
+                return this._lifeCycleStatus;
+            }
+            set {
+                this._lifeCycleStatus = value;
+            }
+        }
+        
+        /// <summary>Privacy settings of the live broadcast. Allowed values: private, unlisted, public.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("privacyStatus")]
+        public virtual string PrivacyStatus {
+            get {
+                return this._privacyStatus;
+            }
+            set {
+                this._privacyStatus = value;
+            }
+        }
+    }
+    
+    /// <summary>A live stream describes a live ingestion point.</summary>
+    public class LiveStream : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private LiveStreamCdn _cdn;
+        
+        private string _etag;
+        
+        private string _id;
+        
+        private string _kind;
+        
+        private LiveStreamSnippet _snippet;
+        
+        private LiveStreamStatus _status;
+        
+        /// <summary>Brief description of the live stream cdn settings.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("cdn")]
+        public virtual LiveStreamCdn Cdn {
+            get {
+                return this._cdn;
+            }
+            set {
+                this._cdn = value;
+            }
+        }
+        
+        /// <summary>The eTag of the stream.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("etag")]
+        public virtual string ETag {
+            get {
+                return this._etag;
+            }
+            set {
+                this._etag = value;
+            }
+        }
+        
+        /// <summary>The unique id of the stream.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        /// <summary>The type of this API resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Basic details about a live stream, including title and description.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("snippet")]
+        public virtual LiveStreamSnippet Snippet {
+            get {
+                return this._snippet;
+            }
+            set {
+                this._snippet = value;
+            }
+        }
+        
+        /// <summary>Brief description of the live stream status.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("status")]
+        public virtual LiveStreamStatus Status {
+            get {
+                return this._status;
+            }
+            set {
+                this._status = value;
+            }
+        }
+    }
+    
+    /// <summary>Brief description of the live stream cdn settings.</summary>
+    public class LiveStreamCdn {
+        
+        private string _format;
+        
+        private LiveStreamCdnIngestionInfo _ingestionInfo;
+        
+        private string _ingestionType;
+        
+        private LiveStreamCdnMulticastIngestionInfo _multicastIngestionInfo;
+        
+        /// <summary>The format of the inbound data. Allowed values: 240p, 360p, 480p, 720p, 1080p, webm_360p, multicast_qcif, multicast_240p, multicast_360p, multicast_480p, multicast_720p, multicast_1080p.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("format")]
+        public virtual string Format {
+            get {
+                return this._format;
+            }
+            set {
+                this._format = value;
+            }
+        }
+        
+        /// <summary>Brief description of the live stream cdn settings.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("ingestionInfo")]
+        public virtual LiveStreamCdnIngestionInfo IngestionInfo {
+            get {
+                return this._ingestionInfo;
+            }
+            set {
+                this._ingestionInfo = value;
+            }
+        }
+        
+        /// <summary>The live stream ingestion type. Allowed values: rtmp, http, multicast.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("ingestionType")]
+        public virtual string IngestionType {
+            get {
+                return this._ingestionType;
+            }
+            set {
+                this._ingestionType = value;
+            }
+        }
+        
+        /// <summary>Brief description of the live stream cdn settings.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("multicastIngestionInfo")]
+        public virtual LiveStreamCdnMulticastIngestionInfo MulticastIngestionInfo {
+            get {
+                return this._multicastIngestionInfo;
+            }
+            set {
+                this._multicastIngestionInfo = value;
+            }
+        }
+    }
+    
+    /// <summary>Brief description of the live stream cdn settings.</summary>
+    public class LiveStreamCdnIngestionInfo {
+        
+        private string _backupIngestionAddress;
+        
+        private string _ingestionAddress;
+        
+        private string _streamName;
+        
+        /// <summary>The backup address of the inbound data.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("backupIngestionAddress")]
+        public virtual string BackupIngestionAddress {
+            get {
+                return this._backupIngestionAddress;
+            }
+            set {
+                this._backupIngestionAddress = value;
+            }
+        }
+        
+        /// <summary>The address of the inbound data.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("ingestionAddress")]
+        public virtual string IngestionAddress {
+            get {
+                return this._ingestionAddress;
+            }
+            set {
+                this._ingestionAddress = value;
+            }
+        }
+        
+        /// <summary>Ingestion stream name.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("streamName")]
+        public virtual string StreamName {
+            get {
+                return this._streamName;
+            }
+            set {
+                this._streamName = value;
+            }
+        }
+    }
+    
+    /// <summary>Brief description of the live stream cdn settings.</summary>
+    public class LiveStreamCdnMulticastIngestionInfo {
+        
+        private string _multicastAddress;
+        
+        /// <summary>The IP address of the multicast data.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("multicastAddress")]
+        public virtual string MulticastAddress {
+            get {
+                return this._multicastAddress;
+            }
+            set {
+                this._multicastAddress = value;
+            }
+        }
+    }
+    
+    /// <summary>List of live streams.</summary>
+    public class LiveStreamList : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _etag;
+        
+        private System.Collections.Generic.IList<LiveStream> _items;
+        
+        private string _kind;
+        
+        private string _nextPageToken;
+        
+        private PageInfo _pageInfo;
+        
+        private string _prevPageToken;
+        
+        /// <summary>The eTag of the chart.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("etag")]
+        public virtual string ETag {
+            get {
+                return this._etag;
+            }
+            set {
+                this._etag = value;
+            }
+        }
+        
+        /// <summary>A list of live streams that match the request criteria.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<LiveStream> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>The type of this API resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the next page in the result set.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
+        public virtual string NextPageToken {
+            get {
+                return this._nextPageToken;
+            }
+            set {
+                this._nextPageToken = value;
+            }
+        }
+        
+        /// <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("pageInfo")]
+        public virtual PageInfo PageInfo {
+            get {
+                return this._pageInfo;
+            }
+            set {
+                this._pageInfo = value;
+            }
+        }
+        
+        /// <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the previous page in the result set.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
+        public virtual string PrevPageToken {
+            get {
+                return this._prevPageToken;
+            }
+            set {
+                this._prevPageToken = value;
+            }
+        }
+    }
+    
+    /// <summary>Basic details about a live stream, including title and description.</summary>
+    public class LiveStreamSnippet {
+        
+        private string _channelId;
+        
+        private string _description;
+        
+        private string _publishedAt;
+        
+        private string _title;
+        
+        /// <summary>Channel publishing the live stream.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
+        public virtual string ChannelId {
+            get {
+                return this._channelId;
+            }
+            set {
+                this._channelId = value;
+            }
+        }
+        
+        /// <summary>Description of the live stream.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this._description;
+            }
+            set {
+                this._description = value;
+            }
+        }
+        
+        /// <summary>Date and time the live stream was published at.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
+        public virtual string PublishedAt {
+            get {
+                return this._publishedAt;
+            }
+            set {
+                this._publishedAt = value;
+            }
+        }
+        
+        /// <summary>Title of the live stream.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this._title;
+            }
+            set {
+                this._title = value;
+            }
+        }
+    }
+    
+    /// <summary>Brief description of the live stream status.</summary>
+    public class LiveStreamStatus {
+        
+        private string _streamStatus;
+        
+        /// <summary>The status of the stream.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("streamStatus")]
+        public virtual string StreamStatus {
+            get {
+                return this._streamStatus;
+            }
+            set {
+                this._streamStatus = value;
             }
         }
     }
@@ -2458,7 +3405,22 @@ namespace Google.Apis.Youtube.v3.Data {
     /// <summary>A thumbnail is an image representing a YouTube resource.</summary>
     public class Thumbnail {
         
+        private System.Nullable<long> _height;
+        
         private string _url;
+        
+        private System.Nullable<long> _width;
+        
+        /// <summary>(Optional) Height of the thumbnail image.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("height")]
+        public virtual System.Nullable<long> Height {
+            get {
+                return this._height;
+            }
+            set {
+                this._height = value;
+            }
+        }
         
         /// <summary>The thumbnail image&apos;s URL.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
@@ -2470,6 +3432,17 @@ namespace Google.Apis.Youtube.v3.Data {
                 this._url = value;
             }
         }
+        
+        /// <summary>(Optional) Width of the thumbnail image.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("width")]
+        public virtual System.Nullable<long> Width {
+            get {
+                return this._width;
+            }
+            set {
+                this._width = value;
+            }
+        }
     }
     
     /// <summary>A video resource represents a YouTube video.</summary>
@@ -2479,11 +3452,17 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _etag;
         
+        private VideoFileDetails _fileDetails;
+        
         private string _id;
         
         private string _kind;
         
+        private VideoMonetizationDetails _monetizationDetails;
+        
         private VideoPlayer _player;
+        
+        private VideoProcessingDetails _processingDetails;
         
         private VideoRecordingDetails _recordingDetails;
         
@@ -2493,9 +3472,11 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private VideoStatus _status;
         
+        private VideoSuggestions _suggestions;
+        
         private VideoTopicDetails _topicDetails;
         
-        /// <summary>Details about the media content of a YouTube video.</summary>
+        /// <summary>Details about the content of a YouTube Video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("contentDetails")]
         public virtual VideoContentDetails ContentDetails {
             get {
@@ -2514,6 +3495,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._etag = value;
+            }
+        }
+        
+        /// <summary>Describes original video file properties, including technical details about audio and video streams, but also metadata information like content length, digitization time, or geotagging information.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("fileDetails")]
+        public virtual VideoFileDetails FileDetails {
+            get {
+                return this._fileDetails;
+            }
+            set {
+                this._fileDetails = value;
             }
         }
         
@@ -2539,6 +3531,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
+        /// <summary>Details about monetization of a YouTube Video.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("monetizationDetails")]
+        public virtual VideoMonetizationDetails MonetizationDetails {
+            get {
+                return this._monetizationDetails;
+            }
+            set {
+                this._monetizationDetails = value;
+            }
+        }
+        
         /// <summary>Player to be used for a video playback.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("player")]
         public virtual VideoPlayer Player {
@@ -2547,6 +3550,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._player = value;
+            }
+        }
+        
+        /// <summary>Describes processing status and progress and availability of some other Video resource parts.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("processingDetails")]
+        public virtual VideoProcessingDetails ProcessingDetails {
+            get {
+                return this._processingDetails;
+            }
+            set {
+                this._processingDetails = value;
             }
         }
         
@@ -2591,6 +3605,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._status = value;
+            }
+        }
+        
+        /// <summary>Specifies suggestions on how to improve video content, including encoding hints, tag suggestions, and editor suggestions.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("suggestions")]
+        public virtual VideoSuggestions Suggestions {
+            get {
+                return this._suggestions;
+            }
+            set {
+                this._suggestions = value;
             }
         }
         
@@ -2735,12 +3760,53 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
-    /// <summary>Details about the media content of a YouTube video.</summary>
+    /// <summary>Details about the content of a YouTube Video.</summary>
     public class VideoContentDetails {
+        
+        private string _caption;
+        
+        private string _definition;
+        
+        private string _dimension;
         
         private string _duration;
         
-        private VideoContentDetails.RegionRestrictionData _regionRestriction;
+        private System.Nullable<bool> _licensedContent;
+        
+        private VideoContentDetailsRegionRestriction _regionRestriction;
+        
+        /// <summary>The value of captions indicates whether the video has captions or not.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("caption")]
+        public virtual string Caption {
+            get {
+                return this._caption;
+            }
+            set {
+                this._caption = value;
+            }
+        }
+        
+        /// <summary>The value of definition indicates whether the video is available in high definition or only in standard definition.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("definition")]
+        public virtual string Definition {
+            get {
+                return this._definition;
+            }
+            set {
+                this._definition = value;
+            }
+        }
+        
+        /// <summary>The value of dimension indicates whether the video is available in 3D or in 2D.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("dimension")]
+        public virtual string Dimension {
+            get {
+                return this._dimension;
+            }
+            set {
+                this._dimension = value;
+            }
+        }
         
         /// <summary>The length of the video. The tag value is an ISO 8601 duration in the format PT#M#S, in which the letters PT indicate that the value specifies a period of time, and the letters M and S refer to length in minutes and seconds, respectively. The # characters preceding the M and S letters are both integers that specify the number of minutes (or seconds) of the video. For example, a value of PT15M51S indicates that the video is 15 minutes and 51 seconds long.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("duration")]
@@ -2753,9 +3819,20 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The regionRestriction object contains information about the countries where a video is (or is not) viewable. The object will contain either the contentDetails.regionRestriction.allowed property or the contentDetails.regionRestriction.blocked property.</summary>
+        /// <summary>The value of is_license_content indicates whether the video is licensed content.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("licensedContent")]
+        public virtual System.Nullable<bool> LicensedContent {
+            get {
+                return this._licensedContent;
+            }
+            set {
+                this._licensedContent = value;
+            }
+        }
+        
+        /// <summary>Region restriction of the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("regionRestriction")]
-        public virtual VideoContentDetails.RegionRestrictionData RegionRestriction {
+        public virtual VideoContentDetailsRegionRestriction RegionRestriction {
             get {
                 return this._regionRestriction;
             }
@@ -2763,34 +3840,332 @@ namespace Google.Apis.Youtube.v3.Data {
                 this._regionRestriction = value;
             }
         }
+    }
+    
+    /// <summary>Region restriction of the video.</summary>
+    public class VideoContentDetailsRegionRestriction {
         
-        /// <summary>The regionRestriction object contains information about the countries where a video is (or is not) viewable. The object will contain either the contentDetails.regionRestriction.allowed property or the contentDetails.regionRestriction.blocked property.</summary>
-        public class RegionRestrictionData {
-            
-            private System.Collections.Generic.IList<string> _allowed;
-            
-            private System.Collections.Generic.IList<string> _blocked;
-            
-            /// <summary>A list of region codes that identify countries where the video is viewable. If this property is present and a country is not listed in its value, then the video is blocked from appearing in that country. If this property is present and contains an empty list, the video is blocked in all countries.</summary>
-            [Newtonsoft.Json.JsonPropertyAttribute("allowed")]
-            public virtual System.Collections.Generic.IList<string> Allowed {
-                get {
-                    return this._allowed;
-                }
-                set {
-                    this._allowed = value;
-                }
+        private System.Collections.Generic.IList<string> _allowed;
+        
+        private System.Collections.Generic.IList<string> _blocked;
+        
+        /// <summary>A list of region codes that identify countries where the video is viewable. If this property is present and a country is not listed in its value, then the video is blocked from appearing in that country. If this property is present and contains an empty list, the video is blocked in all countries.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("allowed")]
+        public virtual System.Collections.Generic.IList<string> Allowed {
+            get {
+                return this._allowed;
             }
-            
-            /// <summary>A list of region codes that identify countries where the video is blocked. If this property is present and a country is not listed in its value, then the video is viewable in that country. If this property is present and contains an empty list, the video is viewable in all countries.</summary>
-            [Newtonsoft.Json.JsonPropertyAttribute("blocked")]
-            public virtual System.Collections.Generic.IList<string> Blocked {
-                get {
-                    return this._blocked;
-                }
-                set {
-                    this._blocked = value;
-                }
+            set {
+                this._allowed = value;
+            }
+        }
+        
+        /// <summary>A list of region codes that identify countries where the video is blocked. If this property is present and a country is not listed in its value, then the video is viewable in that country. If this property is present and contains an empty list, the video is viewable in all countries.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("blocked")]
+        public virtual System.Collections.Generic.IList<string> Blocked {
+            get {
+                return this._blocked;
+            }
+            set {
+                this._blocked = value;
+            }
+        }
+    }
+    
+    /// <summary>Describes original video file properties, including technical details about audio and video streams, but also metadata information like content length, digitization time, or geotagging information.</summary>
+    public class VideoFileDetails {
+        
+        private System.Collections.Generic.IList<VideoFileDetailsAudioStream> _audioStreams;
+        
+        private string _bitrateBps;
+        
+        private string _container;
+        
+        private string _creationTime;
+        
+        private string _durationMs;
+        
+        private string _fileName;
+        
+        private string _fileSize;
+        
+        private string _fileType;
+        
+        private GeoPoint _recordingLocation;
+        
+        private System.Collections.Generic.IList<VideoFileDetailsVideoStream> _videoStreams;
+        
+        /// <summary>Audio streams.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("audioStreams")]
+        public virtual System.Collections.Generic.IList<VideoFileDetailsAudioStream> AudioStreams {
+            get {
+                return this._audioStreams;
+            }
+            set {
+                this._audioStreams = value;
+            }
+        }
+        
+        /// <summary>Combined audio and video bitrate, in bits per second.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("bitrateBps")]
+        public virtual string BitrateBps {
+            get {
+                return this._bitrateBps;
+            }
+            set {
+                this._bitrateBps = value;
+            }
+        }
+        
+        /// <summary>Container format used.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("container")]
+        public virtual string Container {
+            get {
+                return this._container;
+            }
+            set {
+                this._container = value;
+            }
+        }
+        
+        /// <summary>Date and time when the video file was created, in ISO 8601 format. Currently the only ISO 8601 formats produced are: - Date only: YYYY-MM-DD - Naive time: YYYY-MM-DDTHH:MM:SS - Time with timezone: YYYY-MM-DDTHH:MM:SS+HH:MM</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("creationTime")]
+        public virtual string CreationTime {
+            get {
+                return this._creationTime;
+            }
+            set {
+                this._creationTime = value;
+            }
+        }
+        
+        /// <summary>Video duration in milliseconds.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("durationMs")]
+        public virtual string DurationMs {
+            get {
+                return this._durationMs;
+            }
+            set {
+                this._durationMs = value;
+            }
+        }
+        
+        /// <summary>File name.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("fileName")]
+        public virtual string FileName {
+            get {
+                return this._fileName;
+            }
+            set {
+                this._fileName = value;
+            }
+        }
+        
+        /// <summary>File size.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("fileSize")]
+        public virtual string FileSize {
+            get {
+                return this._fileSize;
+            }
+            set {
+                this._fileSize = value;
+            }
+        }
+        
+        /// <summary>File type.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("fileType")]
+        public virtual string FileType {
+            get {
+                return this._fileType;
+            }
+            set {
+                this._fileType = value;
+            }
+        }
+        
+        /// <summary>A geoPoint holds geo location information associated with a YouTube resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("recordingLocation")]
+        public virtual GeoPoint RecordingLocation {
+            get {
+                return this._recordingLocation;
+            }
+            set {
+                this._recordingLocation = value;
+            }
+        }
+        
+        /// <summary>Video streams.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("videoStreams")]
+        public virtual System.Collections.Generic.IList<VideoFileDetailsVideoStream> VideoStreams {
+            get {
+                return this._videoStreams;
+            }
+            set {
+                this._videoStreams = value;
+            }
+        }
+    }
+    
+    /// <summary>Information about an audio stream.</summary>
+    public class VideoFileDetailsAudioStream {
+        
+        private string _bitrateBps;
+        
+        private System.Nullable<long> _channelCount;
+        
+        private string _codec;
+        
+        private string _vendor;
+        
+        /// <summary>Audio stream bitrate, in bits per second.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("bitrateBps")]
+        public virtual string BitrateBps {
+            get {
+                return this._bitrateBps;
+            }
+            set {
+                this._bitrateBps = value;
+            }
+        }
+        
+        /// <summary>Number of audio channels.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelCount")]
+        public virtual System.Nullable<long> ChannelCount {
+            get {
+                return this._channelCount;
+            }
+            set {
+                this._channelCount = value;
+            }
+        }
+        
+        /// <summary>Audio codec used.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("codec")]
+        public virtual string Codec {
+            get {
+                return this._codec;
+            }
+            set {
+                this._codec = value;
+            }
+        }
+        
+        /// <summary>Audio vendor identifier, typically a four-letter vendor code.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("vendor")]
+        public virtual string Vendor {
+            get {
+                return this._vendor;
+            }
+            set {
+                this._vendor = value;
+            }
+        }
+    }
+    
+    /// <summary>Information about a video stream.</summary>
+    public class VideoFileDetailsVideoStream {
+        
+        private System.Nullable<double> _aspectRatio;
+        
+        private string _bitrateBps;
+        
+        private string _codec;
+        
+        private System.Nullable<double> _frameRateFps;
+        
+        private System.Nullable<long> _heightPixels;
+        
+        private string _rotation;
+        
+        private string _vendor;
+        
+        private System.Nullable<long> _widthPixels;
+        
+        /// <summary>Display aspect ratio, which might differ from width_pixels / height_pixels.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("aspectRatio")]
+        public virtual System.Nullable<double> AspectRatio {
+            get {
+                return this._aspectRatio;
+            }
+            set {
+                this._aspectRatio = value;
+            }
+        }
+        
+        /// <summary>Video stream bitrate, in bits per second.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("bitrateBps")]
+        public virtual string BitrateBps {
+            get {
+                return this._bitrateBps;
+            }
+            set {
+                this._bitrateBps = value;
+            }
+        }
+        
+        /// <summary>Video codec used.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("codec")]
+        public virtual string Codec {
+            get {
+                return this._codec;
+            }
+            set {
+                this._codec = value;
+            }
+        }
+        
+        /// <summary>Video frame rate, in frames per second.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("frameRateFps")]
+        public virtual System.Nullable<double> FrameRateFps {
+            get {
+                return this._frameRateFps;
+            }
+            set {
+                this._frameRateFps = value;
+            }
+        }
+        
+        /// <summary>Video height in pixels.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("heightPixels")]
+        public virtual System.Nullable<long> HeightPixels {
+            get {
+                return this._heightPixels;
+            }
+            set {
+                this._heightPixels = value;
+            }
+        }
+        
+        /// <summary>Rotation that is necessary to display the video properly.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("rotation")]
+        public virtual string Rotation {
+            get {
+                return this._rotation;
+            }
+            set {
+                this._rotation = value;
+            }
+        }
+        
+        /// <summary>Video vendor identifier, typically a four-letter vendor code.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("vendor")]
+        public virtual string Vendor {
+            get {
+                return this._vendor;
+            }
+            set {
+                this._vendor = value;
+            }
+        }
+        
+        /// <summary>Video width in pixels.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("widthPixels")]
+        public virtual System.Nullable<long> WidthPixels {
+            get {
+                return this._widthPixels;
+            }
+            set {
+                this._widthPixels = value;
             }
         }
     }
@@ -2838,6 +4213,23 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
+    /// <summary>Details about monetization of a YouTube Video.</summary>
+    public class VideoMonetizationDetails {
+        
+        private AccessPolicy _access;
+        
+        /// <summary>Rights management policy for YouTube resources.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("access")]
+        public virtual AccessPolicy Access {
+            get {
+                return this._access;
+            }
+            set {
+                this._access = value;
+            }
+        }
+    }
+    
     /// <summary>Player to be used for a video playback.</summary>
     public class VideoPlayer {
         
@@ -2851,6 +4243,157 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._embedHtml = value;
+            }
+        }
+    }
+    
+    /// <summary>Describes processing status and progress and availability of some other Video resource parts.</summary>
+    public class VideoProcessingDetails {
+        
+        private string _editorSuggestionsAvailability;
+        
+        private string _fileDetailsAvailability;
+        
+        private string _processingFailureReason;
+        
+        private string _processingIssuesAvailability;
+        
+        private VideoProcessingDetailsProcessingProgress _processingProgress;
+        
+        private string _processingStatus;
+        
+        private string _tagSuggestionsAvailability;
+        
+        private string _thumbnailsAvailability;
+        
+        /// <summary>Editor suggestions availability.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("editorSuggestionsAvailability")]
+        public virtual string EditorSuggestionsAvailability {
+            get {
+                return this._editorSuggestionsAvailability;
+            }
+            set {
+                this._editorSuggestionsAvailability = value;
+            }
+        }
+        
+        /// <summary>File details availability.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("fileDetailsAvailability")]
+        public virtual string FileDetailsAvailability {
+            get {
+                return this._fileDetailsAvailability;
+            }
+            set {
+                this._fileDetailsAvailability = value;
+            }
+        }
+        
+        /// <summary>Reason why video processing has failed.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("processingFailureReason")]
+        public virtual string ProcessingFailureReason {
+            get {
+                return this._processingFailureReason;
+            }
+            set {
+                this._processingFailureReason = value;
+            }
+        }
+        
+        /// <summary>Processing issues availability.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("processingIssuesAvailability")]
+        public virtual string ProcessingIssuesAvailability {
+            get {
+                return this._processingIssuesAvailability;
+            }
+            set {
+                this._processingIssuesAvailability = value;
+            }
+        }
+        
+        /// <summary>Video processing progress and completion time estimate.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("processingProgress")]
+        public virtual VideoProcessingDetailsProcessingProgress ProcessingProgress {
+            get {
+                return this._processingProgress;
+            }
+            set {
+                this._processingProgress = value;
+            }
+        }
+        
+        /// <summary>Video processing status.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("processingStatus")]
+        public virtual string ProcessingStatus {
+            get {
+                return this._processingStatus;
+            }
+            set {
+                this._processingStatus = value;
+            }
+        }
+        
+        /// <summary>Tag suggestions availability.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("tagSuggestionsAvailability")]
+        public virtual string TagSuggestionsAvailability {
+            get {
+                return this._tagSuggestionsAvailability;
+            }
+            set {
+                this._tagSuggestionsAvailability = value;
+            }
+        }
+        
+        /// <summary>Thumbnails availability.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnailsAvailability")]
+        public virtual string ThumbnailsAvailability {
+            get {
+                return this._thumbnailsAvailability;
+            }
+            set {
+                this._thumbnailsAvailability = value;
+            }
+        }
+    }
+    
+    /// <summary>Video processing progress and completion time estimate.</summary>
+    public class VideoProcessingDetailsProcessingProgress {
+        
+        private string _partsProcessed;
+        
+        private string _partsTotal;
+        
+        private string _timeLeftMs;
+        
+        /// <summary>Number of parts already processed. Progress expressed in percent should be computed as: 100 * parts_processed / parts_total.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("partsProcessed")]
+        public virtual string PartsProcessed {
+            get {
+                return this._partsProcessed;
+            }
+            set {
+                this._partsProcessed = value;
+            }
+        }
+        
+        /// <summary>An estimate of total number of parts to process. The number might be updated with more precise estimates as the processing progresses.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("partsTotal")]
+        public virtual string PartsTotal {
+            get {
+                return this._partsTotal;
+            }
+            set {
+                this._partsTotal = value;
+            }
+        }
+        
+        /// <summary>Estimated time till video processing is complete, in milliseconds.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("timeLeftMs")]
+        public virtual string TimeLeftMs {
+            get {
+                return this._timeLeftMs;
+            }
+            set {
+                this._timeLeftMs = value;
             }
         }
     }
@@ -3069,13 +4612,28 @@ namespace Google.Apis.Youtube.v3.Data {
     /// <summary>The status of a video details the video&apos;s upload status and privacy status.</summary>
     public class VideoStatus {
         
+        private System.Nullable<bool> _embeddable;
+        
         private string _failureReason;
+        
+        private string _license;
         
         private string _privacyStatus;
         
         private string _rejectionReason;
         
         private string _uploadStatus;
+        
+        /// <summary>This value indicates if the video can be embedded on another website.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("embeddable")]
+        public virtual System.Nullable<bool> Embeddable {
+            get {
+                return this._embeddable;
+            }
+            set {
+                this._embeddable = value;
+            }
+        }
         
         /// <summary>This value explains why a video failed to upload. This property is only present if the uploadStatus property indicates that the upload failed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("failureReason")]
@@ -3085,6 +4643,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._failureReason = value;
+            }
+        }
+        
+        /// <summary>The video&apos;s license.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("license")]
+        public virtual string License {
+            get {
+                return this._license;
+            }
+            set {
+                this._license = value;
             }
         }
         
@@ -3122,6 +4691,105 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
+    /// <summary>Specifies suggestions on how to improve video content, including encoding hints, tag suggestions, and editor suggestions.</summary>
+    public class VideoSuggestions {
+        
+        private System.Collections.Generic.IList<string> _editorSuggestions;
+        
+        private System.Collections.Generic.IList<string> _processingErrors;
+        
+        private System.Collections.Generic.IList<string> _processingHints;
+        
+        private System.Collections.Generic.IList<string> _processingWarnings;
+        
+        private System.Collections.Generic.IList<VideoSuggestionsTagSuggestion> _tagSuggestions;
+        
+        /// <summary>Editor operations that could improve video quality.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("editorSuggestions")]
+        public virtual System.Collections.Generic.IList<string> EditorSuggestions {
+            get {
+                return this._editorSuggestions;
+            }
+            set {
+                this._editorSuggestions = value;
+            }
+        }
+        
+        /// <summary>Errors encountered during video processing.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("processingErrors")]
+        public virtual System.Collections.Generic.IList<string> ProcessingErrors {
+            get {
+                return this._processingErrors;
+            }
+            set {
+                this._processingErrors = value;
+            }
+        }
+        
+        /// <summary>Hints about how to improve video processing.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("processingHints")]
+        public virtual System.Collections.Generic.IList<string> ProcessingHints {
+            get {
+                return this._processingHints;
+            }
+            set {
+                this._processingHints = value;
+            }
+        }
+        
+        /// <summary>Warnings produced by the video processing engine.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("processingWarnings")]
+        public virtual System.Collections.Generic.IList<string> ProcessingWarnings {
+            get {
+                return this._processingWarnings;
+            }
+            set {
+                this._processingWarnings = value;
+            }
+        }
+        
+        /// <summary>Tags that could be added to aid video discovery.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("tagSuggestions")]
+        public virtual System.Collections.Generic.IList<VideoSuggestionsTagSuggestion> TagSuggestions {
+            get {
+                return this._tagSuggestions;
+            }
+            set {
+                this._tagSuggestions = value;
+            }
+        }
+    }
+    
+    /// <summary>A single tag suggestion with it&apos;s relevance information.</summary>
+    public class VideoSuggestionsTagSuggestion {
+        
+        private System.Collections.Generic.IList<string> _categoryRestricts;
+        
+        private string _tag;
+        
+        /// <summary>Set of categories this tag should be restricted to. Tag applies to all categories if there are no restricts.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("categoryRestricts")]
+        public virtual System.Collections.Generic.IList<string> CategoryRestricts {
+            get {
+                return this._categoryRestricts;
+            }
+            set {
+                this._categoryRestricts = value;
+            }
+        }
+        
+        /// <summary>Tag label.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("tag")]
+        public virtual string Tag {
+            get {
+                return this._tag;
+            }
+            set {
+                this._tag = value;
+            }
+        }
+    }
+    
     /// <summary>Freebase topic information related to the video.</summary>
     public class VideoTopicDetails {
         
@@ -3147,1113 +4815,77 @@ namespace Google.Apis.Youtube.v3 {
     using Google.Apis.Discovery;
     
     
-    public partial class YoutubeService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/Dmlq6oE" +
-            "DYbX3k9p3xUDe74Jwugw\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"youtube:v3\",\"name\":\"youtub" +
-            "e\",\"canonicalName\":\"YouTube\",\"version\":\"v3\",\"revision\":\"20121217\",\"title\":\"YouTu" +
-            "be Data API\",\"description\":\"Programmatic access to YouTube features.\",\"icons\":{\"" +
-            "x16\":\"http://www.google.com/images/icons/product/youtube-16.png\",\"x32\":\"http://w" +
-            "ww.google.com/images/icons/product/youtube-32.png\"},\"documentationLink\":\"https:/" +
-            "/developers.google.com/youtube/v3\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
-            "leapis.com/youtube/v3/\",\"basePath\":\"/youtube/v3/\",\"rootUrl\":\"https://www.googlea" +
-            "pis.com/\",\"servicePath\":\"youtube/v3/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"" +
-            "type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"e" +
-            "num\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/js" +
-            "on\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector speci" +
-            "fying which fields to include in a partial response.\",\"location\":\"query\"},\"key\":" +
-            "{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project an" +
-            "d provides you with API access, quota, and reports. Required unless you provide " +
-            "an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":" +
-            "{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line bre" +
-            "aks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Available to use for quota purposes for server-side applications. Can be " +
-            "any arbitrary string assigned to a user, but should not exceed 40 characters. Ov" +
-            "errides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"stri" +
-            "ng\",\"description\":\"IP address of the site where the request originates. Use this" +
-            " if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":" +
-            "{\"scopes\":{\"https://www.googleapis.com/auth/youtube\":{\"description\":\"Manage your" +
-            " YouTube account\"},\"https://www.googleapis.com/auth/youtube.readonly\":{\"descript" +
-            "ion\":\"View your YouTube account\"},\"https://www.googleapis.com/auth/youtube.uploa" +
-            "d\":{\"description\":\"Manage your YouTube videos\"},\"https://www.googleapis.com/auth" +
-            "/youtubepartner\":{\"description\":\"View and manage your assets and associated cont" +
-            "ent on YouTube\"}}}},\"schemas\":{\"Activity\":{\"id\":\"Activity\",\"type\":\"object\",\"desc" +
-            "ription\":\"An activity resource contains information about an action that a parti" +
-            "cular channel, or user, has taken on YouTube. The actions reported in activity f" +
-            "eeds include rating a video, sharing a video, marking a video as a favorite, com" +
-            "menting on a video, uploading a video, and so forth. Each activity resource iden" +
-            "tifies the type of action, the channel associated with the action, and the resou" +
-            "rce(s) associated with the action, such as the video that was rated or uploaded." +
-            "\",\"properties\":{\"contentDetails\":{\"$ref\":\"ActivityContentDetails\",\"description\":" +
-            "\"The contentDetails object contains information about the content associated wit" +
-            "h the activity. For example, if the snippet.type value is videoRated, then the c" +
-            "ontentDetails object\'s content identifies the rated video.\"},\"etag\":{\"type\":\"str" +
-            "ing\",\"description\":\"The ETag of the activity resource.\"},\"id\":{\"type\":\"string\",\"" +
-            "description\":\"The ID that YouTube uses to uniquely identify the activity.\"},\"kin" +
-            "d\":{\"type\":\"string\",\"description\":\"The type of the API resource. For activity re" +
-            "sources, the value will be youtube#activity.\",\"default\":\"youtube#activity\"},\"sni" +
-            "ppet\":{\"$ref\":\"ActivitySnippet\",\"description\":\"The snippet object contains basic" +
-            " details about the activity, including the activity\'s type and group ID.\"}}},\"Ac" +
-            "tivityContentDetails\":{\"id\":\"ActivityContentDetails\",\"type\":\"object\",\"descriptio" +
-            "n\":\"Details about the content of an activity: the video that was shared, the cha" +
-            "nnel that was subscribed to, etc.\",\"properties\":{\"bulletin\":{\"type\":\"object\",\"de" +
-            "scription\":\"The bulletin object contains details about a channel bulletin post. " +
-            "This object is only present if the snippet.type is bulletin.\",\"properties\":{\"res" +
-            "ourceId\":{\"$ref\":\"ResourceId\",\"description\":\"The resourceId object contains info" +
-            "rmation that identifies the resource associated with a bulletin post.\"}}},\"comme" +
-            "nt\":{\"type\":\"object\",\"description\":\"The comment object contains information abou" +
-            "t a resource that received a comment. This property is only present if the snipp" +
-            "et.type is comment.\",\"properties\":{\"resourceId\":{\"$ref\":\"ResourceId\",\"descriptio" +
-            "n\":\"The resourceId object contains information that identifies the resource asso" +
-            "ciated with the comment.\"}}},\"favorite\":{\"type\":\"object\",\"description\":\"The favo" +
-            "rite object contains information about a video that was marked as a favorite vid" +
-            "eo. This property is only present if the snippet.type is favorite.\",\"properties\"" +
-            ":{\"resourceId\":{\"$ref\":\"ResourceId\",\"description\":\"The resourceId object contain" +
-            "s information that identifies the resource that was marked as a favorite.\"}}},\"l" +
-            "ike\":{\"type\":\"object\",\"description\":\"The like object contains information about " +
-            "a resource that received a positive (like) rating. This property is only present" +
-            " if the snippet.type is like.\",\"properties\":{\"resourceId\":{\"$ref\":\"ResourceId\",\"" +
-            "description\":\"The resourceId object contains information that identifies the rat" +
-            "ed resource.\"}}},\"playlistItem\":{\"type\":\"object\",\"description\":\"The playlistItem" +
-            " object contains information about a new playlist item. This property is only pr" +
-            "esent if the snippet.type is playlistItem.\",\"properties\":{\"playlistId\":{\"type\":\"" +
-            "string\",\"description\":\"The value that YouTube uses to uniquely identify the play" +
-            "list.\"},\"playlistItemId\":{\"type\":\"string\",\"description\":\"ID of the item within t" +
-            "he playlist.\"},\"resourceId\":{\"$ref\":\"ResourceId\",\"description\":\"The resourceId o" +
-            "bject contains information about the resource that was added to the playlist.\"}}" +
-            "},\"recommendation\":{\"type\":\"object\",\"description\":\"The recommendation object con" +
-            "tains information about a recommended resource. This property is only present if" +
-            " the snippet.type is recommendation.\",\"properties\":{\"reason\":{\"type\":\"string\",\"d" +
-            "escription\":\"The reason that the resource is recommended to the user.\"},\"resourc" +
-            "eId\":{\"$ref\":\"ResourceId\",\"description\":\"The resourceId object contains informat" +
-            "ion that identifies the recommended resource.\"},\"seedResourceId\":{\"$ref\":\"Resour" +
-            "ceId\",\"description\":\"The seedResourceId object contains information about the re" +
-            "source that caused the recommendation.\"}}},\"social\":{\"type\":\"object\",\"descriptio" +
-            "n\":\"The social object contains details about a social network post. This propert" +
-            "y is only present if the snippet.type is social.\",\"properties\":{\"author\":{\"type\"" +
-            ":\"string\",\"description\":\"The author of the social network post.\"},\"imageUrl\":{\"t" +
-            "ype\":\"string\",\"description\":\"An image of the post\'s author.\"},\"referenceUrl\":{\"t" +
-            "ype\":\"string\",\"description\":\"The URL of the social network post.\"},\"resourceId\":" +
-            "{\"$ref\":\"ResourceId\",\"description\":\"The resourceId object encapsulates informati" +
-            "on that identifies the resource associated with a social network post.\"},\"type\":" +
-            "{\"type\":\"string\",\"description\":\"The name of the social network.\"}}},\"subscriptio" +
-            "n\":{\"type\":\"object\",\"description\":\"The subscription object contains information " +
-            "about a channel that a user subscribed to. This property is only present if the " +
-            "snippet.type is subscription.\",\"properties\":{\"resourceId\":{\"$ref\":\"ResourceId\",\"" +
-            "description\":\"The resourceId object contains information that identifies the res" +
-            "ource that the user subscribed to.\"}}},\"upload\":{\"type\":\"object\",\"description\":\"" +
-            "The upload object contains information about the uploaded video. This property i" +
-            "s only present if the snippet.type is upload.\",\"properties\":{\"videoId\":{\"type\":\"" +
-            "string\",\"description\":\"The ID that YouTube uses to uniquely identify the uploade" +
-            "d video.\"}}}}},\"ActivityListResponse\":{\"id\":\"ActivityListResponse\",\"type\":\"objec" +
-            "t\",\"description\":\"A paginated list of activities returned as a response to youtu" +
-            "be.activities.list calls.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"" +
-            "The ETag of the response.\"},\"items\":{\"type\":\"array\",\"description\":\"A list of act" +
-            "ivities, or events, that match the request criteria.\",\"items\":{\"$ref\":\"Activity\"" +
-            "}},\"kind\":{\"type\":\"string\",\"description\":\"The type of the API response. For this" +
-            " operation, the value will be youtube#activityListResponse.\",\"default\":\"youtube#" +
-            "activityListResponse\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The token" +
-            " that can be used as the value of the pageToken parameter to retrieve the next p" +
-            "age in the result set.\"},\"pageInfo\":{\"$ref\":\"PageInfo\",\"description\":\"The pageIn" +
-            "fo object encapsulates paging information for the result set.\"},\"prevPageToken\":" +
-            "{\"type\":\"string\",\"description\":\"The token that can be used as the value of the p" +
-            "ageToken parameter to retrieve the previous page in the result set.\"}}},\"Activit" +
-            "ySnippet\":{\"id\":\"ActivitySnippet\",\"type\":\"object\",\"description\":\"Basic details a" +
-            "bout an activity, including title, description, thumbnails, activity type and gr" +
-            "oup.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description\":\"The ID that YouT" +
-            "ube uses to uniquely identify the channel associated with the activity.\"},\"descr" +
-            "iption\":{\"type\":\"string\",\"description\":\"The description of the resource primaril" +
-            "y associated with the activity.\",\"annotations\":{\"required\":[\"youtube.activities." +
-            "insert\"]}},\"groupId\":{\"type\":\"string\",\"description\":\"The group ID associated wit" +
-            "h the activity. A group ID identifies user events that are associated with the s" +
-            "ame user and resource. For example, if a user rates a video and marks the same v" +
-            "ideo as a favorite, the entries for those events would have the same group ID in" +
-            " the user\'s activity feed. In your user interface, you can avoid repetition by g" +
-            "rouping events with the same groupId value.\"},\"publishedAt\":{\"type\":\"string\",\"de" +
-            "scription\":\"The date and time that the activity occurred. The value is specified" +
-            " in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.\",\"format\":\"date-time\"},\"thumbnails" +
-            "\":{\"type\":\"object\",\"description\":\"A map of thumbnail images associated with the " +
-            "resource that is primarily associated with the activity. For each object in the " +
-            "map, the key is the name of the thumbnail image, and the value is an object that" +
-            " contains other information about the thumbnail.\",\"additionalProperties\":{\"$ref\"" +
-            ":\"Thumbnail\",\"description\":\"The thumbnail image\'s name.\"}},\"title\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The title of the resource primarily associated with the activ" +
-            "ity.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of activity that the reso" +
-            "urce describes.\"}}},\"Channel\":{\"id\":\"Channel\",\"type\":\"object\",\"description\":\"A c" +
-            "hannel resource contains information about a YouTube channel.\",\"properties\":{\"co" +
-            "ntentDetails\":{\"$ref\":\"ChannelContentDetails\",\"description\":\"The contentDetails " +
-            "object encapsulates information about the channel\'s content.\"},\"etag\":{\"type\":\"s" +
-            "tring\",\"description\":\"The ETag for the channel resource.\"},\"id\":{\"type\":\"string\"" +
-            ",\"description\":\"The ID that YouTube uses to uniquely identify the channel.\"},\"ki" +
-            "nd\":{\"type\":\"string\",\"description\":\"The type of the API resource. For channel re" +
-            "sources, the value will be youtube#channel.\",\"default\":\"youtube#channel\"},\"snipp" +
-            "et\":{\"$ref\":\"ChannelSnippet\",\"description\":\"The snippet object contains basic de" +
-            "tails about the channel, such as its title, description, and thumbnail images.\"}" +
-            ",\"statistics\":{\"$ref\":\"ChannelStatistics\",\"description\":\"The statistics object e" +
-            "ncapsulates statistics for the channel.\"},\"status\":{\"$ref\":\"ChannelStatus\",\"desc" +
-            "ription\":\"The status object encapsulates information about the privacy status of" +
-            " the channel.\"},\"topicDetails\":{\"$ref\":\"ChannelTopicDetails\",\"description\":\"The " +
-            "topicDetails object encapsulates information about Freebase topics associated wi" +
-            "th the channel.\"}}},\"ChannelContentDetails\":{\"id\":\"ChannelContentDetails\",\"type\"" +
-            ":\"object\",\"description\":\"Details about the content of a channel.\",\"properties\":{" +
-            "\"relatedPlaylists\":{\"type\":\"object\",\"description\":\"The relatedPlaylists object i" +
-            "s a map that identifies playlists associated with the channel, such as the chann" +
-            "el\'s uploaded videos or favorite videos. You can retrieve any of these playlists" +
-            " using the playlists.list method.\",\"properties\":{\"favorites\":{\"type\":\"string\",\"d" +
-            "escription\":\"The ID of the playlist that contains the channel\'s favorite videos." +
-            " Use the playlistItems.insert and playlistItems.delete to add or remove items fr" +
-            "om that list.\"},\"likes\":{\"type\":\"string\",\"description\":\"The ID of the playlist t" +
-            "hat contains the channel\'s liked videos. Use the playlistItems.insert and playli" +
-            "stItems.delete to add or remove items from that list.\"},\"uploads\":{\"type\":\"strin" +
-            "g\",\"description\":\"The ID of the playlist that contains the channel\'s uploaded vi" +
-            "deos. Use the videos.insert method to upload new videos and the videos.delete me" +
-            "thod to delete previously uploaded videos.\"},\"watchHistory\":{\"type\":\"string\",\"de" +
-            "scription\":\"The ID of the playlist that contains the channel\'s watch history. Us" +
-            "e the playlistItems.insert and playlistItems.delete to add or remove items from " +
-            "that list.\"},\"watchLater\":{\"type\":\"string\",\"description\":\"The ID of the channel\'" +
-            "s watch later playlist. Use the playlistItems.insert and playlistItems.delete to" +
-            " add or remove items from that list.\"}}}}},\"ChannelListResponse\":{\"id\":\"ChannelL" +
-            "istResponse\",\"type\":\"object\",\"description\":\"A paginated list of channels returne" +
-            "d as the response to a youtube.channels.list call.\",\"properties\":{\"etag\":{\"type\"" +
-            ":\"string\",\"description\":\"The ETag for the response.\"},\"items\":{\"type\":\"array\",\"d" +
-            "escription\":\"A list of channels that match the request criteria.\",\"items\":{\"$ref" +
-            "\":\"Channel\"}},\"kind\":{\"type\":\"string\",\"description\":\"The type of the API respons" +
-            "e. For this operation, the value will be youtube#channelListResponse.\",\"default\"" +
-            ":\"youtube#channelListResponse\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"" +
-            "The token that can be used as the value of the pageToken parameter to retrieve t" +
-            "he next page in the result set.\"},\"pageInfo\":{\"$ref\":\"PageInfo\",\"description\":\"T" +
-            "he pageInfo object encapsulates paging information for the result set.\"},\"prevPa" +
-            "geToken\":{\"type\":\"string\",\"description\":\"The token that can be used as the value" +
-            " of the pageToken parameter to retrieve the previous page in the result set.\"}}}" +
-            ",\"ChannelSnippet\":{\"id\":\"ChannelSnippet\",\"type\":\"object\",\"description\":\"Basic de" +
-            "tails about a channel, including title, description and thumbnails.\",\"properties" +
-            "\":{\"channelId\":{\"type\":\"string\",\"description\":\"The ID that YouTube uses to uniqu" +
-            "ely identify the channel.\"},\"description\":{\"type\":\"string\",\"description\":\"The ch" +
-            "annel\'s description.\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"The date an" +
-            "d time that the channel was created. The value is specified in ISO 8601 (YYYY-MM" +
-            "-DDThh:mm:ss.sZ) format.\",\"format\":\"date-time\"},\"thumbnails\":{\"type\":\"object\",\"d" +
-            "escription\":\"A map of thumbnail images associated with the channel. For each obj" +
-            "ect in the map, the key is the name of the thumbnail image, and the value is an " +
-            "object that contains other information about the thumbnail.\",\"additionalProperti" +
-            "es\":{\"$ref\":\"Thumbnail\",\"description\":\"The thumbnail image\'s name. This value is" +
-            " used as the key in the snippet.thumbnails map.\"}},\"title\":{\"type\":\"string\",\"des" +
-            "cription\":\"The channel\'s title.\"}}},\"ChannelStatistics\":{\"id\":\"ChannelStatistics" +
-            "\",\"type\":\"object\",\"description\":\"Statistics about a channel: number of subscribe" +
-            "rs, number of videos in the channel, etc.\",\"properties\":{\"commentCount\":{\"type\":" +
-            "\"string\",\"description\":\"The number of comments for the channel.\",\"format\":\"uint6" +
-            "4\"},\"subscriberCount\":{\"type\":\"string\",\"description\":\"The number of subscribers " +
-            "that the channel has.\",\"format\":\"uint64\"},\"videoCount\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The number of videos uploaded to the channel.\",\"format\":\"uint64\"},\"viewCo" +
-            "unt\":{\"type\":\"string\",\"description\":\"The number of times the channel has been vi" +
-            "ewed.\",\"format\":\"uint64\"}}},\"ChannelStatus\":{\"id\":\"ChannelStatus\",\"type\":\"object" +
-            "\",\"description\":\"JSON template for the status part of a channel.\",\"properties\":{" +
-            "\"privacyStatus\":{\"type\":\"string\",\"description\":\"Privacy status of the channel.\"}" +
-            "}},\"ChannelTopicDetails\":{\"id\":\"ChannelTopicDetails\",\"type\":\"object\",\"descriptio" +
-            "n\":\"Freebase topic information related to the channel.\",\"properties\":{\"topicIds\"" +
-            ":{\"type\":\"array\",\"description\":\"A list of Freebase topic IDs associated with the" +
-            " channel. You can retrieve information about each topic using the Freebase Topic" +
-            " API.\",\"items\":{\"type\":\"string\"}}}},\"GeoPoint\":{\"id\":\"GeoPoint\",\"type\":\"object\"," +
-            "\"description\":\"A geoPoint holds geo location information associated with a YouTu" +
-            "be resource.\",\"properties\":{\"elevation\":{\"type\":\"number\",\"description\":\"Altitude" +
-            " above the Earth, in meters.\",\"format\":\"double\"},\"latitude\":{\"type\":\"number\",\"de" +
-            "scription\":\"Latitude in degrees.\",\"format\":\"double\"},\"longitude\":{\"type\":\"number" +
-            "\",\"description\":\"Longitude in degrees.\",\"format\":\"double\"}}},\"GuideCategory\":{\"i" +
-            "d\":\"GuideCategory\",\"type\":\"object\",\"description\":\"A guideCategory resource ident" +
-            "ifies a category that YouTube algorithmically assigns based on a channel\'s conte" +
-            "nt or other indicators, such as the channel\'s popularity. The list is similar to" +
-            " video categories, with the difference being that a video\'s uploader can assign " +
-            "a video category but only YouTube can assign a channel category.\",\"properties\":{" +
-            "\"etag\":{\"type\":\"string\",\"description\":\"The ETag of the guideCategory resource.\"}" +
-            ",\"id\":{\"type\":\"string\",\"description\":\"The ID that YouTube uses to uniquely ident" +
-            "ify the guide category.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of the" +
-            " API resource. For guideCategory resources, the value will be youtube#guideCateg" +
-            "ory/code>.\",\"default\":\"youtube#guideCategory\"},\"snippet\":{\"$ref\":\"GuideCategoryS" +
-            "nippet\",\"description\":\"The snippet object contains basic details about the categ" +
-            "ory, such as its title.\"}}},\"GuideCategoryListResponse\":{\"id\":\"GuideCategoryList" +
-            "Response\",\"type\":\"object\",\"description\":\"A paginated list of guide categories re" +
-            "turned as the response to a youtube.guideCategories.list call.\",\"properties\":{\"e" +
-            "tag\":{\"type\":\"string\",\"description\":\"The ETag of the response.\"},\"items\":{\"type\"" +
-            ":\"array\",\"description\":\"A list of categories that can be associated with YouTube" +
-            " channels. In this map, the category ID is the map key, and its value is the cor" +
-            "responding guideCategory resource.\",\"items\":{\"$ref\":\"GuideCategory\"}},\"kind\":{\"t" +
-            "ype\":\"string\",\"description\":\"The type of the API response. For this operation, t" +
-            "he value will be youtube#guideCategoryListResponse.\",\"default\":\"youtube#guideCat" +
-            "egoryListResponse\"}}},\"GuideCategorySnippet\":{\"id\":\"GuideCategorySnippet\",\"type\"" +
-            ":\"object\",\"description\":\"Basic details about a guide category.\",\"properties\":{\"c" +
-            "hannelId\":{\"type\":\"string\",\"description\":\"The ID that YouTube uses to uniquely i" +
-            "dentify the channel publishing the guide category.\",\"default\":\"UCBR8-60-B28hp2Bm" +
-            "DPdntcQ\"},\"title\":{\"type\":\"string\",\"description\":\"The category\'s title.\"}}},\"Pag" +
-            "eInfo\":{\"id\":\"PageInfo\",\"type\":\"object\",\"description\":\"Paging details for lists " +
-            "of resources, including total number of items available and number of resources " +
-            "returned in a single page.\",\"properties\":{\"resultsPerPage\":{\"type\":\"integer\",\"de" +
-            "scription\":\"The number of results included in the API response.\",\"format\":\"int32" +
-            "\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total number of results i" +
-            "n the result set.\",\"format\":\"int32\"}}},\"Playlist\":{\"id\":\"Playlist\",\"type\":\"objec" +
-            "t\",\"description\":\"A playlist resource represents a YouTube playlist. A playlist " +
-            "is a collection of videos that can be viewed sequentially and shared with other " +
-            "users. A playlist can contain up to 200 videos, and YouTube does not limit the n" +
-            "umber of playlists that each user creates. By default, playlists are publicly vi" +
-            "sible to other users, but playlists can be public or private.\\n\\nYouTube also us" +
-            "es playlists to identify special collections of videos for a channel, such as:  " +
-            "\\n- uploaded videos \\n- favorite videos \\n- positively rated (liked) videos \\n- " +
-            "watch history \\n- watch later  To be more specific, these lists are associated w" +
-            "ith a channel, which is a collection of a person, group, or company\'s videos, pl" +
-            "aylists, and other YouTube information. You can retrieve the playlist IDs for ea" +
-            "ch of these lists from the channel resource for a given channel.\\n\\nYou can then" +
-            " use the playlistItems.list method to retrieve any of those lists. You can also " +
-            "add or remove items from those lists by calling the playlistItems.insert and pla" +
-            "ylistItems.delete methods.\",\"properties\":{\"contentDetails\":{\"$ref\":\"PlaylistCont" +
-            "entDetails\",\"description\":\"The contentDetails object contains information like v" +
-            "ideo count.\"},\"etag\":{\"type\":\"string\",\"description\":\"The ETag for the playlist r" +
-            "esource.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID that YouTube uses to uniq" +
-            "uely identify the playlist.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of" +
-            " the API resource. For video resources, the value will be youtube#playlist.\",\"de" +
-            "fault\":\"youtube#playlist\"},\"player\":{\"$ref\":\"PlaylistPlayer\",\"description\":\"The " +
-            "player object contains information that you would use to play the playlist in an" +
-            " embedded player.\"},\"snippet\":{\"$ref\":\"PlaylistSnippet\",\"description\":\"The snipp" +
-            "et object contains basic details about the playlist, such as its title and descr" +
-            "iption.\"},\"status\":{\"$ref\":\"PlaylistStatus\",\"description\":\"The status object con" +
-            "tains status information for the playlist.\"}}},\"PlaylistContentDetails\":{\"id\":\"P" +
-            "laylistContentDetails\",\"type\":\"object\",\"description\":\"Details about the content " +
-            "of a playlist, such as the video count.\",\"properties\":{\"itemCount\":{\"type\":\"inte" +
-            "ger\",\"description\":\"The number of videos in the playlist.\",\"format\":\"uint32\"}}}," +
-            "\"PlaylistItem\":{\"id\":\"PlaylistItem\",\"type\":\"object\",\"description\":\"A playlistIte" +
-            "m resource identifies another resource, such as a video, that is included in a p" +
-            "laylist. In addition, the playlistItem resource contains details about the inclu" +
-            "ded resource that pertain specifically to how that resource is used in that play" +
-            "list.\\n\\nYouTube uses playlists to identify special collections of videos for a " +
-            "channel, such as:  \\n- uploaded videos \\n- favorite videos \\n- positively rated " +
-            "(liked) videos \\n- watch history \\n- watch later  To be more specific, these lis" +
-            "ts are associated with a channel, which is a collection of a person, group, or c" +
-            "ompany\'s videos, playlists, and other YouTube information.\\n\\nYou can retrieve t" +
-            "he playlist IDs for each of these lists from the channel resource for a given ch" +
-            "annel. You can then use the playlistItems.list method to retrieve any of those l" +
-            "ists. You can also add or remove items from those lists by calling the playlistI" +
-            "tems.insert and playlistItems.delete methods. For example, if a user gives a pos" +
-            "itive rating to a video, you would insert that video into the liked videos playl" +
-            "ist for that user\'s channel.\",\"properties\":{\"contentDetails\":{\"$ref\":\"PlaylistIt" +
-            "emContentDetails\",\"description\":\"The contentDetails object is included in the re" +
-            "source if the included item is a YouTube video. The object contains additional i" +
-            "nformation about the video.\"},\"etag\":{\"type\":\"string\",\"description\":\"The ETag fo" +
-            "r the playlist item resource.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID that" +
-            " YouTube uses to uniquely identify the playlist item.\"},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"The type of the API resource. For playlist item resources, the va" +
-            "lue will be youtube#playlistItem.\",\"default\":\"youtube#playlistItem\"},\"snippet\":{" +
-            "\"$ref\":\"PlaylistItemSnippet\",\"description\":\"The snippet object contains basic de" +
-            "tails about the playlist item, such as its title and position in the playlist.\"}" +
-            "}},\"PlaylistItemContentDetails\":{\"id\":\"PlaylistItemContentDetails\",\"type\":\"objec" +
-            "t\",\"description\":\"Details about the content of a playlist item, such as the vide" +
-            "o or the video fragment start and end time included in the playlist.\",\"propertie" +
-            "s\":{\"endAt\":{\"type\":\"string\",\"description\":\"The time, measured in seconds from t" +
-            "he start of the video, when the video should stop playing. (The playlist owner c" +
-            "an specify the times when the video should start and stop playing when the video" +
-            " is played in the context of the playlist.) By default, assume that the video.en" +
-            "dTime is the end of the video.\"},\"note\":{\"type\":\"string\",\"description\":\"A user-g" +
-            "enerated note for this item.\"},\"startAt\":{\"type\":\"string\",\"description\":\"The tim" +
-            "e, measured in seconds from the start of the video, when the video should start " +
-            "playing. (The playlist owner can specify the times when the video should start a" +
-            "nd stop playing when the video is played in the context of the playlist.) The de" +
-            "fault value is 0.\"},\"videoId\":{\"type\":\"string\",\"description\":\"The ID that YouTub" +
-            "e uses to uniquely identify a video. To retrieve the video resource, set the id " +
-            "query parameter to this value in your API request.\"}}},\"PlaylistItemListResponse" +
-            "\":{\"id\":\"PlaylistItemListResponse\",\"type\":\"object\",\"description\":\"A paginated li" +
-            "st of playlist items returned as the response to a youtube.playlistItems.list ca" +
-            "ll.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag for the respo" +
-            "nse.\"},\"items\":{\"type\":\"array\",\"description\":\"A list of playlist items that matc" +
-            "h the request criteria.\",\"items\":{\"$ref\":\"PlaylistItem\"}},\"kind\":{\"type\":\"string" +
-            "\",\"description\":\"The type of the API response. For this operation, the value wil" +
-            "l be youtube#playlistItemListResponse.\",\"default\":\"youtube#playlistItemListRespo" +
-            "nse\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token that can be used a" +
-            "s the value of the pageToken parameter to retrieve the next page in the result s" +
-            "et.\"},\"pageInfo\":{\"$ref\":\"PageInfo\",\"description\":\"The pageInfo object encapsula" +
-            "tes paging information for the result set.\"},\"prevPageToken\":{\"type\":\"string\",\"d" +
-            "escription\":\"A token that can be used as the value of the pageToken parameter to" +
-            " retrieve the previous page in the result set.\"}}},\"PlaylistItemSnippet\":{\"id\":\"" +
-            "PlaylistItemSnippet\",\"type\":\"object\",\"description\":\"Basic details about an item " +
-            "included in a playlist, including title, description, thumbnails, playlist the i" +
-            "tem is part of and position of the item inside the playlist.\",\"properties\":{\"cha" +
-            "nnelId\":{\"type\":\"string\",\"description\":\"The ID that YouTube uses to uniquely ide" +
-            "ntify the user that added the item to the playlist.\"},\"description\":{\"type\":\"str" +
-            "ing\",\"description\":\"The item\'s description.\"},\"playlistId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The ID that YouTube uses to uniquely identify the playlist that the p" +
-            "laylist item is in.\",\"annotations\":{\"required\":[\"youtube.playlistItems.insert\"]}" +
-            "},\"position\":{\"type\":\"integer\",\"description\":\"The order in which the item appear" +
-            "s in the playlist. The value uses a zero-based index, so the first item has a po" +
-            "sition of 0, the second item has a position of 1, and so forth.\",\"format\":\"uint3" +
-            "2\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"The date and time that the ite" +
-            "m was added to the playlist. The value is specified in ISO 8601 (YYYY-MM-DDThh:m" +
-            "m:ss.sZ) format.\",\"format\":\"date-time\"},\"resourceId\":{\"$ref\":\"ResourceId\",\"descr" +
-            "iption\":\"The id object contains information that can be used to uniquely identif" +
-            "y the resource that is included in the playlist as the playlist item.\"},\"thumbna" +
-            "ils\":{\"type\":\"object\",\"description\":\"A map of thumbnail images associated with t" +
-            "he playlist item. For each object in the map, the key is the name of the thumbna" +
-            "il image, and the value is an object that contains other information about the t" +
-            "humbnail.\",\"additionalProperties\":{\"$ref\":\"Thumbnail\",\"description\":\"The thumbna" +
-            "il image\'s name. This value is used as the key in the snippet.thumbnails map.\"}}" +
-            ",\"title\":{\"type\":\"string\",\"description\":\"The item\'s title.\"}}},\"PlaylistListResp" +
-            "onse\":{\"id\":\"PlaylistListResponse\",\"type\":\"object\",\"description\":\"A paginated li" +
-            "st of playlists returned as the response to a youtube.playlists.list call.\",\"pro" +
-            "perties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag of the response.\"},\"it" +
-            "ems\":{\"type\":\"array\",\"description\":\"A list of playlists that match the request c" +
-            "riteria.\",\"items\":{\"$ref\":\"Playlist\"}},\"kind\":{\"type\":\"string\",\"description\":\"Th" +
-            "e type of the API response. For this operation, the value will be youtube#playli" +
-            "stListResponse.\",\"default\":\"youtube#playlistListResponse\"},\"nextPageToken\":{\"typ" +
-            "e\":\"string\",\"description\":\"The token that can be used as the value of the pageTo" +
-            "ken parameter to retrieve the next page in the result set.\"},\"pageInfo\":{\"$ref\":" +
-            "\"PageInfo\",\"description\":\"The pageInfo object encapsulates paging information fo" +
-            "r the result set.\"},\"prevPageToken\":{\"type\":\"string\",\"description\":\"The token th" +
-            "at can be used as the value of the pageToken parameter to retrieve the previous " +
-            "page in the result set.\"}}},\"PlaylistPlayer\":{\"id\":\"PlaylistPlayer\",\"type\":\"obje" +
-            "ct\",\"description\":\"Player to be used for a playlist playback.\",\"properties\":{\"em" +
-            "bedHtml\":{\"type\":\"string\",\"description\":\"An <iframe> tag that embeds a player th" +
-            "at will play the playlist.\"}}},\"PlaylistSnippet\":{\"id\":\"PlaylistSnippet\",\"type\":" +
-            "\"object\",\"description\":\"Basic details about a playlist, including title, descrip" +
-            "tion and thumbnails.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description\":\"" +
-            "The ID that YouTube uses to uniquely identify the channel that published the pla" +
-            "ylist.\"},\"description\":{\"type\":\"string\",\"description\":\"The playlist\'s descriptio" +
-            "n.\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"The date and time that the pl" +
-            "aylist was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) " +
-            "format.\",\"format\":\"date-time\"},\"thumbnails\":{\"type\":\"object\",\"description\":\"A ma" +
-            "p of thumbnail images associated with the playlist. For each object in the map, " +
-            "the key is the name of the thumbnail image, and the value is an object that cont" +
-            "ains other information about the thumbnail.\",\"additionalProperties\":{\"$ref\":\"Thu" +
-            "mbnail\",\"description\":\"The thumbnail image\'s name. This value is used as the key" +
-            " in the snippet.thumbnails map.\"}},\"title\":{\"type\":\"string\",\"description\":\"The p" +
-            "laylist\'s title.\",\"annotations\":{\"required\":[\"youtube.playlists.insert\",\"youtube" +
-            ".playlists.update\"]}}}},\"PlaylistStatus\":{\"id\":\"PlaylistStatus\",\"type\":\"object\"," +
-            "\"description\":\"The status details of a playlist describes whether the playlist i" +
-            "s private.\",\"properties\":{\"privacyStatus\":{\"type\":\"string\",\"description\":\"The pl" +
-            "aylist\'s privacy status.\"}}},\"ResourceId\":{\"id\":\"ResourceId\",\"type\":\"object\",\"de" +
-            "scription\":\"A resource id is a generic reference that points to another YouTube " +
-            "resource.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description\":\"The ID that" +
-            " YouTube uses to uniquely identify the referred resource, if that resource is a " +
-            "channel. This property is only present if the resourceId.kind value is youtube#c" +
-            "hannel.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind, or type, of the refer" +
-            "red resource.\"},\"playlistId\":{\"type\":\"string\",\"description\":\"The ID that YouTube" +
-            " uses to uniquely identify the referred resource, if that resource is a playlist" +
-            ". This property is only present if the resourceId.kind value is youtube#playlist" +
-            ".\"},\"videoId\":{\"type\":\"string\",\"description\":\"The ID that YouTube uses to unique" +
-            "ly identify the referred resource, if that resource is a video. This property is" +
-            " only present if the resourceId.kind value is youtube#video.\"}}},\"SearchListResp" +
-            "onse\":{\"id\":\"SearchListResponse\",\"type\":\"object\",\"description\":\"A paginated list" +
-            " of search results returned as the response to a youtube.search.list call.\",\"pro" +
-            "perties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag for the response.\"},\"i" +
-            "tems\":{\"type\":\"array\",\"description\":\"A list of results that match the search cri" +
-            "teria.\",\"items\":{\"$ref\":\"SearchResult\"}},\"kind\":{\"type\":\"string\",\"description\":\"" +
-            "The type of the API response. For this operation, the value will be youtube#sear" +
-            "chListResponse.\",\"default\":\"youtube#searchListResponse\"},\"nextPageToken\":{\"type\"" +
-            ":\"string\",\"description\":\"The token that can be used as the value of the pageToke" +
-            "n parameter to retrieve the next page in the result set.\"},\"pageInfo\":{\"$ref\":\"P" +
-            "ageInfo\",\"description\":\"The pageInfo object encapsulates paging information for " +
-            "the search result set.\"},\"prevPageToken\":{\"type\":\"string\",\"description\":\"The tok" +
-            "en that can be used as the value of the pageToken parameter to retrieve the prev" +
-            "ious page in the result set.\"}}},\"SearchResult\":{\"id\":\"SearchResult\",\"type\":\"obj" +
-            "ect\",\"description\":\"A search result contains information about a YouTube video, " +
-            "channel, or playlist that matches the search parameters specified in an API requ" +
-            "est. While a search result points to a uniquely identifiable resource, like a vi" +
-            "deo, it does not have its own persistent data.\",\"properties\":{\"etag\":{\"type\":\"st" +
-            "ring\",\"description\":\"The ETag of the search result.\"},\"id\":{\"$ref\":\"ResourceId\"," +
-            "\"description\":\"The id object contains information that can be used to uniquely i" +
-            "dentify the resource that matches the search request.\"},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"The type of the API response. For this resource, the value will b" +
-            "e youtube#searchResult.\",\"default\":\"youtube#searchResult\"},\"snippet\":{\"$ref\":\"Se" +
-            "archResultSnippet\",\"description\":\"The snippet object contains basic details abou" +
-            "t a search result, such as its title or description. For example, if the search " +
-            "result is a video, then the title will be the video\'s title and the description " +
-            "will be the video\'s description.\"}}},\"SearchResultSnippet\":{\"id\":\"SearchResultSn" +
-            "ippet\",\"type\":\"object\",\"description\":\"Basic details about a search result, inclu" +
-            "ding title, description and thumbnails of the item referenced by the search resu" +
-            "lt.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description\":\"The value that Yo" +
-            "uTube uses to uniquely identify the channel that published the resource that the" +
-            " search result identifies.\"},\"description\":{\"type\":\"string\",\"description\":\"A des" +
-            "cription of the search result.\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"T" +
-            "he creation date and time of the resource that the search result identifies. The" +
-            " value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.\",\"format\":\"date" +
-            "-time\"},\"thumbnails\":{\"type\":\"object\",\"description\":\"A map of thumbnail images a" +
-            "ssociated with the search result. For each object in the map, the key is the nam" +
-            "e of the thumbnail image, and the value is an object that contains other informa" +
-            "tion about the thumbnail.\",\"additionalProperties\":{\"$ref\":\"Thumbnail\",\"descripti" +
-            "on\":\"The thumbnail image\'s name. This value is used as the key in the snippet.th" +
-            "umbnails map.\"}},\"title\":{\"type\":\"string\",\"description\":\"The title to display fo" +
-            "r the search result.\"}}},\"Subscription\":{\"id\":\"Subscription\",\"type\":\"object\",\"de" +
-            "scription\":\"A subscription resource contains information about a YouTube user su" +
-            "bscription. A subscription notifies a user when new videos are added to a channe" +
-            "l or when another user takes one of several actions on YouTube, such as uploadin" +
-            "g a video, rating a video, or commenting on a video.\",\"properties\":{\"contentDeta" +
-            "ils\":{\"$ref\":\"SubscriptionContentDetails\",\"description\":\"The contentDetails obje" +
-            "ct contains basic statistics about the subscription.\"},\"etag\":{\"type\":\"string\",\"" +
-            "description\":\"The ETag of the subscription resource.\"},\"id\":{\"type\":\"string\",\"de" +
-            "scription\":\"The ID that YouTube uses to uniquely identify the subscription.\"},\"k" +
-            "ind\":{\"type\":\"string\",\"description\":\"The type of the API resource. For subscript" +
-            "ion resources, the value will be youtube#subscription.\",\"default\":\"youtube#subsc" +
-            "ription\"},\"snippet\":{\"$ref\":\"SubscriptionSnippet\",\"description\":\"The snippet obj" +
-            "ect contains basic details about the subscription, including its title and the c" +
-            "hannel that the user subscribed to.\"}}},\"SubscriptionContentDetails\":{\"id\":\"Subs" +
-            "criptionContentDetails\",\"type\":\"object\",\"description\":\"Details about the content" +
-            " to witch a subscription refers.\",\"properties\":{\"newItemCount\":{\"type\":\"integer\"" +
-            ",\"description\":\"The number of new items in the subscription since its content wa" +
-            "s last read.\",\"format\":\"uint32\"},\"totalItemCount\":{\"type\":\"integer\",\"description" +
-            "\":\"The approximate number of items that the subscription points to.\",\"format\":\"u" +
-            "int32\"}}},\"SubscriptionListResponse\":{\"id\":\"SubscriptionListResponse\",\"type\":\"ob" +
-            "ject\",\"description\":\"A paginated list of subscriptions returned as the response " +
-            "to a youtube.subscriptions.list call.\",\"properties\":{\"etag\":{\"type\":\"string\",\"de" +
-            "scription\":\"The ETag of the response.\"},\"items\":{\"type\":\"array\",\"description\":\"A" +
-            " list of subscriptions that match the request criteria.\",\"items\":{\"$ref\":\"Subscr" +
-            "iption\"}},\"kind\":{\"type\":\"string\",\"description\":\"The type of the API response. F" +
-            "or this operation, the value will be youtube#subscriptionListResponse.\",\"default" +
-            "\":\"youtube#subscriptionListResponse\"},\"nextPageToken\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The token that can be used as the value of the pageToken parameter to retr" +
-            "ieve the next page in the result set.\"},\"pageInfo\":{\"$ref\":\"PageInfo\",\"descripti" +
-            "on\":\"The pageInfo object encapsulates paging information for the result set.\"},\"" +
-            "prevPageToken\":{\"type\":\"string\",\"description\":\"The token that can be used as the" +
-            " value of the pageToken parameter to retrieve the previous page in the result se" +
-            "t.\"}}},\"SubscriptionSnippet\":{\"id\":\"SubscriptionSnippet\",\"type\":\"object\",\"descri" +
-            "ption\":\"Basic details about a subscription, including title, description and thu" +
-            "mbnails of the subscribed item.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The ID that YouTube uses to uniquely identify the subscriber\'s channe" +
-            "l.\"},\"description\":{\"type\":\"string\",\"description\":\"The subscription\'s details.\"}" +
-            ",\"publishedAt\":{\"type\":\"string\",\"description\":\"The date and time that the subscr" +
-            "iption was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) " +
-            "format.\",\"format\":\"date-time\"},\"resourceId\":{\"$ref\":\"ResourceId\",\"description\":\"" +
-            "The id object contains information about the channel that the user subscribed to" +
-            ".\"},\"thumbnails\":{\"type\":\"object\",\"description\":\"A map of thumbnail images assoc" +
-            "iated with the subscription. For each object in the map, the key is the name of " +
-            "the thumbnail image, and the value is an object that contains other information " +
-            "about the thumbnail.\",\"additionalProperties\":{\"$ref\":\"Thumbnail\",\"description\":\"" +
-            "The thumbnail image\'s name.\"}},\"title\":{\"type\":\"string\",\"description\":\"The subsc" +
-            "ription\'s title.\"}}},\"Thumbnail\":{\"id\":\"Thumbnail\",\"type\":\"object\",\"description\"" +
-            ":\"A thumbnail is an image representing a YouTube resource.\",\"properties\":{\"url\":" +
-            "{\"type\":\"string\",\"description\":\"The thumbnail image\'s URL.\"}}},\"Video\":{\"id\":\"Vi" +
-            "deo\",\"type\":\"object\",\"description\":\"A video resource represents a YouTube video." +
-            "\",\"properties\":{\"contentDetails\":{\"$ref\":\"VideoContentDetails\",\"description\":\"Th" +
-            "e contentDetails object contains information about the video content, including " +
-            "the length of the video and its aspect ratio.\"},\"etag\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The ETag of the video resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Th" +
-            "e ID that YouTube uses to uniquely identify the video.\"},\"kind\":{\"type\":\"string\"" +
-            ",\"description\":\"The type of the API resource. For video resources, the value wil" +
-            "l be youtube#video.\",\"default\":\"youtube#video\"},\"player\":{\"$ref\":\"VideoPlayer\",\"" +
-            "description\":\"The player object contains information that you would use to play " +
-            "the video in an embedded player.\"},\"recordingDetails\":{\"$ref\":\"VideoRecordingDet" +
-            "ails\",\"description\":\"The recordingDetails object encapsulates information about " +
-            "the location, date and address where the video was recorded.\"},\"snippet\":{\"$ref\"" +
-            ":\"VideoSnippet\",\"description\":\"The snippet object contains basic details about t" +
-            "he video, such as its title, description, and category.\"},\"statistics\":{\"$ref\":\"" +
-            "VideoStatistics\",\"description\":\"The statistics object contains statistics about " +
-            "the video.\"},\"status\":{\"$ref\":\"VideoStatus\",\"description\":\"The status object con" +
-            "tains information about the video\'s uploading, processing, and privacy statuses." +
-            "\"},\"topicDetails\":{\"$ref\":\"VideoTopicDetails\",\"description\":\"The topicDetails ob" +
-            "ject encapsulates information about Freebase topics associated with the video.\"}" +
-            "}},\"VideoCategory\":{\"id\":\"VideoCategory\",\"type\":\"object\",\"description\":\"A videoC" +
-            "ategory resource identifies a category that has been or could be associated with" +
-            " uploaded videos.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag" +
-            " of the videoCategory resource.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID th" +
-            "at YouTube uses to uniquely identify the video category.\"},\"kind\":{\"type\":\"strin" +
-            "g\",\"description\":\"The type of the API resource. For video category resources, th" +
-            "e value will be youtube#videoCategory.\",\"default\":\"youtube#videoCategory\"},\"snip" +
-            "pet\":{\"$ref\":\"VideoCategorySnippet\",\"description\":\"The snippet object contains b" +
-            "asic details about the video category, including its title.\"}}},\"VideoCategoryLi" +
-            "stResponse\":{\"id\":\"VideoCategoryListResponse\",\"type\":\"object\",\"description\":\"A p" +
-            "aginated list of video categories returned as the response to a youtube.videoCat" +
-            "egory.list call.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag " +
-            "of the response.\"},\"items\":{\"type\":\"array\",\"description\":\"A list of video catego" +
-            "ries that can be associated with YouTube videos. In this map, the video category" +
-            " ID is the map key, and its value is the corresponding videoCategory resource.\"," +
-            "\"items\":{\"$ref\":\"VideoCategory\"}},\"kind\":{\"type\":\"string\",\"description\":\"The typ" +
-            "e of the API response. For this operation, the value will be youtube#videoCatego" +
-            "ryListResponse.\",\"default\":\"youtube#videoCategoryListResponse\"}}},\"VideoCategory" +
-            "Snippet\":{\"id\":\"VideoCategorySnippet\",\"type\":\"object\",\"description\":\"Basic detai" +
-            "ls about a video category, such as its localized title.\",\"properties\":{\"channelI" +
-            "d\":{\"type\":\"string\",\"description\":\"The YouTube channel that created the video ca" +
-            "tegory.\",\"default\":\"UCBR8-60-B28hp2BmDPdntcQ\"},\"title\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The video category\'s title.\"}}},\"VideoContentDetails\":{\"id\":\"VideoContent" +
-            "Details\",\"type\":\"object\",\"description\":\"Details about the media content of a You" +
-            "Tube video.\",\"properties\":{\"duration\":{\"type\":\"string\",\"description\":\"The length" +
-            " of the video. The tag value is an ISO 8601 duration in the format PT#M#S, in wh" +
-            "ich the letters PT indicate that the value specifies a period of time, and the l" +
-            "etters M and S refer to length in minutes and seconds, respectively. The # chara" +
-            "cters preceding the M and S letters are both integers that specify the number of" +
-            " minutes (or seconds) of the video. For example, a value of PT15M51S indicates t" +
-            "hat the video is 15 minutes and 51 seconds long.\"},\"regionRestriction\":{\"type\":\"" +
-            "object\",\"description\":\"The regionRestriction object contains information about t" +
-            "he countries where a video is (or is not) viewable. The object will contain eith" +
-            "er the contentDetails.regionRestriction.allowed property or the contentDetails.r" +
-            "egionRestriction.blocked property.\",\"properties\":{\"allowed\":{\"type\":\"array\",\"des" +
-            "cription\":\"A list of region codes that identify countries where the video is vie" +
-            "wable. If this property is present and a country is not listed in its value, the" +
-            "n the video is blocked from appearing in that country. If this property is prese" +
-            "nt and contains an empty list, the video is blocked in all countries.\",\"items\":{" +
-            "\"type\":\"string\"}},\"blocked\":{\"type\":\"array\",\"description\":\"A list of region code" +
-            "s that identify countries where the video is blocked. If this property is presen" +
-            "t and a country is not listed in its value, then the video is viewable in that c" +
-            "ountry. If this property is present and contains an empty list, the video is vie" +
-            "wable in all countries.\",\"items\":{\"type\":\"string\"}}}}}},\"VideoListResponse\":{\"id" +
-            "\":\"VideoListResponse\",\"type\":\"object\",\"description\":\"A paginated list of videos " +
-            "returned as the response to a youtube.videos.list call.\",\"properties\":{\"etag\":{\"" +
-            "type\":\"string\",\"description\":\"The ETag of the response.\"},\"items\":{\"type\":\"array" +
-            "\",\"description\":\"A list of videos that match the request criteria.\",\"items\":{\"$r" +
-            "ef\":\"Video\"}},\"kind\":{\"type\":\"string\",\"description\":\"The type of the API respons" +
-            "e. For this operation, the value will be youtube#videoListResponse.\",\"default\":\"" +
-            "youtube#videoListResponse\"}}},\"VideoPlayer\":{\"id\":\"VideoPlayer\",\"type\":\"object\"," +
-            "\"description\":\"Player to be used for a video playback.\",\"properties\":{\"embedHtml" +
-            "\":{\"type\":\"string\",\"description\":\"An <iframe> tag that embeds a player that will" +
-            " play the video.\"}}},\"VideoRecordingDetails\":{\"id\":\"VideoRecordingDetails\",\"type" +
-            "\":\"object\",\"description\":\"Recording information associated with the video.\",\"pro" +
-            "perties\":{\"location\":{\"$ref\":\"GeoPoint\",\"description\":\"The geolocation informati" +
-            "on associated with the video.\"},\"locationDescription\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The text description of the location where the video was recorded.\"},\"reco" +
-            "rdingDate\":{\"type\":\"string\",\"description\":\"The date and time when the video was " +
-            "recorded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.\",\"" +
-            "format\":\"date-time\"}}},\"VideoSnippet\":{\"id\":\"VideoSnippet\",\"type\":\"object\",\"desc" +
-            "ription\":\"Basic details about a video, including title, description, uploader, t" +
-            "humbnails and category.\",\"properties\":{\"categoryId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The YouTube video category associated with the video.\"},\"channelId\":{\"type\":" +
-            "\"string\",\"description\":\"The ID that YouTube uses to uniquely identify the channe" +
-            "l that the video was uploaded to.\"},\"description\":{\"type\":\"string\",\"description\"" +
-            ":\"The video\'s description.\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"The d" +
-            "ate and time that the video was uploaded. The value is specified in ISO 8601 (YY" +
-            "YY-MM-DDThh:mm:ss.sZ) format.\",\"format\":\"date-time\"},\"tags\":{\"type\":\"array\",\"des" +
-            "cription\":\"A list of keyword tags associated with the video. Tags may contain sp" +
-            "aces. This field is only visible to the video\'s uploader.\",\"items\":{\"type\":\"stri" +
-            "ng\"}},\"thumbnails\":{\"type\":\"object\",\"description\":\"A map of thumbnail images ass" +
-            "ociated with the video. For each object in the map, the key is the name of the t" +
-            "humbnail image, and the value is an object that contains other information about" +
-            " the thumbnail.\",\"additionalProperties\":{\"$ref\":\"Thumbnail\",\"description\":\"The t" +
-            "humbnail image\'s name. This value is used as the key in the snippet.thumbnails m" +
-            "ap.\"}},\"title\":{\"type\":\"string\",\"description\":\"The video\'s title.\"}}},\"VideoStat" +
-            "istics\":{\"id\":\"VideoStatistics\",\"type\":\"object\",\"description\":\"Statistics about " +
-            "the video, such as the number of times the video was viewed or liked.\",\"properti" +
-            "es\":{\"commentCount\":{\"type\":\"string\",\"description\":\"The number of comments for t" +
-            "he video.\",\"format\":\"uint64\"},\"dislikeCount\":{\"type\":\"string\",\"description\":\"The" +
-            " number of users who have indicated that they disliked the video by giving it a " +
-            "negative rating.\",\"format\":\"uint64\"},\"favoriteCount\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The number of users who currently have the video marked as a favorite video" +
-            ".\",\"format\":\"uint64\"},\"likeCount\":{\"type\":\"string\",\"description\":\"The number of " +
-            "users who have indicated that they liked the video by giving it a positive ratin" +
-            "g.\",\"format\":\"uint64\"},\"viewCount\":{\"type\":\"string\",\"description\":\"The number of" +
-            " times the video has been viewed.\",\"format\":\"uint64\"}}},\"VideoStatus\":{\"id\":\"Vid" +
-            "eoStatus\",\"type\":\"object\",\"description\":\"The status of a video details the video" +
-            "\'s upload status and privacy status.\",\"properties\":{\"failureReason\":{\"type\":\"str" +
-            "ing\",\"description\":\"This value explains why a video failed to upload. This prope" +
-            "rty is only present if the uploadStatus property indicates that the upload faile" +
-            "d.\"},\"privacyStatus\":{\"type\":\"string\",\"description\":\"The video\'s privacy status." +
-            "\"},\"rejectionReason\":{\"type\":\"string\",\"description\":\"This value explains why You" +
-            "Tube rejected an uploaded video. This property is only present if the uploadStat" +
-            "us property indicates that the upload was rejected.\"},\"uploadStatus\":{\"type\":\"st" +
-            "ring\",\"description\":\"The status of the uploaded video.\"}}},\"VideoTopicDetails\":{" +
-            "\"id\":\"VideoTopicDetails\",\"type\":\"object\",\"description\":\"Freebase topic informati" +
-            "on related to the video.\",\"properties\":{\"topicIds\":{\"type\":\"array\",\"description\"" +
-            ":\"A list of Freebase topic IDs associated with the video. You can retrieve infor" +
-            "mation about each topic using the Freebase Topic API.\",\"items\":{\"type\":\"string\"}" +
-            "}}}},\"resources\":{\"activities\":{\"methods\":{\"insert\":{\"id\":\"youtube.activities.in" +
-            "sert\",\"path\":\"activities\",\"httpMethod\":\"POST\",\"description\":\"Posts a bulletin fo" +
-            "r a specific channel. (The user submitting the request must be authorized to act" +
-            " on the channel\'s behalf.)\",\"parameters\":{\"part\":{\"type\":\"string\",\"description\":" +
-            "\"The part parameter serves two purposes in this operation. It identifies the pro" +
-            "perties that the write operation will set as well as the properties that the API" +
-            " response will include.\\n\\nThe part names that you can include in the parameter " +
-            "value are snippet and contentDetails.\",\"required\":true,\"location\":\"query\"}},\"par" +
-            "ameterOrder\":[\"part\"],\"request\":{\"$ref\":\"Activity\"},\"response\":{\"$ref\":\"Activity" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\"]},\"list\":{\"id\":\"youtube.a" +
-            "ctivities.list\",\"path\":\"activities\",\"httpMethod\":\"GET\",\"description\":\"Returns a " +
-            "list of channel activity events that match the request criteria. For example, yo" +
-            "u can retrieve events associated with a particular channel, events associated wi" +
-            "th the user\'s subscriptions and Google+ friends, or the YouTube home page feed, " +
-            "which is customized for each user.\",\"parameters\":{\"channelId\":{\"type\":\"string\",\"" +
-            "description\":\"The channelId parameter specifies a unique YouTube channel ID. The" +
-            " API will then return a list of that channel\'s activities.\",\"location\":\"query\"}," +
-            "\"home\":{\"type\":\"string\",\"description\":\"Set this parameter\'s value to true to ret" +
-            "rieve the activity feed that displays on the YouTube home page for the currently" +
-            " authenticated user.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descri" +
-            "ption\":\"USE_DESCRIPTION --- channels:list:maxResults\",\"default\":\"5\",\"format\":\"ui" +
-            "nt32\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"mine\":{\"type\":\"boolean\"," +
-            "\"description\":\"Set this parameter\'s value to true to retrieve a feed of the auth" +
-            "enticated user\'s activities.\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"" +
-            "description\":\"USE_DESCRIPTION --- channels:list:pageToken\",\"location\":\"query\"},\"" +
-            "part\":{\"type\":\"string\",\"description\":\"The part parameter specifies a comma-separ" +
-            "ated list of one or more activity resource properties that the API response will" +
-            " include. The part names that you can include in the parameter value are id, sni" +
-            "ppet, and contentDetails.\\n\\nIf the parameter identifies a property that contain" +
-            "s child properties, the child properties will be included in the response. For e" +
-            "xample, in a activity resource, the snippet property contains other properties t" +
-            "hat identify the type of activity, a display title for the activity, and so fort" +
-            "h. If you set part=snippet, the API response will also contain all of those nest" +
-            "ed properties.\",\"required\":true,\"location\":\"query\"},\"publishedAfter\":{\"type\":\"st" +
-            "ring\",\"description\":\"The publishedAfter parameter specifies the earliest date an" +
-            "d time that an activity could have occurred for that activity to be included in " +
-            "the API response. If the parameter value specifies a day, but not a time, then a" +
-            "ny activities that occurred that day will be included in the result set. The val" +
-            "ue is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.\",\"format\":\"date-tim" +
-            "e\",\"location\":\"query\"},\"publishedBefore\":{\"type\":\"string\",\"description\":\"The pub" +
-            "lishedBefore parameter specifies the date and time before which an activity must" +
-            " have occurred for that activity to be included in the API response. If the para" +
-            "meter value specifies a day, but not a time, then any activities that occurred t" +
-            "hat day will be excluded from the result set. The value is specified in ISO 8601" +
-            " (YYYY-MM-DDThh:mm:ss.sZ) format.\",\"format\":\"date-time\",\"location\":\"query\"}},\"pa" +
-            "rameterOrder\":[\"part\"],\"response\":{\"$ref\":\"ActivityListResponse\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtube.r" +
-            "eadonly\"]}}},\"channels\":{\"methods\":{\"list\":{\"id\":\"youtube.channels.list\",\"path\":" +
-            "\"channels\",\"httpMethod\":\"GET\",\"description\":\"Returns a collection of zero or mor" +
-            "e channel resources that match the request criteria.\",\"parameters\":{\"categoryId\"" +
-            ":{\"type\":\"string\",\"description\":\"The categoryId parameter specifies a YouTube gu" +
-            "ide category, thereby requesting YouTube channels associated with that category." +
-            "\",\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id parameter spec" +
-            "ifies a comma-separated list of the YouTube channel ID(s) for the resource(s) th" +
-            "at are being retrieved. In a channel resource, the id property specifies the cha" +
-            "nnel\'s YouTube channel ID.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"" +
-            "description\":\"The maxResults parameter specifies the maximum number of items tha" +
-            "t should be returned in the result set.\",\"default\":\"5\",\"format\":\"uint32\",\"minimu" +
-            "m\":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"mine\":{\"type\":\"boolean\",\"description\"" +
-            ":\"Set this parameter\'s value to true to instruct the API to only return channels" +
-            " owned by the authenticated user.\",\"location\":\"query\"},\"mySubscribers\":{\"type\":\"" +
-            "string\",\"description\":\"Set this parameter\'s value to true to retrieve a list of " +
-            "channels that subscribed to the authenticated user\'s channel.\",\"location\":\"query" +
-            "\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The pageToken parameter identifie" +
-            "s a specific page in the result set that should be returned. In an API response," +
-            " the nextPageToken and prevPageToken properties identify other pages that could " +
-            "be retrieved.\",\"location\":\"query\"},\"part\":{\"type\":\"string\",\"description\":\"The pa" +
-            "rt parameter specifies a comma-separated list of one or more channel resource pr" +
-            "operties that the API response will include. The part names that you can include" +
-            " in the parameter value are id, snippet, contentDetails, statistics, and topicDe" +
-            "tails.\\n\\nIf the parameter identifies a property that contains child properties," +
-            " the child properties will be included in the response. For example, in a channe" +
-            "l resource, the contentDetails property contains other properties, such as the u" +
-            "ploads properties. As such, if you set part=contentDetails, the API response wil" +
-            "l also contain all of those nested properties.\",\"required\":true,\"location\":\"quer" +
-            "y\"}},\"parameterOrder\":[\"part\"],\"response\":{\"$ref\":\"ChannelListResponse\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/yo" +
-            "utube.readonly\",\"https://www.googleapis.com/auth/youtubepartner\"]}}},\"guideCateg" +
-            "ories\":{\"methods\":{\"list\":{\"id\":\"youtube.guideCategories.list\",\"path\":\"guideCate" +
-            "gories\",\"httpMethod\":\"GET\",\"description\":\"Returns a list of categories that can " +
-            "be associated with YouTube channels.\",\"parameters\":{\"hl\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The hl parameter specifies the language that will be used for text valu" +
-            "es in the API response.\",\"default\":\"en-US\",\"location\":\"query\"},\"id\":{\"type\":\"str" +
-            "ing\",\"description\":\"The id parameter specifies a comma-separated list of the You" +
-            "Tube channel category ID(s) for the resource(s) that are being retrieved. In a g" +
-            "uideCategory resource, the id property specifies the YouTube channel category ID" +
-            ".\",\"location\":\"query\"},\"part\":{\"type\":\"string\",\"description\":\"The part parameter" +
-            " specifies a comma-separated list of one or more guideCategory resource properti" +
-            "es that the API response will include. The part names that you can include in th" +
-            "e parameter value are id and snippet.\\n\\nIf the parameter identifies a property " +
-            "that contains child properties, the child properties will be included in the res" +
-            "ponse. For example, in a guideCategory resource, the snippet property contains o" +
-            "ther properties, such as the category\'s title. If you set part=snippet, the API " +
-            "response will also contain all of those nested properties.\",\"required\":true,\"loc" +
-            "ation\":\"query\"},\"regionCode\":{\"type\":\"string\",\"description\":\"The regionCode para" +
-            "meter instructs the API to return the list of guide categories available in the " +
-            "specified country. The parameter value is an ISO 3166-1 alpha-2 country code.\",\"" +
-            "location\":\"query\"}},\"parameterOrder\":[\"part\"],\"response\":{\"$ref\":\"GuideCategoryL" +
-            "istResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.g" +
-            "oogleapis.com/auth/youtube.readonly\",\"https://www.googleapis.com/auth/youtubepar" +
-            "tner\"]}}},\"playlistItems\":{\"methods\":{\"delete\":{\"id\":\"youtube.playlistItems.dele" +
-            "te\",\"path\":\"playlistItems\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a playli" +
-            "st item.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The id parameter sp" +
-            "ecifies the YouTube playlist item ID for the playlist item that is being deleted" +
-            ". In a playlistItem resource, the id property specifies the playlist item\'s ID.\"" +
-            ",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartne" +
-            "r\"]},\"insert\":{\"id\":\"youtube.playlistItems.insert\",\"path\":\"playlistItems\",\"httpM" +
-            "ethod\":\"POST\",\"description\":\"Adds a resource to a playlist.\",\"parameters\":{\"part" +
-            "\":{\"type\":\"string\",\"description\":\"The part parameter serves two purposes in this" +
-            " operation. It identifies the properties that the write operation will set as we" +
-            "ll as the properties that the API response will include.\\n\\nThe part names that " +
-            "you can include in the parameter value are snippet and contentDetails.\",\"require" +
-            "d\":true,\"location\":\"query\"}},\"parameterOrder\":[\"part\"],\"request\":{\"$ref\":\"Playli" +
-            "stItem\"},\"response\":{\"$ref\":\"PlaylistItem\"},\"scopes\":[\"https://www.googleapis.co" +
-            "m/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"]},\"list\":{\"id\":" +
-            "\"youtube.playlistItems.list\",\"path\":\"playlistItems\",\"httpMethod\":\"GET\",\"descript" +
-            "ion\":\"Returns a collection of playlist items that match the API request paramete" +
-            "rs. You can retrieve all of the playlist items in a specified playlist or retrie" +
-            "ve one or more playlist items by their unique IDs.\",\"parameters\":{\"id\":{\"type\":\"" +
-            "string\",\"description\":\"The id parameter specifies a comma-separated list of one " +
-            "or more unique playlist item IDs.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"int" +
-            "eger\",\"description\":\"USE_DESCRIPTION --- channels:list:maxResults\",\"default\":\"5\"" +
-            ",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"pageToken\":" +
-            "{\"type\":\"string\",\"description\":\"USE_DESCRIPTION --- channels:list:pageToken\",\"lo" +
-            "cation\":\"query\"},\"part\":{\"type\":\"string\",\"description\":\"The part parameter speci" +
-            "fies a comma-separated list of one or more playlistItem resource properties that" +
-            " the API response will include. The part names that you can include in the param" +
-            "eter value are id, snippet, and contentDetails.\\n\\nIf the parameter identifies a" +
-            " property that contains child properties, the child properties will be included " +
-            "in the response. For example, in a playlistItem resource, the snippet property c" +
-            "ontains numerous fields, including the title, description, position, and resourc" +
-            "eId properties. As such, if you set part=snippet, the API response will contain " +
-            "all of those properties.\",\"required\":true,\"location\":\"query\"},\"playlistId\":{\"typ" +
-            "e\":\"string\",\"description\":\"The playlistId parameter specifies the unique ID of t" +
-            "he playlist for which you want to retrieve playlist items. Note that even though" +
-            " this is an optional parameter, every request to retrieve playlist items must sp" +
-            "ecify a value for either the id parameter or the playlistId parameter.\",\"locatio" +
-            "n\":\"query\"}},\"parameterOrder\":[\"part\"],\"response\":{\"$ref\":\"PlaylistItemListRespo" +
-            "nse\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapi" +
-            "s.com/auth/youtube.readonly\",\"https://www.googleapis.com/auth/youtubepartner\"]}," +
-            "\"update\":{\"id\":\"youtube.playlistItems.update\",\"path\":\"playlistItems\",\"httpMethod" +
-            "\":\"PUT\",\"description\":\"Modifies a playlist item. For example, you could update t" +
-            "he item\'s position in the playlist.\",\"parameters\":{\"part\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The part parameter serves two purposes in this operation. It identifie" +
-            "s the properties that the write operation will set as well as the properties tha" +
-            "t the API response will include.\\n\\nThe part names that you can include in the p" +
-            "arameter value are snippet and contentDetails.\\n\\nNote that this method will ove" +
-            "rride the existing values for all of the mutable properties that are contained i" +
-            "n any parts that the parameter value specifies. For example, a playlist item can" +
-            " specify a start time and end time, which identify the times portion of the vide" +
-            "o that should play when users watch the video in the playlist. If your request i" +
-            "s updating a playlist item that sets these values, and the request\'s part parame" +
-            "ter value includes the contentDetails part, the playlist item\'s start and end ti" +
-            "mes will be updated to whatever value the request body specifies. If the request" +
-            " body does not specify values, the existing start and end times will be removed " +
-            "and replaced with the default settings.\",\"required\":true,\"location\":\"query\"}},\"p" +
-            "arameterOrder\":[\"part\"],\"request\":{\"$ref\":\"PlaylistItem\"},\"response\":{\"$ref\":\"Pl" +
-            "aylistItem\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.go" +
-            "ogleapis.com/auth/youtubepartner\"]}}},\"playlists\":{\"methods\":{\"delete\":{\"id\":\"yo" +
-            "utube.playlists.delete\",\"path\":\"playlists\",\"httpMethod\":\"DELETE\",\"description\":\"" +
-            "Deletes a playlist.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The id p" +
-            "arameter specifies the YouTube playlist ID for the playlist that is being delete" +
-            "d. In a playlist resource, the id property specifies the playlist\'s ID.\",\"requir" +
-            "ed\":true,\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"]},\"in" +
-            "sert\":{\"id\":\"youtube.playlists.insert\",\"path\":\"playlists\",\"httpMethod\":\"POST\",\"d" +
-            "escription\":\"Creates a playlist.\",\"parameters\":{\"part\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The part parameter serves two purposes in this operation. It identifies t" +
-            "he properties that the write operation will set as well as the properties that t" +
-            "he API response will include.\\n\\nThe part names that you can include in the para" +
-            "meter value are snippet and status.\",\"required\":true,\"location\":\"query\"}},\"param" +
-            "eterOrder\":[\"part\"],\"request\":{\"$ref\":\"Playlist\"},\"response\":{\"$ref\":\"Playlist\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com" +
-            "/auth/youtubepartner\"]},\"list\":{\"id\":\"youtube.playlists.list\",\"path\":\"playlists\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Returns a collection of playlists that match " +
-            "the API request parameters. For example, you can retrieve all playlists that the" +
-            " authenticated user owns, or you can retrieve one or more playlists by their uni" +
-            "que IDs.\",\"parameters\":{\"channelId\":{\"type\":\"string\",\"description\":\"This value i" +
-            "ndicates that the API should only return the specified channel\'s playlists.\",\"lo" +
-            "cation\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id parameter specifies" +
-            " a comma-separated list of the YouTube playlist ID(s) for the resource(s) that a" +
-            "re being retrieved. In a playlist resource, the id property specifies the playli" +
-            "st\'s YouTube playlist ID.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"d" +
-            "escription\":\"USE_DESCRIPTION --- channels:list:maxResults\",\"default\":\"5\",\"format" +
-            "\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"mine\":{\"type\":\"bool" +
-            "ean\",\"description\":\"Set this parameter\'s value to true to instruct the API to on" +
-            "ly return playlists owned by the authenticated user.\",\"location\":\"query\"},\"pageT" +
-            "oken\":{\"type\":\"string\",\"description\":\"USE_DESCRIPTION --- channels:list:pageToke" +
-            "n\",\"location\":\"query\"},\"part\":{\"type\":\"string\",\"description\":\"The part parameter" +
-            " specifies a comma-separated list of one or more playlist resource properties th" +
-            "at the API response will include. The part names that you can include in the par" +
-            "ameter value are id, snippet, and status.\\n\\nIf the parameter identifies a prope" +
-            "rty that contains child properties, the child properties will be included in the" +
-            " response. For example, in a playlist resource, the snippet property contains pr" +
-            "operties like author, title, description, tags, and timeCreated. As such, if you" +
-            " set part=snippet, the API response will contain all of those properties.\",\"requ" +
-            "ired\":true,\"location\":\"query\"}},\"parameterOrder\":[\"part\"],\"response\":{\"$ref\":\"Pl" +
-            "aylistListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https:" +
-            "//www.googleapis.com/auth/youtube.readonly\",\"https://www.googleapis.com/auth/you" +
-            "tubepartner\"]},\"update\":{\"id\":\"youtube.playlists.update\",\"path\":\"playlists\",\"htt" +
-            "pMethod\":\"PUT\",\"description\":\"Modifies a playlist. For example, you could change" +
-            " a playlist\'s title, description, or privacy status.\",\"parameters\":{\"part\":{\"typ" +
-            "e\":\"string\",\"description\":\"The part parameter serves two purposes in this operat" +
-            "ion. It identifies the properties that the write operation will set as well as t" +
-            "he properties that the API response will include.\\n\\nThe part names that you can" +
-            " include in the parameter value are snippet and status.\\n\\nNote that this method" +
-            " will override the existing values for all of the mutable properties that are co" +
-            "ntained in any parts that the parameter value specifies. For example, a playlist" +
-            "\'s privacy setting is contained in the status part. As such, if your request is " +
-            "updating a private playlist, and the request\'s part parameter value includes the" +
-            " status part, the playlist\'s privacy setting will be updated to whatever value t" +
-            "he request body specifies. If the request body does not specify a value, the exi" +
-            "sting privacy setting will be removed and the playlist will revert to the defaul" +
-            "t privacy setting.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"part" +
-            "\"],\"request\":{\"$ref\":\"Playlist\"},\"response\":{\"$ref\":\"Playlist\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepart" +
-            "ner\"]}}},\"search\":{\"methods\":{\"list\":{\"id\":\"youtube.search.list\",\"path\":\"search\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Returns a collection of search results that m" +
-            "atch the query parameters specified in the API request. By default, a search res" +
-            "ult set identifies matching video, channel, and playlist resources, but you can " +
-            "also configure queries to only retrieve a specific type of resource.\",\"parameter" +
-            "s\":{\"channelId\":{\"type\":\"string\",\"description\":\"The channelId parameter indicate" +
-            "s that the API response should only contain resources created by the channel\",\"l" +
-            "ocation\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"USE_DESCRIPTION " +
-            "--- channels:list:maxResults\",\"default\":\"5\",\"format\":\"uint32\",\"minimum\":\"0\",\"max" +
-            "imum\":\"50\",\"location\":\"query\"},\"order\":{\"type\":\"string\",\"description\":\"The order" +
-            " parameter specifies the method that will be used to order resources in the API " +
-            "response.\",\"default\":\"SEARCH_SORT_RELEVANCE\",\"enum\":[\"date\",\"rating\",\"relevance\"" +
-            ",\"viewCount\"],\"enumDescriptions\":[\"Resources are sorted in reverse chronological" +
-            " order based on the date they were created.\",\"Resources are sorted from highest " +
-            "to lowest rating.\",\"Resources are sorted based on their relevance to the search " +
-            "query. This is the default value for this parameter.\",\"Resources are sorted from" +
-            " highest to lowest number of views.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"s" +
-            "tring\",\"description\":\"USE_DESCRIPTION --- channels:list:pageToken\",\"location\":\"q" +
-            "uery\"},\"part\":{\"type\":\"string\",\"description\":\"The part parameter specifies a com" +
-            "ma-separated list of one or more search resource properties that the API respons" +
-            "e will include. The part names that you can include in the parameter value are i" +
-            "d and snippet.\\n\\nIf the parameter identifies a property that contains child pro" +
-            "perties, the child properties will be included in the response. For example, in " +
-            "a search result, the snippet property contains other properties that identify th" +
-            "e result\'s title, description, and so forth. If you set part=snippet, the API re" +
-            "sponse will also contain all of those nested properties.\",\"required\":true,\"locat" +
-            "ion\":\"query\"},\"publishedAfter\":{\"type\":\"string\",\"description\":\"The publishedAfte" +
-            "r parameter indicates that the API response should only contain resources create" +
-            "d after the specified time. The value is an RFC 3339 formatted date-time value (" +
-            "1970-01-01T00:00:00Z).\",\"format\":\"date-time\",\"location\":\"query\"},\"publishedBefor" +
-            "e\":{\"type\":\"string\",\"description\":\"The publishedBefore parameter indicates that " +
-            "the API response should only contain resources created before the specified time" +
-            ". The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).\",\"f" +
-            "ormat\":\"date-time\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"The q" +
-            " parameter specifies the query term to search for.\",\"location\":\"query\"},\"related" +
-            "ToVideoId\":{\"type\":\"string\",\"description\":\"The relatedToVideoId parameter retrie" +
-            "ves a list of videos that are related to the video that the parameter value iden" +
-            "tifies. The parameter value must be set to a YouTube video ID and, if you are us" +
-            "ing this parameter, the type parameter must be set to video.\",\"location\":\"query\"" +
-            "},\"topicId\":{\"type\":\"string\",\"description\":\"The topicId parameter indicates that" +
-            " the API response should only contain resources associated with the specified to" +
-            "pic. The value identifies a Freebase topic ID.\",\"location\":\"query\"},\"type\":{\"typ" +
-            "e\":\"string\",\"description\":\"The type parameter restricts a search query to only r" +
-            "etrieve a particular type of resource.\",\"default\":\"video,channel,playlist\",\"loca" +
-            "tion\":\"query\"},\"videoCaption\":{\"type\":\"string\",\"description\":\"The videoCaption p" +
-            "arameter indicates whether the API should filter video search results based on w" +
-            "hether they have captions.\",\"enum\":[\"any\",\"closedCaption\",\"none\"],\"enumDescripti" +
-            "ons\":[\"Do not filter results based on caption availability.\",\"Only include video" +
-            "s that have captions.\",\"Only include videos that do not have captions.\"],\"locati" +
-            "on\":\"query\"},\"videoCategoryId\":{\"type\":\"string\",\"description\":\"The videoCategory" +
-            "Id parameter filters video search results based on their category.\",\"location\":\"" +
-            "query\"},\"videoDefinition\":{\"type\":\"string\",\"description\":\"The videoDefinition pa" +
-            "rameter lets you restrict a search to only include either high definition (HD) o" +
-            "r standard definition (SD) videos. HD videos are available for playback in at le" +
-            "ast 720p, though higher resolutions, like 1080p, might also be available.\",\"enum" +
-            "\":[\"any\",\"high\",\"standard\"],\"enumDescriptions\":[\"Return all videos, regardless o" +
-            "f their resolution.\",\"Only retrieve HD videos.\",\"Only retrieve videos in standar" +
-            "d definition.\"],\"location\":\"query\"},\"videoDimension\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The videoDimension parameter lets you restrict a search to only retrieve 2D" +
-            " or 3D videos.\",\"enum\":[\"2d\",\"3d\",\"any\"],\"enumDescriptions\":[\"Restrict search re" +
-            "sults to exclude 3D videos.\",\"Restrict search results to only include 3D videos." +
-            "\",\"Include both 3D and non-3D videos in returned results. This is the default va" +
-            "lue.\"],\"location\":\"query\"},\"videoDuration\":{\"type\":\"string\",\"description\":\"The v" +
-            "ideoDuration parameter filters video search results based on their duration.\",\"e" +
-            "num\":[\"any\",\"long\",\"medium\",\"short\"],\"enumDescriptions\":[\"Do not filter video se" +
-            "arch results based on their duration. This is the default value.\",\"Only include " +
-            "videos longer than 20 minutes.\",\"Only include videos that are between four and 2" +
-            "0 minutes long (inclusive).\",\"Only include videos that are less than four minute" +
-            "s long.\"],\"location\":\"query\"},\"videoEmbeddable\":{\"type\":\"string\",\"description\":\"" +
-            "The videoEmbeddable parameter lets you to restrict a search to only videos that " +
-            "can be embedded into a webpage.\",\"enum\":[\"any\",\"true\"],\"enumDescriptions\":[\"Retu" +
-            "rn all videos, embeddable or not.\",\"Only retrieve embeddable videos.\"],\"location" +
-            "\":\"query\"},\"videoLicense\":{\"type\":\"string\",\"description\":\"The videoLicense param" +
-            "eter filters search results to only include videos with a particular license. Yo" +
-            "uTube lets video uploaders choose to attach either the Creative Commons license " +
-            "or the standard YouTube license to each of their videos.\",\"enum\":[\"any\",\"creativ" +
-            "eCommon\",\"youtube\"],\"enumDescriptions\":[\"Return all videos, regardless of which " +
-            "license they have, that match the query parameters.\",\"Only return videos that ha" +
-            "ve a Creative Commons license. Users can reuse videos with this license in other" +
-            " videos that they create. Learn more.\",\"Only return videos that have the standar" +
-            "d YouTube license.\"],\"location\":\"query\"},\"videoSyndicated\":{\"type\":\"string\",\"des" +
-            "cription\":\"The videoSyndicated parameter lets you to restrict a search to only v" +
-            "ideos that can be played outside youtube.com.\",\"enum\":[\"any\",\"true\"],\"enumDescri" +
-            "ptions\":[\"Return all videos, syndicated or not.\",\"Only retrieve syndicated video" +
-            "s.\"],\"location\":\"query\"}},\"parameterOrder\":[\"part\"],\"response\":{\"$ref\":\"SearchLi" +
-            "stResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.go" +
-            "ogleapis.com/auth/youtube.readonly\",\"https://www.googleapis.com/auth/youtubepart" +
-            "ner\"]}}},\"subscriptions\":{\"methods\":{\"delete\":{\"id\":\"youtube.subscriptions.delet" +
-            "e\",\"path\":\"subscriptions\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a subscri" +
-            "ption.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The id parameter spec" +
-            "ifies the YouTube subscription ID for the resource that is being deleted. In a s" +
-            "ubscription resource, the id property specifies the YouTube subscription ID.\",\"r" +
-            "equired\":true,\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"]" +
-            "},\"insert\":{\"id\":\"youtube.subscriptions.insert\",\"path\":\"subscriptions\",\"httpMeth" +
-            "od\":\"POST\",\"description\":\"Adds a subscription for the authenticated user\'s chann" +
-            "el.\",\"parameters\":{\"part\":{\"type\":\"string\",\"description\":\"The part parameter ser" +
-            "ves two purposes in this operation. It identifies the properties that the write " +
-            "operation will set as well as the properties that the API response will include." +
-            "\\n\\nThe part names that you can include in the parameter value are snippet and c" +
-            "ontentDetails.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"part\"],\"" +
-            "request\":{\"$ref\":\"Subscription\"},\"response\":{\"$ref\":\"Subscription\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtube" +
-            "partner\"]},\"list\":{\"id\":\"youtube.subscriptions.list\",\"path\":\"subscriptions\",\"htt" +
-            "pMethod\":\"GET\",\"description\":\"Returns subscription resources that match the API " +
-            "request criteria.\",\"parameters\":{\"channelId\":{\"type\":\"string\",\"description\":\"The" +
-            " channelId parameter specifies a YouTube channel ID. The API will only return th" +
-            "at channel\'s subscriptions.\",\"location\":\"query\"},\"forChannelId\":{\"type\":\"string\"" +
-            ",\"description\":\"The forChannelId parameter specifies a comma-separated list of c" +
-            "hannel IDs. The API response will then only contain subscriptions matching those" +
-            " channels.\",\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id para" +
-            "meter specifies a comma-separated list of the YouTube subscription ID(s) for the" +
-            " resource(s) that are being retrieved. In a subscription resource, the id proper" +
-            "ty specifies the YouTube subscription ID.\",\"location\":\"query\"},\"maxResults\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"USE_DESCRIPTION --- channels:list:maxResults\",\"defa" +
-            "ult\":\"5\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"min" +
-            "e\":{\"type\":\"boolean\",\"description\":\"Set this parameter\'s value to true to retrie" +
-            "ve a feed of the authenticated user\'s subscriptions.\",\"location\":\"query\"},\"order" +
-            "\":{\"type\":\"string\",\"description\":\"The order parameter specifies the method that " +
-            "will be used to sort resources in the API response.\",\"default\":\"SUBSCRIPTION_ORD" +
-            "ER_RELEVANCE\",\"enum\":[\"alphabetical\",\"relevance\",\"unread\"],\"enumDescriptions\":[\"" +
-            "Sort alphabetically.\",\"Sort by relevance.\",\"Sort by order of activity.\"],\"locati" +
-            "on\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"USE_DESCRIPTION --- cha" +
-            "nnels:list:pageToken\",\"location\":\"query\"},\"part\":{\"type\":\"string\",\"description\":" +
-            "\"The part parameter specifies a comma-separated list of one or more subscription" +
-            " resource properties that the API response will include. The part names that you" +
-            " can include in the parameter value are id, snippet, and contentDetails.\\n\\nIf t" +
-            "he parameter identifies a property that contains child properties, the child pro" +
-            "perties will be included in the response. For example, in a subscription resourc" +
-            "e, the snippet property contains other properties, such as a display title for t" +
-            "he subscription. If you set part=snippet, the API response will also contain all" +
-            " of those nested properties.\",\"required\":true,\"location\":\"query\"}},\"parameterOrd" +
-            "er\":[\"part\"],\"response\":{\"$ref\":\"SubscriptionListResponse\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"" +
-            "]}}},\"videoCategories\":{\"methods\":{\"list\":{\"id\":\"youtube.videoCategories.list\",\"" +
-            "path\":\"videoCategories\",\"httpMethod\":\"GET\",\"description\":\"Returns a list of cate" +
-            "gories that can be associated with YouTube videos.\",\"parameters\":{\"hl\":{\"type\":\"" +
-            "string\",\"description\":\"The hl parameter specifies the language that should be us" +
-            "ed for text values in the API response.\",\"default\":\"en_US\",\"location\":\"query\"},\"" +
-            "id\":{\"type\":\"string\",\"description\":\"The id parameter specifies a comma-separated" +
-            " list of video category IDs for the resources that you are retrieving.\",\"locatio" +
-            "n\":\"query\"},\"part\":{\"type\":\"string\",\"description\":\"The part parameter specifies " +
-            "the videoCategory resource parts that the API response will include. Supported v" +
-            "alues are id and snippet.\",\"required\":true,\"location\":\"query\"},\"regionCode\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The regionCode parameter instructs the API to return" +
-            " the list of video categories available in the specified country. The parameter " +
-            "value is an ISO 3166-1 alpha-2 country code.\",\"location\":\"query\"}},\"parameterOrd" +
-            "er\":[\"part\"],\"response\":{\"$ref\":\"VideoCategoryListResponse\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtube.readon" +
-            "ly\",\"https://www.googleapis.com/auth/youtubepartner\"]}}},\"videos\":{\"methods\":{\"d" +
-            "elete\":{\"id\":\"youtube.videos.delete\",\"path\":\"videos\",\"httpMethod\":\"DELETE\",\"desc" +
-            "ription\":\"Deletes a YouTube video.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The id parameter specifies the YouTube video ID for the resource that is " +
-            "being deleted. In a video resource, the id property specifies the video\'s ID.\",\"" +
-            "required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"" +
-            "]},\"insert\":{\"id\":\"youtube.videos.insert\",\"path\":\"videos\",\"httpMethod\":\"POST\",\"d" +
-            "escription\":\"Uploads a video to YouTube and optionally sets the video\'s metadata" +
-            ".\",\"parameters\":{\"part\":{\"type\":\"string\",\"description\":\"The part parameter serve" +
-            "s two purposes in this operation. It identifies the properties that the write op" +
-            "eration will set as well as the properties that the API response will include.\\n" +
-            "\\nThe part names that you can include in the parameter value are snippet, conten" +
-            "tDetails, player, statistics, status, and topicDetails. However, not all of thos" +
-            "e parts contain properties that can be set when setting or updating a video\'s me" +
-            "tadata. For example, the statistics object encapsulates statistics that YouTube " +
-            "calculates for a video and does not contain values that you can set or modify. I" +
-            "f the parameter value specifies a part that does not contain mutable values, tha" +
-            "t part will still be included in the API response.\",\"required\":true,\"location\":\"" +
-            "query\"}},\"parameterOrder\":[\"part\"],\"request\":{\"$ref\":\"Video\"},\"response\":{\"$ref\"" +
-            ":\"Video\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googl" +
-            "eapis.com/auth/youtube.upload\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accep" +
-            "t\":[\"application/octet-stream\",\"video/*\"],\"maxSize\":\"64GB\",\"protocols\":{\"simple\"" +
-            ":{\"multipart\":true,\"path\":\"/upload/youtube/v3/videos\"},\"resumable\":{\"multipart\":" +
-            "true,\"path\":\"/resumable/upload/youtube/v3/videos\"}}}},\"list\":{\"id\":\"youtube.vide" +
-            "os.list\",\"path\":\"videos\",\"httpMethod\":\"GET\",\"description\":\"Returns a list of vid" +
-            "eos that match the API request parameters.\",\"parameters\":{\"id\":{\"type\":\"string\"," +
-            "\"description\":\"The id parameter specifies a comma-separated list of the YouTube " +
-            "video ID(s) for the resource(s) that are being retrieved. In a video resource, t" +
-            "he id property specifies the video\'s ID.\",\"required\":true,\"location\":\"query\"},\"p" +
-            "art\":{\"type\":\"string\",\"description\":\"The part parameter specifies a comma-separa" +
-            "ted list of one or more video resource properties that the API response will inc" +
-            "lude. The part names that you can include in the parameter value are id, snippet" +
-            ", contentDetails, player, statistics, status, and topicDetails.\\n\\nIf the parame" +
-            "ter identifies a property that contains child properties, the child properties w" +
-            "ill be included in the response. For example, in a video resource, the snippet p" +
-            "roperty contains the channelId, title, description, tags, and categoryId propert" +
-            "ies. As such, if you set part=snippet, the API response will contain all of thos" +
-            "e properties.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"id\",\"part" +
-            "\"],\"response\":{\"$ref\":\"VideoListResponse\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/youtube\",\"https://www.googleapis.com/auth/youtube.readonly\",\"https://www.g" +
-            "oogleapis.com/auth/youtubepartner\"]},\"update\":{\"id\":\"youtube.videos.update\",\"pat" +
-            "h\":\"videos\",\"httpMethod\":\"PUT\",\"description\":\"Updates a video\'s metadata.\",\"para" +
-            "meters\":{\"part\":{\"type\":\"string\",\"description\":\"The part parameter serves two pu" +
-            "rposes in this operation. It identifies the properties that the write operation " +
-            "will set as well as the properties that the API response will include.\\n\\nThe pa" +
-            "rt names that you can include in the parameter value are snippet, contentDetails" +
-            ", player, statistics, status, and topicDetails.\\n\\nNote that this method will ov" +
-            "erride the existing values for all of the mutable properties that are contained " +
-            "in any parts that the parameter value specifies. For example, a video\'s privacy " +
-            "setting is contained in the status part. As such, if your request is updating a " +
-            "private video, and the request\'s part parameter value includes the status part, " +
-            "the video\'s privacy setting will be updated to whatever value the request body s" +
-            "pecifies. If the request body does not specify a value, the existing privacy set" +
-            "ting will be removed and the video will revert to the default privacy setting.\\n" +
-            "\\nIn addition, not all of those parts contain properties that can be set when se" +
-            "tting or updating a video\'s metadata. For example, the statistics object encapsu" +
-            "lates statistics that YouTube calculates for a video and does not contain values" +
-            " that you can set or modify. If the parameter value specifies a part that does n" +
-            "ot contain mutable values, that part will still be included in the API response." +
-            "\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"part\"],\"request\":{\"$re" +
-            "f\":\"Video\"},\"response\":{\"$ref\":\"Video\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"]}}}}}";
+    public partial class YoutubeService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v3";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected YoutubeService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._activities = new ActivitiesResource(this, _authenticator);
-            this._channels = new ChannelsResource(this, _authenticator);
-            this._guideCategories = new GuideCategoriesResource(this, _authenticator);
-            this._playlistItems = new PlaylistItemsResource(this, _authenticator);
-            this._playlists = new PlaylistsResource(this, _authenticator);
-            this._search = new SearchResource(this, _authenticator);
-            this._subscriptions = new SubscriptionsResource(this, _authenticator);
-            this._videoCategories = new VideoCategoriesResource(this, _authenticator);
-            this._videos = new VideosResource(this, _authenticator);
+        public YoutubeService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._activities = new ActivitiesResource(this, Authenticator);
+            this._channels = new ChannelsResource(this, Authenticator);
+            this._guideCategories = new GuideCategoriesResource(this, Authenticator);
+            this._liveBroadcasts = new LiveBroadcastsResource(this, Authenticator);
+            this._liveStreams = new LiveStreamsResource(this, Authenticator);
+            this._playlistItems = new PlaylistItemsResource(this, Authenticator);
+            this._playlists = new PlaylistsResource(this, Authenticator);
+            this._search = new SearchResource(this, Authenticator);
+            this._subscriptions = new SubscriptionsResource(this, Authenticator);
+            this._videoCategories = new VideoCategoriesResource(this, Authenticator);
+            this._videos = new VideosResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public YoutubeService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public YoutubeService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(YoutubeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/youtube/v3/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "youtube";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/youtube/v3/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -4281,13 +4913,13 @@ namespace Google.Apis.Youtube.v3 {
         
         private YoutubeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "activities";
         
-        public ActivitiesResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ActivitiesResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Posts a bulletin for a specific channel. (The user submitting the request must be authorized to act on the channel&apos;s behalf.)</summary>
@@ -4306,20 +4938,51 @@ namespace Google.Apis.Youtube.v3 {
             return new ListRequest(service, part);
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.Activity> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.Activity> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.Activity _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Youtube.v3.Data.Activity body, string part) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Activity body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4341,6 +5004,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4364,28 +5049,54 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.ActivityListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.ActivityListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _channelId;
             
@@ -4403,9 +5114,32 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _publishedBefore;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string part) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4427,6 +5161,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4517,16 +5273,41 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("channelId", Google.Apis.Util.Utilities.CreateRuntimeParameter("channelId", false, "query", null, null, new string[0]));
+                parameters.Add("home", Google.Apis.Util.Utilities.CreateRuntimeParameter("home", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
+                parameters.Add("mine", Google.Apis.Util.Utilities.CreateRuntimeParameter("mine", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                parameters.Add("publishedAfter", Google.Apis.Util.Utilities.CreateRuntimeParameter("publishedAfter", false, "query", null, null, new string[0]));
+                parameters.Add("publishedBefore", Google.Apis.Util.Utilities.CreateRuntimeParameter("publishedBefore", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4535,13 +5316,13 @@ namespace Google.Apis.Youtube.v3 {
         
         private YoutubeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "channels";
         
-        public ChannelsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ChannelsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns a collection of zero or more channel resources that match the request criteria.</summary>
@@ -4552,11 +5333,19 @@ namespace Google.Apis.Youtube.v3 {
             return new ListRequest(service, part);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.ChannelListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.ChannelListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _categoryId;
             
@@ -4572,9 +5361,32 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string part) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4596,6 +5408,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4675,16 +5509,40 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "channels";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "channels";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("categoryId", Google.Apis.Util.Utilities.CreateRuntimeParameter("categoryId", false, "query", null, null, new string[0]));
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
+                parameters.Add("mine", Google.Apis.Util.Utilities.CreateRuntimeParameter("mine", false, "query", null, null, new string[0]));
+                parameters.Add("mySubscribers", Google.Apis.Util.Utilities.CreateRuntimeParameter("mySubscribers", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4693,13 +5551,13 @@ namespace Google.Apis.Youtube.v3 {
         
         private YoutubeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "guideCategories";
         
-        public GuideCategoriesResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public GuideCategoriesResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns a list of categories that can be associated with YouTube channels.</summary>
@@ -4710,11 +5568,19 @@ namespace Google.Apis.Youtube.v3 {
             return new ListRequest(service, part);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.GuideCategoryListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.GuideCategoryListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _hl;
             
@@ -4724,9 +5590,32 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _regionCode;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string part) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4748,6 +5637,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4794,16 +5705,1723 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "guideCategories";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "guideCategories";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", "en-US", null, new string[0]));
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                parameters.Add("regionCode", Google.Apis.Util.Utilities.CreateRuntimeParameter("regionCode", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+    }
+    
+    public class LiveBroadcastsResource {
+        
+        private YoutubeService service;
+        
+        private Google.Apis.Authentication.IAuthenticator authenticator;
+        
+        private const string Resource = "liveBroadcasts";
+        
+        public LiveBroadcastsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            this.service = service;
+            this.authenticator = authenticator;
+        }
+        
+        /// <summary>Bind a YouTube live broadcast to a stream.</summary>
+        /// <param name="id">Required - ID of the broadcast to which the stream will be bound</param>
+        /// <param name="part">Required - Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</param>
+        public virtual BindRequest Bind(string id, string part) {
+            return new BindRequest(service, id, part);
+        }
+        
+        /// <summary>Delete a YouTube live broadcast.</summary>
+        /// <param name="id">Required - The id parameter specifies the YouTube live broadcast ID for the resource that is being deleted.</param>
+        public virtual DeleteRequest Delete(string id) {
+            return new DeleteRequest(service, id);
+        }
+        
+        /// <summary>Insert a YouTube live broadcast.</summary>
+        /// <param name="part">Required - Live broadcast parts to be set for the broadcast as well as included in the returned response. Valid values are: snippet, status, slateSettings, contentDetails.</param>
+        public virtual InsertRequest Insert(Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) {
+            return new InsertRequest(service, body, part);
+        }
+        
+        /// <summary>Browse the YouTube broadcast collection.</summary>
+        /// <param name="part">Required - Live broadcast parts to include in the returned response. Valid values are: id, snippet, status, slateSettings, contentDetails.</param>
+        public virtual ListRequest List(string part) {
+            return new ListRequest(service, part);
+        }
+        
+        /// <summary>Change the broadcasting status of a YouTube live broadcast and start all the processes associated with it.</summary>
+        /// <param name="broadcastStatus">Required - Must be one of the following values [complete, live, testing] - Desired broadcast status.</param>
+        /// <param name="id">Required - ID of the broadcast to change status</param>
+        /// <param name="part">Required - Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</param>
+        public virtual TransitionRequest Transition(BroadcastStatusEnum broadcastStatus, string id, string part) {
+            return new TransitionRequest(service, broadcastStatus, id, part);
+        }
+        
+        /// <summary>Update a YouTube live broadcast.</summary>
+        /// <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+        ///
+        ///The part names that you can include in the parameter value are id, snippet, status, slateSettings, contentDetails.</param>
+        public virtual UpdateRequest Update(Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) {
+            return new UpdateRequest(service, body, part);
+        }
+        
+        /// <summary>Filter to only return broadcasts with the given status by the authenticated user.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum BroadcastStatus {
+            
+            /// <summary>Return active broadcasts.</summary>
+            [Google.Apis.Util.StringValueAttribute("active")]
+            Active,
+            
+            /// <summary>Return all the broadcasts.</summary>
+            [Google.Apis.Util.StringValueAttribute("all")]
+            All,
+            
+            /// <summary>Return previously completed broadcasts.</summary>
+            [Google.Apis.Util.StringValueAttribute("completed")]
+            Completed,
+            
+            /// <summary>Return upcoming broadcasts.</summary>
+            [Google.Apis.Util.StringValueAttribute("upcoming")]
+            Upcoming,
+        }
+        
+        /// <summary>Desired broadcast status.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum BroadcastStatusEnum {
+            
+            /// <summary>Stop broadcasting.</summary>
+            [Google.Apis.Util.StringValueAttribute("complete")]
+            Complete,
+            
+            /// <summary>Start broadcasting.</summary>
+            [Google.Apis.Util.StringValueAttribute("live")]
+            Live,
+            
+            /// <summary>Start broadcast testing.</summary>
+            [Google.Apis.Util.StringValueAttribute("testing")]
+            Testing,
+        }
+        
+        public class BindRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.LiveBroadcast> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _id;
+            
+            private string _part;
+            
+            private string _streamId;
+            
+            public BindRequest(Google.Apis.Discovery.IClientService service, string id, string part) : 
+                    base(service) {
+                this._id = id;
+                this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>ID of the broadcast to which the stream will be bound</summary>
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Id {
+                get {
+                    return this._id;
+                }
+            }
+            
+            /// <summary>Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            /// <summary>ID of the stream to bind to the broadcast</summary>
+            [Google.Apis.Util.RequestParameterAttribute("streamId", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string StreamId {
+                get {
+                    return this._streamId;
+                }
+                set {
+                    this._streamId = value;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "bind";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveBroadcasts/bind";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                parameters.Add("streamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("streamId", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _id;
+            
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+                    base(service) {
+                this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>The id parameter specifies the YouTube live broadcast ID for the resource that is being deleted.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Id {
+                get {
+                    return this._id;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.LiveBroadcast> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _part;
+            
+            private Google.Apis.Youtube.v3.Data.LiveBroadcast _Body;
+            
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) : 
+                    base(service) {
+                this.Body = body;
+                this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>Live broadcast parts to be set for the broadcast as well as included in the returned response. Valid values are: snippet, status, slateSettings, contentDetails.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Youtube.v3.Data.LiveBroadcast Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.LiveBroadcastList> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private System.Nullable<BroadcastStatus> _broadcastStatus;
+            
+            private string _id;
+            
+            private System.Nullable<long> _maxResults;
+            
+            private System.Nullable<bool> _mine;
+            
+            private string _onBehalfOf;
+            
+            private string _pageToken;
+            
+            private string _part;
+            
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+                    base(service) {
+                this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>Filter to only return broadcasts with the given status by the authenticated user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("broadcastStatus", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<BroadcastStatus> BroadcastStatus {
+                get {
+                    return this._broadcastStatus;
+                }
+                set {
+                    this._broadcastStatus = value;
+                }
+            }
+            
+            /// <summary>IDs of the live broadcasts to be returned.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Id {
+                get {
+                    return this._id;
+                }
+                set {
+                    this._id = value;
+                }
+            }
+            
+            /// <summary>Maximum number of results to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> MaxResults {
+                get {
+                    return this._maxResults;
+                }
+                set {
+                    this._maxResults = value;
+                }
+            }
+            
+            /// <summary>Filter to only return broadcasts owned by authenticated user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("mine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> Mine {
+                get {
+                    return this._mine;
+                }
+                set {
+                    this._mine = value;
+                }
+            }
+            
+            /// <summary>ID of the Google+ Page for the channel that the request is be on behalf of</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOf", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOf {
+                get {
+                    return this._onBehalfOf;
+                }
+                set {
+                    this._onBehalfOf = value;
+                }
+            }
+            
+            /// <summary>Token for the page selection.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string PageToken {
+                get {
+                    return this._pageToken;
+                }
+                set {
+                    this._pageToken = value;
+                }
+            }
+            
+            /// <summary>Live broadcast parts to include in the returned response. Valid values are: id, snippet, status, slateSettings, contentDetails.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("broadcastStatus", Google.Apis.Util.Utilities.CreateRuntimeParameter("broadcastStatus", false, "query", null, null, new string[] {
+                                "active",
+                                "all",
+                                "completed",
+                                "upcoming"}));
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
+                parameters.Add("mine", Google.Apis.Util.Utilities.CreateRuntimeParameter("mine", false, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOf", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOf", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class TransitionRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.LiveBroadcast> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private BroadcastStatusEnum _broadcastStatus;
+            
+            private string _id;
+            
+            private string _part;
+            
+            public TransitionRequest(Google.Apis.Discovery.IClientService service, BroadcastStatusEnum broadcastStatus, string id, string part) : 
+                    base(service) {
+                this._broadcastStatus = broadcastStatus;
+                this._id = id;
+                this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>Desired broadcast status.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("broadcastStatus", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual BroadcastStatusEnum BroadcastStatus {
+                get {
+                    return this._broadcastStatus;
+                }
+            }
+            
+            /// <summary>ID of the broadcast to change status</summary>
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Id {
+                get {
+                    return this._id;
+                }
+            }
+            
+            /// <summary>Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "transition";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveBroadcasts/transition";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("broadcastStatus", Google.Apis.Util.Utilities.CreateRuntimeParameter("broadcastStatus", true, "query", null, null, new string[] {
+                                "complete",
+                                "live",
+                                "testing"}));
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.LiveBroadcast> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _part;
+            
+            private Google.Apis.Youtube.v3.Data.LiveBroadcast _Body;
+            
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) : 
+                    base(service) {
+                this.Body = body;
+                this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            ///
+            ///The part names that you can include in the parameter value are id, snippet, status, slateSettings, contentDetails.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Youtube.v3.Data.LiveBroadcast Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveBroadcasts";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+    }
+    
+    public class LiveStreamsResource {
+        
+        private YoutubeService service;
+        
+        private Google.Apis.Authentication.IAuthenticator authenticator;
+        
+        private const string Resource = "liveStreams";
+        
+        public LiveStreamsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            this.service = service;
+            this.authenticator = authenticator;
+        }
+        
+        /// <summary>Delete a live stream.</summary>
+        /// <param name="id">Required - The id parameter specifies the YouTube live stream ID for the resource that is being deleted.</param>
+        public virtual DeleteRequest Delete(string id) {
+            return new DeleteRequest(service, id);
+        }
+        
+        /// <summary>Insert a YouTube live stream.</summary>
+        /// <param name="part">Required - Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</param>
+        public virtual InsertRequest Insert(Google.Apis.Youtube.v3.Data.LiveStream body, string part) {
+            return new InsertRequest(service, body, part);
+        }
+        
+        /// <summary>Browse the YouTube live stream collection.</summary>
+        /// <param name="part">Required - Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</param>
+        public virtual ListRequest List(string part) {
+            return new ListRequest(service, part);
+        }
+        
+        /// <summary>Update a YouTube live stream.</summary>
+        /// <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+        ///
+        ///The part names that you can include in the parameter value are id, snippet, cdn, status.</param>
+        public virtual UpdateRequest Update(Google.Apis.Youtube.v3.Data.LiveStream body, string part) {
+            return new UpdateRequest(service, body, part);
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _id;
+            
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+                    base(service) {
+                this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>The id parameter specifies the YouTube live stream ID for the resource that is being deleted.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Id {
+                get {
+                    return this._id;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveStreams";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveStreams";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.LiveStream> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _part;
+            
+            private Google.Apis.Youtube.v3.Data.LiveStream _Body;
+            
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.LiveStream body, string part) : 
+                    base(service) {
+                this.Body = body;
+                this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Youtube.v3.Data.LiveStream Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveStreams";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveStreams";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.LiveStreamList> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _id;
+            
+            private System.Nullable<long> _maxResults;
+            
+            private System.Nullable<bool> _mine;
+            
+            private string _onBehalfOf;
+            
+            private string _pageToken;
+            
+            private string _part;
+            
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+                    base(service) {
+                this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>IDs of the live streams to be returned.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Id {
+                get {
+                    return this._id;
+                }
+                set {
+                    this._id = value;
+                }
+            }
+            
+            /// <summary>Maximum number of results to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> MaxResults {
+                get {
+                    return this._maxResults;
+                }
+                set {
+                    this._maxResults = value;
+                }
+            }
+            
+            /// <summary>Filter to only live streams owned by authenticated user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("mine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> Mine {
+                get {
+                    return this._mine;
+                }
+                set {
+                    this._mine = value;
+                }
+            }
+            
+            /// <summary>ID of the Google+ Page for the channel that the request is to be on behalf of</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOf", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOf {
+                get {
+                    return this._onBehalfOf;
+                }
+                set {
+                    this._onBehalfOf = value;
+                }
+            }
+            
+            /// <summary>Token for the page selection.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string PageToken {
+                get {
+                    return this._pageToken;
+                }
+                set {
+                    this._pageToken = value;
+                }
+            }
+            
+            /// <summary>Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveStreams";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveStreams";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
+                parameters.Add("mine", Google.Apis.Util.Utilities.CreateRuntimeParameter("mine", false, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOf", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOf", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.LiveStream> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _part;
+            
+            private Google.Apis.Youtube.v3.Data.LiveStream _Body;
+            
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.LiveStream body, string part) : 
+                    base(service) {
+                this.Body = body;
+                this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            ///
+            ///The part names that you can include in the parameter value are id, snippet, cdn, status.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Youtube.v3.Data.LiveStream Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "liveStreams";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "liveStreams";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4812,13 +7430,13 @@ namespace Google.Apis.Youtube.v3 {
         
         private YoutubeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "playlistItems";
         
-        public PlaylistItemsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public PlaylistItemsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes a playlist item.</summary>
@@ -4853,17 +7471,48 @@ namespace Google.Apis.Youtube.v3 {
             return new UpdateRequest(service, body, part);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4885,6 +7534,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4896,33 +7567,82 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "playlistItems";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "playlistItems";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.PlaylistItem> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.PlaylistItem> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.PlaylistItem _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Youtube.v3.Data.PlaylistItem body, string part) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.PlaylistItem body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4944,6 +7664,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4967,28 +7709,54 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "playlistItems";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "playlistItems";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.PlaylistItemListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.PlaylistItemListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _id;
             
@@ -5000,9 +7768,34 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _playlistId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string part) : 
+            private string _videoId;
+            
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5024,6 +7817,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5081,33 +7896,98 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            /// <summary>The videoId parameter specifies that the request should return only the playlist items that contain the specified video.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("videoId", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string VideoId {
+                get {
+                    return this._videoId;
+                }
+                set {
+                    this._videoId = value;
+                }
+            }
+            
+            public override string ResourcePath {
                 get {
                     return "playlistItems";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "playlistItems";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                parameters.Add("playlistId", Google.Apis.Util.Utilities.CreateRuntimeParameter("playlistId", false, "query", null, null, new string[0]));
+                parameters.Add("videoId", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoId", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.PlaylistItem> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.PlaylistItem> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.PlaylistItem _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Youtube.v3.Data.PlaylistItem body, string part) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.PlaylistItem body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5129,6 +8009,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5154,20 +8056,38 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "playlistItems";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "playlistItems";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5176,13 +8096,13 @@ namespace Google.Apis.Youtube.v3 {
         
         private YoutubeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "playlists";
         
-        public PlaylistsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public PlaylistsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes a playlist.</summary>
@@ -5217,17 +8137,48 @@ namespace Google.Apis.Youtube.v3 {
             return new UpdateRequest(service, body, part);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5249,6 +8200,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5260,33 +8233,82 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "playlists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "playlists";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.Playlist> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.Playlist> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.Playlist _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Youtube.v3.Data.Playlist body, string part) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Playlist body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5308,6 +8330,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5331,28 +8375,54 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "playlists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "playlists";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.PlaylistListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.PlaylistListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _channelId;
             
@@ -5366,9 +8436,32 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string part) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5390,6 +8483,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5458,33 +8573,87 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "playlists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "playlists";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("channelId", Google.Apis.Util.Utilities.CreateRuntimeParameter("channelId", false, "query", null, null, new string[0]));
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
+                parameters.Add("mine", Google.Apis.Util.Utilities.CreateRuntimeParameter("mine", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.Playlist> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.Playlist> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.Playlist _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Youtube.v3.Data.Playlist body, string part) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Playlist body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5506,6 +8675,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5531,20 +8722,38 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "playlists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "playlists";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5553,13 +8762,13 @@ namespace Google.Apis.Youtube.v3 {
         
         private YoutubeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "search";
         
-        public SearchResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public SearchResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource.</summary>
@@ -5706,11 +8915,19 @@ namespace Google.Apis.Youtube.v3 {
             True,
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.SearchListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.SearchListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _channelId;
             
@@ -5727,6 +8944,8 @@ namespace Google.Apis.Youtube.v3 {
             private string _publishedBefore;
             
             private string _q;
+            
+            private string _regionCode;
             
             private string _relatedToVideoId;
             
@@ -5750,9 +8969,32 @@ namespace Google.Apis.Youtube.v3 {
             
             private System.Nullable<VideoSyndicated> _videoSyndicated;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string part) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5774,6 +9016,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5861,6 +9125,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._q = value;
+                }
+            }
+            
+            /// <summary>The regionCode parameter instructs the API to return search results for the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("regionCode", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string RegionCode {
+                get {
+                    return this._regionCode;
+                }
+                set {
+                    this._regionCode = value;
                 }
             }
             
@@ -5985,16 +9260,77 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "search";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "search";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("channelId", Google.Apis.Util.Utilities.CreateRuntimeParameter("channelId", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
+                parameters.Add("order", Google.Apis.Util.Utilities.CreateRuntimeParameter("order", false, "query", "SEARCH_SORT_RELEVANCE", null, new string[] {
+                                "date",
+                                "rating",
+                                "relevance",
+                                "viewCount"}));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                parameters.Add("publishedAfter", Google.Apis.Util.Utilities.CreateRuntimeParameter("publishedAfter", false, "query", null, null, new string[0]));
+                parameters.Add("publishedBefore", Google.Apis.Util.Utilities.CreateRuntimeParameter("publishedBefore", false, "query", null, null, new string[0]));
+                parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", false, "query", null, null, new string[0]));
+                parameters.Add("regionCode", Google.Apis.Util.Utilities.CreateRuntimeParameter("regionCode", false, "query", null, null, new string[0]));
+                parameters.Add("relatedToVideoId", Google.Apis.Util.Utilities.CreateRuntimeParameter("relatedToVideoId", false, "query", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", false, "query", null, null, new string[0]));
+                parameters.Add("type", Google.Apis.Util.Utilities.CreateRuntimeParameter("type", false, "query", "video,channel,playlist", null, new string[0]));
+                parameters.Add("videoCaption", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoCaption", false, "query", null, null, new string[] {
+                                "any",
+                                "closedCaption",
+                                "none"}));
+                parameters.Add("videoCategoryId", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoCategoryId", false, "query", null, null, new string[0]));
+                parameters.Add("videoDefinition", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoDefinition", false, "query", null, null, new string[] {
+                                "any",
+                                "high",
+                                "standard"}));
+                parameters.Add("videoDimension", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoDimension", false, "query", null, null, new string[] {
+                                "2d",
+                                "3d",
+                                "any"}));
+                parameters.Add("videoDuration", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoDuration", false, "query", null, null, new string[] {
+                                "any",
+                                "long",
+                                "medium",
+                                "short"}));
+                parameters.Add("videoEmbeddable", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoEmbeddable", false, "query", null, null, new string[] {
+                                "any",
+                                "true"}));
+                parameters.Add("videoLicense", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoLicense", false, "query", null, null, new string[] {
+                                "any",
+                                "creativeCommon",
+                                "youtube"}));
+                parameters.Add("videoSyndicated", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoSyndicated", false, "query", null, null, new string[] {
+                                "any",
+                                "true"}));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6003,13 +9339,13 @@ namespace Google.Apis.Youtube.v3 {
         
         private YoutubeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "subscriptions";
         
-        public SubscriptionsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public SubscriptionsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes a subscription.</summary>
@@ -6051,17 +9387,48 @@ namespace Google.Apis.Youtube.v3 {
             Unread,
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6083,6 +9450,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6094,33 +9483,82 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "subscriptions";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.Subscription> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.Subscription> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.Subscription _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Youtube.v3.Data.Subscription body, string part) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Subscription body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6142,6 +9580,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6165,28 +9625,54 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "subscriptions";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.SubscriptionListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.SubscriptionListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _channelId;
             
@@ -6204,9 +9690,32 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string part) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6228,6 +9737,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6318,16 +9849,44 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "subscriptions";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("channelId", Google.Apis.Util.Utilities.CreateRuntimeParameter("channelId", false, "query", null, null, new string[0]));
+                parameters.Add("forChannelId", Google.Apis.Util.Utilities.CreateRuntimeParameter("forChannelId", false, "query", null, null, new string[0]));
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
+                parameters.Add("mine", Google.Apis.Util.Utilities.CreateRuntimeParameter("mine", false, "query", null, null, new string[0]));
+                parameters.Add("order", Google.Apis.Util.Utilities.CreateRuntimeParameter("order", false, "query", "SUBSCRIPTION_ORDER_RELEVANCE", null, new string[] {
+                                "alphabetical",
+                                "relevance",
+                                "unread"}));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6336,13 +9895,13 @@ namespace Google.Apis.Youtube.v3 {
         
         private YoutubeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "videoCategories";
         
-        public VideoCategoriesResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public VideoCategoriesResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns a list of categories that can be associated with YouTube videos.</summary>
@@ -6351,11 +9910,19 @@ namespace Google.Apis.Youtube.v3 {
             return new ListRequest(service, part);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.VideoCategoryListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.VideoCategoryListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _hl;
             
@@ -6365,9 +9932,32 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _regionCode;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string part) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6389,6 +9979,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6433,16 +10045,37 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "videoCategories";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "videoCategories";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", "en_US", null, new string[0]));
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                parameters.Add("regionCode", Google.Apis.Util.Utilities.CreateRuntimeParameter("regionCode", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6451,13 +10084,13 @@ namespace Google.Apis.Youtube.v3 {
         
         private YoutubeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "videos";
         
-        public VideosResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public VideosResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes a YouTube video.</summary>
@@ -6503,17 +10136,48 @@ namespace Google.Apis.Youtube.v3 {
             return new UpdateRequest(service, body, part);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6535,6 +10199,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6546,33 +10232,82 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "videos";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "videos";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.Video> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.Video> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.Video _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Youtube.v3.Data.Video body, string part) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Video body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6594,6 +10329,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6617,36 +10374,84 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "videos";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "videos";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
         public class InsertMediaUpload : Google.Apis.Upload.ResumableUpload<Google.Apis.Youtube.v3.Data.Video, Google.Apis.Youtube.v3.Data.Video> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _part;
             
-            public InsertMediaUpload(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Youtube.v3.Data.Video body, string part, System.IO.Stream stream, string contentType) : 
+            public InsertMediaUpload(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Video body, string part, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/youtube/v3/videos", "POST", stream, contentType) {
                 this.Body = body;
                 this.Authenticator = service.Authenticator;
                 this._part = part;
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6668,6 +10473,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6682,20 +10509,51 @@ namespace Google.Apis.Youtube.v3 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.VideoListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.VideoListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _id;
             
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string id, string part) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string id, string part) : 
                     base(service) {
                 this._id = id;
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6717,6 +10575,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6738,33 +10618,83 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "videos";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "videos";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3.Data.Video> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.Video> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.Video _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Youtube.v3.Data.Video body, string part) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Video body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6786,6 +10716,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6813,20 +10765,38 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "videos";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "videos";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6841,6 +10811,10 @@ namespace Google.Apis.Youtube.v3 {
         
         private GuideCategoriesResource _guideCategories;
         
+        private LiveBroadcastsResource _liveBroadcasts;
+        
+        private LiveStreamsResource _liveStreams;
+        
         private PlaylistItemsResource _playlistItems;
         
         private PlaylistsResource _playlists;
@@ -6853,7 +10827,7 @@ namespace Google.Apis.Youtube.v3 {
         
         private VideosResource _videos;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }
@@ -6874,6 +10848,18 @@ namespace Google.Apis.Youtube.v3 {
         public virtual GuideCategoriesResource GuideCategories {
             get {
                 return this._guideCategories;
+            }
+        }
+        
+        public virtual LiveBroadcastsResource LiveBroadcasts {
+            get {
+                return this._liveBroadcasts;
+            }
+        }
+        
+        public virtual LiveStreamsResource LiveStreams {
+            get {
+                return this._liveStreams;
             }
         }
         

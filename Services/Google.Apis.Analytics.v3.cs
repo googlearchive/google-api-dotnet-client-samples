@@ -3635,717 +3635,68 @@ namespace Google.Apis.Analytics.v3 {
     using Google.Apis.Discovery;
     
     
-    public partial class AnalyticsService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/OJcqlfQ" +
-            "AMoVUW78s4L2aKJ4iskE\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"analytics:v3\",\"name\":\"anal" +
-            "ytics\",\"version\":\"v3\",\"revision\":\"20121212\",\"title\":\"Google Analytics API\",\"desc" +
-            "ription\":\"View and manage your Google Analytics data\",\"icons\":{\"x16\":\"http://www" +
-            ".google.com/images/icons/product/analytics-16.png\",\"x32\":\"http://www.google.com/" +
-            "images/icons/product/analytics-32.png\"},\"documentationLink\":\"https://developers." +
-            "google.com/analytics/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/a" +
-            "nalytics/v3/\",\"basePath\":\"/analytics/v3/\",\"rootUrl\":\"https://www.googleapis.com/" +
-            "\",\"servicePath\":\"analytics/v3/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":" +
-            "\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[" +
-            "\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"" +
-            "location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying " +
-            "which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type" +
-            "\":\"string\",\"description\":\"API key. Your API key identifies your project and prov" +
-            "ides you with API access, quota, and reports. Required unless you provide an OAu" +
-            "th 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":" +
-            "\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type" +
-            "\":\"boolean\",\"description\":\"Returns response with indentations and line breaks.\"," +
-            "\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\"" +
-            ":\"Available to use for quota purposes for server-side applications. Can be any a" +
-            "rbitrary string assigned to a user, but should not exceed 40 characters. Overrid" +
-            "es userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"" +
-            "description\":\"IP address of the site where the request originates. Use this if y" +
-            "ou want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"sco" +
-            "pes\":{\"https://www.googleapis.com/auth/analytics\":{\"description\":\"View and manag" +
-            "e your Google Analytics data\"},\"https://www.googleapis.com/auth/analytics.readon" +
-            "ly\":{\"description\":\"View your Google Analytics data\"}}}},\"schemas\":{\"Account\":{\"" +
-            "id\":\"Account\",\"type\":\"object\",\"description\":\"JSON template for Analytics account" +
-            " entry.\",\"properties\":{\"childLink\":{\"type\":\"object\",\"description\":\"Child link fo" +
-            "r an account entry. Points to the list of web properties for this account.\",\"pro" +
-            "perties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the list of web propert" +
-            "ies for this account.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the child" +
-            " link. Its value is \\\"analytics#webproperties\\\".\",\"default\":\"analytics#webproper" +
-            "ties\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time the account was created." +
-            "\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"description\":\"Account ID.\"},\"kind" +
-            "\":{\"type\":\"string\",\"description\":\"Resource type for Analytics account.\",\"default" +
-            "\":\"analytics#account\"},\"name\":{\"type\":\"string\",\"description\":\"Account name.\"},\"s" +
-            "elfLink\":{\"type\":\"string\",\"description\":\"Link for this account.\"},\"updated\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Time the account was last modified.\",\"format\":\"date-" +
-            "time\"}}},\"Accounts\":{\"id\":\"Accounts\",\"type\":\"object\",\"description\":\"An account c" +
-            "ollection provides a list of Analytics accounts to which a user has access. The " +
-            "account collection is the entry point to all management information. Each resour" +
-            "ce in the collection corresponds to a single Analytics account.\",\"properties\":{\"" +
-            "items\":{\"type\":\"array\",\"description\":\"A list of accounts.\",\"items\":{\"$ref\":\"Acco" +
-            "unt\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum number of ent" +
-            "ries the response can contain, regardless of the actual number of entries return" +
-            "ed. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwis" +
-            "e specified by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type" +
-            "\":\"string\",\"description\":\"Collection type.\",\"default\":\"analytics#accounts\"},\"nex" +
-            "tLink\":{\"type\":\"string\",\"description\":\"Next link for this account collection.\"}," +
-            "\"previousLink\":{\"type\":\"string\",\"description\":\"Previous link for this account co" +
-            "llection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting index of " +
-            "the entries, which is 1 by default or otherwise specified by the start-index que" +
-            "ry parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":" +
-            "\"The total number of results for the query, regardless of the number of results " +
-            "in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"E" +
-            "mail ID of the authenticated user\"}}},\"CustomDataSource\":{\"id\":\"CustomDataSource" +
-            "\",\"type\":\"object\",\"description\":\"JSON template for an Analytics custom data sour" +
-            "ce.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to whi" +
-            "ch this custom data source belongs.\"},\"childLink\":{\"type\":\"object\",\"description\"" +
-            ":\"Child link for this custom data source. Points to the list of daily uploads fo" +
-            "r this custom data source.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":" +
-            "\"Link to the list of daily uploads for this custom data source.\"},\"type\":{\"type\"" +
-            ":\"string\",\"description\":\"Value is \\\"analytics#dailyUploads\\\".\",\"default\":\"analyt" +
-            "ics#dailyUploads\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time this custom " +
-            "data source was created.\",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"" +
-            "description\":\"Description of custom data source.\"},\"id\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Custom data source ID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource" +
-            " type for Analytics custom data source.\",\"default\":\"analytics#customDataSource\"}" +
-            ",\"name\":{\"type\":\"string\",\"description\":\"Name of this custom data source.\"},\"pare" +
-            "ntLink\":{\"type\":\"object\",\"description\":\"Parent link for this custom data source." +
-            " Points to the web property to which this custom data source belongs.\",\"properti" +
-            "es\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the web property to which th" +
-            "is custom data source belongs.\"},\"type\":{\"type\":\"string\",\"description\":\"Value is" +
-            " \\\"analytics#webproperty\\\".\",\"default\":\"analytics#webproperty\"}}},\"profilesLinke" +
-            "d\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"selfLink\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Link for this Analytics custom data source.\"},\"updated\":{\"type\":\"string" +
-            "\",\"description\":\"Time this custom data source was last modified.\",\"format\":\"date" +
-            "-time\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID of the f" +
-            "orm UA-XXXXX-YY to which this custom data source belongs.\"}}},\"CustomDataSources" +
-            "\":{\"id\":\"CustomDataSources\",\"type\":\"object\",\"description\":\"Lists Analytics custo" +
-            "m data sources to which the user has access. Each resource in the collection cor" +
-            "responds to a single Analytics custom data source.\",\"properties\":{\"items\":{\"type" +
-            "\":\"array\",\"description\":\"Collection of custom data sources.\",\"items\":{\"$ref\":\"Cu" +
-            "stomDataSource\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum nu" +
-            "mber of resources the response can contain, regardless of the actual number of r" +
-            "esources returned. Its value ranges from 1 to 1000 with a value of 1000 by defau" +
-            "lt, or otherwise specified by the max-results query parameter.\",\"format\":\"int32\"" +
-            "},\"kind\":{\"type\":\"string\",\"description\":\"Collection type.\",\"default\":\"analytics#" +
-            "customDataSources\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Link to next page" +
-            " for this custom data source collection.\"},\"previousLink\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Link to previous page for this custom data source collection.\"},\"start" +
-            "Index\":{\"type\":\"integer\",\"description\":\"The starting index of the resources, whi" +
-            "ch is 1 by default or otherwise specified by the start-index query parameter.\",\"" +
-            "format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total numbe" +
-            "r of results for the query, regardless of the number of results in the response." +
-            "\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"Email ID of the a" +
-            "uthenticated user\"}}},\"DailyUpload\":{\"id\":\"DailyUpload\",\"type\":\"object\",\"descrip" +
-            "tion\":\"Metadata for daily upload entity.\",\"properties\":{\"accountId\":{\"type\":\"str" +
-            "ing\",\"description\":\"Account ID to which this daily upload belongs.\"},\"appendCoun" +
-            "t\":{\"type\":\"integer\",\"description\":\"Number of appends for this date.\",\"format\":\"" +
-            "int32\"},\"createdTime\":{\"type\":\"string\",\"description\":\"Time this daily upload was" +
-            " created.\",\"format\":\"date-time\"},\"customDataSourceId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Custom data source ID to which this daily upload belongs.\"},\"date\":{\"type\"" +
-            ":\"string\",\"description\":\"Date associated with daily upload.\"},\"kind\":{\"type\":\"st" +
-            "ring\",\"description\":\"Resource type for Analytics daily upload.\",\"default\":\"analy" +
-            "tics#dailyUpload\"},\"modifiedTime\":{\"type\":\"string\",\"description\":\"Time this dail" +
-            "y upload was last modified.\",\"format\":\"date-time\"},\"parentLink\":{\"type\":\"object\"" +
-            ",\"description\":\"Parent link for a daily upload. Points to the custom data source" +
-            " to which this daily upload belongs.\",\"properties\":{\"href\":{\"type\":\"string\",\"des" +
-            "cription\":\"Link to the custom data source to which this daily upload belongs.\"}," +
-            "\"type\":{\"type\":\"string\",\"description\":\"Value is \\\"analytics#customDataSource\\\".\"" +
-            ",\"default\":\"analytics#customDataSource\"}}},\"recentChanges\":{\"type\":\"array\",\"desc" +
-            "ription\":\"Change log for last 10 changes in chronological order.\",\"items\":{\"type" +
-            "\":\"object\",\"properties\":{\"change\":{\"type\":\"string\"},\"time\":{\"type\":\"string\",\"for" +
-            "mat\":\"date-time\"}}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this da" +
-            "ily upload.\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID of" +
-            " the form UA-XXXXX-YY to which this daily upload belongs.\"}}},\"DailyUploadAppend" +
-            "\":{\"id\":\"DailyUploadAppend\",\"type\":\"object\",\"description\":\"Metadata returned for" +
-            " a successful append operation.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"des" +
-            "cription\":\"Account Id to which this daily upload append belongs.\"},\"appendNumber" +
-            "\":{\"type\":\"integer\",\"description\":\"Append number.\",\"format\":\"int32\"},\"customData" +
-            "SourceId\":{\"type\":\"string\",\"description\":\"Custom data source Id to which this da" +
-            "ily upload append belongs.\"},\"date\":{\"type\":\"string\",\"description\":\"Date associa" +
-            "ted with daily upload append.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource " +
-            "type for Analytics daily upload append.\",\"default\":\"analytics#dailyUploadAppend\"" +
-            "},\"nextAppendLink\":{\"type\":\"string\"},\"webPropertyId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Web property Id of the form UA-XXXXX-YY to which this daily upload append b" +
-            "elongs.\"}}},\"DailyUploads\":{\"id\":\"DailyUploads\",\"type\":\"object\",\"description\":\"A" +
-            " daily upload collection lists Analytics daily uploads to which the user has acc" +
-            "ess. Each resource in the collection corresponds to a single Analytics daily upl" +
-            "oad.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A collection of daily" +
-            " uploads.\",\"items\":{\"$ref\":\"DailyUpload\"}},\"itemsPerPage\":{\"type\":\"integer\",\"des" +
-            "cription\":\"The maximum number of resources the response can contain, regardless " +
-            "of the actual number of resources returned. Its value ranges from 1 to 1000 with" +
-            " a value of 1000 by default, or otherwise specified by the max-results query par" +
-            "ameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Collection typ" +
-            "e. Value is analytics#dailyUploads.\",\"default\":\"analytics#dailyUploads\"},\"nextLi" +
-            "nk\":{\"type\":\"string\",\"description\":\"Link to next page for this daily upload coll" +
-            "ection.\"},\"previousLink\":{\"type\":\"string\",\"description\":\"Link to previous page f" +
-            "or this daily upload collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":" +
-            "\"The starting index of the resources, which is 1 by default or otherwise specifi" +
-            "ed by the start-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\"" +
-            ":\"integer\",\"description\":\"The total number of results for the query, regardless " +
-            "of the number of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":" +
-            "\"string\",\"description\":\"Email ID of the authenticated user\"}}},\"GaData\":{\"id\":\"G" +
-            "aData\",\"type\":\"object\",\"description\":\"Analytics data for a given profile.\",\"prop" +
-            "erties\":{\"columnHeaders\":{\"type\":\"array\",\"description\":\"Column headers that list" +
-            " dimension names followed by the metric names. The order of dimensions and metri" +
-            "cs is same as specified in the request.\",\"items\":{\"type\":\"object\",\"properties\":{" +
-            "\"columnType\":{\"type\":\"string\",\"description\":\"Column Type. Either DIMENSION or ME" +
-            "TRIC.\"},\"dataType\":{\"type\":\"string\",\"description\":\"Data type. Dimension column h" +
-            "eaders have only STRING as the data type. Metric column headers have data types " +
-            "for metric values such as INTEGER, DOUBLE, CURRENCY etc.\"},\"name\":{\"type\":\"strin" +
-            "g\",\"description\":\"Column name.\"}}}},\"containsSampledData\":{\"type\":\"boolean\",\"des" +
-            "cription\":\"Determines if Analytics data contains samples.\"},\"id\":{\"type\":\"string" +
-            "\",\"description\":\"Unique ID for this data response.\"},\"itemsPerPage\":{\"type\":\"int" +
-            "eger\",\"description\":\"The maximum number of rows the response can contain, regard" +
-            "less of the actual number of rows returned. Its value ranges from 1 to 10,000 wi" +
-            "th a value of 1000 by default, or otherwise specified by the max-results query p" +
-            "arameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource typ" +
-            "e.\",\"default\":\"analytics#gaData\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Lin" +
-            "k to next page for this Analytics data query.\"},\"previousLink\":{\"type\":\"string\"," +
-            "\"description\":\"Link to previous page for this Analytics data query.\"},\"profileIn" +
-            "fo\":{\"type\":\"object\",\"description\":\"Information for the profile, for which the A" +
-            "nalytics data was requested.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Account ID to which this profile belongs.\"},\"internalWebPropertyId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Internal ID for the web property to which this profi" +
-            "le belongs.\"},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID.\"},\"profile" +
-            "Name\":{\"type\":\"string\",\"description\":\"Profile name.\"},\"tableId\":{\"type\":\"string\"" +
-            ",\"description\":\"Table ID for profile.\"},\"webPropertyId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Web Property ID to which this profile belongs.\"}}},\"query\":{\"type\":\"obje" +
-            "ct\",\"description\":\"Analytics data request query parameters.\",\"properties\":{\"dime" +
-            "nsions\":{\"type\":\"string\",\"description\":\"List of analytics dimensions.\"},\"end-dat" +
-            "e\":{\"type\":\"string\",\"description\":\"End date.\"},\"filters\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Comma-separated list of dimension or metric filters.\"},\"ids\":{\"type\":\"s" +
-            "tring\",\"description\":\"Unique table ID.\"},\"max-results\":{\"type\":\"integer\",\"descri" +
-            "ption\":\"Maximum results per page.\",\"format\":\"int32\"},\"metrics\":{\"type\":\"array\",\"" +
-            "description\":\"List of analytics metrics.\",\"items\":{\"type\":\"string\"}},\"segment\":{" +
-            "\"type\":\"string\",\"description\":\"Analytics advanced segment.\"},\"sort\":{\"type\":\"arr" +
-            "ay\",\"description\":\"List of dimensions or metrics based on which Analytics data i" +
-            "s sorted.\",\"items\":{\"type\":\"string\"}},\"start-date\":{\"type\":\"string\",\"description" +
-            "\":\"Start date.\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Start index.\",\"f" +
-            "ormat\":\"int32\"}}},\"rows\":{\"type\":\"array\",\"description\":\"Analytics data rows, whe" +
-            "re each row contains a list of dimension values followed by the metric values. T" +
-            "he order of dimensions and metrics is same as specified in the request.\",\"items\"" +
-            ":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"selfLink\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Link to this page.\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The" +
-            " total number of rows for the query, regardless of the number of rows in the res" +
-            "ponse.\",\"format\":\"int32\"},\"totalsForAllResults\":{\"type\":\"object\",\"description\":\"" +
-            "Total values for the requested metrics over all the results, not just the result" +
-            "s returned in this response. The order of the metric totals is same as the metri" +
-            "c order specified in the request.\",\"additionalProperties\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Key-value pair for the total value of a metric. Key is the metric name" +
-            " and the value is the total value for that metric.\"}}}},\"Goal\":{\"id\":\"Goal\",\"typ" +
-            "e\":\"object\",\"description\":\"JSON template for Analytics goal resource.\",\"properti" +
-            "es\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to which this goal b" +
-            "elongs.\"},\"active\":{\"type\":\"boolean\",\"description\":\"Determines whether this goal" +
-            " is active.\"},\"created\":{\"type\":\"string\",\"description\":\"Time this goal was creat" +
-            "ed.\",\"format\":\"date-time\"},\"eventDetails\":{\"type\":\"object\",\"description\":\"Detail" +
-            "s for the goal of the type EVENT.\",\"properties\":{\"eventConditions\":{\"type\":\"arra" +
-            "y\",\"description\":\"List of event conditions.\",\"items\":{\"type\":\"object\",\"propertie" +
-            "s\":{\"comparisonType\":{\"type\":\"string\",\"description\":\"Type of comparison. Possibl" +
-            "e values are LESS_THAN, GREATER_THAN or EQUAL.\"},\"comparisonValue\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Value used for this comparison.\",\"format\":\"int64\"},\"expressio" +
-            "n\":{\"type\":\"string\",\"description\":\"Expression used for this match.\"},\"matchType\"" +
-            ":{\"type\":\"string\",\"description\":\"Type of the match to be performed. Possible val" +
-            "ues are REGEXP, BEGINS_WITH, or EXACT.\"},\"type\":{\"type\":\"string\",\"description\":\"" +
-            "Type of this event condition. Possible values are CATEGORY, ACTION, LABEL, or VA" +
-            "LUE.\"}}}},\"useEventValue\":{\"type\":\"boolean\",\"description\":\"Determines if the eve" +
-            "nt value should be used as the value for this goal.\"}}},\"id\":{\"type\":\"string\",\"d" +
-            "escription\":\"Goal ID.\"},\"internalWebPropertyId\":{\"type\":\"string\",\"description\":\"" +
-            "Internal ID for the web property to which this goal belongs.\"},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Resource type for an Analytics goal.\",\"default\":\"analytics" +
-            "#goal\"},\"name\":{\"type\":\"string\",\"description\":\"Goal name.\"},\"parentLink\":{\"type\"" +
-            ":\"object\",\"description\":\"Parent link for a goal. Points to the profile to which " +
-            "this goal belongs.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to" +
-            " the profile to which this goal belongs.\"},\"type\":{\"type\":\"string\",\"description\"" +
-            ":\"Value is \\\"analytics#profile\\\".\",\"default\":\"analytics#profile\"}}},\"profileId\":" +
-            "{\"type\":\"string\",\"description\":\"Profile ID to which this goal belongs.\"},\"selfLi" +
-            "nk\":{\"type\":\"string\",\"description\":\"Link for this goal.\"},\"type\":{\"type\":\"string" +
-            "\",\"description\":\"Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_S" +
-            "ITE, VISIT_NUM_PAGES, AND EVENT.\"},\"updated\":{\"type\":\"string\",\"description\":\"Tim" +
-            "e this goal was last modified.\",\"format\":\"date-time\"},\"urlDestinationDetails\":{\"" +
-            "type\":\"object\",\"description\":\"Details for the goal of the type URL_DESTINATION.\"" +
-            ",\"properties\":{\"caseSensitive\":{\"type\":\"boolean\",\"description\":\"Determines if th" +
-            "e goal URL must exactly match the capitalization of visited URLs.\"},\"firstStepRe" +
-            "quired\":{\"type\":\"boolean\",\"description\":\"Determines if the first step in this go" +
-            "al is required.\"},\"matchType\":{\"type\":\"string\",\"description\":\"Match type for the" +
-            " goal URL. Possible values are HEAD, EXACT, or REGEX.\"},\"steps\":{\"type\":\"array\"," +
-            "\"description\":\"List of steps configured for this goal funnel.\",\"items\":{\"type\":\"" +
-            "object\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"Step name.\"},\"numbe" +
-            "r\":{\"type\":\"integer\",\"description\":\"Step number.\",\"format\":\"int32\"},\"url\":{\"type" +
-            "\":\"string\",\"description\":\"URL for this step.\"}}}},\"url\":{\"type\":\"string\",\"descri" +
-            "ption\":\"URL for this goal.\"}}},\"value\":{\"type\":\"number\",\"description\":\"Goal valu" +
-            "e.\",\"format\":\"float\"},\"visitNumPagesDetails\":{\"type\":\"object\",\"description\":\"Det" +
-            "ails for the goal of the type VISIT_NUM_PAGES.\",\"properties\":{\"comparisonType\":{" +
-            "\"type\":\"string\",\"description\":\"Type of comparison. Possible values are LESS_THAN" +
-            ", GREATER_THAN, or EQUAL.\"},\"comparisonValue\":{\"type\":\"string\",\"description\":\"Va" +
-            "lue used for this comparison.\",\"format\":\"int64\"}}},\"visitTimeOnSiteDetails\":{\"ty" +
-            "pe\":\"object\",\"description\":\"Details for the goal of the type VISIT_TIME_ON_SITE." +
-            "\",\"properties\":{\"comparisonType\":{\"type\":\"string\",\"description\":\"Type of compari" +
-            "son. Possible values are LESS_THAN or GREATER_THAN.\"},\"comparisonValue\":{\"type\":" +
-            "\"string\",\"description\":\"Value used for this comparison.\",\"format\":\"int64\"}}},\"we" +
-            "bPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID to which this goal " +
-            "belongs. The web property ID is of the form UA-XXXXX-YY.\"}}},\"Goals\":{\"id\":\"Goal" +
-            "s\",\"type\":\"object\",\"description\":\"A goal collection lists Analytics goals to whi" +
-            "ch the user has access. Each profile can have a set of goals. Each resource in t" +
-            "he Goal collection corresponds to a single Analytics goal.\",\"properties\":{\"items" +
-            "\":{\"type\":\"array\",\"description\":\"A list of goals.\",\"items\":{\"$ref\":\"Goal\"}},\"ite" +
-            "msPerPage\":{\"type\":\"integer\",\"description\":\"The maximum number of resources the " +
-            "response can contain, regardless of the actual number of resources returned. Its" +
-            " value ranges from 1 to 1000 with a value of 1000 by default, or otherwise speci" +
-            "fied by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Collection type.\",\"default\":\"analytics#goals\"},\"nextLink\":{\"t" +
-            "ype\":\"string\",\"description\":\"Link to next page for this goal collection.\"},\"prev" +
-            "iousLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this goal co" +
-            "llection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting index of " +
-            "the resources, which is 1 by default or otherwise specified by the start-index q" +
-            "uery parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description" +
-            "\":\"The total number of results for the query, regardless of the number of resour" +
-            "ces in the result.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":" +
-            "\"Email ID of the authenticated user\"}}},\"McfData\":{\"id\":\"McfData\",\"type\":\"object" +
-            "\",\"description\":\"Multi-Channel Funnels data for a given profile.\",\"properties\":{" +
-            "\"columnHeaders\":{\"type\":\"array\",\"description\":\"Column headers that list dimensio" +
-            "n names followed by the metric names. The order of dimensions and metrics is sam" +
-            "e as specified in the request.\",\"items\":{\"type\":\"object\",\"properties\":{\"columnTy" +
-            "pe\":{\"type\":\"string\",\"description\":\"Column Type. Either DIMENSION or METRIC.\"},\"" +
-            "dataType\":{\"type\":\"string\",\"description\":\"Data type. Dimension and metric values" +
-            " data types such as INTEGER, DOUBLE, CURRENCY, MCF_SEQUENCE etc.\"},\"name\":{\"type" +
-            "\":\"string\",\"description\":\"Column name.\"}}}},\"containsSampledData\":{\"type\":\"boole" +
-            "an\",\"description\":\"Determines if the Analytics data contains sampled data.\"},\"id" +
-            "\":{\"type\":\"string\",\"description\":\"Unique ID for this data response.\"},\"itemsPerP" +
-            "age\":{\"type\":\"integer\",\"description\":\"The maximum number of rows the response ca" +
-            "n contain, regardless of the actual number of rows returned. Its value ranges fr" +
-            "om 1 to 10,000 with a value of 1000 by default, or otherwise specified by the ma" +
-            "x-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Resource type.\",\"default\":\"analytics#mcfData\"},\"nextLink\":{\"type\":\"string\"," +
-            "\"description\":\"Link to next page for this Analytics data query.\"},\"previousLink\"" +
-            ":{\"type\":\"string\",\"description\":\"Link to previous page for this Analytics data q" +
-            "uery.\"},\"profileInfo\":{\"type\":\"object\",\"description\":\"Information for the profil" +
-            "e, for which the Analytics data was requested.\",\"properties\":{\"accountId\":{\"type" +
-            "\":\"string\",\"description\":\"Account ID to which this profile belongs.\"},\"internalW" +
-            "ebPropertyId\":{\"type\":\"string\",\"description\":\"Internal ID for the web property t" +
-            "o which this profile belongs.\"},\"profileId\":{\"type\":\"string\",\"description\":\"Prof" +
-            "ile ID.\"},\"profileName\":{\"type\":\"string\",\"description\":\"Profile name.\"},\"tableId" +
-            "\":{\"type\":\"string\",\"description\":\"Table ID for profile.\"},\"webPropertyId\":{\"type" +
-            "\":\"string\",\"description\":\"Web Property ID to which this profile belongs.\"}}},\"qu" +
-            "ery\":{\"type\":\"object\",\"description\":\"Analytics data request query parameters.\",\"" +
-            "properties\":{\"dimensions\":{\"type\":\"string\",\"description\":\"List of analytics dime" +
-            "nsions.\"},\"end-date\":{\"type\":\"string\",\"description\":\"End date.\"},\"filters\":{\"typ" +
-            "e\":\"string\",\"description\":\"Comma-separated list of dimension or metric filters.\"" +
-            "},\"ids\":{\"type\":\"string\",\"description\":\"Unique table ID.\"},\"max-results\":{\"type\"" +
-            ":\"integer\",\"description\":\"Maximum results per page.\",\"format\":\"int32\"},\"metrics\"" +
-            ":{\"type\":\"array\",\"description\":\"List of analytics metrics.\",\"items\":{\"type\":\"str" +
-            "ing\"}},\"segment\":{\"type\":\"string\",\"description\":\"Analytics advanced segment.\"},\"" +
-            "sort\":{\"type\":\"array\",\"description\":\"List of dimensions or metrics based on whic" +
-            "h Analytics data is sorted.\",\"items\":{\"type\":\"string\"}},\"start-date\":{\"type\":\"st" +
-            "ring\",\"description\":\"Start date.\"},\"start-index\":{\"type\":\"integer\",\"description\"" +
-            ":\"Start index.\",\"format\":\"int32\"}}},\"rows\":{\"type\":\"array\",\"description\":\"Analyt" +
-            "ics data rows, where each row contains a list of dimension values followed by th" +
-            "e metric values. The order of dimensions and metrics is same as specified in the" +
-            " request.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"description\":\"A uni" +
-            "on object representing a dimension or metric value. Only one of \\\"primitiveValue" +
-            "\\\" or \\\"conversionPathValue\\\" attribute will be populated.\",\"properties\":{\"conve" +
-            "rsionPathValue\":{\"type\":\"array\",\"description\":\"A conversion path dimension value" +
-            ", containing a list of interactions with their attributes.\",\"items\":{\"type\":\"obj" +
-            "ect\",\"properties\":{\"interactionType\":{\"type\":\"string\",\"description\":\"Type of an " +
-            "interaction on conversion path. Such as CLICK, IMPRESSION etc.\"},\"nodeValue\":{\"t" +
-            "ype\":\"string\",\"description\":\"Node value of an interaction on conversion path. Su" +
-            "ch as source, medium etc.\"}}}},\"primitiveValue\":{\"type\":\"string\",\"description\":\"" +
-            "A primitive dimension value. A primitive metric value.\"}}}}},\"selfLink\":{\"type\":" +
-            "\"string\",\"description\":\"Link to this page.\"},\"totalResults\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The total number of rows for the query, regardless of the number of" +
-            " rows in the response.\",\"format\":\"int32\"},\"totalsForAllResults\":{\"type\":\"object\"" +
-            ",\"description\":\"Total values for the requested metrics over all the results, not" +
-            " just the results returned in this response. The order of the metric totals is s" +
-            "ame as the metric order specified in the request.\",\"additionalProperties\":{\"type" +
-            "\":\"string\",\"description\":\"Key-value pair for the total value of a metric. Key is" +
-            " the metric name and the value is the total value for that metric.\"}}}},\"Profile" +
-            "\":{\"id\":\"Profile\",\"type\":\"object\",\"description\":\"JSON template for an Analytics " +
-            "profile.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID t" +
-            "o which this profile belongs.\"},\"childLink\":{\"type\":\"object\",\"description\":\"Chil" +
-            "d link for this profile. Points to the list of goals for this profile.\",\"propert" +
-            "ies\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the list of goals for this " +
-            "profile.\"},\"type\":{\"type\":\"string\",\"description\":\"Value is \\\"analytics#goals\\\".\"" +
-            ",\"default\":\"analytics#goals\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time t" +
-            "his profile was created.\",\"format\":\"date-time\"},\"currency\":{\"type\":\"string\",\"des" +
-            "cription\":\"The currency type associated with this profile.\"},\"defaultPage\":{\"typ" +
-            "e\":\"string\",\"description\":\"Default page for this profile.\"},\"eCommerceTracking\":" +
-            "{\"type\":\"boolean\",\"description\":\"E-commerce tracking parameter for this profile." +
-            "\"},\"excludeQueryParameters\":{\"type\":\"string\",\"description\":\"The query parameters" +
-            " that are excluded from this profile.\"},\"id\":{\"type\":\"string\",\"description\":\"Pro" +
-            "file ID.\"},\"internalWebPropertyId\":{\"type\":\"string\",\"description\":\"Internal ID f" +
-            "or the web property to which this profile belongs.\"},\"kind\":{\"type\":\"string\",\"de" +
-            "scription\":\"Resource type for Analytics profile.\",\"default\":\"analytics#profile\"}" +
-            ",\"name\":{\"type\":\"string\",\"description\":\"Name of this profile.\"},\"parentLink\":{\"t" +
-            "ype\":\"object\",\"description\":\"Parent link for this profile. Points to the web pro" +
-            "perty to which this profile belongs.\",\"properties\":{\"href\":{\"type\":\"string\",\"des" +
-            "cription\":\"Link to the web property to which this profile belongs.\"},\"type\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Value is \\\"analytics#webproperty\\\".\",\"default\":\"anal" +
-            "ytics#webproperty\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this p" +
-            "rofile.\"},\"siteSearchCategoryParameters\":{\"type\":\"string\",\"description\":\"Site se" +
-            "arch category parameters for this profile.\"},\"siteSearchQueryParameters\":{\"type\"" +
-            ":\"string\",\"description\":\"The site search query parameters for this profile.\"},\"t" +
-            "imezone\":{\"type\":\"string\",\"description\":\"Time zone for which this profile has be" +
-            "en configured.\"},\"type\":{\"type\":\"string\",\"description\":\"Profile type. Supported " +
-            "types: WEB or APP.\"},\"updated\":{\"type\":\"string\",\"description\":\"Time this profile" +
-            " was last modified.\",\"format\":\"date-time\"},\"webPropertyId\":{\"type\":\"string\",\"des" +
-            "cription\":\"Web property ID of the form UA-XXXXX-YY to which this profile belongs" +
-            ".\"},\"websiteUrl\":{\"type\":\"string\",\"description\":\"Website URL for this profile.\"}" +
-            "}},\"Profiles\":{\"id\":\"Profiles\",\"type\":\"object\",\"description\":\"A profile collecti" +
-            "on lists Analytics profiles to which the user has access. Each resource in the c" +
-            "ollection corresponds to a single Analytics profile.\",\"properties\":{\"items\":{\"ty" +
-            "pe\":\"array\",\"description\":\"A list of profiles.\",\"items\":{\"$ref\":\"Profile\"}},\"ite" +
-            "msPerPage\":{\"type\":\"integer\",\"description\":\"The maximum number of resources the " +
-            "response can contain, regardless of the actual number of resources returned. Its" +
-            " value ranges from 1 to 1000 with a value of 1000 by default, or otherwise speci" +
-            "fied by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Collection type.\",\"default\":\"analytics#profiles\"},\"nextLink\":" +
-            "{\"type\":\"string\",\"description\":\"Link to next page for this profile collection.\"}" +
-            ",\"previousLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this p" +
-            "rofile collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting " +
-            "index of the resources, which is 1 by default or otherwise specified by the star" +
-            "t-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"de" +
-            "scription\":\"The total number of results for the query, regardless of the number " +
-            "of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Email ID of the authenticated user\"}}},\"Segment\":{\"id\":\"Segment\",\"type" +
-            "\":\"object\",\"description\":\"JSON template for an Analytics advanced segment.\",\"pro" +
-            "perties\":{\"created\":{\"type\":\"string\",\"description\":\"Time the advanced segment wa" +
-            "s created.\",\"format\":\"date-time\"},\"definition\":{\"type\":\"string\",\"description\":\"A" +
-            "dvanced segment definition.\"},\"id\":{\"type\":\"string\",\"description\":\"Advanced segm" +
-            "ent ID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for Analytics adv" +
-            "anced segment.\",\"default\":\"analytics#segment\"},\"name\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Advanced segment name.\"},\"segmentId\":{\"type\":\"string\",\"description\":\"Segme" +
-            "nt ID. Can be used with the \'segment\' parameter in Data Feed.\"},\"selfLink\":{\"typ" +
-            "e\":\"string\",\"description\":\"Link for this advanced segment.\"},\"updated\":{\"type\":\"" +
-            "string\",\"description\":\"Time the advanced segment was last modified.\",\"format\":\"d" +
-            "ate-time\"}}},\"Segments\":{\"id\":\"Segments\",\"type\":\"object\",\"description\":\"An advan" +
-            "ced segment collection lists Analytics advanced segments that the user has acces" +
-            "s to. Each resource in the collection corresponds to a single Analytics advanced" +
-            " segment.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of advanc" +
-            "ed segments.\",\"items\":{\"$ref\":\"Segment\"}},\"itemsPerPage\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"The maximum number of resources the response can contain, regardless o" +
-            "f the actual number of resources returned. Its value ranges from 1 to 1000 with " +
-            "a value of 1000 by default, or otherwise specified by the max-results query para" +
-            "meter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Collection type" +
-            " for advanced segments.\",\"default\":\"analytics#segments\"},\"nextLink\":{\"type\":\"str" +
-            "ing\",\"description\":\"Link to next page for this advanced segment collection.\"},\"p" +
-            "reviousLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this adva" +
-            "nced segment collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The sta" +
-            "rting index of the resources, which is 1 by default or otherwise specified by th" +
-            "e start-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"intege" +
-            "r\",\"description\":\"The total number of results for the query, regardless of the n" +
-            "umber of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\"" +
-            ",\"description\":\"Email ID of the authenticated user\"}}},\"Webproperties\":{\"id\":\"We" +
-            "bproperties\",\"type\":\"object\",\"description\":\"A web property collection lists Anal" +
-            "ytics web properties to which the user has access. Each resource in the collecti" +
-            "on corresponds to a single Analytics web property.\",\"properties\":{\"items\":{\"type" +
-            "\":\"array\",\"description\":\"A list of web properties.\",\"items\":{\"$ref\":\"Webproperty" +
-            "\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum number of resour" +
-            "ces the response can contain, regardless of the actual number of resources retur" +
-            "ned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwi" +
-            "se specified by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"typ" +
-            "e\":\"string\",\"description\":\"Collection type.\",\"default\":\"analytics#webproperties\"" +
-            "},\"nextLink\":{\"type\":\"string\",\"description\":\"Link to next page for this web prop" +
-            "erty collection.\"},\"previousLink\":{\"type\":\"string\",\"description\":\"Link to previo" +
-            "us page for this web property collection.\"},\"startIndex\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"The starting index of the resources, which is 1 by default or otherwis" +
-            "e specified by the start-index query parameter.\",\"format\":\"int32\"},\"totalResults" +
-            "\":{\"type\":\"integer\",\"description\":\"The total number of results for the query, re" +
-            "gardless of the number of results in the response.\",\"format\":\"int32\"},\"username\"" +
-            ":{\"type\":\"string\",\"description\":\"Email ID of the authenticated user\"}}},\"Webprop" +
-            "erty\":{\"id\":\"Webproperty\",\"type\":\"object\",\"description\":\"JSON template for an An" +
-            "alytics web property.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":" +
-            "\"Account ID to which this web property belongs.\"},\"childLink\":{\"type\":\"object\",\"" +
-            "description\":\"Child link for this web property. Points to the list of profiles f" +
-            "or this web property.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Link" +
-            " to the list of profiles for this web property.\"},\"type\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Type of the parent link. Its value is \\\"analytics#profiles\\\".\",\"default" +
-            "\":\"analytics#profiles\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time this we" +
-            "b property was created.\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Web property ID of the form UA-XXXXX-YY.\"},\"internalWebPropertyId\":{\"type\":\"" +
-            "string\",\"description\":\"Internal ID for this web property.\"},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Resource type for Analytics WebProperty.\",\"default\":\"analytic" +
-            "s#webproperty\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this web property" +
-            ".\"},\"parentLink\":{\"type\":\"object\",\"description\":\"Parent link for this web proper" +
-            "ty. Points to the account to which this web property belongs.\",\"properties\":{\"hr" +
-            "ef\":{\"type\":\"string\",\"description\":\"Link to the account for this web property.\"}" +
-            ",\"type\":{\"type\":\"string\",\"description\":\"Type of the parent link. Its value is \\\"" +
-            "analytics#account\\\".\",\"default\":\"analytics#account\"}}},\"selfLink\":{\"type\":\"strin" +
-            "g\",\"description\":\"Link for this web property.\"},\"updated\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Time this web property was last modified.\",\"format\":\"date-time\"},\"webs" +
-            "iteUrl\":{\"type\":\"string\",\"description\":\"Website url for this web property.\"}}}}," +
-            "\"resources\":{\"data\":{\"resources\":{\"ga\":{\"methods\":{\"get\":{\"id\":\"analytics.data.g" +
-            "a.get\",\"path\":\"data/ga\",\"httpMethod\":\"GET\",\"description\":\"Returns Analytics data" +
-            " for a profile.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A co" +
-            "mma-separated list of Analytics dimensions. E.g., \'ga:browser,ga:city\'.\",\"patter" +
-            "n\":\"(ga:.+)?\",\"location\":\"query\"},\"end-date\":{\"type\":\"string\",\"description\":\"End" +
-            " date for fetching Analytics data. All requests should specify an end date forma" +
-            "tted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"loc" +
-            "ation\":\"query\"},\"filters\":{\"type\":\"string\",\"description\":\"A comma-separated list" +
-            " of dimension or metric filters to be applied to Analytics data.\",\"pattern\":\"ga:" +
-            ".+\",\"location\":\"query\"},\"ids\":{\"type\":\"string\",\"description\":\"Unique table ID fo" +
-            "r retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the " +
-            "Analytics profile ID.\",\"required\":true,\"pattern\":\"ga:[0-9]+\",\"location\":\"query\"}" +
-            ",\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum number of entries to" +
-            " include in this feed.\",\"format\":\"int32\",\"location\":\"query\"},\"metrics\":{\"type\":\"" +
-            "string\",\"description\":\"A comma-separated list of Analytics metrics. E.g., \'ga:vi" +
-            "sits,ga:pageviews\'. At least one metric must be specified.\",\"required\":true,\"pat" +
-            "tern\":\"ga:.+\",\"location\":\"query\"},\"segment\":{\"type\":\"string\",\"description\":\"An A" +
-            "nalytics advanced segment to be applied to data.\",\"location\":\"query\"},\"sort\":{\"t" +
-            "ype\":\"string\",\"description\":\"A comma-separated list of dimensions or metrics tha" +
-            "t determine the sort order for Analytics data.\",\"pattern\":\"(-)?ga:.+\",\"location\"" +
-            ":\"query\"},\"start-date\":{\"type\":\"string\",\"description\":\"Start date for fetching A" +
-            "nalytics data. All requests should specify a start date formatted as YYYY-MM-DD." +
-            "\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"st" +
-            "art-index\":{\"type\":\"integer\",\"description\":\"An index of the first entity to retr" +
-            "ieve. Use this parameter as a pagination mechanism along with the max-results pa" +
-            "rameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[" +
-            "\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"response\":{\"$ref\":\"GaData\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/ana" +
-            "lytics.readonly\"]}}},\"mcf\":{\"methods\":{\"get\":{\"id\":\"analytics.data.mcf.get\",\"pat" +
-            "h\":\"data/mcf\",\"httpMethod\":\"GET\",\"description\":\"Returns Analytics Multi-Channel " +
-            "Funnels data for a profile.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"descri" +
-            "ption\":\"A comma-separated list of Multi-Channel Funnels dimensions. E.g., \'mcf:s" +
-            "ource,mcf:medium\'.\",\"pattern\":\"(mcf:.+)?\",\"location\":\"query\"},\"end-date\":{\"type\"" +
-            ":\"string\",\"description\":\"End date for fetching Analytics data. All requests shou" +
-            "ld specify an end date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9" +
-            "]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"filters\":{\"type\":\"string\",\"descript" +
-            "ion\":\"A comma-separated list of dimension or metric filters to be applied to the" +
-            " Analytics data.\",\"pattern\":\"mcf:.+\",\"location\":\"query\"},\"ids\":{\"type\":\"string\"," +
-            "\"description\":\"Unique table ID for retrieving Analytics data. Table ID is of the" +
-            " form ga:XXXX, where XXXX is the Analytics profile ID.\",\"required\":true,\"pattern" +
-            "\":\"ga:[0-9]+\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":" +
-            "\"The maximum number of entries to include in this feed.\",\"format\":\"int32\",\"locat" +
-            "ion\":\"query\"},\"metrics\":{\"type\":\"string\",\"description\":\"A comma-separated list o" +
-            "f Multi-Channel Funnels metrics. E.g., \'mcf:totalConversions,mcf:totalConversion" +
-            "Value\'. At least one metric must be specified.\",\"required\":true,\"pattern\":\"mcf:." +
-            "+\",\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"A comma-separated " +
-            "list of dimensions or metrics that determine the sort order for the Analytics da" +
-            "ta.\",\"pattern\":\"(-)?mcf:.+\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"d" +
-            "escription\":\"Start date for fetching Analytics data. All requests should specify" +
-            " a start date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9" +
-            "]{2}-[0-9]{2}\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\"" +
-            ":\"An index of the first entity to retrieve. Use this parameter as a pagination m" +
-            "echanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"" +
-            "location\":\"query\"}},\"parameterOrder\":[\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"" +
-            "response\":{\"$ref\":\"McfData\"},\"scopes\":[\"https://www.googleapis.com/auth/analytic" +
-            "s\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}}}},\"management\":{\"res" +
-            "ources\":{\"accounts\":{\"methods\":{\"list\":{\"id\":\"analytics.management.accounts.list" +
-            "\",\"path\":\"management/accounts\",\"httpMethod\":\"GET\",\"description\":\"Lists all accou" +
-            "nts to which the user has access.\",\"parameters\":{\"max-results\":{\"type\":\"integer\"" +
-            ",\"description\":\"The maximum number of accounts to include in this response.\",\"fo" +
-            "rmat\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":" +
-            "\"An index of the first account to retrieve. Use this parameter as a pagination m" +
-            "echanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"" +
-            "location\":\"query\"}},\"response\":{\"$ref\":\"Accounts\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}" +
-            "},\"customDataSources\":{\"methods\":{\"list\":{\"id\":\"analytics.management.customDataS" +
-            "ources.list\",\"path\":\"management/accounts/{accountId}/webproperties/{webPropertyI" +
-            "d}/customDataSources\",\"httpMethod\":\"GET\",\"description\":\"List custom data sources" +
-            " to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Account Id for the custom data sources to retrieve.\",\"required\":true,\"" +
-            "pattern\":\"\\\\d+\",\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\"" +
-            ":\"The maximum number of custom data sources to include in this response.\",\"forma" +
-            "t\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"de" +
-            "scription\":\"A 1-based index of the first custom data source to retrieve. Use thi" +
-            "s parameter as a pagination mechanism along with the max-results parameter.\",\"fo" +
-            "rmat\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\"" +
-            ",\"description\":\"Web property Id for the custom data sources to retrieve.\",\"requi" +
-            "red\":true,\"pattern\":\"UA-(\\\\d+)-(\\\\d+)\",\"location\":\"path\"}},\"parameterOrder\":[\"ac" +
-            "countId\",\"webPropertyId\"],\"response\":{\"$ref\":\"CustomDataSources\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analyti" +
-            "cs.readonly\"]}}},\"dailyUploads\":{\"methods\":{\"delete\":{\"id\":\"analytics.management" +
-            ".dailyUploads.delete\",\"path\":\"management/accounts/{accountId}/webproperties/{web" +
-            "PropertyId}/customDataSources/{customDataSourceId}/dailyUploads/{date}\",\"httpMet" +
-            "hod\":\"DELETE\",\"description\":\"Delete uploaded data for the given date.\",\"paramete" +
-            "rs\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account Id associated with dail" +
-            "y upload delete.\",\"required\":true,\"pattern\":\"[0-9]+\",\"location\":\"path\"},\"customD" +
-            "ataSourceId\":{\"type\":\"string\",\"description\":\"Custom data source Id associated wi" +
-            "th daily upload delete.\",\"required\":true,\"location\":\"path\"},\"date\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Date for which data is to be deleted. Date should be formatte" +
-            "d as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"locati" +
-            "on\":\"path\"},\"type\":{\"type\":\"string\",\"description\":\"Type of data for this delete." +
-            "\",\"required\":true,\"enum\":[\"cost\"],\"enumDescriptions\":[\"Value for specifying cost" +
-            " data upload.\"],\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Web property Id associated with daily upload delete.\",\"required\":true,\"patte" +
-            "rn\":\"UA-[0-9]+-[0-9]+\",\"location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPro" +
-            "pertyId\",\"customDataSourceId\",\"date\",\"type\"],\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/analytics\"]},\"list\":{\"id\":\"analytics.management.dailyUploads.list\",\"path" +
-            "\":\"management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSourc" +
-            "es/{customDataSourceId}/dailyUploads\",\"httpMethod\":\"GET\",\"description\":\"List dai" +
-            "ly uploads to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"str" +
-            "ing\",\"description\":\"Account Id for the daily uploads to retrieve.\",\"required\":tr" +
-            "ue,\"pattern\":\"\\\\d+\",\"location\":\"path\"},\"customDataSourceId\":{\"type\":\"string\",\"de" +
-            "scription\":\"Custom data source Id for daily uploads to retrieve.\",\"required\":tru" +
-            "e,\"pattern\":\".{22}\",\"location\":\"path\"},\"end-date\":{\"type\":\"string\",\"description\"" +
-            ":\"End date of the form YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}" +
-            "-[0-9]{2}\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Th" +
-            "e maximum number of custom data sources to include in this response.\",\"format\":\"" +
-            "int32\",\"minimum\":\"1\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Start date of the form YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0" +
-            "-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"descriptio" +
-            "n\":\"A 1-based index of the first daily upload to retrieve. Use this parameter as" +
-            " a pagination mechanism along with the max-results parameter.\",\"format\":\"int32\"," +
-            "\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"description\"" +
-            ":\"Web property Id for the daily uploads to retrieve.\",\"required\":true,\"pattern\":" +
-            "\"UA-(\\\\d+)-(\\\\d+)\",\"location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropert" +
-            "yId\",\"customDataSourceId\",\"start-date\",\"end-date\"],\"response\":{\"$ref\":\"DailyUplo" +
-            "ads\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googlea" +
-            "pis.com/auth/analytics.readonly\"]},\"upload\":{\"id\":\"analytics.management.dailyUpl" +
-            "oads.upload\",\"path\":\"management/accounts/{accountId}/webproperties/{webPropertyI" +
-            "d}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads\",\"httpMeth" +
-            "od\":\"POST\",\"description\":\"Update/Overwrite data for a custom data source.\",\"para" +
-            "meters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account Id associated with " +
-            "daily upload.\",\"required\":true,\"pattern\":\"\\\\d+\",\"location\":\"path\"},\"appendNumber" +
-            "\":{\"type\":\"integer\",\"description\":\"Append number for this upload indexed from 1." +
-            "\",\"required\":true,\"format\":\"int32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"quer" +
-            "y\"},\"customDataSourceId\":{\"type\":\"string\",\"description\":\"Custom data source Id t" +
-            "o which the data being uploaded belongs.\",\"required\":true,\"location\":\"path\"},\"da" +
-            "te\":{\"type\":\"string\",\"description\":\"Date for which data is uploaded. Date should" +
-            " be formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]" +
-            "{2}\",\"location\":\"path\"},\"reset\":{\"type\":\"boolean\",\"description\":\"Reset/Overwrite" +
-            " all previous appends for this date and start over with this file as the first u" +
-            "pload.\",\"default\":\"false\",\"location\":\"query\"},\"type\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Type of data for this upload.\",\"required\":true,\"enum\":[\"cost\"],\"enumDescrip" +
-            "tions\":[\"Value for specifying cost data upload.\"],\"location\":\"query\"},\"webProper" +
-            "tyId\":{\"type\":\"string\",\"description\":\"Web property Id associated with daily uplo" +
-            "ad.\",\"required\":true,\"pattern\":\"UA-\\\\d+-\\\\d+\",\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"accountId\",\"webPropertyId\",\"customDataSourceId\",\"date\",\"appendNumber\",\"type" +
-            "\"],\"response\":{\"$ref\":\"DailyUploadAppend\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/analytics\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"applicati" +
-            "on/octet-stream\"],\"maxSize\":\"5MB\",\"protocols\":{\"simple\":{\"multipart\":true,\"path\"" +
-            ":\"/upload/analytics/v3/management/accounts/{accountId}/webproperties/{webPropert" +
-            "yId}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads\"},\"resum" +
-            "able\":{\"multipart\":true,\"path\":\"/resumable/upload/analytics/v3/management/accoun" +
-            "ts/{accountId}/webproperties/{webPropertyId}/customDataSources/{customDataSource" +
-            "Id}/dailyUploads/{date}/uploads\"}}}}}},\"goals\":{\"methods\":{\"list\":{\"id\":\"analyti" +
-            "cs.management.goals.list\",\"path\":\"management/accounts/{accountId}/webproperties/" +
-            "{webPropertyId}/profiles/{profileId}/goals\",\"httpMethod\":\"GET\",\"description\":\"Li" +
-            "sts goals to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Account ID to retrieve goals for. Can either be a specific ac" +
-            "count ID or \'~all\', which refers to all the accounts that user has access to.\",\"" +
-            "required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":" +
-            "\"The maximum number of goals to include in this response.\",\"format\":\"int32\",\"loc" +
-            "ation\":\"query\"},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID to retrie" +
-            "ve goals for. Can either be a specific profile ID or \'~all\', which refers to all" +
-            " the profiles that user has access to.\",\"required\":true,\"location\":\"path\"},\"star" +
-            "t-index\":{\"type\":\"integer\",\"description\":\"An index of the first goal to retrieve" +
-            ". Use this parameter as a pagination mechanism along with the max-results parame" +
-            "ter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\"" +
-            ":\"string\",\"description\":\"Web property ID to retrieve goals for. Can either be a " +
-            "specific web property ID or \'~all\', which refers to all the web properties that " +
-            "user has access to.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"acco" +
-            "untId\",\"webPropertyId\",\"profileId\"],\"response\":{\"$ref\":\"Goals\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics" +
-            ".readonly\"]}}},\"profiles\":{\"methods\":{\"list\":{\"id\":\"analytics.management.profile" +
-            "s.list\",\"path\":\"management/accounts/{accountId}/webproperties/{webPropertyId}/pr" +
-            "ofiles\",\"httpMethod\":\"GET\",\"description\":\"Lists profiles to which the user has a" +
-            "ccess.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID for" +
-            " the profiles to retrieve. Can either be a specific account ID or \'~all\', which " +
-            "refers to all the accounts to which the user has access.\",\"required\":true,\"locat" +
-            "ion\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum number o" +
-            "f profiles to include in this response.\",\"format\":\"int32\",\"location\":\"query\"},\"s" +
-            "tart-index\":{\"type\":\"integer\",\"description\":\"An index of the first entity to ret" +
-            "rieve. Use this parameter as a pagination mechanism along with the max-results p" +
-            "arameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"" +
-            "type\":\"string\",\"description\":\"Web property ID for the profiles to retrieve. Can " +
-            "either be a specific web property ID or \'~all\', which refers to all the web prop" +
-            "erties to which the user has access.\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"accountId\",\"webPropertyId\"],\"response\":{\"$ref\":\"Profiles\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/a" +
-            "nalytics.readonly\"]}}},\"segments\":{\"methods\":{\"list\":{\"id\":\"analytics.management" +
-            ".segments.list\",\"path\":\"management/segments\",\"httpMethod\":\"GET\",\"description\":\"L" +
-            "ists advanced segments to which the user has access.\",\"parameters\":{\"max-results" +
-            "\":{\"type\":\"integer\",\"description\":\"The maximum number of advanced segments to in" +
-            "clude in this response.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"An index of the first advanced segment to retrieve." +
-            " Use this parameter as a pagination mechanism along with the max-results paramet" +
-            "er.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Seg" +
-            "ments\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googl" +
-            "eapis.com/auth/analytics.readonly\"]}}},\"webproperties\":{\"methods\":{\"list\":{\"id\":" +
-            "\"analytics.management.webproperties.list\",\"path\":\"management/accounts/{accountId" +
-            "}/webproperties\",\"httpMethod\":\"GET\",\"description\":\"Lists web properties to which" +
-            " the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"description\":" +
-            "\"Account ID to retrieve web properties for. Can either be a specific account ID " +
-            "or \'~all\', which refers to all the accounts that user has access to.\",\"required\"" +
-            ":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maxi" +
-            "mum number of web properties to include in this response.\",\"format\":\"int32\",\"loc" +
-            "ation\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the f" +
-            "irst entity to retrieve. Use this parameter as a pagination mechanism along with" +
-            " the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}}" +
-            ",\"parameterOrder\":[\"accountId\"],\"response\":{\"$ref\":\"Webproperties\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analy" +
-            "tics.readonly\"]}}}}}}}";
+    public partial class AnalyticsService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v3";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected AnalyticsService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._data = new DataResource(this, _authenticator);
-            this._management = new ManagementResource(this, _authenticator);
+        public AnalyticsService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._data = new DataResource(this, Authenticator);
+            this._management = new ManagementResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public AnalyticsService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public AnalyticsService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AnalyticsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/analytics/v3/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "analytics";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/analytics/v3/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "false", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -4365,7 +3716,7 @@ namespace Google.Apis.Analytics.v3 {
         
         private AnalyticsService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "data";
         
@@ -4373,11 +3724,11 @@ namespace Google.Apis.Analytics.v3 {
         
         private McfResource _mcf;
         
-        public DataResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public DataResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
-            this._ga = new GaResource(service, _authenticator);
-            this._mcf = new McfResource(service, _authenticator);
+            this.authenticator = authenticator;
+            this._ga = new GaResource(service, authenticator);
+            this._mcf = new McfResource(service, authenticator);
         }
         
         public virtual GaResource Ga {
@@ -4396,13 +3747,13 @@ namespace Google.Apis.Analytics.v3 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "data.ga";
             
-            public GaResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public GaResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Returns Analytics data for a profile.</summary>
@@ -4414,11 +3765,19 @@ namespace Google.Apis.Analytics.v3 {
                 return new GetRequest(service, ids, startDate, endDate, metrics);
             }
             
-            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.GaData> {
+            public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.GaData> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _dimensions;
                 
@@ -4440,12 +3799,35 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private System.Nullable<long> _startIndex;
                 
-                public GetRequest(Google.Apis.Discovery.IRequestProvider service, string ids, string startDate, string endDate, string metrics) : 
+                public GetRequest(Google.Apis.Discovery.IClientService service, string ids, string startDate, string endDate, string metrics) : 
                         base(service) {
                     this._ids = ids;
                     this._startDate = startDate;
                     this._endDate = endDate;
                     this._metrics = metrics;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4467,6 +3849,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -4568,16 +3972,43 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "data.ga";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "get";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "data/ga";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("dimensions", Google.Apis.Util.Utilities.CreateRuntimeParameter("dimensions", false, "query", null, "(ga:.+)?", new string[0]));
+                    parameters.Add("end-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("end-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                    parameters.Add("filters", Google.Apis.Util.Utilities.CreateRuntimeParameter("filters", false, "query", null, "ga:.+", new string[0]));
+                    parameters.Add("ids", Google.Apis.Util.Utilities.CreateRuntimeParameter("ids", true, "query", null, "ga:[0-9]+", new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("metrics", Google.Apis.Util.Utilities.CreateRuntimeParameter("metrics", true, "query", null, "ga:.+", new string[0]));
+                    parameters.Add("segment", Google.Apis.Util.Utilities.CreateRuntimeParameter("segment", false, "query", null, null, new string[0]));
+                    parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, "(-)?ga:.+", new string[0]));
+                    parameters.Add("start-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -4586,13 +4017,13 @@ namespace Google.Apis.Analytics.v3 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "data.mcf";
             
-            public McfResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public McfResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Returns Analytics Multi-Channel Funnels data for a profile.</summary>
@@ -4604,11 +4035,19 @@ namespace Google.Apis.Analytics.v3 {
                 return new GetRequest(service, ids, startDate, endDate, metrics);
             }
             
-            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.McfData> {
+            public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.McfData> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _dimensions;
                 
@@ -4628,12 +4067,35 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private System.Nullable<long> _startIndex;
                 
-                public GetRequest(Google.Apis.Discovery.IRequestProvider service, string ids, string startDate, string endDate, string metrics) : 
+                public GetRequest(Google.Apis.Discovery.IClientService service, string ids, string startDate, string endDate, string metrics) : 
                         base(service) {
                     this._ids = ids;
                     this._startDate = startDate;
                     this._endDate = endDate;
                     this._metrics = metrics;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4655,6 +4117,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -4745,16 +4229,42 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "data.mcf";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "get";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "data/mcf";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("dimensions", Google.Apis.Util.Utilities.CreateRuntimeParameter("dimensions", false, "query", null, "(mcf:.+)?", new string[0]));
+                    parameters.Add("end-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("end-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                    parameters.Add("filters", Google.Apis.Util.Utilities.CreateRuntimeParameter("filters", false, "query", null, "mcf:.+", new string[0]));
+                    parameters.Add("ids", Google.Apis.Util.Utilities.CreateRuntimeParameter("ids", true, "query", null, "ga:[0-9]+", new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("metrics", Google.Apis.Util.Utilities.CreateRuntimeParameter("metrics", true, "query", null, "mcf:.+", new string[0]));
+                    parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, "(-)?mcf:.+", new string[0]));
+                    parameters.Add("start-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -4764,7 +4274,7 @@ namespace Google.Apis.Analytics.v3 {
         
         private AnalyticsService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "management";
         
@@ -4782,16 +4292,16 @@ namespace Google.Apis.Analytics.v3 {
         
         private WebpropertiesResource _webproperties;
         
-        public ManagementResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ManagementResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
-            this._accounts = new AccountsResource(service, _authenticator);
-            this._customDataSources = new CustomDataSourcesResource(service, _authenticator);
-            this._dailyUploads = new DailyUploadsResource(service, _authenticator);
-            this._goals = new GoalsResource(service, _authenticator);
-            this._profiles = new ProfilesResource(service, _authenticator);
-            this._segments = new SegmentsResource(service, _authenticator);
-            this._webproperties = new WebpropertiesResource(service, _authenticator);
+            this.authenticator = authenticator;
+            this._accounts = new AccountsResource(service, authenticator);
+            this._customDataSources = new CustomDataSourcesResource(service, authenticator);
+            this._dailyUploads = new DailyUploadsResource(service, authenticator);
+            this._goals = new GoalsResource(service, authenticator);
+            this._profiles = new ProfilesResource(service, authenticator);
+            this._segments = new SegmentsResource(service, authenticator);
+            this._webproperties = new WebpropertiesResource(service, authenticator);
         }
         
         public virtual AccountsResource Accounts {
@@ -4840,13 +4350,13 @@ namespace Google.Apis.Analytics.v3 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.accounts";
             
-            public AccountsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public AccountsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists all accounts to which the user has access.</summary>
@@ -4854,18 +4364,49 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Accounts> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.Accounts> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
                 
+                private string _quotaUser;
+                
+                private string _userIp;
+                
                 private System.Nullable<long> _maxResults;
                 
                 private System.Nullable<long> _startIndex;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service) : 
                         base(service) {
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4887,6 +4428,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -4912,16 +4475,35 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.accounts";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -4930,13 +4512,13 @@ namespace Google.Apis.Analytics.v3 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.customDataSources";
             
-            public CustomDataSourcesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public CustomDataSourcesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>List custom data sources to which the user has access.</summary>
@@ -4946,11 +4528,19 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service, accountId, webPropertyId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.CustomDataSources> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.CustomDataSources> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -4960,10 +4550,33 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private string _webPropertyId;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4985,6 +4598,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -5026,16 +4661,37 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.customDataSources";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, "\\d+", new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    parameters.Add("webPropertyId", Google.Apis.Util.Utilities.CreateRuntimeParameter("webPropertyId", true, "path", null, "UA-(\\d+)-(\\d+)", new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -5044,13 +4700,13 @@ namespace Google.Apis.Analytics.v3 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.dailyUploads";
             
-            public DailyUploadsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public DailyUploadsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Delete uploaded data for the given date.</summary>
@@ -5104,11 +4760,19 @@ namespace Google.Apis.Analytics.v3 {
                 Cost,
             }
             
-            public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -5120,13 +4784,36 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private string _webPropertyId;
                 
-                public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string customDataSourceId, string date, Type type) : 
+                public DeleteRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId, string customDataSourceId, string date, Type type) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
                     this._customDataSourceId = customDataSourceId;
                     this._date = date;
                     this._type = type;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5148,6 +4835,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -5191,24 +4900,56 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.dailyUploads";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "delete";
                     }
                 }
+                
+                public override string HttpMethod {
+                    get {
+                        return "DELETE";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{" +
+                            "customDataSourceId}/dailyUploads/{date}";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, "[0-9]+", new string[0]));
+                    parameters.Add("customDataSourceId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customDataSourceId", true, "path", null, null, new string[0]));
+                    parameters.Add("date", Google.Apis.Util.Utilities.CreateRuntimeParameter("date", true, "path", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                    parameters.Add("type", Google.Apis.Util.Utilities.CreateRuntimeParameter("type", true, "query", null, null, new string[] {
+                                    "cost"}));
+                    parameters.Add("webPropertyId", Google.Apis.Util.Utilities.CreateRuntimeParameter("webPropertyId", true, "path", null, "UA-[0-9]+-[0-9]+", new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+                }
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.DailyUploads> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.DailyUploads> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -5224,13 +4965,36 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private string _webPropertyId;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string customDataSourceId, string startDate, string endDate) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId, string customDataSourceId, string startDate, string endDate) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
                     this._customDataSourceId = customDataSourceId;
                     this._startDate = startDate;
                     this._endDate = endDate;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5252,6 +5016,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -5317,24 +5103,57 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.dailyUploads";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
                 }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{" +
+                            "customDataSourceId}/dailyUploads";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, "\\d+", new string[0]));
+                    parameters.Add("customDataSourceId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customDataSourceId", true, "path", null, ".{22}", new string[0]));
+                    parameters.Add("end-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("end-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    parameters.Add("webPropertyId", Google.Apis.Util.Utilities.CreateRuntimeParameter("webPropertyId", true, "path", null, "UA-(\\d+)-(\\d+)", new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+                }
             }
             
-            public class UploadRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.DailyUploadAppend> {
+            public class UploadRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.DailyUploadAppend> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -5350,7 +5169,7 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private string _webPropertyId;
                 
-                public UploadRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string customDataSourceId, string date, long appendNumber, Type type) : 
+                public UploadRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId, string customDataSourceId, string date, long appendNumber, Type type) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
@@ -5358,6 +5177,29 @@ namespace Google.Apis.Analytics.v3 {
                     this._date = date;
                     this._appendNumber = appendNumber;
                     this._type = type;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5379,6 +5221,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -5441,24 +5305,58 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.dailyUploads";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "upload";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "POST";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties/{webPropertyId}/customDataSources/{" +
+                            "customDataSourceId}/dailyUploads/{date}/uploads";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, "\\d+", new string[0]));
+                    parameters.Add("appendNumber", Google.Apis.Util.Utilities.CreateRuntimeParameter("appendNumber", true, "query", null, null, new string[0]));
+                    parameters.Add("customDataSourceId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customDataSourceId", true, "path", null, null, new string[0]));
+                    parameters.Add("date", Google.Apis.Util.Utilities.CreateRuntimeParameter("date", true, "path", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
+                    parameters.Add("reset", Google.Apis.Util.Utilities.CreateRuntimeParameter("reset", false, "query", "false", null, new string[0]));
+                    parameters.Add("type", Google.Apis.Util.Utilities.CreateRuntimeParameter("type", true, "query", null, null, new string[] {
+                                    "cost"}));
+                    parameters.Add("webPropertyId", Google.Apis.Util.Utilities.CreateRuntimeParameter("webPropertyId", true, "path", null, "UA-\\d+-\\d+", new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
             
             public class UploadMediaUpload : Google.Apis.Upload.ResumableUpload<string, Google.Apis.Analytics.v3.Data.DailyUploadAppend> {
                 
+                private string _alt;
+                
+                private string _fields;
+                
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -5474,7 +5372,7 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private string _webPropertyId;
                 
-                public UploadMediaUpload(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string customDataSourceId, string date, long appendNumber, Type type, System.IO.Stream stream, string contentType) : 
+                public UploadMediaUpload(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId, string customDataSourceId, string date, long appendNumber, Type type, System.IO.Stream stream, string contentType) : 
                         base(service.BaseUri, "/upload/analytics/v3/management/accounts/{accountId}/webproperties/{webPropertyId" +
                                 "}/customDataSources/{customDataSourceId}/dailyUploads/{date}/uploads", "POST", stream, contentType) {
                     this.Authenticator = service.Authenticator;
@@ -5484,6 +5382,28 @@ namespace Google.Apis.Analytics.v3 {
                     this._date = date;
                     this._appendNumber = appendNumber;
                     this._type = type;
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5505,6 +5425,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -5573,13 +5515,13 @@ namespace Google.Apis.Analytics.v3 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.goals";
             
-            public GoalsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public GoalsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists goals to which the user has access.</summary>
@@ -5590,11 +5532,19 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service, accountId, webPropertyId, profileId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Goals> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.Goals> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -5606,11 +5556,34 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private string _webPropertyId;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string profileId) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId, string profileId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
                     this._profileId = profileId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5632,6 +5605,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -5681,16 +5676,39 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.goals";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId" +
+                            "}/goals";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, null, new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    parameters.Add("webPropertyId", Google.Apis.Util.Utilities.CreateRuntimeParameter("webPropertyId", true, "path", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -5699,13 +5717,13 @@ namespace Google.Apis.Analytics.v3 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.profiles";
             
-            public ProfilesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public ProfilesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists profiles to which the user has access.</summary>
@@ -5715,11 +5733,19 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service, accountId, webPropertyId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Profiles> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.Profiles> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -5729,10 +5755,33 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private string _webPropertyId;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5754,6 +5803,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -5795,16 +5866,37 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.profiles";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties/{webPropertyId}/profiles";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, null, new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    parameters.Add("webPropertyId", Google.Apis.Util.Utilities.CreateRuntimeParameter("webPropertyId", true, "path", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -5813,13 +5905,13 @@ namespace Google.Apis.Analytics.v3 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.segments";
             
-            public SegmentsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public SegmentsResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists advanced segments to which the user has access.</summary>
@@ -5827,18 +5919,49 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Segments> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.Segments> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
                 
+                private string _quotaUser;
+                
+                private string _userIp;
+                
                 private System.Nullable<long> _maxResults;
                 
                 private System.Nullable<long> _startIndex;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service) : 
                         base(service) {
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5860,6 +5983,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -5885,16 +6030,35 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.segments";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/segments";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -5903,13 +6067,13 @@ namespace Google.Apis.Analytics.v3 {
             
             private AnalyticsService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "management.webproperties";
             
-            public WebpropertiesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public WebpropertiesResource(AnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Lists web properties to which the user has access.</summary>
@@ -5918,11 +6082,19 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service, accountId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Webproperties> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Analytics.v3.Data.Webproperties> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _accountId;
                 
@@ -5930,9 +6102,32 @@ namespace Google.Apis.Analytics.v3 {
                 
                 private System.Nullable<long> _startIndex;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId) : 
                         base(service) {
                     this._accountId = accountId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5954,6 +6149,28 @@ namespace Google.Apis.Analytics.v3 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -5987,16 +6204,36 @@ namespace Google.Apis.Analytics.v3 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "management.webproperties";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "management/accounts/{accountId}/webproperties";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, null, new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -6010,7 +6247,7 @@ namespace Google.Apis.Analytics.v3 {
         
         private ManagementResource _management;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

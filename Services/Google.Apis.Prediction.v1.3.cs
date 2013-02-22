@@ -421,193 +421,68 @@ namespace Google.Apis.Prediction.v1_3 {
     using Google.Apis.Discovery;
     
     
-    public partial class PredictionService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/R_1Vuu3" +
-            "XPFIWntSgx-vAfmhHweI\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"prediction:v1.3\",\"name\":\"p" +
-            "rediction\",\"version\":\"v1.3\",\"revision\":\"20120724\",\"title\":\"Prediction API\",\"desc" +
-            "ription\":\"Lets you access a cloud hosted machine learning service that makes it " +
-            "easy to build smart apps\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/fea" +
-            "ture/predictionapi-16.png\",\"x32\":\"http://www.google.com/images/icons/feature/pre" +
-            "dictionapi-32.png\"},\"documentationLink\":\"https://developers.google.com/predictio" +
-            "n/docs/developer-guide\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/" +
-            "prediction/v1.3/\",\"basePath\":\"/prediction/v1.3/\",\"rootUrl\":\"https://www.googleap" +
-            "is.com/\",\"servicePath\":\"prediction/v1.3/\",\"batchPath\":\"batch\",\"parameters\":{\"alt" +
-            "\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json" +
-            "\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applicatio" +
-            "n/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector s" +
-            "pecifying which fields to include in a partial response.\",\"location\":\"query\"},\"k" +
-            "ey\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your projec" +
-            "t and provides you with API access, quota, and reports. Required unless you prov" +
-            "ide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"des" +
-            "cription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPri" +
-            "nt\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line" +
-            " breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"des" +
-            "cription\":\"Available to use for quota purposes for server-side applications. Can" +
-            " be any arbitrary string assigned to a user, but should not exceed 40 characters" +
-            ". Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"" +
-            "string\",\"description\":\"IP address of the site where the request originates. Use " +
-            "this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oaut" +
-            "h2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.read_only\":{\"descript" +
-            "ion\":\"View your data in Google Cloud Storage\"},\"https://www.googleapis.com/auth/" +
-            "prediction\":{\"description\":\"Manage your data in the Google Prediction API\"}}}},\"" +
-            "schemas\":{\"Input\":{\"id\":\"Input\",\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"o" +
-            "bject\",\"description\":\"Input to the model for a prediction\",\"properties\":{\"csvIns" +
-            "tance\":{\"type\":\"array\",\"description\":\"A list of input features, these can be str" +
-            "ings or doubles.\",\"items\":{\"type\":\"any\"}}}}}},\"Output\":{\"id\":\"Output\",\"type\":\"ob" +
-            "ject\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the" +
-            " predictive model.\"},\"kind\":{\"type\":\"string\",\"description\":\"What kind of resourc" +
-            "e this is.\",\"default\":\"prediction#output\"},\"outputLabel\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The most likely class [Categorical models only].\"},\"outputMulti\":{\"type" +
-            "\":\"array\",\"description\":\"A list of classes with their estimated probabilities [C" +
-            "ategorical models only].\",\"items\":{\"type\":\"object\",\"properties\":{\"label\":{\"type\"" +
-            ":\"string\",\"description\":\"The class label.\"},\"score\":{\"type\":\"number\",\"descriptio" +
-            "n\":\"The probability of the class.\",\"format\":\"double\"}}}},\"outputValue\":{\"type\":\"" +
-            "number\",\"description\":\"The estimated regression value [Regression models only].\"" +
-            ",\"format\":\"double\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-reque" +
-            "st this resource.\"}}},\"Training\":{\"id\":\"Training\",\"type\":\"object\",\"properties\":{" +
-            "\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive model.\"}" +
-            ",\"kind\":{\"type\":\"string\",\"description\":\"What kind of resource this is.\",\"default" +
-            "\":\"prediction#training\"},\"modelInfo\":{\"type\":\"object\",\"description\":\"Model metad" +
-            "ata.\",\"properties\":{\"classWeightedAccuracy\":{\"type\":\"number\",\"description\":\"Esti" +
-            "mated accuracy of model taking utility weights into account [Categorical models " +
-            "only].\",\"format\":\"double\"},\"classificationAccuracy\":{\"type\":\"number\",\"descriptio" +
-            "n\":\"A number between 0.0 and 1.0, where 1.0 is 100% accurate. This is an estimat" +
-            "e, based on the amount and quality of the training data, of the estimated predic" +
-            "tion accuracy. You can use this is a guide to decide whether the results are acc" +
-            "urate enough for your needs. This estimate will be more reliable if your real in" +
-            "put data is similar to your training data [Categorical models only].\",\"format\":\"" +
-            "double\"},\"confusionMatrix\":{\"type\":\"object\",\"description\":\"An output confusion m" +
-            "atrix. This shows an estimate for how this model will do in predictions. This is" +
-            " first indexed by the true class label. For each true class label, this provides" +
-            " a pair {predicted_label, count}, where count is the estimated number of times t" +
-            "he model will predict the predicted label given the true label. Will not output " +
-            "if more then 100 classes [Categorical models only].\",\"additionalProperties\":{\"ty" +
-            "pe\":\"object\",\"description\":\"The true class label.\",\"additionalProperties\":{\"type" +
-            "\":\"number\",\"description\":\"The pair {predicted_label, count}.\",\"format\":\"double\"}" +
-            "}},\"confusionMatrixRowTotals\":{\"type\":\"object\",\"description\":\"A list of the conf" +
-            "usion matrix row totals\",\"additionalProperties\":{\"type\":\"number\",\"description\":\"" +
-            "The true class associated with how many instances it had\",\"format\":\"double\"}},\"m" +
-            "eanSquaredError\":{\"type\":\"number\",\"description\":\"An estimated mean squared error" +
-            ". The can be used to measure the quality of the predicted model [Regression mode" +
-            "ls only].\",\"format\":\"double\"},\"modelType\":{\"type\":\"string\",\"description\":\"Type o" +
-            "f predictive model (CLASSIFICATION or REGRESSION)\"},\"numberClasses\":{\"type\":\"str" +
-            "ing\",\"description\":\"Number of classes in the trained model [Categorical models o" +
-            "nly].\",\"format\":\"int64\"},\"numberInstances\":{\"type\":\"string\",\"description\":\"Numbe" +
-            "r of valid data instances used in the trained model.\",\"format\":\"int64\"}}},\"selfL" +
-            "ink\":{\"type\":\"string\",\"description\":\"A URL to re-request this resource.\"},\"train" +
-            "ingStatus\":{\"type\":\"string\",\"description\":\"The current status of the training jo" +
-            "b. This can be one of following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT F" +
-            "OUND\"},\"utility\":{\"type\":\"array\",\"description\":\"A class weighting function, whic" +
-            "h allows the importance weights for classes to be specified [Categorical models " +
-            "only].\",\"items\":{\"type\":\"object\",\"description\":\"Class label (string).\",\"addition" +
-            "alProperties\":{\"type\":\"number\",\"format\":\"double\"}}}}},\"Update\":{\"id\":\"Update\",\"t" +
-            "ype\":\"object\",\"properties\":{\"classLabel\":{\"type\":\"string\",\"description\":\"The tru" +
-            "e class label of this instance\"},\"csvInstance\":{\"type\":\"array\",\"description\":\"Th" +
-            "e input features for this instance\",\"items\":{\"type\":\"any\"}}}}},\"resources\":{\"hos" +
-            "tedmodels\":{\"methods\":{\"predict\":{\"id\":\"prediction.hostedmodels.predict\",\"path\":" +
-            "\"hostedmodels/{hostedModelName}/predict\",\"httpMethod\":\"POST\",\"description\":\"Subm" +
-            "it input and request an output against a hosted model\",\"parameters\":{\"hostedMode" +
-            "lName\":{\"type\":\"string\",\"description\":\"The name of a hosted model\",\"required\":tr" +
-            "ue,\"location\":\"path\"}},\"parameterOrder\":[\"hostedModelName\"],\"request\":{\"$ref\":\"I" +
-            "nput\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/p" +
-            "rediction\"]}}},\"training\":{\"methods\":{\"delete\":{\"id\":\"prediction.training.delete" +
-            "\",\"path\":\"training/{data}\",\"httpMethod\":\"DELETE\",\"description\":\"Delete a trained" +
-            " model\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata res" +
-            "ource in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
-            "data\"],\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"get\":{\"id\":\"pre" +
-            "diction.training.get\",\"path\":\"training/{data}\",\"httpMethod\":\"GET\",\"description\":" +
-            "\"Check training status of your model\",\"parameters\":{\"data\":{\"type\":\"string\",\"des" +
-            "cription\":\"mybucket/mydata resource in Google Storage\",\"required\":true,\"location" +
-            "\":\"path\"}},\"parameterOrder\":[\"data\"],\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/prediction\"]},\"insert\":{\"id\":\"prediction.training" +
-            ".insert\",\"path\":\"training\",\"httpMethod\":\"POST\",\"description\":\"Begin training you" +
-            "r model\",\"request\":{\"$ref\":\"Training\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/devstorage.read_only\",\"https://www.googleapis.c" +
-            "om/auth/prediction\"]},\"predict\":{\"id\":\"prediction.training.predict\",\"path\":\"trai" +
-            "ning/{data}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit data and request " +
-            "a prediction\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/myda" +
-            "ta resource in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"data\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"" +
-            "https://www.googleapis.com/auth/prediction\"]},\"update\":{\"id\":\"prediction.trainin" +
-            "g.update\",\"path\":\"training/{data}\",\"httpMethod\":\"PUT\",\"description\":\"Add new dat" +
-            "a to a trained model\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybuc" +
-            "ket/mydata resource in Google Storage\",\"required\":true,\"location\":\"path\"}},\"para" +
-            "meterOrder\":[\"data\"],\"request\":{\"$ref\":\"Update\"},\"response\":{\"$ref\":\"Training\"}," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}}}}";
+    public partial class PredictionService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1.3";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected PredictionService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._hostedmodels = new HostedmodelsResource(this, _authenticator);
-            this._training = new TrainingResource(this, _authenticator);
+        public PredictionService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._hostedmodels = new HostedmodelsResource(this, Authenticator);
+            this._training = new TrainingResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public PredictionService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public PredictionService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/prediction/v1.3/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "prediction";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/prediction/v1.3/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -627,13 +502,13 @@ namespace Google.Apis.Prediction.v1_3 {
         
         private PredictionService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "hostedmodels";
         
-        public HostedmodelsResource(PredictionService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public HostedmodelsResource(PredictionService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Submit input and request an output against a hosted model</summary>
@@ -642,20 +517,51 @@ namespace Google.Apis.Prediction.v1_3 {
             return new PredictRequest(service, body, hostedModelName);
         }
         
-        public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Output> {
+        public class PredictRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Prediction.v1_3.Data.Output> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _hostedModelName;
             
             private Google.Apis.Prediction.v1_3.Data.Input _Body;
             
-            public PredictRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_3.Data.Input body, string hostedModelName) : 
+            public PredictRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Prediction.v1_3.Data.Input body, string hostedModelName) : 
                     base(service) {
                 this.Body = body;
                 this._hostedModelName = hostedModelName;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -680,6 +586,28 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The name of a hosted model</summary>
             [Google.Apis.Util.RequestParameterAttribute("hostedModelName", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string HostedModelName {
@@ -698,20 +626,38 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "hostedmodels";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "predict";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "hostedmodels/{hostedModelName}/predict";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("hostedModelName", Google.Apis.Util.Utilities.CreateRuntimeParameter("hostedModelName", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -720,13 +666,13 @@ namespace Google.Apis.Prediction.v1_3 {
         
         private PredictionService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "training";
         
-        public TrainingResource(PredictionService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public TrainingResource(PredictionService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Delete a trained model</summary>
@@ -758,17 +704,48 @@ namespace Google.Apis.Prediction.v1_3 {
             return new UpdateRequest(service, body, data);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _data;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string data) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string data) : 
                     base(service) {
                 this._data = data;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -793,6 +770,28 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>mybucket/mydata resource in Google Storage</summary>
             [Google.Apis.Util.RequestParameterAttribute("data", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Data {
@@ -801,30 +800,79 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "training";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "training/{data}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("data", Google.Apis.Util.Utilities.CreateRuntimeParameter("data", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Training> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Prediction.v1_3.Data.Training> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _data;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string data) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string data) : 
                     base(service) {
                 this._data = data;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -846,6 +894,28 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -857,30 +927,79 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "training";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "training/{data}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("data", Google.Apis.Util.Utilities.CreateRuntimeParameter("data", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Training> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Prediction.v1_3.Data.Training> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private Google.Apis.Prediction.v1_3.Data.Training _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_3.Data.Training body) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Prediction.v1_3.Data.Training body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -902,6 +1021,28 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -915,37 +1056,85 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "training";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "training";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Output> {
+        public class PredictRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Prediction.v1_3.Data.Output> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _data;
             
             private Google.Apis.Prediction.v1_3.Data.Input _Body;
             
-            public PredictRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_3.Data.Input body, string data) : 
+            public PredictRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Prediction.v1_3.Data.Input body, string data) : 
                     base(service) {
                 this.Body = body;
                 this._data = data;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -967,6 +1156,28 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -988,37 +1199,86 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "training";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "predict";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "training/{data}/predict";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("data", Google.Apis.Util.Utilities.CreateRuntimeParameter("data", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Training> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Prediction.v1_3.Data.Training> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _data;
             
             private Google.Apis.Prediction.v1_3.Data.Update _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_3.Data.Update body, string data) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Prediction.v1_3.Data.Update body, string data) : 
                     base(service) {
                 this.Body = body;
                 this._data = data;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1043,6 +1303,28 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>mybucket/mydata resource in Google Storage</summary>
             [Google.Apis.Util.RequestParameterAttribute("data", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Data {
@@ -1061,20 +1343,38 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "training";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "training/{data}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("data", Google.Apis.Util.Utilities.CreateRuntimeParameter("data", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1087,7 +1387,7 @@ namespace Google.Apis.Prediction.v1_3 {
         
         private TrainingResource _training;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

@@ -10,6 +10,9 @@
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrationRegion.ElectionAdministrationBody">
             <summary>Information about an election administrative body (e.g. County Board of Elections).</summary>
         </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrationRegion.Id">
+            <summary>An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.</summary>
+        </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrationRegion.Local_jurisdiction">
             <summary>Describes information about a regional election administrative area.</summary>
         </member>
@@ -112,6 +115,9 @@
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.ElectorateSpecifications">
             <summary>A description of any additional eligibility requirements for voting in this contest.</summary>
         </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Id">
+            <summary>An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.</summary>
+        </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Level">
             <summary>The level of office for this contest. One of: federal, state, county, city, other</summary>
         </member>
@@ -205,6 +211,9 @@
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.EndDate">
             <summary>The last date that this early vote site may be used. This field is not populated for polling locations.</summary>
         </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.Id">
+            <summary>An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.</summary>
+        </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.Name">
             <summary>The name of the early vote site. This field is not populated for polling locations.</summary>
         </member>
@@ -289,9 +298,6 @@
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.Status">
             <summary>The result of the request. One of: success, noStreetSegmentFound, addressUnparseable, noAddressParameter, multipleStreetSegmentsFound, electionOver, electionUnknown, internalLookupFailure</summary>
         </member>
-        <member name="P:Google.Apis.Civicinfo.us_v1.CivicinfoService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="M:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQuery">
             <summary>List of available elections to query.</summary>
         </member>
@@ -299,17 +305,41 @@
             <summary>Looks up information relevant to a voter based on the voter&apos;s registered address.</summary>
             <param name="electionId">Required - The unique ID of the election to look up. A list of election IDs can be obtained at.https://www.googleapis.com/civicinfo/{version}/elections</param>
         </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQueryRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQueryRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQueryRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQueryRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQueryRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQueryRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.ElectionId">
             <summary>The unique ID of the election to look up. A list of election IDs can be obtained at.https://www.googleapis.com/civicinfo/{version}/elections</summary>

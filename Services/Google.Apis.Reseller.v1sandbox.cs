@@ -680,264 +680,68 @@ namespace Google.Apis.Reseller.v1sandbox {
     using Google.Apis.Discovery;
     
     
-    public partial class ResellerService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/o5eC56J" +
-            "HCLPFIuLH9P_LWSwR1mQ\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"reseller:v1sandbox\",\"name\"" +
-            ":\"reseller\",\"version\":\"v1sandbox\",\"revision\":\"20120803\",\"title\":\"Enterprise Apps" +
-            " Reseller API\",\"description\":\"Lets you create and manage your customers and thei" +
-            "r subscriptions.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/sea" +
-            "rch-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"d" +
-            "ocumentationLink\":\"https://developers.google.com/google-apps/reseller/\",\"labels\"" +
-            ":[\"limited_availability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.co" +
-            "m/apps/reseller/v1sandbox/\",\"basePath\":\"/apps/reseller/v1sandbox/\",\"rootUrl\":\"ht" +
-            "tps://www.googleapis.com/\",\"servicePath\":\"apps/reseller/v1sandbox/\",\"batchPath\":" +
-            "\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the " +
-            "response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with " +
-            "Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\"" +
-            ",\"description\":\"Selector specifying which fields to include in a partial respons" +
-            "e.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API " +
-            "key identifies your project and provides you with API access, quota, and reports" +
-            ". Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_to" +
-            "ken\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"loc" +
-            "ation\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response " +
-            "with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaU" +
-            "ser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for ser" +
-            "ver-side applications. Can be any arbitrary string assigned to a user, but shoul" +
-            "d not exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"" +
-            "query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where th" +
-            "e request originates. Use this if you want to enforce per-user limits.\",\"locatio" +
-            "n\":\"query\"}},\"schemas\":{\"Address\":{\"id\":\"Address\",\"type\":\"object\",\"description\":" +
-            "\"JSON template for address of a customer.\",\"properties\":{\"addressLine1\":{\"type\":" +
-            "\"string\",\"description\":\"Address line 1 of the address.\"},\"addressLine2\":{\"type\":" +
-            "\"string\",\"description\":\"Address line 2 of the address.\"},\"addressLine3\":{\"type\":" +
-            "\"string\",\"description\":\"Address line 3 of the address.\"},\"contactName\":{\"type\":\"" +
-            "string\",\"description\":\"Name of the contact person.\"},\"countryCode\":{\"type\":\"stri" +
-            "ng\",\"description\":\"ISO 3166 country code.\"},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"Identifies the resource as a customer address.\",\"default\":\"customers#address\"" +
-            "},\"locality\":{\"type\":\"string\",\"description\":\"Name of the locality. This is in ac" +
-            "cordance with - http://portablecontacts.net/draft-spec.html#address_element.\"},\"" +
-            "organizationName\":{\"type\":\"string\",\"description\":\"Name of the organization.\"},\"p" +
-            "ostalCode\":{\"type\":\"string\",\"description\":\"The postal code. This is in accordanc" +
-            "e with - http://portablecontacts.net/draft-spec.html#address_element.\"},\"region\"" +
-            ":{\"type\":\"string\",\"description\":\"Name of the region. This is in accordance with " +
-            "- http://portablecontacts.net/draft-spec.html#address_element.\"}}},\"ChangePlanRe" +
-            "quest\":{\"id\":\"ChangePlanRequest\",\"type\":\"object\",\"description\":\"JSON template fo" +
-            "r the ChangePlan rpc request.\",\"properties\":{\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Identifies the resource as a subscription change plan request.\",\"default\":\"s" +
-            "ubscriptions#changePlanRequest\"},\"planName\":{\"type\":\"string\",\"description\":\"Name" +
-            " of the plan to change to.\"},\"purchaseOrderId\":{\"type\":\"string\",\"description\":\"P" +
-            "urchase order id for your order tracking purposes.\"},\"seats\":{\"$ref\":\"Seats\",\"de" +
-            "scription\":\"Number/Limit of seats in the new plan.\"}}},\"Customer\":{\"id\":\"Custome" +
-            "r\",\"type\":\"object\",\"description\":\"JSON template for a customer.\",\"properties\":{\"" +
-            "alternateEmail\":{\"type\":\"string\",\"description\":\"The alternate email of the custo" +
-            "mer.\"},\"customerDomain\":{\"type\":\"string\",\"description\":\"The domain name of the c" +
-            "ustomer.\"},\"customerId\":{\"type\":\"string\",\"description\":\"The id of the customer.\"" +
-            "},\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resource as a customer.\"" +
-            ",\"default\":\"reseller#customer\"},\"phoneNumber\":{\"type\":\"string\",\"description\":\"Th" +
-            "e phone number of the customer.\"},\"postalAddress\":{\"$ref\":\"Address\",\"description" +
-            "\":\"The postal address of the customer.\"}}},\"RenewalSettings\":{\"id\":\"RenewalSetti" +
-            "ngs\",\"type\":\"object\",\"description\":\"JSON template for a subscription renewal set" +
-            "tings.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Identifies the reso" +
-            "urce as a subscription renewal setting.\",\"default\":\"subscriptions#renewalSetting" +
-            "s\"},\"renewalType\":{\"type\":\"string\",\"description\":\"Subscription renewal type.\"}}}" +
-            ",\"Seats\":{\"id\":\"Seats\",\"type\":\"object\",\"description\":\"JSON template for subscrip" +
-            "tion seats.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Identifies the" +
-            " resource as a subscription change plan request.\",\"default\":\"subscriptions#seats" +
-            "\"},\"maximumNumberOfSeats\":{\"type\":\"integer\",\"description\":\"Maximum number of sea" +
-            "ts that can be purchased. This needs to be provided only for a non-commitment pl" +
-            "an. For a commitment plan it is decided by the contract.\",\"format\":\"int32\"},\"num" +
-            "berOfSeats\":{\"type\":\"integer\",\"description\":\"Number of seats to purchase. This i" +
-            "s applicable only for a commitment plan.\",\"format\":\"int32\"}}},\"Subscription\":{\"i" +
-            "d\":\"Subscription\",\"type\":\"object\",\"description\":\"JSON template for a subscriptio" +
-            "n.\",\"properties\":{\"creationTime\":{\"type\":\"string\",\"description\":\"Creation time o" +
-            "f this subscription in milliseconds since Unix epoch.\",\"format\":\"int64\"},\"custom" +
-            "erId\":{\"type\":\"string\",\"description\":\"The id of the customer to whom the subscri" +
-            "ption belongs.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resource " +
-            "as a Subscription.\",\"default\":\"reseller#subscription\"},\"plan\":{\"type\":\"object\",\"" +
-            "description\":\"Plan details of the subscription\",\"properties\":{\"commitmentInterva" +
-            "l\":{\"type\":\"object\",\"description\":\"Interval of the commitment if it is a commitm" +
-            "ent plan.\",\"properties\":{\"endTime\":{\"type\":\"string\",\"description\":\"End time of t" +
-            "he commitment interval in milliseconds since Unix epoch.\",\"format\":\"int64\"},\"sta" +
-            "rtTime\":{\"type\":\"string\",\"description\":\"Start time of the commitment interval in" +
-            " milliseconds since Unix epoch.\",\"format\":\"int64\"}}},\"isCommitmentPlan\":{\"type\":" +
-            "\"boolean\",\"description\":\"Whether the plan is a commitment plan or not.\"},\"planNa" +
-            "me\":{\"type\":\"string\",\"description\":\"The plan name of this subscription\'s plan.\"}" +
-            "}},\"purchaseOrderId\":{\"type\":\"string\",\"description\":\"Purchase order id for your " +
-            "order tracking purposes.\"},\"renewalSettings\":{\"$ref\":\"RenewalSettings\",\"descript" +
-            "ion\":\"Renewal settings of the subscription.\"},\"seats\":{\"$ref\":\"Seats\",\"descripti" +
-            "on\":\"Number/Limit of seats in the new plan.\"},\"skuId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Name of the sku for which this subscription is purchased.\"},\"subscriptionI" +
-            "d\":{\"type\":\"string\",\"description\":\"The id of the subscription.\"},\"trialSettings\"" +
-            ":{\"type\":\"object\",\"description\":\"Trial Settings of the subscription.\",\"propertie" +
-            "s\":{\"isInTrial\":{\"type\":\"boolean\",\"description\":\"Whether the subscription is in " +
-            "trial.\"},\"trialEndTime\":{\"type\":\"string\",\"description\":\"End time of the trial in" +
-            " milliseconds since Unix epoch.\",\"format\":\"int64\"}}}}},\"Subscriptions\":{\"id\":\"Su" +
-            "bscriptions\",\"type\":\"object\",\"description\":\"JSON template for a subscription lis" +
-            "t.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Identifies the resource" +
-            " as a collection of subscriptions.\",\"default\":\"reseller#subscriptions\"},\"nextPag" +
-            "eToken\":{\"type\":\"string\",\"description\":\"The continuation token, used to page thr" +
-            "ough large result sets. Provide this value in a subsequent request to return the" +
-            " next page of results.\"},\"subscriptions\":{\"type\":\"array\",\"description\":\"The subs" +
-            "criptions in this page of results.\",\"items\":{\"$ref\":\"Subscription\"}}}}},\"resourc" +
-            "es\":{\"customers\":{\"methods\":{\"get\":{\"id\":\"reseller.customers.get\",\"path\":\"custom" +
-            "ers/{customerId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a customer resource if " +
-            "one exists and is owned by the reseller.\",\"parameters\":{\"customerId\":{\"type\":\"st" +
-            "ring\",\"description\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"customerId\"],\"response\":{\"$ref\":\"Customer\"}},\"insert\":{\"id\":\"res" +
-            "eller.customers.insert\",\"path\":\"customers\",\"httpMethod\":\"POST\",\"description\":\"Cr" +
-            "eates a customer resource if one does not already exist.\",\"parameters\":{\"custome" +
-            "rAuthToken\":{\"type\":\"string\",\"description\":\"An auth token needed for inserting a" +
-            " customer for which domain already exists. Can be generated at https://www.googl" +
-            "e.com/a/cpanel//TransferToken. Optional.\",\"location\":\"query\"}},\"request\":{\"$ref\"" +
-            ":\"Customer\"},\"response\":{\"$ref\":\"Customer\"}},\"patch\":{\"id\":\"reseller.customers.p" +
-            "atch\",\"path\":\"customers/{customerId}\",\"httpMethod\":\"PATCH\",\"description\":\"Update" +
-            " a customer resource if one it exists and is owned by the reseller. This method " +
-            "supports patch semantics.\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
-            "\"customerId\"],\"request\":{\"$ref\":\"Customer\"},\"response\":{\"$ref\":\"Customer\"}},\"upd" +
-            "ate\":{\"id\":\"reseller.customers.update\",\"path\":\"customers/{customerId}\",\"httpMeth" +
-            "od\":\"PUT\",\"description\":\"Update a customer resource if one it exists and is owne" +
-            "d by the reseller.\",\"parameters\":{\"customerId\":{\"type\":\"string\",\"description\":\"I" +
-            "d of the Customer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"custom" +
-            "erId\"],\"request\":{\"$ref\":\"Customer\"},\"response\":{\"$ref\":\"Customer\"}}}},\"subscrip" +
-            "tions\":{\"methods\":{\"changePlan\":{\"id\":\"reseller.subscriptions.changePlan\",\"path\"" +
-            ":\"customers/{customerId}/subscriptions/{subscriptionId}/changePlan\",\"httpMethod\"" +
-            ":\"POST\",\"description\":\"Changes the plan of a subscription\",\"parameters\":{\"custom" +
-            "erId\":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"required\":true,\"locat" +
-            "ion\":\"path\"},\"subscriptionId\":{\"type\":\"string\",\"description\":\"Id of the subscrip" +
-            "tion, which is unique for a customer\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"customerId\",\"subscriptionId\"],\"request\":{\"$ref\":\"ChangePlanRequest\"" +
-            "},\"response\":{\"$ref\":\"Subscription\"}},\"changeRenewalSettings\":{\"id\":\"reseller.su" +
-            "bscriptions.changeRenewalSettings\",\"path\":\"customers/{customerId}/subscriptions/" +
-            "{subscriptionId}/changeRenewalSettings\",\"httpMethod\":\"POST\",\"description\":\"Chang" +
-            "es the renewal settings of a subscription\",\"parameters\":{\"customerId\":{\"type\":\"s" +
-            "tring\",\"description\":\"Id of the Customer\",\"required\":true,\"location\":\"path\"},\"su" +
-            "bscriptionId\":{\"type\":\"string\",\"description\":\"Id of the subscription, which is u" +
-            "nique for a customer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"cus" +
-            "tomerId\",\"subscriptionId\"],\"request\":{\"$ref\":\"RenewalSettings\"},\"response\":{\"$re" +
-            "f\":\"Subscription\"}},\"changeSeats\":{\"id\":\"reseller.subscriptions.changeSeats\",\"pa" +
-            "th\":\"customers/{customerId}/subscriptions/{subscriptionId}/changeSeats\",\"httpMet" +
-            "hod\":\"POST\",\"description\":\"Changes the seats configuration of a subscription\",\"p" +
-            "arameters\":{\"customerId\":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"re" +
-            "quired\":true,\"location\":\"path\"},\"subscriptionId\":{\"type\":\"string\",\"description\":" +
-            "\"Id of the subscription, which is unique for a customer\",\"required\":true,\"locati" +
-            "on\":\"path\"}},\"parameterOrder\":[\"customerId\",\"subscriptionId\"],\"request\":{\"$ref\":" +
-            "\"Seats\"},\"response\":{\"$ref\":\"Subscription\"}},\"delete\":{\"id\":\"reseller.subscripti" +
-            "ons.delete\",\"path\":\"customers/{customerId}/subscriptions/{subscriptionId}\",\"http" +
-            "Method\":\"DELETE\",\"description\":\"Cancels/Downgrades a subscription.\",\"parameters\"" +
-            ":{\"customerId\":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"required\":tr" +
-            "ue,\"location\":\"path\"},\"deletionType\":{\"type\":\"string\",\"description\":\"Whether the" +
-            " subscription is to be fully cancelled or downgraded\",\"required\":true,\"enum\":[\"c" +
-            "ancel\",\"downgrade\",\"suspend\"],\"enumDescriptions\":[\"Cancels the subscription imme" +
-            "diately\",\"Downgrades a Google Apps for Business subscription to Google Apps\",\"Su" +
-            "spends the subscriptions for 4 days before cancelling it\"],\"location\":\"query\"},\"" +
-            "subscriptionId\":{\"type\":\"string\",\"description\":\"Id of the subscription, which is" +
-            " unique for a customer\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"c" +
-            "ustomerId\",\"subscriptionId\",\"deletionType\"]},\"get\":{\"id\":\"reseller.subscriptions" +
-            ".get\",\"path\":\"customers/{customerId}/subscriptions/{subscriptionId}\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"Gets a subscription of the customer.\",\"parameters\":{\"cust" +
-            "omerId\":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"required\":true,\"loc" +
-            "ation\":\"path\"},\"subscriptionId\":{\"type\":\"string\",\"description\":\"Id of the subscr" +
-            "iption, which is unique for a customer\",\"required\":true,\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"customerId\",\"subscriptionId\"],\"response\":{\"$ref\":\"Subscription\"}}" +
-            ",\"insert\":{\"id\":\"reseller.subscriptions.insert\",\"path\":\"customers/{customerId}/s" +
-            "ubscriptions\",\"httpMethod\":\"POST\",\"description\":\"Creates/Transfers a subscriptio" +
-            "n for the customer.\",\"parameters\":{\"customerAuthToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"An auth token needed for transferring a subscription. Can be generated at" +
-            " https://www.google.com/a/cpanel/customer-domain/TransferToken. Optional.\",\"loca" +
-            "tion\":\"query\"},\"customerId\":{\"type\":\"string\",\"description\":\"Id of the Customer\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"customerId\"],\"request\":{\"" +
-            "$ref\":\"Subscription\"},\"response\":{\"$ref\":\"Subscription\"}},\"list\":{\"id\":\"reseller" +
-            ".subscriptions.list\",\"path\":\"subscriptions\",\"httpMethod\":\"GET\",\"description\":\"Li" +
-            "sts subscriptions of a reseller, optionally filtered by a customer name prefix.\"" +
-            ",\"parameters\":{\"customerNamePrefix\":{\"type\":\"string\",\"description\":\"Prefix of th" +
-            "e customer\'s domain name by which the subscriptions should be filtered. Optional" +
-            "\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numb" +
-            "er of results to return\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"locati" +
-            "on\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token to specify next p" +
-            "age in the list\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Subscriptions\"}},\"star" +
-            "tPaidService\":{\"id\":\"reseller.subscriptions.startPaidService\",\"path\":\"customers/" +
-            "{customerId}/subscriptions/{subscriptionId}/startPaidService\",\"httpMethod\":\"POST" +
-            "\",\"description\":\"Starts paid service of a trial subscription\",\"parameters\":{\"cus" +
-            "tomerId\":{\"type\":\"string\",\"description\":\"Id of the Customer\",\"required\":true,\"lo" +
-            "cation\":\"path\"},\"subscriptionId\":{\"type\":\"string\",\"description\":\"Id of the subsc" +
-            "ription, which is unique for a customer\",\"required\":true,\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"customerId\",\"subscriptionId\"],\"response\":{\"$ref\":\"Subscription\"}" +
-            "}}}}}";
+    public partial class ResellerService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1sandbox";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected ResellerService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._customers = new CustomersResource(this, _authenticator);
-            this._subscriptions = new SubscriptionsResource(this, _authenticator);
+        public ResellerService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._customers = new CustomersResource(this, Authenticator);
+            this._subscriptions = new SubscriptionsResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public ResellerService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public ResellerService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ResellerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/apps/reseller/v1sandbox/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "reseller";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/apps/reseller/v1sandbox/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -945,13 +749,13 @@ namespace Google.Apis.Reseller.v1sandbox {
         
         private ResellerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "customers";
         
-        public CustomersResource(ResellerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CustomersResource(ResellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Gets a customer resource if one exists and is owned by the reseller.</summary>
@@ -977,17 +781,48 @@ namespace Google.Apis.Reseller.v1sandbox {
             return new UpdateRequest(service, body, customerId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Customer> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Customer> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _customerId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string customerId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string customerId) : 
                     base(service) {
                 this._customerId = customerId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1009,6 +844,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1020,32 +877,81 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "customers";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Customer> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Customer> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _customerAuthToken;
             
             private Google.Apis.Reseller.v1sandbox.Data.Customer _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Reseller.v1sandbox.Data.Customer body) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Customer body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1067,6 +973,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1091,37 +1019,86 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "customers";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerAuthToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerAuthToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Customer> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Customer> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _customerId;
             
             private Google.Apis.Reseller.v1sandbox.Data.Customer _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Reseller.v1sandbox.Data.Customer body, string customerId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Customer body, string customerId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1146,6 +1123,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Id of the Customer</summary>
             [Google.Apis.Util.RequestParameterAttribute("customerId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CustomerId {
@@ -1164,37 +1163,86 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "customers";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Customer> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Customer> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _customerId;
             
             private Google.Apis.Reseller.v1sandbox.Data.Customer _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Reseller.v1sandbox.Data.Customer body, string customerId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Customer body, string customerId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1219,6 +1267,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Id of the Customer</summary>
             [Google.Apis.Util.RequestParameterAttribute("customerId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CustomerId {
@@ -1237,20 +1307,38 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "customers";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1259,13 +1347,13 @@ namespace Google.Apis.Reseller.v1sandbox {
         
         private ResellerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "subscriptions";
         
-        public SubscriptionsResource(ResellerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public SubscriptionsResource(ResellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Changes the plan of a subscription</summary>
@@ -1339,11 +1427,19 @@ namespace Google.Apis.Reseller.v1sandbox {
             Suspend,
         }
         
-        public class ChangePlanRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+        public class ChangePlanRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _customerId;
             
@@ -1351,11 +1447,34 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest _Body;
             
-            public ChangePlanRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest body, string customerId, string subscriptionId) : 
+            public ChangePlanRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest body, string customerId, string subscriptionId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
                 this._subscriptionId = subscriptionId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1377,6 +1496,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1406,28 +1547,55 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "changePlan";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}/subscriptions/{subscriptionId}/changePlan";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                parameters.Add("subscriptionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("subscriptionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ChangeRenewalSettingsRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+        public class ChangeRenewalSettingsRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _customerId;
             
@@ -1435,11 +1603,34 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.RenewalSettings _Body;
             
-            public ChangeRenewalSettingsRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Reseller.v1sandbox.Data.RenewalSettings body, string customerId, string subscriptionId) : 
+            public ChangeRenewalSettingsRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.RenewalSettings body, string customerId, string subscriptionId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
                 this._subscriptionId = subscriptionId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1461,6 +1652,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1490,28 +1703,55 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "changeRenewalSettings";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}/subscriptions/{subscriptionId}/changeRenewalSettings";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                parameters.Add("subscriptionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("subscriptionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ChangeSeatsRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+        public class ChangeSeatsRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _customerId;
             
@@ -1519,11 +1759,34 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.Seats _Body;
             
-            public ChangeSeatsRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Reseller.v1sandbox.Data.Seats body, string customerId, string subscriptionId) : 
+            public ChangeSeatsRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Seats body, string customerId, string subscriptionId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
                 this._subscriptionId = subscriptionId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1545,6 +1808,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1574,28 +1859,55 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "changeSeats";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}/subscriptions/{subscriptionId}/changeSeats";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                parameters.Add("subscriptionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("subscriptionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _customerId;
             
@@ -1603,11 +1915,34 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private string _subscriptionId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string customerId, string subscriptionId, DeletionType deletionType) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string customerId, string subscriptionId, DeletionType deletionType) : 
                     base(service) {
                 this._customerId = customerId;
                 this._subscriptionId = subscriptionId;
                 this._deletionType = deletionType;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1629,6 +1964,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1656,33 +2013,87 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}/subscriptions/{subscriptionId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                parameters.Add("deletionType", Google.Apis.Util.Utilities.CreateRuntimeParameter("deletionType", true, "query", null, null, new string[] {
+                                "cancel",
+                                "downgrade",
+                                "suspend"}));
+                parameters.Add("subscriptionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("subscriptionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _customerId;
             
             private string _subscriptionId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string customerId, string subscriptionId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string customerId, string subscriptionId) : 
                     base(service) {
                 this._customerId = customerId;
                 this._subscriptionId = subscriptionId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1704,6 +2115,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1723,24 +2156,51 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}/subscriptions/{subscriptionId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                parameters.Add("subscriptionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("subscriptionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _customerAuthToken;
             
@@ -1748,10 +2208,33 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.Subscription _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Reseller.v1sandbox.Data.Subscription body, string customerId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Subscription body, string customerId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1773,6 +2256,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1805,28 +2310,55 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}/subscriptions";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerAuthToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerAuthToken", false, "query", null, null, new string[0]));
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscriptions> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscriptions> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _customerNamePrefix;
             
@@ -1834,8 +2366,31 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1857,6 +2412,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1893,33 +2470,84 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "subscriptions";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerNamePrefix", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerNamePrefix", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class StartPaidServiceRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+        public class StartPaidServiceRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Reseller.v1sandbox.Data.Subscription> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _customerId;
             
             private string _subscriptionId;
             
-            public StartPaidServiceRequest(Google.Apis.Discovery.IRequestProvider service, string customerId, string subscriptionId) : 
+            public StartPaidServiceRequest(Google.Apis.Discovery.IClientService service, string customerId, string subscriptionId) : 
                     base(service) {
                 this._customerId = customerId;
                 this._subscriptionId = subscriptionId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1944,6 +2572,28 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Id of the Customer</summary>
             [Google.Apis.Util.RequestParameterAttribute("customerId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CustomerId {
@@ -1960,16 +2610,35 @@ namespace Google.Apis.Reseller.v1sandbox {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "subscriptions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "startPaidService";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "customers/{customerId}/subscriptions/{subscriptionId}/startPaidService";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, null, new string[0]));
+                parameters.Add("subscriptionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("subscriptionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1982,7 +2651,7 @@ namespace Google.Apis.Reseller.v1sandbox {
         
         private SubscriptionsResource _subscriptions;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

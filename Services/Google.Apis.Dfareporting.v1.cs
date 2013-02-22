@@ -1221,398 +1221,70 @@ namespace Google.Apis.Dfareporting.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class DfareportingService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/U5nodZT" +
-            "Ds51g9ZbpRkOxkkLbdKQ\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"dfareporting:v1\",\"name\":\"d" +
-            "fareporting\",\"version\":\"v1\",\"revision\":\"20121127\",\"title\":\"DFA Reporting API\",\"d" +
-            "escription\":\"Lets you create, run and download reports.\",\"icons\":{\"x16\":\"http://" +
-            "www.google.com/images/icons/product/doubleclick-16.gif\",\"x32\":\"http://www.google" +
-            ".com/images/icons/product/doubleclick-32.gif\"},\"documentationLink\":\"https://deve" +
-            "lopers.google.com/doubleclick-advertisers/reporting/\",\"protocol\":\"rest\",\"baseUrl" +
-            "\":\"https://www.googleapis.com/dfareporting/v1/\",\"basePath\":\"/dfareporting/v1/\",\"" +
-            "rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"dfareporting/v1/\",\"batchPa" +
-            "th\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for " +
-            "the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses w" +
-            "ith Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"str" +
-            "ing\",\"description\":\"Selector specifying which fields to include in a partial res" +
-            "ponse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your " +
-            "API key identifies your project and provides you with API access, quota, and rep" +
-            "orts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oaut" +
-            "h_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\"," +
-            "\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respo" +
-            "nse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"qu" +
-            "otaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for" +
-            " server-side applications. Can be any arbitrary string assigned to a user, but s" +
-            "hould not exceed 40 characters. Overrides userIp if both are provided.\",\"locatio" +
-            "n\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site wher" +
-            "e the request originates. Use this if you want to enforce per-user limits.\",\"loc" +
-            "ation\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/df" +
-            "areporting\":{\"description\":\"View and manage DoubleClick for Advertisers reports\"" +
-            "}}}},\"schemas\":{\"DimensionFilter\":{\"id\":\"DimensionFilter\",\"type\":\"object\",\"descr" +
-            "iption\":\"Represents a dimension filter.\",\"properties\":{\"dimensionName\":{\"type\":\"" +
-            "string\",\"description\":\"The name of the dimension to filter.\"},\"kind\":{\"type\":\"st" +
-            "ring\",\"description\":\"Kind of resource this is, in this case dfareporting#dimensi" +
-            "onFilter.\",\"default\":\"dfareporting#dimensionFilter\"},\"value\":{\"type\":\"string\",\"d" +
-            "escription\":\"The value of the dimension to filter for.\"}}},\"DimensionValue\":{\"id" +
-            "\":\"DimensionValue\",\"type\":\"object\",\"description\":\"Represents a DimensionValue re" +
-            "source.\",\"properties\":{\"dimensionName\":{\"type\":\"string\",\"description\":\"Name of t" +
-            "he dimension.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for" +
-            " caching purposes.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID associated with" +
-            " the value if available.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resour" +
-            "ce this is, in this case dfareporting#dimensionValue.\",\"default\":\"dfareporting#d" +
-            "imensionValue\"},\"value\":{\"type\":\"string\",\"description\":\"The value of the dimensi" +
-            "on.\"}}},\"DimensionValueList\":{\"id\":\"DimensionValueList\",\"type\":\"object\",\"descrip" +
-            "tion\":\"Represents the list of DimensionValue resources.\",\"properties\":{\"etag\":{\"" +
-            "type\":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"ite" +
-            "ms\":{\"type\":\"array\",\"description\":\"The dimension values returned in this respons" +
-            "e.\",\"items\":{\"$ref\":\"DimensionValue\"}},\"kind\":{\"type\":\"string\",\"description\":\"Ki" +
-            "nd of list this is, in this case dfareporting#dimensionValueList.\",\"default\":\"df" +
-            "areporting#dimensionValueList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"" +
-            "Continuation token used to page through dimension values. To retrieve the next p" +
-            "age of results, set the next request\'s \\\"pageToken\\\" to the value of this field." +
-            " The page token is only valid for a limited amount of time and should not be per" +
-            "sisted.\"}}},\"DimensionValueRequest\":{\"id\":\"DimensionValueRequest\",\"type\":\"object" +
-            "\",\"description\":\"Represents a DimensionValuesRequest.\",\"properties\":{\"dimensionN" +
-            "ame\":{\"type\":\"string\",\"description\":\"The name of the dimension values should be " +
-            "requested for.\"},\"endDate\":{\"type\":\"string\",\"description\":\"The end date of the d" +
-            "ate range for which to retrieve dimension values. A string of the format: \\\"yyyy" +
-            "-MM-dd\\\".\",\"format\":\"date\"},\"filters\":{\"type\":\"array\",\"description\":\"List of fil" +
-            "ters to filter values by. The filters are ANDed.\",\"items\":{\"$ref\":\"DimensionFilt" +
-            "er\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of request this is, in this ca" +
-            "se dfareporting#dimensionValueRequest.\",\"default\":\"dfareporting#dimensionValueRe" +
-            "quest\"},\"startDate\":{\"type\":\"string\",\"description\":\"The start date of the date r" +
-            "ange for which to retrieve dimension values. A string of the format: \\\"yyyy-MM-d" +
-            "d\\\".\",\"format\":\"date\"}}},\"File\":{\"id\":\"File\",\"type\":\"object\",\"description\":\"Repr" +
-            "esents a File resource. A File contains the meta-data for a report run. It shows" +
-            " the status of the run and holds the urls to the generated report data if the ru" +
-            "n is finished and the status is \\\"REPORT_AVAILABLE\\\".\",\"properties\":{\"dateRange\"" +
-            ":{\"type\":\"object\",\"description\":\"The date range for which the file has report da" +
-            "ta.\",\"properties\":{\"endDate\":{\"type\":\"string\",\"description\":\"The end date of the" +
-            " date range, inclusive. A string of the format: \\\"yyyy-MM-dd\\\".\",\"format\":\"date\"" +
-            "},\"startDate\":{\"type\":\"string\",\"description\":\"The start date of the date range, " +
-            "inclusive. A string of the format: \\\"yyyy-MM-dd\\\".\",\"format\":\"date\"}}},\"etag\":{\"" +
-            "type\":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"fil" +
-            "eName\":{\"type\":\"string\",\"description\":\"The file name of the file.\"},\"id\":{\"type\"" +
-            ":\"string\",\"description\":\"The unique ID of this report file.\",\"format\":\"int64\"},\"" +
-            "kind\":{\"type\":\"string\",\"description\":\"Kind of resource this is, in this case dfa" +
-            "reporting#file.\",\"default\":\"dfareporting#file\"},\"lastModifiedTime\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The timestamp in milliseconds since epoch when this file was " +
-            "last modified.\",\"format\":\"int64\"},\"reportId\":{\"type\":\"string\",\"description\":\"The" +
-            " ID of the report this file was generated from.\",\"format\":\"int64\"},\"status\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The status of the report file, one of:  \\n- \\\"PROCES" +
-            "SING\\\" \\n- \\\"REPORT_AVAILABLE\\\" \\n- \\\"FAILED\\\" \\n- \\\"CANCELLED\\\"\"},\"urls\":{\"type" +
-            "\":\"object\",\"description\":\"The urls where the completed report file can be downlo" +
-            "aded.\",\"properties\":{\"csv\":{\"type\":\"object\",\"description\":\"Urls for generated CS" +
-            "V data.\",\"properties\":{\"apiUrl\":{\"type\":\"string\",\"description\":\"The url for down" +
-            "loading the report data through the API.\"},\"browserUrl\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The url for downloading the report data through a browser.\"}}}}}}},\"File" +
-            "List\":{\"id\":\"FileList\",\"type\":\"object\",\"description\":\"Represents the list of Fil" +
-            "e resources.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this " +
-            "response for caching purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The file" +
-            "s returned in this response.\",\"items\":{\"$ref\":\"File\"}},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"Kind of list this is, in this case dfareporting#fileList.\",\"defaul" +
-            "t\":\"dfareporting#fileList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Cont" +
-            "inuation token used to page through files. To retrieve the next page of results," +
-            " set the next request\'s \\\"pageToken\\\" to the value of this field. The page token" +
-            " is only valid for a limited amount of time and should not be persisted.\"}}},\"Re" +
-            "port\":{\"id\":\"Report\",\"type\":\"object\",\"description\":\"Represents a Report resource" +
-            ".\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"The account id this" +
-            " report belongs to.\",\"format\":\"int64\",\"annotations\":{\"required\":[\"dfareporting.r" +
-            "eports.update\"]}},\"criteria\":{\"type\":\"object\",\"description\":\"The report criteria" +
-            ".\",\"properties\":{\"activities\":{\"type\":\"object\",\"description\":\"Activity group.\",\"" +
-            "properties\":{\"filters\":{\"type\":\"array\",\"description\":\"List of activity filters. " +
-            "The dimension values need to be all either of type \\\"dfa:activity\\\" or \\\"dfa:act" +
-            "ivityGroup\\\".\",\"items\":{\"$ref\":\"DimensionValue\"}},\"metricNames\":{\"type\":\"array\"," +
-            "\"description\":\"List of names of floodlight activity metrics.\",\"items\":{\"type\":\"s" +
-            "tring\"}}}},\"customRichMediaEvents\":{\"type\":\"object\",\"description\":\"Custom Rich M" +
-            "edia Events group.\",\"properties\":{\"filteredEventIds\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"List of custom rich media event IDs. Dimension values must be all of type df" +
-            "a:richMediaEventTypeIdAndName.\",\"items\":{\"$ref\":\"DimensionValue\"}}}},\"dateRange\"" +
-            ":{\"type\":\"object\",\"description\":\"The date range this report should be run for.\"," +
-            "\"properties\":{\"endDate\":{\"type\":\"string\",\"description\":\"The end date of the date" +
-            " range, inclusive. A string of the format: \\\"yyyy-MM-dd\\\".\",\"format\":\"date\"},\"re" +
-            "lativeDateRange\":{\"type\":\"string\",\"description\":\"The date range relative to the " +
-            "date of when the report is run, one of:  \\n- \\\"TODAY\\\" \\n- \\\"YESTERDAY\\\" \\n- \\\"W" +
-            "EEK_TO_DATE\\\" \\n- \\\"MONTH_TO_DATE\\\" \\n- \\\"QUARTER_TO_DATE\\\" \\n- \\\"YEAR_TO_DATE\\\"" +
-            " \\n- \\\"PREVIOUS_WEEK\\\" \\n- \\\"PREVIOUS_MONTH\\\" \\n- \\\"PREVIOUS_QUARTER\\\" \\n- \\\"PRE" +
-            "VIOUS_YEAR\\\" \\n- \\\"LAST_7_DAYS\\\" \\n- \\\"LAST_30_DAYS\\\" \\n- \\\"LAST_90_DAYS\\\" \\n- \\" +
-            "\"LAST_365_DAYS\\\" \\n- \\\"LAST_24_MONTHS\\\"\"},\"startDate\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The start date of the date range, inclusive. A string of the format: \\\"yyy" +
-            "y-MM-dd\\\".\",\"format\":\"date\"}}},\"dimensionFilters\":{\"type\":\"array\",\"description\":" +
-            "\"The list of filters dimensions are filtered on.\\nFilters for different dimensio" +
-            "ns are ANDed, filters for the same dimension are grouped together and ORed.\",\"it" +
-            "ems\":{\"$ref\":\"DimensionValue\"}},\"dimensions\":{\"type\":\"array\",\"description\":\"The " +
-            "list of dimensions the report should include.\",\"items\":{\"$ref\":\"SortedDimension\"" +
-            "}},\"metricNames\":{\"type\":\"array\",\"description\":\"The list of names of metrics the" +
-            " report should include.\",\"items\":{\"type\":\"string\"}}}},\"etag\":{\"type\":\"string\",\"d" +
-            "escription\":\"ETag of this response for caching purposes.\"},\"fileName\":{\"type\":\"s" +
-            "tring\",\"description\":\"The file name used when generating report files for this r" +
-            "eport.\"},\"id\":{\"type\":\"string\",\"description\":\"The unique ID identifying this rep" +
-            "ort resource.\",\"format\":\"int64\",\"annotations\":{\"required\":[\"dfareporting.reports" +
-            ".update\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource this is, in " +
-            "this case dfareporting#report.\",\"default\":\"dfareporting#report\"},\"lastModifiedTi" +
-            "me\":{\"type\":\"string\",\"description\":\"The timestamp (in milliseconds since epoch) " +
-            "of when this report was last modified.\",\"format\":\"uint64\",\"annotations\":{\"requir" +
-            "ed\":[\"dfareporting.reports.update\"]}},\"name\":{\"type\":\"string\",\"description\":\"The" +
-            " name of the report.\",\"annotations\":{\"required\":[\"dfareporting.reports.insert\",\"" +
-            "dfareporting.reports.update\"]}},\"ownerProfileId\":{\"type\":\"string\",\"description\":" +
-            "\"The user profile id of the owner of this report.\",\"format\":\"int64\",\"annotations" +
-            "\":{\"required\":[\"dfareporting.reports.update\"]}},\"schedule\":{\"type\":\"object\",\"des" +
-            "cription\":\"The report\'s schedule. Can only be set if the report\'s \'dateRange\' is" +
-            " a relative date range and the relative date range is not \\\"TODAY\\\".\",\"propertie" +
-            "s\":{\"active\":{\"type\":\"boolean\",\"description\":\"Whether the schedule is active or " +
-            "not. Must be set to either true or false.\",\"annotations\":{\"required\":[\"dfareport" +
-            "ing.reports.insert\",\"dfareporting.reports.update\"]}},\"every\":{\"type\":\"integer\",\"" +
-            "description\":\"Defines every how many days, weeks or months the report should be " +
-            "run. Needs to be set when \\\"repeats\\\" is either \\\"DAILY\\\", \\\"WEEKLY\\\" or \\\"MONTH" +
-            "LY\\\".\",\"format\":\"int32\"},\"expirationDate\":{\"type\":\"string\",\"description\":\"The ex" +
-            "piration date when the scheduled report stops running.\",\"format\":\"date\",\"annotat" +
-            "ions\":{\"required\":[\"dfareporting.reports.insert\",\"dfareporting.reports.update\"]}" +
-            "},\"repeats\":{\"type\":\"string\",\"description\":\"The interval the report is repeated " +
-            "for, one of:  \\n- \\\"DAILY\\\", also requires field \\\"every\\\" to be set. \\n- \\\"WEEK" +
-            "LY\\\", also requires fields \\\"every\\\" and \\\"repeatsOnWeekDays\\\" to be set. \\n- \\\"" +
-            "TWICE_A_MONTH\\\" \\n- \\\"MONTHLY\\\", also requires fields \\\"every\\\" and \\\"runsOnDayO" +
-            "fMonth\\\" to be set. \\n- \\\"QUARTERLY\\\" \\n- \\\"YEARLY\\\"\",\"annotations\":{\"required\":" +
-            "[\"dfareporting.reports.insert\",\"dfareporting.reports.update\"]}},\"repeatsOnWeekDa" +
-            "ys\":{\"type\":\"array\",\"description\":\"List of week days \\\"WEEKLY\\\" scheduled report" +
-            "s should run on.\",\"items\":{\"type\":\"string\"}},\"runsOnDayOfMonth\":{\"type\":\"string\"" +
-            ",\"description\":\"Enum to define for \\\"MONTHLY\\\" scheduled reports whether reports" +
-            " should be repeated on the same day of the month as \\\"startDate\\\" or the same da" +
-            "y of the week of the month. Possible values are:  \\n- DAY_OF_MONTH \\n- WEEK_OF_M" +
-            "ONTH  \\nExample: If \'startDate\' is Monday, April 2nd 2012 (2012-04-02), \\\"DAY_OF" +
-            "_MONTH\\\" would run subsequent reports on the 2nd of every Month, and \\\"WEEK_OF_M" +
-            "ONTH\\\" would run subsequent reports on the first Monday of the month.\"},\"startDa" +
-            "te\":{\"type\":\"string\",\"description\":\"Start date of date range for which scheduled" +
-            " reports should be run.\",\"format\":\"date\",\"annotations\":{\"required\":[\"dfareportin" +
-            "g.reports.insert\",\"dfareporting.reports.update\"]}}}},\"subAccountId\":{\"type\":\"str" +
-            "ing\",\"description\":\"The subbaccount id this report belongs to if applicable.\",\"f" +
-            "ormat\":\"int64\"},\"type\":{\"type\":\"string\",\"description\":\"The type of the report, c" +
-            "urrently only \\\"STANDARD\\\" is supported.\",\"annotations\":{\"required\":[\"dfareporti" +
-            "ng.reports.insert\",\"dfareporting.reports.update\"]}}}},\"ReportList\":{\"id\":\"Report" +
-            "List\",\"type\":\"object\",\"description\":\"Represents the list of reports.\",\"propertie" +
-            "s\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching pur" +
-            "poses.\"},\"items\":{\"type\":\"array\",\"description\":\"The reports returned in this res" +
-            "ponse.\",\"items\":{\"$ref\":\"Report\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind o" +
-            "f list this is, in this case dfareporting#reportList.\",\"default\":\"dfareporting#r" +
-            "eportList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuation token u" +
-            "sed to page through reports. To retrieve the next page of results, set the next " +
-            "request\'s \\\"pageToken\\\" to the value of this field. The page token is only valid" +
-            " for a limited amount of time and should not be persisted.\"}}},\"SortedDimension\"" +
-            ":{\"id\":\"SortedDimension\",\"type\":\"object\",\"description\":\"Represents a sorted dime" +
-            "nsion.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource th" +
-            "is is, in this case dfareporting#sortedDimension.\",\"default\":\"dfareporting#sorte" +
-            "dDimension\"},\"name\":{\"type\":\"string\",\"description\":\"The name of the dimension.\"}" +
-            ",\"sortOrder\":{\"type\":\"string\",\"description\":\"An optional sort order for the dime" +
-            "nsion column, one of:  \\n- \\\"ASCENDING\\\" \\n- \\\"DESCENDING\\\"\"}}},\"UserProfile\":{\"" +
-            "id\":\"UserProfile\",\"type\":\"object\",\"description\":\"Represents a UserProfile resour" +
-            "ce.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"The account ID th" +
-            "is profile belongs to.\",\"format\":\"int64\"},\"accountName\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The account name this profile belongs to.\"},\"etag\":{\"type\":\"string\",\"des" +
-            "cription\":\"ETag of this response for caching purposes.\"},\"kind\":{\"type\":\"string\"" +
-            ",\"description\":\"Kind of resource this is, in this case dfareporting#userProfile." +
-            "\",\"default\":\"dfareporting#userProfile\"},\"profileId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The unique ID of the user profile.\",\"format\":\"int64\"},\"subAccountId\":{\"type\"" +
-            ":\"string\",\"description\":\"The sub account ID this profile belongs to if applicabl" +
-            "e.\",\"format\":\"int64\"},\"subAccountName\":{\"type\":\"string\",\"description\":\"The sub a" +
-            "ccount name this profile belongs to if applicable.\"},\"userName\":{\"type\":\"string\"" +
-            ",\"description\":\"The user name.\"}}},\"UserProfileList\":{\"id\":\"UserProfileList\",\"ty" +
-            "pe\":\"object\",\"description\":\"Represents the list of user profiles.\",\"properties\":" +
-            "{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching purpos" +
-            "es.\"},\"items\":{\"type\":\"array\",\"description\":\"The user profiles returned in this " +
-            "response.\",\"items\":{\"$ref\":\"UserProfile\"}},\"kind\":{\"type\":\"string\",\"description\"" +
-            ":\"Kind of list this is, in this case dfareporting#userProfileList.\",\"default\":\"d" +
-            "fareporting#userProfileList\"}}}},\"resources\":{\"dimensionValues\":{\"methods\":{\"que" +
-            "ry\":{\"id\":\"dfareporting.dimensionValues.query\",\"path\":\"userprofiles/{profileId}/" +
-            "dimensionvalues/query\",\"httpMethod\":\"POST\",\"description\":\"Retrieves list of repo" +
-            "rt dimension values for a list of filters.\",\"parameters\":{\"maxResults\":{\"type\":\"" +
-            "integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"int32\",\"" +
-            "minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"d" +
-            "escription\":\"The value of the nextToken from the previous result page.\",\"locatio" +
-            "n\":\"query\"},\"profileId\":{\"type\":\"string\",\"description\":\"The DFA user profile id." +
-            "\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"profil" +
-            "eId\"],\"request\":{\"$ref\":\"DimensionValueRequest\"},\"response\":{\"$ref\":\"DimensionVa" +
-            "lueList\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]}}},\"files\":{" +
-            "\"methods\":{\"list\":{\"id\":\"dfareporting.files.list\",\"path\":\"userprofiles/{profileI" +
-            "d}/files\",\"httpMethod\":\"GET\",\"description\":\"Lists files for a user profile.\",\"pa" +
-            "rameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of resul" +
-            "ts to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10\",\"location\":\"query\"}" +
-            ",\"pageToken\":{\"type\":\"string\",\"description\":\"The value of the nextToken from the" +
-            " previous result page.\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The DFA profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}" +
-            ",\"sortField\":{\"type\":\"string\",\"description\":\"The field to sort the list by.\",\"de" +
-            "fault\":\"LAST_MODIFIED_TIME\",\"enum\":[\"ID\",\"LAST_MODIFIED_TIME\"],\"enumDescriptions" +
-            "\":[\"Sort by file id.\",\"Sort by \'lastmodifiedAt\' field.\"],\"location\":\"query\"},\"so" +
-            "rtOrder\":{\"type\":\"string\",\"description\":\"Order of sorted results, default is \'DE" +
-            "SCENDING\'.\",\"default\":\"DESCENDING\",\"enum\":[\"ASCENDING\",\"DESCENDING\"],\"enumDescri" +
-            "ptions\":[\"Ascending order.\",\"Descending order.\"],\"location\":\"query\"}},\"parameter" +
-            "Order\":[\"profileId\"],\"response\":{\"$ref\":\"FileList\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/dfareporting\"]}}},\"reports\":{\"methods\":{\"delete\":{\"id\":\"dfareport" +
-            "ing.reports.delete\",\"path\":\"userprofiles/{profileId}/reports/{reportId}\",\"httpMe" +
-            "thod\":\"DELETE\",\"description\":\"Deletes a report by its id.\",\"parameters\":{\"profil" +
-            "eId\":{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"required\":true,\"" +
-            "format\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"Th" +
-            "e id of the report.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"profileId\",\"reportId\"],\"scopes\":[\"https://www.googleapis.com/auth/d" +
-            "fareporting\"]},\"get\":{\"id\":\"dfareporting.reports.get\",\"path\":\"userprofiles/{prof" +
-            "ileId}/reports/{reportId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a report " +
-            "by its id.\",\"parameters\":{\"profileId\":{\"type\":\"string\",\"description\":\"The DFA us" +
-            "er profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"reportId\":{" +
-            "\"type\":\"string\",\"description\":\"The id of the report.\",\"required\":true,\"format\":\"" +
-            "int64\",\"location\":\"path\"}},\"parameterOrder\":[\"profileId\",\"reportId\"],\"response\":" +
-            "{\"$ref\":\"Report\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"in" +
-            "sert\":{\"id\":\"dfareporting.reports.insert\",\"path\":\"userprofiles/{profileId}/repor" +
-            "ts\",\"httpMethod\":\"POST\",\"description\":\"Creates a report.\",\"parameters\":{\"profile" +
-            "Id\":{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"required\":true,\"f" +
-            "ormat\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"profileId\"],\"request\":{\"$r" +
-            "ef\":\"Report\"},\"response\":{\"$ref\":\"Report\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/dfareporting\"]},\"list\":{\"id\":\"dfareporting.reports.list\",\"path\":\"userprofi" +
-            "les/{profileId}/reports\",\"httpMethod\":\"GET\",\"description\":\"Retrieves list of rep" +
-            "orts.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numbe" +
-            "r of results to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10\",\"location" +
-            "\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of the nextToke" +
-            "n from the previous result page.\",\"location\":\"query\"},\"profileId\":{\"type\":\"strin" +
-            "g\",\"description\":\"The DFA user profile id.\",\"required\":true,\"format\":\"int64\",\"lo" +
-            "cation\":\"path\"},\"sortField\":{\"type\":\"string\",\"description\":\"The field to sort th" +
-            "e list by.\",\"default\":\"LAST_MODIFIED_TIME\",\"enum\":[\"ID\",\"LAST_MODIFIED_TIME\",\"NA" +
-            "ME\"],\"enumDescriptions\":[\"Sort by report id.\",\"Sort by \'lastModifiedTime\' field." +
-            "\",\"Sort by display name of reports.\"],\"location\":\"query\"},\"sortOrder\":{\"type\":\"s" +
-            "tring\",\"description\":\"Order of sorted results, default is \'DESCENDING\'.\",\"defaul" +
-            "t\":\"DESCENDING\",\"enum\":[\"ASCENDING\",\"DESCENDING\"],\"enumDescriptions\":[\"Ascending" +
-            " order.\",\"Descending order.\"],\"location\":\"query\"}},\"parameterOrder\":[\"profileId\"" +
-            "],\"response\":{\"$ref\":\"ReportList\"},\"scopes\":[\"https://www.googleapis.com/auth/df" +
-            "areporting\"]},\"patch\":{\"id\":\"dfareporting.reports.patch\",\"path\":\"userprofiles/{p" +
-            "rofileId}/reports/{reportId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a repo" +
-            "rt. This method supports patch semantics.\",\"parameters\":{\"profileId\":{\"type\":\"st" +
-            "ring\",\"description\":\"The DFA user profile id.\",\"required\":true,\"format\":\"int64\"," +
-            "\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"The id of the repo" +
-            "rt.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"pro" +
-            "fileId\",\"reportId\"],\"request\":{\"$ref\":\"Report\"},\"response\":{\"$ref\":\"Report\"},\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"run\":{\"id\":\"dfareportin" +
-            "g.reports.run\",\"path\":\"userprofiles/{profileId}/reports/{reportId}/run\",\"httpMet" +
-            "hod\":\"POST\",\"description\":\"Runs a report.\",\"parameters\":{\"profileId\":{\"type\":\"st" +
-            "ring\",\"description\":\"The DFA profile id.\",\"required\":true,\"format\":\"int64\",\"loca" +
-            "tion\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"The id of the report.\"," +
-            "\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"synchronous\":{\"type\":\"boole" +
-            "an\",\"description\":\"If set and true, tries to run the report synchronously.\",\"loc" +
-            "ation\":\"query\"}},\"parameterOrder\":[\"profileId\",\"reportId\"],\"response\":{\"$ref\":\"F" +
-            "ile\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"update\":{\"id\":" +
-            "\"dfareporting.reports.update\",\"path\":\"userprofiles/{profileId}/reports/{reportId" +
-            "}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a report.\",\"parameters\":{\"profileId" +
-            "\":{\"type\":\"string\",\"description\":\"The DFA user profile id.\",\"required\":true,\"for" +
-            "mat\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"description\":\"The i" +
-            "d of the report.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"paramete" +
-            "rOrder\":[\"profileId\",\"reportId\"],\"request\":{\"$ref\":\"Report\"},\"response\":{\"$ref\":" +
-            "\"Report\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]}},\"resources" +
-            "\":{\"files\":{\"methods\":{\"get\":{\"id\":\"dfareporting.reports.files.get\",\"path\":\"user" +
-            "profiles/{profileId}/reports/{reportId}/files/{fileId}\",\"httpMethod\":\"GET\",\"desc" +
-            "ription\":\"Retrieves a report file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The id of the report file.\",\"required\":true,\"format\":\"int64\",\"locatio" +
-            "n\":\"path\"},\"profileId\":{\"type\":\"string\",\"description\":\"The DFA profile id.\",\"req" +
-            "uired\":true,\"format\":\"int64\",\"location\":\"path\"},\"reportId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The id of the report.\",\"required\":true,\"format\":\"int64\",\"location\":\"p" +
-            "ath\"}},\"parameterOrder\":[\"profileId\",\"reportId\",\"fileId\"],\"response\":{\"$ref\":\"Fi" +
-            "le\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]},\"list\":{\"id\":\"df" +
-            "areporting.reports.files.list\",\"path\":\"userprofiles/{profileId}/reports/{reportI" +
-            "d}/files\",\"httpMethod\":\"GET\",\"description\":\"Lists files for a report.\",\"paramete" +
-            "rs\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to " +
-            "return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10\",\"location\":\"query\"},\"page" +
-            "Token\":{\"type\":\"string\",\"description\":\"The value of the nextToken from the previ" +
-            "ous result page.\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\",\"description\"" +
-            ":\"The DFA profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"repo" +
-            "rtId\":{\"type\":\"string\",\"description\":\"The id of the parent report.\",\"required\":t" +
-            "rue,\"format\":\"int64\",\"location\":\"path\"},\"sortField\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The field to sort the list by.\",\"default\":\"LAST_MODIFIED_TIME\",\"enum\":[\"ID\"," +
-            "\"LAST_MODIFIED_TIME\"],\"enumDescriptions\":[\"Sort by file id.\",\"Sort by \'lastmodif" +
-            "iedAt\' field.\"],\"location\":\"query\"},\"sortOrder\":{\"type\":\"string\",\"description\":\"" +
-            "Order of sorted results, default is \'DESCENDING\'.\",\"default\":\"DESCENDING\",\"enum\"" +
-            ":[\"ASCENDING\",\"DESCENDING\"],\"enumDescriptions\":[\"Ascending order.\",\"Descending o" +
-            "rder.\"],\"location\":\"query\"}},\"parameterOrder\":[\"profileId\",\"reportId\"],\"response" +
-            "\":{\"$ref\":\"FileList\"},\"scopes\":[\"https://www.googleapis.com/auth/dfareporting\"]}" +
-            "}}}},\"userProfiles\":{\"methods\":{\"get\":{\"id\":\"dfareporting.userProfiles.get\",\"pat" +
-            "h\":\"userprofiles/{profileId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one user pr" +
-            "ofile by id.\",\"parameters\":{\"profileId\":{\"type\":\"string\",\"description\":\"The user" +
-            " profile id.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"profileId\"],\"response\":{\"$ref\":\"UserProfile\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/dfareporting\"]},\"list\":{\"id\":\"dfareporting.userProfiles.list\",\"pa" +
-            "th\":\"userprofiles\",\"httpMethod\":\"GET\",\"description\":\"Retrieves list of user prof" +
-            "iles for a user.\",\"response\":{\"$ref\":\"UserProfileList\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/dfareporting\"]}}}}}";
+    public partial class DfareportingService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected DfareportingService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._dimensionValues = new DimensionValuesResource(this, _authenticator);
-            this._files = new FilesResource(this, _authenticator);
-            this._reports = new ReportsResource(this, _authenticator);
-            this._userProfiles = new UserProfilesResource(this, _authenticator);
+        public DfareportingService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._dimensionValues = new DimensionValuesResource(this, Authenticator);
+            this._files = new FilesResource(this, Authenticator);
+            this._reports = new ReportsResource(this, Authenticator);
+            this._userProfiles = new UserProfilesResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public DfareportingService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public DfareportingService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(DfareportingService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/dfareporting/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "dfareporting";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/dfareporting/v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -1628,13 +1300,13 @@ namespace Google.Apis.Dfareporting.v1 {
         
         private DfareportingService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "dimensionValues";
         
-        public DimensionValuesResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public DimensionValuesResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves list of report dimension values for a list of filters.</summary>
@@ -1643,11 +1315,19 @@ namespace Google.Apis.Dfareporting.v1 {
             return new QueryRequest(service, body, profileId);
         }
         
-        public class QueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.DimensionValueList> {
+        public class QueryRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.DimensionValueList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<long> _maxResults;
             
@@ -1657,10 +1337,33 @@ namespace Google.Apis.Dfareporting.v1 {
             
             private Google.Apis.Dfareporting.v1.Data.DimensionValueRequest _Body;
             
-            public QueryRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Dfareporting.v1.Data.DimensionValueRequest body, string profileId) : 
+            public QueryRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Dfareporting.v1.Data.DimensionValueRequest body, string profileId) : 
                     base(service) {
                 this.Body = body;
                 this._profileId = profileId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1682,6 +1385,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1725,20 +1450,40 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "dimensionValues";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "query";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}/dimensionvalues/query";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1747,13 +1492,13 @@ namespace Google.Apis.Dfareporting.v1 {
         
         private DfareportingService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "files";
         
-        public FilesResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public FilesResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Lists files for a user profile.</summary>
@@ -1788,11 +1533,19 @@ namespace Google.Apis.Dfareporting.v1 {
             DESCENDING,
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.FileList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.FileList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<long> _maxResults;
             
@@ -1804,9 +1557,32 @@ namespace Google.Apis.Dfareporting.v1 {
             
             private System.Nullable<SortOrder> _sortOrder;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string profileId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string profileId) : 
                     base(service) {
                 this._profileId = profileId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1828,6 +1604,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1883,16 +1681,42 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "files";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}/files";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                parameters.Add("sortField", Google.Apis.Util.Utilities.CreateRuntimeParameter("sortField", false, "query", "LAST_MODIFIED_TIME", null, new string[] {
+                                "ID",
+                                "LAST_MODIFIED_TIME"}));
+                parameters.Add("sortOrder", Google.Apis.Util.Utilities.CreateRuntimeParameter("sortOrder", false, "query", "DESCENDING", null, new string[] {
+                                "ASCENDING",
+                                "DESCENDING"}));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1901,16 +1725,16 @@ namespace Google.Apis.Dfareporting.v1 {
         
         private DfareportingService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "reports";
         
         private FilesResource _files;
         
-        public ReportsResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ReportsResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
-            this._files = new FilesResource(service, _authenticator);
+            this.authenticator = authenticator;
+            this._files = new FilesResource(service, authenticator);
         }
         
         public virtual FilesResource Files {
@@ -1970,13 +1794,13 @@ namespace Google.Apis.Dfareporting.v1 {
             
             private DfareportingService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "reports.files";
             
-            public FilesResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public FilesResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Retrieves a report file.</summary>
@@ -2020,11 +1844,19 @@ namespace Google.Apis.Dfareporting.v1 {
                 DESCENDING,
             }
             
-            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.File> {
+            public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.File> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private string _fileId;
                 
@@ -2032,11 +1864,34 @@ namespace Google.Apis.Dfareporting.v1 {
                 
                 private string _reportId;
                 
-                public GetRequest(Google.Apis.Discovery.IRequestProvider service, string profileId, string reportId, string fileId) : 
+                public GetRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId, string fileId) : 
                         base(service) {
                     this._profileId = profileId;
                     this._reportId = reportId;
                     this._fileId = fileId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2058,6 +1913,28 @@ namespace Google.Apis.Dfareporting.v1 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -2085,24 +1962,52 @@ namespace Google.Apis.Dfareporting.v1 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "reports.files";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "get";
                     }
                 }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "userprofiles/{profileId}/reports/{reportId}/files/{fileId}";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("fileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("fileId", true, "path", null, null, new string[0]));
+                    parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                    parameters.Add("reportId", Google.Apis.Util.Utilities.CreateRuntimeParameter("reportId", true, "path", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+                }
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.FileList> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.FileList> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _userIp;
                 
                 private System.Nullable<long> _maxResults;
                 
@@ -2116,10 +2021,33 @@ namespace Google.Apis.Dfareporting.v1 {
                 
                 private System.Nullable<SortOrder> _sortOrder;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string profileId, string reportId) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId) : 
                         base(service) {
                     this._profileId = profileId;
                     this._reportId = reportId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2141,6 +2069,28 @@ namespace Google.Apis.Dfareporting.v1 {
                     }
                     set {
                         this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
                     }
                 }
                 
@@ -2204,16 +2154,43 @@ namespace Google.Apis.Dfareporting.v1 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "reports.files";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "userprofiles/{profileId}/reports/{reportId}/files";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                    parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                    parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                    parameters.Add("reportId", Google.Apis.Util.Utilities.CreateRuntimeParameter("reportId", true, "path", null, null, new string[0]));
+                    parameters.Add("sortField", Google.Apis.Util.Utilities.CreateRuntimeParameter("sortField", false, "query", "LAST_MODIFIED_TIME", null, new string[] {
+                                    "ID",
+                                    "LAST_MODIFIED_TIME"}));
+                    parameters.Add("sortOrder", Google.Apis.Util.Utilities.CreateRuntimeParameter("sortOrder", false, "query", "DESCENDING", null, new string[] {
+                                    "ASCENDING",
+                                    "DESCENDING"}));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -2248,20 +2225,51 @@ namespace Google.Apis.Dfareporting.v1 {
             DESCENDING,
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _profileId;
             
             private string _reportId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string profileId, string reportId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId) : 
                     base(service) {
                 this._profileId = profileId;
                 this._reportId = reportId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2286,6 +2294,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The DFA user profile id.</summary>
             [Google.Apis.Util.RequestParameterAttribute("profileId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProfileId {
@@ -2302,33 +2332,83 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "reports";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}/reports/{reportId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                parameters.Add("reportId", Google.Apis.Util.Utilities.CreateRuntimeParameter("reportId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.Report> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.Report> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _profileId;
             
             private string _reportId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string profileId, string reportId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId) : 
                     base(service) {
                 this._profileId = profileId;
                 this._reportId = reportId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2353,6 +2433,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The DFA user profile id.</summary>
             [Google.Apis.Util.RequestParameterAttribute("profileId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProfileId {
@@ -2369,33 +2471,83 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "reports";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}/reports/{reportId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                parameters.Add("reportId", Google.Apis.Util.Utilities.CreateRuntimeParameter("reportId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.Report> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.Report> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _profileId;
             
             private Google.Apis.Dfareporting.v1.Data.Report _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Dfareporting.v1.Data.Report body, string profileId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Dfareporting.v1.Data.Report body, string profileId) : 
                     base(service) {
                 this.Body = body;
                 this._profileId = profileId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2417,6 +2569,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2438,28 +2612,54 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "reports";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}/reports";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.ReportList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.ReportList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<long> _maxResults;
             
@@ -2471,9 +2671,32 @@ namespace Google.Apis.Dfareporting.v1 {
             
             private System.Nullable<SortOrder> _sortOrder;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string profileId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string profileId) : 
                     base(service) {
                 this._profileId = profileId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2495,6 +2718,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2550,24 +2795,59 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "reports";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}/reports";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                parameters.Add("sortField", Google.Apis.Util.Utilities.CreateRuntimeParameter("sortField", false, "query", "LAST_MODIFIED_TIME", null, new string[] {
+                                "ID",
+                                "LAST_MODIFIED_TIME",
+                                "NAME"}));
+                parameters.Add("sortOrder", Google.Apis.Util.Utilities.CreateRuntimeParameter("sortOrder", false, "query", "DESCENDING", null, new string[] {
+                                "ASCENDING",
+                                "DESCENDING"}));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.Report> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.Report> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _profileId;
             
@@ -2575,11 +2855,34 @@ namespace Google.Apis.Dfareporting.v1 {
             
             private Google.Apis.Dfareporting.v1.Data.Report _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Dfareporting.v1.Data.Report body, string profileId, string reportId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Dfareporting.v1.Data.Report body, string profileId, string reportId) : 
                     base(service) {
                 this.Body = body;
                 this._profileId = profileId;
                 this._reportId = reportId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2601,6 +2904,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2630,28 +2955,55 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "reports";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}/reports/{reportId}";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                parameters.Add("reportId", Google.Apis.Util.Utilities.CreateRuntimeParameter("reportId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class RunRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.File> {
+        public class RunRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.File> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _profileId;
             
@@ -2659,10 +3011,33 @@ namespace Google.Apis.Dfareporting.v1 {
             
             private System.Nullable<bool> _synchronous;
             
-            public RunRequest(Google.Apis.Discovery.IRequestProvider service, string profileId, string reportId) : 
+            public RunRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId) : 
                     base(service) {
                 this._profileId = profileId;
                 this._reportId = reportId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2684,6 +3059,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2714,24 +3111,52 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "reports";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "run";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}/reports/{reportId}/run";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                parameters.Add("reportId", Google.Apis.Util.Utilities.CreateRuntimeParameter("reportId", true, "path", null, null, new string[0]));
+                parameters.Add("synchronous", Google.Apis.Util.Utilities.CreateRuntimeParameter("synchronous", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.Report> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.Report> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _profileId;
             
@@ -2739,11 +3164,34 @@ namespace Google.Apis.Dfareporting.v1 {
             
             private Google.Apis.Dfareporting.v1.Data.Report _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Dfareporting.v1.Data.Report body, string profileId, string reportId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Dfareporting.v1.Data.Report body, string profileId, string reportId) : 
                     base(service) {
                 this.Body = body;
                 this._profileId = profileId;
                 this._reportId = reportId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2765,6 +3213,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2794,20 +3264,39 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "reports";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}/reports/{reportId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                parameters.Add("reportId", Google.Apis.Util.Utilities.CreateRuntimeParameter("reportId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2816,13 +3305,13 @@ namespace Google.Apis.Dfareporting.v1 {
         
         private DfareportingService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "userProfiles";
         
-        public UserProfilesResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public UserProfilesResource(DfareportingService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Gets one user profile by id.</summary>
@@ -2836,17 +3325,48 @@ namespace Google.Apis.Dfareporting.v1 {
             return new ListRequest(service);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.UserProfile> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.UserProfile> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _profileId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string profileId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string profileId) : 
                     base(service) {
                 this._profileId = profileId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2868,6 +3388,28 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2879,27 +3421,76 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "userProfiles";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles/{profileId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Dfareporting.v1.Data.UserProfileList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Dfareporting.v1.Data.UserProfileList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2924,16 +3515,55 @@ namespace Google.Apis.Dfareporting.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            public override string ResourcePath {
                 get {
                     return "userProfiles";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "userprofiles";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2950,7 +3580,7 @@ namespace Google.Apis.Dfareporting.v1 {
         
         private UserProfilesResource _userProfiles;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

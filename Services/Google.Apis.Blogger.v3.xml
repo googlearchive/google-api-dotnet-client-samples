@@ -376,9 +376,6 @@
         <member name="P:Google.Apis.Blogger.v3.Data.User.LocaleData.Variant">
             <summary>The user&apos;s language variant setting.</summary>
         </member>
-        <member name="P:Google.Apis.Blogger.v3.BloggerService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Blogger.v3.BloggerService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -392,12 +389,19 @@
             <summary>Gets one blog by id.</summary>
             <param name="blogId">Required - The ID of the blog to get.</param>
         </member>
-        <member name="M:Google.Apis.Blogger.v3.BlogsResource.GetByUrl">
+        <member name="M:Google.Apis.Blogger.v3.BlogsResource.GetByUrl(System.String)">
             <summary>Retrieve a Blog by URL.</summary>
+            <param name="url">Required - The URL of the blog to retrieve.</param>
         </member>
         <member name="M:Google.Apis.Blogger.v3.BlogsResource.ListByUser(System.String)">
             <summary>Retrieves a list of blogs, possibly filtered.</summary>
             <param name="userId">Required - ID of the user whose blogs are to be fetched. Either the word &apos;self&apos; (sans quote marks) or the user&apos;s profile identifier.</param>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -405,11 +409,23 @@
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetRequest.BlogId">
             <summary>The ID of the blog to get.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetRequest.MaxPosts">
             <summary>Maximum number of posts to pull back with the blog.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetByUrlRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetByUrlRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetByUrlRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -417,14 +433,32 @@
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetByUrlRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetByUrlRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetByUrlRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.GetByUrlRequest.Url">
             <summary>The URL of the blog to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.BlogsResource.ListByUserRequest.UserId">
             <summary>ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the user's profile identifier.</summary>
@@ -440,11 +474,23 @@
             <param name="blogId">Required - ID of the blog to fetch comments from.</param>
             <param name="postId">Required - ID of the post to fetch posts from.</param>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.CommentsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.CommentsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.CommentsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.CommentsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.CommentsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.CommentsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.CommentsResource.GetRequest.BlogId">
             <summary>ID of the blog to containing the comment.</summary>
@@ -455,11 +501,23 @@
         <member name="P:Google.Apis.Blogger.v3.CommentsResource.GetRequest.PostId">
             <summary>ID of the post to fetch posts from.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.CommentsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.CommentsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.CommentsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.CommentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.CommentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.CommentsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.CommentsResource.ListRequest.BlogId">
             <summary>ID of the blog to fetch comments from.</summary>
@@ -491,11 +549,23 @@
             <summary>Retrieves pages for a blog, possibly filtered.</summary>
             <param name="blogId">Required - ID of the blog to fetch pages from.</param>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PagesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PagesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PagesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PagesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PagesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PagesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PagesResource.GetRequest.BlogId">
             <summary>ID of the blog containing the page.</summary>
@@ -503,11 +573,23 @@
         <member name="P:Google.Apis.Blogger.v3.PagesResource.GetRequest.PageId">
             <summary>The ID of the page to get.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PagesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PagesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PagesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PagesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PagesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PagesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PagesResource.ListRequest.BlogId">
             <summary>ID of the blog to fetch pages from.</summary>
@@ -525,9 +607,10 @@
             <param name="blogId">Required - ID of the blog to fetch the post from.</param>
             <param name="postId">Required - The ID of the post</param>
         </member>
-        <member name="M:Google.Apis.Blogger.v3.PostsResource.GetByPath(System.String)">
+        <member name="M:Google.Apis.Blogger.v3.PostsResource.GetByPath(System.String,System.String)">
             <summary>Retrieve a Post by Path.</summary>
             <param name="blogId">Required - ID of the blog to fetch the post from.</param>
+            <param name="path">Required - Path of the Post to retrieve.</param>
         </member>
         <member name="M:Google.Apis.Blogger.v3.PostsResource.Insert(Google.Apis.Blogger.v3.Data.Post,System.String)">
             <summary>Add a post.</summary>
@@ -542,14 +625,21 @@
             <param name="blogId">Required - The ID of the Blog.</param>
             <param name="postId">Required - The ID of the Post.</param>
         </member>
-        <member name="M:Google.Apis.Blogger.v3.PostsResource.Search(System.String)">
+        <member name="M:Google.Apis.Blogger.v3.PostsResource.Search(System.String,System.String)">
             <summary>Search for a post.</summary>
             <param name="blogId">Required - ID of the blog to fetch the post from.</param>
+            <param name="q">Required - Query terms to search this blog for matching posts.</param>
         </member>
         <member name="M:Google.Apis.Blogger.v3.PostsResource.Update(Google.Apis.Blogger.v3.Data.Post,System.String,System.String)">
             <summary>Update a post.</summary>
             <param name="blogId">Required - The ID of the Blog.</param>
             <param name="postId">Required - The ID of the Post.</param>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -557,17 +647,35 @@
         <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.BlogId">
             <summary>The Id of the Blog.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.DeleteRequest.PostId">
             <summary>The ID of the Post.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.GetRequest.BlogId">
             <summary>ID of the blog to fetch the post from.</summary>
@@ -578,11 +686,23 @@
         <member name="P:Google.Apis.Blogger.v3.PostsResource.GetRequest.PostId">
             <summary>The ID of the post</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.GetByPathRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.GetByPathRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.GetByPathRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.GetByPathRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.GetByPathRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.GetByPathRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.GetByPathRequest.BlogId">
             <summary>ID of the blog to fetch the post from.</summary>
@@ -593,11 +713,23 @@
         <member name="P:Google.Apis.Blogger.v3.PostsResource.GetByPathRequest.Path">
             <summary>Path of the Post to retrieve.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.InsertRequest.BlogId">
             <summary>ID of the blog to fetch the post from.</summary>
@@ -605,11 +737,23 @@
         <member name="P:Google.Apis.Blogger.v3.PostsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.ListRequest.BlogId">
             <summary>ID of the blog to fetch posts from.</summary>
@@ -632,11 +776,23 @@
         <member name="P:Google.Apis.Blogger.v3.PostsResource.ListRequest.StartDate">
             <summary>Earliest post date to fetch, a date-time with RFC 3339 formatting.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.PatchRequest.BlogId">
             <summary>The ID of the Blog.</summary>
@@ -647,11 +803,23 @@
         <member name="P:Google.Apis.Blogger.v3.PostsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.SearchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.SearchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.SearchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.SearchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.SearchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.SearchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.SearchRequest.BlogId">
             <summary>ID of the blog to fetch the post from.</summary>
@@ -659,11 +827,23 @@
         <member name="P:Google.Apis.Blogger.v3.PostsResource.SearchRequest.Q">
             <summary>Query terms to search this blog for matching posts.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.PostsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.PostsResource.UpdateRequest.BlogId">
             <summary>The ID of the Blog.</summary>
@@ -678,11 +858,23 @@
             <summary>Gets one user by id.</summary>
             <param name="userId">Required - The ID of the user to get.</param>
         </member>
+        <member name="P:Google.Apis.Blogger.v3.UsersResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.UsersResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v3.UsersResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.UsersResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.UsersResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v3.UsersResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v3.UsersResource.GetRequest.UserId">
             <summary>The ID of the user to get.</summary>

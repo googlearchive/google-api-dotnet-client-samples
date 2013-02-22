@@ -46,9 +46,6 @@
         <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignmentList.NextPageToken">
             <summary>The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
         </member>
-        <member name="P:Google.Apis.Licensing.v1.LicensingService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="M:Google.Apis.Licensing.v1.LicenseAssignmentsResource.Delete(System.String,System.String,System.String)">
             <summary>Revoke License.</summary>
             <param name="productId">Required - Name for product</param>
@@ -89,11 +86,23 @@
             <param name="skuId">Required - Name for sku for which license would be revoked</param>
             <param name="userId">Required - email id or unique Id of the user</param>
         </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.ProductId">
             <summary>Name for product</summary>
@@ -104,11 +113,23 @@
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.UserId">
             <summary>email id or unique Id of the user</summary>
         </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.ProductId">
             <summary>Name for product</summary>
@@ -119,11 +140,23 @@
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.UserId">
             <summary>email id or unique Id of the user</summary>
         </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.ProductId">
             <summary>Name for product</summary>
@@ -134,11 +167,23 @@
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.CustomerId">
             <summary>CustomerId represents the customer for whom licenseassignments are queried</summary>
@@ -152,11 +197,23 @@
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.ProductId">
             <summary>Name for product</summary>
         </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.CustomerId">
             <summary>CustomerId represents the customer for whom licenseassignments are queried</summary>
@@ -173,11 +230,23 @@
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.SkuId">
             <summary>Name for sku</summary>
         </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.ProductId">
             <summary>Name for product</summary>
@@ -191,11 +260,23 @@
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.ProductId">
             <summary>Name for product</summary>

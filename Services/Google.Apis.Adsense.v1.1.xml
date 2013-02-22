@@ -177,9 +177,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.Data.UrlChannels.NextPageToken">
             <summary>Continuation token used to page through URL channels. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AdsenseService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Adsense.v1_1.AdsenseService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -200,11 +197,23 @@
             <summary>List all ad clients in the specified account.</summary>
             <param name="accountId">Required - Account for which to list ad clients.</param>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.AccountId">
             <summary>Account for which to list ad clients.</summary>
@@ -232,11 +241,23 @@
             <param name="adClientId">Required - Ad client which contains the ad unit.</param>
             <param name="adUnitId">Required - Ad unit for which to list custom channels.</param>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
@@ -253,11 +274,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.PageToken">
             <summary>A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
@@ -268,11 +301,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.AdUnitId">
             <summary>Ad unit to retrieve.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
@@ -306,11 +351,23 @@
             <param name="adClientId">Required - Ad client which contains the custom channel.</param>
             <param name="customChannelId">Required - Custom channel for which to list ad units.</param>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
@@ -330,11 +387,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.PageToken">
             <summary>A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
@@ -345,11 +414,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.CustomChannelId">
             <summary>Custom channel to retrieve.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
@@ -369,11 +450,23 @@
             <param name="startDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - Start of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
             <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.AccountId">
             <summary>Account upon which to report.</summary>
@@ -413,11 +506,23 @@
             <param name="accountId">Required - Account to which the ad client belongs.</param>
             <param name="adClientId">Required - Ad client for which to list URL channels.</param>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
@@ -431,11 +536,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.PageToken">
             <summary>A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.AccountId">
             <summary>Account to get information about.</summary>
@@ -443,11 +560,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.Tree">
             <summary>Whether the tree of sub accounts should be returned.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.MaxResults">
             <summary>The maximum number of accounts to include in the response, used for paging.</summary>
@@ -458,11 +587,23 @@
         <member name="M:Google.Apis.Adsense.v1_1.AdclientsResource.List">
             <summary>List all ad clients in this AdSense account.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.MaxResults">
             <summary>The maximum number of ad clients to include in the response, used for paging.</summary>
@@ -484,11 +625,23 @@
             <param name="adClientId">Required - Ad client which contains the ad unit.</param>
             <param name="adUnitId">Required - Ad unit for which to list custom channels.</param>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.AdClientId">
             <summary>Ad client which contains the ad unit.</summary>
@@ -502,11 +655,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.PageToken">
             <summary>A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.AdClientId">
             <summary>Ad client for which to get the ad unit.</summary>
@@ -514,11 +679,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.AdUnitId">
             <summary>Ad unit to retrieve.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.AdClientId">
             <summary>Ad client for which to list ad units.</summary>
@@ -546,11 +723,23 @@
             <param name="adClientId">Required - Ad client which contains the custom channel.</param>
             <param name="customChannelId">Required - Custom channel for which to list ad units.</param>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.AdClientId">
             <summary>Ad client which contains the custom channel.</summary>
@@ -567,11 +756,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.PageToken">
             <summary>A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.AdClientId">
             <summary>Ad client which contains the custom channel.</summary>
@@ -579,11 +780,23 @@
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.CustomChannelId">
             <summary>Custom channel to retrieve.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.AdClientId">
             <summary>Ad client for which to list custom channels.</summary>
@@ -599,11 +812,23 @@
             <param name="startDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - Start of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
             <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.AccountId">
             <summary>Accounts upon which to report.</summary>
@@ -642,11 +867,23 @@
             <summary>List all URL channels in the specified ad client for this AdSense account.</summary>
             <param name="adClientId">Required - Ad client for which to list URL channels.</param>
         </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.AdClientId">
             <summary>Ad client for which to list URL channels.</summary>

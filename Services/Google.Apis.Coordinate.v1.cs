@@ -945,347 +945,71 @@ namespace Google.Apis.Coordinate.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class CoordinateService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/WX03Zew" +
-            "QxfF2XWOwzKkIKbyKtY4\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"coordinate:v1\",\"name\":\"coo" +
-            "rdinate\",\"version\":\"v1\",\"revision\":\"20121205\",\"title\":\"Google Maps Coordinate AP" +
-            "I\",\"description\":\"Lets you view and manage jobs in a Coordinate team.\",\"icons\":{" +
-            "\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://w" +
-            "ww.google.com/images/icons/product/search-32.gif\"},\"documentationLink\":\"https://" +
-            "developers.google.com/coordinate/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
-            "leapis.com/coordinate/v1/teams/\",\"basePath\":\"/coordinate/v1/teams/\",\"rootUrl\":\"h" +
-            "ttps://www.googleapis.com/\",\"servicePath\":\"coordinate/v1/teams/\",\"batchPath\":\"ba" +
-            "tch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the res" +
-            "ponse.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Con" +
-            "tent-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"d" +
-            "escription\":\"Selector specifying which fields to include in a partial response.\"" +
-            ",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key" +
-            " identifies your project and provides you with API access, quota, and reports. R" +
-            "equired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token" +
-            "\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"locati" +
-            "on\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response wit" +
-            "h indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser" +
-            "\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for server" +
-            "-side applications. Can be any arbitrary string assigned to a user, but should n" +
-            "ot exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"que" +
-            "ry\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the r" +
-            "equest originates. Use this if you want to enforce per-user limits.\",\"location\":" +
-            "\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/coordinat" +
-            "e\":{\"description\":\"View and manage your Google Maps Coordinate jobs\"},\"https://w" +
-            "ww.googleapis.com/auth/coordinate.readonly\":{\"description\":\"View your Google Coo" +
-            "rdinate jobs\"}}}},\"schemas\":{\"CustomField\":{\"id\":\"CustomField\",\"type\":\"object\",\"" +
-            "description\":\"Custom field.\",\"properties\":{\"customFieldId\":{\"type\":\"string\",\"des" +
-            "cription\":\"Custom field id.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Identifies this object as a custom field.\",\"default\":\"coordinate#customFie" +
-            "ld\"},\"value\":{\"type\":\"string\",\"description\":\"Custom field value.\"}}},\"CustomFiel" +
-            "dDef\":{\"id\":\"CustomFieldDef\",\"type\":\"object\",\"description\":\"Custom field definit" +
-            "ion.\",\"properties\":{\"enabled\":{\"type\":\"boolean\",\"description\":\"Whether the field" +
-            " is enabled.\"},\"id\":{\"type\":\"string\",\"description\":\"Custom field id.\",\"format\":\"" +
-            "int64\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object as a custo" +
-            "m field definition.\",\"default\":\"coordinate#customFieldDef\"},\"name\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Custom field name.\"},\"requiredForCheckout\":{\"type\":\"boolean\"," +
-            "\"description\":\"Whether the field is required for checkout.\"},\"type\":{\"type\":\"str" +
-            "ing\",\"description\":\"Custom field type.\"}}},\"CustomFieldDefListResponse\":{\"id\":\"C" +
-            "ustomFieldDefListResponse\",\"type\":\"object\",\"description\":\"Collection of custom f" +
-            "ield definitions for a team.\",\"properties\":{\"items\":{\"type\":\"array\",\"description" +
-            "\":\"Collection of custom field definitions in a team.\",\"items\":{\"$ref\":\"CustomFie" +
-            "ldDef\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object as a coll" +
-            "ection of custom field definitions in a team.\",\"default\":\"coordinate#customField" +
-            "DefList\"}}},\"CustomFields\":{\"id\":\"CustomFields\",\"type\":\"object\",\"description\":\"C" +
-            "ollection of custom fields.\",\"properties\":{\"customField\":{\"type\":\"array\",\"descri" +
-            "ption\":\"Collection of custom fields.\",\"items\":{\"$ref\":\"CustomField\"}},\"kind\":{\"t" +
-            "ype\":\"string\",\"description\":\"Identifies this object as a collection of custom fi" +
-            "elds.\",\"default\":\"coordinate#customFields\"}}},\"Job\":{\"id\":\"Job\",\"type\":\"object\"," +
-            "\"description\":\"A job.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Job id" +
-            ".\",\"format\":\"uint64\"},\"jobChange\":{\"type\":\"array\",\"description\":\"List of job cha" +
-            "nges since it was created. The first change corresponds to the state of the job " +
-            "when it was created.\",\"items\":{\"$ref\":\"JobChange\"}},\"kind\":{\"type\":\"string\",\"des" +
-            "cription\":\"Identifies this object as a job.\",\"default\":\"coordinate#job\"},\"state\"" +
-            ":{\"$ref\":\"JobState\",\"description\":\"Current job state.\"}}},\"JobChange\":{\"id\":\"Job" +
-            "Change\",\"type\":\"object\",\"description\":\"Change to a job. For example assigning th" +
-            "e job to a different worker.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"Identifies this object as a job change.\",\"default\":\"coordinate#jobChange\"},\"s" +
-            "tate\":{\"$ref\":\"JobState\",\"description\":\"Change applied to the job. Only the fiel" +
-            "ds that were changed are set.\"},\"timestamp\":{\"type\":\"string\",\"description\":\"Time" +
-            " at which this change was applied.\",\"format\":\"uint64\"}}},\"JobListResponse\":{\"id\"" +
-            ":\"JobListResponse\",\"type\":\"object\",\"description\":\"Response from a List Jobs requ" +
-            "est.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Jobs in the collectio" +
-            "n.\",\"items\":{\"$ref\":\"Job\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies th" +
-            "is object as a list of jobs.\",\"default\":\"coordinate#jobList\"},\"nextPageToken\":{\"" +
-            "type\":\"string\",\"description\":\"A token to provide to get the next page of results" +
-            ".\"}}},\"JobState\":{\"id\":\"JobState\",\"type\":\"object\",\"description\":\"Current state o" +
-            "f a job.\",\"properties\":{\"assignee\":{\"type\":\"string\",\"description\":\"Email address" +
-            " of the assignee.\"},\"customFields\":{\"$ref\":\"CustomFields\",\"description\":\"Custom " +
-            "fields.\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name.\"},\"custo" +
-            "merPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer phone number.\"},\"kind\":" +
-            "{\"type\":\"string\",\"description\":\"Identifies this object as a job state.\",\"default" +
-            "\":\"coordinate#jobState\"},\"location\":{\"$ref\":\"Location\",\"description\":\"Job locati" +
-            "on.\"},\"note\":{\"type\":\"array\",\"description\":\"Note added to the job.\",\"items\":{\"ty" +
-            "pe\":\"string\"}},\"progress\":{\"type\":\"string\",\"description\":\"Job progress.\"},\"title" +
-            "\":{\"type\":\"string\",\"description\":\"Job title.\"}}},\"Location\":{\"id\":\"Location\",\"ty" +
-            "pe\":\"object\",\"description\":\"Location of a job.\",\"properties\":{\"addressLine\":{\"ty" +
-            "pe\":\"array\",\"description\":\"Address.\",\"items\":{\"type\":\"string\"}},\"kind\":{\"type\":\"" +
-            "string\",\"description\":\"Identifies this object as a location.\",\"default\":\"coordin" +
-            "ate#location\"},\"lat\":{\"type\":\"number\",\"description\":\"Latitude.\",\"format\":\"double" +
-            "\"},\"lng\":{\"type\":\"number\",\"description\":\"Longitude.\",\"format\":\"double\"}}},\"Locat" +
-            "ionListResponse\":{\"id\":\"LocationListResponse\",\"type\":\"object\",\"description\":\"Res" +
-            "ponse from a List Locations request.\",\"properties\":{\"items\":{\"type\":\"array\",\"des" +
-            "cription\":\"Locations in the collection.\",\"items\":{\"$ref\":\"LocationRecord\"}},\"kin" +
-            "d\":{\"type\":\"string\",\"description\":\"Identifies this object as a list of locations" +
-            ".\",\"default\":\"coordinate#locationList\"},\"nextPageToken\":{\"type\":\"string\",\"descri" +
-            "ption\":\"A token to provide to get the next page of results.\"},\"pageInfo\":{\"$ref\"" +
-            ":\"PageInfo\",\"description\":\"General pagination information.\"},\"tokenPagination\":{" +
-            "\"$ref\":\"TokenPagination\",\"description\":\"Pagination information for token paginat" +
-            "ion.\"}}},\"LocationRecord\":{\"id\":\"LocationRecord\",\"type\":\"object\",\"description\":\"" +
-            "Recorded location of a worker.\",\"properties\":{\"collectionTime\":{\"type\":\"string\"," +
-            "\"description\":\"The collection time in milliseconds since the epoch.\",\"format\":\"i" +
-            "nt64\"},\"confidenceRadius\":{\"type\":\"number\",\"description\":\"The location accuracy " +
-            "in meters. This is the radius of a 95% confidence interval around the location m" +
-            "easurement.\",\"format\":\"double\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifie" +
-            "s this object as a location.\",\"default\":\"coordinate#locationRecord\"},\"latitude\":" +
-            "{\"type\":\"number\",\"description\":\"Latitude.\",\"format\":\"double\"},\"longitude\":{\"type" +
-            "\":\"number\",\"description\":\"Longitude.\",\"format\":\"double\"}}},\"PageInfo\":{\"id\":\"Pag" +
-            "eInfo\",\"type\":\"object\",\"description\":\"Page information.\",\"properties\":{\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"Identifies this object as page information.\",\"defa" +
-            "ult\":\"coordinate#pageInfo\"},\"resultPerPage\":{\"type\":\"integer\",\"description\":\"Num" +
-            "ber of results per page.\",\"format\":\"int32\"},\"startIndex\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"Page start index.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\"," +
-            "\"description\":\"Number of results available.\",\"format\":\"int32\"}}},\"Schedule\":{\"id" +
-            "\":\"Schedule\",\"type\":\"object\",\"description\":\"Job schedule.\",\"properties\":{\"allDay" +
-            "\":{\"type\":\"boolean\",\"description\":\"Whether the job is scheduled for the whole da" +
-            "y. Time of day in start/end times is ignored if this is true.\"},\"endTime\":{\"type" +
-            "\":\"string\",\"description\":\"Scheduled end time in milliseconds since epoch.\",\"form" +
-            "at\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object as a" +
-            " job schedule.\",\"default\":\"coordinate#schedule\"},\"startTime\":{\"type\":\"string\",\"d" +
-            "escription\":\"Scheduled start time in milliseconds since epoch.\",\"format\":\"uint64" +
-            "\"}}},\"TokenPagination\":{\"id\":\"TokenPagination\",\"type\":\"object\",\"description\":\"Pa" +
-            "gination information.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Iden" +
-            "tifies this object as pagination information.\",\"default\":\"coordinate#tokenPagina" +
-            "tion\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token to provide to get" +
-            " the next page of results.\"},\"previousPageToken\":{\"type\":\"string\",\"description\":" +
-            "\"A token to provide to get the previous page of results.\"}}},\"Worker\":{\"id\":\"Wor" +
-            "ker\",\"type\":\"object\",\"description\":\"A worker in a Coordinate team.\",\"properties\"" +
-            ":{\"id\":{\"type\":\"string\",\"description\":\"Worker email address.\"},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Identifies this object as a worker.\",\"default\":\"coordinate" +
-            "#worker\"}}},\"WorkerListResponse\":{\"id\":\"WorkerListResponse\",\"type\":\"object\",\"des" +
-            "cription\":\"Response from a List Workers request.\",\"properties\":{\"items\":{\"type\":" +
-            "\"array\",\"description\":\"Workers in the collection.\",\"items\":{\"$ref\":\"Worker\"}},\"k" +
-            "ind\":{\"type\":\"string\",\"description\":\"Identifies this object as a list of workers" +
-            ".\",\"default\":\"coordinate#workerList\"}}}},\"resources\":{\"customFieldDef\":{\"methods" +
-            "\":{\"list\":{\"id\":\"coordinate.customFieldDef.list\",\"path\":\"{teamId}/custom_fields\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of custom field definitions " +
-            "for a team.\",\"parameters\":{\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"re" +
-            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"teamId\"],\"response\":{\"$ref\":" +
-            "\"CustomFieldDefListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/coordin" +
-            "ate\",\"https://www.googleapis.com/auth/coordinate.readonly\"]}}},\"jobs\":{\"methods\"" +
-            ":{\"get\":{\"id\":\"coordinate.jobs.get\",\"path\":\"{teamId}/jobs/{jobId}\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"Retrieves a job, including all the changes made to the job." +
-            "\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"description\":\"Job number\",\"required\":t" +
-            "rue,\"format\":\"uint64\",\"location\":\"path\"},\"teamId\":{\"type\":\"string\",\"description\"" +
-            ":\"Team ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"teamId\",\"jobId" +
-            "\"],\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/coordina" +
-            "te\",\"https://www.googleapis.com/auth/coordinate.readonly\"]},\"insert\":{\"id\":\"coor" +
-            "dinate.jobs.insert\",\"path\":\"{teamId}/jobs\",\"httpMethod\":\"POST\",\"description\":\"In" +
-            "serts a new job. Only the state field of the job should be set.\",\"parameters\":{\"" +
-            "address\":{\"type\":\"string\",\"description\":\"Job address as newline (Unix) separated" +
-            " string\",\"required\":true,\"location\":\"query\"},\"assignee\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Assignee email address, or empty string to unassign.\",\"location\":\"query\"" +
-            "},\"customField\":{\"type\":\"string\",\"description\":\"Map from custom field id (from /" +
-            "team//custom_fields) to the field value. For example \'123=Alice\'\",\"repeated\":tru" +
-            "e,\"location\":\"query\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer na" +
-            "me\",\"location\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Cu" +
-            "stomer phone number\",\"location\":\"query\"},\"lat\":{\"type\":\"number\",\"description\":\"T" +
-            "he latitude coordinate of this job\'s location.\",\"required\":true,\"format\":\"double" +
-            "\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude coordi" +
-            "nate of this job\'s location.\",\"required\":true,\"format\":\"double\",\"location\":\"quer" +
-            "y\"},\"note\":{\"type\":\"string\",\"description\":\"Job note as newline (Unix) separated " +
-            "string\",\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"r" +
-            "equired\":true,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job tit" +
-            "le\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"teamId\",\"address\",\"l" +
-            "at\",\"lng\",\"title\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/coordinate\"]},\"list\":{\"id\":\"coordinate.jobs.lis" +
-            "t\",\"path\":\"{teamId}/jobs\",\"httpMethod\":\"GET\",\"description\":\"Retrieves jobs creat" +
-            "ed or modified since the given timestamp.\",\"parameters\":{\"maxResults\":{\"type\":\"i" +
-            "nteger\",\"description\":\"Maximum number of results to return in one page.\",\"format" +
-            "\":\"uint32\",\"location\":\"query\"},\"minModifiedTimestampMs\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Minimum time a job was modified in milliseconds since epoch.\",\"format\":\"" +
-            "uint64\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continua" +
-            "tion token\",\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID" +
-            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"teamId\"],\"response\":{\"$" +
-            "ref\":\"JobListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/coordinate\",\"" +
-            "https://www.googleapis.com/auth/coordinate.readonly\"]},\"patch\":{\"id\":\"coordinate" +
-            ".jobs.patch\",\"path\":\"{teamId}/jobs/{jobId}\",\"httpMethod\":\"PATCH\",\"description\":\"" +
-            "Updates a job. Fields that are set in the job state will be updated. This method" +
-            " supports patch semantics.\",\"parameters\":{\"address\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Job address as newline (Unix) separated string\",\"location\":\"query\"},\"assigne" +
-            "e\":{\"type\":\"string\",\"description\":\"Assignee email address, or empty string to un" +
-            "assign.\",\"location\":\"query\"},\"customField\":{\"type\":\"string\",\"description\":\"Map f" +
-            "rom custom field id (from /team//custom_fields) to the field value. For example " +
-            "\'123=Alice\'\",\"repeated\":true,\"location\":\"query\"},\"customerName\":{\"type\":\"string\"" +
-            ",\"description\":\"Customer name\",\"location\":\"query\"},\"customerPhoneNumber\":{\"type\"" +
-            ":\"string\",\"description\":\"Customer phone number\",\"location\":\"query\"},\"jobId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Job number\",\"required\":true,\"format\":\"uint64\",\"locat" +
-            "ion\":\"path\"},\"lat\":{\"type\":\"number\",\"description\":\"The latitude coordinate of th" +
-            "is job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\":\"number\"" +
-            ",\"description\":\"The longitude coordinate of this job\'s location.\",\"format\":\"doub" +
-            "le\",\"location\":\"query\"},\"note\":{\"type\":\"string\",\"description\":\"Job note as newli" +
-            "ne (Unix) separated string\",\"location\":\"query\"},\"progress\":{\"type\":\"string\",\"des" +
-            "cription\":\"Job progress\",\"enum\":[\"COMPLETED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_S" +
-            "TARTED\",\"OBSOLETE\"],\"enumDescriptions\":[\"Completed\",\"In progress\",\"Not accepted\"" +
-            ",\"Not started\",\"Obsolete\"],\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Team ID\",\"required\":true,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"de" +
-            "scription\":\"Job title\",\"location\":\"query\"}},\"parameterOrder\":[\"teamId\",\"jobId\"]," +
-            "\"request\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/coordinate\"]},\"update\":{\"id\":\"coordinate.jobs.update\",\"path\":\"{tea" +
-            "mId}/jobs/{jobId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a job. Fields that " +
-            "are set in the job state will be updated.\",\"parameters\":{\"address\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Job address as newline (Unix) separated string\",\"location\":\"q" +
-            "uery\"},\"assignee\":{\"type\":\"string\",\"description\":\"Assignee email address, or emp" +
-            "ty string to unassign.\",\"location\":\"query\"},\"customField\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Map from custom field id (from /team//custom_fields) to the field valu" +
-            "e. For example \'123=Alice\'\",\"repeated\":true,\"location\":\"query\"},\"customerName\":{" +
-            "\"type\":\"string\",\"description\":\"Customer name\",\"location\":\"query\"},\"customerPhone" +
-            "Number\":{\"type\":\"string\",\"description\":\"Customer phone number\",\"location\":\"query" +
-            "\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job number\",\"required\":true,\"format\":" +
-            "\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"number\",\"description\":\"The latitude c" +
-            "oordinate of this job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"lng\":{" +
-            "\"type\":\"number\",\"description\":\"The longitude coordinate of this job\'s location.\"" +
-            ",\"format\":\"double\",\"location\":\"query\"},\"note\":{\"type\":\"string\",\"description\":\"Jo" +
-            "b note as newline (Unix) separated string\",\"location\":\"query\"},\"progress\":{\"type" +
-            "\":\"string\",\"description\":\"Job progress\",\"enum\":[\"COMPLETED\",\"IN_PROGRESS\",\"NOT_A" +
-            "CCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescriptions\":[\"Completed\",\"In progress\"" +
-            ",\"Not accepted\",\"Not started\",\"Obsolete\"],\"location\":\"query\"},\"teamId\":{\"type\":\"" +
-            "string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"},\"title\":{\"typ" +
-            "e\":\"string\",\"description\":\"Job title\",\"location\":\"query\"}},\"parameterOrder\":[\"te" +
-            "amId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/coordinate\"]}}},\"location\":{\"methods\":{\"list\":{\"id\"" +
-            ":\"coordinate.location.list\",\"path\":\"{teamId}/workers/{workerEmail}/locations\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"Retrieves a list of locations for a worker.\",\"pa" +
-            "rameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of resul" +
-            "ts to return in one page.\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"t" +
-            "ype\":\"string\",\"description\":\"Continuation token\",\"location\":\"query\"},\"startTimes" +
-            "tampMs\":{\"type\":\"string\",\"description\":\"Start timestamp in milliseconds since th" +
-            "e epoch.\",\"required\":true,\"format\":\"uint64\",\"location\":\"query\"},\"teamId\":{\"type\"" +
-            ":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"},\"workerEmai" +
-            "l\":{\"type\":\"string\",\"description\":\"Worker email address.\",\"required\":true,\"locat" +
-            "ion\":\"path\"}},\"parameterOrder\":[\"teamId\",\"workerEmail\",\"startTimestampMs\"],\"resp" +
-            "onse\":{\"$ref\":\"LocationListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/coordinate\",\"https://www.googleapis.com/auth/coordinate.readonly\"]}}},\"schedule" +
-            "\":{\"methods\":{\"get\":{\"id\":\"coordinate.schedule.get\",\"path\":\"{teamId}/jobs/{jobId" +
-            "}/schedule\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the schedule for a job.\"" +
-            ",\"parameters\":{\"jobId\":{\"type\":\"string\",\"description\":\"Job number\",\"required\":tr" +
-            "ue,\"format\":\"uint64\",\"location\":\"path\"},\"teamId\":{\"type\":\"string\",\"description\":" +
-            "\"Team ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"teamId\",\"jobId\"" +
-            "],\"response\":{\"$ref\":\"Schedule\"},\"scopes\":[\"https://www.googleapis.com/auth/coor" +
-            "dinate\",\"https://www.googleapis.com/auth/coordinate.readonly\"]},\"patch\":{\"id\":\"c" +
-            "oordinate.schedule.patch\",\"path\":\"{teamId}/jobs/{jobId}/schedule\",\"httpMethod\":\"" +
-            "PATCH\",\"description\":\"Replaces the schedule of a job with the provided schedule." +
-            " This method supports patch semantics.\",\"parameters\":{\"allDay\":{\"type\":\"boolean\"" +
-            ",\"description\":\"Whether the job is scheduled for the whole day. Time of day in s" +
-            "tart/end times is ignored if this is true.\",\"location\":\"query\"},\"endTime\":{\"type" +
-            "\":\"string\",\"description\":\"Scheduled end time in milliseconds since epoch.\",\"form" +
-            "at\":\"uint64\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job num" +
-            "ber\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"startTime\":{\"type\":\"s" +
-            "tring\",\"description\":\"Scheduled start time in milliseconds since epoch.\",\"format" +
-            "\":\"uint64\",\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\"" +
-            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"reques" +
-            "t\":{\"$ref\":\"Schedule\"},\"response\":{\"$ref\":\"Schedule\"},\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/coordinate\"]},\"update\":{\"id\":\"coordinate.schedule.update\",\"path" +
-            "\":\"{teamId}/jobs/{jobId}/schedule\",\"httpMethod\":\"PUT\",\"description\":\"Replaces th" +
-            "e schedule of a job with the provided schedule.\",\"parameters\":{\"allDay\":{\"type\":" +
-            "\"boolean\",\"description\":\"Whether the job is scheduled for the whole day. Time of" +
-            " day in start/end times is ignored if this is true.\",\"location\":\"query\"},\"endTim" +
-            "e\":{\"type\":\"string\",\"description\":\"Scheduled end time in milliseconds since epoc" +
-            "h.\",\"format\":\"uint64\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\"" +
-            ":\"Job number\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"startTime\":{" +
-            "\"type\":\"string\",\"description\":\"Scheduled start time in milliseconds since epoch." +
-            "\",\"format\":\"uint64\",\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":" +
-            "\"Team ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"teamId\",\"jobId\"" +
-            "],\"request\":{\"$ref\":\"Schedule\"},\"response\":{\"$ref\":\"Schedule\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/coordinate\"]}}},\"worker\":{\"methods\":{\"list\":{\"id\":\"coo" +
-            "rdinate.worker.list\",\"path\":\"{teamId}/workers\",\"httpMethod\":\"GET\",\"description\":" +
-            "\"Retrieves a list of workers in a team.\",\"parameters\":{\"teamId\":{\"type\":\"string\"" +
-            ",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
-            "teamId\"],\"response\":{\"$ref\":\"WorkerListResponse\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/coordinate\",\"https://www.googleapis.com/auth/coordinate.readonly\"]}" +
-            "}}}}";
+    public partial class CoordinateService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected CoordinateService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._customFieldDef = new CustomFieldDefResource(this, _authenticator);
-            this._jobs = new JobsResource(this, _authenticator);
-            this._location = new LocationResource(this, _authenticator);
-            this._schedule = new ScheduleResource(this, _authenticator);
-            this._worker = new WorkerResource(this, _authenticator);
+        public CoordinateService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._customFieldDef = new CustomFieldDefResource(this, Authenticator);
+            this._jobs = new JobsResource(this, Authenticator);
+            this._location = new LocationResource(this, Authenticator);
+            this._schedule = new ScheduleResource(this, Authenticator);
+            this._worker = new WorkerResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public CoordinateService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public CoordinateService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CoordinateService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/coordinate/v1/teams/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "coordinate";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/coordinate/v1/teams/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -1305,13 +1029,13 @@ namespace Google.Apis.Coordinate.v1 {
         
         private CoordinateService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "customFieldDef";
         
-        public CustomFieldDefResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CustomFieldDefResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves a list of custom field definitions for a team.</summary>
@@ -1320,17 +1044,48 @@ namespace Google.Apis.Coordinate.v1 {
             return new ListRequest(service, teamId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.CustomFieldDefListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.CustomFieldDefListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _teamId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string teamId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string teamId) : 
                     base(service) {
                 this._teamId = teamId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1355,6 +1110,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Team ID</summary>
             [Google.Apis.Util.RequestParameterAttribute("teamId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TeamId {
@@ -1363,16 +1140,34 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "customFieldDef";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/custom_fields";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1381,13 +1176,13 @@ namespace Google.Apis.Coordinate.v1 {
         
         private CoordinateService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "jobs";
         
-        public JobsResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public JobsResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves a job, including all the changes made to the job.</summary>
@@ -1452,20 +1247,51 @@ namespace Google.Apis.Coordinate.v1 {
             OBSOLETE,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.Job> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.Job> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _jobId;
             
             private string _teamId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string teamId, string jobId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string teamId, string jobId) : 
                     base(service) {
                 this._teamId = teamId;
                 this._jobId = jobId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1490,6 +1316,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Job number</summary>
             [Google.Apis.Util.RequestParameterAttribute("jobId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string JobId {
@@ -1506,24 +1354,51 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "jobs";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/jobs/{jobId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("jobId", Google.Apis.Util.Utilities.CreateRuntimeParameter("jobId", true, "path", null, null, new string[0]));
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.Job> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.Job> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _address;
             
@@ -1547,7 +1422,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Job _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string address, string lat, string lng, string title) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string address, string lat, string lng, string title) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
@@ -1555,6 +1430,29 @@ namespace Google.Apis.Coordinate.v1 {
                 this._lat = lat;
                 this._lng = lng;
                 this._title = title;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1576,6 +1474,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1684,28 +1604,63 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "jobs";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/jobs";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("address", Google.Apis.Util.Utilities.CreateRuntimeParameter("address", true, "query", null, null, new string[0]));
+                parameters.Add("assignee", Google.Apis.Util.Utilities.CreateRuntimeParameter("assignee", false, "query", null, null, new string[0]));
+                parameters.Add("customField", Google.Apis.Util.Utilities.CreateRuntimeParameter("customField", false, "query", null, null, new string[0]));
+                parameters.Add("customerName", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerName", false, "query", null, null, new string[0]));
+                parameters.Add("customerPhoneNumber", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerPhoneNumber", false, "query", null, null, new string[0]));
+                parameters.Add("lat", Google.Apis.Util.Utilities.CreateRuntimeParameter("lat", true, "query", null, null, new string[0]));
+                parameters.Add("lng", Google.Apis.Util.Utilities.CreateRuntimeParameter("lng", true, "query", null, null, new string[0]));
+                parameters.Add("note", Google.Apis.Util.Utilities.CreateRuntimeParameter("note", false, "query", null, null, new string[0]));
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                parameters.Add("title", Google.Apis.Util.Utilities.CreateRuntimeParameter("title", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.JobListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.JobListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<long> _maxResults;
             
@@ -1715,9 +1670,32 @@ namespace Google.Apis.Coordinate.v1 {
             
             private string _teamId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string teamId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string teamId) : 
                     base(service) {
                 this._teamId = teamId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1739,6 +1717,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1783,24 +1783,53 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "jobs";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/jobs";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("minModifiedTimestampMs", Google.Apis.Util.Utilities.CreateRuntimeParameter("minModifiedTimestampMs", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.Job> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.Job> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _address;
             
@@ -1828,11 +1857,34 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Job _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string jobId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string jobId) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
                 this._jobId = jobId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1854,6 +1906,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1993,28 +2067,70 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "jobs";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/jobs/{jobId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("address", Google.Apis.Util.Utilities.CreateRuntimeParameter("address", false, "query", null, null, new string[0]));
+                parameters.Add("assignee", Google.Apis.Util.Utilities.CreateRuntimeParameter("assignee", false, "query", null, null, new string[0]));
+                parameters.Add("customField", Google.Apis.Util.Utilities.CreateRuntimeParameter("customField", false, "query", null, null, new string[0]));
+                parameters.Add("customerName", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerName", false, "query", null, null, new string[0]));
+                parameters.Add("customerPhoneNumber", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerPhoneNumber", false, "query", null, null, new string[0]));
+                parameters.Add("jobId", Google.Apis.Util.Utilities.CreateRuntimeParameter("jobId", true, "path", null, null, new string[0]));
+                parameters.Add("lat", Google.Apis.Util.Utilities.CreateRuntimeParameter("lat", false, "query", null, null, new string[0]));
+                parameters.Add("lng", Google.Apis.Util.Utilities.CreateRuntimeParameter("lng", false, "query", null, null, new string[0]));
+                parameters.Add("note", Google.Apis.Util.Utilities.CreateRuntimeParameter("note", false, "query", null, null, new string[0]));
+                parameters.Add("progress", Google.Apis.Util.Utilities.CreateRuntimeParameter("progress", false, "query", null, null, new string[] {
+                                "COMPLETED",
+                                "IN_PROGRESS",
+                                "NOT_ACCEPTED",
+                                "NOT_STARTED",
+                                "OBSOLETE"}));
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                parameters.Add("title", Google.Apis.Util.Utilities.CreateRuntimeParameter("title", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.Job> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.Job> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _address;
             
@@ -2042,11 +2158,34 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Job _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string jobId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string jobId) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
                 this._jobId = jobId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2068,6 +2207,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2207,20 +2368,54 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "jobs";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/jobs/{jobId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("address", Google.Apis.Util.Utilities.CreateRuntimeParameter("address", false, "query", null, null, new string[0]));
+                parameters.Add("assignee", Google.Apis.Util.Utilities.CreateRuntimeParameter("assignee", false, "query", null, null, new string[0]));
+                parameters.Add("customField", Google.Apis.Util.Utilities.CreateRuntimeParameter("customField", false, "query", null, null, new string[0]));
+                parameters.Add("customerName", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerName", false, "query", null, null, new string[0]));
+                parameters.Add("customerPhoneNumber", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerPhoneNumber", false, "query", null, null, new string[0]));
+                parameters.Add("jobId", Google.Apis.Util.Utilities.CreateRuntimeParameter("jobId", true, "path", null, null, new string[0]));
+                parameters.Add("lat", Google.Apis.Util.Utilities.CreateRuntimeParameter("lat", false, "query", null, null, new string[0]));
+                parameters.Add("lng", Google.Apis.Util.Utilities.CreateRuntimeParameter("lng", false, "query", null, null, new string[0]));
+                parameters.Add("note", Google.Apis.Util.Utilities.CreateRuntimeParameter("note", false, "query", null, null, new string[0]));
+                parameters.Add("progress", Google.Apis.Util.Utilities.CreateRuntimeParameter("progress", false, "query", null, null, new string[] {
+                                "COMPLETED",
+                                "IN_PROGRESS",
+                                "NOT_ACCEPTED",
+                                "NOT_STARTED",
+                                "OBSOLETE"}));
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                parameters.Add("title", Google.Apis.Util.Utilities.CreateRuntimeParameter("title", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2229,13 +2424,13 @@ namespace Google.Apis.Coordinate.v1 {
         
         private CoordinateService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "location";
         
-        public LocationResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public LocationResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves a list of locations for a worker.</summary>
@@ -2246,11 +2441,19 @@ namespace Google.Apis.Coordinate.v1 {
             return new ListRequest(service, teamId, workerEmail, startTimestampMs);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.LocationListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.LocationListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<long> _maxResults;
             
@@ -2262,11 +2465,34 @@ namespace Google.Apis.Coordinate.v1 {
             
             private string _workerEmail;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string teamId, string workerEmail, string startTimestampMs) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string teamId, string workerEmail, string startTimestampMs) : 
                     base(service) {
                 this._teamId = teamId;
                 this._workerEmail = workerEmail;
                 this._startTimestampMs = startTimestampMs;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2288,6 +2514,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2337,16 +2585,38 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "location";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/workers/{workerEmail}/locations";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("startTimestampMs", Google.Apis.Util.Utilities.CreateRuntimeParameter("startTimestampMs", true, "query", null, null, new string[0]));
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                parameters.Add("workerEmail", Google.Apis.Util.Utilities.CreateRuntimeParameter("workerEmail", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2355,13 +2625,13 @@ namespace Google.Apis.Coordinate.v1 {
         
         private CoordinateService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "schedule";
         
-        public ScheduleResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ScheduleResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves the schedule for a job.</summary>
@@ -2385,20 +2655,51 @@ namespace Google.Apis.Coordinate.v1 {
             return new UpdateRequest(service, body, teamId, jobId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.Schedule> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.Schedule> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _jobId;
             
             private string _teamId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string teamId, string jobId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string teamId, string jobId) : 
                     base(service) {
                 this._teamId = teamId;
                 this._jobId = jobId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2420,6 +2721,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2439,24 +2762,51 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "schedule";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/jobs/{jobId}/schedule";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("jobId", Google.Apis.Util.Utilities.CreateRuntimeParameter("jobId", true, "path", null, null, new string[0]));
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.Schedule> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.Schedule> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<bool> _allDay;
             
@@ -2470,11 +2820,34 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Schedule _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Coordinate.v1.Data.Schedule body, string teamId, string jobId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Schedule body, string teamId, string jobId) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
                 this._jobId = jobId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2496,6 +2869,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2558,28 +2953,58 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "schedule";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/jobs/{jobId}/schedule";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("allDay", Google.Apis.Util.Utilities.CreateRuntimeParameter("allDay", false, "query", null, null, new string[0]));
+                parameters.Add("endTime", Google.Apis.Util.Utilities.CreateRuntimeParameter("endTime", false, "query", null, null, new string[0]));
+                parameters.Add("jobId", Google.Apis.Util.Utilities.CreateRuntimeParameter("jobId", true, "path", null, null, new string[0]));
+                parameters.Add("startTime", Google.Apis.Util.Utilities.CreateRuntimeParameter("startTime", false, "query", null, null, new string[0]));
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.Schedule> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.Schedule> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<bool> _allDay;
             
@@ -2593,11 +3018,34 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Schedule _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Coordinate.v1.Data.Schedule body, string teamId, string jobId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Schedule body, string teamId, string jobId) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
                 this._jobId = jobId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2619,6 +3067,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2681,20 +3151,42 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "schedule";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/jobs/{jobId}/schedule";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("allDay", Google.Apis.Util.Utilities.CreateRuntimeParameter("allDay", false, "query", null, null, new string[0]));
+                parameters.Add("endTime", Google.Apis.Util.Utilities.CreateRuntimeParameter("endTime", false, "query", null, null, new string[0]));
+                parameters.Add("jobId", Google.Apis.Util.Utilities.CreateRuntimeParameter("jobId", true, "path", null, null, new string[0]));
+                parameters.Add("startTime", Google.Apis.Util.Utilities.CreateRuntimeParameter("startTime", false, "query", null, null, new string[0]));
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2703,13 +3195,13 @@ namespace Google.Apis.Coordinate.v1 {
         
         private CoordinateService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "worker";
         
-        public WorkerResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public WorkerResource(CoordinateService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves a list of workers in a team.</summary>
@@ -2718,17 +3210,48 @@ namespace Google.Apis.Coordinate.v1 {
             return new ListRequest(service, teamId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Coordinate.v1.Data.WorkerListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Coordinate.v1.Data.WorkerListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _teamId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string teamId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string teamId) : 
                     base(service) {
                 this._teamId = teamId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2753,6 +3276,28 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Team ID</summary>
             [Google.Apis.Util.RequestParameterAttribute("teamId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TeamId {
@@ -2761,16 +3306,34 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "worker";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{teamId}/workers";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("teamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("teamId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2789,7 +3352,7 @@ namespace Google.Apis.Coordinate.v1 {
         
         private WorkerResource _worker;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

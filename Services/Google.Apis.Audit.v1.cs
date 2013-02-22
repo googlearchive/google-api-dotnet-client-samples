@@ -339,158 +339,68 @@ namespace Google.Apis.Audit.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class AuditService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/RQGftnp" +
-            "rB2UgD1XSIoJI9KpBSgM\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"audit:v1\",\"name\":\"audit\",\"" +
-            "version\":\"v1\",\"revision\":\"20121213\",\"title\":\"Enterprise Audit API\",\"description\"" +
-            ":\"Lets you access user activities in your enterprise made through various applic" +
-            "ations.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gi" +
-            "f\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentat" +
-            "ionLink\":\"https://developers.google.com/google-apps/admin-audit/get_started\",\"pr" +
-            "otocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/apps/reporting/audit/v1/\",\"" +
-            "basePath\":\"/apps/reporting/audit/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"s" +
-            "ervicePath\":\"apps/reporting/audit/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{" +
-            "\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"" +
-            "enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applic" +
-            "ation/atom+xml\",\"Responses with Content-Type of application/json\"],\"location\":\"q" +
-            "uery\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fields" +
-            " to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"" +
-            "description\":\"API key. Your API key identifies your project and provides you wit" +
-            "h API access, quota, and reports. Required unless you provide an OAuth 2.0 token" +
-            ".\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 t" +
-            "oken for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\"," +
-            "\"description\":\"Returns response with indentations and line breaks.\",\"default\":\"t" +
-            "rue\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available t" +
-            "o use for quota purposes for server-side applications. Can be any arbitrary stri" +
-            "ng assigned to a user, but should not exceed 40 characters. Overrides userIp if " +
-            "both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":" +
-            "\"IP address of the site where the request originates. Use this if you want to en" +
-            "force per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"Activities\":{\"id\":\"Acti" +
-            "vities\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Eac" +
-            "h record in read response.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string\"" +
-            ",\"description\":\"Kind of list response this is.\",\"default\":\"audit#activities\"},\"n" +
-            "ext\":{\"type\":\"string\",\"description\":\"Next page URL.\"}}},\"Activity\":{\"id\":\"Activi" +
-            "ty\",\"type\":\"object\",\"properties\":{\"actor\":{\"type\":\"object\",\"description\":\"User d" +
-            "oing the action.\",\"properties\":{\"applicationId\":{\"type\":\"string\",\"description\":\"" +
-            "ID of application which interacted on behalf of the user.\",\"format\":\"int64\"},\"ca" +
-            "llerType\":{\"type\":\"string\",\"description\":\"User or OAuth 2LO request.\"},\"email\":{" +
-            "\"type\":\"string\",\"description\":\"Email address of the user.\"},\"key\":{\"type\":\"strin" +
-            "g\",\"description\":\"For OAuth 2LO API requests, consumer_key of the requestor.\"}}}" +
-            ",\"events\":{\"type\":\"array\",\"description\":\"Activity events.\",\"items\":{\"type\":\"obje" +
-            "ct\",\"properties\":{\"eventType\":{\"type\":\"string\",\"description\":\"Type of event.\"},\"" +
-            "name\":{\"type\":\"string\",\"description\":\"Name of event.\"},\"parameters\":{\"type\":\"arr" +
-            "ay\",\"description\":\"Event parameters.\",\"items\":{\"type\":\"object\",\"properties\":{\"na" +
-            "me\":{\"type\":\"string\",\"description\":\"Name of the parameter.\"},\"value\":{\"type\":\"st" +
-            "ring\",\"description\":\"Value of the parameter.\"}}}}}}},\"id\":{\"type\":\"object\",\"desc" +
-            "ription\":\"Unique identifier for each activity record.\",\"properties\":{\"applicatio" +
-            "nId\":{\"type\":\"string\",\"description\":\"Application ID of the source application.\"," +
-            "\"format\":\"int64\"},\"customerId\":{\"type\":\"string\",\"description\":\"Obfuscated custom" +
-            "er ID of the source customer.\"},\"time\":{\"type\":\"string\",\"description\":\"Time of o" +
-            "ccurrence of the activity.\",\"format\":\"date-time\"},\"uniqQualifier\":{\"type\":\"strin" +
-            "g\",\"description\":\"Unique qualifier if multiple events have the same time.\",\"form" +
-            "at\":\"int64\"}}},\"ipAddress\":{\"type\":\"string\",\"description\":\"IP Address of the use" +
-            "r doing the action.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource th" +
-            "is is.\",\"default\":\"audit#activity\"},\"ownerDomain\":{\"type\":\"string\",\"description\"" +
-            ":\"Domain of source customer.\"}}}},\"resources\":{\"activities\":{\"methods\":{\"list\":{" +
-            "\"id\":\"audit.activities.list\",\"path\":\"{customerId}/{applicationId}\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"Retrieves a list of activities for a specific customer and " +
-            "application.\",\"parameters\":{\"actorApplicationId\":{\"type\":\"string\",\"description\":" +
-            "\"Application ID of the application which interacted on behalf of the user while " +
-            "performing the event.\",\"format\":\"int64\",\"location\":\"query\"},\"actorEmail\":{\"type\"" +
-            ":\"string\",\"description\":\"Email address of the user who performed the action.\",\"l" +
-            "ocation\":\"query\"},\"actorIpAddress\":{\"type\":\"string\",\"description\":\"IP Address of" +
-            " host where the event was performed. Supports both IPv4 and IPv6 addresses.\",\"lo" +
-            "cation\":\"query\"},\"applicationId\":{\"type\":\"string\",\"description\":\"Application ID " +
-            "of the application on which the event was performed.\",\"required\":true,\"format\":\"" +
-            "int64\",\"location\":\"path\"},\"caller\":{\"type\":\"string\",\"description\":\"Type of the c" +
-            "aller.\",\"enum\":[\"application_owner\",\"customer\"],\"enumDescriptions\":[\"Caller is a" +
-            "n application owner.\",\"Caller is a customer.\"],\"location\":\"query\"},\"continuation" +
-            "Token\":{\"type\":\"string\",\"description\":\"Next page URL.\",\"location\":\"query\"},\"cust" +
-            "omerId\":{\"type\":\"string\",\"description\":\"Represents the customer who is the owner" +
-            " of target object on which action was performed.\",\"required\":true,\"pattern\":\"C.+" +
-            "\",\"location\":\"path\"},\"endTime\":{\"type\":\"string\",\"description\":\"Return events whi" +
-            "ch occured at or before this time.\",\"location\":\"query\"},\"eventName\":{\"type\":\"str" +
-            "ing\",\"description\":\"Name of the event being queried.\",\"location\":\"query\"},\"maxRe" +
-            "sults\":{\"type\":\"integer\",\"description\":\"Number of activity records to be shown i" +
-            "n each page.\",\"format\":\"int32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location\":\"query\"" +
-            "},\"parameters\":{\"type\":\"string\",\"description\":\"Event parameters in the form [par" +
-            "ameter1 name]:[parameter1 value],[parameter2 name]:[parameter2 value],...\",\"loca" +
-            "tion\":\"query\"},\"startTime\":{\"type\":\"string\",\"description\":\"Return events which o" +
-            "ccured at or after this time.\",\"location\":\"query\"}},\"parameterOrder\":[\"customerI" +
-            "d\",\"applicationId\"],\"response\":{\"$ref\":\"Activities\"}}}}}}";
+    public partial class AuditService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected AuditService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._activities = new ActivitiesResource(this, _authenticator);
+        public AuditService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._activities = new ActivitiesResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public AuditService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public AuditService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AuditService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/apps/reporting/audit/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "audit";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/apps/reporting/audit/v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "atom",
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -498,13 +408,13 @@ namespace Google.Apis.Audit.v1 {
         
         private AuditService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "activities";
         
-        public ActivitiesResource(AuditService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ActivitiesResource(AuditService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves a list of activities for a specific customer and application.</summary>
@@ -527,11 +437,19 @@ namespace Google.Apis.Audit.v1 {
             Customer,
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Audit.v1.Data.Activities> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Audit.v1.Data.Activities> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _actorApplicationId;
             
@@ -553,14 +471,35 @@ namespace Google.Apis.Audit.v1 {
             
             private System.Nullable<long> _maxResults;
             
-            private string _parameters;
-            
             private string _startTime;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string customerId, string applicationId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string customerId, string applicationId) : 
                     base(service) {
                 this._customerId = customerId;
                 this._applicationId = applicationId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -582,6 +521,28 @@ namespace Google.Apis.Audit.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -689,17 +650,6 @@ namespace Google.Apis.Audit.v1 {
                 }
             }
             
-            /// <summary>Event parameters in the form [parameter1 name]:[parameter1 value],[parameter2 name]:[parameter2 value],...</summary>
-            [Google.Apis.Util.RequestParameterAttribute("parameters", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Parameters {
-                get {
-                    return this._parameters;
-                }
-                set {
-                    this._parameters = value;
-                }
-            }
-            
             /// <summary>Return events which occured at or after this time.</summary>
             [Google.Apis.Util.RequestParameterAttribute("startTime", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string StartTime {
@@ -711,16 +661,46 @@ namespace Google.Apis.Audit.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{customerId}/{applicationId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("actorApplicationId", Google.Apis.Util.Utilities.CreateRuntimeParameter("actorApplicationId", false, "query", null, null, new string[0]));
+                parameters.Add("actorEmail", Google.Apis.Util.Utilities.CreateRuntimeParameter("actorEmail", false, "query", null, null, new string[0]));
+                parameters.Add("actorIpAddress", Google.Apis.Util.Utilities.CreateRuntimeParameter("actorIpAddress", false, "query", null, null, new string[0]));
+                parameters.Add("applicationId", Google.Apis.Util.Utilities.CreateRuntimeParameter("applicationId", true, "path", null, null, new string[0]));
+                parameters.Add("caller", Google.Apis.Util.Utilities.CreateRuntimeParameter("caller", false, "query", null, null, new string[] {
+                                "application_owner",
+                                "customer"}));
+                parameters.Add("continuationToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("continuationToken", false, "query", null, null, new string[0]));
+                parameters.Add("customerId", Google.Apis.Util.Utilities.CreateRuntimeParameter("customerId", true, "path", null, "C.+", new string[0]));
+                parameters.Add("endTime", Google.Apis.Util.Utilities.CreateRuntimeParameter("endTime", false, "query", null, null, new string[0]));
+                parameters.Add("eventName", Google.Apis.Util.Utilities.CreateRuntimeParameter("eventName", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("startTime", Google.Apis.Util.Utilities.CreateRuntimeParameter("startTime", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -731,7 +711,7 @@ namespace Google.Apis.Audit.v1 {
         
         private ActivitiesResource _activities;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

@@ -37,12 +37,15 @@
         <member name="P:Google.Apis.Translate.v2.Data.TranslationsResource.TranslatedText">
             <summary>The translation.</summary>
         </member>
-        <member name="P:Google.Apis.Translate.v2.TranslateService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="M:Google.Apis.Translate.v2.DetectionsResource.List(Google.Apis.Util.Repeatable{System.String})">
             <summary>Detect the language of text.</summary>
             <param name="q">Required - The text to detect</param>
+        </member>
+        <member name="P:Google.Apis.Translate.v2.DetectionsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.v2.DetectionsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Translate.v2.DetectionsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -50,17 +53,35 @@
         <member name="P:Google.Apis.Translate.v2.DetectionsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Translate.v2.DetectionsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.v2.DetectionsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Translate.v2.DetectionsResource.ListRequest.Q">
             <summary>The text to detect</summary>
         </member>
         <member name="M:Google.Apis.Translate.v2.LanguagesResource.List">
             <summary>List the source/target languages supported by the API</summary>
         </member>
+        <member name="P:Google.Apis.Translate.v2.LanguagesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.v2.LanguagesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Translate.v2.LanguagesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Translate.v2.LanguagesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.v2.LanguagesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.v2.LanguagesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Translate.v2.LanguagesResource.ListRequest.Target">
             <summary>the language and collation in which the localized results should be returned</summary>
@@ -79,11 +100,23 @@
         <member name="F:Google.Apis.Translate.v2.TranslationsResource.Format.Text">
             <summary>Specifies the input is in plain textual format</summary>
         </member>
+        <member name="P:Google.Apis.Translate.v2.TranslationsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.v2.TranslationsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Translate.v2.TranslationsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Translate.v2.TranslationsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.v2.TranslationsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Translate.v2.TranslationsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Translate.v2.TranslationsResource.ListRequest.Cid">
             <summary>The customization id for translate</summary>

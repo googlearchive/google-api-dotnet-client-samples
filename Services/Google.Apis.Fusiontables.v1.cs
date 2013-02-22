@@ -1375,516 +1375,72 @@ namespace Google.Apis.Fusiontables.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class FusiontablesService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/w1O6_QP" +
-            "2D-DbbWunlsPyihDq4l4\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"fusiontables:v1\",\"name\":\"f" +
-            "usiontables\",\"version\":\"v1\",\"revision\":\"20121210\",\"title\":\"Fusion Tables API\",\"d" +
-            "escription\":\"API for working with Fusion Tables data.\",\"icons\":{\"x16\":\"http://ww" +
-            "w.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com/im" +
-            "ages/icons/product/search-32.gif\"},\"documentationLink\":\"https://developers.googl" +
-            "e.com/fusiontables\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/fusi" +
-            "ontables/v1/\",\"basePath\":\"/fusiontables/v1/\",\"rootUrl\":\"https://www.googleapis.c" +
-            "om/\",\"servicePath\":\"fusiontables/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"" +
-            "type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"e" +
-            "num\":[\"csv\",\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of text/csv" +
-            "\",\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fields" +
-            "\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to include in" +
-            " a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"" +
-            "API key. Your API key identifies your project and provides you with API access, " +
-            "quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":" +
-            "\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the c" +
-            "urrent user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":" +
-            "\"Returns response with indentations and line breaks.\",\"default\":\"true\",\"location" +
-            "\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quot" +
-            "a purposes for server-side applications. Can be any arbitrary string assigned to" +
-            " a user, but should not exceed 40 characters. Overrides userIp if both are provi" +
-            "ded.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of" +
-            " the site where the request originates. Use this if you want to enforce per-user" +
-            " limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleap" +
-            "is.com/auth/fusiontables\":{\"description\":\"Manage your Fusion Tables\"},\"https://w" +
-            "ww.googleapis.com/auth/fusiontables.readonly\":{\"description\":\"View your Fusion T" +
-            "ables\"}}}},\"schemas\":{\"Bucket\":{\"id\":\"Bucket\",\"type\":\"object\",\"description\":\"Spe" +
-            "cifies the minimum and maximum values, the color, opacity, icon and weight of a " +
-            "bucket within a StyleSetting.\",\"properties\":{\"color\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Color of line or the interior of a polygon in #RRGGBB format.\"},\"icon\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Icon name used for a point.\"},\"max\":{\"type\":\"number\"" +
-            ",\"description\":\"Maximum value in the selected column for a row to be styled acco" +
-            "rding to the bucket color, opacity, icon, or weight.\",\"format\":\"double\"},\"min\":{" +
-            "\"type\":\"number\",\"description\":\"Minimum value in the selected column for a row to" +
-            " be styled according to the bucket color, opacity, icon, or weight.\",\"format\":\"d" +
-            "ouble\"},\"opacity\":{\"type\":\"number\",\"description\":\"Opacity of the color: 0.0 (tra" +
-            "nsparent) to 1.0 (opaque).\",\"format\":\"double\"},\"weight\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"Width of a line (in pixels).\",\"format\":\"int32\"}}},\"Column\":{\"id\":\"Colum" +
-            "n\",\"type\":\"object\",\"description\":\"Specifies the id, name and type of a column in" +
-            " a table.\",\"properties\":{\"baseColumn\":{\"type\":\"object\",\"description\":\"Optional i" +
-            "dentifier of the base column. If present, this column is derived from the specif" +
-            "ied base column.\",\"properties\":{\"columnId\":{\"type\":\"integer\",\"description\":\"The " +
-            "id of the column in the base table from which this column is derived.\",\"format\":" +
-            "\"int32\"},\"tableIndex\":{\"type\":\"integer\",\"description\":\"Offset to the entry in th" +
-            "e list of base tables in the table definition.\",\"format\":\"int32\"}}},\"columnId\":{" +
-            "\"type\":\"integer\",\"description\":\"Identifier for the column.\",\"format\":\"int32\"},\"k" +
-            "ind\":{\"type\":\"string\",\"description\":\"Type name: a template for an individual col" +
-            "umn.\",\"default\":\"fusiontables#column\"},\"name\":{\"type\":\"string\",\"description\":\"Re" +
-            "quired name of the column.\",\"annotations\":{\"required\":[\"fusiontables.column.inse" +
-            "rt\"]}},\"type\":{\"type\":\"string\",\"description\":\"Required type of the column.\",\"ann" +
-            "otations\":{\"required\":[\"fusiontables.column.insert\"]}}}},\"ColumnList\":{\"id\":\"Col" +
-            "umnList\",\"type\":\"object\",\"description\":\"Represents a list of columns in a table." +
-            "\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of all requested col" +
-            "umns.\",\"items\":{\"$ref\":\"Column\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type na" +
-            "me: a list of all tables.\",\"default\":\"fusiontables#columnList\"},\"nextPageToken\":" +
-            "{\"type\":\"string\",\"description\":\"Token used to access the next page of this resul" +
-            "t. No token is displayed if there are no more tokens left.\"},\"totalItems\":{\"type" +
-            "\":\"integer\",\"description\":\"Total number of columns for the table.\",\"format\":\"int" +
-            "32\"}}},\"Geometry\":{\"id\":\"Geometry\",\"type\":\"object\",\"description\":\"Represents a G" +
-            "eometry object.\",\"properties\":{\"geometries\":{\"type\":\"array\",\"description\":\"The l" +
-            "ist of geometries in this geometry collection.\",\"items\":{\"type\":\"any\"}},\"geometr" +
-            "y\":{\"type\":\"any\"},\"type\":{\"type\":\"string\",\"description\":\"Type: A collection of g" +
-            "eometries.\",\"default\":\"GeometryCollection\"}}},\"Import\":{\"id\":\"Import\",\"type\":\"ob" +
-            "ject\",\"description\":\"Represents an import request.\",\"properties\":{\"kind\":{\"type\"" +
-            ":\"string\",\"description\":\"Type name: a template for an import request.\",\"default\"" +
-            ":\"fusiontables#import\"},\"numRowsReceived\":{\"type\":\"string\",\"description\":\"The nu" +
-            "mber of rows received from the import request.\",\"format\":\"int64\"}}},\"Line\":{\"id\"" +
-            ":\"Line\",\"type\":\"object\",\"description\":\"Represents a line geometry.\",\"properties\"" +
-            ":{\"coordinates\":{\"type\":\"array\",\"description\":\"The coordinates that define the l" +
-            "ine.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"number\",\"format\":\"double\"}}},\"typ" +
-            "e\":{\"type\":\"string\",\"description\":\"Type: A line geometry.\",\"default\":\"LineString" +
-            "\"}}},\"LineStyle\":{\"id\":\"LineStyle\",\"type\":\"object\",\"description\":\"Represents a L" +
-            "ineStyle within a StyleSetting\",\"properties\":{\"strokeColor\":{\"type\":\"string\",\"de" +
-            "scription\":\"Color of the line in #RRGGBB format.\"},\"strokeColorStyler\":{\"$ref\":\"" +
-            "StyleFunction\",\"description\":\"Column-value, gradient or buckets styler that is u" +
-            "sed to determine the line color and opacity.\"},\"strokeOpacity\":{\"type\":\"number\"," +
-            "\"description\":\"Opacity of the line : 0.0 (transparent) to 1.0 (opaque).\",\"format" +
-            "\":\"double\"},\"strokeWeight\":{\"type\":\"integer\",\"description\":\"Width of the line in" +
-            " pixels.\",\"format\":\"int32\"},\"strokeWeightStyler\":{\"$ref\":\"StyleFunction\",\"descri" +
-            "ption\":\"Column-value or bucket styler that is used to determine the width of the" +
-            " line.\"}}},\"Point\":{\"id\":\"Point\",\"type\":\"object\",\"description\":\"Represents a poi" +
-            "nt object.\",\"properties\":{\"coordinates\":{\"type\":\"array\",\"description\":\"The coord" +
-            "inates that define the point.\",\"items\":{\"type\":\"number\",\"format\":\"double\"}},\"typ" +
-            "e\":{\"type\":\"string\",\"description\":\"Point: A point geometry.\",\"default\":\"Point\"}}" +
-            "},\"PointStyle\":{\"id\":\"PointStyle\",\"type\":\"object\",\"description\":\"Represents a Po" +
-            "intStyle within a StyleSetting\",\"properties\":{\"iconName\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Name of the icon. Use values defined in http://www.google.com/fusiontab" +
-            "les/DataSource?dsrcid=308519\"},\"iconStyler\":{\"$ref\":\"StyleFunction\",\"description" +
-            "\":\"Column or a bucket value from which the icon name is to be determined.\"}}},\"P" +
-            "olygon\":{\"id\":\"Polygon\",\"type\":\"object\",\"description\":\"Represents a polygon obje" +
-            "ct.\",\"properties\":{\"coordinates\":{\"type\":\"array\",\"description\":\"The coordinates " +
-            "that define the polygon.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"array\",\"items" +
-            "\":{\"type\":\"number\",\"format\":\"double\"}}}},\"type\":{\"type\":\"string\",\"description\":\"" +
-            "Type: A polygon geometry.\",\"default\":\"Polygon\"}}},\"PolygonStyle\":{\"id\":\"PolygonS" +
-            "tyle\",\"type\":\"object\",\"description\":\"Represents a PolygonStyle within a StyleSet" +
-            "ting\",\"properties\":{\"fillColor\":{\"type\":\"string\",\"description\":\"Color of the int" +
-            "erior of the polygon in #RRGGBB format.\"},\"fillColorStyler\":{\"$ref\":\"StyleFuncti" +
-            "on\",\"description\":\"Column-value, gradient, or bucket styler that is used to dete" +
-            "rmine the interior color and opacity of the polygon.\"},\"fillOpacity\":{\"type\":\"nu" +
-            "mber\",\"description\":\"Opacity of the interior of the polygon: 0.0 (transparent) t" +
-            "o 1.0 (opaque).\",\"format\":\"double\"},\"strokeColor\":{\"type\":\"string\",\"description\"" +
-            ":\"Color of the polygon border in #RRGGBB format.\"},\"strokeColorStyler\":{\"$ref\":\"" +
-            "StyleFunction\",\"description\":\"Column-value, gradient or buckets styler that is u" +
-            "sed to determine the border color and opacity.\"},\"strokeOpacity\":{\"type\":\"number" +
-            "\",\"description\":\"Opacity of the polygon border: 0.0 (transparent) to 1.0 (opaque" +
-            ").\",\"format\":\"double\"},\"strokeWeight\":{\"type\":\"integer\",\"description\":\"Width of " +
-            "the polyon border in pixels.\",\"format\":\"int32\"},\"strokeWeightStyler\":{\"$ref\":\"St" +
-            "yleFunction\",\"description\":\"Column-value or bucket styler that is used to determ" +
-            "ine the width of the polygon border.\"}}},\"Sqlresponse\":{\"id\":\"Sqlresponse\",\"type" +
-            "\":\"object\",\"description\":\"Represents a response to an sql statement.\",\"propertie" +
-            "s\":{\"columns\":{\"type\":\"array\",\"description\":\"Columns in the table.\",\"items\":{\"ty" +
-            "pe\":\"string\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type name: a template for " +
-            "an individual table.\",\"default\":\"fusiontables#sqlresponse\"},\"rows\":{\"type\":\"arra" +
-            "y\",\"description\":\"The rows in the table. For each cell we print out whatever cel" +
-            "l value (e.g., numeric, string) exists. Thus it is important that each cell cont" +
-            "ains only one value.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"any\"}}}}},\"StyleF" +
-            "unction\":{\"id\":\"StyleFunction\",\"type\":\"object\",\"description\":\"Represents a Style" +
-            "Function within a StyleSetting\",\"properties\":{\"buckets\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"Bucket function that assigns a style based on the range a column value fa" +
-            "lls into.\",\"items\":{\"$ref\":\"Bucket\"}},\"columnName\":{\"type\":\"string\",\"description" +
-            "\":\"Name of the column whose value is used in the style.\",\"annotations\":{\"require" +
-            "d\":[\"fusiontables.style.insert\"]}},\"gradient\":{\"type\":\"object\",\"description\":\"Gr" +
-            "adient function that interpolates a range of colors based on column value.\",\"pro" +
-            "perties\":{\"colors\":{\"type\":\"array\",\"description\":\"Array with two or more colors." +
-            "\",\"items\":{\"type\":\"object\",\"properties\":{\"color\":{\"type\":\"string\",\"description\":" +
-            "\"Color in #RRGGBB format.\"},\"opacity\":{\"type\":\"number\",\"description\":\"Opacity of" +
-            " the color: 0.0 (transparent) to 1.0 (opaque).\",\"format\":\"double\"}}}},\"max\":{\"ty" +
-            "pe\":\"number\",\"description\":\"Higher-end of the interpolation range: rows with thi" +
-            "s value will be assigned to colors[n-1].\",\"format\":\"double\"},\"min\":{\"type\":\"numb" +
-            "er\",\"description\":\"Lower-end of the interpolation range: rows with this value wi" +
-            "ll be assigned to colors[0].\",\"format\":\"double\"}}},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Stylers can be one of three kinds: \\\"fusiontables#fromColumn\\\" if the " +
-            "column value is to be used as is, i.e., the column values can have colors in #RR" +
-            "GGBBAA format or integer line widths or icon names; \\\"fusiontables#gradient\\\" if" +
-            " the styling of the row is to be based on applying the gradient function on the " +
-            "column value; or \\\"fusiontables#buckets\\\" if the styling is to based on the buck" +
-            "et into which the the column value falls.\"}}},\"StyleSetting\":{\"id\":\"StyleSetting" +
-            "\",\"type\":\"object\",\"description\":\"Represents a complete StyleSettings object. The" +
-            " primary key is a combination of the tableId and a styleId.\",\"properties\":{\"kind" +
-            "\":{\"type\":\"string\",\"description\":\"Type name: an individual style setting. A Styl" +
-            "eSetting contains the style defintions for points, lines, and polygons in a tabl" +
-            "e. Since a table can have any one or all of them, a style definition can have po" +
-            "int, line and polygon style definitions.\",\"default\":\"fusiontables#styleSetting\"}" +
-            ",\"markerOptions\":{\"$ref\":\"PointStyle\",\"description\":\"Style definition for points" +
-            " in the table.\"},\"name\":{\"type\":\"string\",\"description\":\"Optional name for the st" +
-            "yle setting.\"},\"polygonOptions\":{\"$ref\":\"PolygonStyle\",\"description\":\"Style defi" +
-            "nition for polygons in the table.\"},\"polylineOptions\":{\"$ref\":\"LineStyle\",\"descr" +
-            "iption\":\"Style definition for lines in the table.\"},\"styleId\":{\"type\":\"integer\"," +
-            "\"description\":\"Identifier for the style setting (unique only within tables).\",\"f" +
-            "ormat\":\"int32\"},\"tableId\":{\"type\":\"string\",\"description\":\"Identifier for the tab" +
-            "le.\"}}},\"StyleSettingList\":{\"id\":\"StyleSettingList\",\"type\":\"object\",\"description" +
-            "\":\"Represents a list of styles for a given table.\",\"properties\":{\"items\":{\"type\"" +
-            ":\"array\",\"description\":\"All requested style settings.\",\"items\":{\"$ref\":\"StyleSet" +
-            "ting\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type name: in this case, a list o" +
-            "f style settings.\",\"default\":\"fusiontables#styleSettingList\"},\"nextPageToken\":{\"" +
-            "type\":\"string\",\"description\":\"Token used to access the next page of this result." +
-            " No token is displayed if there are no more styles left.\"},\"totalItems\":{\"type\":" +
-            "\"integer\",\"description\":\"Total number of styles for the table.\",\"format\":\"int32\"" +
-            "}}},\"Table\":{\"id\":\"Table\",\"type\":\"object\",\"description\":\"Represents a table. Spe" +
-            "cifies the name, whether it is exportable, description, attribution, and attribu" +
-            "tion link.\",\"properties\":{\"attribution\":{\"type\":\"string\",\"description\":\"Optional" +
-            " attribution assigned to the table.\"},\"attributionLink\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Optional link for attribution.\"},\"baseTableIds\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"Optional base table identifier if this table is a view or merged table.\"," +
-            "\"items\":{\"type\":\"string\"}},\"columns\":{\"type\":\"array\",\"description\":\"Columns in t" +
-            "he table.\",\"items\":{\"$ref\":\"Column\"},\"annotations\":{\"required\":[\"fusiontables.ta" +
-            "ble.insert\",\"fusiontables.table.update\"]}},\"description\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Optional description assigned to the table.\"},\"isExportable\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Variable for whether table is exportable.\",\"annotations\":" +
-            "{\"required\":[\"fusiontables.table.insert\",\"fusiontables.table.update\"]}},\"kind\":{" +
-            "\"type\":\"string\",\"description\":\"Type name: a template for an individual table.\",\"" +
-            "default\":\"fusiontables#table\"},\"name\":{\"type\":\"string\",\"description\":\"Name assig" +
-            "ned to a table.\",\"annotations\":{\"required\":[\"fusiontables.table.insert\",\"fusiont" +
-            "ables.table.update\"]}},\"sql\":{\"type\":\"string\",\"description\":\"Optional sql that e" +
-            "ncodes the table definition for derived tables.\"},\"tableId\":{\"type\":\"string\",\"de" +
-            "scription\":\"Encrypted unique alphanumeric identifier for the table.\"}}},\"TableLi" +
-            "st\":{\"id\":\"TableList\",\"type\":\"object\",\"description\":\"Represents a list of tables" +
-            ".\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of all requested ta" +
-            "bles.\",\"items\":{\"$ref\":\"Table\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type nam" +
-            "e: a list of all tables.\",\"default\":\"fusiontables#tableList\"},\"nextPageToken\":{\"" +
-            "type\":\"string\",\"description\":\"Token used to access the next page of this result." +
-            " No token is displayed if there are no more tokens left.\"}}},\"Template\":{\"id\":\"T" +
-            "emplate\",\"type\":\"object\",\"description\":\"Represents the contents of InfoWindow te" +
-            "mplates.\",\"properties\":{\"automaticColumnNames\":{\"type\":\"array\",\"description\":\"Li" +
-            "st of columns from which the template is to be automatically constructed. Only o" +
-            "ne of body or automaticColumns can be specified.\",\"items\":{\"type\":\"string\"}},\"bo" +
-            "dy\":{\"type\":\"string\",\"description\":\"Body of the template. It contains HTML with " +
-            "{column_name} to insert values from a particular column. The body is sanitized t" +
-            "o remove certain tags, e.g., script. Only one of body or automaticColumns can be" +
-            " specified.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type name: a template for t" +
-            "he info window contents. The template can either include an HTML body or a list " +
-            "of columns from which the template is computed automatically.\",\"default\":\"fusion" +
-            "tables#template\"},\"name\":{\"type\":\"string\",\"description\":\"Optional name assigned " +
-            "to a template.\"},\"tableId\":{\"type\":\"string\",\"description\":\"Identifier for the ta" +
-            "ble for which the template is defined.\"},\"templateId\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"Identifier for the template, unique within the context of a particular ta" +
-            "ble.\",\"format\":\"int32\"}}},\"TemplateList\":{\"id\":\"TemplateList\",\"type\":\"object\",\"d" +
-            "escription\":\"Represents a list of templates for a given table.\",\"properties\":{\"i" +
-            "tems\":{\"type\":\"array\",\"description\":\"List of all requested templates.\",\"items\":{" +
-            "\"$ref\":\"Template\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type name: a list of " +
-            "all templates.\",\"default\":\"fusiontables#templateList\"},\"nextPageToken\":{\"type\":\"" +
-            "string\",\"description\":\"Token used to access the next page of this result. No tok" +
-            "en is displayed if there are no more tokens left.\"},\"totalItems\":{\"type\":\"intege" +
-            "r\",\"description\":\"Total number of templates for the table.\",\"format\":\"int32\"}}}}" +
-            ",\"resources\":{\"column\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.column.delete\",\"" +
-            "path\":\"tables/{tableId}/columns/{columnId}\",\"httpMethod\":\"DELETE\",\"description\":" +
-            "\"Deletes the column.\",\"parameters\":{\"columnId\":{\"type\":\"string\",\"description\":\"N" +
-            "ame or identifier for the column being deleted.\",\"required\":true,\"location\":\"pat" +
-            "h\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table from which the column is bei" +
-            "ng deleted.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"co" +
-            "lumnId\"],\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"get\":{\"id\":" +
-            "\"fusiontables.column.get\",\"path\":\"tables/{tableId}/columns/{columnId}\",\"httpMeth" +
-            "od\":\"GET\",\"description\":\"Retrieves a specific column by its id.\",\"parameters\":{\"" +
-            "columnId\":{\"type\":\"string\",\"description\":\"Name or identifier for the column that" +
-            " is being requested.\",\"required\":true,\"location\":\"path\"},\"tableId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Table to which the column belongs.\",\"required\":true,\"location" +
-            "\":\"path\"}},\"parameterOrder\":[\"tableId\",\"columnId\"],\"response\":{\"$ref\":\"Column\"}," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis" +
-            ".com/auth/fusiontables.readonly\"]},\"insert\":{\"id\":\"fusiontables.column.insert\",\"" +
-            "path\":\"tables/{tableId}/columns\",\"httpMethod\":\"POST\",\"description\":\"Adds a new c" +
-            "olumn to the table.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Tab" +
-            "le for which a new column is being added.\",\"required\":true,\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Column\"},\"response\":{\"$ref\":\"Colu" +
-            "mn\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"list\":{\"id\":\"fu" +
-            "siontables.column.list\",\"path\":\"tables/{tableId}/columns\",\"httpMethod\":\"GET\",\"de" +
-            "scription\":\"Retrieves a list of columns.\",\"parameters\":{\"maxResults\":{\"type\":\"in" +
-            "teger\",\"description\":\"Maximum number of columns to return. Optional. Default is " +
-            "5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"str" +
-            "ing\",\"description\":\"Continuation token specifying which result page to return. O" +
-            "ptional.\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table wh" +
-            "ose columns are being listed.\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"tableId\"],\"response\":{\"$ref\":\"ColumnList\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fusiontables.readonly" +
-            "\"]},\"patch\":{\"id\":\"fusiontables.column.patch\",\"path\":\"tables/{tableId}/columns/{" +
-            "columnId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the name or type of an ex" +
-            "isting column. This method supports patch semantics.\",\"parameters\":{\"columnId\":{" +
-            "\"type\":\"string\",\"description\":\"Name or identifier for the column that is being u" +
-            "pdated.\",\"required\":true,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Table for which the column is being updated.\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"tableId\",\"columnId\"],\"request\":{\"$ref\":\"Column\"},\"res" +
-            "ponse\":{\"$ref\":\"Column\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables" +
-            "\"]},\"update\":{\"id\":\"fusiontables.column.update\",\"path\":\"tables/{tableId}/columns" +
-            "/{columnId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the name or type of an ex" +
-            "isting column.\",\"parameters\":{\"columnId\":{\"type\":\"string\",\"description\":\"Name or" +
-            " identifier for the column that is being updated.\",\"required\":true,\"location\":\"p" +
-            "ath\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table for which the column is be" +
-            "ing updated.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"c" +
-            "olumnId\"],\"request\":{\"$ref\":\"Column\"},\"response\":{\"$ref\":\"Column\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/fusiontables\"]}}},\"query\":{\"methods\":{\"sql\":{\"id\":" +
-            "\"fusiontables.query.sql\",\"path\":\"query\",\"httpMethod\":\"POST\",\"description\":\"Execu" +
-            "tes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE/CREATE statement.\",\"paramet" +
-            "ers\":{\"hdrs\":{\"type\":\"boolean\",\"description\":\"Should column names be included (i" +
-            "n the first row)?. Default is true.\",\"location\":\"query\"},\"sql\":{\"type\":\"string\"," +
-            "\"description\":\"An SQL SELECT/SHOW/DESCRIBE/INSERT/UPDATE/DELETE/CREATE statement" +
-            ".\",\"required\":true,\"location\":\"query\"},\"typed\":{\"type\":\"boolean\",\"description\":\"" +
-            "Should typed values be returned in the (JSON) response -- numbers for numeric va" +
-            "lues and parsed geometries for KML values? Default is true.\",\"location\":\"query\"}" +
-            "},\"parameterOrder\":[\"sql\"],\"response\":{\"$ref\":\"Sqlresponse\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fusiontab" +
-            "les.readonly\"]},\"sqlGet\":{\"id\":\"fusiontables.query.sqlGet\",\"path\":\"query\",\"httpM" +
-            "ethod\":\"GET\",\"description\":\"Executes an SQL SELECT/SHOW/DESCRIBE statement.\",\"pa" +
-            "rameters\":{\"hdrs\":{\"type\":\"boolean\",\"description\":\"Should column names be includ" +
-            "ed (in the first row)?. Default is true.\",\"location\":\"query\"},\"sql\":{\"type\":\"str" +
-            "ing\",\"description\":\"An SQL SELECT/SHOW/DESCRIBE statement.\",\"required\":true,\"loc" +
-            "ation\":\"query\"},\"typed\":{\"type\":\"boolean\",\"description\":\"Should typed values be " +
-            "returned in the (JSON) response -- numbers for numeric values and parsed geometr" +
-            "ies for KML values? Default is true.\",\"location\":\"query\"}},\"parameterOrder\":[\"sq" +
-            "l\"],\"response\":{\"$ref\":\"Sqlresponse\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/fusiontables\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]}}},\"styl" +
-            "e\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.style.delete\",\"path\":\"tables/{tableI" +
-            "d}/styles/{styleId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a style.\",\"par" +
-            "ameters\":{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (within a table)" +
-            " for the style being deleted\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"" +
-            "},\"tableId\":{\"type\":\"string\",\"description\":\"Table from which the style is being " +
-            "deleted\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleI" +
-            "d\"],\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"get\":{\"id\":\"fusi" +
-            "ontables.style.get\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"GET" +
-            "\",\"description\":\"Gets a specific style.\",\"parameters\":{\"styleId\":{\"type\":\"intege" +
-            "r\",\"description\":\"Identifier (integer) for a specific style in a table\",\"require" +
-            "d\":true,\"format\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Table to which the requested style belongs\",\"required\":true,\"location\":\"pa" +
-            "th\"}},\"parameterOrder\":[\"tableId\",\"styleId\"],\"response\":{\"$ref\":\"StyleSetting\"}," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis" +
-            ".com/auth/fusiontables.readonly\"]},\"insert\":{\"id\":\"fusiontables.style.insert\",\"p" +
-            "ath\":\"tables/{tableId}/styles\",\"httpMethod\":\"POST\",\"description\":\"Adds a new sty" +
-            "le for the table.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table" +
-            " for which a new style is being added\",\"required\":true,\"location\":\"path\"}},\"para" +
-            "meterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"StyleSetting\"},\"response\":{\"$ref\":\"St" +
-            "yleSetting\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"list\":{" +
-            "\"id\":\"fusiontables.style.list\",\"path\":\"tables/{tableId}/styles\",\"httpMethod\":\"GE" +
-            "T\",\"description\":\"Retrieves a list of styles.\",\"parameters\":{\"maxResults\":{\"type" +
-            "\":\"integer\",\"description\":\"Maximum number of styles to return. Optional. Default" +
-            " is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":" +
-            "\"string\",\"description\":\"Continuation token specifying which result page to retur" +
-            "n. Optional.\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"Tabl" +
-            "e whose styles are being listed\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"tableId\"],\"response\":{\"$ref\":\"StyleSettingList\"},\"scopes\":[\"https://www." +
-            "googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fusiontables." +
-            "readonly\"]},\"patch\":{\"id\":\"fusiontables.style.patch\",\"path\":\"tables/{tableId}/st" +
-            "yles/{styleId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an existing style. T" +
-            "his method supports patch semantics.\",\"parameters\":{\"styleId\":{\"type\":\"integer\"," +
-            "\"description\":\"Identifier (within a table) for the style being updated.\",\"requir" +
-            "ed\":true,\"format\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Table whose style is being updated.\",\"required\":true,\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"tableId\",\"styleId\"],\"request\":{\"$ref\":\"StyleSetting\"},\"respon" +
-            "se\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontab" +
-            "les\"]},\"update\":{\"id\":\"fusiontables.style.update\",\"path\":\"tables/{tableId}/style" +
-            "s/{styleId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an existing style.\",\"para" +
-            "meters\":{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (within a table) " +
-            "for the style being updated.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"" +
-            "},\"tableId\":{\"type\":\"string\",\"description\":\"Table whose style is being updated.\"" +
-            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleId\"],\"req" +
-            "uest\":{\"$ref\":\"StyleSetting\"},\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"http" +
-            "s://www.googleapis.com/auth/fusiontables\"]}}},\"table\":{\"methods\":{\"copy\":{\"id\":\"" +
-            "fusiontables.table.copy\",\"path\":\"tables/{tableId}/copy\",\"httpMethod\":\"POST\",\"des" +
-            "cription\":\"Copies a table.\",\"parameters\":{\"copyPresentation\":{\"type\":\"boolean\",\"" +
-            "description\":\"Whether to also copy tabs, styles, and templates. Default is false" +
-            ".\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"ID of the table" +
-            " that is being copied.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"t" +
-            "ableId\"],\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "fusiontables\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]},\"delete\"" +
-            ":{\"id\":\"fusiontables.table.delete\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"DELET" +
-            "E\",\"description\":\"Deletes a table.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"de" +
-            "scription\":\"ID of the table that is being deleted.\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"tableId\"],\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "fusiontables\"]},\"get\":{\"id\":\"fusiontables.table.get\",\"path\":\"tables/{tableId}\",\"" +
-            "httpMethod\":\"GET\",\"description\":\"Retrieves a specific table by its id.\",\"paramet" +
-            "ers\":{\"tableId\":{\"type\":\"string\",\"description\":\"Identifier(ID) for the table bei" +
-            "ng requested.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"]," +
-            "\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontab" +
-            "les\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]},\"importRows\":{\"id" +
-            "\":\"fusiontables.table.importRows\",\"path\":\"tables/{tableId}/import\",\"httpMethod\":" +
-            "\"POST\",\"description\":\"Import more rows into a table.\",\"parameters\":{\"delimiter\":" +
-            "{\"type\":\"string\",\"description\":\"The delimiter used to separate cell values. This" +
-            " can only consist of a single character. Default is \',\'.\",\"location\":\"query\"},\"e" +
-            "ncoding\":{\"type\":\"string\",\"description\":\"The encoding of the content. Default is" +
-            " UTF-8. Use \'auto-detect\' if you are unsure of the encoding.\",\"location\":\"query\"" +
-            "},\"endLine\":{\"type\":\"integer\",\"description\":\"The index of the last line from whi" +
-            "ch to start importing, exclusive. Thus, the number of imported lines is endLine " +
-            "- startLine. If this parameter is not provided, the file will be imported until " +
-            "the last line of the file. If endLine is negative, then the imported content wil" +
-            "l exclude the last endLine lines. That is, if endline is negative, no line will " +
-            "be imported whose index is greater than N + endLine where N is the number of lin" +
-            "es in the file, and the number of imported lines will be N + endLine - startLine" +
-            ".\",\"format\":\"int32\",\"location\":\"query\"},\"isStrict\":{\"type\":\"boolean\",\"descriptio" +
-            "n\":\"Whether the CSV must have the same number of values for each row. If false, " +
-            "rows with fewer values will be padded with empty values. Default is true.\",\"loca" +
-            "tion\":\"query\"},\"startLine\":{\"type\":\"integer\",\"description\":\"The index of the fir" +
-            "st line from which to start importing, inclusive. Default is 0.\",\"format\":\"int32" +
-            "\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"The table into w" +
-            "hich new rows are being imported.\",\"required\":true,\"location\":\"path\"}},\"paramete" +
-            "rOrder\":[\"tableId\"],\"response\":{\"$ref\":\"Import\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/fusiontables\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"" +
-            "application/octet-stream\"],\"maxSize\":\"100MB\",\"protocols\":{\"simple\":{\"multipart\":" +
-            "true,\"path\":\"/upload/fusiontables/v1/tables/{tableId}/import\"},\"resumable\":{\"mul" +
-            "tipart\":true,\"path\":\"/resumable/upload/fusiontables/v1/tables/{tableId}/import\"}" +
-            "}}},\"insert\":{\"id\":\"fusiontables.table.insert\",\"path\":\"tables\",\"httpMethod\":\"POS" +
-            "T\",\"description\":\"Creates a new table.\",\"request\":{\"$ref\":\"Table\"},\"response\":{\"" +
-            "$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"list\"" +
-            ":{\"id\":\"fusiontables.table.list\",\"path\":\"tables\",\"httpMethod\":\"GET\",\"description" +
-            "\":\"Retrieves a list of tables a user owns.\",\"parameters\":{\"maxResults\":{\"type\":\"" +
-            "integer\",\"description\":\"Maximum number of styles to return. Optional. Default is" +
-            " 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"Continuation token specifying which result page to return. " +
-            "Optional.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"TableList\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fusion" +
-            "tables.readonly\"]},\"patch\":{\"id\":\"fusiontables.table.patch\",\"path\":\"tables/{tabl" +
-            "eId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an existing table. Unless expl" +
-            "icitly requested, only the name, description, and attribution will be updated. T" +
-            "his method supports patch semantics.\",\"parameters\":{\"replaceViewDefinition\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Should the view definition also be updated? The spe" +
-            "cified view definition replaces the existing one. Only a view can be updated wit" +
-            "h a new definition.\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description" +
-            "\":\"ID of the table that is being updated.\",\"required\":true,\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"Table" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fu" +
-            "siontables.table.update\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"PUT\",\"descripti" +
-            "on\":\"Updates an existing table. Unless explicitly requested, only the name, desc" +
-            "ription, and attribution will be updated.\",\"parameters\":{\"replaceViewDefinition\"" +
-            ":{\"type\":\"boolean\",\"description\":\"Should the view definition also be updated? Th" +
-            "e specified view definition replaces the existing one. Only a view can be update" +
-            "d with a new definition.\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"ID of the table that is being updated.\",\"required\":true,\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"" +
-            "Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]}}},\"template\":" +
-            "{\"methods\":{\"delete\":{\"id\":\"fusiontables.template.delete\",\"path\":\"tables/{tableI" +
-            "d}/templates/{templateId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a templa" +
-            "te\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table from which the" +
-            " template is being deleted\",\"required\":true,\"location\":\"path\"},\"templateId\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"Identifier for the template which is being deleted\"" +
-            ",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"tableId" +
-            "\",\"templateId\"],\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"get\"" +
-            ":{\"id\":\"fusiontables.template.get\",\"path\":\"tables/{tableId}/templates/{templateI" +
-            "d}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a specific template by its id\",\"" +
-            "parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table to which the templa" +
-            "te belongs\",\"required\":true,\"location\":\"path\"},\"templateId\":{\"type\":\"integer\",\"d" +
-            "escription\":\"Identifier for the template that is being requested\",\"required\":tru" +
-            "e,\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"templateId\"]" +
-            ",\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://www.googleapis.com/auth/fusio" +
-            "ntables\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]},\"insert\":{\"id" +
-            "\":\"fusiontables.template.insert\",\"path\":\"tables/{tableId}/templates\",\"httpMethod" +
-            "\":\"POST\",\"description\":\"Creates a new template for the table.\",\"parameters\":{\"ta" +
-            "bleId\":{\"type\":\"string\",\"description\":\"Table for which a new template is being c" +
-            "reated\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"reques" +
-            "t\":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.template.list\",\"path" +
-            "\":\"tables/{tableId}/templates\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a lis" +
-            "t of templates.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Max" +
-            "imum number of templates to return. Optional. Default is 5.\",\"format\":\"uint32\",\"" +
-            "minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Con" +
-            "tinuation token specifying which results page to return. Optional.\",\"location\":\"" +
-            "query\"},\"tableId\":{\"type\":\"string\",\"description\":\"Identifier for the table whose" +
-            " templates are being requested\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"tableId\"],\"response\":{\"$ref\":\"TemplateList\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fusiontables.reado" +
-            "nly\"]},\"patch\":{\"id\":\"fusiontables.template.patch\",\"path\":\"tables/{tableId}/temp" +
-            "lates/{templateId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an existing temp" +
-            "late. This method supports patch semantics.\",\"parameters\":{\"tableId\":{\"type\":\"st" +
-            "ring\",\"description\":\"Table to which the updated template belongs\",\"required\":tru" +
-            "e,\"location\":\"path\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier fo" +
-            "r the template that is being updated\",\"required\":true,\"format\":\"int32\",\"location" +
-            "\":\"path\"}},\"parameterOrder\":[\"tableId\",\"templateId\"],\"request\":{\"$ref\":\"Template" +
-            "\"},\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://www.googleapis.com/auth/fus" +
-            "iontables\"]},\"update\":{\"id\":\"fusiontables.template.update\",\"path\":\"tables/{table" +
-            "Id}/templates/{templateId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an existin" +
-            "g template\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table to whi" +
-            "ch the updated template belongs\",\"required\":true,\"location\":\"path\"},\"templateId\"" +
-            ":{\"type\":\"integer\",\"description\":\"Identifier for the template that is being upda" +
-            "ted\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"tab" +
-            "leId\",\"templateId\"],\"request\":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"Template\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]}}}}}";
+    public partial class FusiontablesService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected FusiontablesService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._column = new ColumnResource(this, _authenticator);
-            this._query = new QueryResource(this, _authenticator);
-            this._style = new StyleResource(this, _authenticator);
-            this._table = new TableResource(this, _authenticator);
-            this._template = new TemplateResource(this, _authenticator);
+        public FusiontablesService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._column = new ColumnResource(this, Authenticator);
+            this._query = new QueryResource(this, Authenticator);
+            this._style = new StyleResource(this, Authenticator);
+            this._table = new TableResource(this, Authenticator);
+            this._template = new TemplateResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public FusiontablesService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public FusiontablesService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(FusiontablesService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/fusiontables/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "fusiontables";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/fusiontables/v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "csv",
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -1904,13 +1460,13 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private FusiontablesService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "column";
         
-        public ColumnResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ColumnResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes the column.</summary>
@@ -1953,20 +1509,51 @@ namespace Google.Apis.Fusiontables.v1 {
             return new UpdateRequest(service, body, tableId, columnId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _columnId;
             
             private string _tableId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string tableId, string columnId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tableId, string columnId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._columnId = columnId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1988,6 +1575,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2007,33 +1616,83 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "column";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/columns/{columnId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("columnId", Google.Apis.Util.Utilities.CreateRuntimeParameter("columnId", true, "path", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Column> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Column> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _columnId;
             
             private string _tableId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string tableId, string columnId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string tableId, string columnId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._columnId = columnId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2055,6 +1714,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2074,33 +1755,83 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "column";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/columns/{columnId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("columnId", Google.Apis.Util.Utilities.CreateRuntimeParameter("columnId", true, "path", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Column> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Column> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tableId;
             
             private Google.Apis.Fusiontables.v1.Data.Column _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2122,6 +1853,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2143,28 +1896,54 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "column";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/columns";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.ColumnList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.ColumnList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<long> _maxResults;
             
@@ -2172,9 +1951,32 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2196,6 +1998,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2229,24 +2053,52 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "column";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/columns";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Column> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Column> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _columnId;
             
@@ -2254,11 +2106,34 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Column _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId, string columnId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId, string columnId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
                 this._columnId = columnId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2280,6 +2155,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2309,28 +2206,55 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "column";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/columns/{columnId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("columnId", Google.Apis.Util.Utilities.CreateRuntimeParameter("columnId", true, "path", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Column> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Column> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _columnId;
             
@@ -2338,11 +2262,34 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Column _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId, string columnId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId, string columnId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
                 this._columnId = columnId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2364,6 +2311,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2393,20 +2362,39 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "column";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/columns/{columnId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("columnId", Google.Apis.Util.Utilities.CreateRuntimeParameter("columnId", true, "path", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2415,13 +2403,13 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private FusiontablesService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "query";
         
-        public QueryResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public QueryResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE/CREATE statement.</summary>
@@ -2436,11 +2424,19 @@ namespace Google.Apis.Fusiontables.v1 {
             return new SqlGetRequest(service, sql);
         }
         
-        public class SqlRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Sqlresponse> {
+        public class SqlRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Sqlresponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<bool> _hdrs;
             
@@ -2448,9 +2444,32 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private System.Nullable<bool> _typed;
             
-            public SqlRequest(Google.Apis.Discovery.IRequestProvider service, string sql) : 
+            public SqlRequest(Google.Apis.Discovery.IClientService service, string sql) : 
                     base(service) {
                 this._sql = sql;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2472,6 +2491,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2505,24 +2546,52 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "query";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "sql";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "query";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("hdrs", Google.Apis.Util.Utilities.CreateRuntimeParameter("hdrs", false, "query", null, null, new string[0]));
+                parameters.Add("sql", Google.Apis.Util.Utilities.CreateRuntimeParameter("sql", true, "query", null, null, new string[0]));
+                parameters.Add("typed", Google.Apis.Util.Utilities.CreateRuntimeParameter("typed", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class SqlGetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Sqlresponse> {
+        public class SqlGetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Sqlresponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<bool> _hdrs;
             
@@ -2530,9 +2599,32 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private System.Nullable<bool> _typed;
             
-            public SqlGetRequest(Google.Apis.Discovery.IRequestProvider service, string sql) : 
+            public SqlGetRequest(Google.Apis.Discovery.IClientService service, string sql) : 
                     base(service) {
                 this._sql = sql;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2554,6 +2646,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2587,16 +2701,36 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "query";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "sqlGet";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "query";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("hdrs", Google.Apis.Util.Utilities.CreateRuntimeParameter("hdrs", false, "query", null, null, new string[0]));
+                parameters.Add("sql", Google.Apis.Util.Utilities.CreateRuntimeParameter("sql", true, "query", null, null, new string[0]));
+                parameters.Add("typed", Google.Apis.Util.Utilities.CreateRuntimeParameter("typed", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2605,13 +2739,13 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private FusiontablesService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "style";
         
-        public StyleResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public StyleResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes a style.</summary>
@@ -2654,20 +2788,51 @@ namespace Google.Apis.Fusiontables.v1 {
             return new UpdateRequest(service, body, tableId, styleId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _styleId;
             
             private string _tableId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string tableId, long styleId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tableId, long styleId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._styleId = styleId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2689,6 +2854,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2708,33 +2895,83 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "style";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/styles/{styleId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("styleId", Google.Apis.Util.Utilities.CreateRuntimeParameter("styleId", true, "path", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSetting> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSetting> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _styleId;
             
             private string _tableId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string tableId, long styleId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string tableId, long styleId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._styleId = styleId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2756,6 +2993,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2775,33 +3034,83 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "style";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/styles/{styleId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("styleId", Google.Apis.Util.Utilities.CreateRuntimeParameter("styleId", true, "path", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSetting> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSetting> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tableId;
             
             private Google.Apis.Fusiontables.v1.Data.StyleSetting _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2823,6 +3132,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2844,28 +3175,54 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "style";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/styles";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSettingList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSettingList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<long> _maxResults;
             
@@ -2873,9 +3230,32 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2897,6 +3277,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2930,24 +3332,52 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "style";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/styles";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSetting> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSetting> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _styleId;
             
@@ -2955,11 +3385,34 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.StyleSetting _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId, long styleId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId, long styleId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
                 this._styleId = styleId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2981,6 +3434,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3010,28 +3485,55 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "style";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/styles/{styleId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("styleId", Google.Apis.Util.Utilities.CreateRuntimeParameter("styleId", true, "path", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSetting> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.StyleSetting> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _styleId;
             
@@ -3039,11 +3541,34 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.StyleSetting _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId, long styleId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId, long styleId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
                 this._styleId = styleId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3065,6 +3590,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3094,20 +3641,39 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "style";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/styles/{styleId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("styleId", Google.Apis.Util.Utilities.CreateRuntimeParameter("styleId", true, "path", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -3116,13 +3682,13 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private FusiontablesService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "table";
         
-        public TableResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public TableResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Copies a table.</summary>
@@ -3177,19 +3743,50 @@ namespace Google.Apis.Fusiontables.v1 {
             return new UpdateRequest(service, body, tableId);
         }
         
-        public class CopyRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+        public class CopyRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private System.Nullable<bool> _copyPresentation;
             
             private string _tableId;
             
-            public CopyRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
+            public CopyRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3211,6 +3808,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3233,30 +3852,80 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "table";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "copy";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/copy";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("copyPresentation", Google.Apis.Util.Utilities.CreateRuntimeParameter("copyPresentation", false, "query", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tableId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3278,6 +3947,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3289,30 +3980,79 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "table";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tableId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3334,6 +4074,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3345,24 +4107,50 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "table";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ImportRowsRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Import> {
+        public class ImportRowsRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Import> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _delimiter;
             
@@ -3376,9 +4164,32 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ImportRowsRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
+            public ImportRowsRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3400,6 +4211,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3466,24 +4299,55 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "table";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "importRows";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/import";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("delimiter", Google.Apis.Util.Utilities.CreateRuntimeParameter("delimiter", false, "query", null, null, new string[0]));
+                parameters.Add("encoding", Google.Apis.Util.Utilities.CreateRuntimeParameter("encoding", false, "query", null, null, new string[0]));
+                parameters.Add("endLine", Google.Apis.Util.Utilities.CreateRuntimeParameter("endLine", false, "query", null, null, new string[0]));
+                parameters.Add("isStrict", Google.Apis.Util.Utilities.CreateRuntimeParameter("isStrict", false, "query", null, null, new string[0]));
+                parameters.Add("startLine", Google.Apis.Util.Utilities.CreateRuntimeParameter("startLine", false, "query", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
         public class ImportRowsMediaUpload : Google.Apis.Upload.ResumableUpload<string, Google.Apis.Fusiontables.v1.Data.Import> {
             
+            private string _alt;
+            
+            private string _fields;
+            
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _delimiter;
             
@@ -3497,10 +4361,32 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ImportRowsMediaUpload(Google.Apis.Discovery.IRequestProvider service, string tableId, System.IO.Stream stream, string contentType) : 
+            public ImportRowsMediaUpload(Google.Apis.Discovery.IClientService service, string tableId, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/fusiontables/v1/tables/{tableId}/import", "POST", stream, contentType) {
                 this.Authenticator = service.Authenticator;
                 this._tableId = tableId;
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3522,6 +4408,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3589,17 +4497,48 @@ namespace Google.Apis.Fusiontables.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private Google.Apis.Fusiontables.v1.Data.Table _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.Table body) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Table body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3621,6 +4560,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3634,35 +4595,83 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "table";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.TableList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.TableList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private System.Nullable<long> _maxResults;
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3684,6 +4693,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3709,24 +4740,51 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "table";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<bool> _replaceViewDefinition;
             
@@ -3734,10 +4792,33 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Table _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.Table body, string tableId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Table body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3759,6 +4840,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3791,28 +4894,55 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "table";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("replaceViewDefinition", Google.Apis.Util.Utilities.CreateRuntimeParameter("replaceViewDefinition", false, "query", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<bool> _replaceViewDefinition;
             
@@ -3820,10 +4950,33 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Table _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.Table body, string tableId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Table body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3845,6 +4998,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3877,20 +5052,39 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "table";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("replaceViewDefinition", Google.Apis.Util.Utilities.CreateRuntimeParameter("replaceViewDefinition", false, "query", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -3899,13 +5093,13 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private FusiontablesService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "template";
         
-        public TemplateResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public TemplateResource(FusiontablesService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes a template</summary>
@@ -3948,20 +5142,51 @@ namespace Google.Apis.Fusiontables.v1 {
             return new UpdateRequest(service, body, tableId, templateId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tableId;
             
             private long _templateId;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string tableId, long templateId) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tableId, long templateId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._templateId = templateId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3983,6 +5208,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4002,33 +5249,83 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "template";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/templates/{templateId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                parameters.Add("templateId", Google.Apis.Util.Utilities.CreateRuntimeParameter("templateId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Template> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Template> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tableId;
             
             private long _templateId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string tableId, long templateId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string tableId, long templateId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._templateId = templateId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4050,6 +5347,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4069,33 +5388,83 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "template";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/templates/{templateId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                parameters.Add("templateId", Google.Apis.Util.Utilities.CreateRuntimeParameter("templateId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Template> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Template> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tableId;
             
             private Google.Apis.Fusiontables.v1.Data.Template _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4117,6 +5486,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4138,28 +5529,54 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "template";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/templates";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.TemplateList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.TemplateList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private System.Nullable<long> _maxResults;
             
@@ -4167,9 +5584,32 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4191,6 +5631,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4224,24 +5686,52 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "template";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/templates";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Template> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Template> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _tableId;
             
@@ -4249,11 +5739,34 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Template _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId, long templateId) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId, long templateId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
                 this._templateId = templateId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4275,6 +5788,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4304,28 +5839,55 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "template";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/templates/{templateId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                parameters.Add("templateId", Google.Apis.Util.Utilities.CreateRuntimeParameter("templateId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Template> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Fusiontables.v1.Data.Template> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _tableId;
             
@@ -4333,11 +5895,34 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Template _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId, long templateId) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId, long templateId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
                 this._templateId = templateId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4359,6 +5944,28 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4388,20 +5995,39 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "template";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "tables/{tableId}/templates/{templateId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tableId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tableId", true, "path", null, null, new string[0]));
+                parameters.Add("templateId", Google.Apis.Util.Utilities.CreateRuntimeParameter("templateId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4420,7 +6046,7 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private TemplateResource _template;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

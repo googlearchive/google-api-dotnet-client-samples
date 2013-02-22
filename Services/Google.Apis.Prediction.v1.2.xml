@@ -14,9 +14,6 @@
             <summary>Submit data and request a prediction</summary>
             <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
         </member>
-        <member name="P:Google.Apis.Prediction.v1_2.PredictionService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Prediction.v1_2.PredictionService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -26,11 +23,23 @@
         <member name="F:Google.Apis.Prediction.v1_2.PredictionService.Scopes.Prediction">
             <summary>Manage your data in the Google Prediction API</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.Data">
             <summary>mybucket%2Fmydata resource in Google Storage</summary>
@@ -42,11 +51,23 @@
             <summary>Submit input and request an output against a hosted model</summary>
             <param name="hostedModelName">Required - The name of a hosted model</param>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.HostedModelName">
             <summary>The name of a hosted model</summary>
@@ -69,14 +90,32 @@
             <summary>Add new data to a trained model</summary>
             <param name="data">Required - mybucket/mydata resource in Google Storage</param>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -84,8 +123,20 @@
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -93,17 +144,35 @@
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>

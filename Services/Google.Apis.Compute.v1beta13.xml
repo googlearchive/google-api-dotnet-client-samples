@@ -4,6 +4,9 @@
         <name>Google.Apis.Compute.v1beta13</name>
     </assembly>
     <members>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.AccessConfig">
+            <summary>An access configuration attached to an instance&apos;s network interface.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.AccessConfig.Kind">
             <summary>Type of the resource.</summary>
         </member>
@@ -15,6 +18,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.AccessConfig.Type">
             <summary>Type of configuration. Must be set to &quot;ONE_TO_ONE_NAT&quot;. This configures port-for-port NAT to the internet.</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.AttachedDisk">
+            <summary>An instance-attached disk resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.AttachedDisk.DeleteOnTerminate">
             <summary>Persistent disk only; If true, delete the disk and all its data when the associated instance is deleted. This property defaults to false if not specified.</summary>
@@ -36,6 +42,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.AttachedDisk.Type">
             <summary>Type of the disk, either &quot;EPHEMERAL&quot; or &quot;PERSISTENT&quot;. Note that persistent disks must be created before you can specify them here.</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Disk">
+            <summary>A persistent disk resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Disk.CreationTimestamp">
             <summary>Creation timestamp in RFC3339 text format (output only).</summary>
@@ -73,6 +82,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.Disk.Zone">
             <summary>URL for the zone where the persistent disk resides; provided by the client when the disk is created. A persistent disk must reside in the same zone as the instance to which it is attached.</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.DiskList">
+            <summary>Contains a list of persistent disk resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.DiskList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -87,6 +99,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.DiskList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Firewall">
+            <summary>A firewall resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Firewall.Allowed">
             <summary>The list of rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a permitted connection.</summary>
@@ -128,6 +143,9 @@
              <summary>An optional list of ports which are allowed. It is an error to specify this for any protocol that isn&apos;t UDP or TCP. Each entry must be either an integer or a range. If not specified, connections through any port are allowed.
             Example inputs include: [&quot;22&quot;], [&quot;80,&quot;443&quot;] and [&quot;12345-12349&quot;].</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.FirewallList">
+            <summary>Contains a list of firewall resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.FirewallList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -142,6 +160,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.FirewallList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Image">
+            <summary>A disk image resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Image.CreationTimestamp">
             <summary>Creation timestamp in RFC3339 text format (output only).</summary>
@@ -191,6 +212,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.Image.RawDiskData.Source">
             <summary>The full Google Cloud Storage URL where the disk image is stored; provided by the client when the disk image is created.</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.ImageList">
+            <summary>Contains a list of disk image resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.ImageList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -205,6 +229,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.ImageList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Instance">
+            <summary>An instance resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Instance.CreationTimestamp">
             <summary>Creation timestamp in RFC3339 text format (output only).</summary>
@@ -226,6 +253,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Instance.MachineType">
             <summary>URL of the machine type resource describing which machine type to use to host the instance; provided by the client when the instance is created.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.Data.Instance.Metadata">
+            <summary>A metadata key/value entry.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Instance.Name">
             <summary>Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.</summary>
@@ -251,6 +281,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.Instance.Zone">
             <summary>URL of the zone resource describing where this instance should be hosted; provided by the client when the instance is created.</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.InstanceList">
+            <summary>Contains a list of instance resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.InstanceList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -265,6 +298,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.InstanceList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Kernel">
+            <summary>A kernel resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Kernel.CreationTimestamp">
             <summary>Creation timestamp in RFC3339 text format (output only).</summary>
@@ -284,6 +320,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.Kernel.SelfLink">
             <summary>Server defined URL for the resource (output only).</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.KernelList">
+            <summary>Contains a list of kernel resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.KernelList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -298,6 +337,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.KernelList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.MachineType">
+            <summary>A machine type resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.MachineType.AvailableZone">
             <summary>The zones that this machine type can run in.</summary>
@@ -341,6 +383,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.MachineType.EphemeralDisksData.DiskGb">
             <summary>Size of the ephemeral disk, defined in GB.</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.MachineTypeList">
+            <summary>Contains a list of machine type resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.MachineTypeList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -356,6 +401,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.MachineTypeList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Metadata">
+            <summary>A metadata key/value entry.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Metadata.Items">
             <summary>Array of key/value pairs. The total size of all keys and values must be less than 512 KB.</summary>
         </member>
@@ -367,6 +415,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Metadata.ItemsData.Value">
             <summary>Value for the metadata entry. These are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on values is that their size must be less than or equal to 32768 bytes.</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Network">
+            <summary>A network resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Network.IPv4Range">
             <summary>Required; The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.</summary>
@@ -392,6 +443,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.Network.SelfLink">
             <summary>Server defined URL for the resource (output only).</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.NetworkInterface">
+            <summary>A network interface resource attached to an instance.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.NetworkInterface.AccessConfigs">
             <summary>Array of configurations for this interface. This specifies how this interface is configured to interact with other network services, such as connecting to the internet. Currently, ONE_TO_ONE_NAT is the only access config supported. If there are no accessConfigs specified, then this instance will have no external internet access.</summary>
         </member>
@@ -407,6 +461,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.NetworkInterface.NetworkIP">
             <summary>An optional IPV4 internal network address to assign to this instance. If not specified, one will be assigned from the available range.</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.NetworkList">
+            <summary>Contains a list of network resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.NetworkList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -421,6 +478,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.NetworkList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Operation">
+            <summary>An operation resource, used to manage asynchronous API requests.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Operation.ClientOperationId">
             <summary>An optional identifier specified by the client when the mutation was initiated. Must be unique for all operation resources in the project (output only).</summary>
@@ -494,6 +554,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.Operation.ErrorData.ErrorsData.Message">
             <summary>An optional, human-readable error message.</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.OperationList">
+            <summary>Contains a list of operation resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.OperationList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -508,6 +571,12 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.OperationList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Project">
+            <summary>A project resource. Projects can be created only in the APIs Console. Unless marked otherwise, values can only be modified in the console.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.Data.Project.CommonInstanceMetadata">
+            <summary>A metadata key/value entry.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Project.CreationTimestamp">
             <summary>Creation timestamp in RFC3339 text format (output only).</summary>
@@ -554,6 +623,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.SerialPortOutput.SelfLink">
             <summary>Server defined URL for the resource.</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.ServiceAccount">
+            <summary>A service account.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.ServiceAccount.Email">
             <summary>Email address of the service account.</summary>
         </member>
@@ -562,6 +634,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.ServiceAccount.Scopes">
             <summary>The list of scopes to be made available for this service account.</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Snapshot">
+            <summary>A persistent disk snapshot resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Snapshot.CreationTimestamp">
             <summary>Creation timestamp in RFC3339 text format (output only).</summary>
@@ -593,6 +668,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.Snapshot.Status">
             <summary>The status of the persistent disk snapshot (output only).</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.SnapshotList">
+            <summary>Contains a list of persistent disk snapshot resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.SnapshotList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -607,6 +685,9 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.SnapshotList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.Zone">
+            <summary>A zone resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.Zone.AvailableMachineType">
             <summary>The machine types that can be used in this zone (output only).</summary>
@@ -647,6 +728,9 @@
         <member name="P:Google.Apis.Compute.v1beta13.Data.Zone.MaintenanceWindowsData.Name">
             <summary>Name of the maintenance window.</summary>
         </member>
+        <member name="T:Google.Apis.Compute.v1beta13.Data.ZoneList">
+            <summary>Contains a list of zone resources.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.ZoneList.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
@@ -661,9 +745,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.Data.ZoneList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta13.ComputeService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
         <member name="T:Google.Apis.Compute.v1beta13.ComputeService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -695,11 +776,23 @@
             <summary>Retrieves the list of persistent disk resources contained within the specified project.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.DeleteRequest.Disk">
             <summary>Name of the persistent disk resource to delete.</summary>
@@ -707,11 +800,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.DeleteRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.GetRequest.Disk">
             <summary>Name of the persistent disk resource to return.</summary>
@@ -719,11 +824,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -731,11 +848,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.DisksResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.DisksResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -777,11 +906,23 @@
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
             <param name="firewall">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the firewall resource to update.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.DeleteRequest.Firewall">
             <summary>Name of the firewall resource to delete.</summary>
@@ -789,11 +930,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.DeleteRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.GetRequest.Firewall">
             <summary>Name of the firewall resource to return.</summary>
@@ -801,11 +954,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -813,11 +978,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -831,11 +1008,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.ListRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.PatchRequest.Firewall">
             <summary>Name of the firewall resource to update.</summary>
@@ -846,11 +1035,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.FirewallsResource.UpdateRequest.Firewall">
             <summary>Name of the firewall resource to update.</summary>
@@ -879,11 +1080,23 @@
             <summary>Retrieves the list of image resources available to the specified project.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.DeleteRequest.Image">
             <summary>Name of the image resource to delete.</summary>
@@ -891,11 +1104,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.DeleteRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.GetRequest.Image">
             <summary>Name of the image resource to return.</summary>
@@ -903,11 +1128,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -915,11 +1152,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ImagesResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -969,11 +1218,23 @@
             <summary>Retrieves the list of instance resources contained within the specified project.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.AddAccessConfigRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.AddAccessConfigRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.AddAccessConfigRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.AddAccessConfigRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.AddAccessConfigRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.AddAccessConfigRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.AddAccessConfigRequest.Instance">
             <summary>Instance name.</summary>
@@ -987,11 +1248,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.AddAccessConfigRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteRequest.Instance">
             <summary>Name of the instance resource to delete.</summary>
@@ -999,11 +1272,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteAccessConfigRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteAccessConfigRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteAccessConfigRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteAccessConfigRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteAccessConfigRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteAccessConfigRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteAccessConfigRequest.Access_config">
             <summary>Access config name.</summary>
@@ -1017,11 +1302,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.DeleteAccessConfigRequest.Project">
             <summary>Project name.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetRequest.Instance">
             <summary>Name of the instance resource to return.</summary>
@@ -1029,11 +1326,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetSerialPortOutputRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetSerialPortOutputRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetSerialPortOutputRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetSerialPortOutputRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetSerialPortOutputRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetSerialPortOutputRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetSerialPortOutputRequest.Instance">
             <summary>Name of the instance scoping this request.</summary>
@@ -1041,11 +1350,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.GetSerialPortOutputRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -1053,11 +1374,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.InstancesResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1080,11 +1413,23 @@
             <summary>Retrieves the list of kernel resources available to the specified project.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.GetRequest.Kernel">
             <summary>Name of the kernel resource to return.</summary>
@@ -1092,11 +1437,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.KernelsResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1119,11 +1476,23 @@
             <summary>Retrieves the list of machine type resources available to the specified project.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.GetRequest.MachineType">
             <summary>Name of the machine type resource to return.</summary>
@@ -1131,11 +1500,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.MachineTypesResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1167,11 +1548,23 @@
             <summary>Retrieves the list of network resources available to the specified project.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.DeleteRequest.Network">
             <summary>Name of the network resource to delete.</summary>
@@ -1179,11 +1572,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.DeleteRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.GetRequest.Network">
             <summary>Name of the network resource to return.</summary>
@@ -1191,11 +1596,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -1203,11 +1620,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.NetworksResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1235,11 +1664,23 @@
             <summary>Retrieves the list of operation resources contained within the specified project.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.DeleteRequest.Operation">
             <summary>Name of the operation resource to delete.</summary>
@@ -1247,11 +1688,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.DeleteRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.GetRequest.Operation">
             <summary>Name of the operation resource to return.</summary>
@@ -1259,11 +1712,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.OperationsResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1285,20 +1750,44 @@
             <summary>Sets metadata common to all instances within the specified project using the data included in the request.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.GetRequest.Project">
             <summary>Name of the project resource to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.SetCommonInstanceMetadataRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.SetCommonInstanceMetadataRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.SetCommonInstanceMetadataRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.SetCommonInstanceMetadataRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.SetCommonInstanceMetadataRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.SetCommonInstanceMetadataRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ProjectsResource.SetCommonInstanceMetadataRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -1324,11 +1813,23 @@
             <summary>Retrieves the list of persistent disk snapshot resources contained within the specified project.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.DeleteRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -1336,11 +1837,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.DeleteRequest.Snapshot">
             <summary>Name of the persistent disk snapshot resource to delete.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -1348,11 +1861,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.GetRequest.Snapshot">
             <summary>Name of the persistent disk snapshot resource to return.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -1360,11 +1885,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.SnapshotsResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1387,11 +1924,23 @@
             <summary>Retrieves the list of zone resources available to the specified project.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -1399,11 +1948,23 @@
         <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.GetRequest.Zone">
             <summary>Name of the zone resource to return.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta13.ZonesResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>

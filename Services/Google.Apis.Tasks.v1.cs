@@ -453,271 +453,68 @@ namespace Google.Apis.Tasks.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class TasksService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/-FRO-hz" +
-            "ZfDWPF3fu3VkP7b9BOUQ\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"tasks:v1\",\"name\":\"tasks\",\"" +
-            "version\":\"v1\",\"revision\":\"20111027\",\"title\":\"Tasks API\",\"description\":\"Lets you " +
-            "manage your tasks and task lists.\",\"icons\":{\"x16\":\"http://www.google.com/images/" +
-            "icons/product/tasks-16.png\",\"x32\":\"http://www.google.com/images/icons/product/ta" +
-            "sks-32.png\"},\"documentationLink\":\"http://code.google.com/apis/tasks/v1/using.htm" +
-            "l\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/tasks/v1/\",\"basePath\"" +
-            ":\"/tasks/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"tasks/v1/\"," +
-            "\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data for" +
-            "mat for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Res" +
-            "ponses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Selector specifying which fields to include in a par" +
-            "tial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API ke" +
-            "y. Your API key identifies your project and provides you with API access, quota," +
-            " and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query" +
-            "\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current" +
-            " user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Retur" +
-            "ns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"que" +
-            "ry\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purp" +
-            "oses for server-side applications. Can be any arbitrary string assigned to a use" +
-            "r, but should not exceed 40 characters. Overrides userIp if both are provided.\"," +
-            "\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the s" +
-            "ite where the request originates. Use this if you want to enforce per-user limit" +
-            "s.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com" +
-            "/auth/tasks\":{\"description\":\"Manage your tasks\"},\"https://www.googleapis.com/aut" +
-            "h/tasks.readonly\":{\"description\":\"View your tasks\"}}}},\"schemas\":{\"Task\":{\"id\":\"" +
-            "Task\",\"type\":\"object\",\"properties\":{\"completed\":{\"type\":\"string\",\"description\":\"" +
-            "Completion date of the task (as a RFC 3339 timestamp). This field is omitted if " +
-            "the task has not been completed.\",\"format\":\"date-time\"},\"deleted\":{\"type\":\"boole" +
-            "an\",\"description\":\"Flag indicating whether the task has been deleted. The defaul" +
-            "t if False.\"},\"due\":{\"type\":\"string\",\"description\":\"Due date of the task (as a R" +
-            "FC 3339 timestamp). Optional.\",\"format\":\"date-time\"},\"etag\":{\"type\":\"string\",\"de" +
-            "scription\":\"ETag of the resource.\"},\"hidden\":{\"type\":\"boolean\",\"description\":\"Fl" +
-            "ag indicating whether the task is hidden. This is the case if the task had been " +
-            "marked completed when the task list was last cleared. The default is False. This" +
-            " field is read-only.\"},\"id\":{\"type\":\"string\",\"description\":\"Task identifier.\"},\"" +
-            "kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This is always \\\"tas" +
-            "ks#task\\\".\",\"default\":\"tasks#task\"},\"links\":{\"type\":\"array\",\"description\":\"Colle" +
-            "ction of links. This collection is read-only.\",\"items\":{\"type\":\"object\",\"propert" +
-            "ies\":{\"description\":{\"type\":\"string\",\"description\":\"The description. In HTML spe" +
-            "ak: Everything between <a> and </a>.\"},\"link\":{\"type\":\"string\",\"description\":\"Th" +
-            "e URL.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the link, e.g. \\\"email\\\"" +
-            ".\"}}}},\"notes\":{\"type\":\"string\",\"description\":\"Notes describing the task. Option" +
-            "al.\"},\"parent\":{\"type\":\"string\",\"description\":\"Parent task identifier. This fiel" +
-            "d is omitted if it is a top-level task. This field is read-only. Use the \\\"move\\" +
-            "\" method to move the task under a different parent or to the top level.\"},\"posit" +
-            "ion\":{\"type\":\"string\",\"description\":\"String indicating the position of the task " +
-            "among its sibling tasks under the same parent task or at the top level. If this " +
-            "string is greater than another task\'s corresponding position string according to" +
-            " lexicographical ordering, the task is positioned after the other task under the" +
-            " same parent task (or at the top level). This field is read-only. Use the \\\"move" +
-            "\\\" method to move the task to another position.\"},\"selfLink\":{\"type\":\"string\",\"d" +
-            "escription\":\"URL pointing to this task. Used to retrieve, update, or delete this" +
-            " task.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the task. This is ei" +
-            "ther \\\"needsAction\\\" or \\\"completed\\\".\"},\"title\":{\"type\":\"string\",\"description\":" +
-            "\"Title of the task.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modificatio" +
-            "n time of the task (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}},\"TaskList" +
-            "\":{\"id\":\"TaskList\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"descri" +
-            "ption\":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Task list i" +
-            "dentifier.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This i" +
-            "s always \\\"tasks#taskList\\\".\",\"default\":\"tasks#taskList\"},\"selfLink\":{\"type\":\"st" +
-            "ring\",\"description\":\"URL pointing to this task list. Used to retrieve, update, o" +
-            "r delete this task list.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of the " +
-            "task list.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of" +
-            " the task list (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}},\"TaskLists\":{" +
-            "\"id\":\"TaskLists\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"descript" +
-            "ion\":\"ETag of the resource.\"},\"items\":{\"type\":\"array\",\"description\":\"Collection " +
-            "of task lists.\",\"items\":{\"$ref\":\"TaskList\"}},\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Type of the resource. This is always \\\"tasks#taskLists\\\".\",\"default\":\"tasks#" +
-            "taskLists\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token that can be us" +
-            "ed to request the next page of this result.\"}}},\"Tasks\":{\"id\":\"Tasks\",\"type\":\"ob" +
-            "ject\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resource." +
-            "\"},\"items\":{\"type\":\"array\",\"description\":\"Collection of tasks.\",\"items\":{\"$ref\":" +
-            "\"Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This is al" +
-            "ways \\\"tasks#tasks\\\".\",\"default\":\"tasks#tasks\"},\"nextPageToken\":{\"type\":\"string\"" +
-            ",\"description\":\"Token used to access the next page of this result.\"}}}},\"resourc" +
-            "es\":{\"tasklists\":{\"methods\":{\"delete\":{\"id\":\"tasks.tasklists.delete\",\"path\":\"use" +
-            "rs/@me/lists/{tasklist}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the authen" +
-            "ticated user\'s specified task list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"" +
-            "description\":\"Task list identifier.\",\"required\":true,\"location\":\"path\"}},\"parame" +
-            "terOrder\":[\"tasklist\"],\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]},\"get\"" +
-            ":{\"id\":\"tasks.tasklists.get\",\"path\":\"users/@me/lists/{tasklist}\",\"httpMethod\":\"G" +
-            "ET\",\"description\":\"Returns the authenticated user\'s specified task list.\",\"param" +
-            "eters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"requi" +
-            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"response\":{\"$ref\":\"" +
-            "TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\",\"https://www.google" +
-            "apis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"tasks.tasklists.insert\",\"path\":\"" +
-            "users/@me/lists\",\"httpMethod\":\"POST\",\"description\":\"Creates a new task list and " +
-            "adds it to the authenticated user\'s task lists.\",\"request\":{\"$ref\":\"TaskList\"},\"" +
-            "response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]" +
-            "},\"list\":{\"id\":\"tasks.tasklists.list\",\"path\":\"users/@me/lists\",\"httpMethod\":\"GET" +
-            "\",\"description\":\"Returns all the authenticated user\'s task lists.\",\"parameters\":" +
-            "{\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number of task lists retur" +
-            "ned on one page. Optional. The default is 100.\",\"format\":\"int64\",\"location\":\"que" +
-            "ry\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying the result pag" +
-            "e to return. Optional.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"TaskLists\"},\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/tasks\",\"https://www.googleapis.com/auth/" +
-            "tasks.readonly\"]},\"patch\":{\"id\":\"tasks.tasklists.patch\",\"path\":\"users/@me/lists/" +
-            "{tasklist}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the authenticated user\'s" +
-            " specified task list. This method supports patch semantics.\",\"parameters\":{\"task" +
-            "list\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"lo" +
-            "cation\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"request\":{\"$ref\":\"TaskList\"},\"re" +
-            "sponse\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]}," +
-            "\"update\":{\"id\":\"tasks.tasklists.update\",\"path\":\"users/@me/lists/{tasklist}\",\"htt" +
-            "pMethod\":\"PUT\",\"description\":\"Updates the authenticated user\'s specified task li" +
-            "st.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifi" +
-            "er.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"request\"" +
-            ":{\"$ref\":\"TaskList\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/tasks\"]}}},\"tasks\":{\"methods\":{\"clear\":{\"id\":\"tasks.tasks.clear\"," +
-            "\"path\":\"lists/{tasklist}/clear\",\"httpMethod\":\"POST\",\"description\":\"Clears all co" +
-            "mpleted tasks from the specified task list. The affected tasks will be marked as" +
-            " \'hidden\' and no longer be returned by default when retrieving all tasks for a t" +
-            "ask list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list id" +
-            "entifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/tasks\"]},\"delete\":{\"id\":\"tasks.tasks.del" +
-            "ete\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"httpMethod\":\"DELETE\",\"description\":" +
-            "\"Deletes the specified task from the task list.\",\"parameters\":{\"task\":{\"type\":\"s" +
-            "tring\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"task" +
-            "list\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"lo" +
-            "cation\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"scopes\":[\"https://www.goo" +
-            "gleapis.com/auth/tasks\"]},\"get\":{\"id\":\"tasks.tasks.get\",\"path\":\"lists/{tasklist}" +
-            "/tasks/{task}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified task.\",\"p" +
-            "arameters\":{\"task\":{\"type\":\"string\",\"description\":\"Task identifier.\",\"required\":" +
-            "true,\"location\":\"path\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task list ide" +
-            "ntifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task" +
-            "\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"," +
-            "\"https://www.googleapis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"tasks.tasks.i" +
-            "nsert\",\"path\":\"lists/{tasklist}/tasks\",\"httpMethod\":\"POST\",\"description\":\"Create" +
-            "s a new task on the specified task list.\",\"parameters\":{\"parent\":{\"type\":\"string" +
-            "\",\"description\":\"Parent task identifier. If the task is created at the top level" +
-            ", this parameter is omitted. Optional.\",\"location\":\"query\"},\"previous\":{\"type\":\"" +
-            "string\",\"description\":\"Previous sibling task identifier. If the task is created " +
-            "at the first position among its siblings, this parameter is omitted. Optional.\"," +
-            "\"location\":\"query\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identif" +
-            "ier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"request" +
-            "\":{\"$ref\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/tasks\"]},\"list\":{\"id\":\"tasks.tasks.list\",\"path\":\"lists/{tasklist}/tasks\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Returns all tasks in the specified task list." +
-            "\",\"parameters\":{\"completedMax\":{\"type\":\"string\",\"description\":\"Upper bound for a" +
-            " task\'s completion date (as a RFC 3339 timestamp) to filter by. Optional. The de" +
-            "fault is not to filter by completion date.\",\"location\":\"query\"},\"completedMin\":{" +
-            "\"type\":\"string\",\"description\":\"Lower bound for a task\'s completion date (as a RF" +
-            "C 3339 timestamp) to filter by. Optional. The default is not to filter by comple" +
-            "tion date.\",\"location\":\"query\"},\"dueMax\":{\"type\":\"string\",\"description\":\"Upper b" +
-            "ound for a task\'s due date (as a RFC 3339 timestamp) to filter by. Optional. The" +
-            " default is not to filter by due date.\",\"location\":\"query\"},\"dueMin\":{\"type\":\"st" +
-            "ring\",\"description\":\"Lower bound for a task\'s due date (as a RFC 3339 timestamp)" +
-            " to filter by. Optional. The default is not to filter by due date.\",\"location\":\"" +
-            "query\"},\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number of task list" +
-            "s returned on one page. Optional. The default is 100.\",\"format\":\"int64\",\"locatio" +
-            "n\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying the res" +
-            "ult page to return. Optional.\",\"location\":\"query\"},\"showCompleted\":{\"type\":\"bool" +
-            "ean\",\"description\":\"Flag indicating whether completed tasks are returned in the " +
-            "result. Optional. The default is True.\",\"location\":\"query\"},\"showDeleted\":{\"type" +
-            "\":\"boolean\",\"description\":\"Flag indicating whether deleted tasks are returned in" +
-            " the result. Optional. The default is False.\",\"location\":\"query\"},\"showHidden\":{" +
-            "\"type\":\"boolean\",\"description\":\"Flag indicating whether hidden tasks are returne" +
-            "d in the result. Optional. The default is False.\",\"location\":\"query\"},\"tasklist\"" +
-            ":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"locatio" +
-            "n\":\"path\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"Lower bound for a task\'s" +
-            " last modification time (as a RFC 3339 timestamp) to filter by. Optional. The de" +
-            "fault is not to filter by last modification time.\",\"location\":\"query\"}},\"paramet" +
-            "erOrder\":[\"tasklist\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/tasks\",\"https://www.googleapis.com/auth/tasks.readonly\"]},\"move\":{\"" +
-            "id\":\"tasks.tasks.move\",\"path\":\"lists/{tasklist}/tasks/{task}/move\",\"httpMethod\":" +
-            "\"POST\",\"description\":\"Moves the specified task to another position in the task l" +
-            "ist. This can include putting it as a child task under a new parent and/or move " +
-            "it to a different position among its sibling tasks.\",\"parameters\":{\"parent\":{\"ty" +
-            "pe\":\"string\",\"description\":\"New parent task identifier. If the task is moved to " +
-            "the top level, this parameter is omitted. Optional.\",\"location\":\"query\"},\"previo" +
-            "us\":{\"type\":\"string\",\"description\":\"New previous sibling task identifier. If the" +
-            " task is moved to the first position among its siblings, this parameter is omitt" +
-            "ed. Optional.\",\"location\":\"query\"},\"task\":{\"type\":\"string\",\"description\":\"Task i" +
-            "dentifier.\",\"required\":true,\"location\":\"path\"},\"tasklist\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Task list identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"tasklist\",\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/tasks\"]},\"patch\":{\"id\":\"tasks.tasks.patch\",\"path\":\"lists/{taskli" +
-            "st}/tasks/{task}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the specified task" +
-            ". This method supports patch semantics.\",\"parameters\":{\"task\":{\"type\":\"string\",\"" +
-            "description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"tasklist\":{\"" +
-            "type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"location\":" +
-            "\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$ref\":\"Task\"},\"respons" +
-            "e\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]},\"update\":" +
-            "{\"id\":\"tasks.tasks.update\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"httpMethod\":\"" +
-            "PUT\",\"description\":\"Updates the specified task.\",\"parameters\":{\"task\":{\"type\":\"s" +
-            "tring\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"task" +
-            "list\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"lo" +
-            "cation\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$ref\":\"Task\"}," +
-            "\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]}}}" +
-            "}}";
+    public partial class TasksService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected TasksService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._tasklists = new TasklistsResource(this, _authenticator);
-            this._tasks = new TasksResource(this, _authenticator);
+        public TasksService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._tasklists = new TasklistsResource(this, Authenticator);
+            this._tasks = new TasksResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public TasksService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public TasksService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TasksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/tasks/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "tasks";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/tasks/v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -737,13 +534,13 @@ namespace Google.Apis.Tasks.v1 {
         
         private TasksService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "tasklists";
         
-        public TasklistsResource(TasksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public TasklistsResource(TasksService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes the authenticated user&apos;s specified task list.</summary>
@@ -780,17 +577,48 @@ namespace Google.Apis.Tasks.v1 {
             return new UpdateRequest(service, body, tasklist);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tasklist;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tasklist) : 
                     base(service) {
                 this._tasklist = tasklist;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -815,6 +643,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Task list identifier.</summary>
             [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
@@ -823,30 +673,79 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasklists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "users/@me/lists/{tasklist}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tasklist;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string tasklist) : 
                     base(service) {
                 this._tasklist = tasklist;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -868,6 +767,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -879,30 +800,79 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasklists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "users/@me/lists/{tasklist}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private Google.Apis.Tasks.v1.Data.TaskList _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.TaskList body) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.TaskList body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -924,6 +894,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -937,35 +929,83 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasklists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "users/@me/lists";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskLists> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.TaskLists> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _maxResults;
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -987,6 +1027,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1012,33 +1074,83 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasklists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "users/@me/lists";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tasklist;
             
             private Google.Apis.Tasks.v1.Data.TaskList _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1063,6 +1175,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Task list identifier.</summary>
             [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
@@ -1081,37 +1215,86 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasklists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "users/@me/lists/{tasklist}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tasklist;
             
             private Google.Apis.Tasks.v1.Data.TaskList _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1136,6 +1319,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Task list identifier.</summary>
             [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
@@ -1154,20 +1359,38 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasklists";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "users/@me/lists/{tasklist}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1176,13 +1399,13 @@ namespace Google.Apis.Tasks.v1 {
         
         private TasksService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "tasks";
         
-        public TasksResource(TasksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public TasksResource(TasksService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Clears all completed tasks from the specified task list. The affected tasks will be marked as &apos;hidden&apos; and no longer be returned by default when retrieving all tasks for a task list.</summary>
@@ -1238,17 +1461,48 @@ namespace Google.Apis.Tasks.v1 {
             return new UpdateRequest(service, body, tasklist, task);
         }
         
-        public class ClearRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class ClearRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _tasklist;
             
-            public ClearRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist) : 
+            public ClearRequest(Google.Apis.Discovery.IClientService service, string tasklist) : 
                     base(service) {
                 this._tasklist = tasklist;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1273,6 +1527,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Task list identifier.</summary>
             [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
@@ -1281,33 +1557,82 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "clear";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "lists/{tasklist}/clear";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _task;
             
             private string _tasklist;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist, string task) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tasklist, string task) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this._task = task;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1332,6 +1657,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Task identifier.</summary>
             [Google.Apis.Util.RequestParameterAttribute("task", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Task {
@@ -1348,33 +1695,83 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "lists/{tasklist}/tasks/{task}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("task", Google.Apis.Util.Utilities.CreateRuntimeParameter("task", true, "path", null, null, new string[0]));
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _task;
             
             private string _tasklist;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist, string task) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string tasklist, string task) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this._task = task;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1399,6 +1796,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Task identifier.</summary>
             [Google.Apis.Util.RequestParameterAttribute("task", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Task {
@@ -1415,24 +1834,51 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "lists/{tasklist}/tasks/{task}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("task", Google.Apis.Util.Utilities.CreateRuntimeParameter("task", true, "path", null, null, new string[0]));
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _parent;
             
@@ -1442,10 +1888,33 @@ namespace Google.Apis.Tasks.v1 {
             
             private Google.Apis.Tasks.v1.Data.Task _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.Task body, string tasklist) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.Task body, string tasklist) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1467,6 +1936,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1510,28 +2001,56 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "lists/{tasklist}/tasks";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("parent", Google.Apis.Util.Utilities.CreateRuntimeParameter("parent", false, "query", null, null, new string[0]));
+                parameters.Add("previous", Google.Apis.Util.Utilities.CreateRuntimeParameter("previous", false, "query", null, null, new string[0]));
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Tasks> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.Tasks> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _completedMax;
             
@@ -1555,9 +2074,32 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _updatedMin;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string tasklist) : 
                     base(service) {
                 this._tasklist = tasklist;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1579,6 +2121,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1700,24 +2264,60 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "lists/{tasklist}/tasks";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("completedMax", Google.Apis.Util.Utilities.CreateRuntimeParameter("completedMax", false, "query", null, null, new string[0]));
+                parameters.Add("completedMin", Google.Apis.Util.Utilities.CreateRuntimeParameter("completedMin", false, "query", null, null, new string[0]));
+                parameters.Add("dueMax", Google.Apis.Util.Utilities.CreateRuntimeParameter("dueMax", false, "query", null, null, new string[0]));
+                parameters.Add("dueMin", Google.Apis.Util.Utilities.CreateRuntimeParameter("dueMin", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("showCompleted", Google.Apis.Util.Utilities.CreateRuntimeParameter("showCompleted", false, "query", null, null, new string[0]));
+                parameters.Add("showDeleted", Google.Apis.Util.Utilities.CreateRuntimeParameter("showDeleted", false, "query", null, null, new string[0]));
+                parameters.Add("showHidden", Google.Apis.Util.Utilities.CreateRuntimeParameter("showHidden", false, "query", null, null, new string[0]));
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                parameters.Add("updatedMin", Google.Apis.Util.Utilities.CreateRuntimeParameter("updatedMin", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class MoveRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class MoveRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _parent;
             
@@ -1727,10 +2327,33 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _tasklist;
             
-            public MoveRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist, string task) : 
+            public MoveRequest(Google.Apis.Discovery.IClientService service, string tasklist, string task) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this._task = task;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1752,6 +2375,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1793,24 +2438,53 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "move";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "lists/{tasklist}/tasks/{task}/move";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("parent", Google.Apis.Util.Utilities.CreateRuntimeParameter("parent", false, "query", null, null, new string[0]));
+                parameters.Add("previous", Google.Apis.Util.Utilities.CreateRuntimeParameter("previous", false, "query", null, null, new string[0]));
+                parameters.Add("task", Google.Apis.Util.Utilities.CreateRuntimeParameter("task", true, "path", null, null, new string[0]));
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _task;
             
@@ -1818,11 +2492,34 @@ namespace Google.Apis.Tasks.v1 {
             
             private Google.Apis.Tasks.v1.Data.Task _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
                 this._task = task;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1844,6 +2541,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1873,28 +2592,55 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "lists/{tasklist}/tasks/{task}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("task", Google.Apis.Util.Utilities.CreateRuntimeParameter("task", true, "path", null, null, new string[0]));
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _task;
             
@@ -1902,11 +2648,34 @@ namespace Google.Apis.Tasks.v1 {
             
             private Google.Apis.Tasks.v1.Data.Task _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
                 this._task = task;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1928,6 +2697,28 @@ namespace Google.Apis.Tasks.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1957,20 +2748,39 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tasks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "lists/{tasklist}/tasks/{task}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("task", Google.Apis.Util.Utilities.CreateRuntimeParameter("task", true, "path", null, null, new string[0]));
+                parameters.Add("tasklist", Google.Apis.Util.Utilities.CreateRuntimeParameter("tasklist", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1983,7 +2793,7 @@ namespace Google.Apis.Tasks.v1 {
         
         private TasksResource _tasks;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

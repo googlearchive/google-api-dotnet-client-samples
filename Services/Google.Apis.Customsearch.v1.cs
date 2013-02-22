@@ -1209,240 +1209,68 @@ namespace Google.Apis.Customsearch.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class CustomsearchService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/0cxOkw9" +
-            "W6EofdmPQ-VQv5tyikiQ\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"customsearch:v1\",\"name\":\"c" +
-            "ustomsearch\",\"version\":\"v1\",\"revision\":\"20120904\",\"title\":\"CustomSearch API\",\"de" +
-            "scription\":\"Lets you search over a website or collection of websites\",\"icons\":{\"" +
-            "x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://ww" +
-            "w.google.com/images/icons/product/search-32.gif\"},\"documentationLink\":\"https://d" +
-            "evelopers.google.com/custom-search/v1/using_rest\",\"protocol\":\"rest\",\"baseUrl\":\"h" +
-            "ttps://www.googleapis.com/customsearch/\",\"basePath\":\"/customsearch/\",\"rootUrl\":\"" +
-            "https://www.googleapis.com/\",\"servicePath\":\"customsearch/\",\"batchPath\":\"batch\",\"" +
-            "parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response." +
-            "\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with Co" +
-            "ntent-Type of application/atom+xml\",\"Responses with Content-Type of application/" +
-            "json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector spe" +
-            "cifying which fields to include in a partial response.\",\"location\":\"query\"},\"key" +
-            "\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project " +
-            "and provides you with API access, quota, and reports. Required unless you provid" +
-            "e an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descr" +
-            "iption\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint" +
-            "\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line b" +
-            "reaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Available to use for quota purposes for server-side applications. Can b" +
-            "e any arbitrary string assigned to a user, but should not exceed 40 characters. " +
-            "Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"st" +
-            "ring\",\"description\":\"IP address of the site where the request originates. Use th" +
-            "is if you want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"Con" +
-            "text\":{\"id\":\"Context\",\"type\":\"object\",\"properties\":{\"facets\":{\"type\":\"array\",\"it" +
-            "ems\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"anchor\":{\"type\":\"st" +
-            "ring\"},\"label\":{\"type\":\"string\"}}}}},\"title\":{\"type\":\"string\"}}},\"Promotion\":{\"i" +
-            "d\":\"Promotion\",\"type\":\"object\",\"properties\":{\"bodyLines\":{\"type\":\"array\",\"items\"" +
-            ":{\"type\":\"object\",\"properties\":{\"htmlTitle\":{\"type\":\"string\"},\"link\":{\"type\":\"st" +
-            "ring\"},\"title\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}}}},\"displayLink\":{\"type" +
-            "\":\"string\"},\"htmlTitle\":{\"type\":\"string\"},\"image\":{\"type\":\"object\",\"properties\":" +
-            "{\"height\":{\"type\":\"integer\",\"format\":\"int32\"},\"source\":{\"type\":\"string\"},\"width\"" +
-            ":{\"type\":\"integer\",\"format\":\"int32\"}}},\"link\":{\"type\":\"string\"},\"title\":{\"type\":" +
-            "\"string\"}}},\"Query\":{\"id\":\"Query\",\"type\":\"object\",\"properties\":{\"count\":{\"type\":" +
-            "\"integer\",\"format\":\"int32\"},\"cr\":{\"type\":\"string\"},\"cref\":{\"type\":\"string\"},\"cx\"" +
-            ":{\"type\":\"string\"},\"dateRestrict\":{\"type\":\"string\"},\"disableCnTwTranslation\":{\"t" +
-            "ype\":\"string\"},\"exactTerms\":{\"type\":\"string\"},\"excludeTerms\":{\"type\":\"string\"},\"" +
-            "fileType\":{\"type\":\"string\"},\"filter\":{\"type\":\"string\"},\"gl\":{\"type\":\"string\"},\"g" +
-            "oogleHost\":{\"type\":\"string\"},\"highRange\":{\"type\":\"string\"},\"hl\":{\"type\":\"string\"" +
-            "},\"hq\":{\"type\":\"string\"},\"imgColorType\":{\"type\":\"string\"},\"imgDominantColor\":{\"t" +
-            "ype\":\"string\"},\"imgSize\":{\"type\":\"string\"},\"imgType\":{\"type\":\"string\"},\"inputEnc" +
-            "oding\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"linkSite\":{\"type\":\"string" +
-            "\"},\"lowRange\":{\"type\":\"string\"},\"orTerms\":{\"type\":\"string\"},\"outputEncoding\":{\"t" +
-            "ype\":\"string\"},\"relatedSite\":{\"type\":\"string\"},\"rights\":{\"type\":\"string\"},\"safe\"" +
-            ":{\"type\":\"string\"},\"searchTerms\":{\"type\":\"string\"},\"searchType\":{\"type\":\"string\"" +
-            "},\"siteSearch\":{\"type\":\"string\"},\"siteSearchFilter\":{\"type\":\"string\"},\"sort\":{\"t" +
-            "ype\":\"string\"},\"startIndex\":{\"type\":\"integer\",\"format\":\"int32\"},\"startPage\":{\"ty" +
-            "pe\":\"integer\",\"format\":\"int32\"},\"title\":{\"type\":\"string\"},\"totalResults\":{\"type\"" +
-            ":\"string\",\"format\":\"int64\"}}},\"Result\":{\"id\":\"Result\",\"type\":\"object\",\"propertie" +
-            "s\":{\"cacheId\":{\"type\":\"string\"},\"displayLink\":{\"type\":\"string\"},\"fileFormat\":{\"t" +
-            "ype\":\"string\"},\"formattedUrl\":{\"type\":\"string\"},\"htmlFormattedUrl\":{\"type\":\"stri" +
-            "ng\"},\"htmlSnippet\":{\"type\":\"string\"},\"htmlTitle\":{\"type\":\"string\"},\"image\":{\"typ" +
-            "e\":\"object\",\"properties\":{\"byteSize\":{\"type\":\"integer\",\"format\":\"int32\"},\"contex" +
-            "tLink\":{\"type\":\"string\"},\"height\":{\"type\":\"integer\",\"format\":\"int32\"},\"thumbnail" +
-            "Height\":{\"type\":\"integer\",\"format\":\"int32\"},\"thumbnailLink\":{\"type\":\"string\"},\"t" +
-            "humbnailWidth\":{\"type\":\"integer\",\"format\":\"int32\"},\"width\":{\"type\":\"integer\",\"fo" +
-            "rmat\":\"int32\"}}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch#result\"},\"label" +
-            "s\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"displayName\":{\"type\":" +
-            "\"string\"},\"name\":{\"type\":\"string\"}}}},\"link\":{\"type\":\"string\"},\"mime\":{\"type\":\"s" +
-            "tring\"},\"pagemap\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"array\",\"items" +
-            "\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"any\"}}}},\"snippet\":{\"type\":\"s" +
-            "tring\"},\"title\":{\"type\":\"string\"}}},\"Search\":{\"id\":\"Search\",\"type\":\"object\",\"pro" +
-            "perties\":{\"context\":{\"$ref\":\"Context\"},\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"" +
-            "Result\"}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch#search\"},\"promotions\":" +
-            "{\"type\":\"array\",\"items\":{\"$ref\":\"Promotion\"}},\"queries\":{\"type\":\"object\",\"additi" +
-            "onalProperties\":{\"type\":\"array\",\"items\":{\"$ref\":\"Query\"}}},\"searchInformation\":{" +
-            "\"type\":\"object\",\"properties\":{\"formattedSearchTime\":{\"type\":\"string\"},\"formatted" +
-            "TotalResults\":{\"type\":\"string\"},\"searchTime\":{\"type\":\"number\",\"format\":\"double\"}" +
-            ",\"totalResults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"spelling\":{\"type\":\"object\"" +
-            ",\"properties\":{\"correctedQuery\":{\"type\":\"string\"},\"htmlCorrectedQuery\":{\"type\":\"" +
-            "string\"}}},\"url\":{\"type\":\"object\",\"properties\":{\"template\":{\"type\":\"string\",\"def" +
-            "ault\":\"https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&s" +
-            "tart={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?" +
-            "}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnT" +
-            "wTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={site" +
-            "SearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={l" +
-            "inkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestri" +
-            "ct?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileTyp" +
-            "e={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorTyp" +
-            "e={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json\"},\"type\":{\"type\"" +
-            ":\"string\",\"default\":\"application/json\"}}}}}},\"resources\":{\"cse\":{\"methods\":{\"lis" +
-            "t\":{\"id\":\"search.cse.list\",\"path\":\"v1\",\"httpMethod\":\"GET\",\"description\":\"Returns" +
-            " metadata about the search performed, metadata about the custom search engine us" +
-            "ed for the search, and the search results.\",\"parameters\":{\"c2coff\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Turns off the translation between zh-CN and zh-TW.\",\"location" +
-            "\":\"query\"},\"cr\":{\"type\":\"string\",\"description\":\"Country restrict(s).\",\"location\"" +
-            ":\"query\"},\"cref\":{\"type\":\"string\",\"description\":\"The URL of a linked custom sear" +
-            "ch engine\",\"location\":\"query\"},\"cx\":{\"type\":\"string\",\"description\":\"The custom s" +
-            "earch engine ID to scope this search query\",\"location\":\"query\"},\"dateRestrict\":{" +
-            "\"type\":\"string\",\"description\":\"Specifies all search results are from a time peri" +
-            "od\",\"location\":\"query\"},\"exactTerms\":{\"type\":\"string\",\"description\":\"Identifies " +
-            "a phrase that all documents in the search results must contain\",\"location\":\"quer" +
-            "y\"},\"excludeTerms\":{\"type\":\"string\",\"description\":\"Identifies a word or phrase t" +
-            "hat should not appear in any documents in the search results\",\"location\":\"query\"" +
-            "},\"fileType\":{\"type\":\"string\",\"description\":\"Returns images of a specified type." +
-            " Some of the allowed values are: bmp, gif, png, jpg, svg, pdf, ...\",\"location\":\"" +
-            "query\"},\"filter\":{\"type\":\"string\",\"description\":\"Controls turning on or off the " +
-            "duplicate content filter.\",\"enum\":[\"0\",\"1\"],\"enumDescriptions\":[\"Turns off dupli" +
-            "cate content filter.\",\"Turns on duplicate content filter.\"],\"location\":\"query\"}," +
-            "\"gl\":{\"type\":\"string\",\"description\":\"Geolocation of end user.\",\"location\":\"query" +
-            "\"},\"googlehost\":{\"type\":\"string\",\"description\":\"The local Google domain to use t" +
-            "o perform the search.\",\"location\":\"query\"},\"highRange\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Creates a range in form as_nlo value..as_nhi value and attempts to append" +
-            " it to query\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Sets the " +
-            "user interface language.\",\"location\":\"query\"},\"hq\":{\"type\":\"string\",\"description" +
-            "\":\"Appends the extra query terms to the query.\",\"location\":\"query\"},\"imgColorTyp" +
-            "e\":{\"type\":\"string\",\"description\":\"Returns black and white, grayscale, or color " +
-            "images: mono, gray, and color.\",\"enum\":[\"color\",\"gray\",\"mono\"],\"enumDescriptions" +
-            "\":[\"color\",\"gray\",\"mono\"],\"location\":\"query\"},\"imgDominantColor\":{\"type\":\"string" +
-            "\",\"description\":\"Returns images of a specific dominant color: yellow, green, tea" +
-            "l, blue, purple, pink, white, gray, black and brown.\",\"enum\":[\"black\",\"blue\",\"br" +
-            "own\",\"gray\",\"green\",\"pink\",\"purple\",\"teal\",\"white\",\"yellow\"],\"enumDescriptions\":" +
-            "[\"black\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"teal\",\"white\",\"yellow\"]," +
-            "\"location\":\"query\"},\"imgSize\":{\"type\":\"string\",\"description\":\"Returns images of " +
-            "a specified size, where size can be one of: icon, small, medium, large, xlarge, " +
-            "xxlarge, and huge.\",\"enum\":[\"huge\",\"icon\",\"large\",\"medium\",\"small\",\"xlarge\",\"xxl" +
-            "arge\"],\"enumDescriptions\":[\"huge\",\"icon\",\"large\",\"medium\",\"small\",\"xlarge\",\"xxla" +
-            "rge\"],\"location\":\"query\"},\"imgType\":{\"type\":\"string\",\"description\":\"Returns imag" +
-            "es of a type, which can be one of: clipart, face, lineart, news, and photo.\",\"en" +
-            "um\":[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"enumDescriptions\":[\"clipart\",\"f" +
-            "ace\",\"lineart\",\"news\",\"photo\"],\"location\":\"query\"},\"linkSite\":{\"type\":\"string\",\"" +
-            "description\":\"Specifies that all search results should contain a link to a parti" +
-            "cular URL\",\"location\":\"query\"},\"lowRange\":{\"type\":\"string\",\"description\":\"Create" +
-            "s a range in form as_nlo value..as_nhi value and attempts to append it to query\"" +
-            ",\"location\":\"query\"},\"lr\":{\"type\":\"string\",\"description\":\"The language restricti" +
-            "on for the search results\",\"enum\":[\"lang_ar\",\"lang_bg\",\"lang_ca\",\"lang_cs\",\"lang" +
-            "_da\",\"lang_de\",\"lang_el\",\"lang_en\",\"lang_es\",\"lang_et\",\"lang_fi\",\"lang_fr\",\"lang" +
-            "_hr\",\"lang_hu\",\"lang_id\",\"lang_is\",\"lang_it\",\"lang_iw\",\"lang_ja\",\"lang_ko\",\"lang" +
-            "_lt\",\"lang_lv\",\"lang_nl\",\"lang_no\",\"lang_pl\",\"lang_pt\",\"lang_ro\",\"lang_ru\",\"lang" +
-            "_sk\",\"lang_sl\",\"lang_sr\",\"lang_sv\",\"lang_tr\",\"lang_zh-CN\",\"lang_zh-TW\"],\"enumDes" +
-            "criptions\":[\"Arabic\",\"Bulgarian\",\"Catalan\",\"Czech\",\"Danish\",\"German\",\"Greek\",\"En" +
-            "glish\",\"Spanish\",\"Estonian\",\"Finnish\",\"French\",\"Croatian\",\"Hungarian\",\"Indonesia" +
-            "n\",\"Icelandic\",\"Italian\",\"Hebrew\",\"Japanese\",\"Korean\",\"Lithuanian\",\"Latvian\",\"Du" +
-            "tch\",\"Norwegian\",\"Polish\",\"Portuguese\",\"Romanian\",\"Russian\",\"Slovak\",\"Slovenian\"" +
-            ",\"Serbian\",\"Swedish\",\"Turkish\",\"Chinese (Simplified)\",\"Chinese (Traditional)\"],\"" +
-            "location\":\"query\"},\"num\":{\"type\":\"integer\",\"description\":\"Number of search resul" +
-            "ts to return\",\"default\":\"10\",\"format\":\"uint32\",\"location\":\"query\"},\"orTerms\":{\"t" +
-            "ype\":\"string\",\"description\":\"Provides additional search terms to check for in a " +
-            "document, where each document in the search results must contain at least one of" +
-            " the additional search terms\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Query\",\"required\":true,\"location\":\"query\"},\"relatedSite\":{\"type\":\"string\"," +
-            "\"description\":\"Specifies that all search results should be pages that are relate" +
-            "d to the specified URL\",\"location\":\"query\"},\"rights\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Filters based on licensing. Supported values include: cc_publicdomain, cc_a" +
-            "ttribute, cc_sharealike, cc_noncommercial, cc_nonderived and combinations of the" +
-            "se.\",\"location\":\"query\"},\"safe\":{\"type\":\"string\",\"description\":\"Search safety le" +
-            "vel\",\"default\":\"off\",\"enum\":[\"high\",\"medium\",\"off\"],\"enumDescriptions\":[\"Enables" +
-            " highest level of safe search filtering.\",\"Enables moderate safe search filterin" +
-            "g.\",\"Disables safe search filtering.\"],\"location\":\"query\"},\"searchType\":{\"type\":" +
-            "\"string\",\"description\":\"Specifies the search type: image.\",\"enum\":[\"image\"],\"enu" +
-            "mDescriptions\":[\"custom image search\"],\"location\":\"query\"},\"siteSearch\":{\"type\":" +
-            "\"string\",\"description\":\"Specifies all search results should be pages from a give" +
-            "n site\",\"location\":\"query\"},\"siteSearchFilter\":{\"type\":\"string\",\"description\":\"C" +
-            "ontrols whether to include or exclude results from the site named in the as_site" +
-            "search parameter\",\"enum\":[\"e\",\"i\"],\"enumDescriptions\":[\"exclude\",\"include\"],\"loc" +
-            "ation\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"The sort expression to ap" +
-            "ply to the results\",\"location\":\"query\"},\"start\":{\"type\":\"integer\",\"description\":" +
-            "\"The index of the first result to return\",\"format\":\"uint32\",\"location\":\"query\"}}" +
-            ",\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Search\"}}}}}}";
+    public partial class CustomsearchService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected CustomsearchService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._cse = new CseResource(this, _authenticator);
+        public CustomsearchService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._cse = new CseResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public CustomsearchService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public CustomsearchService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CustomsearchService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/customsearch/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "customsearch";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/customsearch/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "atom",
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -1450,13 +1278,13 @@ namespace Google.Apis.Customsearch.v1 {
         
         private CustomsearchService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "cse";
         
-        public CseResource(CustomsearchService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CseResource(CustomsearchService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns metadata about the search performed, metadata about the custom search engine used for the search, and the search results.</summary>
@@ -1782,11 +1610,19 @@ namespace Google.Apis.Customsearch.v1 {
             I,
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Customsearch.v1.Data.Search> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Customsearch.v1.Data.Search> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _c2coff;
             
@@ -1852,9 +1688,32 @@ namespace Google.Apis.Customsearch.v1 {
             
             private System.Nullable<long> _start;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string q) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string q) : 
                     base(service) {
                 this._q = q;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1876,6 +1735,28 @@ namespace Google.Apis.Customsearch.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2228,16 +2109,133 @@ namespace Google.Apis.Customsearch.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "cse";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "v1";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("c2coff", Google.Apis.Util.Utilities.CreateRuntimeParameter("c2coff", false, "query", null, null, new string[0]));
+                parameters.Add("cr", Google.Apis.Util.Utilities.CreateRuntimeParameter("cr", false, "query", null, null, new string[0]));
+                parameters.Add("cref", Google.Apis.Util.Utilities.CreateRuntimeParameter("cref", false, "query", null, null, new string[0]));
+                parameters.Add("cx", Google.Apis.Util.Utilities.CreateRuntimeParameter("cx", false, "query", null, null, new string[0]));
+                parameters.Add("dateRestrict", Google.Apis.Util.Utilities.CreateRuntimeParameter("dateRestrict", false, "query", null, null, new string[0]));
+                parameters.Add("exactTerms", Google.Apis.Util.Utilities.CreateRuntimeParameter("exactTerms", false, "query", null, null, new string[0]));
+                parameters.Add("excludeTerms", Google.Apis.Util.Utilities.CreateRuntimeParameter("excludeTerms", false, "query", null, null, new string[0]));
+                parameters.Add("fileType", Google.Apis.Util.Utilities.CreateRuntimeParameter("fileType", false, "query", null, null, new string[0]));
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[] {
+                                "0",
+                                "1"}));
+                parameters.Add("gl", Google.Apis.Util.Utilities.CreateRuntimeParameter("gl", false, "query", null, null, new string[0]));
+                parameters.Add("googlehost", Google.Apis.Util.Utilities.CreateRuntimeParameter("googlehost", false, "query", null, null, new string[0]));
+                parameters.Add("highRange", Google.Apis.Util.Utilities.CreateRuntimeParameter("highRange", false, "query", null, null, new string[0]));
+                parameters.Add("hl", Google.Apis.Util.Utilities.CreateRuntimeParameter("hl", false, "query", null, null, new string[0]));
+                parameters.Add("hq", Google.Apis.Util.Utilities.CreateRuntimeParameter("hq", false, "query", null, null, new string[0]));
+                parameters.Add("imgColorType", Google.Apis.Util.Utilities.CreateRuntimeParameter("imgColorType", false, "query", null, null, new string[] {
+                                "color",
+                                "gray",
+                                "mono"}));
+                parameters.Add("imgDominantColor", Google.Apis.Util.Utilities.CreateRuntimeParameter("imgDominantColor", false, "query", null, null, new string[] {
+                                "black",
+                                "blue",
+                                "brown",
+                                "gray",
+                                "green",
+                                "pink",
+                                "purple",
+                                "teal",
+                                "white",
+                                "yellow"}));
+                parameters.Add("imgSize", Google.Apis.Util.Utilities.CreateRuntimeParameter("imgSize", false, "query", null, null, new string[] {
+                                "huge",
+                                "icon",
+                                "large",
+                                "medium",
+                                "small",
+                                "xlarge",
+                                "xxlarge"}));
+                parameters.Add("imgType", Google.Apis.Util.Utilities.CreateRuntimeParameter("imgType", false, "query", null, null, new string[] {
+                                "clipart",
+                                "face",
+                                "lineart",
+                                "news",
+                                "photo"}));
+                parameters.Add("linkSite", Google.Apis.Util.Utilities.CreateRuntimeParameter("linkSite", false, "query", null, null, new string[0]));
+                parameters.Add("lowRange", Google.Apis.Util.Utilities.CreateRuntimeParameter("lowRange", false, "query", null, null, new string[0]));
+                parameters.Add("lr", Google.Apis.Util.Utilities.CreateRuntimeParameter("lr", false, "query", null, null, new string[] {
+                                "lang_ar",
+                                "lang_bg",
+                                "lang_ca",
+                                "lang_cs",
+                                "lang_da",
+                                "lang_de",
+                                "lang_el",
+                                "lang_en",
+                                "lang_es",
+                                "lang_et",
+                                "lang_fi",
+                                "lang_fr",
+                                "lang_hr",
+                                "lang_hu",
+                                "lang_id",
+                                "lang_is",
+                                "lang_it",
+                                "lang_iw",
+                                "lang_ja",
+                                "lang_ko",
+                                "lang_lt",
+                                "lang_lv",
+                                "lang_nl",
+                                "lang_no",
+                                "lang_pl",
+                                "lang_pt",
+                                "lang_ro",
+                                "lang_ru",
+                                "lang_sk",
+                                "lang_sl",
+                                "lang_sr",
+                                "lang_sv",
+                                "lang_tr",
+                                "lang_zh-CN",
+                                "lang_zh-TW"}));
+                parameters.Add("num", Google.Apis.Util.Utilities.CreateRuntimeParameter("num", false, "query", "10", null, new string[0]));
+                parameters.Add("orTerms", Google.Apis.Util.Utilities.CreateRuntimeParameter("orTerms", false, "query", null, null, new string[0]));
+                parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", true, "query", null, null, new string[0]));
+                parameters.Add("relatedSite", Google.Apis.Util.Utilities.CreateRuntimeParameter("relatedSite", false, "query", null, null, new string[0]));
+                parameters.Add("rights", Google.Apis.Util.Utilities.CreateRuntimeParameter("rights", false, "query", null, null, new string[0]));
+                parameters.Add("safe", Google.Apis.Util.Utilities.CreateRuntimeParameter("safe", false, "query", "off", null, new string[] {
+                                "high",
+                                "medium",
+                                "off"}));
+                parameters.Add("searchType", Google.Apis.Util.Utilities.CreateRuntimeParameter("searchType", false, "query", null, null, new string[] {
+                                "image"}));
+                parameters.Add("siteSearch", Google.Apis.Util.Utilities.CreateRuntimeParameter("siteSearch", false, "query", null, null, new string[0]));
+                parameters.Add("siteSearchFilter", Google.Apis.Util.Utilities.CreateRuntimeParameter("siteSearchFilter", false, "query", null, null, new string[] {
+                                "e",
+                                "i"}));
+                parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, null, new string[0]));
+                parameters.Add("start", Google.Apis.Util.Utilities.CreateRuntimeParameter("start", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2248,7 +2246,7 @@ namespace Google.Apis.Customsearch.v1 {
         
         private CseResource _cse;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

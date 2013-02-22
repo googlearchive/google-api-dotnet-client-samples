@@ -294,7 +294,6 @@ namespace Google.Apis.Plus.v1.Data {
         }
         
         /// <summary>This activity&apos;s verb, indicating what action was performed. Possible values are:  
-        ///- &quot;checkin&quot; - Check in to a location. 
         ///- &quot;post&quot; - Publish content to the stream. 
         ///- &quot;share&quot; - Reshare an activity.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("verb")]
@@ -1135,7 +1134,7 @@ namespace Google.Apis.Plus.v1.Data {
             }
         }
         
-        /// <summary>The ID of this collection of activities.</summary>
+        /// <summary>The ID of this collection of activities. Deprecated.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
@@ -1741,6 +1740,8 @@ namespace Google.Apis.Plus.v1.Data {
         
         private string _birthday;
         
+        private string _braggingRights;
+        
         private System.Nullable<long> _circledByCount;
         
         private Person.CoverData _cover;
@@ -1809,6 +1810,17 @@ namespace Google.Apis.Plus.v1.Data {
             }
         }
         
+        /// <summary>The &quot;bragging rights&quot; line of this person.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("braggingRights")]
+        public virtual string BraggingRights {
+            get {
+                return this._braggingRights;
+            }
+            set {
+                this._braggingRights = value;
+            }
+        }
+        
         /// <summary>If a Google+ Page and for followers who are visible, the number of people who have added this page to a circle.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("circledByCount")]
         public virtual System.Nullable<long> CircledByCount {
@@ -1853,7 +1865,7 @@ namespace Google.Apis.Plus.v1.Data {
             }
         }
         
-        /// <summary>A list of email addresses for this person.</summary>
+        /// <summary>A list of email addresses that this person has set to public on their Google+ profile. You can also use the userinfo.email scope to retrieve an authenticated user&apos;s email address.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("emails")]
         public virtual System.Collections.Generic.IList<Person.EmailsData> Emails {
             get {
@@ -2065,7 +2077,7 @@ namespace Google.Apis.Plus.v1.Data {
             }
         }
         
-        /// <summary>If a Google+ Page, whether it has been verified.</summary>
+        /// <summary>Whether the person or Google+ Page has been verified.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("verified")]
         public virtual System.Nullable<bool> Verified {
             get {
@@ -2591,485 +2603,69 @@ namespace Google.Apis.Plus.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class PlusService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/HMYg6yT" +
-            "0YoJllAuRiX4zQm76-r0\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"plus:v1\",\"name\":\"plus\",\"ve" +
-            "rsion\":\"v1\",\"revision\":\"20121127\",\"title\":\"Google+ API\",\"description\":\"The Googl" +
-            "e+ API enables developers to build on top of the Google+ platform.\",\"icons\":{\"x1" +
-            "6\":\"http://www.google.com/images/icons/product/gplus-16.png\",\"x32\":\"http://www.g" +
-            "oogle.com/images/icons/product/gplus-32.png\"},\"documentationLink\":\"https://devel" +
-            "opers.google.com/+/api/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com" +
-            "/plus/v1/\",\"basePath\":\"/plus/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servi" +
-            "cePath\":\"plus/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"des" +
-            "cription\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enum" +
-            "Descriptions\":[\"Responses with Content-Type of application/json\"],\"location\":\"qu" +
-            "ery\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fields " +
-            "to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"d" +
-            "escription\":\"API key. Your API key identifies your project and provides you with" +
-            " API access, quota, and reports. Required unless you provide an OAuth 2.0 token." +
-            "\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 to" +
-            "ken for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"" +
-            "description\":\"Returns response with indentations and line breaks.\",\"default\":\"tr" +
-            "ue\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to" +
-            " use for quota purposes for server-side applications. Can be any arbitrary strin" +
-            "g assigned to a user, but should not exceed 40 characters. Overrides userIp if b" +
-            "oth are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"" +
-            "IP address of the site where the request originates. Use this if you want to enf" +
-            "orce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https:/" +
-            "/www.googleapis.com/auth/plus.me\":{\"description\":\"Know who you are on Google\"}}}" +
-            "},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"object\",\"properties\":{\"description\":{\"typ" +
-            "e\":\"string\",\"description\":\"Description of the access granted, suitable for displ" +
-            "ay.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of access entries.\",\"items" +
-            "\":{\"$ref\":\"PlusAclentryResource\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identi" +
-            "fies this resource as a collection of access controls. Value: \\\"plus#acl\\\".\",\"de" +
-            "fault\":\"plus#acl\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"object\",\"properties\":{\"" +
-            "access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has access to see this activ" +
-            "ity.\"},\"actor\":{\"type\":\"object\",\"description\":\"The person who performed this act" +
-            "ivity.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The name of " +
-            "the actor, suitable for display.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID o" +
-            "f the actor\'s person resource.\"},\"image\":{\"type\":\"object\",\"description\":\"The ima" +
-            "ge representation of the actor.\",\"properties\":{\"url\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The URL of the actor\'s profile photo. To re-size the image and crop it to a" +
-            " square, append the query string ?sz=x, where x is the dimension in pixels of ea" +
-            "ch side.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An object representation of " +
-            "the individual components of name.\",\"properties\":{\"familyName\":{\"type\":\"string\"," +
-            "\"description\":\"The family name (last name) of the actor.\"},\"givenName\":{\"type\":\"" +
-            "string\",\"description\":\"The given name (first name) of the actor.\"}}},\"url\":{\"typ" +
-            "e\":\"string\",\"description\":\"The link to the actor\'s Google profile.\"}}},\"address\"" +
-            ":{\"type\":\"string\",\"description\":\"Street address where this activity occurred.\"}," +
-            "\"annotation\":{\"type\":\"string\",\"description\":\"Additional content added by the per" +
-            "son who shared this activity, applicable only when resharing an activity.\"},\"cro" +
-            "sspostSource\":{\"type\":\"string\",\"description\":\"If this activity is a crosspost fr" +
-            "om another system, this property specifies the ID of the original activity.\"},\"e" +
-            "tag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching purposes." +
-            "\"},\"geocode\":{\"type\":\"string\",\"description\":\"Latitude and longitude where this a" +
-            "ctivity occurred. Format is latitude followed by longitude, space separated.\"},\"" +
-            "id\":{\"type\":\"string\",\"description\":\"The ID of this activity.\"},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Identifies this resource as an activity. Value: \\\"plus#act" +
-            "ivity\\\".\",\"default\":\"plus#activity\"},\"object\":{\"type\":\"object\",\"description\":\"Th" +
-            "e object of this activity.\",\"properties\":{\"actor\":{\"type\":\"object\",\"description\"" +
-            ":\"If this activity\'s object is itself another activity (for example, when a pers" +
-            "on reshares an activity), this property specifies the original activity\'s actor." +
-            "\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The original actor" +
-            "\'s name, suitable for display.\"},\"id\":{\"type\":\"string\",\"description\":\"ID of the " +
-            "original actor.\"},\"image\":{\"type\":\"object\",\"description\":\"The image representati" +
-            "on of the original actor.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A" +
-            " URL that points to a thumbnail photo of the original actor.\"}}},\"url\":{\"type\":\"" +
-            "string\",\"description\":\"A link to the original actor\'s Google profile.\"}}},\"attac" +
-            "hments\":{\"type\":\"array\",\"description\":\"The media objects attached to this activi" +
-            "ty.\",\"items\":{\"type\":\"object\",\"properties\":{\"content\":{\"type\":\"string\",\"descript" +
-            "ion\":\"If the attachment is an article, this property contains a snippet of text " +
-            "from the article. It can also include descriptions for other types.\"},\"displayNa" +
-            "me\":{\"type\":\"string\",\"description\":\"The title of the attachment (such as a photo" +
-            " caption or an article title).\"},\"embed\":{\"type\":\"object\",\"description\":\"If the " +
-            "attachment is a video, the embeddable link.\",\"properties\":{\"type\":{\"type\":\"strin" +
-            "g\",\"description\":\"Media type of the link.\"},\"url\":{\"type\":\"string\",\"description\"" +
-            ":\"URL of the link.\"}}},\"fullImage\":{\"type\":\"object\",\"description\":\"The full imag" +
-            "e URL for photo attachments.\",\"properties\":{\"height\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"The height, in pixels, of the linked resource.\",\"format\":\"uint32\"},\"type\":" +
-            "{\"type\":\"string\",\"description\":\"Media type of the link.\"},\"url\":{\"type\":\"string\"" +
-            ",\"description\":\"URL to the image.\"},\"width\":{\"type\":\"integer\",\"description\":\"The" +
-            " width, in pixels, of the linked resource.\",\"format\":\"uint32\"}}},\"id\":{\"type\":\"s" +
-            "tring\",\"description\":\"The ID of the attachment.\"},\"image\":{\"type\":\"object\",\"desc" +
-            "ription\":\"The preview image for photos or videos.\",\"properties\":{\"height\":{\"type" +
-            "\":\"integer\",\"description\":\"The height, in pixels, of the linked resource.\",\"form" +
-            "at\":\"uint32\"},\"type\":{\"type\":\"string\",\"description\":\"Media type of the link.\"},\"" +
-            "url\":{\"type\":\"string\",\"description\":\"Image url.\"},\"width\":{\"type\":\"integer\",\"des" +
-            "cription\":\"The width, in pixels, of the linked resource.\",\"format\":\"uint32\"}}},\"" +
-            "objectType\":{\"type\":\"string\",\"description\":\"The type of media object. Possible v" +
-            "alues are:  \\n- \\\"photo\\\" - A photo. \\n- \\\"album\\\" - A photo album. \\n- \\\"video\\" +
-            "\" - A video. \\n- \\\"article\\\" - An article, specified by a link.\"},\"thumbnails\":{" +
-            "\"type\":\"array\",\"description\":\"If the attachment is an album, potential additiona" +
-            "l thumbnails from the album.\",\"items\":{\"type\":\"object\",\"properties\":{\"descriptio" +
-            "n\":{\"type\":\"string\",\"description\":\"Potential name of the thumbnail.\"},\"image\":{\"" +
-            "type\":\"object\",\"description\":\"Image resource.\",\"properties\":{\"height\":{\"type\":\"i" +
-            "nteger\",\"description\":\"The height, in pixels, of the linked resource.\",\"format\":" +
-            "\"uint32\"},\"type\":{\"type\":\"string\",\"description\":\"Media type of the link.\"},\"url\"" +
-            ":{\"type\":\"string\",\"description\":\"Image url.\"},\"width\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"The width, in pixels, of the linked resource.\",\"format\":\"uint32\"}}},\"url\"" +
-            ":{\"type\":\"string\",\"description\":\"URL to the webpage containing the image.\"}}}},\"" +
-            "url\":{\"type\":\"string\",\"description\":\"The link to the attachment, should be of ty" +
-            "pe text/html.\"}}}},\"content\":{\"type\":\"string\",\"description\":\"The HTML-formatted " +
-            "content, suitable for display.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of " +
-            "the object. When resharing an activity, this is the ID of the activity being res" +
-            "hared.\"},\"objectType\":{\"type\":\"string\",\"description\":\"The type of the object. Po" +
-            "ssible values are:  \\n- \\\"note\\\" - Textual content. \\n- \\\"activity\\\" - A Google+" +
-            " activity.\"},\"originalContent\":{\"type\":\"string\",\"description\":\"The content (text" +
-            ") as provided by the author, stored without any HTML formatting. When creating o" +
-            "r updating an activity, this value must be supplied as plain text in the request" +
-            ".\"},\"plusoners\":{\"type\":\"object\",\"description\":\"People who +1\'d this activity.\"," +
-            "\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collect" +
-            "ion of people who +1\'d this activity.\"},\"totalItems\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"Total number of people who +1\'d this activity.\",\"format\":\"uint32\"}}},\"repl" +
-            "ies\":{\"type\":\"object\",\"description\":\"Comments in reply to this activity.\",\"prope" +
-            "rties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collection of" +
-            " comments in reply to this activity.\"},\"totalItems\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"Total number of comments on this activity.\",\"format\":\"uint32\"}}},\"resharers" +
-            "\":{\"type\":\"object\",\"description\":\"People who reshared this activity.\",\"propertie" +
-            "s\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collection of res" +
-            "harers.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of people w" +
-            "ho reshared this activity.\",\"format\":\"uint32\"}}},\"url\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The URL that points to the linked resource.\"}}},\"placeId\":{\"type\":\"string" +
-            "\",\"description\":\"ID of the place where this activity occurred.\"},\"placeName\":{\"t" +
-            "ype\":\"string\",\"description\":\"Name of the place where this activity occurred.\"},\"" +
-            "provider\":{\"type\":\"object\",\"description\":\"The service provider that initially pu" +
-            "blished this activity.\",\"properties\":{\"title\":{\"type\":\"string\",\"description\":\"Na" +
-            "me of the service provider.\"}}},\"published\":{\"type\":\"string\",\"description\":\"The " +
-            "time at which this activity was initially published. Formatted as an RFC 3339 ti" +
-            "mestamp.\",\"format\":\"date-time\"},\"radius\":{\"type\":\"string\",\"description\":\"Radius," +
-            " in meters, of the region where this activity occurred, centered at the latitude" +
-            " and longitude identified in geocode.\"},\"title\":{\"type\":\"string\",\"description\":\"" +
-            "Title of this activity.\"},\"updated\":{\"type\":\"string\",\"description\":\"The time at " +
-            "which this activity was last updated. Formatted as an RFC 3339 timestamp.\",\"form" +
-            "at\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The link to this activity" +
-            ".\"},\"verb\":{\"type\":\"string\",\"description\":\"This activity\'s verb, indicating what" +
-            " action was performed. Possible values are:  \\n- \\\"checkin\\\" - Check in to a loc" +
-            "ation. \\n- \\\"post\\\" - Publish content to the stream. \\n- \\\"share\\\" - Reshare an " +
-            "activity.\"}}},\"ActivityFeed\":{\"id\":\"ActivityFeed\",\"type\":\"object\",\"properties\":{" +
-            "\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching purpose" +
-            "s.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this collection of activitie" +
-            "s.\"},\"items\":{\"type\":\"array\",\"description\":\"The activities in this page of resul" +
-            "ts.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identif" +
-            "ies this resource as a collection of activities. Value: \\\"plus#activityFeed\\\".\"," +
-            "\"default\":\"plus#activityFeed\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Link t" +
-            "o the next page of activities.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":" +
-            "\"The continuation token, which is used to page through large result sets. Provid" +
-            "e this value in a subsequent request to return the next page of results.\"},\"self" +
-            "Link\":{\"type\":\"string\",\"description\":\"Link to this activity resource.\"},\"title\":" +
-            "{\"type\":\"string\",\"description\":\"The title of this collection of activities.\"},\"u" +
-            "pdated\":{\"type\":\"string\",\"description\":\"The time at which this collection of act" +
-            "ivities was last updated. Formatted as an RFC 3339 timestamp.\",\"format\":\"date-ti" +
-            "me\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"properties\":{\"actor\":{\"type\":\"" +
-            "object\",\"description\":\"The person who posted this comment.\",\"properties\":{\"displ" +
-            "ayName\":{\"type\":\"string\",\"description\":\"The name of this actor, suitable for dis" +
-            "play.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the actor.\"},\"image\":{\"ty" +
-            "pe\":\"object\",\"description\":\"The image representation of this actor.\",\"properties" +
-            "\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of the actor\'s profile photo. T" +
-            "o re-size the image and crop it to a square, append the query string ?sz=x, wher" +
-            "e x is the dimension in pixels of each side.\"}}},\"url\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"A link to the person resource for this actor.\"}}},\"etag\":{\"type\":\"string\"" +
-            ",\"description\":\"ETag of this response for caching purposes.\"},\"id\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The ID of this comment.\"},\"inReplyTo\":{\"type\":\"array\",\"descri" +
-            "ption\":\"The activity this comment replied to.\",\"items\":{\"type\":\"object\",\"propert" +
-            "ies\":{\"id\":{\"type\":\"string\",\"description\":\"The ID of the activity.\"},\"url\":{\"typ" +
-            "e\":\"string\",\"description\":\"The URL of the activity.\"}}}},\"kind\":{\"type\":\"string\"" +
-            ",\"description\":\"Identifies this resource as a comment. Value: \\\"plus#comment\\\".\"" +
-            ",\"default\":\"plus#comment\"},\"object\":{\"type\":\"object\",\"description\":\"The object o" +
-            "f this comment.\",\"properties\":{\"content\":{\"type\":\"string\",\"description\":\"The HTM" +
-            "L-formatted content, suitable for display.\"},\"objectType\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The object type of this comment. Possible values are:  \\n- \\\"comment\\\"" +
-            " - A comment in reply to an activity.\",\"default\":\"comment\"},\"originalContent\":{\"" +
-            "type\":\"string\",\"description\":\"The content (text) as provided by the author, stor" +
-            "ed without any HTML formatting. When creating or updating a comment, this value " +
-            "must be supplied as plain text in the request.\"}}},\"plusoners\":{\"type\":\"object\"," +
-            "\"description\":\"People who +1\'d this comment.\",\"properties\":{\"totalItems\":{\"type\"" +
-            ":\"integer\",\"description\":\"Total number of people who +1\'d this comment.\",\"format" +
-            "\":\"uint32\"}}},\"published\":{\"type\":\"string\",\"description\":\"The time at which this" +
-            " comment was initially published. Formatted as an RFC 3339 timestamp.\",\"format\":" +
-            "\"date-time\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Link to this comment res" +
-            "ource.\"},\"updated\":{\"type\":\"string\",\"description\":\"The time at which this commen" +
-            "t was last updated. Formatted as an RFC 3339 timestamp.\",\"format\":\"date-time\"},\"" +
-            "verb\":{\"type\":\"string\",\"description\":\"This comment\'s verb, indicating what actio" +
-            "n was performed. Possible values are:  \\n- \\\"post\\\" - Publish content to the str" +
-            "eam.\",\"default\":\"post\"}}},\"CommentFeed\":{\"id\":\"CommentFeed\",\"type\":\"object\",\"pro" +
-            "perties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for cachi" +
-            "ng purposes.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this collection of" +
-            " comments.\"},\"items\":{\"type\":\"array\",\"description\":\"The comments in this page of" +
-            " results.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"string\",\"description\":\"Id" +
-            "entifies this resource as a collection of comments. Value: \\\"plus#commentFeed\\\"." +
-            "\",\"default\":\"plus#commentFeed\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Link " +
-            "to the next page of activities.\"},\"nextPageToken\":{\"type\":\"string\",\"description\"" +
-            ":\"The continuation token, which is used to page through large result sets. Provi" +
-            "de this value in a subsequent request to return the next page of results.\"},\"tit" +
-            "le\":{\"type\":\"string\",\"description\":\"The title of this collection of comments.\"}," +
-            "\"updated\":{\"type\":\"string\",\"description\":\"The time at which this collection of c" +
-            "omments was last updated. Formatted as an RFC 3339 timestamp.\",\"format\":\"date-ti" +
-            "me\"}}},\"PeopleFeed\":{\"id\":\"PeopleFeed\",\"type\":\"object\",\"properties\":{\"etag\":{\"ty" +
-            "pe\":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"items" +
-            "\":{\"type\":\"array\",\"description\":\"The people in this page of results. Each item i" +
-            "ncludes the id, displayName, image, and url for the person. To retrieve addition" +
-            "al profile data, see the people.get method.\",\"items\":{\"$ref\":\"Person\"}},\"kind\":{" +
-            "\"type\":\"string\",\"description\":\"Identifies this resource as a collection of peopl" +
-            "e. Value: \\\"plus#peopleFeed\\\".\",\"default\":\"plus#peopleFeed\"},\"nextPageToken\":{\"t" +
-            "ype\":\"string\",\"description\":\"The continuation token, which is used to page throu" +
-            "gh large result sets. Provide this value in a subsequent request to return the n" +
-            "ext page of results.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Link to this r" +
-            "esource.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of this collection " +
-            "of people.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"The total number of p" +
-            "eople available in this list. The number of people in a response might be smalle" +
-            "r due to paging. This might not be set for all collections.\",\"format\":\"int32\"}}}" +
-            ",\"Person\":{\"id\":\"Person\",\"type\":\"object\",\"properties\":{\"aboutMe\":{\"type\":\"string" +
-            "\",\"description\":\"A short biography for this person.\"},\"birthday\":{\"type\":\"string" +
-            "\",\"description\":\"The person\'s date of birth, represented as YYYY-MM-DD.\"},\"circl" +
-            "edByCount\":{\"type\":\"integer\",\"description\":\"If a Google+ Page and for followers " +
-            "who are visible, the number of people who have added this page to a circle.\",\"fo" +
-            "rmat\":\"int32\"},\"cover\":{\"type\":\"object\",\"description\":\"The cover photo content.\"" +
-            ",\"properties\":{\"coverInfo\":{\"type\":\"object\",\"description\":\"Extra information abo" +
-            "ut the cover photo.\",\"properties\":{\"leftImageOffset\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"The difference between the left position of the image cover and the actual" +
-            " displayed cover image. Only valid for BANNER layout.\",\"format\":\"int32\"},\"topIma" +
-            "geOffset\":{\"type\":\"integer\",\"description\":\"The difference between the top positi" +
-            "on of the image cover and the actual displayed cover image. Only valid for BANNE" +
-            "R layout.\",\"format\":\"int32\"}}},\"coverPhoto\":{\"type\":\"object\",\"description\":\"The " +
-            "person\'s primary cover image.\",\"properties\":{\"height\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"The height to the image.\",\"format\":\"int32\"},\"url\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The url to the image.\"},\"width\":{\"type\":\"integer\",\"description\":\"The wi" +
-            "dth to the image.\",\"format\":\"int32\"}}},\"layout\":{\"type\":\"string\",\"description\":\"" +
-            "The layout of the cover art. Possible values are:  \\n- \\\"banner\\\" - One large im" +
-            "age banner.\"}}},\"currentLocation\":{\"type\":\"string\",\"description\":\"The current lo" +
-            "cation for this person.\"},\"displayName\":{\"type\":\"string\",\"description\":\"The name" +
-            " of this person, suitable for display.\"},\"emails\":{\"type\":\"array\",\"description\":" +
-            "\"A list of email addresses for this person.\",\"items\":{\"type\":\"object\",\"propertie" +
-            "s\":{\"primary\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", indicates this email" +
-            " address is the person\'s primary one.\"},\"type\":{\"type\":\"string\",\"description\":\"T" +
-            "he type of address. Possible values are:  \\n- \\\"home\\\" - Home email address. \\n-" +
-            " \\\"work\\\" - Work email address. \\n- \\\"other\\\" - Other.\"},\"value\":{\"type\":\"string" +
-            "\",\"description\":\"The email address.\"}}}},\"etag\":{\"type\":\"string\",\"description\":\"" +
-            "ETag of this response for caching purposes.\"},\"gender\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The person\'s gender. Possible values are:  \\n- \\\"male\\\" - Male gender. \\n" +
-            "- \\\"female\\\" - Female gender. \\n- \\\"other\\\" - Other.\"},\"hasApp\":{\"type\":\"boolean" +
-            "\",\"description\":\"If \\\"true\\\", indicates that the person has installed the app th" +
-            "at is making the request and has chosen to expose this install state to the call" +
-            "er. A value of \\\"false\\\" indicates that the install state cannot be determined (" +
-            "it is either not installed or the person has chosen to keep this information pri" +
-            "vate).\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this person.\"},\"image\":{" +
-            "\"type\":\"object\",\"description\":\"The representation of the person\'s profile photo." +
-            "\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of the person\'s pr" +
-            "ofile photo. To re-size the image and crop it to a square, append the query stri" +
-            "ng ?sz=x, where x is the dimension in pixels of each side.\"}}},\"isPlusUser\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Whether this user has signed up for Google+.\"},\"kin" +
-            "d\":{\"type\":\"string\",\"description\":\"Identifies this resource as a person. Value: " +
-            "\\\"plus#person\\\".\",\"default\":\"plus#person\"},\"name\":{\"type\":\"object\",\"description\"" +
-            ":\"An object representation of the individual components of a person\'s name.\",\"pr" +
-            "operties\":{\"familyName\":{\"type\":\"string\",\"description\":\"The family name (last na" +
-            "me) of this person.\"},\"formatted\":{\"type\":\"string\",\"description\":\"The full name " +
-            "of this person, including middle names, suffixes, etc.\"},\"givenName\":{\"type\":\"st" +
-            "ring\",\"description\":\"The given name (first name) of this person.\"},\"honorificPre" +
-            "fix\":{\"type\":\"string\",\"description\":\"The honorific prefixes (such as \\\"Dr.\\\" or " +
-            "\\\"Mrs.\\\") for this person.\"},\"honorificSuffix\":{\"type\":\"string\",\"description\":\"T" +
-            "he honorific suffixes (such as \\\"Jr.\\\") for this person.\"},\"middleName\":{\"type\":" +
-            "\"string\",\"description\":\"The middle name of this person.\"}}},\"nickname\":{\"type\":\"" +
-            "string\",\"description\":\"The nickname of this person.\"},\"objectType\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Type of person within Google+. Possible values are:  \\n- \\\"pe" +
-            "rson\\\" - represents an actual person. \\n- \\\"page\\\" - represents a page.\"},\"organ" +
-            "izations\":{\"type\":\"array\",\"description\":\"A list of current or past organizations" +
-            " with which this person is associated.\",\"items\":{\"type\":\"object\",\"properties\":{\"" +
-            "department\":{\"type\":\"string\",\"description\":\"The department within the organizati" +
-            "on. Deprecated.\"},\"description\":{\"type\":\"string\",\"description\":\"A short descript" +
-            "ion of the person\'s role in this organization. Deprecated.\"},\"endDate\":{\"type\":\"" +
-            "string\",\"description\":\"The date the person left this organization.\"},\"location\":" +
-            "{\"type\":\"string\",\"description\":\"The location of this organization. Deprecated.\"}" +
-            ",\"name\":{\"type\":\"string\",\"description\":\"The name of the organization.\"},\"primary" +
-            "\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", indicates this organization is t" +
-            "he person\'s primary one (typically interpreted as current one).\"},\"startDate\":{\"" +
-            "type\":\"string\",\"description\":\"The date the person joined this organization.\"},\"t" +
-            "itle\":{\"type\":\"string\",\"description\":\"The person\'s job title or role within the " +
-            "organization.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of organization." +
-            " Possible values are:  \\n- \\\"work\\\" - Work. \\n- \\\"school\\\" - School.\"}}}},\"place" +
-            "sLived\":{\"type\":\"array\",\"description\":\"A list of places where this person has li" +
-            "ved.\",\"items\":{\"type\":\"object\",\"properties\":{\"primary\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"If \\\"true\\\", this place of residence is this person\'s primary residence." +
-            "\"},\"value\":{\"type\":\"string\",\"description\":\"A place where this person has lived. " +
-            "For example: \\\"Seattle, WA\\\", \\\"Near Toronto\\\".\"}}}},\"plusOneCount\":{\"type\":\"int" +
-            "eger\",\"description\":\"If a Google+ Page, the number of people who have +1\'ed this" +
-            " page.\",\"format\":\"int32\"},\"relationshipStatus\":{\"type\":\"string\",\"description\":\"T" +
-            "he person\'s relationship status. Possible values are:  \\n- \\\"single\\\" - Person i" +
-            "s single. \\n- \\\"in_a_relationship\\\" - Person is in a relationship. \\n- \\\"engaged" +
-            "\\\" - Person is engaged. \\n- \\\"married\\\" - Person is married. \\n- \\\"its_complicat" +
-            "ed\\\" - The relationship is complicated. \\n- \\\"open_relationship\\\" - Person is in" +
-            " an open relationship. \\n- \\\"widowed\\\" - Person is widowed. \\n- \\\"in_domestic_pa" +
-            "rtnership\\\" - Person is in a domestic partnership. \\n- \\\"in_civil_union\\\" - Pers" +
-            "on is in a civil union.\"},\"tagline\":{\"type\":\"string\",\"description\":\"The brief de" +
-            "scription (tagline) of this person.\"},\"url\":{\"type\":\"string\",\"description\":\"The " +
-            "URL of this person\'s profile.\"},\"urls\":{\"type\":\"array\",\"description\":\"A list of " +
-            "URLs for this person.\",\"items\":{\"type\":\"object\",\"properties\":{\"primary\":{\"type\":" +
-            "\"boolean\",\"description\":\"If \\\"true\\\", this URL is the person\'s primary URL.\"},\"t" +
-            "ype\":{\"type\":\"string\",\"description\":\"The type of URL. Possible values are:  \\n- " +
-            "\\\"home\\\" - URL for home. \\n- \\\"work\\\" - URL for work. \\n- \\\"blog\\\" - URL for blo" +
-            "g. \\n- \\\"profile\\\" - URL for profile. \\n- \\\"other\\\" - Other.\"},\"value\":{\"type\":\"" +
-            "string\",\"description\":\"The URL value.\"}}}},\"verified\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"If a Google+ Page, whether it has been verified.\"}}},\"PlusAclentryResourc" +
-            "e\":{\"id\":\"PlusAclentryResource\",\"type\":\"object\",\"properties\":{\"displayName\":{\"ty" +
-            "pe\":\"string\",\"description\":\"A descriptive name for this entry. Suitable for disp" +
-            "lay.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the entry. For entries of " +
-            "type \\\"person\\\" or \\\"circle\\\", this is the ID of the resource. For other types, " +
-            "this property is not set.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of e" +
-            "ntry describing to whom access is granted. Possible values are:  \\n- \\\"person\\\" " +
-            "- Access to an individual. \\n- \\\"circle\\\" - Access to members of a circle. \\n- \\" +
-            "\"myCircles\\\" - Access to members of all the person\'s circles. \\n- \\\"extendedCirc" +
-            "les\\\" - Access to members of everyone in a person\'s circles, plus all of the peo" +
-            "ple in their circles. \\n- \\\"public\\\" - Access to anyone on the web.\"}}}},\"resour" +
-            "ces\":{\"activities\":{\"methods\":{\"get\":{\"id\":\"plus.activities.get\",\"path\":\"activit" +
-            "ies/{activityId}\",\"httpMethod\":\"GET\",\"description\":\"Get an activity.\",\"parameter" +
-            "s\":{\"activityId\":{\"type\":\"string\",\"description\":\"The ID of the activity to get.\"" +
-            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\"],\"response\":" +
-            "{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"list\"" +
-            ":{\"id\":\"plus.activities.list\",\"path\":\"people/{userId}/activities/{collection}\",\"" +
-            "httpMethod\":\"GET\",\"description\":\"List all of the activities in the specified col" +
-            "lection for a particular user.\",\"parameters\":{\"collection\":{\"type\":\"string\",\"des" +
-            "cription\":\"The collection of activities to list.\",\"required\":true,\"enum\":[\"publi" +
-            "c\"],\"enumDescriptions\":[\"All public activities created by the specified user.\"]," +
-            "\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum num" +
-            "ber of activities to include in the response, which is used for paging. For any " +
-            "response, the actual number returned might be less than the specified maxResults" +
-            ".\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"qu" +
-            "ery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, which " +
-            "is used to page through large result sets. To get the next page of results, set " +
-            "this parameter to the value of \\\"nextPageToken\\\" from the previous response.\",\"l" +
-            "ocation\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user to" +
-            " get activities for. The special value \\\"me\\\" can be used to indicate the authen" +
-            "ticated user.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"c" +
-            "ollection\"],\"response\":{\"$ref\":\"ActivityFeed\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/plus.me\"]},\"search\":{\"id\":\"plus.activities.search\",\"path\":\"activities\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Search public activities.\",\"parameters\":{\"lan" +
-            "guage\":{\"type\":\"string\",\"description\":\"Specify the preferred language to search " +
-            "with. See search language codes for available values.\",\"default\":\"en-US\",\"locati" +
-            "on\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of" +
-            " activities to include in the response, which is used for paging. For any respon" +
-            "se, the actual number returned might be less than the specified maxResults.\",\"de" +
-            "fault\":\"10\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"query\"},\"" +
-            "orderBy\":{\"type\":\"string\",\"description\":\"Specifies how to order search results.\"" +
-            ",\"default\":\"recent\",\"enum\":[\"best\",\"recent\"],\"enumDescriptions\":[\"Sort activitie" +
-            "s by relevance to the user, most relevant first.\",\"Sort activities by published " +
-            "date, most recent first.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"des" +
-            "cription\":\"The continuation token, which is used to page through large result se" +
-            "ts. To get the next page of results, set this parameter to the value of \\\"nextPa" +
-            "geToken\\\" from the previous response. This token can be of any length.\",\"locatio" +
-            "n\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"Full-text search query strin" +
-            "g.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"response\":{" +
-            "\"$ref\":\"ActivityFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"" +
-            "comments\":{\"methods\":{\"get\":{\"id\":\"plus.comments.get\",\"path\":\"comments/{commentI" +
-            "d}\",\"httpMethod\":\"GET\",\"description\":\"Get a comment.\",\"parameters\":{\"commentId\":" +
-            "{\"type\":\"string\",\"description\":\"The ID of the comment to get.\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"}," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"list\":{\"id\":\"plus.comment" +
-            "s.list\",\"path\":\"activities/{activityId}/comments\",\"httpMethod\":\"GET\",\"descriptio" +
-            "n\":\"List all of the comments for an activity.\",\"parameters\":{\"activityId\":{\"type" +
-            "\":\"string\",\"description\":\"The ID of the activity to get comments for.\",\"required" +
-            "\":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maxi" +
-            "mum number of comments to include in the response, which is used for paging. For" +
-            " any response, the actual number returned might be less than the specified maxRe" +
-            "sults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"500\",\"location" +
-            "\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, w" +
-            "hich is used to page through large result sets. To get the next page of results," +
-            " set this parameter to the value of \\\"nextPageToken\\\" from the previous response" +
-            ".\",\"location\":\"query\"},\"sortOrder\":{\"type\":\"string\",\"description\":\"The order in " +
-            "which to sort the list of comments.\",\"default\":\"ascending\",\"enum\":[\"ascending\",\"" +
-            "descending\"],\"enumDescriptions\":[\"Sort oldest comments first.\",\"Sort newest comm" +
-            "ents first.\"],\"location\":\"query\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"" +
-            "$ref\":\"CommentFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"pe" +
-            "ople\":{\"methods\":{\"get\":{\"id\":\"plus.people.get\",\"path\":\"people/{userId}\",\"httpMe" +
-            "thod\":\"GET\",\"description\":\"Get a person\'s profile.\",\"parameters\":{\"userId\":{\"typ" +
-            "e\":\"string\",\"description\":\"The ID of the person to get the profile for. The spec" +
-            "ial value \\\"me\\\" can be used to indicate the authenticated user.\",\"required\":tru" +
-            "e,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"Person\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"listByActivity\":{\"id\":\"plu" +
-            "s.people.listByActivity\",\"path\":\"activities/{activityId}/people/{collection}\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"List all of the people in the specified collecti" +
-            "on for a particular activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The ID of the activity to get the list of people for.\",\"required\":true" +
-            ",\"location\":\"path\"},\"collection\":{\"type\":\"string\",\"description\":\"The collection " +
-            "of people to list.\",\"required\":true,\"enum\":[\"plusoners\",\"resharers\"],\"enumDescri" +
-            "ptions\":[\"List all people who have +1\'d this activity.\",\"List all people who hav" +
-            "e reshared this activity.\"],\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The maximum number of people to include in the response, which is u" +
-            "sed for paging. For any response, the actual number returned might be less than " +
-            "the specified maxResults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"1\",\"maxim" +
-            "um\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The co" +
-            "ntinuation token, which is used to page through large result sets. To get the ne" +
-            "xt page of results, set this parameter to the value of \\\"nextPageToken\\\" from th" +
-            "e previous response.\",\"location\":\"query\"}},\"parameterOrder\":[\"activityId\",\"colle" +
-            "ction\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/plus.me\"]},\"search\":{\"id\":\"plus.people.search\",\"path\":\"people\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"Search all public profiles.\",\"parameters\":{\"language\":{\"typ" +
-            "e\":\"string\",\"description\":\"Specify the preferred language to search with. See se" +
-            "arch language codes for available values.\",\"default\":\"en-US\",\"location\":\"query\"}" +
-            ",\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of people to i" +
-            "nclude in the response, which is used for paging. For any response, the actual n" +
-            "umber returned might be less than the specified maxResults.\",\"default\":\"10\",\"for" +
-            "mat\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"query\"},\"pageToken\":{\"typ" +
-            "e\":\"string\",\"description\":\"The continuation token, which is used to page through" +
-            " large result sets. To get the next page of results, set this parameter to the v" +
-            "alue of \\\"nextPageToken\\\" from the previous response. This token can be of any l" +
-            "ength.\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"Specify a qu" +
-            "ery string for full text search of public text in all profiles.\",\"required\":true" +
-            ",\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"response\":{\"$ref\":\"PeopleFeed\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}}}}";
+    public partial class PlusService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected PlusService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._activities = new ActivitiesResource(this, _authenticator);
-            this._comments = new CommentsResource(this, _authenticator);
-            this._people = new PeopleResource(this, _authenticator);
+        public PlusService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._activities = new ActivitiesResource(this, Authenticator);
+            this._comments = new CommentsResource(this, Authenticator);
+            this._people = new PeopleResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public PlusService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public PlusService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PlusService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/plus/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "plus";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/plus/v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -3085,13 +2681,13 @@ namespace Google.Apis.Plus.v1 {
         
         private PlusService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "activities";
         
-        public ActivitiesResource(PlusService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ActivitiesResource(PlusService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Get an activity.</summary>
@@ -3135,17 +2731,48 @@ namespace Google.Apis.Plus.v1 {
             Recent,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Activity> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.Activity> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _activityId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3167,6 +2794,28 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3178,24 +2827,50 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private Collection _collection;
             
@@ -3205,10 +2880,33 @@ namespace Google.Apis.Plus.v1 {
             
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Collection collection) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string userId, Collection collection) : 
                     base(service) {
                 this._userId = userId;
                 this._collection = collection;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3230,6 +2928,28 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3271,24 +2991,54 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}/activities/{collection}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("collection", Google.Apis.Util.Utilities.CreateRuntimeParameter("collection", true, "path", null, null, new string[] {
+                                "public"}));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "20", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
+        public class SearchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _language;
             
@@ -3300,9 +3050,32 @@ namespace Google.Apis.Plus.v1 {
             
             private string _query;
             
-            public SearchRequest(Google.Apis.Discovery.IRequestProvider service, string query) : 
+            public SearchRequest(Google.Apis.Discovery.IClientService service, string query) : 
                     base(service) {
                 this._query = query;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3324,6 +3097,28 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3379,16 +3174,40 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "activities";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "search";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("language", Google.Apis.Util.Utilities.CreateRuntimeParameter("language", false, "query", "en-US", null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "10", null, new string[0]));
+                parameters.Add("orderBy", Google.Apis.Util.Utilities.CreateRuntimeParameter("orderBy", false, "query", "recent", null, new string[] {
+                                "best",
+                                "recent"}));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("query", Google.Apis.Util.Utilities.CreateRuntimeParameter("query", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -3397,13 +3216,13 @@ namespace Google.Apis.Plus.v1 {
         
         private PlusService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "comments";
         
-        public CommentsResource(PlusService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommentsResource(PlusService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Get a comment.</summary>
@@ -3431,17 +3250,48 @@ namespace Google.Apis.Plus.v1 {
             Descending,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Comment> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.Comment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _commentId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string commentId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string commentId) : 
                     base(service) {
                 this._commentId = commentId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3463,6 +3313,28 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3474,24 +3346,50 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "comments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "comments/{commentId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("commentId", Google.Apis.Util.Utilities.CreateRuntimeParameter("commentId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.CommentFeed> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.CommentFeed> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _activityId;
             
@@ -3501,9 +3399,32 @@ namespace Google.Apis.Plus.v1 {
             
             private System.Nullable<SortOrder> _sortOrder;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3525,6 +3446,28 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3569,16 +3512,39 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "comments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}/comments";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "20", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("sortOrder", Google.Apis.Util.Utilities.CreateRuntimeParameter("sortOrder", false, "query", "ascending", null, new string[] {
+                                "ascending",
+                                "descending"}));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -3587,13 +3553,13 @@ namespace Google.Apis.Plus.v1 {
         
         private PlusService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "people";
         
-        public PeopleResource(PlusService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public PeopleResource(PlusService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Get a person&apos;s profile.</summary>
@@ -3628,17 +3594,48 @@ namespace Google.Apis.Plus.v1 {
             Resharers,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Person> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.Person> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3660,6 +3657,28 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3671,24 +3690,50 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "people";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListByActivityRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
+        public class ListByActivityRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _activityId;
             
@@ -3698,10 +3743,33 @@ namespace Google.Apis.Plus.v1 {
             
             private string _pageToken;
             
-            public ListByActivityRequest(Google.Apis.Discovery.IRequestProvider service, string activityId, Collection collection) : 
+            public ListByActivityRequest(Google.Apis.Discovery.IClientService service, string activityId, Collection collection) : 
                     base(service) {
                 this._activityId = activityId;
                 this._collection = collection;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3723,6 +3791,28 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3764,24 +3854,55 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "people";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "listByActivity";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "activities/{activityId}/people/{collection}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("activityId", Google.Apis.Util.Utilities.CreateRuntimeParameter("activityId", true, "path", null, null, new string[0]));
+                parameters.Add("collection", Google.Apis.Util.Utilities.CreateRuntimeParameter("collection", true, "path", null, null, new string[] {
+                                "plusoners",
+                                "resharers"}));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "20", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
+        public class SearchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _language;
             
@@ -3791,9 +3912,32 @@ namespace Google.Apis.Plus.v1 {
             
             private string _query;
             
-            public SearchRequest(Google.Apis.Discovery.IRequestProvider service, string query) : 
+            public SearchRequest(Google.Apis.Discovery.IClientService service, string query) : 
                     base(service) {
                 this._query = query;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3815,6 +3959,28 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -3859,16 +4025,37 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "people";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "search";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("language", Google.Apis.Util.Utilities.CreateRuntimeParameter("language", false, "query", "en-US", null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "10", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("query", Google.Apis.Util.Utilities.CreateRuntimeParameter("query", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -3883,7 +4070,7 @@ namespace Google.Apis.Plus.v1 {
         
         private PeopleResource _people;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

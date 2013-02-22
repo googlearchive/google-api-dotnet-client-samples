@@ -233,7 +233,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The person who created this scope.</summary>
+        /// <summary>The person or persons who created this result. In the example of restaurant reviews, this might be the reviewer&apos;s name.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual System.Collections.Generic.IList<ItemScope> Author {
             get {
@@ -244,7 +244,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>Best possible rating value.</summary>
+        /// <summary>Best possible rating value that a result might obtain. This property defines the upper bound for the ratingValue. For example, you might have a 5 star rating scale, you would provide 5 as the value for this property.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("bestRating")]
         public virtual string BestRating {
             get {
@@ -309,7 +309,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The list of contributors for this scope.</summary>
+        /// <summary>A list of contributors to this result.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("contributor")]
         public virtual System.Collections.Generic.IList<ItemScope> Contributor {
             get {
@@ -320,7 +320,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The date this scope was created.</summary>
+        /// <summary>The date the result was created such as the date that a review was first created.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("dateCreated")]
         public virtual string DateCreated {
             get {
@@ -331,7 +331,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The date this scope was last modified.</summary>
+        /// <summary>The date the result was last modified such as the date that a review was last edited.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("dateModified")]
         public virtual string DateModified {
             get {
@@ -342,7 +342,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The initial date this scope was published.</summary>
+        /// <summary>The initial date that the result was published. For example, a user writes a comment on a blog, which has a result.dateCreated of when they submit it. If the blog users comment moderation, the result.datePublished value would match the date when the owner approved the message.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("datePublished")]
         public virtual string DatePublished {
             get {
@@ -353,7 +353,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The string describing the content of this scope.</summary>
+        /// <summary>The string that describes the content of the result.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
@@ -397,7 +397,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the Name property.</summary>
+        /// <summary>Family name. This property can be used with givenName instead of the name property.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("familyName")]
         public virtual string FamilyName {
             get {
@@ -429,7 +429,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the Name property.</summary>
+        /// <summary>Given name. This property can be used with familyName instead of the name property.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("givenName")]
         public virtual string GivenName {
             get {
@@ -451,7 +451,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The id for this item scope.</summary>
+        /// <summary>An identifier for the target. Your app can choose how to identify targets. The target.id is required if you are writing an activity that does not have a corresponding web page or target.url property.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
@@ -462,7 +462,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>A url to the image for this scope.</summary>
+        /// <summary>A URL to the image that represents this result. For example, if a user writes a review of a restaurant and attaches a photo of their meal, you might use that photo as the result.image.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("image")]
         public virtual string Image {
             get {
@@ -526,7 +526,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The name of this scope.</summary>
+        /// <summary>The name of the result. In the example of a restaurant review, this might be the summary the user gave their review such as &quot;Great ambiance, but overpriced.&quot;</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
@@ -558,7 +558,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>Player type required-for example, Flash or Silverlight.</summary>
+        /// <summary>Player type that is required. For example: Flash or Silverlight.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("playerType")]
         public virtual string PlayerType {
             get {
@@ -634,7 +634,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>Comment text, review text, etc.</summary>
+        /// <summary>The text that is the result of the app activity. For example, if a user leaves a review of a restaurant, this might be the text of the review.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("text")]
         public virtual string Text {
             get {
@@ -655,7 +655,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>A url to a thumbnail image for this scope.</summary>
+        /// <summary>A URL to a thumbnail image that represents this result.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("thumbnailUrl")]
         public virtual string ThumbnailUrl {
             get {
@@ -677,7 +677,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The item type.</summary>
+        /// <summary>The schema.org URL that best describes the referenced target and matches the type of moment.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("type")]
         public virtual string Type {
             get {
@@ -688,7 +688,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>A URL for the item upon which the action was performed.</summary>
+        /// <summary>The URL that points to the result object. For example, a permalink directly to a restaurant reviewer&apos;s comment.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
@@ -710,7 +710,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>Worst possible rating value.</summary>
+        /// <summary>Worst possible rating value that a result might obtain. This property defines the lower bound for the ratingValue.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("worstRating")]
         public virtual string WorstRating {
             get {
@@ -791,7 +791,7 @@ namespace Google.Apis.Plus.v1moments.Data {
             }
         }
         
-        /// <summary>The schema.org activity type.</summary>
+        /// <summary>The Google schema for the type of moment to write. For example, http://schemas.google.com/AddActivity.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("type")]
         public virtual string Type {
             get {
@@ -820,210 +820,67 @@ namespace Google.Apis.Plus.v1moments {
     using Google.Apis.Discovery;
     
     
-    public partial class PlusService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/RDthA8R" +
-            "rVCv0M9wxCBeRiHR94BQ\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"plus:v1moments\",\"name\":\"pl" +
-            "us\",\"version\":\"v1moments\",\"revision\":\"20121022\",\"title\":\"Google+ API\",\"descripti" +
-            "on\":\"The Google+ API enables developers to build on top of the Google+ platform." +
-            "\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/gplus-16.png\",\"x32\"" +
-            ":\"http://www.google.com/images/icons/product/gplus-32.png\"},\"documentationLink\":" +
-            "\"https://developers.google.com/+/history/\",\"labels\":[\"limited_availability\"],\"pr" +
-            "otocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/plus/v1moments/people/\",\"ba" +
-            "sePath\":\"/plus/v1moments/people/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servi" +
-            "cePath\":\"plus/v1moments/people/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\"" +
-            ":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":" +
-            "[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"]," +
-            "\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying" +
-            " which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"typ" +
-            "e\":\"string\",\"description\":\"API key. Your API key identifies your project and pro" +
-            "vides you with API access, quota, and reports. Required unless you provide an OA" +
-            "uth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\"" +
-            ":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"typ" +
-            "e\":\"boolean\",\"description\":\"Returns response with indentations and line breaks.\"" +
-            ",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\"" +
-            ":\"Available to use for quota purposes for server-side applications. Can be any a" +
-            "rbitrary string assigned to a user, but should not exceed 40 characters. Overrid" +
-            "es userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"" +
-            "description\":\"IP address of the site where the request originates. Use this if y" +
-            "ou want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"sco" +
-            "pes\":{\"https://www.googleapis.com/auth/plus.me\":{\"description\":\"Know who you are" +
-            " on Google\"},\"https://www.googleapis.com/auth/plus.moments.write\":{\"description\"" +
-            ":\"Send your activity to your private Google+ history\"}}}},\"schemas\":{\"ItemScope\"" +
-            ":{\"id\":\"ItemScope\",\"type\":\"object\",\"properties\":{\"about\":{\"$ref\":\"ItemScope\",\"de" +
-            "scription\":\"The subject matter of the content.\"},\"additionalName\":{\"type\":\"array" +
-            "\",\"description\":\"An additional name for a Person, can be used for a middle name." +
-            "\",\"items\":{\"type\":\"string\"}},\"address\":{\"$ref\":\"ItemScope\",\"description\":\"Postal" +
-            " address.\"},\"addressCountry\":{\"type\":\"string\",\"description\":\"Address country.\"}," +
-            "\"addressLocality\":{\"type\":\"string\",\"description\":\"Address locality.\"},\"addressRe" +
-            "gion\":{\"type\":\"string\",\"description\":\"Address region.\"},\"associated_media\":{\"typ" +
-            "e\":\"array\",\"description\":\"The encoding.\",\"items\":{\"$ref\":\"ItemScope\"}},\"attendee" +
-            "Count\":{\"type\":\"integer\",\"description\":\"Number of attendees.\",\"format\":\"int32\"}," +
-            "\"attendees\":{\"type\":\"array\",\"description\":\"A person attending the event.\",\"items" +
-            "\":{\"$ref\":\"ItemScope\"}},\"audio\":{\"$ref\":\"ItemScope\",\"description\":\"From http://s" +
-            "chema.org/MusicRecording, the audio file.\"},\"author\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"The person who created this scope.\",\"items\":{\"$ref\":\"ItemScope\"}},\"bestRatin" +
-            "g\":{\"type\":\"string\",\"description\":\"Best possible rating value.\"},\"birthDate\":{\"t" +
-            "ype\":\"string\",\"description\":\"Date of birth.\"},\"byArtist\":{\"$ref\":\"ItemScope\",\"de" +
-            "scription\":\"From http://schema.org/MusicRecording, the artist that performed thi" +
-            "s recording.\"},\"caption\":{\"type\":\"string\",\"description\":\"The caption for this ob" +
-            "ject.\"},\"contentSize\":{\"type\":\"string\",\"description\":\"File size in (mega/kilo) b" +
-            "ytes.\"},\"contentUrl\":{\"type\":\"string\",\"description\":\"Actual bytes of the media o" +
-            "bject, for example the image file or video file.\"},\"contributor\":{\"type\":\"array\"" +
-            ",\"description\":\"The list of contributors for this scope.\",\"items\":{\"$ref\":\"ItemS" +
-            "cope\"}},\"dateCreated\":{\"type\":\"string\",\"description\":\"The date this scope was cr" +
-            "eated.\"},\"dateModified\":{\"type\":\"string\",\"description\":\"The date this scope was " +
-            "last modified.\"},\"datePublished\":{\"type\":\"string\",\"description\":\"The initial dat" +
-            "e this scope was published.\"},\"description\":{\"type\":\"string\",\"description\":\"The " +
-            "string describing the content of this scope.\"},\"duration\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The duration of the item (movie, audio recording, event, etc.) in ISO " +
-            "8601 date format.\"},\"embedUrl\":{\"type\":\"string\",\"description\":\"A URL pointing to" +
-            " a player for a specific video. In general, this is the information in the src e" +
-            "lement of an embed tag and should not be the same as the content of the loc tag." +
-            "\"},\"endDate\":{\"type\":\"string\",\"description\":\"The end date and time of the event " +
-            "(in ISO 8601 date format).\"},\"familyName\":{\"type\":\"string\",\"description\":\"Family" +
-            " name. In the U.S., the last name of an Person. This can be used along with give" +
-            "nName instead of the Name property.\"},\"gender\":{\"type\":\"string\",\"description\":\"G" +
-            "ender of the person.\"},\"geo\":{\"$ref\":\"ItemScope\",\"description\":\"Geo coordinates." +
-            "\"},\"givenName\":{\"type\":\"string\",\"description\":\"Given name. In the U.S., the firs" +
-            "t name of a Person. This can be used along with familyName instead of the Name p" +
-            "roperty.\"},\"height\":{\"type\":\"string\",\"description\":\"The height of the media obje" +
-            "ct.\"},\"id\":{\"type\":\"string\",\"description\":\"The id for this item scope.\"},\"image\"" +
-            ":{\"type\":\"string\",\"description\":\"A url to the image for this scope.\"},\"inAlbum\":" +
-            "{\"$ref\":\"ItemScope\",\"description\":\"From http://schema.org/MusicRecording, which " +
-            "album a song is in.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this res" +
-            "ource as an itemScope.\",\"default\":\"plus#itemScope\"},\"latitude\":{\"type\":\"number\"," +
-            "\"description\":\"Latitude.\",\"format\":\"double\"},\"location\":{\"$ref\":\"ItemScope\",\"des" +
-            "cription\":\"The location of the event or organization.\"},\"longitude\":{\"type\":\"num" +
-            "ber\",\"description\":\"Longitude.\",\"format\":\"double\"},\"name\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The name of this scope.\"},\"partOfTVSeries\":{\"$ref\":\"ItemScope\",\"descri" +
-            "ption\":\"Property of http://schema.org/TVEpisode indicating which series the epis" +
-            "ode belongs to.\"},\"performers\":{\"type\":\"array\",\"description\":\"The main performer" +
-            " or performers of the event-for example, a presenter, musician, or actor.\",\"item" +
-            "s\":{\"$ref\":\"ItemScope\"}},\"playerType\":{\"type\":\"string\",\"description\":\"Player typ" +
-            "e required-for example, Flash or Silverlight.\"},\"postOfficeBoxNumber\":{\"type\":\"s" +
-            "tring\",\"description\":\"Post office box number.\"},\"postalCode\":{\"type\":\"string\",\"d" +
-            "escription\":\"Postal code.\"},\"ratingValue\":{\"type\":\"string\",\"description\":\"Rating" +
-            " value.\"},\"reviewRating\":{\"$ref\":\"ItemScope\",\"description\":\"Review rating.\"},\"st" +
-            "artDate\":{\"type\":\"string\",\"description\":\"The start date and time of the event (i" +
-            "n ISO 8601 date format).\"},\"streetAddress\":{\"type\":\"string\",\"description\":\"Stree" +
-            "t address.\"},\"text\":{\"type\":\"string\",\"description\":\"Comment text, review text, e" +
-            "tc.\"},\"thumbnail\":{\"$ref\":\"ItemScope\",\"description\":\"Thumbnail image for an imag" +
-            "e or video.\"},\"thumbnailUrl\":{\"type\":\"string\",\"description\":\"A url to a thumbnai" +
-            "l image for this scope.\"},\"tickerSymbol\":{\"type\":\"string\",\"description\":\"The exc" +
-            "hange traded instrument associated with a Corporation object. The tickerSymbol i" +
-            "s expressed as an exchange and an instrument name separated by a space character" +
-            ". For the exchange component of the tickerSymbol attribute, we reccommend using " +
-            "the controlled vocaulary of Market Identifier Codes (MIC) specified in ISO15022." +
-            "\"},\"type\":{\"type\":\"string\",\"description\":\"The item type.\"},\"url\":{\"type\":\"string" +
-            "\",\"description\":\"A URL for the item upon which the action was performed.\"},\"widt" +
-            "h\":{\"type\":\"string\",\"description\":\"The width of the media object.\"},\"worstRating" +
-            "\":{\"type\":\"string\",\"description\":\"Worst possible rating value.\"}}},\"Moment\":{\"id" +
-            "\":\"Moment\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Th" +
-            "e moment ID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource a" +
-            "s a moment.\",\"default\":\"plus#moment\"},\"result\":{\"$ref\":\"ItemScope\",\"description\"" +
-            ":\"The object generated by performing the action on the item\"},\"startDate\":{\"type" +
-            "\":\"string\",\"description\":\"Time stamp of when the action occurred in RFC3339 form" +
-            "at.\",\"format\":\"date-time\"},\"target\":{\"$ref\":\"ItemScope\",\"description\":\"The objec" +
-            "t on which the action was performed.\"},\"type\":{\"type\":\"string\",\"description\":\"Th" +
-            "e schema.org activity type.\",\"annotations\":{\"required\":[\"plus.moments.insert\"]}}" +
-            "}}},\"resources\":{\"moments\":{\"methods\":{\"insert\":{\"id\":\"plus.moments.insert\",\"pat" +
-            "h\":\"{userId}/moments/{collection}\",\"httpMethod\":\"POST\",\"description\":\"Record a u" +
-            "ser activity (e.g Bill watched a video on Youtube)\",\"parameters\":{\"collection\":{" +
-            "\"type\":\"string\",\"description\":\"The collection to which to write moments.\",\"requi" +
-            "red\":true,\"enum\":[\"vault\"],\"enumDescriptions\":[\"The default collection for writi" +
-            "ng new moments.\"],\"location\":\"path\"},\"debug\":{\"type\":\"boolean\",\"description\":\"Re" +
-            "turn the moment as written. Should be used only for debugging.\",\"location\":\"quer" +
-            "y\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user to record activi" +
-            "ties for. The only valid values are \\\"me\\\" and the ID of the authenticated user." +
-            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"collection\"],\"" +
-            "request\":{\"$ref\":\"Moment\"},\"response\":{\"$ref\":\"Moment\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/plus.me\",\"https://www.googleapis.com/auth/plus.moments.write\"" +
-            "]}}}}}";
+    public partial class PlusService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1moments";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected PlusService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._moments = new MomentsResource(this, _authenticator);
+        public PlusService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._moments = new MomentsResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public PlusService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public PlusService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PlusService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/plus/v1moments/people/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "plus";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/plus/v1moments/people/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
-        }
-        
-        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
-        public enum Scopes {
-            
-            /// <summary>Know who you are on Google</summary>
-            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/plus.me")]
-            PlusMe,
-            
-            /// <summary>Send your activity to your private Google+ history</summary>
-            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/plus.moments.write")]
-            PlusMomentsWrite,
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -1031,16 +888,16 @@ namespace Google.Apis.Plus.v1moments {
         
         private PlusService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "moments";
         
-        public MomentsResource(PlusService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public MomentsResource(PlusService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
-        /// <summary>Record a user activity (e.g Bill watched a video on Youtube)</summary>
+        /// <summary>Record a moment representing a user&apos;s activity such as making a purchase or commenting on a blog.</summary>
         /// <param name="userId">Required - The ID of the user to record activities for. The only valid values are &quot;me&quot; and the ID of the authenticated user.</param>
         /// <param name="collection">Required - Must be one of the following values [vault] - The collection to which to write moments.</param>
         public virtual InsertRequest Insert(Google.Apis.Plus.v1moments.Data.Moment body, string userId, Collection collection) {
@@ -1056,11 +913,19 @@ namespace Google.Apis.Plus.v1moments {
             Vault,
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1moments.Data.Moment> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1moments.Data.Moment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private Collection _collection;
             
@@ -1070,11 +935,34 @@ namespace Google.Apis.Plus.v1moments {
             
             private Google.Apis.Plus.v1moments.Data.Moment _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Plus.v1moments.Data.Moment body, string userId, Collection collection) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Plus.v1moments.Data.Moment body, string userId, Collection collection) : 
                     base(service) {
                 this.Body = body;
                 this._userId = userId;
                 this._collection = collection;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1096,6 +984,28 @@ namespace Google.Apis.Plus.v1moments {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1136,20 +1046,41 @@ namespace Google.Apis.Plus.v1moments {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "moments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{userId}/moments/{collection}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("collection", Google.Apis.Util.Utilities.CreateRuntimeParameter("collection", true, "path", null, null, new string[] {
+                                "vault"}));
+                parameters.Add("debug", Google.Apis.Util.Utilities.CreateRuntimeParameter("debug", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1160,7 +1091,7 @@ namespace Google.Apis.Plus.v1moments {
         
         private MomentsResource _moments;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

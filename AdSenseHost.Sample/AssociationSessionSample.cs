@@ -17,15 +17,16 @@ limitations under the License.
 using System;
 
 using DotNetOpenAuth.OAuth2;
+
+using AdSenseHost.Sample.Host;
+using AdSenseHost.Sample.Publisher;
 using Google.Apis.Adsensehost.v4_1;
 using Google.Apis.Adsensehost.v4_1.Data;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Util;
-
-using AdSenseHost.Sample.Host;
-using AdSenseHost.Sample.Publisher;
 
 namespace AdSenseHost.Sample
 {
@@ -54,25 +55,29 @@ namespace AdSenseHost.Sample
             CommandLine.DisplayGoogleSampleHeader("AdSense Host API Command Line Sample - Association sessions");
 
             // Register the authenticator.
-            NativeApplicationClient provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
+            NativeApplicationClient provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = credentials.ClientId,
+                    ClientSecret = credentials.ClientSecret
+                };
+
             OAuth2Authenticator<NativeApplicationClient> auth =
                 new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            AdsensehostService service = new AdsensehostService(auth);
+            AdsensehostService service = new AdsensehostService(new BaseClientService.Initializer()
+                {
+                    Authenticator = auth
+                });
 
             string websiteUrl = null;
             CommandLine.RequestUserInput("Insert website URL", ref websiteUrl);
 
             /*  1. Create the association session. */
-
             StartAssociationSession(service, websiteUrl);
 
             /* 2. Use the token to verify the association. */
-
             string callbackToken = null;
             CommandLine.RequestUserInput("Insert callback token", ref callbackToken);
 
@@ -105,7 +110,7 @@ namespace AdSenseHost.Sample
             // Return the Association Session that was just created.
             return associationSession;
         }
-                
+
         /// <summary>
         /// This example verifies an association session callback token.
         /// </summary>

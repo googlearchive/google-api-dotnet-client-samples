@@ -16,7 +16,9 @@ limitations under the License.
 
 using System;
 using System.Windows.Forms;
+
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
@@ -86,8 +88,11 @@ namespace TasksExample.WinForms.NoteMgr
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Initialize the service.
-            Service = new TasksService(CreateAuthenticator());
-            
+            Service = new TasksService(new BaseClientService.Initializer()
+                {
+                    Authenticator = CreateAuthenticator()
+                });
+
             // Open a NoteForm for every task list.
             foreach (TaskList list in Service.Tasklists.List().Fetch().Items)
             {

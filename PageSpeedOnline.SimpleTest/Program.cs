@@ -15,6 +15,8 @@ limitations under the License.
 */
 
 using System;
+
+using Google.Apis.Discovery;
 using Google.Apis.Pagespeedonline.v1;
 using Google.Apis.Samples.Helper;
 
@@ -34,8 +36,11 @@ namespace PageSpeedOnline.SimpleTest
             CommandLine.DisplayGoogleSampleHeader("Page Speed Online API");
 
             // Create the service.
+            var service = new PagespeedonlineService(new BaseClientService.Initializer()
+                {
+                    ApiKey = GetApiKey()
+                });
 
-            var service = new PagespeedonlineService() { Key = GetApiKey() };
             RunSample(service);
             CommandLine.PressAnyKeyToExit();
         }
@@ -48,8 +53,8 @@ namespace PageSpeedOnline.SimpleTest
 
             // Run the request.
             CommandLine.WriteAction("Measuring page score ...");
-            var result = service.Pagespeedapi.Runpagespeed(url).Fetch(); 
-            
+            var result = service.Pagespeedapi.Runpagespeed(url).Fetch();
+
             // Display the results.
             CommandLine.WriteResult("Page score", result.Score);
         }

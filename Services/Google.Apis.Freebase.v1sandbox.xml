@@ -19,9 +19,6 @@
             <summary>Performs MQL Write Operations.</summary>
             <param name="query">Required - An MQL query with write directives.</param>
         </member>
-        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Freebase.v1sandbox.FreebaseService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -52,11 +49,23 @@
         <member name="F:Google.Apis.Freebase.v1sandbox.FreebaseService.Uniqueness_failure.Soft">
             <summary>Just return the first encountered object.</summary>
         </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.ImageRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.ImageRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.ImageRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.ImageRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.ImageRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.ImageRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.ImageRequest.Fallbackid">
             <summary>Use the image associated with this secondary id if no image is associated with the primary id.</summary>
@@ -76,11 +85,23 @@
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.ImageRequest.Pad">
             <summary>A boolean specifying whether the resulting image should be padded up to the requested dimensions.</summary>
         </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlreadRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlreadRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlreadRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlreadRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlreadRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlreadRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlreadRequest.As_of_time">
             <summary>Run the query as it would've been run at the specified point in time.</summary>
@@ -112,11 +133,23 @@
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlreadRequest.Uniqueness_failure">
             <summary>How MQL responds to uniqueness failures.</summary>
         </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlwriteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlwriteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlwriteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlwriteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlwriteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlwriteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.FreebaseService.MqlwriteRequest.Callback">
             <summary>JS method name for JSONP callbacks.</summary>
@@ -149,11 +182,23 @@
         <member name="F:Google.Apis.Freebase.v1sandbox.TextResource.Format.Raw">
             <summary>Return the entire content as-is.</summary>
         </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.TextResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.TextResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.TextResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.TextResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.TextResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.TextResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.TextResource.GetRequest.Format">
             <summary>Sanitizing transformation.</summary>
@@ -168,11 +213,23 @@
             <summary>Get properties and meta-data about a topic.</summary>
             <param name="id">Required - The id of the item that you want data about.</param>
         </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.TopicResource.LookupRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.TopicResource.LookupRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.TopicResource.LookupRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.TopicResource.LookupRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.TopicResource.LookupRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1sandbox.TopicResource.LookupRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1sandbox.TopicResource.LookupRequest.Dateline">
             <summary>Determines how up-to-date the data returned is. A unix epoch time, a guid or a 'now'</summary>

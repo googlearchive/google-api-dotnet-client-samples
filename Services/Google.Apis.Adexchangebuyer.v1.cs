@@ -648,245 +648,69 @@ namespace Google.Apis.Adexchangebuyer.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class AdexchangebuyerService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/0MlKisJ" +
-            "Ext06inEGMtgFbFgr1hw\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"adexchangebuyer:v1\",\"name\"" +
-            ":\"adexchangebuyer\",\"version\":\"v1\",\"revision\":\"20120718\",\"title\":\"Ad Exchange Buy" +
-            "er API\",\"description\":\"Lets you manage your Ad Exchange Buyer account.\",\"icons\":" +
-            "{\"x16\":\"http://www.google.com/images/icons/product/doubleclick-16.gif\",\"x32\":\"ht" +
-            "tp://www.google.com/images/icons/product/doubleclick-32.gif\"},\"documentationLink" +
-            "\":\"https://developers.google.com/ad-exchange/buyer-rest\",\"protocol\":\"rest\",\"base" +
-            "Url\":\"https://www.googleapis.com/adexchangebuyer/v1/\",\"basePath\":\"/adexchangebuy" +
-            "er/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"adexchangebuyer/v" +
-            "1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data" +
-            " format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[" +
-            "\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":" +
-            "{\"type\":\"string\",\"description\":\"Selector specifying which fields to include in a" +
-            " partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"AP" +
-            "I key. Your API key identifies your project and provides you with API access, qu" +
-            "ota, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"q" +
-            "uery\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the cur" +
-            "rent user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"R" +
-            "eturns response with indentations and line breaks.\",\"default\":\"true\",\"location\":" +
-            "\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota " +
-            "purposes for server-side applications. Can be any arbitrary string assigned to a" +
-            " user, but should not exceed 40 characters. Overrides userIp if both are provide" +
-            "d.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of t" +
-            "he site where the request originates. Use this if you want to enforce per-user l" +
-            "imits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis" +
-            ".com/auth/adexchange.buyer\":{\"description\":\"Manage your Ad Exchange buyer accoun" +
-            "t configuration\"}}}},\"schemas\":{\"Account\":{\"id\":\"Account\",\"type\":\"object\",\"descr" +
-            "iption\":\"Configuration data for an Ad Exchange buyer account.\",\"properties\":{\"bi" +
-            "dderLocation\":{\"type\":\"array\",\"description\":\"Your bidder locations that have dis" +
-            "tinct URLs.\",\"items\":{\"type\":\"object\",\"properties\":{\"maximumQps\":{\"type\":\"intege" +
-            "r\",\"description\":\"The maximum queries per second the Ad Exchange will send.\",\"fo" +
-            "rmat\":\"int32\"},\"url\":{\"type\":\"string\",\"description\":\"The URL to which the Ad Exc" +
-            "hange will send bid requests.\"}}}},\"cookieMatchingNid\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The nid parameter value used in cookie match requests. Please contact you" +
-            "r technical account manager if you need to change this.\"},\"cookieMatchingUrl\":{\"" +
-            "type\":\"string\",\"description\":\"The base URL used in cookie match requests.\"},\"id\"" +
-            ":{\"type\":\"integer\",\"description\":\"Account id.\",\"format\":\"int32\"},\"kind\":{\"type\":" +
-            "\"string\",\"description\":\"Resource type.\",\"default\":\"adexchangebuyer#account\"},\"ma" +
-            "ximumTotalQps\":{\"type\":\"integer\",\"description\":\"The sum of all bidderLocation.ma" +
-            "ximumQps values cannot exceed this. Please contact your technical account manage" +
-            "r if you need to change this.\",\"format\":\"int32\"}}},\"AccountsList\":{\"id\":\"Account" +
-            "sList\",\"type\":\"object\",\"description\":\"An account feed lists Ad Exchange buyer ac" +
-            "counts that the user has access to. Each entry in the feed corresponds to a sing" +
-            "le buyer account.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list o" +
-            "f accounts.\",\"items\":{\"$ref\":\"Account\"}},\"kind\":{\"type\":\"string\",\"description\":\"" +
-            "Resource type.\",\"default\":\"adexchangebuyer#accountsList\"}}},\"Creative\":{\"id\":\"Cr" +
-            "eative\",\"type\":\"object\",\"description\":\"A creative and its classification data.\"," +
-            "\"properties\":{\"HTMLSnippet\":{\"type\":\"string\",\"description\":\"The HTML snippet tha" +
-            "t displays the ad when inserted in the web page. If set, videoURL should not be " +
-            "set.\"},\"accountId\":{\"type\":\"integer\",\"description\":\"Account id.\",\"format\":\"int32" +
-            "\",\"annotations\":{\"required\":[\"adexchangebuyer.creatives.insert\"]}},\"adgroupId\":{" +
-            "\"type\":\"string\",\"description\":\"The pretargeting adgroup id that this creative wi" +
-            "ll be associated with.\",\"format\":\"int64\",\"annotations\":{\"required\":[\"adexchangeb" +
-            "uyer.creatives.insert\"]}},\"advertiserId\":{\"type\":\"array\",\"description\":\"Detected" +
-            " advertiser id, if any. Read-only. This field should not be set in requests.\",\"i" +
-            "tems\":{\"type\":\"string\",\"format\":\"int64\"}},\"advertiserName\":{\"type\":\"string\",\"des" +
-            "cription\":\"The name of the company being advertised in the creative.\",\"annotatio" +
-            "ns\":{\"required\":[\"adexchangebuyer.creatives.insert\"]}},\"attribute\":{\"type\":\"arra" +
-            "y\",\"description\":\"All attributes for the ads that may be shown from this snippet" +
-            ".\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"buyerCreativeId\":{\"type\":\"strin" +
-            "g\",\"description\":\"A buyer-specific id identifying the creative in this ad.\",\"ann" +
-            "otations\":{\"required\":[\"adexchangebuyer.creatives.insert\"]}},\"clickThroughUrl\":{" +
-            "\"type\":\"array\",\"description\":\"The set of destination urls for the snippet.\",\"ite" +
-            "ms\":{\"type\":\"string\"},\"annotations\":{\"required\":[\"adexchangebuyer.creatives.inse" +
-            "rt\"]}},\"disapprovalReasons\":{\"type\":\"array\",\"description\":\"The reason for disapp" +
-            "roval, if any. Note that not all disapproval reasons may be categorized, so it i" +
-            "s possible for the creative to have a status of DISAPPROVED with an empty list f" +
-            "or disapproval_reasons. In this case, please reach out to your TAM to help debug" +
-            " the issue. Read-only. This field should not be set in requests.\",\"items\":{\"type" +
-            "\":\"string\"}},\"height\":{\"type\":\"integer\",\"description\":\"Ad height.\",\"format\":\"int" +
-            "32\",\"annotations\":{\"required\":[\"adexchangebuyer.creatives.insert\"]}},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Resource type.\",\"default\":\"adexchangebuyer#creative\"" +
-            "},\"productCategories\":{\"type\":\"array\",\"description\":\"Detected product categories" +
-            ", if any. Read-only. This field should not be set in requests.\",\"items\":{\"type\":" +
-            "\"integer\",\"format\":\"int32\"}},\"sensitiveCategories\":{\"type\":\"array\",\"description\"" +
-            ":\"Detected sensitive categories, if any. Read-only. This field should not be set" +
-            " in requests.\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}},\"status\":{\"type\":\"st" +
-            "ring\",\"description\":\"Creative serving status. Read-only. This field should not b" +
-            "e set in requests.\"},\"vendorType\":{\"type\":\"array\",\"description\":\"All vendor type" +
-            "s for the ads that may be shown from this snippet.\",\"items\":{\"type\":\"integer\",\"f" +
-            "ormat\":\"int32\"}},\"videoURL\":{\"type\":\"string\",\"description\":\"The url to fetch a v" +
-            "ideo ad. If set, HTMLSnippet should not be set.\"},\"width\":{\"type\":\"integer\",\"des" +
-            "cription\":\"Ad width.\",\"format\":\"int32\",\"annotations\":{\"required\":[\"adexchangebuy" +
-            "er.creatives.insert\"]}}}},\"CreativesList\":{\"id\":\"CreativesList\",\"type\":\"object\"," +
-            "\"description\":\"The creatives feed lists the active creatives for the Ad Exchange" +
-            " buyer accounts that the user has access to. Each entry in the feed corresponds " +
-            "to a single creative.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A li" +
-            "st of creatives.\",\"items\":{\"$ref\":\"Creative\"}},\"kind\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Resource type.\",\"default\":\"adexchangebuyer#creativesList\"},\"nextPageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"Continuation token used to page through creativ" +
-            "es. To retrieve the next page of results, set the next request\'s \\\"pageToken\\\" v" +
-            "alue to this.\"}}},\"DirectDeal\":{\"id\":\"DirectDeal\",\"type\":\"object\",\"description\":" +
-            "\"The configuration data for an Ad Exchange direct deal.\",\"properties\":{\"accountI" +
-            "d\":{\"type\":\"integer\",\"description\":\"The account id of the buyer this deal is for" +
-            ".\",\"format\":\"int32\"},\"advertiser\":{\"type\":\"string\",\"description\":\"The name of th" +
-            "e advertiser this deal is for.\"},\"currencyCode\":{\"type\":\"string\",\"description\":\"" +
-            "The currency code that applies to the fixed_cpm value. If not set then assumed t" +
-            "o be USD.\"},\"endTime\":{\"type\":\"string\",\"description\":\"End time for when this dea" +
-            "l stops being active. If not set then this deal is valid until manually disabled" +
-            " by the publisher. In seconds since the epoch.\",\"format\":\"int64\"},\"fixedCpm\":{\"t" +
-            "ype\":\"string\",\"description\":\"The fixed price for this direct deal. In cpm micros" +
-            " of currency according to currency_code.\",\"format\":\"int64\"},\"id\":{\"type\":\"string" +
-            "\",\"description\":\"Deal id.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Resource type.\",\"default\":\"adexchangebuyer#directDeal\"},\"sellerNetwork\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The name of the publisher offering this direct deal." +
-            "\"},\"startTime\":{\"type\":\"string\",\"description\":\"Start time for when this deal bec" +
-            "omes active. If not set then this deal is active immediately upon creation. In s" +
-            "econds since the epoch.\",\"format\":\"int64\"}}},\"DirectDealsList\":{\"id\":\"DirectDeal" +
-            "sList\",\"type\":\"object\",\"description\":\"A direct deals feed lists Direct Deals the" +
-            " Ad Exchange buyer account has access to. This includes direct deals set up for " +
-            "the buyer account as well as its merged stream seats.\",\"properties\":{\"directDeal" +
-            "s\":{\"type\":\"array\",\"description\":\"A list of direct deals relevant for your accou" +
-            "nt.\",\"items\":{\"$ref\":\"DirectDeal\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resou" +
-            "rce type.\",\"default\":\"adexchangebuyer#directDealsList\"}}}},\"resources\":{\"account" +
-            "s\":{\"methods\":{\"get\":{\"id\":\"adexchangebuyer.accounts.get\",\"path\":\"accounts/{id}\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Gets one account by ID.\",\"parameters\":{\"id\":{" +
-            "\"type\":\"integer\",\"description\":\"The account id\",\"required\":true,\"format\":\"int32\"" +
-            ",\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Account\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/adexchange.buyer\"]},\"list\":{\"id\":\"adexchan" +
-            "gebuyer.accounts.list\",\"path\":\"accounts\",\"httpMethod\":\"GET\",\"description\":\"Retri" +
-            "eves the authenticated user\'s list of accounts.\",\"response\":{\"$ref\":\"AccountsLis" +
-            "t\"},\"scopes\":[\"https://www.googleapis.com/auth/adexchange.buyer\"]},\"patch\":{\"id\"" +
-            ":\"adexchangebuyer.accounts.patch\",\"path\":\"accounts/{id}\",\"httpMethod\":\"PATCH\",\"d" +
-            "escription\":\"Updates an existing account. This method supports patch semantics.\"" +
-            ",\"parameters\":{\"id\":{\"type\":\"integer\",\"description\":\"The account id\",\"required\":" +
-            "true,\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$r" +
-            "ef\":\"Account\"},\"response\":{\"$ref\":\"Account\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/adexchange.buyer\"]},\"update\":{\"id\":\"adexchangebuyer.accounts.update\",\"pa" +
-            "th\":\"accounts/{id}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an existing accoun" +
-            "t.\",\"parameters\":{\"id\":{\"type\":\"integer\",\"description\":\"The account id\",\"require" +
-            "d\":true,\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{" +
-            "\"$ref\":\"Account\"},\"response\":{\"$ref\":\"Account\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/adexchange.buyer\"]}}},\"creatives\":{\"methods\":{\"get\":{\"id\":\"adexchange" +
-            "buyer.creatives.get\",\"path\":\"creatives/{accountId}/{buyerCreativeId}\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Gets the status for a single creative.\",\"parameters\":{\"a" +
-            "ccountId\":{\"type\":\"integer\",\"description\":\"The id for the account that will serv" +
-            "e this creative.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"adgroupId" +
-            "\":{\"type\":\"string\",\"description\":\"The adgroup this creative belongs to.\",\"requir" +
-            "ed\":true,\"format\":\"int64\",\"location\":\"query\"},\"buyerCreativeId\":{\"type\":\"string\"" +
-            ",\"description\":\"The buyer-specific id for this creative.\",\"required\":true,\"locat" +
-            "ion\":\"path\"}},\"parameterOrder\":[\"accountId\",\"buyerCreativeId\",\"adgroupId\"],\"resp" +
-            "onse\":{\"$ref\":\"Creative\"},\"scopes\":[\"https://www.googleapis.com/auth/adexchange." +
-            "buyer\"]},\"insert\":{\"id\":\"adexchangebuyer.creatives.insert\",\"path\":\"creatives\",\"h" +
-            "ttpMethod\":\"POST\",\"description\":\"Submit a new creative.\",\"request\":{\"$ref\":\"Crea" +
-            "tive\"},\"response\":{\"$ref\":\"Creative\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/adexchange.buyer\"]},\"list\":{\"id\":\"adexchangebuyer.creatives.list\",\"path\":\"creat" +
-            "ives\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of the authenticated us" +
-            "er\'s active creatives.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"descriptio" +
-            "n\":\"Maximum number of entries returned on one result page. If not set, the defau" +
-            "lt is 100. Optional.\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location" +
-            "\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token, use" +
-            "d to page through ad clients. To retrieve the next page, set this parameter to t" +
-            "he value of \\\"nextPageToken\\\" from the previous response. Optional.\",\"location\":" +
-            "\"query\"}},\"response\":{\"$ref\":\"CreativesList\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/adexchange.buyer\"]}}},\"directDeals\":{\"methods\":{\"get\":{\"id\":\"adexchange" +
-            "buyer.directDeals.get\",\"path\":\"directdeals/{id}\",\"httpMethod\":\"GET\",\"description" +
-            "\":\"Gets one direct deal by ID.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description" +
-            "\":\"The direct deal id\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"id\"],\"response\":{\"$ref\":\"DirectDeal\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/adexchange.buyer\"]},\"list\":{\"id\":\"adexchangebuyer.directDeals.li" +
-            "st\",\"path\":\"directdeals\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the authent" +
-            "icated user\'s list of direct deals.\",\"response\":{\"$ref\":\"DirectDealsList\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/adexchange.buyer\"]}}}}}";
+    public partial class AdexchangebuyerService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected AdexchangebuyerService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._accounts = new AccountsResource(this, _authenticator);
-            this._creatives = new CreativesResource(this, _authenticator);
-            this._directDeals = new DirectDealsResource(this, _authenticator);
+        public AdexchangebuyerService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._accounts = new AccountsResource(this, Authenticator);
+            this._creatives = new CreativesResource(this, Authenticator);
+            this._directDeals = new DirectDealsResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public AdexchangebuyerService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public AdexchangebuyerService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AdexchangebuyerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/adexchangebuyer/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "adexchangebuyer";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/adexchangebuyer/v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -902,13 +726,13 @@ namespace Google.Apis.Adexchangebuyer.v1 {
         
         private AdexchangebuyerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "accounts";
         
-        public AccountsResource(AdexchangebuyerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public AccountsResource(AdexchangebuyerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Gets one account by ID.</summary>
@@ -934,17 +758,48 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             return new UpdateRequest(service, body, id);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _id;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, long id) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, long id) : 
                     base(service) {
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -966,6 +821,28 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -977,27 +854,76 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "accounts";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "accounts/{id}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.AccountsList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.AccountsList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1022,33 +948,103 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            public override string ResourcePath {
                 get {
                     return "accounts";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "accounts";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _id;
             
             private Google.Apis.Adexchangebuyer.v1.Data.Account _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Adexchangebuyer.v1.Data.Account body, long id) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Adexchangebuyer.v1.Data.Account body, long id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1070,6 +1066,28 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1091,37 +1109,86 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "accounts";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "accounts/{id}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private long _id;
             
             private Google.Apis.Adexchangebuyer.v1.Data.Account _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Adexchangebuyer.v1.Data.Account body, long id) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Adexchangebuyer.v1.Data.Account body, long id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1146,6 +1213,28 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The account id</summary>
             [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long Id {
@@ -1164,20 +1253,38 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "accounts";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "accounts/{id}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1186,13 +1293,13 @@ namespace Google.Apis.Adexchangebuyer.v1 {
         
         private AdexchangebuyerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "creatives";
         
-        public CreativesResource(AdexchangebuyerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CreativesResource(AdexchangebuyerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Gets the status for a single creative.</summary>
@@ -1213,11 +1320,19 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             return new ListRequest(service);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private long _accountId;
             
@@ -1225,11 +1340,34 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private string _buyerCreativeId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, long accountId, string buyerCreativeId, string adgroupId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, long accountId, string buyerCreativeId, string adgroupId) : 
                     base(service) {
                 this._accountId = accountId;
                 this._buyerCreativeId = buyerCreativeId;
                 this._adgroupId = adgroupId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1251,6 +1389,28 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1278,30 +1438,81 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "creatives";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "creatives/{accountId}/{buyerCreativeId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, null, new string[0]));
+                parameters.Add("adgroupId", Google.Apis.Util.Utilities.CreateRuntimeParameter("adgroupId", true, "query", null, null, new string[0]));
+                parameters.Add("buyerCreativeId", Google.Apis.Util.Utilities.CreateRuntimeParameter("buyerCreativeId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private Google.Apis.Adexchangebuyer.v1.Data.Creative _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Adexchangebuyer.v1.Data.Creative body) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Adexchangebuyer.v1.Data.Creative body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1323,6 +1534,28 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1336,35 +1569,83 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "creatives";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "creatives";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.CreativesList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.CreativesList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private System.Nullable<long> _maxResults;
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1386,6 +1667,28 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1411,16 +1714,35 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "creatives";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "creatives";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1429,13 +1751,13 @@ namespace Google.Apis.Adexchangebuyer.v1 {
         
         private AdexchangebuyerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "directDeals";
         
-        public DirectDealsResource(AdexchangebuyerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public DirectDealsResource(AdexchangebuyerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Gets one direct deal by ID.</summary>
@@ -1449,17 +1771,48 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             return new ListRequest(service);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDeal> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDeal> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _id;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1481,6 +1834,28 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1492,27 +1867,76 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "directDeals";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "directdeals/{id}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDealsList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDealsList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1537,16 +1961,55 @@ namespace Google.Apis.Adexchangebuyer.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            public override string ResourcePath {
                 get {
                     return "directDeals";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "directdeals";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1561,7 +2024,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
         
         private DirectDealsResource _directDeals;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

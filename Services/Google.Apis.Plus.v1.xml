@@ -66,7 +66,6 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.Verb">
              <summary>This activity&apos;s verb, indicating what action was performed. Possible values are:  
-            - &quot;checkin&quot; - Check in to a location. 
             - &quot;post&quot; - Publish content to the stream. 
             - &quot;share&quot; - Reshare an activity.</summary>
         </member>
@@ -290,7 +289,7 @@
             <summary>ETag of this response for caching purposes.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.ActivityFeed.Id">
-            <summary>The ID of this collection of activities.</summary>
+            <summary>The ID of this collection of activities. Deprecated.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.ActivityFeed.Items">
             <summary>The activities in this page of results.</summary>
@@ -444,6 +443,9 @@
         <member name="P:Google.Apis.Plus.v1.Data.Person.Birthday">
             <summary>The person&apos;s date of birth, represented as YYYY-MM-DD.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.BraggingRights">
+            <summary>The &quot;bragging rights&quot; line of this person.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.CircledByCount">
             <summary>If a Google+ Page and for followers who are visible, the number of people who have added this page to a circle.</summary>
         </member>
@@ -457,7 +459,7 @@
             <summary>The name of this person, suitable for display.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Emails">
-            <summary>A list of email addresses for this person.</summary>
+            <summary>A list of email addresses that this person has set to public on their Google+ profile. You can also use the userinfo.email scope to retrieve an authenticated user&apos;s email address.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.ETag">
             <summary>ETag of this response for caching purposes.</summary>
@@ -525,7 +527,7 @@
             <summary>A list of URLs for this person.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Verified">
-            <summary>If a Google+ Page, whether it has been verified.</summary>
+            <summary>Whether the person or Google+ Page has been verified.</summary>
         </member>
         <member name="T:Google.Apis.Plus.v1.Data.Person.CoverData">
             <summary>The cover photo content.</summary>
@@ -663,9 +665,6 @@
             - &quot;extendedCircles&quot; - Access to members of everyone in a person&apos;s circles, plus all of the people in their circles. 
             - &quot;public&quot; - Access to anyone on the web.</summary>
         </member>
-        <member name="P:Google.Apis.Plus.v1.PlusService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Plus.v1.PlusService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -700,20 +699,44 @@
         <member name="F:Google.Apis.Plus.v1.ActivitiesResource.OrderBy.Recent">
             <summary>Sort activities by published date, most recent first.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.ActivityId">
             <summary>The ID of the activity to get.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.Collection">
             <summary>The collection of activities to list.</summary>
@@ -727,11 +750,23 @@
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.UserId">
             <summary>The ID of the user to get activities for. The special value "me" can be used to indicate the authenticated user.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.Language">
             <summary>Specify the preferred language to search with. See search language codes for available values.</summary>
@@ -765,20 +800,44 @@
         <member name="F:Google.Apis.Plus.v1.CommentsResource.SortOrder.Descending">
             <summary>Sort newest comments first.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.CommentId">
             <summary>The ID of the comment to get.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.ActivityId">
             <summary>The ID of the activity to get comments for.</summary>
@@ -814,20 +873,44 @@
         <member name="F:Google.Apis.Plus.v1.PeopleResource.Collection.Resharers">
             <summary>List all people who have reshared this activity.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.UserId">
             <summary>The ID of the person to get the profile for. The special value "me" can be used to indicate the authenticated user.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.ActivityId">
             <summary>The ID of the activity to get the list of people for.</summary>
@@ -841,11 +924,23 @@
         <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.PageToken">
             <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.Language">
             <summary>Specify the preferred language to search with. See search language codes for available values.</summary>

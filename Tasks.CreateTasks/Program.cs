@@ -16,10 +16,13 @@ limitations under the License.
 
 using System;
 using System.Linq;
+
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Tasks.v1;
 using Google.Apis.Tasks.v1.Data;
@@ -44,14 +47,19 @@ namespace TasksSample.CreateTasks
             CommandLine.DisplayGoogleSampleHeader("Tasks API");
 
             // Register the authenticator.
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
+            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = credentials.ClientId,
+                    ClientSecret = credentials.ClientSecret
+                };
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
 
             // Create the service.
-            var service = new TasksService(auth);
+            var service = new TasksService(new BaseClientService.Initializer()
+                {
+                    Authenticator = auth
+                });
 
             // Execute request: Create sample list.
             if (!ListExists(service, SampleListName) &&

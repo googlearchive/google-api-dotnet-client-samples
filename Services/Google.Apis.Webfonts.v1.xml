@@ -22,9 +22,6 @@
         <member name="P:Google.Apis.Webfonts.v1.Data.WebfontList.Kind">
             <summary>This kind represents a list of webfont objects in the webfonts service.</summary>
         </member>
-        <member name="P:Google.Apis.Webfonts.v1.WebfontsService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="M:Google.Apis.Webfonts.v1.WebfontsResource.List">
             <summary>Retrieves the list of fonts currently served by the Google Web Fonts Developer API</summary>
         </member>
@@ -46,11 +43,23 @@
         <member name="F:Google.Apis.Webfonts.v1.WebfontsResource.Sort.Trending">
             <summary>Sort by trending</summary>
         </member>
+        <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.Sort">
             <summary>Enables sorting of the list</summary>

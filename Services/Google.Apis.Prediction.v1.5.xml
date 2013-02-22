@@ -241,9 +241,6 @@
         <member name="P:Google.Apis.Prediction.v1_5.Data.Update.Output">
             <summary>The generic output value - could be regression value or class label</summary>
         </member>
-        <member name="P:Google.Apis.Prediction.v1_5.PredictionService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Prediction.v1_5.PredictionService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -257,11 +254,23 @@
             <summary>Submit input and request an output against a hosted model.</summary>
             <param name="hostedModelName">Required - The name of a hosted model.</param>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.HostedmodelsResource.PredictRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.HostedmodelsResource.PredictRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.HostedmodelsResource.PredictRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.HostedmodelsResource.PredictRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.HostedmodelsResource.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.HostedmodelsResource.PredictRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.HostedmodelsResource.PredictRequest.HostedModelName">
             <summary>The name of a hosted model.</summary>
@@ -295,14 +304,32 @@
             <summary>Add new data to a trained model.</summary>
             <param name="id">Required - The unique name for the predictive model.</param>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.AnalyzeRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.AnalyzeRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.AnalyzeRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.AnalyzeRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.AnalyzeRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.AnalyzeRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.AnalyzeRequest.Id">
             <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -310,8 +337,20 @@
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.DeleteRequest.Id">
             <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -319,8 +358,20 @@
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.GetRequest.Id">
             <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -328,8 +379,20 @@
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -337,11 +400,23 @@
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.ListRequest.PageToken">
             <summary>Pagination token</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.PredictRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.PredictRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.PredictRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -349,17 +424,35 @@
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.PredictRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.PredictRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.PredictRequest.Id">
             <summary>The unique name for the predictive model.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.PredictRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_5.TrainedmodelsResource.UpdateRequest.Id">
             <summary>The unique name for the predictive model.</summary>

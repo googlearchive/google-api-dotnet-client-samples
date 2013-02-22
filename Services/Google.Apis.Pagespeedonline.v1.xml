@@ -163,9 +163,6 @@
         <member name="P:Google.Apis.Pagespeedonline.v1.Data.Result.VersionData.Minor">
             <summary>The minor version number of the Page Speed SDK used to generate these results.</summary>
         </member>
-        <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedonlineService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="M:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.Runpagespeed(System.String)">
             <summary>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list of suggestions to make that page faster, and other information.</summary>
             <param name="url">Required - Must match pattern http(s)?://.* - The URL to fetch and analyze</param>
@@ -179,11 +176,23 @@
         <member name="F:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.Strategy.Mobile">
             <summary>Fetch and analyze the URL for mobile devices</summary>
         </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.Locale">
             <summary>The locale used to localize formatted results</summary>

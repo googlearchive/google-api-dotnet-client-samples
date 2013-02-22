@@ -1477,299 +1477,71 @@ namespace Google.Apis.Blogger.v2 {
     using Google.Apis.Discovery;
     
     
-    public partial class BloggerService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/L-Fvwci" +
-            "KnyblN_QE3wRQRHPCFt0\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"blogger:v2\",\"name\":\"blogge" +
-            "r\",\"version\":\"v2\",\"revision\":\"20120508\",\"title\":\"Blogger API\",\"description\":\"API" +
-            " for access to the data within Blogger.\",\"icons\":{\"x16\":\"http://www.google.com/i" +
-            "mages/icons/product/blogger-16.png\",\"x32\":\"http://www.google.com/images/icons/pr" +
-            "oduct/blogger-32.png\"},\"documentationLink\":\"https://developers.google.com/blogge" +
-            "r/docs/2.0/json/getting_started\",\"labels\":[\"limited_availability\"],\"protocol\":\"r" +
-            "est\",\"baseUrl\":\"https://www.googleapis.com/blogger/v2/\",\"basePath\":\"/blogger/v2/" +
-            "\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"blogger/v2/\",\"batchPath" +
-            "\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for th" +
-            "e response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses wit" +
-            "h Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"strin" +
-            "g\",\"description\":\"Selector specifying which fields to include in a partial respo" +
-            "nse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your AP" +
-            "I key identifies your project and provides you with API access, quota, and repor" +
-            "ts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_" +
-            "token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"l" +
-            "ocation\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respons" +
-            "e with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quot" +
-            "aUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for s" +
-            "erver-side applications. Can be any arbitrary string assigned to a user, but sho" +
-            "uld not exceed 40 characters. Overrides userIp if both are provided.\",\"location\"" +
-            ":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where " +
-            "the request originates. Use this if you want to enforce per-user limits.\",\"locat" +
-            "ion\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/blog" +
-            "ger\":{\"description\":\"Manage your Blogger account\"}}}},\"schemas\":{\"Blog\":{\"id\":\"B" +
-            "log\",\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\",\"description\":" +
-            "\"The description of this blog. This is displayed underneath the title.\"},\"id\":{\"" +
-            "type\":\"string\",\"description\":\"The identifier for this resource.\",\"format\":\"int64" +
-            "\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entry. Always blogger" +
-            "#blog\",\"default\":\"blogger#blog\"},\"locale\":{\"type\":\"object\",\"description\":\"The lo" +
-            "cale this Blog is set to.\",\"properties\":{\"country\":{\"type\":\"string\",\"description" +
-            "\":\"The country this blog\'s locale is set to.\"},\"language\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The language this blog is authored in.\"},\"variant\":{\"type\":\"string\",\"d" +
-            "escription\":\"The language variant this blog is authored in.\"}}},\"name\":{\"type\":\"" +
-            "string\",\"description\":\"The name of this blog. This is displayed as the title.\"}," +
-            "\"pages\":{\"type\":\"object\",\"description\":\"The container of pages in this blog.\",\"p" +
-            "roperties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL of the container " +
-            "for pages in this blog.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"The coun" +
-            "t of pages in this blog.\",\"format\":\"int32\"}}},\"posts\":{\"type\":\"object\",\"descript" +
-            "ion\":\"The container of posts in this blog.\",\"properties\":{\"selfLink\":{\"type\":\"st" +
-            "ring\",\"description\":\"The URL of the container for posts in this blog.\"},\"totalIt" +
-            "ems\":{\"type\":\"integer\",\"description\":\"The count of posts in this blog.\",\"format\"" +
-            ":\"int32\"}}},\"published\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time when " +
-            "this blog was published.\",\"format\":\"date-time\"},\"selfLink\":{\"type\":\"string\",\"des" +
-            "cription\":\"The API REST URL to fetch this resource from.\"},\"updated\":{\"type\":\"st" +
-            "ring\",\"description\":\"RFC 3339 date-time when this blog was last updated.\",\"forma" +
-            "t\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The URL where this blog is" +
-            " published.\"}}},\"BlogList\":{\"id\":\"BlogList\",\"type\":\"object\",\"properties\":{\"items" +
-            "\":{\"type\":\"array\",\"description\":\"The list of Blogs this user has Authorship or A" +
-            "dmin rights over.\",\"items\":{\"$ref\":\"Blog\"}},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"The kind of this entity. Always blogger#blogList\",\"default\":\"blogger#blogList" +
-            "\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"properties\":{\"author\":{\"type\":\"o" +
-            "bject\",\"description\":\"The author of this Comment.\",\"properties\":{\"displayName\":{" +
-            "\"type\":\"string\",\"description\":\"The display name.\"},\"id\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The identifier of the Comment creator.\"},\"image\":{\"type\":\"object\",\"descr" +
-            "iption\":\"The comment creator\'s avatar.\",\"properties\":{\"url\":{\"type\":\"string\",\"de" +
-            "scription\":\"The comment creator\'s avatar URL.\"}}},\"url\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The URL of the Comment creator\'s Profile page.\"}}},\"blog\":{\"type\":\"objec" +
-            "t\",\"description\":\"Data about the blog containing this comment.\",\"properties\":{\"i" +
-            "d\":{\"type\":\"string\",\"description\":\"The identifier of the blog containing this co" +
-            "mment.\",\"format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"description\":\"The actual" +
-            " content of the comment. May include HTML markup.\"},\"id\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The identifier for this resource.\",\"format\":\"int64\"},\"inReplyTo\":{\"type" +
-            "\":\"object\",\"description\":\"Data about the comment this is in reply to.\",\"properti" +
-            "es\":{\"id\":{\"type\":\"string\",\"description\":\"The identified of the parent of this c" +
-            "omment.\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"description\":\"The kind of " +
-            "this entry. Always blogger#comment\",\"default\":\"blogger#comment\"},\"post\":{\"type\":" +
-            "\"object\",\"description\":\"Data about the post containing this comment.\",\"propertie" +
-            "s\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the post containing t" +
-            "his comment.\",\"format\":\"int64\"}}},\"published\":{\"type\":\"string\",\"description\":\"RF" +
-            "C 3339 date-time when this comment was published.\",\"format\":\"date-time\"},\"selfLi" +
-            "nk\":{\"type\":\"string\",\"description\":\"The API REST URL to fetch this resource from" +
-            ".\"},\"updated\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time when this comme" +
-            "nt was last updated.\",\"format\":\"date-time\"}}},\"CommentList\":{\"id\":\"CommentList\"," +
-            "\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The List of" +
-            " Comments for a Post.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The kind of this entry. Always blogger#commentList\",\"default\":\"blogger" +
-            "#commentList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Pagination token " +
-            "to fetch the next page, if one exists.\"},\"prevPageToken\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Pagination token to fetch the previous page, if one exists.\"}}},\"Page\":" +
-            "{\"id\":\"Page\",\"type\":\"object\",\"properties\":{\"author\":{\"type\":\"object\",\"descriptio" +
-            "n\":\"The author of this Page.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The display name.\"},\"id\":{\"type\":\"string\",\"description\":\"The identifie" +
-            "r of the Page creator.\"},\"image\":{\"type\":\"object\",\"description\":\"The page author" +
-            "\'s avatar.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The page author\'" +
-            "s avatar URL.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The URL of the Page crea" +
-            "tor\'s Profile page.\"}}},\"blog\":{\"type\":\"object\",\"description\":\"Data about the bl" +
-            "og containing this Page.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The" +
-            " identifier of the blog containing this page.\",\"format\":\"int64\"}}},\"content\":{\"t" +
-            "ype\":\"string\",\"description\":\"The body content of this Page, in HTML.\"},\"id\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The identifier for this resource.\",\"format\":\"int64\"}" +
-            ",\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always blogger#" +
-            "page\",\"default\":\"blogger#page\"},\"published\":{\"type\":\"string\",\"description\":\"RFC " +
-            "3339 date-time when this Page was published.\",\"format\":\"date-time\"},\"selfLink\":{" +
-            "\"type\":\"string\",\"description\":\"The API REST URL to fetch this resource from.\"},\"" +
-            "title\":{\"type\":\"string\",\"description\":\"The title of this entity. This is the nam" +
-            "e displayed in the Admin user interface.\"},\"updated\":{\"type\":\"string\",\"descripti" +
-            "on\":\"RFC 3339 date-time when this Page was last updated.\",\"format\":\"date-time\"}," +
-            "\"url\":{\"type\":\"string\",\"description\":\"The URL that this Page is displayed at.\"}}" +
-            "},\"PageList\":{\"id\":\"PageList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"arr" +
-            "ay\",\"description\":\"The list of Pages for a Blog.\",\"items\":{\"$ref\":\"Page\"}},\"kind" +
-            "\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always blogger#pageLi" +
-            "st\",\"default\":\"blogger#pageList\"}}},\"Post\":{\"id\":\"Post\",\"type\":\"object\",\"propert" +
-            "ies\":{\"author\":{\"type\":\"object\",\"description\":\"The author of this Post.\",\"proper" +
-            "ties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The display name.\"},\"id\":{\"" +
-            "type\":\"string\",\"description\":\"The identifier of the Post creator.\"},\"image\":{\"ty" +
-            "pe\":\"object\",\"description\":\"The Post author\'s avatar.\",\"properties\":{\"url\":{\"typ" +
-            "e\":\"string\",\"description\":\"The Post author\'s avatar URL.\"}}},\"url\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The URL of the Post creator\'s Profile page.\"}}},\"blog\":{\"type" +
-            "\":\"object\",\"description\":\"Data about the blog containing this Post.\",\"properties" +
-            "\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the Blog that contains" +
-            " this Post.\",\"format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"description\":\"The c" +
-            "ontent of the Post. May contain HTML markup.\"},\"id\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The identifier of this Post.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"des" +
-            "cription\":\"The kind of this entity. Always blogger#post\",\"default\":\"blogger#post" +
-            "\"},\"labels\":{\"type\":\"array\",\"description\":\"The list of labels this Post was tagg" +
-            "ed with.\",\"items\":{\"type\":\"string\"}},\"published\":{\"type\":\"string\",\"description\":" +
-            "\"RFC 3339 date-time when this Post was published.\",\"format\":\"date-time\"},\"replie" +
-            "s\":{\"type\":\"object\",\"description\":\"The container of comments on this Post.\",\"pro" +
-            "perties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL of the comments on " +
-            "this post.\"},\"totalItems\":{\"type\":\"string\",\"description\":\"The count of comments " +
-            "on this post.\",\"format\":\"int64\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Th" +
-            "e API REST URL to fetch this resource from.\"},\"title\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The title of the Post.\"},\"updated\":{\"type\":\"string\",\"description\":\"RFC 333" +
-            "9 date-time when this Post was last updated.\",\"format\":\"date-time\"},\"url\":{\"type" +
-            "\":\"string\",\"description\":\"The URL where this Post is displayed.\"}}},\"PostList\":{" +
-            "\"id\":\"PostList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descripti" +
-            "on\":\"The list of Posts for this Blog.\",\"items\":{\"$ref\":\"Post\"}},\"kind\":{\"type\":\"" +
-            "string\",\"description\":\"The kind of this entity. Always blogger#postList\",\"defaul" +
-            "t\":\"blogger#postList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Paginatio" +
-            "n token to fetch the next page, if one exists.\"},\"prevPageToken\":{\"type\":\"string" +
-            "\",\"description\":\"Pagination token to fetch the previous page, if one exists.\"}}}" +
-            ",\"User\":{\"id\":\"User\",\"type\":\"object\",\"properties\":{\"about\":{\"type\":\"string\",\"des" +
-            "cription\":\"Profile summary information.\"},\"blogs\":{\"type\":\"object\",\"description\"" +
-            ":\"The container of blogs for this user.\",\"properties\":{\"selfLink\":{\"type\":\"strin" +
-            "g\",\"description\":\"The URL of the Blogs for this user.\"}}},\"created\":{\"type\":\"str" +
-            "ing\",\"description\":\"The timestamp of when this profile was created, in seconds s" +
-            "ince epoch.\",\"format\":\"date-time\"},\"displayName\":{\"type\":\"string\",\"description\":" +
-            "\"The display name.\"},\"id\":{\"type\":\"string\",\"description\":\"The identifier for thi" +
-            "s User.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always" +
-            " blogger#user\",\"default\":\"blogger#user\"},\"locale\":{\"type\":\"object\",\"description\"" +
-            ":\"This user\'s locale\",\"properties\":{\"country\":{\"type\":\"string\",\"description\":\"Th" +
-            "e user\'s country setting.\"},\"language\":{\"type\":\"string\",\"description\":\"The user\'" +
-            "s language setting.\"},\"variant\":{\"type\":\"string\",\"description\":\"The user\'s langu" +
-            "age variant setting.\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"The API REST" +
-            " URL to fetch this resource from.\"},\"url\":{\"type\":\"string\",\"description\":\"The us" +
-            "er\'s profile page.\"}}}},\"resources\":{\"blogs\":{\"methods\":{\"get\":{\"id\":\"blogger.bl" +
-            "ogs.get\",\"path\":\"blogs/{blogId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one blog" +
-            " by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"The ID of the bl" +
-            "og to get.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"blogId\"],\"res" +
-            "ponse\":{\"$ref\":\"Blog\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}}},\"" +
-            "comments\":{\"methods\":{\"get\":{\"id\":\"blogger.comments.get\",\"path\":\"blogs/{blogId}/" +
-            "posts/{postId}/comments/{commentId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one " +
-            "comment by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the" +
-            " blog to containing the comment.\",\"required\":true,\"location\":\"path\"},\"commentId\"" +
-            ":{\"type\":\"string\",\"description\":\"The ID of the comment to get.\",\"required\":true," +
-            "\"location\":\"path\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the post to fe" +
-            "tch posts from.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"blogId\"," +
-            "\"postId\",\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/blogger\"]},\"list\":{\"id\":\"blogger.comments.list\",\"path\":\"blogs/{bl" +
-            "ogId}/posts/{postId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the c" +
-            "omments for a blog, possibly filtered.\",\"parameters\":{\"blogId\":{\"type\":\"string\"," +
-            "\"description\":\"ID of the blog to fetch comments from.\",\"required\":true,\"location" +
-            "\":\"path\"},\"fetchBodies\":{\"type\":\"boolean\",\"description\":\"Whether the body conten" +
-            "t of the comments is included.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"intege" +
-            "r\",\"description\":\"Maximum number of comments to include in the result.\",\"format\"" +
-            ":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Contin" +
-            "uation token if request is paged.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\"" +
-            ",\"description\":\"ID of the post to fetch posts from.\",\"required\":true,\"location\":" +
-            "\"path\"},\"startDate\":{\"type\":\"string\",\"description\":\"Earliest date of comment to " +
-            "fetch, a date-time with RFC 3339 formatting.\",\"format\":\"date-time\",\"location\":\"q" +
-            "uery\"}},\"parameterOrder\":[\"blogId\",\"postId\"],\"response\":{\"$ref\":\"CommentList\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/blogger\"]}}},\"pages\":{\"methods\":{\"get\"" +
-            ":{\"id\":\"blogger.pages.get\",\"path\":\"blogs/{blogId}/pages/{pageId}\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Gets one blog page by id.\",\"parameters\":{\"blogId\":{\"type\":\"s" +
-            "tring\",\"description\":\"ID of the blog containing the page.\",\"required\":true,\"loca" +
-            "tion\":\"path\"},\"pageId\":{\"type\":\"string\",\"description\":\"The ID of the page to get" +
-            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"blogId\",\"pageId\"],\"res" +
-            "ponse\":{\"$ref\":\"Page\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]},\"li" +
-            "st\":{\"id\":\"blogger.pages.list\",\"path\":\"blogs/{blogId}/pages\",\"httpMethod\":\"GET\"," +
-            "\"description\":\"Retrieves pages for a blog, possibly filtered.\",\"parameters\":{\"bl" +
-            "ogId\":{\"type\":\"string\",\"description\":\"ID of the blog to fetch pages from.\",\"requ" +
-            "ired\":true,\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boolean\",\"description\":\"Whe" +
-            "ther to retrieve the Page bodies.\",\"location\":\"query\"}},\"parameterOrder\":[\"blogI" +
-            "d\"],\"response\":{\"$ref\":\"PageList\"},\"scopes\":[\"https://www.googleapis.com/auth/bl" +
-            "ogger\"]}}},\"posts\":{\"methods\":{\"get\":{\"id\":\"blogger.posts.get\",\"path\":\"blogs/{bl" +
-            "ogId}/posts/{postId}\",\"httpMethod\":\"GET\",\"description\":\"Get a post by id.\",\"para" +
-            "meters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the blog to fetch the po" +
-            "st from.\",\"required\":true,\"location\":\"path\"},\"postId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The ID of the post\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
-            "\"blogId\",\"postId\"],\"response\":{\"$ref\":\"Post\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/blogger\"]},\"list\":{\"id\":\"blogger.posts.list\",\"path\":\"blogs/{blogId}/pos" +
-            "ts\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of posts, possibly filter" +
-            "ed.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the blog to fe" +
-            "tch posts from.\",\"required\":true,\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boole" +
-            "an\",\"description\":\"Whether the body content of posts is included.\",\"location\":\"q" +
-            "uery\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of posts to " +
-            "fetch.\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Continuation token if the request is paged.\",\"location\":\"query\"},\"star" +
-            "tDate\":{\"type\":\"string\",\"description\":\"Earliest post date to fetch, a date-time " +
-            "with RFC 3339 formatting.\",\"format\":\"date-time\",\"location\":\"query\"}},\"parameterO" +
-            "rder\":[\"blogId\"],\"response\":{\"$ref\":\"PostList\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/blogger\"]}}},\"users\":{\"methods\":{\"get\":{\"id\":\"blogger.users.get\",\"pat" +
-            "h\":\"users/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one user by id.\",\"par" +
-            "ameters\":{\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user to get.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref" +
-            "\":\"User\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}},\"resources\":{\"b" +
-            "logs\":{\"methods\":{\"list\":{\"id\":\"blogger.users.blogs.list\",\"path\":\"users/{userId}" +
-            "/blogs\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of blogs, possibly fi" +
-            "ltered.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"description\":\"ID of the user w" +
-            "hose blogs are to be fetched. Either the word \'self\' (sans quote marks) or the u" +
-            "ser\'s profile identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"userId\"],\"response\":{\"$ref\":\"BlogList\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/blogger\"]}}}}}}}";
+    public partial class BloggerService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v2";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected BloggerService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._blogs = new BlogsResource(this, _authenticator);
-            this._comments = new CommentsResource(this, _authenticator);
-            this._pages = new PagesResource(this, _authenticator);
-            this._posts = new PostsResource(this, _authenticator);
-            this._users = new UsersResource(this, _authenticator);
+        public BloggerService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._blogs = new BlogsResource(this, Authenticator);
+            this._comments = new CommentsResource(this, Authenticator);
+            this._pages = new PagesResource(this, Authenticator);
+            this._posts = new PostsResource(this, Authenticator);
+            this._users = new UsersResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public BloggerService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public BloggerService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BloggerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/blogger/v2/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "blogger";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/blogger/v2/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -1785,13 +1557,13 @@ namespace Google.Apis.Blogger.v2 {
         
         private BloggerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "blogs";
         
-        public BlogsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public BlogsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Gets one blog by id.</summary>
@@ -1800,17 +1572,48 @@ namespace Google.Apis.Blogger.v2 {
             return new GetRequest(service, blogId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Blog> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Blogger.v2.Data.Blog> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _blogId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string blogId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string blogId) : 
                     base(service) {
                 this._blogId = blogId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1835,6 +1638,28 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The ID of the blog to get.</summary>
             [Google.Apis.Util.RequestParameterAttribute("blogId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BlogId {
@@ -1843,16 +1668,34 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "blogs";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "blogs/{blogId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("blogId", Google.Apis.Util.Utilities.CreateRuntimeParameter("blogId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1861,13 +1704,13 @@ namespace Google.Apis.Blogger.v2 {
         
         private BloggerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "comments";
         
-        public CommentsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public CommentsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Gets one comment by id.</summary>
@@ -1885,11 +1728,19 @@ namespace Google.Apis.Blogger.v2 {
             return new ListRequest(service, blogId, postId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Comment> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Blogger.v2.Data.Comment> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _blogId;
             
@@ -1897,11 +1748,34 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _postId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string blogId, string postId, string commentId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string blogId, string postId, string commentId) : 
                     base(service) {
                 this._blogId = blogId;
                 this._postId = postId;
                 this._commentId = commentId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1923,6 +1797,28 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1950,24 +1846,52 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "comments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "blogs/{blogId}/posts/{postId}/comments/{commentId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("blogId", Google.Apis.Util.Utilities.CreateRuntimeParameter("blogId", true, "path", null, null, new string[0]));
+                parameters.Add("commentId", Google.Apis.Util.Utilities.CreateRuntimeParameter("commentId", true, "path", null, null, new string[0]));
+                parameters.Add("postId", Google.Apis.Util.Utilities.CreateRuntimeParameter("postId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.CommentList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Blogger.v2.Data.CommentList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _blogId;
             
@@ -1981,10 +1905,33 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _startDate;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string blogId, string postId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string blogId, string postId) : 
                     base(service) {
                 this._blogId = blogId;
                 this._postId = postId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2006,6 +1953,28 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2069,16 +2038,39 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "comments";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "blogs/{blogId}/posts/{postId}/comments";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("blogId", Google.Apis.Util.Utilities.CreateRuntimeParameter("blogId", true, "path", null, null, new string[0]));
+                parameters.Add("fetchBodies", Google.Apis.Util.Utilities.CreateRuntimeParameter("fetchBodies", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("postId", Google.Apis.Util.Utilities.CreateRuntimeParameter("postId", true, "path", null, null, new string[0]));
+                parameters.Add("startDate", Google.Apis.Util.Utilities.CreateRuntimeParameter("startDate", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2087,13 +2079,13 @@ namespace Google.Apis.Blogger.v2 {
         
         private BloggerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "pages";
         
-        public PagesResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public PagesResource(BloggerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Gets one blog page by id.</summary>
@@ -2109,20 +2101,51 @@ namespace Google.Apis.Blogger.v2 {
             return new ListRequest(service, blogId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Page> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Blogger.v2.Data.Page> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _blogId;
             
             private string _pageId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string blogId, string pageId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string blogId, string pageId) : 
                     base(service) {
                 this._blogId = blogId;
                 this._pageId = pageId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2144,6 +2167,28 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2163,32 +2208,82 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "pages";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "blogs/{blogId}/pages/{pageId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("blogId", Google.Apis.Util.Utilities.CreateRuntimeParameter("blogId", true, "path", null, null, new string[0]));
+                parameters.Add("pageId", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PageList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Blogger.v2.Data.PageList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _blogId;
             
             private System.Nullable<bool> _fetchBodies;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string blogId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string blogId) : 
                     base(service) {
                 this._blogId = blogId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2210,6 +2305,28 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2232,16 +2349,35 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "pages";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "blogs/{blogId}/pages";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("blogId", Google.Apis.Util.Utilities.CreateRuntimeParameter("blogId", true, "path", null, null, new string[0]));
+                parameters.Add("fetchBodies", Google.Apis.Util.Utilities.CreateRuntimeParameter("fetchBodies", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2250,13 +2386,13 @@ namespace Google.Apis.Blogger.v2 {
         
         private BloggerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "posts";
         
-        public PostsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public PostsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Get a post by id.</summary>
@@ -2272,20 +2408,51 @@ namespace Google.Apis.Blogger.v2 {
             return new ListRequest(service, blogId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Post> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Blogger.v2.Data.Post> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _blogId;
             
             private string _postId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string blogId, string postId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string blogId, string postId) : 
                     base(service) {
                 this._blogId = blogId;
                 this._postId = postId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2307,6 +2474,28 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2326,24 +2515,51 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "posts";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "blogs/{blogId}/posts/{postId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("blogId", Google.Apis.Util.Utilities.CreateRuntimeParameter("blogId", true, "path", null, null, new string[0]));
+                parameters.Add("postId", Google.Apis.Util.Utilities.CreateRuntimeParameter("postId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PostList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Blogger.v2.Data.PostList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _blogId;
             
@@ -2355,9 +2571,32 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _startDate;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string blogId) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string blogId) : 
                     base(service) {
                 this._blogId = blogId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2379,6 +2618,28 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -2434,16 +2695,38 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "posts";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "blogs/{blogId}/posts";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("blogId", Google.Apis.Util.Utilities.CreateRuntimeParameter("blogId", true, "path", null, null, new string[0]));
+                parameters.Add("fetchBodies", Google.Apis.Util.Utilities.CreateRuntimeParameter("fetchBodies", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("startDate", Google.Apis.Util.Utilities.CreateRuntimeParameter("startDate", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2452,16 +2735,16 @@ namespace Google.Apis.Blogger.v2 {
         
         private BloggerService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "users";
         
         private BlogsResource _blogs;
         
-        public UsersResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public UsersResource(BloggerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
-            this._blogs = new BlogsResource(service, _authenticator);
+            this.authenticator = authenticator;
+            this._blogs = new BlogsResource(service, authenticator);
         }
         
         public virtual BlogsResource Blogs {
@@ -2480,13 +2763,13 @@ namespace Google.Apis.Blogger.v2 {
             
             private BloggerService service;
             
-            private Google.Apis.Authentication.IAuthenticator _authenticator;
+            private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "users.blogs";
             
-            public BlogsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            public BlogsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
-                this._authenticator = _authenticator;
+                this.authenticator = authenticator;
             }
             
             /// <summary>Retrieves a list of blogs, possibly filtered.</summary>
@@ -2495,17 +2778,48 @@ namespace Google.Apis.Blogger.v2 {
                 return new ListRequest(service, userId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.BlogList> {
+            public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Blogger.v2.Data.BlogList> {
+                
+                private string _alt;
+                
+                private string _fields;
                 
                 private string _oauth_token;
                 
                 private System.Nullable<bool> _prettyPrint;
                 
+                private string _quotaUser;
+                
+                private string _userIp;
+                
                 private string _userId;
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
+                public ListRequest(Google.Apis.Discovery.IClientService service, string userId) : 
                         base(service) {
                     this._userId = userId;
+                    this.InitParameters();
+                }
+                
+                /// <summary>Data format for the response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Alt {
+                    get {
+                        return this._alt;
+                    }
+                    set {
+                        this._alt = value;
+                    }
+                }
+                
+                /// <summary>Selector specifying which fields to include in a partial response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string Fields {
+                    get {
+                        return this._fields;
+                    }
+                    set {
+                        this._fields = value;
+                    }
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2530,6 +2844,28 @@ namespace Google.Apis.Blogger.v2 {
                     }
                 }
                 
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+                public virtual string UserIp {
+                    get {
+                        return this._userIp;
+                    }
+                    set {
+                        this._userIp = value;
+                    }
+                }
+                
                 /// <summary>ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the user's profile identifier.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string UserId {
@@ -2538,31 +2874,80 @@ namespace Google.Apis.Blogger.v2 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "users.blogs";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
                 }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "users/{userId}/blogs";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+                }
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.User> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Blogger.v2.Data.User> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2587,6 +2972,28 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>The ID of the user to get.</summary>
             [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
@@ -2595,16 +3002,34 @@ namespace Google.Apis.Blogger.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "users";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "users/{userId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2623,7 +3048,7 @@ namespace Google.Apis.Blogger.v2 {
         
         private UsersResource _users;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

@@ -4,9 +4,6 @@
         <name>Google.Apis.Customsearch.v1</name>
     </assembly>
     <members>
-        <member name="P:Google.Apis.Customsearch.v1.CustomsearchService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="M:Google.Apis.Customsearch.v1.CseResource.List(System.String)">
             <summary>Returns metadata about the search performed, metadata about the custom search engine used for the search, and the search results.</summary>
             <param name="q">Required - Query</param>
@@ -242,11 +239,23 @@
         <member name="F:Google.Apis.Customsearch.v1.CseResource.SiteSearchFilter.I">
             <summary>include</summary>
         </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.C2coff">
             <summary>Turns off the translation between zh-CN and zh-TW.</summary>

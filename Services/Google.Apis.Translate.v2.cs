@@ -207,153 +207,70 @@ namespace Google.Apis.Translate.v2 {
     using Google.Apis.Discovery;
     
     
-    public partial class TranslateService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/0-Y5DNK" +
-            "93jgoziDxP4PQmKHHkRM\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"translate:v2\",\"name\":\"tran" +
-            "slate\",\"version\":\"v2\",\"revision\":\"20120112\",\"title\":\"Translate API\",\"description" +
-            "\":\"Lets you translate text from one language to another\",\"icons\":{\"x16\":\"http://" +
-            "www.google.com/images/icons/product/translate-16.png\",\"x32\":\"http://www.google.c" +
-            "om/images/icons/product/translate-32.png\"},\"documentationLink\":\"http://code.goog" +
-            "le.com/apis/language/translate/v2/using_rest.html\",\"protocol\":\"rest\",\"baseUrl\":\"" +
-            "https://www.googleapis.com/language/translate/\",\"basePath\":\"/language/translate/" +
-            "\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"language/translate/\",\"b" +
-            "atchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data forma" +
-            "t for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Respo" +
-            "nses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type" +
-            "\":\"string\",\"description\":\"Selector specifying which fields to include in a parti" +
-            "al response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key." +
-            " Your API key identifies your project and provides you with API access, quota, a" +
-            "nd reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"}" +
-            ",\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current u" +
-            "ser.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns" +
-            " response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query" +
-            "\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purpos" +
-            "es for server-side applications. Can be any arbitrary string assigned to a user," +
-            " but should not exceed 40 characters. Overrides userIp if both are provided.\",\"l" +
-            "ocation\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the sit" +
-            "e where the request originates. Use this if you want to enforce per-user limits." +
-            "\",\"location\":\"query\"}},\"features\":[\"dataWrapper\"],\"schemas\":{\"DetectionsListResp" +
-            "onse\":{\"id\":\"DetectionsListResponse\",\"type\":\"object\",\"properties\":{\"detections\":" +
-            "{\"type\":\"array\",\"description\":\"A detections contains detection results of severa" +
-            "l text\",\"items\":{\"$ref\":\"DetectionsResource\"}}}},\"DetectionsResource\":{\"id\":\"Det" +
-            "ectionsResource\",\"type\":\"array\",\"description\":\"An array of languages which we de" +
-            "tect for the given text The most likely language list first.\",\"items\":{\"type\":\"o" +
-            "bject\",\"properties\":{\"confidence\":{\"type\":\"number\",\"description\":\"The confidence" +
-            " of the detection resul of this language.\",\"format\":\"float\"},\"isReliable\":{\"type" +
-            "\":\"boolean\",\"description\":\"A boolean to indicate is the language detection resul" +
-            "t reliable.\"},\"language\":{\"type\":\"string\",\"description\":\"The language we detect\"" +
-            "}}}},\"LanguagesListResponse\":{\"id\":\"LanguagesListResponse\",\"type\":\"object\",\"prop" +
-            "erties\":{\"languages\":{\"type\":\"array\",\"description\":\"List of source/target langua" +
-            "ges supported by the translation API. If target parameter is unspecified, the li" +
-            "st is sorted by the ASCII code point order of the language code. If target param" +
-            "eter is specified, the list is sorted by the collation order of the language nam" +
-            "e in the target language.\",\"items\":{\"$ref\":\"LanguagesResource\"}}}},\"LanguagesRes" +
-            "ource\":{\"id\":\"LanguagesResource\",\"type\":\"object\",\"properties\":{\"language\":{\"type" +
-            "\":\"string\",\"description\":\"The language code.\"},\"name\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The localized name of the language if target parameter is given.\"}}},\"Tran" +
-            "slationsListResponse\":{\"id\":\"TranslationsListResponse\",\"type\":\"object\",\"properti" +
-            "es\":{\"translations\":{\"type\":\"array\",\"description\":\"Translations contains list of" +
-            " translation results of given text\",\"items\":{\"$ref\":\"TranslationsResource\"}}}},\"" +
-            "TranslationsResource\":{\"id\":\"TranslationsResource\",\"type\":\"object\",\"properties\":" +
-            "{\"detectedSourceLanguage\":{\"type\":\"string\",\"description\":\"Detected source langua" +
-            "ge if source parameter is unspecified.\"},\"translatedText\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The translation.\"}}}},\"resources\":{\"detections\":{\"methods\":{\"list\":{\"i" +
-            "d\":\"language.detections.list\",\"path\":\"v2/detect\",\"httpMethod\":\"GET\",\"description" +
-            "\":\"Detect the language of text.\",\"parameters\":{\"q\":{\"type\":\"string\",\"description" +
-            "\":\"The text to detect\",\"required\":true,\"repeated\":true,\"location\":\"query\"}},\"par" +
-            "ameterOrder\":[\"q\"],\"response\":{\"$ref\":\"DetectionsListResponse\"}}}},\"languages\":{" +
-            "\"methods\":{\"list\":{\"id\":\"language.languages.list\",\"path\":\"v2/languages\",\"httpMet" +
-            "hod\":\"GET\",\"description\":\"List the source/target languages supported by the API\"" +
-            ",\"parameters\":{\"target\":{\"type\":\"string\",\"description\":\"the language and collati" +
-            "on in which the localized results should be returned\",\"location\":\"query\"}},\"resp" +
-            "onse\":{\"$ref\":\"LanguagesListResponse\"}}}},\"translations\":{\"methods\":{\"list\":{\"id" +
-            "\":\"language.translations.list\",\"path\":\"v2\",\"httpMethod\":\"GET\",\"description\":\"Ret" +
-            "urns text translations from one language to another.\",\"parameters\":{\"cid\":{\"type" +
-            "\":\"string\",\"description\":\"The customization id for translate\",\"repeated\":true,\"l" +
-            "ocation\":\"query\"},\"format\":{\"type\":\"string\",\"description\":\"The format of the tex" +
-            "t\",\"enum\":[\"html\",\"text\"],\"enumDescriptions\":[\"Specifies the input is in HTML\",\"" +
-            "Specifies the input is in plain textual format\"],\"location\":\"query\"},\"q\":{\"type\"" +
-            ":\"string\",\"description\":\"The text to translate\",\"required\":true,\"repeated\":true," +
-            "\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"The source language" +
-            " of the text\",\"location\":\"query\"},\"target\":{\"type\":\"string\",\"description\":\"The t" +
-            "arget language into which the text should be translated\",\"required\":true,\"locati" +
-            "on\":\"query\"}},\"parameterOrder\":[\"q\",\"target\"],\"response\":{\"$ref\":\"TranslationsLi" +
-            "stResponse\"}}}}}}";
+    public partial class TranslateService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v2";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected TranslateService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._detections = new DetectionsResource(this, _authenticator);
-            this._languages = new LanguagesResource(this, _authenticator);
-            this._translations = new TranslationsResource(this, _authenticator);
+        public TranslateService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._detections = new DetectionsResource(this, Authenticator);
+            this._languages = new LanguagesResource(this, Authenticator);
+            this._translations = new TranslationsResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public TranslateService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public TranslateService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TranslateService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/language/translate/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[] {
+                        "dataWrapper"};
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "translate";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/language/translate/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -361,13 +278,13 @@ namespace Google.Apis.Translate.v2 {
         
         private TranslateService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "detections";
         
-        public DetectionsResource(TranslateService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public DetectionsResource(TranslateService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Detect the language of text.</summary>
@@ -376,17 +293,48 @@ namespace Google.Apis.Translate.v2 {
             return new ListRequest(service, q);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.DetectionsListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Translate.v2.Data.DetectionsListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private Google.Apis.Util.Repeatable<string> _q;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Util.Repeatable<string> q) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Util.Repeatable<string> q) : 
                     base(service) {
                 this._q = q;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -408,6 +356,28 @@ namespace Google.Apis.Translate.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -419,16 +389,34 @@ namespace Google.Apis.Translate.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "detections";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "v2/detect";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -437,13 +425,13 @@ namespace Google.Apis.Translate.v2 {
         
         private TranslateService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "languages";
         
-        public LanguagesResource(TranslateService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public LanguagesResource(TranslateService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>List the source/target languages supported by the API</summary>
@@ -451,16 +439,47 @@ namespace Google.Apis.Translate.v2 {
             return new ListRequest(service);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.LanguagesListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Translate.v2.Data.LanguagesListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _target;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -482,6 +501,28 @@ namespace Google.Apis.Translate.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -496,16 +537,34 @@ namespace Google.Apis.Translate.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "languages";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "v2/languages";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("target", Google.Apis.Util.Utilities.CreateRuntimeParameter("target", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -514,13 +573,13 @@ namespace Google.Apis.Translate.v2 {
         
         private TranslateService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "translations";
         
-        public TranslationsResource(TranslateService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public TranslationsResource(TranslateService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns text translations from one language to another.</summary>
@@ -543,11 +602,19 @@ namespace Google.Apis.Translate.v2 {
             Text,
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.TranslationsListResponse> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Translate.v2.Data.TranslationsListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private Google.Apis.Util.Repeatable<string> _cid;
             
@@ -559,10 +626,33 @@ namespace Google.Apis.Translate.v2 {
             
             private string _target;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Util.Repeatable<string> q, string target) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Util.Repeatable<string> q, string target) : 
                     base(service) {
                 this._q = q;
                 this._target = target;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -584,6 +674,28 @@ namespace Google.Apis.Translate.v2 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -636,16 +748,40 @@ namespace Google.Apis.Translate.v2 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "translations";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "v2";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("cid", Google.Apis.Util.Utilities.CreateRuntimeParameter("cid", false, "query", null, null, new string[0]));
+                parameters.Add("format", Google.Apis.Util.Utilities.CreateRuntimeParameter("format", false, "query", null, null, new string[] {
+                                "html",
+                                "text"}));
+                parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", true, "query", null, null, new string[0]));
+                parameters.Add("source", Google.Apis.Util.Utilities.CreateRuntimeParameter("source", false, "query", null, null, new string[0]));
+                parameters.Add("target", Google.Apis.Util.Utilities.CreateRuntimeParameter("target", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -660,7 +796,7 @@ namespace Google.Apis.Translate.v2 {
         
         private TranslationsResource _translations;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

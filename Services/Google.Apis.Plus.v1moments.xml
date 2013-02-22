@@ -26,10 +26,10 @@
             <summary>A person attending the event.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Author">
-            <summary>The person who created this scope.</summary>
+            <summary>The person or persons who created this result. In the example of restaurant reviews, this might be the reviewer&apos;s name.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.BestRating">
-            <summary>Best possible rating value.</summary>
+            <summary>Best possible rating value that a result might obtain. This property defines the upper bound for the ratingValue. For example, you might have a 5 star rating scale, you would provide 5 as the value for this property.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.BirthDate">
             <summary>Date of birth.</summary>
@@ -44,19 +44,19 @@
             <summary>Actual bytes of the media object, for example the image file or video file.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Contributor">
-            <summary>The list of contributors for this scope.</summary>
+            <summary>A list of contributors to this result.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.DateCreated">
-            <summary>The date this scope was created.</summary>
+            <summary>The date the result was created such as the date that a review was first created.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.DateModified">
-            <summary>The date this scope was last modified.</summary>
+            <summary>The date the result was last modified such as the date that a review was last edited.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.DatePublished">
-            <summary>The initial date this scope was published.</summary>
+            <summary>The initial date that the result was published. For example, a user writes a comment on a blog, which has a result.dateCreated of when they submit it. If the blog users comment moderation, the result.datePublished value would match the date when the owner approved the message.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Description">
-            <summary>The string describing the content of this scope.</summary>
+            <summary>The string that describes the content of the result.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Duration">
             <summary>The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.</summary>
@@ -68,22 +68,22 @@
             <summary>The end date and time of the event (in ISO 8601 date format).</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.FamilyName">
-            <summary>Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the Name property.</summary>
+            <summary>Family name. This property can be used with givenName instead of the name property.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Gender">
             <summary>Gender of the person.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.GivenName">
-            <summary>Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the Name property.</summary>
+            <summary>Given name. This property can be used with familyName instead of the name property.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Height">
             <summary>The height of the media object.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Id">
-            <summary>The id for this item scope.</summary>
+            <summary>An identifier for the target. Your app can choose how to identify targets. The target.id is required if you are writing an activity that does not have a corresponding web page or target.url property.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Image">
-            <summary>A url to the image for this scope.</summary>
+            <summary>A URL to the image that represents this result. For example, if a user writes a review of a restaurant and attaches a photo of their meal, you might use that photo as the result.image.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Kind">
             <summary>Identifies this resource as an itemScope.</summary>
@@ -95,13 +95,13 @@
             <summary>Longitude.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Name">
-            <summary>The name of this scope.</summary>
+            <summary>The name of the result. In the example of a restaurant review, this might be the summary the user gave their review such as &quot;Great ambiance, but overpriced.&quot;</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Performers">
             <summary>The main performer or performers of the event-for example, a presenter, musician, or actor.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.PlayerType">
-            <summary>Player type required-for example, Flash or Silverlight.</summary>
+            <summary>Player type that is required. For example: Flash or Silverlight.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.PostOfficeBoxNumber">
             <summary>Post office box number.</summary>
@@ -119,25 +119,25 @@
             <summary>Street address.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Text">
-            <summary>Comment text, review text, etc.</summary>
+            <summary>The text that is the result of the app activity. For example, if a user leaves a review of a restaurant, this might be the text of the review.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.ThumbnailUrl">
-            <summary>A url to a thumbnail image for this scope.</summary>
+            <summary>A URL to a thumbnail image that represents this result.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.TickerSymbol">
             <summary>The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we reccommend using the controlled vocaulary of Market Identifier Codes (MIC) specified in ISO15022.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Type">
-            <summary>The item type.</summary>
+            <summary>The schema.org URL that best describes the referenced target and matches the type of moment.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Url">
-            <summary>A URL for the item upon which the action was performed.</summary>
+            <summary>The URL that points to the result object. For example, a permalink directly to a restaurant reviewer&apos;s comment.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Width">
             <summary>The width of the media object.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.WorstRating">
-            <summary>Worst possible rating value.</summary>
+            <summary>Worst possible rating value that a result might obtain. This property defines the lower bound for the ratingValue.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.Moment.Id">
             <summary>The moment ID.</summary>
@@ -149,22 +149,10 @@
             <summary>Time stamp of when the action occurred in RFC3339 format.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.Moment.Type">
-            <summary>The schema.org activity type.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1moments.PlusService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
-        <member name="T:Google.Apis.Plus.v1moments.PlusService.Scopes">
-            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
-        </member>
-        <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMe">
-            <summary>Know who you are on Google</summary>
-        </member>
-        <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMomentsWrite">
-            <summary>Send your activity to your private Google+ history</summary>
+            <summary>The Google schema for the type of moment to write. For example, http://schemas.google.com/AddActivity.</summary>
         </member>
         <member name="M:Google.Apis.Plus.v1moments.MomentsResource.Insert(Google.Apis.Plus.v1moments.Data.Moment,System.String,Google.Apis.Plus.v1moments.MomentsResource.Collection)">
-            <summary>Record a user activity (e.g Bill watched a video on Youtube)</summary>
+            <summary>Record a moment representing a user&apos;s activity such as making a purchase or commenting on a blog.</summary>
             <param name="userId">Required - The ID of the user to record activities for. The only valid values are &quot;me&quot; and the ID of the authenticated user.</param>
             <param name="collection">Required - Must be one of the following values [vault] - The collection to which to write moments.</param>
         </member>
@@ -174,11 +162,23 @@
         <member name="F:Google.Apis.Plus.v1moments.MomentsResource.Collection.Vault">
             <summary>The default collection for writing new moments.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1moments.MomentsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1moments.MomentsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1moments.MomentsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.MomentsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1moments.MomentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1moments.MomentsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.MomentsResource.InsertRequest.Collection">
             <summary>The collection to which to write moments.</summary>

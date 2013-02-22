@@ -1604,377 +1604,7 @@ namespace Google.Apis.Moderator.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class ModeratorService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/0W9ODbl" +
-            "6hqMnzt7N9_K7ILXgS_I\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"moderator:v1\",\"name\":\"mode" +
-            "rator\",\"version\":\"v1\",\"revision\":\"19700115\",\"title\":\"Moderator API\",\"description" +
-            "\":\"Moderator API\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/mod" +
-            "erator-32.png\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"}" +
-            ",\"documentationLink\":\"http://code.google.com/apis/moderator/v1/using_rest.html\"," +
-            "\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/moderator/v1/\",\"basePath" +
-            "\":\"/moderator/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"modera" +
-            "tor/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":" +
-            "\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptio" +
-            "ns\":[\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fie" +
-            "lds\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to include" +
-            " in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description" +
-            "\":\"API key. Your API key identifies your project and provides you with API acces" +
-            "s, quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"locatio" +
-            "n\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for th" +
-            "e current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"descriptio" +
-            "n\":\"Returns response with indentations and line breaks.\",\"default\":\"false\",\"loca" +
-            "tion\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for " +
-            "quota purposes for server-side applications. Can be any arbitrary string assigne" +
-            "d to a user, but should not exceed 40 characters. Overrides userIp if both are p" +
-            "rovided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP addres" +
-            "s of the site where the request originates. Use this if you want to enforce per-" +
-            "user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.goog" +
-            "leapis.com/auth/moderator\":{\"description\":\"Manage your activity in Google Modera" +
-            "tor\"}}}},\"features\":[\"dataWrapper\"],\"schemas\":{\"ModeratorTopicsResourcePartial\":" +
-            "{\"id\":\"ModeratorTopicsResourcePartial\",\"type\":\"object\",\"properties\":{\"id\":{\"type" +
-            "\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"topicId\"" +
-            ":{\"type\":\"string\",\"format\":\"int64\"}}}}},\"ModeratorVotesResourcePartial\":{\"id\":\"M" +
-            "oderatorVotesResourcePartial\",\"type\":\"object\",\"properties\":{\"flag\":{\"type\":\"stri" +
-            "ng\"},\"vote\":{\"type\":\"string\"}}},\"Profile\":{\"id\":\"Profile\",\"type\":\"object\",\"prope" +
-            "rties\":{\"attribution\":{\"type\":\"object\",\"properties\":{\"avatarUrl\":{\"type\":\"string" +
-            "\"},\"displayName\":{\"type\":\"string\"},\"geo\":{\"type\":\"object\",\"properties\":{\"latitud" +
-            "e\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"longitude\":" +
-            "{\"type\":\"number\",\"format\":\"double\"}}},\"location\":{\"type\":\"string\"}}},\"id\":{\"type" +
-            "\":\"object\",\"properties\":{\"user\":{\"type\":\"string\"}}},\"kind\":{\"type\":\"string\",\"def" +
-            "ault\":\"moderator#profile\"}}},\"Series\":{\"id\":\"Series\",\"type\":\"object\",\"properties" +
-            "\":{\"anonymousSubmissionAllowed\":{\"type\":\"boolean\"},\"counters\":{\"type\":\"object\",\"" +
-            "properties\":{\"anonymousSubmissions\":{\"type\":\"integer\",\"format\":\"int32\"},\"minusVo" +
-            "tes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type\":\"integer\",\"format\":" +
-            "\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"submissions\":{\"type\":\"" +
-            "integer\",\"format\":\"int32\"},\"users\":{\"type\":\"integer\",\"format\":\"int32\"},\"videoSub" +
-            "missions\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"description\":{\"type\":\"string\"}," +
-            "\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"" +
-            "}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#series\"},\"name\":{\"type\":\"string" +
-            "\"},\"numTopics\":{\"type\":\"integer\",\"format\":\"int32\"},\"rules\":{\"type\":\"object\",\"pro" +
-            "perties\":{\"submissions\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\"," +
-            "\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}},\"votes\":{\"type\":" +
-            "\"object\",\"properties\":{\"close\":{\"type\":\"string\",\"format\":\"uint64\"},\"open\":{\"type" +
-            "\":\"string\",\"format\":\"uint64\"}}}}},\"unauthSubmissionAllowed\":{\"type\":\"boolean\"},\"" +
-            "unauthVotingAllowed\":{\"type\":\"boolean\"},\"videoSubmissionAllowed\":{\"type\":\"boolea" +
-            "n\"}}},\"SeriesList\":{\"id\":\"SeriesList\",\"type\":\"object\",\"properties\":{\"items\":{\"ty" +
-            "pe\":\"array\",\"items\":{\"$ref\":\"Series\"}},\"kind\":{\"type\":\"string\",\"default\":\"modera" +
-            "tor#seriesList\"}}},\"Submission\":{\"id\":\"Submission\",\"type\":\"object\",\"properties\":" +
-            "{\"attachmentUrl\":{\"type\":\"string\"},\"attribution\":{\"type\":\"object\",\"properties\":{" +
-            "\"avatarUrl\":{\"type\":\"string\"},\"displayName\":{\"type\":\"string\"},\"location\":{\"type\"" +
-            ":\"string\"}}},\"author\":{\"type\":\"string\"},\"counters\":{\"type\":\"object\",\"properties\"" +
-            ":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type\":\"integer\"" +
-            ",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"created\":{" +
-            "\"type\":\"string\",\"format\":\"uint64\"},\"geo\":{\"type\":\"object\",\"properties\":{\"latitud" +
-            "e\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"longitude\":" +
-            "{\"type\":\"number\",\"format\":\"double\"}}},\"id\":{\"type\":\"object\",\"properties\":{\"serie" +
-            "sId\":{\"type\":\"string\",\"format\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\"" +
-            ":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#submission\"},\"parentSub" +
-            "missionId\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"" +
-            "int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"text\":{\"type\":\"stri" +
-            "ng\"},\"topics\":{\"type\":\"array\",\"items\":{\"$ref\":\"ModeratorTopicsResourcePartial\"}}" +
-            ",\"translations\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"lang\":{\"" +
-            "type\":\"string\"},\"text\":{\"type\":\"string\"}}}},\"vote\":{\"$ref\":\"ModeratorVotesResour" +
-            "cePartial\"}}},\"SubmissionList\":{\"id\":\"SubmissionList\",\"type\":\"object\",\"propertie" +
-            "s\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Submission\"}},\"kind\":{\"type\":\"strin" +
-            "g\",\"default\":\"moderator#submissionList\"}}},\"Tag\":{\"id\":\"Tag\",\"type\":\"object\",\"pr" +
-            "operties\":{\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"form" +
-            "at\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"},\"tagId\":{\"type\":\"" +
-            "string\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#tag\"},\"text\":{\"type\":\"st" +
-            "ring\"}}},\"TagList\":{\"id\":\"TagList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\"" +
-            ":\"array\",\"items\":{\"$ref\":\"Tag\"}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#ta" +
-            "gList\"}}},\"Topic\":{\"id\":\"Topic\",\"type\":\"object\",\"properties\":{\"counters\":{\"type\"" +
-            ":\"object\",\"properties\":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVo" +
-            "tes\":{\"type\":\"integer\",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":" +
-            "\"int32\"},\"submissions\":{\"type\":\"integer\",\"format\":\"int32\"},\"users\":{\"type\":\"inte" +
-            "ger\",\"format\":\"int32\"},\"videoSubmissions\":{\"type\":\"integer\",\"format\":\"int32\"}}}," +
-            "\"description\":{\"type\":\"string\"},\"featuredSubmission\":{\"$ref\":\"Submission\"},\"id\":" +
-            "{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"to" +
-            "picId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"m" +
-            "oderator#topic\"},\"name\":{\"type\":\"string\"},\"presenter\":{\"type\":\"string\"},\"rules\":" +
-            "{\"type\":\"object\",\"properties\":{\"submissions\":{\"type\":\"object\",\"properties\":{\"clo" +
-            "se\":{\"type\":\"string\",\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64" +
-            "\"}}},\"votes\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\",\"format\":\"u" +
-            "int64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}}}}}},\"TopicList\":{\"id\":\"Topi" +
-            "cList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"To" +
-            "pic\"}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#topicList\"}}},\"Vote\":{\"id\":\"" +
-            "Vote\",\"type\":\"object\",\"properties\":{\"flag\":{\"type\":\"string\"},\"id\":{\"type\":\"objec" +
-            "t\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"submissionId\":{\"" +
-            "type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#" +
-            "vote\"},\"vote\":{\"type\":\"string\"}}},\"VoteList\":{\"id\":\"VoteList\",\"type\":\"object\",\"p" +
-            "roperties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Vote\"}},\"kind\":{\"type\":\"str" +
-            "ing\",\"default\":\"moderator#voteList\"}}}},\"resources\":{\"featured\":{\"resources\":{\"s" +
-            "eries\":{\"methods\":{\"list\":{\"id\":\"moderator.featured.series.list\",\"path\":\"series/" +
-            "featured\",\"httpMethod\":\"GET\",\"description\":\"Lists the featured series.\",\"respons" +
-            "e\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}" +
-            "}}}},\"global\":{\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.global." +
-            "series.list\",\"path\":\"search\",\"httpMethod\":\"GET\",\"description\":\"Searches the publ" +
-            "ic series and returns the search results.\",\"parameters\":{\"max-results\":{\"type\":\"" +
-            "integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"uint32\"," +
-            "\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"location" +
-            "\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first res" +
-            "ult to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"response\":{\"$ref\":" +
-            "\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}}}},\"my\":{" +
-            "\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.my.series.list\",\"path\"" +
-            ":\"series/@me/mine\",\"httpMethod\":\"GET\",\"description\":\"Lists all series created by" +
-            " the authenticated user.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/moderator\"]}}}}},\"myrecent\":{\"resources\":{\"series\":{\"metho" +
-            "ds\":{\"list\":{\"id\":\"moderator.myrecent.series.list\",\"path\":\"series/@me/recent\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"Lists the series the authenticated user has visi" +
-            "ted.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/moderator\"]}}}}},\"profiles\":{\"methods\":{\"get\":{\"id\":\"moderator.profiles.get\",\"" +
-            "path\":\"profiles/@me\",\"httpMethod\":\"GET\",\"description\":\"Returns the profile infor" +
-            "mation for the authenticated user.\",\"response\":{\"$ref\":\"Profile\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.profiles.patc" +
-            "h\",\"path\":\"profiles/@me\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the profile" +
-            " information for the authenticated user. This method supports patch semantics.\"," +
-            "\"request\":{\"$ref\":\"Profile\"},\"response\":{\"$ref\":\"Profile\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/moderator\"]},\"update\":{\"id\":\"moderator.profiles.update\",\"p" +
-            "ath\":\"profiles/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the profile inform" +
-            "ation for the authenticated user.\",\"request\":{\"$ref\":\"Profile\"},\"response\":{\"$re" +
-            "f\":\"Profile\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"respons" +
-            "es\":{\"methods\":{\"insert\":{\"id\":\"moderator.responses.insert\",\"path\":\"series/{seri" +
-            "esId}/topics/{topicId}/submissions/{parentSubmissionId}/responses\",\"httpMethod\":" +
-            "\"POST\",\"description\":\"Inserts a response for the specified submission in the spe" +
-            "cified topic within the specified series.\",\"parameters\":{\"anonymous\":{\"type\":\"bo" +
-            "olean\",\"description\":\"Set to true to mark the new submission as anonymous.\",\"loc" +
-            "ation\":\"query\"},\"parentSubmissionId\":{\"type\":\"integer\",\"description\":\"The decima" +
-            "l ID of the parent Submission within the Series.\",\"required\":true,\"format\":\"uint" +
-            "32\",\"location\":\"path\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal I" +
-            "D of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"topicId\"" +
-            ":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic within the Series." +
-            "\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"User identifier for unauthenticated usage mode\",\"location\":" +
-            "\"query\"}},\"parameterOrder\":[\"seriesId\",\"topicId\",\"parentSubmissionId\"],\"request\"" +
-            ":{\"$ref\":\"Submission\"},\"response\":{\"$ref\":\"Submission\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.responses.list\",\"path\":\"" +
-            "series/{seriesId}/submissions/{submissionId}/responses\",\"httpMethod\":\"GET\",\"desc" +
-            "ription\":\"Lists or searches the responses for the specified submission within th" +
-            "e specified series and returns the search results.\",\"parameters\":{\"author\":{\"typ" +
-            "e\":\"string\",\"description\":\"Restricts the results to submissions by a specific au" +
-            "thor.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"S" +
-            "pecifies whether to restrict to submissions that have videos attached.\",\"locatio" +
-            "n\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number of res" +
-            "ults to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"des" +
-            "cription\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"loca" +
-            "tion\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"Sort order.\",\"location\":\"qu" +
-            "ery\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first result t" +
-            "o be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"},\"submissionId\":{\"type\":\"i" +
-            "nteger\",\"description\":\"The decimal ID of the Submission within the Series.\",\"req" +
-            "uired\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"" +
-            "submissionId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/moderator\"]}}},\"series\":{\"methods\":{\"get\":{\"id\":\"moderator.series" +
-            ".get\",\"path\":\"series/{seriesId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the s" +
-            "pecified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The " +
-            "decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.series.insert\",\"pa" +
-            "th\":\"series\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new series.\",\"request\"" +
-            ":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.series.list\",\"path\":\"series\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"Searches the series and returns the search result" +
-            "s.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number " +
-            "of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string" +
-            "\",\"description\":\"Search query.\",\"location\":\"query\"},\"start-index\":{\"type\":\"integ" +
-            "er\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"uint32\"" +
-            ",\"location\":\"query\"}},\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.series.patch\",\"path\":\"se" +
-            "ries/{seriesId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the specified serie" +
-            "s. This method supports patch semantics.\",\"parameters\":{\"seriesId\":{\"type\":\"inte" +
-            "ger\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uin" +
-            "t32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$ref\":\"Series" +
-            "\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googleapis.com/auth/moder" +
-            "ator\"]},\"update\":{\"id\":\"moderator.series.update\",\"path\":\"series/{seriesId}\",\"htt" +
-            "pMethod\":\"PUT\",\"description\":\"Updates the specified series.\",\"parameters\":{\"seri" +
-            "esId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\"" +
-            ":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"reque" +
-            "st\":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/moderator\"]}},\"resources\":{\"responses\":{\"methods\":{\"list\":{\"id\":\"m" +
-            "oderator.series.responses.list\",\"path\":\"series/{seriesId}/responses\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"Searches the responses for the specified series and retur" +
-            "ns the search results.\",\"parameters\":{\"author\":{\"type\":\"string\",\"description\":\"R" +
-            "estricts the results to submissions by a specific author.\",\"location\":\"query\"},\"" +
-            "hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Specifies whether to restrict" +
-            " to submissions that have videos attached.\",\"location\":\"query\"},\"max-results\":{\"" +
-            "type\":\"integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"u" +
-            "int32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"l" +
-            "ocation\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of " +
-            "the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\"" +
-            ":\"string\",\"description\":\"Sort order.\",\"location\":\"query\"},\"start-index\":{\"type\":" +
-            "\"integer\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"u" +
-            "int32\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"Se" +
-            "riesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"submission" +
-            "s\":{\"methods\":{\"list\":{\"id\":\"moderator.series.submissions.list\",\"path\":\"series/{" +
-            "seriesId}/submissions\",\"httpMethod\":\"GET\",\"description\":\"Searches the submission" +
-            "s for the specified series and returns the search results.\",\"parameters\":{\"autho" +
-            "r\":{\"type\":\"string\",\"description\":\"Restricts the results to submissions by a spe" +
-            "cific author.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Specifies whether to restrict to submissions that have videos attached.\"," +
-            "\"location\":\"query\"},\"includeVotes\":{\"type\":\"boolean\",\"description\":\"Specifies wh" +
-            "ether to include the current user\'s vote\",\"location\":\"query\"},\"lang\":{\"type\":\"st" +
-            "ring\",\"description\":\"The language code for the language the client prefers resul" +
-            "s in.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximu" +
-            "m number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type" +
-            "\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":" +
-            "\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\"" +
-            ":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"Sort order.\"" +
-            ",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the" +
-            " first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"paramete" +
-            "rOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/moderator\"]}}}}},\"submissions\":{\"methods\":{\"get\":{\"id\":\"mod" +
-            "erator.submissions.get\",\"path\":\"series/{seriesId}/submissions/{submissionId}\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"Returns the specified submission within the spec" +
-            "ified series.\",\"parameters\":{\"includeVotes\":{\"type\":\"boolean\",\"description\":\"Spe" +
-            "cifies whether to include the current user\'s vote\",\"location\":\"query\"},\"lang\":{\"" +
-            "type\":\"string\",\"description\":\"The language code for the language the client pref" +
-            "ers resuls in.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"" +
-            "The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"pat" +
-            "h\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submis" +
-            "sion within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"seriesId\",\"submissionId\"],\"response\":{\"$ref\":\"Submission\"},\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.s" +
-            "ubmissions.insert\",\"path\":\"series/{seriesId}/topics/{topicId}/submissions\",\"http" +
-            "Method\":\"POST\",\"description\":\"Inserts a new submission in the specified topic wi" +
-            "thin the specified series.\",\"parameters\":{\"anonymous\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Set to true to mark the new submission as anonymous.\",\"location\":\"query\"}" +
-            ",\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"req" +
-            "uired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"topicId\":{\"type\":\"integer\",\"de" +
-            "scription\":\"The decimal ID of the Topic within the Series.\",\"required\":true,\"for" +
-            "mat\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"description\":\"U" +
-            "ser identifier for unauthenticated usage mode\",\"location\":\"query\"}},\"parameterOr" +
-            "der\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Submission\"},\"response\":{\"$ref\":\"" +
-            "Submission\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"tags\":{\"" +
-            "methods\":{\"delete\":{\"id\":\"moderator.tags.delete\",\"path\":\"series/{seriesId}/submi" +
-            "ssions/{submissionId}/tags/{tagId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes" +
-            " the specified tag from the specified submission within the specified series.\",\"" +
-            "parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the S" +
-            "eries.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"The decimal ID of the Submission within the Series." +
-            "\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"tagId\":{\"type\":\"string\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"," +
-            "\"tagId\"],\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":" +
-            "\"moderator.tags.insert\",\"path\":\"series/{seriesId}/submissions/{submissionId}/tag" +
-            "s\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new tag for the specified submis" +
-            "sion within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"l" +
-            "ocation\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID " +
-            "of the Submission within the Series.\",\"required\":true,\"format\":\"uint32\",\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\":\"Tag\"" +
-            "},\"response\":{\"$ref\":\"Tag\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator" +
-            "\"]},\"list\":{\"id\":\"moderator.tags.list\",\"path\":\"series/{seriesId}/submissions/{su" +
-            "bmissionId}/tags\",\"httpMethod\":\"GET\",\"description\":\"Lists all tags for the speci" +
-            "fied submission within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"" +
-            "integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":" +
-            "\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The " +
-            "decimal ID of the Submission within the Series.\",\"required\":true,\"format\":\"uint3" +
-            "2\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"response\":{" +
-            "\"$ref\":\"TagList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"top" +
-            "ics\":{\"methods\":{\"get\":{\"id\":\"moderator.topics.get\",\"path\":\"series/{seriesId}/to" +
-            "pics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified topic fr" +
-            "om the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descriptio" +
-            "n\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":" +
-            "\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic w" +
-            "ithin the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parame" +
-            "terOrder\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"Topic\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.topics.insert\",\"p" +
-            "ath\":\"series/{seriesId}/topics\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new" +
-            " topic into the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$ref\":\"Topic\"},\"resp" +
-            "onse\":{\"$ref\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"" +
-            "list\":{\"id\":\"moderator.topics.list\",\"path\":\"series/{seriesId}/topics\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Searches the topics within the specified series and retu" +
-            "rns the search results.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"" +
-            "},\"mode\":{\"type\":\"string\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\"" +
-            ":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":" +
-            "\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"pa" +
-            "th\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first result to" +
-            " be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"series" +
-            "Id\"],\"response\":{\"$ref\":\"TopicList\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "moderator\"]},\"update\":{\"id\":\"moderator.topics.update\",\"path\":\"series/{seriesId}/" +
-            "topics/{topicId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the specified topic " +
-            "within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descri" +
-            "ption\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"locati" +
-            "on\":\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Top" +
-            "ic within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Topic\"},\"response\":{\"$re" +
-            "f\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}},\"resources\"" +
-            ":{\"submissions\":{\"methods\":{\"list\":{\"id\":\"moderator.topics.submissions.list\",\"pa" +
-            "th\":\"series/{seriesId}/topics/{topicId}/submissions\",\"httpMethod\":\"GET\",\"descrip" +
-            "tion\":\"Searches the submissions for the specified topic within the specified ser" +
-            "ies and returns the search results.\",\"parameters\":{\"author\":{\"type\":\"string\",\"de" +
-            "scription\":\"Restricts the results to submissions by a specific author.\",\"locatio" +
-            "n\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Specifies whethe" +
-            "r to restrict to submissions that have videos attached.\",\"location\":\"query\"},\"in" +
-            "cludeVotes\":{\"type\":\"boolean\",\"description\":\"Specifies whether to include the cu" +
-            "rrent user\'s vote\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"" +
-            "},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"series" +
-            "Id\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":t" +
-            "rue,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"" +
-            "Sort order.\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"" +
-            "Index of the first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"" +
-            "},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic within " +
-            "the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/moderator\"]}}}}},\"votes\":{\"methods\":{\"get\":{\"id\":\"mod" +
-            "erator.votes.get\",\"path\":\"series/{seriesId}/submissions/{submissionId}/votes/@me" +
-            "\",\"httpMethod\":\"GET\",\"description\":\"Returns the votes by the authenticated user " +
-            "for the specified submission within the specified series.\",\"parameters\":{\"series" +
-            "Id\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":t" +
-            "rue,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"The decimal ID of the Submission within the Series.\",\"required\":true,\"f" +
-            "ormat\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"description\":" +
-            "\"User identifier for unauthenticated usage mode\",\"location\":\"query\"},\"userId\":{\"" +
-            "type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"]" +
-            ",\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator" +
-            "\"]},\"insert\":{\"id\":\"moderator.votes.insert\",\"path\":\"series/{seriesId}/submission" +
-            "s/{submissionId}/votes/@me\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new vot" +
-            "e by the authenticated user for the specified submission within the specified se" +
-            "ries.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID " +
-            "of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submission" +
-            "Id\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission within the" +
-            " Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"t" +
-            "ype\":\"string\",\"description\":\"User identifier for unauthenticated usage mode\",\"lo" +
-            "cation\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\"" +
-            ":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/m" +
-            "oderator\"]},\"list\":{\"id\":\"moderator.votes.list\",\"path\":\"series/{seriesId}/votes/" +
-            "@me\",\"httpMethod\":\"GET\",\"description\":\"Lists the votes by the authenticated user" +
-            " for the given series.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"}" +
-            ",\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"req" +
-            "uired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"start-index\":{\"type\":\"integer\"" +
-            ",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"uint32\",\"l" +
-            "ocation\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"VoteList\"}," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator" +
-            ".votes.patch\",\"path\":\"series/{seriesId}/submissions/{submissionId}/votes/@me\",\"h" +
-            "ttpMethod\":\"PATCH\",\"description\":\"Updates the votes by the authenticated user fo" +
-            "r the specified submission within the specified series. This method supports pat" +
-            "ch semantics.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The dec" +
-            "imal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"su" +
-            "bmissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission wi" +
-            "thin the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthTo" +
-            "ken\":{\"type\":\"string\",\"description\":\"User identifier for unauthenticated usage m" +
-            "ode\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"location\":\"query\"}},\"paramet" +
-            "erOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$ref" +
-            "\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"update\":{\"id\"" +
-            ":\"moderator.votes.update\",\"path\":\"series/{seriesId}/submissions/{submissionId}/v" +
-            "otes/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the votes by the authenticat" +
-            "ed user for the specified submission within the specified series.\",\"parameters\":" +
-            "{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"req" +
-            "uired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer" +
-            "\",\"description\":\"The decimal ID of the Submission within the Series.\",\"required\"" +
-            ":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"descr" +
-            "iption\":\"User identifier for unauthenticated usage mode\",\"location\":\"query\"},\"us" +
-            "erId\":{\"type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submis" +
-            "sionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/moderator\"]}}}}}";
+    public partial class ModeratorService : Google.Apis.Discovery.BaseRequestProvider {
         
         public const string Version = "v1";
         
@@ -1982,8 +1612,11 @@ namespace Google.Apis.Moderator.v1 {
         
         private string _Key;
         
-        protected ModeratorService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
+        
+        public ModeratorService(Google.Apis.Authentication.IAuthenticator _authenticator) {
             this._authenticator = _authenticator;
             this._featured = new FeaturedResource(this, _authenticator);
             this._global = new GlobalResource(this, _authenticator);
@@ -1996,32 +1629,11 @@ namespace Google.Apis.Moderator.v1 {
             this._tags = new TagsResource(this, _authenticator);
             this._topics = new TopicsResource(this, _authenticator);
             this._votes = new VotesResource(this, _authenticator);
+            this.InitParameters();
         }
         
         public ModeratorService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
-        }
-        
-        public ModeratorService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ModeratorService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/moderator/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
-            get {
-                return this._authenticator;
-            }
-        }
-        
-        public virtual string Name {
-            get {
-                return "moderator";
-            }
-        }
-        
-        public virtual string BaseUri {
-            get {
-                return "https://www.googleapis.com/moderator/v1/";
-            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -2034,25 +1646,56 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
+        public override System.Collections.Generic.IList<string> Features {
+            get {
+                return new string[] {
+                        "dataWrapper"};
+            }
+        }
+        
+        public override string Name {
+            get {
+                return "moderator";
+            }
+        }
+        
+        public override string BaseUri {
+            get {
+                return "https://www.googleapis.com/moderator/v1/";
+            }
+        }
+        
+        public override Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
+            get {
+                return this._serviceParameters;
+            }
+        }
+        
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(_authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "false", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -2112,6 +1755,7 @@ namespace Google.Apis.Moderator.v1 {
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
+                    this.InitParameters();
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2136,16 +1780,33 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "featured.series";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "series/featured";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -2205,6 +1866,7 @@ namespace Google.Apis.Moderator.v1 {
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
+                    this.InitParameters();
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2262,16 +1924,36 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "global.series";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "search";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -2325,6 +2007,7 @@ namespace Google.Apis.Moderator.v1 {
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
+                    this.InitParameters();
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2349,16 +2032,33 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "my.series";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "series/@me/mine";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -2412,6 +2112,7 @@ namespace Google.Apis.Moderator.v1 {
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
+                    this.InitParameters();
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2436,16 +2137,33 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "myrecent.series";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "series/@me/recent";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -2487,6 +2205,7 @@ namespace Google.Apis.Moderator.v1 {
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2511,16 +2230,33 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "profiles";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "profiles/@me";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -2535,6 +2271,7 @@ namespace Google.Apis.Moderator.v1 {
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Profile body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2569,20 +2306,37 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "profiles";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "profiles/@me";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -2597,6 +2351,7 @@ namespace Google.Apis.Moderator.v1 {
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Profile body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2631,20 +2386,37 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "profiles";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "profiles/@me";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -2701,6 +2473,7 @@ namespace Google.Apis.Moderator.v1 {
                 this._seriesId = seriesId;
                 this._topicId = topicId;
                 this._parentSubmissionId = parentSubmissionId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2781,20 +2554,42 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "responses";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/topics/{topicId}/submissions/{parentSubmissionId}/responses";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("anonymous", Google.Apis.Util.Utilities.CreateRuntimeParameter("anonymous", false, "query", null, null, new string[0]));
+                parameters.Add("parentSubmissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("parentSubmissionId", true, "path", null, null, new string[0]));
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                parameters.Add("unauthToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("unauthToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -2824,6 +2619,7 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this._seriesId = seriesId;
                 this._submissionId = submissionId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -2930,16 +2726,41 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "responses";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/submissions/{submissionId}/responses";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("author", Google.Apis.Util.Utilities.CreateRuntimeParameter("author", false, "query", null, null, new string[0]));
+                parameters.Add("hasAttachedVideo", Google.Apis.Util.Utilities.CreateRuntimeParameter("hasAttachedVideo", false, "query", null, null, new string[0]));
+                parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", false, "query", null, null, new string[0]));
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, null, new string[0]));
+                parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                parameters.Add("submissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("submissionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -3045,6 +2866,7 @@ namespace Google.Apis.Moderator.v1 {
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                         base(service) {
                     this._seriesId = seriesId;
+                    this.InitParameters();
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3143,16 +2965,40 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "series.responses";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "series/{seriesId}/responses";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("author", Google.Apis.Util.Utilities.CreateRuntimeParameter("author", false, "query", null, null, new string[0]));
+                    parameters.Add("hasAttachedVideo", Google.Apis.Util.Utilities.CreateRuntimeParameter("hasAttachedVideo", false, "query", null, null, new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", false, "query", null, null, new string[0]));
+                    parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                    parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -3203,6 +3049,7 @@ namespace Google.Apis.Moderator.v1 {
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                         base(service) {
                     this._seriesId = seriesId;
+                    this.InitParameters();
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3323,16 +3170,42 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "series.submissions";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "series/{seriesId}/submissions";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("author", Google.Apis.Util.Utilities.CreateRuntimeParameter("author", false, "query", null, null, new string[0]));
+                    parameters.Add("hasAttachedVideo", Google.Apis.Util.Utilities.CreateRuntimeParameter("hasAttachedVideo", false, "query", null, null, new string[0]));
+                    parameters.Add("includeVotes", Google.Apis.Util.Utilities.CreateRuntimeParameter("includeVotes", false, "query", null, null, new string[0]));
+                    parameters.Add("lang", Google.Apis.Util.Utilities.CreateRuntimeParameter("lang", false, "query", null, null, new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", false, "query", null, null, new string[0]));
+                    parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                    parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -3348,6 +3221,7 @@ namespace Google.Apis.Moderator.v1 {
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                     base(service) {
                 this._seriesId = seriesId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3380,16 +3254,34 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "series";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -3404,6 +3296,7 @@ namespace Google.Apis.Moderator.v1 {
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Series body) : 
                     base(service) {
                 this.Body = body;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3438,20 +3331,37 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "series";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -3469,6 +3379,7 @@ namespace Google.Apis.Moderator.v1 {
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3526,16 +3437,36 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "series";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", false, "query", null, null, new string[0]));
+                parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -3553,6 +3484,7 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this.Body = body;
                 this._seriesId = seriesId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3595,20 +3527,38 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "series";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -3626,6 +3576,7 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this.Body = body;
                 this._seriesId = seriesId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3668,20 +3619,38 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "series";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -3731,6 +3700,7 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this._seriesId = seriesId;
                 this._submissionId = submissionId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3793,16 +3763,37 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "submissions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/submissions/{submissionId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("includeVotes", Google.Apis.Util.Utilities.CreateRuntimeParameter("includeVotes", false, "query", null, null, new string[0]));
+                parameters.Add("lang", Google.Apis.Util.Utilities.CreateRuntimeParameter("lang", false, "query", null, null, new string[0]));
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("submissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("submissionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -3827,6 +3818,7 @@ namespace Google.Apis.Moderator.v1 {
                 this.Body = body;
                 this._seriesId = seriesId;
                 this._topicId = topicId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -3899,20 +3891,41 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "submissions";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/topics/{topicId}/submissions";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("anonymous", Google.Apis.Util.Utilities.CreateRuntimeParameter("anonymous", false, "query", null, null, new string[0]));
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                parameters.Add("unauthToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("unauthToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -3969,6 +3982,7 @@ namespace Google.Apis.Moderator.v1 {
                 this._seriesId = seriesId;
                 this._submissionId = submissionId;
                 this._tagId = tagId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4016,16 +4030,36 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tags";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/submissions/{submissionId}/tags/{tagId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("submissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("submissionId", true, "path", null, null, new string[0]));
+                parameters.Add("tagId", Google.Apis.Util.Utilities.CreateRuntimeParameter("tagId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4046,6 +4080,7 @@ namespace Google.Apis.Moderator.v1 {
                 this.Body = body;
                 this._seriesId = seriesId;
                 this._submissionId = submissionId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4096,20 +4131,39 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tags";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/submissions/{submissionId}/tags";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("submissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("submissionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4127,6 +4181,7 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this._seriesId = seriesId;
                 this._submissionId = submissionId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4167,16 +4222,35 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "tags";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/submissions/{submissionId}/tags";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("submissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("submissionId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4277,6 +4351,7 @@ namespace Google.Apis.Moderator.v1 {
                         base(service) {
                     this._seriesId = seriesId;
                     this._topicId = topicId;
+                    this.InitParameters();
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4394,16 +4469,42 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourcePath {
+                public override string ResourcePath {
                     get {
                         return "topics.submissions";
                     }
                 }
                 
-                protected override string MethodName {
+                public override string MethodName {
                     get {
                         return "list";
                     }
+                }
+                
+                public override string HttpMethod {
+                    get {
+                        return "GET";
+                    }
+                }
+                
+                public override string RestPath {
+                    get {
+                        return "series/{seriesId}/topics/{topicId}/submissions";
+                    }
+                }
+                
+                private void InitParameters() {
+                    System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                    parameters.Add("author", Google.Apis.Util.Utilities.CreateRuntimeParameter("author", false, "query", null, null, new string[0]));
+                    parameters.Add("hasAttachedVideo", Google.Apis.Util.Utilities.CreateRuntimeParameter("hasAttachedVideo", false, "query", null, null, new string[0]));
+                    parameters.Add("includeVotes", Google.Apis.Util.Utilities.CreateRuntimeParameter("includeVotes", false, "query", null, null, new string[0]));
+                    parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                    parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", false, "query", null, null, new string[0]));
+                    parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                    parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, null, new string[0]));
+                    parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                    parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                    this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
             }
         }
@@ -4422,6 +4523,7 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this._seriesId = seriesId;
                 this._topicId = topicId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4462,16 +4564,35 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "topics";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/topics/{topicId}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4489,6 +4610,7 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this.Body = body;
                 this._seriesId = seriesId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4531,20 +4653,38 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "topics";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/topics";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4567,6 +4707,7 @@ namespace Google.Apis.Moderator.v1 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                     base(service) {
                 this._seriesId = seriesId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4642,16 +4783,38 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "topics";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/topics";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                parameters.Add("mode", Google.Apis.Util.Utilities.CreateRuntimeParameter("mode", false, "query", null, null, new string[0]));
+                parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", false, "query", null, null, new string[0]));
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4672,6 +4835,7 @@ namespace Google.Apis.Moderator.v1 {
                 this.Body = body;
                 this._seriesId = seriesId;
                 this._topicId = topicId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4722,20 +4886,39 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "topics";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/topics/{topicId}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("topicId", Google.Apis.Util.Utilities.CreateRuntimeParameter("topicId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4805,6 +4988,7 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this._seriesId = seriesId;
                 this._submissionId = submissionId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4866,16 +5050,37 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "votes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/submissions/{submissionId}/votes/@me";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("submissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("submissionId", true, "path", null, null, new string[0]));
+                parameters.Add("unauthToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("unauthToken", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4898,6 +5103,7 @@ namespace Google.Apis.Moderator.v1 {
                 this.Body = body;
                 this._seriesId = seriesId;
                 this._submissionId = submissionId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4959,20 +5165,40 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "votes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/submissions/{submissionId}/votes/@me";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("submissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("submissionId", true, "path", null, null, new string[0]));
+                parameters.Add("unauthToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("unauthToken", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -4991,6 +5217,7 @@ namespace Google.Apis.Moderator.v1 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                     base(service) {
                 this._seriesId = seriesId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5045,16 +5272,36 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "votes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/votes/@me";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5079,6 +5326,7 @@ namespace Google.Apis.Moderator.v1 {
                 this.Body = body;
                 this._seriesId = seriesId;
                 this._submissionId = submissionId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5150,20 +5398,41 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "votes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/submissions/{submissionId}/votes/@me";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("submissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("submissionId", true, "path", null, null, new string[0]));
+                parameters.Add("unauthToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("unauthToken", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
         
@@ -5188,6 +5457,7 @@ namespace Google.Apis.Moderator.v1 {
                 this.Body = body;
                 this._seriesId = seriesId;
                 this._submissionId = submissionId;
+                this.InitParameters();
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5259,20 +5529,41 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "votes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "series/{seriesId}/submissions/{submissionId}/votes/@me";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("seriesId", Google.Apis.Util.Utilities.CreateRuntimeParameter("seriesId", true, "path", null, null, new string[0]));
+                parameters.Add("submissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("submissionId", true, "path", null, null, new string[0]));
+                parameters.Add("unauthToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("unauthToken", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", false, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }

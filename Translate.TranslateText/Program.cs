@@ -17,6 +17,8 @@ limitations under the License.
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Translate.v2;
 using Google.Apis.Translate.v2.Data;
@@ -38,8 +40,10 @@ namespace Translate.TranslateText
         [Description("input")]
         public class TranslateInput
         {
-            [Description("text to translate")] public string SourceText = "Who ate my candy?";
-            [Description("target language")] public string TargetLanguage = "fr";
+            [Description("text to translate")]
+            public string SourceText = "Who ate my candy?";
+            [Description("target language")]
+            public string TargetLanguage = "fr";
         }
 
         [STAThread]
@@ -53,10 +57,13 @@ namespace Translate.TranslateText
             TranslateInput input = CommandLine.CreateClassFromUserinput<TranslateInput>();
 
             // Create the service.
-            var service = new TranslateService { Key = GetApiKey() };
+            var service = new TranslateService(new BaseClientService.Initializer()
+                {
+                    ApiKey = GetApiKey()
+                });
 
             // Execute the first translation request.
-            CommandLine.WriteAction("Translating to '"+input.TargetLanguage+"' ...");
+            CommandLine.WriteAction("Translating to '" + input.TargetLanguage + "' ...");
 
             string[] srcText = new[] { "Hello world!", input.SourceText };
             TranslationsListResponse response = service.Translations.List(srcText, input.TargetLanguage).Fetch();

@@ -14,6 +14,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
     using System.Collections.Generic;
     
     
+    /// <summary>An access configuration attached to an instance&apos;s network interface.</summary>
     public class AccessConfig {
         
         private string _kind;
@@ -69,6 +70,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>An instance-attached disk resource.</summary>
     public class AttachedDisk {
         
         private System.Nullable<bool> _deleteOnTerminate;
@@ -163,6 +165,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A persistent disk resource.</summary>
     public class Disk : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _creationTimestamp;
@@ -333,6 +336,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of persistent disk resources.</summary>
     public class DiskList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -412,6 +416,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A firewall resource.</summary>
     public class Firewall : Google.Apis.Requests.IDirectResponseSchema {
         
         private System.Collections.Generic.IList<Firewall.AllowedData> _allowed;
@@ -599,6 +604,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of firewall resources.</summary>
     public class FirewallList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -678,6 +684,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A disk image resource.</summary>
     public class Image : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _creationTimestamp;
@@ -882,6 +889,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of disk image resources.</summary>
     public class ImageList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -961,6 +969,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>An instance resource.</summary>
     public class Instance : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _creationTimestamp;
@@ -1074,6 +1083,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
             }
         }
         
+        /// <summary>A metadata key/value entry.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("metadata")]
         public virtual Metadata Metadata {
             get {
@@ -1182,6 +1192,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of instance resources.</summary>
     public class InstanceList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -1261,6 +1272,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A kernel resource.</summary>
     public class Kernel : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _creationTimestamp;
@@ -1353,6 +1365,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of kernel resources.</summary>
     public class KernelList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -1432,6 +1445,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A machine type resource.</summary>
     public class MachineType : Google.Apis.Requests.IDirectResponseSchema {
         
         private System.Collections.Generic.IList<string> _availableZone;
@@ -1631,6 +1645,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of machine type resources.</summary>
     public class MachineTypeList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -1710,6 +1725,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A metadata key/value entry.</summary>
     public class Metadata {
         
         private System.Collections.Generic.IList<Metadata.ItemsData> _items;
@@ -1768,6 +1784,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A network resource.</summary>
     public class Network : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _IPv4Range;
@@ -1886,6 +1903,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A network interface resource attached to an instance.</summary>
     public class NetworkInterface {
         
         private System.Collections.Generic.IList<AccessConfig> _accessConfigs;
@@ -1954,6 +1972,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of network resources.</summary>
     public class NetworkList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -2033,6 +2052,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>An operation resource, used to manage asynchronous API requests.</summary>
     public class Operation : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _clientOperationId;
@@ -2353,6 +2373,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of operation resources.</summary>
     public class OperationList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -2432,6 +2453,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A project resource. Projects can be created only in the APIs Console. Unless marked otherwise, values can only be modified in the console.</summary>
     public class Project : Google.Apis.Requests.IDirectResponseSchema {
         
         private Metadata _commonInstanceMetadata;
@@ -2454,6 +2476,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         
         private string _ETag;
         
+        /// <summary>A metadata key/value entry.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("commonInstanceMetadata")]
         public virtual Metadata CommonInstanceMetadata {
             get {
@@ -2658,6 +2681,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A service account.</summary>
     public class ServiceAccount {
         
         private string _email;
@@ -2700,6 +2724,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A persistent disk snapshot resource.</summary>
     public class Snapshot : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _creationTimestamp;
@@ -2844,6 +2869,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of persistent disk snapshot resources.</summary>
     public class SnapshotList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -2923,6 +2949,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>A zone resource.</summary>
     public class Zone : Google.Apis.Requests.IDirectResponseSchema {
         
         private System.Collections.Generic.IList<string> _availableMachineType;
@@ -3109,6 +3136,7 @@ namespace Google.Apis.Compute.v1beta13.Data {
         }
     }
     
+    /// <summary>Contains a list of zone resources.</summary>
     public class ZoneList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _id;
@@ -3196,941 +3224,77 @@ namespace Google.Apis.Compute.v1beta13 {
     using Google.Apis.Discovery;
     
     
-    public partial class ComputeService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/kB_m7WP" +
-            "ogPc2LKfJ98YNCKFAnxc\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"compute:v1beta13\",\"name\":\"" +
-            "compute\",\"version\":\"v1beta13\",\"revision\":\"20121212\",\"title\":\"Compute Engine API\"" +
-            ",\"description\":\"API for the Google Compute Engine service.\",\"icons\":{\"x16\":\"http" +
-            "://www.google.com/images/icons/product/compute_engine-16.png\",\"x32\":\"http://www." +
-            "google.com/images/icons/product/compute_engine-32.png\"},\"documentationLink\":\"htt" +
-            "ps://developers.google.com/compute/docs/reference/v1beta13\",\"labels\":[\"limited_a" +
-            "vailability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/compute/v1" +
-            "beta13/projects/\",\"basePath\":\"/compute/v1beta13/projects/\",\"rootUrl\":\"https://ww" +
-            "w.googleapis.com/\",\"servicePath\":\"compute/v1beta13/projects/\",\"batchPath\":\"batch" +
-            "\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respon" +
-            "se.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Conten" +
-            "t-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Selector specifying which fields to include in a partial response.\",\"l" +
-            "ocation\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key id" +
-            "entifies your project and provides you with API access, quota, and reports. Requ" +
-            "ired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{" +
-            "\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\"" +
-            ":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with i" +
-            "ndentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{" +
-            "\"type\":\"string\",\"description\":\"Available to use for quota purposes for server-si" +
-            "de applications. Can be any arbitrary string assigned to a user, but should not " +
-            "exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"" +
-            "},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the requ" +
-            "est originates. Use this if you want to enforce per-user limits.\",\"location\":\"qu" +
-            "ery\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/compute\":{\"d" +
-            "escription\":\"View and manage your Google Compute Engine resources\"},\"https://www" +
-            ".googleapis.com/auth/compute.readonly\":{\"description\":\"View your Google Compute " +
-            "Engine resources\"},\"https://www.googleapis.com/auth/devstorage.read_only\":{\"desc" +
-            "ription\":\"View your data in Google Cloud Storage\"}}}},\"schemas\":{\"AccessConfig\":" +
-            "{\"id\":\"AccessConfig\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Type of the resource.\",\"default\":\"compute#accessConfig\"},\"name\":{\"type" +
-            "\":\"string\",\"description\":\"Name of this access configuration.\"},\"natIP\":{\"type\":\"" +
-            "string\",\"description\":\"An external IP address associated with this instance. Spe" +
-            "cify an unused static IP address available to the project. If not specified, the" +
-            " external IP will be drawn from a shared ephemeral pool.\"},\"type\":{\"type\":\"strin" +
-            "g\",\"description\":\"Type of configuration. Must be set to \\\"ONE_TO_ONE_NAT\\\". This" +
-            " configures port-for-port NAT to the internet.\",\"default\":\"ONE_TO_ONE_NAT\"}}},\"A" +
-            "ttachedDisk\":{\"id\":\"AttachedDisk\",\"type\":\"object\",\"properties\":{\"deleteOnTermina" +
-            "te\":{\"type\":\"boolean\",\"description\":\"Persistent disk only; If true, delete the d" +
-            "isk and all its data when the associated instance is deleted. This property defa" +
-            "ults to false if not specified.\"},\"deviceName\":{\"type\":\"string\",\"description\":\"P" +
-            "ersistent disk only; must be unique within the instance when specified. This rep" +
-            "resents a unique device name that is reflected into the /dev/ tree of a Linux op" +
-            "erating system running within the instance. If not specified, a default will be " +
-            "chosen by the system.\"},\"index\":{\"type\":\"integer\",\"description\":\"A zero-based in" +
-            "dex to assign to this disk, where 0 is reserved for the boot disk. If not specif" +
-            "ied, the server will choose an appropriate value.\",\"format\":\"int32\"},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#attachedDi" +
-            "sk\"},\"mode\":{\"type\":\"string\",\"description\":\"The mode in which to attach this dis" +
-            "k, either \\\"READ_WRITE\\\" or \\\"READ_ONLY\\\".\"},\"source\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Persistent disk only; the URL of the persistent disk resource.\"},\"type\":{\"" +
-            "type\":\"string\",\"description\":\"Type of the disk, either \\\"EPHEMERAL\\\" or \\\"PERSIS" +
-            "TENT\\\". Note that persistent disks must be created before you can specify them h" +
-            "ere.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}}},\"Disk\":{\"id\":\"D" +
-            "isk\",\"type\":\"object\",\"properties\":{\"creationTimestamp\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Creation timestamp in RFC3339 text format (output only).\"},\"description\":" +
-            "{\"type\":\"string\",\"description\":\"An optional textual description of the resource;" +
-            " provided by the client when the resource is created.\"},\"id\":{\"type\":\"string\",\"d" +
-            "escription\":\"Unique identifier for the resource; defined by the server (output o" +
-            "nly).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the res" +
-            "ource.\",\"default\":\"compute#disk\"},\"name\":{\"type\":\"string\",\"description\":\"Name of" +
-            " the resource; provided by the client when the resource is created. The name mus" +
-            "t be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-z0-9" +
-            "]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}},\"options" +
-            "\":{\"type\":\"string\",\"description\":\"Internal use only.\"},\"selfLink\":{\"type\":\"strin" +
-            "g\",\"description\":\"Server defined URL for the resource (output only).\"},\"sizeGb\":" +
-            "{\"type\":\"string\",\"description\":\"Size of the persistent disk, specified in GB.\",\"" +
-            "format\":\"int64\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}},\"sourceSnap" +
-            "shot\":{\"type\":\"string\",\"description\":\"The source snapshot used to create this di" +
-            "sk. Once the source snapshot has been deleted from the system, this field will b" +
-            "e cleared, and will not be set even if a snapshot with the same name has been re" +
-            "-created.\"},\"sourceSnapshotId\":{\"type\":\"string\",\"description\":\"The \'id\' value of" +
-            " the snapshot used to create this disk. This value may be used to determine whet" +
-            "her the disk was created from the current or a previous instance of a given disk" +
-            " snapshot.\"},\"status\":{\"type\":\"string\",\"description\":\"The status of disk creatio" +
-            "n (output only).\"},\"zone\":{\"type\":\"string\",\"description\":\"URL for the zone where" +
-            " the persistent disk resides; provided by the client when the disk is created. A" +
-            " persistent disk must reside in the same zone as the instance to which it is att" +
-            "ached.\",\"annotations\":{\"required\":[\"compute.disks.insert\"]}}}},\"DiskList\":{\"id\":" +
-            "\"DiskList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Un" +
-            "ique identifier for the resource; defined by the server (output only).\"},\"items\"" +
-            ":{\"type\":\"array\",\"description\":\"The persistent disk resources.\",\"items\":{\"$ref\":" +
-            "\"Disk\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"default\":\"co" +
-            "mpute#diskList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to" +
-            " continue a truncated list request (output only).\"},\"selfLink\":{\"type\":\"string\"," +
-            "\"description\":\"Server defined URL for this resource (output only).\"}}},\"Firewall" +
-            "\":{\"id\":\"Firewall\",\"type\":\"object\",\"properties\":{\"allowed\":{\"type\":\"array\",\"desc" +
-            "ription\":\"The list of rules specified by this firewall. Each rule specifies a pr" +
-            "otocol and port-range tuple that describes a permitted connection.\",\"items\":{\"ty" +
-            "pe\":\"object\",\"properties\":{\"IPProtocol\":{\"type\":\"string\",\"description\":\"Required" +
-            "; this is the IP protocol that is allowed for this rule. This can either be a we" +
-            "ll known protocol string (tcp, udp or icmp) or the IP protocol number.\"},\"ports\"" +
-            ":{\"type\":\"array\",\"description\":\"An optional list of ports which are allowed. It " +
-            "is an error to specify this for any protocol that isn\'t UDP or TCP. Each entry m" +
-            "ust be either an integer or a range. If not specified, connections through any p" +
-            "ort are allowed.\\nExample inputs include: [\\\"22\\\"], [\\\"80,\\\"443\\\"] and [\\\"12345-" +
-            "12349\\\"].\",\"items\":{\"type\":\"string\"}}}}},\"creationTimestamp\":{\"type\":\"string\",\"d" +
-            "escription\":\"Creation timestamp in RFC3339 text format (output only).\"},\"descrip" +
-            "tion\":{\"type\":\"string\",\"description\":\"An optional textual description of the res" +
-            "ource; provided by the client when the resource is created.\"},\"id\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Unique identifier for the resource; defined by the server (ou" +
-            "tput only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of t" +
-            "he resource.\",\"default\":\"compute#firewall\"},\"name\":{\"type\":\"string\",\"description" +
-            "\":\"Name of the resource; provided by the client when the resource is created. Th" +
-            "e name must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](" +
-            "?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.firewalls.inser" +
-            "t\",\"compute.firewalls.patch\"]}},\"network\":{\"type\":\"string\",\"description\":\"URL of" +
-            " the network to which this firewall is applied; provided by the client when the " +
-            "firewall is created.\",\"annotations\":{\"required\":[\"compute.firewalls.insert\",\"com" +
-            "pute.firewalls.patch\"]}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defin" +
-            "ed URL for the resource (output only).\"},\"sourceRanges\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"A list of IP address blocks expressed in CIDR format which this rule appl" +
-            "ies to. One or both of sourceRanges and sourceTags may be set; an inbound connec" +
-            "tion is allowed if either the range or the tag of the source matches.\",\"items\":{" +
-            "\"type\":\"string\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9]{1,3}){3}/[0-9]{1,2}\"}},\"sourceT" +
-            "ags\":{\"type\":\"array\",\"description\":\"A list of instance tags which this rule appl" +
-            "ies to. One or both of sourceRanges and sourceTags may be set; an inbound connec" +
-            "tion is allowed if either the range or the tag of the source matches.\",\"items\":{" +
-            "\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"}},\"targetTags\":{\"t" +
-            "ype\":\"array\",\"description\":\"A list of instance tags indicating sets of instances" +
-            " located on network which may make network connections as specified in allowed. " +
-            "If no targetTags are specified, the firewall rule applies to all instances on th" +
-            "e specified network.\",\"items\":{\"type\":\"string\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61" +
-            "}[a-z0-9])?\"}}}},\"FirewallList\":{\"id\":\"FirewallList\",\"type\":\"object\",\"properties" +
-            "\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defi" +
-            "ned by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The fi" +
-            "rewall resources.\",\"items\":{\"$ref\":\"Firewall\"}},\"kind\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Type of resource.\",\"default\":\"compute#firewallList\"},\"nextPageToken\":{\"ty" +
-            "pe\":\"string\",\"description\":\"A token used to continue a truncated list request (o" +
-            "utput only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for" +
-            " this resource (output only).\"}}},\"Image\":{\"id\":\"Image\",\"type\":\"object\",\"propert" +
-            "ies\":{\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in " +
-            "RFC3339 text format (output only).\"},\"description\":{\"type\":\"string\",\"description" +
-            "\":\"Textual description of the resource; provided by the client when the resource" +
-            " is created.\"},\"diskSnapshot\":{\"type\":\"object\",\"description\":\"Not yet implemente" +
-            "d.\",\"properties\":{\"source\":{\"type\":\"string\",\"description\":\"URL of the disk snaps" +
-            "hot.\",\"annotations\":{\"required\":[\"compute.images.insert\"]}}}},\"id\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Unique identifier for the resource; defined by the server (ou" +
-            "tput only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of t" +
-            "he resource.\",\"default\":\"compute#image\"},\"name\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the resource; provided by the client when the resource is created. The n" +
-            "ame must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[" +
-            "-a-z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.images.insert\"]}}," +
-            "\"preferredKernel\":{\"type\":\"string\",\"description\":\"An optional URL of the preferr" +
-            "ed kernel for use with this disk image. If not specified, a server defined defau" +
-            "lt kernel will be used.\"},\"rawDisk\":{\"type\":\"object\",\"description\":\"The raw disk" +
-            " image parameters.\",\"properties\":{\"containerType\":{\"type\":\"string\",\"description\"" +
-            ":\"The format used to encode and transmit the block device. Should be TAR. This i" +
-            "s just a container and transmission format and not a runtime format. Provided by" +
-            " the client when the disk image is created.\",\"default\":\"TAR\",\"annotations\":{\"req" +
-            "uired\":[\"compute.images.insert\"]}},\"sha1Checksum\":{\"type\":\"string\",\"description\"" +
-            ":\"An optional SHA1 checksum of the disk image before unpackaging; provided by th" +
-            "e client when the disk image is created.\",\"pattern\":\"[a-f0-9]{40}\"},\"source\":{\"t" +
-            "ype\":\"string\",\"description\":\"The full Google Cloud Storage URL where the disk im" +
-            "age is stored; provided by the client when the disk image is created.\",\"annotati" +
-            "ons\":{\"required\":[\"compute.images.insert\"]}}}},\"selfLink\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Server defined URL for the resource (output only).\"},\"sourceType\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Must be \\\"RAW\\\"; provided by the client when the dis" +
-            "k image is created.\",\"default\":\"RAW\",\"annotations\":{\"required\":[\"compute.images." +
-            "insert\"]}}}},\"ImageList\":{\"id\":\"ImageList\",\"type\":\"object\",\"properties\":{\"id\":{\"" +
-            "type\":\"string\",\"description\":\"Unique identifier for the resource; defined by the" +
-            " server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The disk image r" +
-            "esources.\",\"items\":{\"$ref\":\"Image\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type" +
-            " of resource.\",\"default\":\"compute#imageList\"},\"nextPageToken\":{\"type\":\"string\",\"" +
-            "description\":\"A token used to continue a truncated list request (output only).\"}" +
-            ",\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this resource" +
-            " (output only).\"}}},\"Instance\":{\"id\":\"Instance\",\"type\":\"object\",\"properties\":{\"c" +
-            "reationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339 " +
-            "text format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"An op" +
-            "tional textual description of the resource; provided by the client when the reso" +
-            "urce is created.\"},\"disks\":{\"type\":\"array\",\"description\":\"Array of disks associa" +
-            "ted with this instance. Persistent disks must be created before you can assign t" +
-            "hem.\",\"items\":{\"$ref\":\"AttachedDisk\"}},\"id\":{\"type\":\"string\",\"description\":\"Uniq" +
-            "ue identifier for the resource; defined by the server (output only).\",\"format\":\"" +
-            "uint64\"},\"image\":{\"type\":\"string\",\"description\":\"An optional URL of the disk ima" +
-            "ge resource to be to be installed on this instance; provided by the client when " +
-            "the instance is created. If not specified, the server will choose a default imag" +
-            "e.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"Type of the resource.\",\"default\":\"compute#instance\"},\"machin" +
-            "eType\":{\"type\":\"string\",\"description\":\"URL of the machine type resource describi" +
-            "ng which machine type to use to host the instance; provided by the client when t" +
-            "he instance is created.\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}" +
-            "},\"metadata\":{\"$ref\":\"Metadata\",\"description\":\"Metadata key/value pairs assigned" +
-            " to this instance. Consists of custom metadata or predefined keys; see Instance " +
-            "documentation for more information.\"},\"name\":{\"type\":\"string\",\"description\":\"Nam" +
-            "e of the resource; provided by the client when the resource is created. The name" +
-            " must be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-" +
-            "z0-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.instances.insert\"]}}," +
-            "\"networkInterfaces\":{\"type\":\"array\",\"description\":\"Array of configurations for t" +
-            "his interface. This specifies how this interface is configured to interact with " +
-            "other network services, such as connecting to the internet. Currently, ONE_TO_ON" +
-            "E_NAT is the only access config supported. If there are no accessConfigs specifi" +
-            "ed, then this instance will have no external internet access.\",\"items\":{\"$ref\":\"" +
-            "NetworkInterface\"}},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined UR" +
-            "L for the resource (output only).\"},\"serviceAccounts\":{\"type\":\"array\",\"descripti" +
-            "on\":\"A list of service accounts each with specified scopes, for which access tok" +
-            "ens are to be made available to the instance through metadata queries.\",\"items\":" +
-            "{\"$ref\":\"ServiceAccount\"}},\"status\":{\"type\":\"string\",\"description\":\"Instance sta" +
-            "tus. One of the following values: \\\"PROVISIONING\\\", \\\"STAGING\\\", \\\"RUNNING\\\", \\\"" +
-            "STOPPED\\\", \\\"TERMINATED\\\", and \\\"STOPPING\\\" (output only).\"},\"statusMessage\":{\"t" +
-            "ype\":\"string\",\"description\":\"An optional, human-readable explanation of the stat" +
-            "us (output only).\"},\"tags\":{\"type\":\"array\",\"description\":\"An optional set of tag" +
-            "s applied to this instance. Used to identify valid sources or targets for networ" +
-            "k firewalls. Provided by the client when the instance is created. Each tag must " +
-            "be 1-63 characters long, and comply with RFC1035.\",\"items\":{\"type\":\"string\",\"pat" +
-            "tern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"}},\"zone\":{\"type\":\"string\",\"description" +
-            "\":\"URL of the zone resource describing where this instance should be hosted; pro" +
-            "vided by the client when the instance is created.\",\"annotations\":{\"required\":[\"c" +
-            "ompute.instances.insert\"]}}}},\"InstanceList\":{\"id\":\"InstanceList\",\"type\":\"object" +
-            "\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the r" +
-            "esource; defined by the server (output only).\"},\"items\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"A list of instance resources.\",\"items\":{\"$ref\":\"Instance\"}},\"kind\":{\"type" +
-            "\":\"string\",\"description\":\"Type of resource.\",\"default\":\"compute#instanceList\"},\"" +
-            "nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to continue a trunca" +
-            "ted list request (output only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Ser" +
-            "ver defined URL for this resource (output only).\"}}},\"Kernel\":{\"id\":\"Kernel\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"creationTimestamp\":{\"type\":\"string\",\"description\":\"C" +
-            "reation timestamp in RFC3339 text format (output only).\"},\"description\":{\"type\":" +
-            "\"string\",\"description\":\"An optional textual description of the resource.\"},\"id\":" +
-            "{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined by t" +
-            "he server (output only).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Type of the resource.\",\"default\":\"compute#kernel\"},\"name\":{\"type\":\"string\",\"" +
-            "description\":\"Name of the resource.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])" +
-            "?\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for the resour" +
-            "ce (output only).\"}}},\"KernelList\":{\"id\":\"KernelList\",\"type\":\"object\",\"propertie" +
-            "s\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; def" +
-            "ined by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The k" +
-            "ernel resources.\",\"items\":{\"$ref\":\"Kernel\"}},\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Type of resource.\",\"default\":\"compute#kernelList\"},\"nextPageToken\":{\"type\":\"" +
-            "string\",\"description\":\"A token used to continue a truncated list request (output" +
-            " only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for this" +
-            " resource (output only).\"}}},\"MachineType\":{\"id\":\"MachineType\",\"type\":\"object\",\"" +
-            "properties\":{\"availableZone\":{\"type\":\"array\",\"description\":\"The zones that this " +
-            "machine type can run in.\",\"items\":{\"type\":\"string\"}},\"creationTimestamp\":{\"type\"" +
-            ":\"string\",\"description\":\"Creation timestamp in RFC3339 text format (output only)" +
-            ".\"},\"description\":{\"type\":\"string\",\"description\":\"An optional textual descriptio" +
-            "n of the resource.\"},\"ephemeralDisks\":{\"type\":\"array\",\"description\":\"List of ext" +
-            "ended ephemeral disks assigned to the instance.\",\"items\":{\"type\":\"object\",\"prope" +
-            "rties\":{\"diskGb\":{\"type\":\"integer\",\"description\":\"Size of the ephemeral disk, de" +
-            "fined in GB.\",\"format\":\"int32\"}}}},\"guestCpus\":{\"type\":\"integer\",\"description\":\"" +
-            "Count of CPUs exposed to the instance.\",\"format\":\"int32\"},\"id\":{\"type\":\"string\"," +
-            "\"description\":\"Unique identifier for the resource; defined by the server (output" +
-            " only).\",\"format\":\"uint64\"},\"imageSpaceGb\":{\"type\":\"integer\",\"description\":\"Spac" +
-            "e allotted for the image, defined in GB.\",\"format\":\"int32\"},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Type of the resource.\",\"default\":\"compute#machineType\"},\"maxi" +
-            "mumPersistentDisks\":{\"type\":\"integer\",\"description\":\"Maximum persistent disks al" +
-            "lowed.\",\"format\":\"int32\"},\"maximumPersistentDisksSizeGb\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Maximum total persistent disks size (GB) allowed.\",\"format\":\"int64\"},\"m" +
-            "emoryMb\":{\"type\":\"integer\",\"description\":\"Physical memory assigned to the instan" +
-            "ce, defined in MB.\",\"format\":\"int32\"},\"name\":{\"type\":\"string\",\"description\":\"Nam" +
-            "e of the resource.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\"},\"selfLink\":{\"" +
-            "type\":\"string\",\"description\":\"Server defined URL for the resource (output only)." +
-            "\"}}},\"MachineTypeList\":{\"id\":\"MachineTypeList\",\"type\":\"object\",\"properties\":{\"id" +
-            "\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined by" +
-            " the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The machine " +
-            "type resources.\",\"items\":{\"$ref\":\"MachineType\"}},\"kind\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Type of resource.\",\"default\":\"compute#machineTypeList\"},\"nextPageToken\":" +
-            "{\"type\":\"string\",\"description\":\"A token used to continue a truncated list reques" +
-            "t (output only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL" +
-            " for this resource (output only).\"}}},\"Metadata\":{\"id\":\"Metadata\",\"type\":\"object" +
-            "\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Array of key/value pairs." +
-            " The total size of all keys and values must be less than 512 KB.\",\"items\":{\"type" +
-            "\":\"object\",\"properties\":{\"key\":{\"type\":\"string\",\"description\":\"Key for the metad" +
-            "ata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be les" +
-            "s than 128 bytes in length. This is reflected as part of a URL in the metadata s" +
-            "erver. Additionally, to avoid ambiguity, keys must not conflict with any other m" +
-            "etadata keys for the project.\",\"pattern\":\"[a-zA-Z0-9-_]{1,128}\",\"annotations\":{\"" +
-            "required\":[\"compute.instances.insert\",\"compute.projects.setCommonInstanceMetadat" +
-            "a\"]}},\"value\":{\"type\":\"string\",\"description\":\"Value for the metadata entry. Thes" +
-            "e are free-form strings, and only have meaning as interpreted by the image runni" +
-            "ng in the instance. The only restriction placed on values is that their size mus" +
-            "t be less than or equal to 32768 bytes.\",\"annotations\":{\"required\":[\"compute.ins" +
-            "tances.insert\",\"compute.projects.setCommonInstanceMetadata\"]}}}}},\"kind\":{\"type\"" +
-            ":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#metadata\"}}}," +
-            "\"Network\":{\"id\":\"Network\",\"type\":\"object\",\"properties\":{\"IPv4Range\":{\"type\":\"str" +
-            "ing\",\"description\":\"Required; The range of internal addresses that are legal on " +
-            "this network. This range is a CIDR specification, for example: 192.168.0.0/16. P" +
-            "rovided by the client when the network is created.\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[" +
-            "0-9]{1,3}){3}/[0-9]{1,2}\",\"annotations\":{\"required\":[\"compute.networks.insert\"]}" +
-            "},\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3" +
-            "339 text format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"A" +
-            "n optional textual description of the resource; provided by the client when the " +
-            "resource is created.\"},\"gatewayIPv4\":{\"type\":\"string\",\"description\":\"An optional" +
-            " address that is used for default routing to other networks. This must be within" +
-            " the range specified by IPv4Range, and is typically the first usable address in " +
-            "that range. If not specified, the default value is the first usable address in I" +
-            "Pv4Range.\",\"pattern\":\"[0-9]{1,3}(?:\\\\.[0-9]{1,3}){3}\"},\"id\":{\"type\":\"string\",\"de" +
-            "scription\":\"Unique identifier for the resource; defined by the server (output on" +
-            "ly).\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the reso" +
-            "urce.\",\"default\":\"compute#network\"},\"name\":{\"type\":\"string\",\"description\":\"Name " +
-            "of the resource; provided by the client when the resource is created. The name m" +
-            "ust be 1-63 characters long, and comply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-z0" +
-            "-9]{0,61}[a-z0-9])?\",\"annotations\":{\"required\":[\"compute.networks.insert\"]}},\"se" +
-            "lfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for the resource (out" +
-            "put only).\"}}},\"NetworkInterface\":{\"id\":\"NetworkInterface\",\"type\":\"object\",\"prop" +
-            "erties\":{\"accessConfigs\":{\"type\":\"array\",\"description\":\"Array of configurations " +
-            "for this interface. This specifies how this interface is configured to interact " +
-            "with other network services, such as connecting to the internet. Currently, ONE_" +
-            "TO_ONE_NAT is the only access config supported. If there are no accessConfigs sp" +
-            "ecified, then this instance will have no external internet access.\",\"items\":{\"$r" +
-            "ef\":\"AccessConfig\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource" +
-            ".\",\"default\":\"compute#networkInterface\"},\"name\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the resource, determined by the server; for network devices, these are e" +
-            ".g. eth0, eth1, etc. (output only).\"},\"network\":{\"type\":\"string\",\"description\":\"" +
-            "URL of the network resource attached to this interface.\",\"annotations\":{\"require" +
-            "d\":[\"compute.instances.insert\"]}},\"networkIP\":{\"type\":\"string\",\"description\":\"An" +
-            " optional IPV4 internal network address to assign to this instance. If not speci" +
-            "fied, one will be assigned from the available range.\"}}},\"NetworkList\":{\"id\":\"Ne" +
-            "tworkList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Un" +
-            "ique identifier for the resource; defined by the server (output only).\"},\"items\"" +
-            ":{\"type\":\"array\",\"description\":\"The network resources.\",\"items\":{\"$ref\":\"Network" +
-            "\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"default\":\"compute" +
-            "#networkList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to c" +
-            "ontinue a truncated list request (output only).\"},\"selfLink\":{\"type\":\"string\",\"d" +
-            "escription\":\"Server defined URL for this resource (output only).\"}}},\"Operation\"" +
-            ":{\"id\":\"Operation\",\"type\":\"object\",\"properties\":{\"clientOperationId\":{\"type\":\"st" +
-            "ring\",\"description\":\"An optional identifier specified by the client when the mut" +
-            "ation was initiated. Must be unique for all operation resources in the project (" +
-            "output only).\"},\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation tim" +
-            "estamp in RFC3339 text format (output only).\"},\"endTime\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The time that this operation was completed. This is in RFC 3339 format " +
-            "(output only).\"},\"error\":{\"type\":\"object\",\"description\":\"If errors occurred duri" +
-            "ng processing of this operation, this field will be populated (output only).\",\"p" +
-            "roperties\":{\"errors\":{\"type\":\"array\",\"description\":\"The array of errors encounte" +
-            "red while processing this operation.\",\"items\":{\"type\":\"object\",\"properties\":{\"co" +
-            "de\":{\"type\":\"string\",\"description\":\"The error type identifier for this error.\"}," +
-            "\"location\":{\"type\":\"string\",\"description\":\"Indicates the field in the request wh" +
-            "ich caused the error. This property is optional.\"},\"message\":{\"type\":\"string\",\"d" +
-            "escription\":\"An optional, human-readable error message.\"}}}}}},\"httpErrorMessage" +
-            "\":{\"type\":\"string\",\"description\":\"If operation fails, the HTTP error message ret" +
-            "urned, e.g. NOT FOUND. (output only).\"},\"httpErrorStatusCode\":{\"type\":\"integer\"," +
-            "\"description\":\"If operation fails, the HTTP error status code returned, e.g. 404" +
-            ". (output only).\",\"format\":\"int32\"},\"id\":{\"type\":\"string\",\"description\":\"Unique " +
-            "identifier for the resource; defined by the server (output only).\",\"format\":\"uin" +
-            "t64\"},\"insertTime\":{\"type\":\"string\",\"description\":\"The time that this operation " +
-            "was requested. This is in RFC 3339 format (output only).\"},\"kind\":{\"type\":\"strin" +
-            "g\",\"description\":\"Type of the resource.\",\"default\":\"compute#operation\"},\"name\":{" +
-            "\"type\":\"string\",\"description\":\"Name of the resource.\"},\"operationType\":{\"type\":\"" +
-            "string\",\"description\":\"Type of the operation. Examples include \\\"insert\\\", \\\"upd" +
-            "ate\\\", and \\\"delete\\\" (output only).\"},\"progress\":{\"type\":\"integer\",\"description" +
-            "\":\"An optional progress indicator that ranges from 0 to 100. There is no require" +
-            "ment that this be linear or support any granularity of operations. This should n" +
-            "ot be used to guess at when the operation will be complete. This number should b" +
-            "e monotonically increasing as the operation progresses (output only).\",\"format\":" +
-            "\"int32\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined URL for the r" +
-            "esource (output only).\"},\"startTime\":{\"type\":\"string\",\"description\":\"The time th" +
-            "at this operation was started by the server. This is in RFC 3339 format (output " +
-            "only).\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the operation. Can b" +
-            "e one of the following: \\\"PENDING\\\", \\\"RUNNING\\\", or \\\"DONE\\\" (output only).\"},\"" +
-            "statusMessage\":{\"type\":\"string\",\"description\":\"An optional textual description o" +
-            "f the current status of the operation (output only).\"},\"targetId\":{\"type\":\"strin" +
-            "g\",\"description\":\"Unique target id which identifies a particular incarnation of " +
-            "the target (output only).\",\"format\":\"uint64\"},\"targetLink\":{\"type\":\"string\",\"des" +
-            "cription\":\"URL of the resource the operation is mutating (output only).\"},\"user\"" +
-            ":{\"type\":\"string\",\"description\":\"User who requested the operation, for example \\" +
-            "\"user@example.com\\\" (output only).\"}}},\"OperationList\":{\"id\":\"OperationList\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifie" +
-            "r for the resource; defined by the server (output only).\"},\"items\":{\"type\":\"arra" +
-            "y\",\"description\":\"The operation resources.\",\"items\":{\"$ref\":\"Operation\"}},\"kind\"" +
-            ":{\"type\":\"string\",\"description\":\"Type of resource.\",\"default\":\"compute#operation" +
-            "List\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to continue " +
-            "a truncated list request (output only).\"},\"selfLink\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Server defined URL for this resource (output only).\"}}},\"Project\":{\"id\":\"Pr" +
-            "oject\",\"type\":\"object\",\"properties\":{\"commonInstanceMetadata\":{\"$ref\":\"Metadata\"" +
-            ",\"description\":\"Metadata key/value pairs available to all instances contained in" +
-            " this project.\"},\"creationTimestamp\":{\"type\":\"string\",\"description\":\"Creation ti" +
-            "mestamp in RFC3339 text format (output only).\"},\"description\":{\"type\":\"string\",\"" +
-            "description\":\"An optional textual description of the resource.\"},\"externalIpAddr" +
-            "esses\":{\"type\":\"array\",\"description\":\"Internet available IP addresses available " +
-            "for use in this project.\",\"items\":{\"type\":\"string\"}},\"id\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Unique identifier for the resource; defined by the server (output only" +
-            ").\",\"format\":\"uint64\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resour" +
-            "ce.\",\"default\":\"compute#project\"},\"name\":{\"type\":\"string\",\"description\":\"Name of" +
-            " the resource.\"},\"quotas\":{\"type\":\"array\",\"description\":\"Quotas assigned to this" +
-            " project.\",\"items\":{\"type\":\"object\",\"properties\":{\"limit\":{\"type\":\"number\",\"desc" +
-            "ription\":\"Quota limit for this metric.\",\"format\":\"double\"},\"metric\":{\"type\":\"str" +
-            "ing\",\"description\":\"Name of the quota metric.\"},\"usage\":{\"type\":\"number\",\"descri" +
-            "ption\":\"Current usage of this metric.\",\"format\":\"double\"}}}},\"selfLink\":{\"type\":" +
-            "\"string\",\"description\":\"Server defined URL for the resource (output only).\"}}},\"" +
-            "SerialPortOutput\":{\"id\":\"SerialPortOutput\",\"type\":\"object\",\"description\":\"An ins" +
-            "tance serial console output.\",\"properties\":{\"contents\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The contents of the console output.\"},\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Type of the resource.\",\"default\":\"compute#serialPortOutput\"},\"selfLink\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Server defined URL for the resource.\"}}},\"ServiceAcc" +
-            "ount\":{\"id\":\"ServiceAccount\",\"type\":\"object\",\"properties\":{\"email\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Email address of the service account.\"},\"kind\":{\"type\":\"strin" +
-            "g\",\"description\":\"Type of the resource.\",\"default\":\"compute#serviceAccount\"},\"sc" +
-            "opes\":{\"type\":\"array\",\"description\":\"The list of scopes to be made available for" +
-            " this service account.\",\"items\":{\"type\":\"string\"}}}},\"Snapshot\":{\"id\":\"Snapshot\"" +
-            ",\"type\":\"object\",\"properties\":{\"creationTimestamp\":{\"type\":\"string\",\"description" +
-            "\":\"Creation timestamp in RFC3339 text format (output only).\"},\"description\":{\"ty" +
-            "pe\":\"string\",\"description\":\"An optional textual description of the resource; pro" +
-            "vided by the client when the resource is created.\"},\"diskSizeGb\":{\"type\":\"string" +
-            "\",\"description\":\"Size of the persistent disk snapshot, specified in GB (output o" +
-            "nly).\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier " +
-            "for the resource; defined by the server (output only).\",\"format\":\"uint64\"},\"kind" +
-            "\":{\"type\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"compute#snap" +
-            "shot\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the resource; provided by " +
-            "the client when the resource is created. The name must be 1-63 characters long, " +
-            "and comply with RFC1035.\",\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"annotat" +
-            "ions\":{\"required\":[\"compute.snapshots.insert\"]}},\"selfLink\":{\"type\":\"string\",\"de" +
-            "scription\":\"Server defined URL for the resource (output only).\"},\"sourceDisk\":{\"" +
-            "type\":\"string\",\"description\":\"The source disk used to create this snapshot. Once" +
-            " the source disk has been deleted from the system, this field will be cleared, a" +
-            "nd will not be set even if a disk with the same name has been re-created.\"},\"sou" +
-            "rceDiskId\":{\"type\":\"string\",\"description\":\"The \'id\' value of the disk used to cr" +
-            "eate this snapshot. This value may be used to determine whether the snapshot was" +
-            " taken from the current or a previous instance of a given disk name.\"},\"status\":" +
-            "{\"type\":\"string\",\"description\":\"The status of the persistent disk snapshot (outp" +
-            "ut only).\"}}},\"SnapshotList\":{\"id\":\"SnapshotList\",\"type\":\"object\",\"properties\":{" +
-            "\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for the resource; defined" +
-            " by the server (output only).\"},\"items\":{\"type\":\"array\",\"description\":\"The persi" +
-            "stent snapshot resources.\",\"items\":{\"$ref\":\"Snapshot\"}},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"Type of resource.\",\"default\":\"compute#snapshotList\"},\"nextPageTok" +
-            "en\":{\"type\":\"string\",\"description\":\"A token used to continue a truncated list re" +
-            "quest (output only).\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Server defined" +
-            " URL for this resource (output only).\"}}},\"Zone\":{\"id\":\"Zone\",\"type\":\"object\",\"p" +
-            "roperties\":{\"availableMachineType\":{\"type\":\"array\",\"description\":\"The machine ty" +
-            "pes that can be used in this zone (output only).\",\"items\":{\"type\":\"string\"}},\"cr" +
-            "eationTimestamp\":{\"type\":\"string\",\"description\":\"Creation timestamp in RFC3339 t" +
-            "ext format (output only).\"},\"description\":{\"type\":\"string\",\"description\":\"Textua" +
-            "l description of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique ide" +
-            "ntifier for the resource; defined by the server (output only).\",\"format\":\"uint64" +
-            "\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource.\",\"default\":\"comp" +
-            "ute#zone\"},\"maintenanceWindows\":{\"type\":\"array\",\"description\":\"Scheduled mainten" +
-            "ance windows for the zone. When the zone is in a maintenance window, all resourc" +
-            "es which reside in the zone will be unavailable.\",\"items\":{\"type\":\"object\",\"prop" +
-            "erties\":{\"beginTime\":{\"type\":\"string\",\"description\":\"Begin time of the maintenan" +
-            "ce window, in RFC 3339 format.\"},\"description\":{\"type\":\"string\",\"description\":\"T" +
-            "extual description of the maintenance window.\"},\"endTime\":{\"type\":\"string\",\"desc" +
-            "ription\":\"End time of the maintenance window, in RFC 3339 format.\"},\"name\":{\"typ" +
-            "e\":\"string\",\"description\":\"Name of the maintenance window.\"}}}},\"name\":{\"type\":\"" +
-            "string\",\"description\":\"Name of the resource.\"},\"selfLink\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Server defined URL for the resource (output only).\"},\"status\":{\"type\":" +
-            "\"string\",\"description\":\"Status of the zone. \\\"UP\\\" or \\\"DOWN\\\".\"}}},\"ZoneList\":{" +
-            "\"id\":\"ZoneList\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description" +
-            "\":\"Unique identifier for the resource; defined by the server (output only).\"},\"i" +
-            "tems\":{\"type\":\"array\",\"description\":\"The zone resources.\",\"items\":{\"$ref\":\"Zone\"" +
-            "}},\"kind\":{\"type\":\"string\",\"description\":\"Type of resource.\",\"default\":\"compute#" +
-            "zoneList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token used to conti" +
-            "nue a truncated list request (output only).\"},\"selfLink\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Server defined URL for this resource (output only).\"}}}},\"resources\":{\"" +
-            "disks\":{\"methods\":{\"delete\":{\"id\":\"compute.disks.delete\",\"path\":\"{project}/disks" +
-            "/{disk}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the specified persistent d" +
-            "isk resource.\",\"parameters\":{\"disk\":{\"type\":\"string\",\"description\":\"Name of the " +
-            "persistent disk resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9" +
-            "]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-" +
-            "z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](" +
-            "?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"" +
-            "disk\"],\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/compute\"]},\"get\":{\"id\":\"compute.disks.get\",\"path\":\"{project}/disks/{disk}\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"Returns the specified persistent disk resource.\"," +
-            "\"parameters\":{\"disk\":{\"type\":\"string\",\"description\":\"Name of the persistent disk" +
-            " resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9]" +
-            ")?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the pro" +
-            "ject scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)" +
-            "*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,6" +
-            "1}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"disk\"],\"respons" +
-            "e\":{\"$ref\":\"Disk\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]" +
-            "},\"insert\":{\"id\":\"compute.disks.insert\",\"path\":\"{project}/disks\",\"httpMethod\":\"P" +
-            "OST\",\"description\":\"Creates a persistent disk resource in the specified project " +
-            "using the data included in the request.\",\"parameters\":{\"project\":{\"type\":\"string" +
-            "\",\"description\":\"Name of the project scoping this request.\",\"required\":true,\"pat" +
-            "tern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9" +
-            "]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"project\"],\"request\":{\"$ref\":\"Disk\"},\"response\":{\"$ref\":\"Operation\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/compute\"]},\"list\":{\"id\":\"compute.disks.lis" +
-            "t\",\"path\":\"{project}/disks\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list" +
-            " of persistent disk resources contained within the specified project.\",\"paramete" +
-            "rs\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter expression for fi" +
-            "ltering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"d" +
-            "escription\":\"Optional. Maximum count of results to be returned. Maximum and defa" +
-            "ult value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"10" +
-            "0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag" +
-            " returned by a previous list request truncated by maxResults. Used to continue a" +
-            " previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:" +
-            "(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?" +
-            ":[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"pro" +
-            "ject\"],\"response\":{\"$ref\":\"DiskList\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/compute.readonly\"]}}},\"firewalls\":{\"methods\":{\"delete\":{\"id\":\"compute.firewalls" +
-            ".delete\",\"path\":\"{project}/firewalls/{firewall}\",\"httpMethod\":\"DELETE\",\"descript" +
-            "ion\":\"Deletes the specified firewall resource.\",\"parameters\":{\"firewall\":{\"type\"" +
-            ":\"string\",\"description\":\"Name of the firewall resource to delete.\",\"required\":tr" +
-            "ue,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"" +
-            "type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"requir" +
-            "ed\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9]" +
-            ")?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"project\",\"firewall\"],\"response\":{\"$ref\":\"Operation\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.firewalls.ge" +
-            "t\",\"path\":\"{project}/firewalls/{firewall}\",\"httpMethod\":\"GET\",\"description\":\"Ret" +
-            "urns the specified firewall resource.\",\"parameters\":{\"firewall\":{\"type\":\"string\"" +
-            ",\"description\":\"Name of the firewall resource to return.\",\"required\":true,\"patte" +
-            "rn\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"st" +
-            "ring\",\"description\":\"Name of the project scoping this request.\",\"required\":true," +
-            "\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:" +
-            "[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"project\",\"firewall\"],\"response\":{\"$ref\":\"Firewall\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.firewalls." +
-            "insert\",\"path\":\"{project}/firewalls\",\"httpMethod\":\"POST\",\"description\":\"Creates " +
-            "a firewall resource in the specified project using the data included in the requ" +
-            "est.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the projec" +
-            "t scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?" +
-            ":[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[" +
-            "a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":" +
-            "\"Firewall\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.co" +
-            "m/auth/compute\"]},\"list\":{\"id\":\"compute.firewalls.list\",\"path\":\"{project}/firewa" +
-            "lls\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of firewall resources " +
-            "available to the specified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"de" +
-            "scription\":\"Optional. Filter expression for filtering listed resources.\",\"locati" +
-            "on\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum cou" +
-            "nt of results to be returned. Maximum and default value is 100.\",\"default\":\"100\"" +
-            ",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"Optional. Tag returned by a previous list reque" +
-            "st truncated by maxResults. Used to continue a previous list request.\",\"location" +
-            "\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping" +
-            " this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:" +
-            "[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?" +
-            "))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"Firewal" +
-            "lList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]},\"patch\":{" +
-            "\"id\":\"compute.firewalls.patch\",\"path\":\"{project}/firewalls/{firewall}\",\"httpMeth" +
-            "od\":\"PATCH\",\"description\":\"Updates the specified firewall resource with the data" +
-            " included in the request. This method supports patch semantics.\",\"parameters\":{\"" +
-            "firewall\":{\"type\":\"string\",\"description\":\"Name of the firewall resource to updat" +
-            "e.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"pa" +
-            "th\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping this " +
-            "request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0" +
-            "-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"project\",\"firewall\"],\"request\":{\"$ref\":\"Fir" +
-            "ewall\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/compute\"]},\"update\":{\"id\":\"compute.firewalls.update\",\"path\":\"{project}/firewa" +
-            "lls/{firewall}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the specified firewall" +
-            " resource with the data included in the request.\",\"parameters\":{\"firewall\":{\"typ" +
-            "e\":\"string\",\"description\":\"Name of the firewall resource to update.\",\"required\":" +
-            "true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":" +
-            "{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"requ" +
-            "ired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-" +
-            "9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"" +
-            "}},\"parameterOrder\":[\"project\",\"firewall\"],\"request\":{\"$ref\":\"Firewall\"},\"respon" +
-            "se\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]}}}" +
-            ",\"images\":{\"methods\":{\"delete\":{\"id\":\"compute.images.delete\",\"path\":\"{project}/i" +
-            "mages/{image}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the specified image " +
-            "resource.\",\"parameters\":{\"image\":{\"type\":\"string\",\"description\":\"Name of the ima" +
-            "ge resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-" +
-            "9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the p" +
-            "roject scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\" +
-            ".)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0" +
-            ",61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"image\"],\"resp" +
-            "onse\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]}" +
-            ",\"get\":{\"id\":\"compute.images.get\",\"path\":\"{project}/images/{image}\",\"httpMethod\"" +
-            ":\"GET\",\"description\":\"Returns the specified image resource.\",\"parameters\":{\"imag" +
-            "e\":{\"type\":\"string\",\"description\":\"Name of the image resource to return.\",\"requi" +
-            "red\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"proj" +
-            "ect\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\"," +
-            "\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[" +
-            "a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"project\",\"image\"],\"response\":{\"$ref\":\"Image\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute." +
-            "images.insert\",\"path\":\"{project}/images\",\"httpMethod\":\"POST\",\"description\":\"Crea" +
-            "tes an image resource in the specified project using the data included in the re" +
-            "quest.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the proj" +
-            "ect scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*" +
-            "(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61" +
-            "}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref" +
-            "\":\"Image\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/compute\",\"https://www.googleapis.com/auth/devstorage.read_only\"]},\"list\":{" +
-            "\"id\":\"compute.images.list\",\"path\":\"{project}/images\",\"httpMethod\":\"GET\",\"descrip" +
-            "tion\":\"Retrieves the list of image resources available to the specified project." +
-            "\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter expres" +
-            "sion for filtering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"" +
-            "integer\",\"description\":\"Optional. Maximum count of results to be returned. Maxim" +
-            "um and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"m" +
-            "aximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Op" +
-            "tional. Tag returned by a previous list request truncated by maxResults. Used to" +
-            " continue a previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"strin" +
-            "g\",\"description\":\"Name of the project scoping this request.\",\"required\":true,\"pa" +
-            "ttern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-" +
-            "9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"project\"],\"response\":{\"$ref\":\"ImageList\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/compute.readonly\"]}}},\"instances\":{\"methods\":{\"addAccessConfig\":{\"i" +
-            "d\":\"compute.instances.addAccessConfig\",\"path\":\"{project}/instances/{instance}/ad" +
-            "dAccessConfig\",\"httpMethod\":\"POST\",\"description\":\"Adds an access config to an in" +
-            "stance\'s network interface.\",\"parameters\":{\"instance\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Instance name.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9]" +
-            ")?\",\"location\":\"path\"},\"network_interface\":{\"type\":\"string\",\"description\":\"Netwo" +
-            "rk interface name.\",\"required\":true,\"location\":\"query\"},\"project\":{\"type\":\"strin" +
-            "g\",\"description\":\"Project name.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63" +
-            "}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9" +
-            "]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"instance\"," +
-            "\"network_interface\"],\"request\":{\"$ref\":\"AccessConfig\"},\"response\":{\"$ref\":\"Opera" +
-            "tion\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"delete\":{\"id\":\"com" +
-            "pute.instances.delete\",\"path\":\"{project}/instances/{instance}\",\"httpMethod\":\"DEL" +
-            "ETE\",\"description\":\"Deletes the specified instance resource.\",\"parameters\":{\"ins" +
-            "tance\":{\"type\":\"string\",\"description\":\"Name of the instance resource to delete.\"" +
-            ",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"" +
-            "},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping this req" +
-            "uest.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]" +
-            "{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"loca" +
-            "tion\":\"path\"}},\"parameterOrder\":[\"project\",\"instance\"],\"response\":{\"$ref\":\"Opera" +
-            "tion\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"deleteAccessConfig" +
-            "\":{\"id\":\"compute.instances.deleteAccessConfig\",\"path\":\"{project}/instances/{inst" +
-            "ance}/deleteAccessConfig\",\"httpMethod\":\"POST\",\"description\":\"Deletes an access c" +
-            "onfig from an instance\'s network interface.\",\"parameters\":{\"access_config\":{\"typ" +
-            "e\":\"string\",\"description\":\"Access config name.\",\"required\":true,\"location\":\"quer" +
-            "y\"},\"instance\":{\"type\":\"string\",\"description\":\"Instance name.\",\"required\":true,\"" +
-            "pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"network_interfa" +
-            "ce\":{\"type\":\"string\",\"description\":\"Network interface name.\",\"required\":true,\"lo" +
-            "cation\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Project name.\",\"requi" +
-            "red\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9" +
-            "])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"project\",\"instance\",\"access_config\",\"network_interface\"],\"r" +
-            "esponse\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute" +
-            "\"]},\"get\":{\"id\":\"compute.instances.get\",\"path\":\"{project}/instances/{instance}\"," +
-            "\"httpMethod\":\"GET\",\"description\":\"Returns the specified instance resource.\",\"par" +
-            "ameters\":{\"instance\":{\"type\":\"string\",\"description\":\"Name of the instance resour" +
-            "ce to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"lo" +
-            "cation\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project sc" +
-            "oping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-" +
-            "z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0" +
-            "-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"instance\"],\"response\":" +
-            "{\"$ref\":\"Instance\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"" +
-            "]},\"getSerialPortOutput\":{\"id\":\"compute.instances.getSerialPortOutput\",\"path\":\"{" +
-            "project}/instances/{instance}/serialPort\",\"httpMethod\":\"GET\",\"description\":\"Retu" +
-            "rns the specified instance\'s serial port output.\",\"parameters\":{\"instance\":{\"typ" +
-            "e\":\"string\",\"description\":\"Name of the instance scoping this request.\",\"required" +
-            "\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project" +
-            "\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"re" +
-            "quired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z" +
-            "0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"project\",\"instance\"],\"response\":{\"$ref\":\"SerialPortOutpu" +
-            "t\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]},\"insert\":{\"id" +
-            "\":\"compute.instances.insert\",\"path\":\"{project}/instances\",\"httpMethod\":\"POST\",\"d" +
-            "escription\":\"Creates an instance resource in the specified project using the dat" +
-            "a included in the request.\",\"parameters\":{\"project\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:" +
-            "[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a" +
-            "-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"projec" +
-            "t\"],\"request\":{\"$ref\":\"Instance\"},\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/compute\"]},\"list\":{\"id\":\"compute.instances.list\",\"p" +
-            "ath\":\"{project}/instances\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list " +
-            "of instance resources contained within the specified project.\",\"parameters\":{\"fi" +
-            "lter\":{\"type\":\"string\",\"description\":\"Optional. Filter expression for filtering " +
-            "listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"Optional. Maximum count of results to be returned. Maximum and default valu" +
-            "e is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"loca" +
-            "tion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag returne" +
-            "d by a previous list request truncated by maxResults. Used to continue a previou" +
-            "s list request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"N" +
-            "ame of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z" +
-            "0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?" +
-            ":[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"" +
-            "response\":{\"$ref\":\"InstanceList\"},\"scopes\":[\"https://www.googleapis.com/auth/com" +
-            "pute.readonly\"]}}},\"kernels\":{\"methods\":{\"get\":{\"id\":\"compute.kernels.get\",\"path" +
-            "\":\"{project}/kernels/{kernel}\",\"httpMethod\":\"GET\",\"description\":\"Returns the spe" +
-            "cified kernel resource.\",\"parameters\":{\"kernel\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the kernel resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z" +
-            "0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description" +
-            "\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[" +
-            "-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-" +
-            "z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project" +
-            "\",\"kernel\"],\"response\":{\"$ref\":\"Kernel\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/compute.readonly\"]},\"list\":{\"id\":\"compute.kernels.list\",\"path\":\"{project}/ke" +
-            "rnels\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of kernel resources " +
-            "available to the specified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"de" +
-            "scription\":\"Optional. Filter expression for filtering listed resources.\",\"locati" +
-            "on\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum cou" +
-            "nt of results to be returned. Maximum and default value is 100.\",\"default\":\"100\"" +
-            ",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"Optional. Tag returned by a previous list reque" +
-            "st truncated by maxResults. Used to continue a previous list request.\",\"location" +
-            "\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping" +
-            " this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:" +
-            "[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?" +
-            "))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"KernelL" +
-            "ist\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]}}},\"machineT" +
-            "ypes\":{\"methods\":{\"get\":{\"id\":\"compute.machineTypes.get\",\"path\":\"{project}/machi" +
-            "neTypes/{machineType}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified m" +
-            "achine type resource.\",\"parameters\":{\"machineType\":{\"type\":\"string\",\"description" +
-            "\":\"Name of the machine type resource to return.\",\"required\":true,\"pattern\":\"[a-z" +
-            "](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"de" +
-            "scription\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\"" +
-            ":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,1" +
-            "9}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"project\",\"machineType\"],\"response\":{\"$ref\":\"MachineType\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/compute.readonly\"]},\"list\":{\"id\":\"compute.machineTypes.li" +
-            "st\",\"path\":\"{project}/machineTypes\",\"httpMethod\":\"GET\",\"description\":\"Retrieves " +
-            "the list of machine type resources available to the specified project.\",\"paramet" +
-            "ers\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Filter expression for f" +
-            "iltering listed resources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"" +
-            "description\":\"Optional. Maximum count of results to be returned. Maximum and def" +
-            "ault value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"1" +
-            "00\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Ta" +
-            "g returned by a previous list request truncated by maxResults. Used to continue " +
-            "a previous list request.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?" +
-            ":(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
-            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"pr" +
-            "oject\"],\"response\":{\"$ref\":\"MachineTypeList\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/compute.readonly\"]}}},\"networks\":{\"methods\":{\"delete\":{\"id\":\"compute.ne" +
-            "tworks.delete\",\"path\":\"{project}/networks/{network}\",\"httpMethod\":\"DELETE\",\"desc" +
-            "ription\":\"Deletes the specified network resource.\",\"parameters\":{\"network\":{\"typ" +
-            "e\":\"string\",\"description\":\"Name of the network resource to delete.\",\"required\":t" +
-            "rue,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{" +
-            "\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"requi" +
-            "red\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9" +
-            "])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"project\",\"network\"],\"response\":{\"$ref\":\"Operation\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.networks.get" +
-            "\",\"path\":\"{project}/networks/{network}\",\"httpMethod\":\"GET\",\"description\":\"Return" +
-            "s the specified network resource.\",\"parameters\":{\"network\":{\"type\":\"string\",\"des" +
-            "cription\":\"Name of the network resource to return.\",\"required\":true,\"pattern\":\"[" +
-            "a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\"," +
-            "\"description\":\"Name of the project scoping this request.\",\"required\":true,\"patte" +
-            "rn\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{" +
-            "1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"project\",\"network\"],\"response\":{\"$ref\":\"Network\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/compute.readonly\"]},\"insert\":{\"id\":\"compute.networks.insert\",\"" +
-            "path\":\"{project}/networks\",\"httpMethod\":\"POST\",\"description\":\"Creates a network " +
-            "resource in the specified project using the data included in the request.\",\"para" +
-            "meters\":{\"project\":{\"type\":\"string\",\"description\":\"Name of the project scoping t" +
-            "his request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-" +
-            "a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))" +
-            "\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Network\"}," +
-            "\"response\":{\"$ref\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compu" +
-            "te\"]},\"list\":{\"id\":\"compute.networks.list\",\"path\":\"{project}/networks\",\"httpMeth" +
-            "od\":\"GET\",\"description\":\"Retrieves the list of network resources available to th" +
-            "e specified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Opt" +
-            "ional. Filter expression for filtering listed resources.\",\"location\":\"query\"},\"m" +
-            "axResults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum count of results t" +
-            "o be returned. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint" +
-            "32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"strin" +
-            "g\",\"description\":\"Optional. Tag returned by a previous list request truncated by" +
-            " maxResults. Used to continue a previous list request.\",\"location\":\"query\"},\"pro" +
-            "ject\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\"" +
-            ",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}" +
-            "[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":" +
-            "\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"NetworkList\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/compute.readonly\"]}}},\"operations\":{\"methods\"" +
-            ":{\"delete\":{\"id\":\"compute.operations.delete\",\"path\":\"{project}/operations/{opera" +
-            "tion}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the specified operation reso" +
-            "urce.\",\"parameters\":{\"operation\":{\"type\":\"string\",\"description\":\"Name of the ope" +
-            "ration resource to delete.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a" +
-            "-z0-9])?\",\"location\":\"path\"},\"project\":{\"type\":\"string\",\"description\":\"Name of t" +
-            "he project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,6" +
-            "3}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-" +
-            "9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"operation" +
-            "\"],\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.op" +
-            "erations.get\",\"path\":\"{project}/operations/{operation}\",\"httpMethod\":\"GET\",\"desc" +
-            "ription\":\"Retrieves the specified operation resource.\",\"parameters\":{\"operation\"" +
-            ":{\"type\":\"string\",\"description\":\"Name of the operation resource to return.\",\"req" +
-            "uired\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"},\"pr" +
-            "oject\":{\"type\":\"string\",\"description\":\"Name of the project scoping this request." +
-            "\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61" +
-            "}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\"" +
-            ":\"path\"}},\"parameterOrder\":[\"project\",\"operation\"],\"response\":{\"$ref\":\"Operation" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]},\"list\":{\"id\":\"" +
-            "compute.operations.list\",\"path\":\"{project}/operations\",\"httpMethod\":\"GET\",\"descr" +
-            "iption\":\"Retrieves the list of operation resources contained within the specifie" +
-            "d project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"Optional. Fil" +
-            "ter expression for filtering listed resources.\",\"location\":\"query\"},\"maxResults\"" +
-            ":{\"type\":\"integer\",\"description\":\"Optional. Maximum count of results to be retur" +
-            "ned. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"uint32\",\"minim" +
-            "um\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Optional. Tag returned by a previous list request truncated by maxResult" +
-            "s. Used to continue a previous list request.\",\"location\":\"query\"},\"project\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Name of the project scoping this request.\",\"required" +
-            "\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?" +
-            "):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"OperationList\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/compute.readonly\"]}}},\"projects\":{\"methods\":{\"get\":{\"" +
-            "id\":\"compute.projects.get\",\"path\":\"{project}\",\"httpMethod\":\"GET\",\"description\":\"" +
-            "Returns the specified project resource.\",\"parameters\":{\"project\":{\"type\":\"string" +
-            "\",\"description\":\"Name of the project resource to retrieve.\",\"required\":true,\"pat" +
-            "tern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9" +
-            "]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"project\"],\"response\":{\"$ref\":\"Project\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/compute.readonly\"]},\"setCommonInstanceMetadata\":{\"id\":\"compute.project" +
-            "s.setCommonInstanceMetadata\",\"path\":\"{project}/setCommonInstanceMetadata\",\"httpM" +
-            "ethod\":\"POST\",\"description\":\"Sets metadata common to all instances within the sp" +
-            "ecified project using the data included in the request.\",\"parameters\":{\"project\"" +
-            ":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"req" +
-            "uired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0" +
-            "-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Metadata\"},\"response\":{\"$ref" +
-            "\":\"Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]}}},\"snapshot" +
-            "s\":{\"methods\":{\"delete\":{\"id\":\"compute.snapshots.delete\",\"path\":\"{project}/snaps" +
-            "hots/{snapshot}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the specified pers" +
-            "istent disk snapshot resource.\",\"parameters\":{\"project\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Name of the project scoping this request.\",\"required\":true,\"pattern\":\"(?" +
-            ":(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
-            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"},\"snapshot\":{\"type\":\"st" +
-            "ring\",\"description\":\"Name of the persistent disk snapshot resource to delete.\",\"" +
-            "required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"project\",\"snapshot\"],\"response\":{\"$ref\":\"Operation\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/compute\"]},\"get\":{\"id\":\"compute.snapshots.ge" +
-            "t\",\"path\":\"{project}/snapshots/{snapshot}\",\"httpMethod\":\"GET\",\"description\":\"Ret" +
-            "urns the specified persistent disk snapshot resource.\",\"parameters\":{\"project\":{" +
-            "\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"requi" +
-            "red\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9" +
-            "])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}" +
-            ",\"snapshot\":{\"type\":\"string\",\"description\":\"Name of the persistent disk snapshot" +
-            " resource to return.\",\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9]" +
-            ")?\",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"snapshot\"],\"response\":{\"$re" +
-            "f\":\"Snapshot\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonly\"]},\"i" +
-            "nsert\":{\"id\":\"compute.snapshots.insert\",\"path\":\"{project}/snapshots\",\"httpMethod" +
-            "\":\"POST\",\"description\":\"Creates a persistent disk snapshot resource in the speci" +
-            "fied project using the data included in the request.\",\"parameters\":{\"project\":{\"" +
-            "type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"requir" +
-            "ed\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9]" +
-            ")?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"project\"],\"request\":{\"$ref\":\"Snapshot\"},\"response\":{\"$ref\":\"" +
-            "Operation\"},\"scopes\":[\"https://www.googleapis.com/auth/compute\"]},\"list\":{\"id\":\"" +
-            "compute.snapshots.list\",\"path\":\"{project}/snapshots\",\"httpMethod\":\"GET\",\"descrip" +
-            "tion\":\"Retrieves the list of persistent disk snapshot resources contained within" +
-            " the specified project.\",\"parameters\":{\"filter\":{\"type\":\"string\",\"description\":\"" +
-            "Optional. Filter expression for filtering listed resources.\",\"location\":\"query\"}" +
-            ",\"maxResults\":{\"type\":\"integer\",\"description\":\"Optional. Maximum count of result" +
-            "s to be returned. Maximum and default value is 100.\",\"default\":\"100\",\"format\":\"u" +
-            "int32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"Optional. Tag returned by a previous list request truncated" +
-            " by maxResults. Used to continue a previous list request.\",\"location\":\"query\"},\"" +
-            "project\":{\"type\":\"string\",\"description\":\"Name of the project scoping this reques" +
-            "t.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0," +
-            "61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"project\"],\"response\":{\"$ref\":\"SnapshotList\"},\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/compute.readonly\"]}}},\"zones\":{\"methods\":" +
-            "{\"get\":{\"id\":\"compute.zones.get\",\"path\":\"{project}/zones/{zone}\",\"httpMethod\":\"G" +
-            "ET\",\"description\":\"Returns the specified zone resource.\",\"parameters\":{\"project\"" +
-            ":{\"type\":\"string\",\"description\":\"Name of the project scoping this request.\",\"req" +
-            "uired\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,63}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0" +
-            "-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))\",\"location\":\"path" +
-            "\"},\"zone\":{\"type\":\"string\",\"description\":\"Name of the zone resource to return.\"," +
-            "\"required\":true,\"pattern\":\"[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?\",\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"project\",\"zone\"],\"response\":{\"$ref\":\"Zone\"},\"scopes\":[\"http" +
-            "s://www.googleapis.com/auth/compute.readonly\"]},\"list\":{\"id\":\"compute.zones.list" +
-            "\",\"path\":\"{project}/zones\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list " +
-            "of zone resources available to the specified project.\",\"parameters\":{\"filter\":{\"" +
-            "type\":\"string\",\"description\":\"Optional. Filter expression for filtering listed r" +
-            "esources.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Opt" +
-            "ional. Maximum count of results to be returned. Maximum and default value is 100" +
-            ".\",\"default\":\"100\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"q" +
-            "uery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Optional. Tag returned by a p" +
-            "revious list request truncated by maxResults. Used to continue a previous list r" +
-            "equest.\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"Name of t" +
-            "he project scoping this request.\",\"required\":true,\"pattern\":\"(?:(?:[-a-z0-9]{1,6" +
-            "3}\\\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-" +
-            "9]{0,61}[a-z0-9])?))\",\"location\":\"path\"}},\"parameterOrder\":[\"project\"],\"response" +
-            "\":{\"$ref\":\"ZoneList\"},\"scopes\":[\"https://www.googleapis.com/auth/compute.readonl" +
-            "y\"]}}}}}";
+    public partial class ComputeService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1beta13";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected ComputeService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._disks = new DisksResource(this, _authenticator);
-            this._firewalls = new FirewallsResource(this, _authenticator);
-            this._images = new ImagesResource(this, _authenticator);
-            this._instances = new InstancesResource(this, _authenticator);
-            this._kernels = new KernelsResource(this, _authenticator);
-            this._machineTypes = new MachineTypesResource(this, _authenticator);
-            this._networks = new NetworksResource(this, _authenticator);
-            this._operations = new OperationsResource(this, _authenticator);
-            this._projects = new ProjectsResource(this, _authenticator);
-            this._snapshots = new SnapshotsResource(this, _authenticator);
-            this._zones = new ZonesResource(this, _authenticator);
+        public ComputeService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._disks = new DisksResource(this, Authenticator);
+            this._firewalls = new FirewallsResource(this, Authenticator);
+            this._images = new ImagesResource(this, Authenticator);
+            this._instances = new InstancesResource(this, Authenticator);
+            this._kernels = new KernelsResource(this, Authenticator);
+            this._machineTypes = new MachineTypesResource(this, Authenticator);
+            this._networks = new NetworksResource(this, Authenticator);
+            this._operations = new OperationsResource(this, Authenticator);
+            this._projects = new ProjectsResource(this, Authenticator);
+            this._snapshots = new SnapshotsResource(this, Authenticator);
+            this._zones = new ZonesResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public ComputeService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public ComputeService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ComputeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/compute/v1beta13/projects/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "compute";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/compute/v1beta13/projects/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -4154,13 +3318,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "disks";
         
-        public DisksResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public DisksResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes the specified persistent disk resource.</summary>
@@ -4189,20 +3353,51 @@ namespace Google.Apis.Compute.v1beta13 {
             return new ListRequest(service, project);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _disk;
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string project, string disk) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string disk) : 
                     base(service) {
                 this._project = project;
                 this._disk = disk;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4224,6 +3419,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4243,33 +3460,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "disks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/disks/{disk}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("disk", Google.Apis.Util.Utilities.CreateRuntimeParameter("disk", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Disk> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Disk> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _disk;
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string disk) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string disk) : 
                     base(service) {
                 this._project = project;
                 this._disk = disk;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4291,6 +3559,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4310,33 +3600,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "disks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/disks/{disk}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("disk", Google.Apis.Util.Utilities.CreateRuntimeParameter("disk", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private Google.Apis.Compute.v1beta13.Data.Disk _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.Disk body, string project) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.Disk body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4358,6 +3699,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4379,28 +3742,55 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "disks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/disks";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.DiskList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.DiskList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -4410,9 +3800,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4434,6 +3847,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4478,16 +3913,38 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "disks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/disks";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -4496,13 +3953,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "firewalls";
         
-        public FirewallsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public FirewallsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes the specified firewall resource.</summary>
@@ -4545,20 +4002,51 @@ namespace Google.Apis.Compute.v1beta13 {
             return new UpdateRequest(service, body, project, firewall);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _firewall;
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string project, string firewall) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string firewall) : 
                     base(service) {
                 this._project = project;
                 this._firewall = firewall;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4580,6 +4068,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4599,33 +4109,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls/{firewall}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("firewall", Google.Apis.Util.Utilities.CreateRuntimeParameter("firewall", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Firewall> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Firewall> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _firewall;
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string firewall) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string firewall) : 
                     base(service) {
                 this._project = project;
                 this._firewall = firewall;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4647,6 +4208,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4666,33 +4249,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls/{firewall}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("firewall", Google.Apis.Util.Utilities.CreateRuntimeParameter("firewall", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private Google.Apis.Compute.v1beta13.Data.Firewall _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.Firewall body, string project) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.Firewall body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4714,6 +4348,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4735,28 +4391,55 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.FirewallList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.FirewallList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -4766,9 +4449,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4790,6 +4496,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4834,24 +4562,54 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class PatchRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _firewall;
             
@@ -4859,11 +4617,34 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private Google.Apis.Compute.v1beta13.Data.Firewall _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.Firewall body, string project, string firewall) : 
+            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.Firewall body, string project, string firewall) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
                 this._firewall = firewall;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4885,6 +4666,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4914,28 +4717,56 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "patch";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PATCH";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls/{firewall}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("firewall", Google.Apis.Util.Utilities.CreateRuntimeParameter("firewall", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class UpdateRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _firewall;
             
@@ -4943,11 +4774,34 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private Google.Apis.Compute.v1beta13.Data.Firewall _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.Firewall body, string project, string firewall) : 
+            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.Firewall body, string project, string firewall) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
                 this._firewall = firewall;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -4969,6 +4823,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -4998,20 +4874,40 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "firewalls";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "update";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "PUT";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/firewalls/{firewall}";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("firewall", Google.Apis.Util.Utilities.CreateRuntimeParameter("firewall", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5020,13 +4916,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "images";
         
-        public ImagesResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ImagesResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes the specified image resource.</summary>
@@ -5055,20 +4951,51 @@ namespace Google.Apis.Compute.v1beta13 {
             return new ListRequest(service, project);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _image;
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string project, string image) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string image) : 
                     base(service) {
                 this._project = project;
                 this._image = image;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5090,6 +5017,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5109,33 +5058,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "images";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/images/{image}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("image", Google.Apis.Util.Utilities.CreateRuntimeParameter("image", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Image> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Image> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _image;
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string image) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string image) : 
                     base(service) {
                 this._project = project;
                 this._image = image;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5157,6 +5157,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5176,33 +5198,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "images";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/images/{image}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("image", Google.Apis.Util.Utilities.CreateRuntimeParameter("image", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private Google.Apis.Compute.v1beta13.Data.Image _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.Image body, string project) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.Image body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5224,6 +5297,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5245,28 +5340,55 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "images";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/images";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.ImageList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.ImageList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -5276,9 +5398,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5300,6 +5445,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5344,16 +5511,38 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "images";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/images";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5362,13 +5551,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "instances";
         
-        public InstancesResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public InstancesResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Adds an access config to an instance&apos;s network interface.</summary>
@@ -5421,11 +5610,19 @@ namespace Google.Apis.Compute.v1beta13 {
             return new ListRequest(service, project);
         }
         
-        public class AddAccessConfigRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class AddAccessConfigRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _instance;
             
@@ -5435,12 +5632,35 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private Google.Apis.Compute.v1beta13.Data.AccessConfig _Body;
             
-            public AddAccessConfigRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.AccessConfig body, string project, string instance, string network_interface) : 
+            public AddAccessConfigRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.AccessConfig body, string project, string instance, string network_interface) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
                 this._instance = instance;
                 this._network_interface = network_interface;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5462,6 +5682,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5499,37 +5741,89 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "addAccessConfig";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances/{instance}/addAccessConfig";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("network_interface", Google.Apis.Util.Utilities.CreateRuntimeParameter("network_interface", true, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _instance;
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string project, string instance) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string instance) : 
                     base(service) {
                 this._project = project;
                 this._instance = instance;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5551,6 +5845,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5570,24 +5886,52 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances/{instance}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class DeleteAccessConfigRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class DeleteAccessConfigRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _access_config;
             
@@ -5597,12 +5941,35 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public DeleteAccessConfigRequest(Google.Apis.Discovery.IRequestProvider service, string project, string instance, string access_config, string network_interface) : 
+            public DeleteAccessConfigRequest(Google.Apis.Discovery.IClientService service, string project, string instance, string access_config, string network_interface) : 
                     base(service) {
                 this._project = project;
                 this._instance = instance;
                 this._access_config = access_config;
                 this._network_interface = network_interface;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5624,6 +5991,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5659,33 +6048,86 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "deleteAccessConfig";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances/{instance}/deleteAccessConfig";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("access_config", Google.Apis.Util.Utilities.CreateRuntimeParameter("access_config", true, "query", null, null, new string[0]));
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("network_interface", Google.Apis.Util.Utilities.CreateRuntimeParameter("network_interface", true, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Instance> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Instance> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _instance;
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string instance) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string instance) : 
                     base(service) {
                 this._project = project;
                 this._instance = instance;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5707,6 +6149,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5726,33 +6190,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances/{instance}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetSerialPortOutputRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.SerialPortOutput> {
+        public class GetSerialPortOutputRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.SerialPortOutput> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _instance;
             
             private string _project;
             
-            public GetSerialPortOutputRequest(Google.Apis.Discovery.IRequestProvider service, string project, string instance) : 
+            public GetSerialPortOutputRequest(Google.Apis.Discovery.IClientService service, string project, string instance) : 
                     base(service) {
                 this._project = project;
                 this._instance = instance;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5774,6 +6289,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5793,33 +6330,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "getSerialPortOutput";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances/{instance}/serialPort";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private Google.Apis.Compute.v1beta13.Data.Instance _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.Instance body, string project) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.Instance body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5841,6 +6429,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5862,28 +6472,55 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.InstanceList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.InstanceList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -5893,9 +6530,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -5917,6 +6577,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -5961,16 +6643,38 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "instances";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/instances";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -5979,13 +6683,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "kernels";
         
-        public KernelsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public KernelsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns the specified kernel resource.</summary>
@@ -6001,20 +6705,51 @@ namespace Google.Apis.Compute.v1beta13 {
             return new ListRequest(service, project);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Kernel> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Kernel> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _kernel;
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string kernel) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string kernel) : 
                     base(service) {
                 this._project = project;
                 this._kernel = kernel;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6036,6 +6771,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6055,24 +6812,52 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "kernels";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/kernels/{kernel}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("kernel", Google.Apis.Util.Utilities.CreateRuntimeParameter("kernel", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.KernelList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.KernelList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -6082,9 +6867,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6106,6 +6914,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6150,16 +6980,38 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "kernels";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/kernels";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6168,13 +7020,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "machineTypes";
         
-        public MachineTypesResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public MachineTypesResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns the specified machine type resource.</summary>
@@ -6190,20 +7042,51 @@ namespace Google.Apis.Compute.v1beta13 {
             return new ListRequest(service, project);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.MachineType> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.MachineType> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _machineType;
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string machineType) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string machineType) : 
                     base(service) {
                 this._project = project;
                 this._machineType = machineType;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6225,6 +7108,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6244,24 +7149,52 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "machineTypes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/machineTypes/{machineType}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("machineType", Google.Apis.Util.Utilities.CreateRuntimeParameter("machineType", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.MachineTypeList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.MachineTypeList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -6271,9 +7204,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6295,6 +7251,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6339,16 +7317,38 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "machineTypes";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/machineTypes";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6357,13 +7357,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "networks";
         
-        public NetworksResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public NetworksResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes the specified network resource.</summary>
@@ -6392,20 +7392,51 @@ namespace Google.Apis.Compute.v1beta13 {
             return new ListRequest(service, project);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _network;
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string project, string network) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string network) : 
                     base(service) {
                 this._project = project;
                 this._network = network;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6427,6 +7458,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6446,33 +7499,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "networks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/networks/{network}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("network", Google.Apis.Util.Utilities.CreateRuntimeParameter("network", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Network> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Network> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _network;
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string network) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string network) : 
                     base(service) {
                 this._project = project;
                 this._network = network;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6494,6 +7598,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6513,33 +7639,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "networks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/networks/{network}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("network", Google.Apis.Util.Utilities.CreateRuntimeParameter("network", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private Google.Apis.Compute.v1beta13.Data.Network _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.Network body, string project) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.Network body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6561,6 +7738,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6582,28 +7781,55 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "networks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/networks";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.NetworkList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.NetworkList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -6613,9 +7839,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6637,6 +7886,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6681,16 +7952,38 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "networks";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/networks";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6699,13 +7992,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "operations";
         
-        public OperationsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public OperationsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes the specified operation resource.</summary>
@@ -6728,20 +8021,51 @@ namespace Google.Apis.Compute.v1beta13 {
             return new ListRequest(service, project);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _operation;
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string project, string operation) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string operation) : 
                     base(service) {
                 this._project = project;
                 this._operation = operation;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6763,6 +8087,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6782,33 +8128,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "operations";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/operations/{operation}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("operation", Google.Apis.Util.Utilities.CreateRuntimeParameter("operation", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _operation;
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string operation) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string operation) : 
                     base(service) {
                 this._project = project;
                 this._operation = operation;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6830,6 +8227,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6849,24 +8268,52 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "operations";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/operations/{operation}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("operation", Google.Apis.Util.Utilities.CreateRuntimeParameter("operation", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.OperationList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.OperationList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -6876,9 +8323,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -6900,6 +8370,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -6944,16 +8436,38 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "operations";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/operations";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -6962,13 +8476,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "projects";
         
-        public ProjectsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ProjectsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns the specified project resource.</summary>
@@ -6983,17 +8497,48 @@ namespace Google.Apis.Compute.v1beta13 {
             return new SetCommonInstanceMetadataRequest(service, body, project);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Project> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Project> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7015,6 +8560,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -7026,33 +8593,83 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "projects";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class SetCommonInstanceMetadataRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class SetCommonInstanceMetadataRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private Google.Apis.Compute.v1beta13.Data.Metadata _Body;
             
-            public SetCommonInstanceMetadataRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.Metadata body, string project) : 
+            public SetCommonInstanceMetadataRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.Metadata body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7074,6 +8691,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -7095,20 +8734,39 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "projects";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "setCommonInstanceMetadata";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/setCommonInstanceMetadata";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -7117,13 +8775,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "snapshots";
         
-        public SnapshotsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public SnapshotsResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Deletes the specified persistent disk snapshot resource.</summary>
@@ -7152,20 +8810,51 @@ namespace Google.Apis.Compute.v1beta13 {
             return new ListRequest(service, project);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private string _snapshot;
             
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string project, string snapshot) : 
+            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string snapshot) : 
                     base(service) {
                 this._project = project;
                 this._snapshot = snapshot;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7187,6 +8876,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -7206,33 +8917,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "snapshots";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "delete";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/snapshots/{snapshot}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                parameters.Add("snapshot", Google.Apis.Util.Utilities.CreateRuntimeParameter("snapshot", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Snapshot> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Snapshot> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private string _snapshot;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string snapshot) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string snapshot) : 
                     base(service) {
                 this._project = project;
                 this._snapshot = snapshot;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7254,6 +9016,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -7273,33 +9057,84 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "snapshots";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/snapshots/{snapshot}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                parameters.Add("snapshot", Google.Apis.Util.Utilities.CreateRuntimeParameter("snapshot", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private Google.Apis.Compute.v1beta13.Data.Snapshot _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Compute.v1beta13.Data.Snapshot body, string project) : 
+            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta13.Data.Snapshot body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7321,6 +9156,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -7342,28 +9199,55 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "snapshots";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/snapshots";
                 }
             }
             
             protected override object GetBody() {
                 return this.Body;
             }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.SnapshotList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.SnapshotList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -7373,9 +9257,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7397,6 +9304,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -7441,16 +9370,38 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "snapshots";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/snapshots";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -7459,13 +9410,13 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ComputeService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "zones";
         
-        public ZonesResource(ComputeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ZonesResource(ComputeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Returns the specified zone resource.</summary>
@@ -7481,20 +9432,51 @@ namespace Google.Apis.Compute.v1beta13 {
             return new ListRequest(service, project);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.Zone> {
+        public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.Zone> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private string _project;
             
             private string _zone;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string zone) : 
+            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string zone) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7516,6 +9498,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -7535,24 +9539,52 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "zones";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "get";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/zones/{zone}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                parameters.Add("zone", Google.Apis.Util.Utilities.CreateRuntimeParameter("zone", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Compute.v1beta13.Data.ZoneList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta13.Data.ZoneList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _filter;
             
@@ -7562,9 +9594,32 @@ namespace Google.Apis.Compute.v1beta13 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -7586,6 +9641,28 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -7630,16 +9707,38 @@ namespace Google.Apis.Compute.v1beta13 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "zones";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/zones";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("filter", Google.Apis.Util.Utilities.CreateRuntimeParameter("filter", false, "query", null, null, new string[0]));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -7670,7 +9769,7 @@ namespace Google.Apis.Compute.v1beta13 {
         
         private ZonesResource _zones;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

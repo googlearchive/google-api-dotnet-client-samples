@@ -94,6 +94,122 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Google.Apis.Discovery.BaseClientService">
+            <summary>
+            A safe thread base class for a client service which provides common mechanizm for all services, like 
+            serialization and gzip support.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Discovery.IClientService">
+            <summary>
+            Implementors of this interface are able to create arbitory requests against a service
+            resource name and method, as well as to create and retrieve information related to a request.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Discovery.IClientService.CreateRequest(Google.Apis.Requests.IClientServiceRequest)">
+            <summary>
+            Creates a request with the specified settings.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Discovery.IClientService.SerializeObject(System.Object)">
+            <summary>
+            Serializes an object into a string representation.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Discovery.IClientService.DeserializeResponse``1(Google.Apis.Requests.IResponse)">
+            <summary>
+            Deserializes a response into the specified object.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Discovery.IClientService.DeserializeError(Google.Apis.Requests.IResponse)">
+            <summary>
+            Deserializes an error response into a <see cref="T:Google.Apis.Requests.RequestError"/> object
+            </summary>
+            <exception cref="T:Google.GoogleApiException">If no error is found in the response.</exception>
+            <param name="input"><see cref="T:Google.Apis.Requests.IResponse"/> containing an error.</param>
+            <returns>The <see cref="T:Google.Apis.Requests.RequestError"/> object deserialized from the stream.</returns>
+        </member>
+        <member name="P:Google.Apis.Discovery.IClientService.Name">
+            <summary>
+            The service name.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IClientService.BaseUri">
+            <summary>
+            The BaseUri of the service. All request paths should be relative to this URI.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IClientService.Authenticator">
+            <summary>
+            The Authenticator for this service.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IClientService.Features">
+            <summary>
+            The supported features by this service.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IClientService.ServiceParameters">
+            <summary>
+            The common parameters information for this service.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IClientService.GZipEnabled">
+            <summary>
+            True if GZip is supported by this service.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IClientService.ApiKey">
+            <summary>
+            API-Key (DeveloperKey) which this service uses for all requests.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IClientService.Serializer">
+            <summary>
+            The serializer used by this service.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Discovery.BaseClientService.#ctor(Google.Apis.Discovery.BaseClientService.Initializer)">
+            <summary>
+            Constructs a new base client with the specified initializer
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Discovery.BaseClientService.HasFeature(Google.Apis.Discovery.Features)">
+            <summary>
+            Return true if this service contains the specified feature.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Discovery.BaseClientService.Initializer">
+            <summary> An initializer class for the client service.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Discovery.BaseClientService.Initializer.#ctor">
+            <summary>
+            Constructs a new initializer with default values.
+            <code>GZipEnabled</code> is <code>code</code> and the <code>Serializer</code> is set to 
+            <code>NewtonsoftJsonSerializer</code>
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.BaseClientService.Initializer.GZipEnabled">
+            <summary>
+            Gets and Sets the gzip enabled support.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.BaseClientService.Initializer.Serializer">
+            <summary>
+            Gets and Sets the Serializer.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.BaseClientService.Initializer.ApiKey">
+            <summary>
+            Gets and Sets the API Key.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.BaseClientService.Initializer.Authenticator">
+            <summary>
+            Gets and Sets the Authenticator.
+            </summary>
+        </member>
         <member name="T:Google.Apis.Discovery.Features">
             <summary>
             Specifies a list of features which can be defined within the discovery document of a service
@@ -120,6 +236,49 @@
             Maximum size of a media upload, such as "1MB", "2GB" or "3TB".
             </summary>
         </member>
+        <member name="T:Google.Apis.Discovery.RuntimeParameter">
+            <summary>
+            Runtime Parametert represents a parameter which is used on the service runtime. <br/>
+            <code>IClientService</code> contains parameters which are common to all requests <br/>
+            <code>ServiceRequest</code> contains parameters which are relevant for the specific requesut.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Discovery.IParameter">
+            <summary>
+            Represents a parameter for a method. 
+            This interface is used by both Discovery and Runtime compoenents.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.Name">
+            <summary>
+            Name of the parameter.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.Pattern">
+            <summary>
+            The pattern in which this parameter has to be defined.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.IsRequired">
+            <summary>
+            Defines whether this parameter is optional or required.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.DefaultValue">
+            <summary>
+            The default value of this parameter.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.EnumValues">
+            <summary>
+            A list of valid enum values. (Only for enum values)
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.ParameterType">
+            <summary>
+            The type of the parameter.
+            </summary>
+        </member>
         <member name="T:Google.Apis.Discovery.Scope">
             <summary>
             Represents an authentication scope used in a discovery document.
@@ -143,7 +302,7 @@
         <member name="T:Google.Apis.Discovery.ServiceObject">
             <summary>
             Base class for all objects that are part of the Discovery Service and a
-            constructed by the IServiceFactory
+            constructed by the IServiceFactory.
             </summary>
         </member>
         <member name="M:Google.Apis.Discovery.ServiceObject.#ctor(Google.Apis.Discovery.IServiceFactory)">
@@ -180,11 +339,217 @@
             <param name="kvp">A KeyValuePair containing the name and data for this 
             portion of the service document. The key should be the name of the parameter,
             value should be a JsonDictionary describing the parameter.</param>
-            <returns>An IParameter instance as defined by the json description.</returns>
+            <returns>An IDiscoveryParameter instance as defined by the json description.</returns>
         </member>
         <member name="P:Google.Apis.Discovery.ServiceObject.Factory">
             <summary>
             The factory used to construct objects for this service
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Requests.ClientServiceRequest`1">
+            <summary>
+            Represents an abstract, strongly typed request base class to make requests made to a service.
+            Supports a strongly typed response.
+            </summary>
+            <remarks>Internally uses the dynamic Request class to execute requests.</remarks>
+            <typeparam name="TResponse">The type of the response object</typeparam>
+        </member>
+        <member name="T:Google.Apis.Requests.IClientServiceRequest`1">
+            <summary>
+            Represents a request with a specified return type.
+            </summary>
+            <remarks>
+            Should execute the request (specified by the instance of this class) once a "Fetch" method is called.
+            </remarks>
+            <typeparam name="TResponse">Type of the response returned when executing this request.</typeparam>
+        </member>
+        <member name="T:Google.Apis.Requests.IClientServiceRequest">
+            <summary>
+            Represents a basic, non generic request to a service.
+            </summary>
+            <remarks>
+            Should execute the request (specified by the instance of this class) once a "Fetch" method is called.
+            </remarks>
+        </member>
+        <member name="M:Google.Apis.Requests.IClientServiceRequest.FetchAsStream">
+            <summary>
+            Executes the request synchronously and returns the unparsed response stream.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.IClientServiceRequest.FetchAsyncAsStream(Google.Apis.Requests.ExecuteRequestDelegate{System.IO.Stream})">
+            <summary>
+            Executes the request asynchronously without parsing the response, 
+            and optionally calls the specified method once finished.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.IClientServiceRequest.MethodName">
+            <summary>
+            The name of the method to which this request belongs.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.IClientServiceRequest.RestPath">
+            <summary>
+            The rest path of this request.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.IClientServiceRequest.HttpMethod">
+            <summary>
+            The http method of this request.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.IClientServiceRequest.RequestParameters">
+            <summary>
+            The parameters information for this specific request
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.IClientServiceRequest`1.Fetch">
+            <summary>
+            Executes the request synchronously and returns the result.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.IClientServiceRequest`1.FetchAsync(Google.Apis.Requests.ExecuteRequestDelegate{`0})">
+            <summary>
+            Executes the request asynchronously and optionally calls the specified method once finished.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Requests.ClientServiceRequest`1.GetBodyMethodName">
+            <summary>
+            The name of the "GetBody" method
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.#ctor(Google.Apis.Discovery.IClientService)">
+            <summary>
+            Creates a new service request.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.GetBody">
+            <summary>
+            Should return the body of the request (if applicable), or null.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.GetSerializedBody">
+            <summary>
+            Returns the serialized version of the body, or null if unavailable.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.BuildRequest">
+            <summary>
+            Builds an executeable base request containing the data of this request class.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.GetAsyncResponse(System.Action{Google.Apis.Requests.IAsyncRequestResult})">
+            <summary>
+            Retrieves a response asynchronously
+            </summary>
+            <param name="responseHandler">Method to call once a response has been received.</param>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.GetResponse">
+            <summary>
+            Receives a response synchronously.
+            </summary>
+            <returns>The received response.</returns>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.FetchObject(Google.Apis.Requests.IResponse)">
+            <summary>
+            Fetches the specified response as an object.
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.Fetch">
+             <summary>
+            Executes the request synchronously and returns the result.
+             </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.FetchAsStream">
+            <summary>
+            Executes the request synchronously and returns the unparsed response stream.
+            </summary>
+            <remarks>The returned stream is encoded in UTF-8.</remarks>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.CreateParameterDictionary">
+            <summary>
+            Creates a parameter dictionary by using reflection to look at all properties marked with a KeyAttribute.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.FetchAsync(Google.Apis.Requests.ExecuteRequestDelegate{`0})">
+            <summary>
+            Executes the request asynchronously and optionally calls the specified method once finished.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.FetchAsyncAsStream(Google.Apis.Requests.ExecuteRequestDelegate{System.IO.Stream})">
+            <summary>
+            Executes the request asynchronously without parsing the response, 
+            and calls the specified method once finished.
+            </summary>
+            <remarks>The returned stream is encoded in UTF-8.</remarks>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.BeginFetch(System.AsyncCallback,System.Object)">
+            <summary>
+            Begins an asynchronous Fetch request.
+            </summary>
+            <param name="callback">The method to call once the request has been completed. Optional.</param>
+            <param name="state">
+              A user-defined object used to pass application-specific state information to the
+              <paramref name="callback"/> method invoked when the asynchronous operation completes. Optional.
+            </param>
+            <returns>An IAsyncResult describing the state of the asynchronous operation.</returns>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.BeginFetchAsStream(System.AsyncCallback,System.Object)">
+            <summary>
+            Begins an asynchronous FetchAsStream request.
+            </summary>
+            <param name="callback">The method to call once the request has been completed. Optional.</param>
+            <param name="state">
+              A user-defined object used to pass application-specific state information to the
+              <paramref name="callback"/> method invoked when the asynchronous operation completes. Optional.
+            </param>
+            <returns>An IAsyncResult describing the state of the asynchronous operation.</returns>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.EndFetch(System.IAsyncResult)">
+            <summary>
+            Completes an asynchronous Fetch request.
+            </summary>
+            <param name="asyncResult">The IAsyncResult passed from BeginFetch.</param>
+            <returns>The response object.</returns>
+            <remarks>Will complete the request synchronously if called manually.</remarks>
+        </member>
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.EndFetchAsStream(System.IAsyncResult)">
+            <summary>
+            Completes an asynchronous FetchAsStream request.
+            </summary>
+            <param name="asyncResult">The IAsyncResult passed from BeginFetch.</param>
+            <returns>The response stream.</returns>
+            <remarks>Will complete the request synchronously if called manually.</remarks>
+        </member>
+        <member name="P:Google.Apis.Requests.ClientServiceRequest`1.ETagAction">
+            <summary>
+            Defines whether the E-Tag will be used in a specified way or ignored.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.ClientServiceRequest`1.ETag">
+            <summary>
+            The E-Tag to use with this request. If this is null, the e-tag of the body will be used (if possible).
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.ClientServiceRequest`1.ResourcePath">
+            <summary>
+            Name of the Resource to which the method belongs.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.ClientServiceRequest`1.Service">
+            <summary>
+            The service on which the request will be executed.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Requests.ClientServiceRequest`1.RequestAsyncResult">
+            <summary>
+            Describes the state of an asynchronous fetch operation.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Requests.ClientServiceRequest`1.RequestAsyncResult.Result">
+            <summary>
+            The result returned by this asynchronous operation.
             </summary>
         </member>
         <member name="T:Google.Apis.Requests.HttpWebRequestBuilder">
@@ -226,7 +591,7 @@
         </member>
         <member name="M:Google.Apis.Requests.HttpWebRequestBuilder.AddParameter(Google.Apis.Util.RequestParameterType,System.String,System.String)">
             <summary>
-            Add a parameter value.
+            Adds a parameter value.
             </summary>
             <param name="type">Type of the parameter (must be Path or Query).</param>
             <param name="name">Parameter name.</param>
@@ -274,6 +639,11 @@
             <remarks>
             Defaults to "GET".
             </remarks>
+        </member>
+        <member name="T:Google.Apis.Requests.ExecuteRequestDelegate`1">
+            <summary>
+            Delegate for executing an asynchronous request.
+            </summary>
         </member>
         <member name="T:Google.Apis.Requests.UriFactory">
             <summary>
@@ -862,49 +1232,6 @@
             Represents a NullLogger which does not do any logging.
             </summary>
         </member>
-        <member name="T:Google.Apis.Requests.IServiceRequest">
-            <summary>
-            Represents a basic, non generic request to a service.
-            </summary>
-            <remarks>
-            Should execute the request (specified by the instance of this class) once a "Fetch" method is called.
-            </remarks>
-        </member>
-        <member name="M:Google.Apis.Requests.IServiceRequest.FetchAsStream">
-            <summary>
-            Executes the request synchronously and returns the unparsed response stream.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.IServiceRequest.FetchAsyncAsStream(Google.Apis.Requests.ExecuteRequestDelegate{System.IO.Stream})">
-            <summary>
-            Executes the request asynchronously without parsing the response, 
-            and optionally calls the specified method once finished.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Requests.IServiceRequest`1">
-            <summary>
-            Represents a request with a specified return type.
-            </summary>
-            <remarks>
-            Should execute the request (specified by the instance of this class) once a "Fetch" method is called.
-            </remarks>
-            <typeparam name="TResponse">Type of the response returned when executing this request.</typeparam>
-        </member>
-        <member name="M:Google.Apis.Requests.IServiceRequest`1.Fetch">
-            <summary>
-            Executes the request synchronously and returns the result.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.IServiceRequest`1.FetchAsync(Google.Apis.Requests.ExecuteRequestDelegate{`0})">
-            <summary>
-            Executes the request asynchronously and optionally calls the specified method once finished.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Requests.ExecuteRequestDelegate`1">
-            <summary>
-            Delegate for executing an asynchronous request.
-            </summary>
-        </member>
         <member name="T:Google.Apis.ETagAction">
             <summary>
             Defines the behaviour/header used for sending an etag along with a request.
@@ -1001,176 +1328,6 @@
         <member name="M:Google.Apis.Requests.Response.#ctor(System.Net.WebResponse)">
             <summary>
             Creates a new response encapsulating the webresponse specified.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Requests.ServiceRequest`1">
-            <summary>
-            Represents an abstract, strongly typed request base class to make requests made to a service.
-            Supports a strongly typed response.
-            </summary>
-            <remarks>Internally uses the dynamic Request class to execute requests.</remarks>
-            <typeparam name="TResponse">The type of the response object</typeparam>
-        </member>
-        <member name="F:Google.Apis.Requests.ServiceRequest`1.GetBodyMethodName">
-            <summary>
-            The name of the "GetBody" method
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.#ctor(Google.Apis.Discovery.IRequestProvider)">
-            <summary>
-            Creates a new service request.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.GetBody">
-            <summary>
-            Should return the body of the request (if applicable), or null.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.GetSerializedBody">
-            <summary>
-            Returns the serialized version of the body, or null if unavailable.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.BuildRequest">
-            <summary>
-            Builds an executeable base request containing the data of this request class.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.GetAsyncResponse(System.Action{Google.Apis.Requests.IAsyncRequestResult})">
-            <summary>
-            Retrieves a response asynchronously
-            </summary>
-            <param name="responseHandler">Method to call once a response has been received.</param>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.GetResponse">
-            <summary>
-            Receives a response synchronously.
-            </summary>
-            <returns>The received response.</returns>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.FetchObject(Google.Apis.Requests.IResponse)">
-            <summary>
-            Fetches the specified response as an object.
-            </summary>
-            <param name="response"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.Fetch">
-             <summary>
-            Executes the request synchronously and returns the result.
-             </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.FetchAsStream">
-            <summary>
-            Executes the request synchronously and returns the unparsed response stream.
-            </summary>
-            <remarks>The returned stream is encoded in UTF-8.</remarks>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.CreateParameterDictionary">
-            <summary>
-            Creates a parameter dictionary by using reflection to look at all properties marked with a KeyAttribute.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.FetchAsync(Google.Apis.Requests.ExecuteRequestDelegate{`0})">
-            <summary>
-            Executes the request asynchronously and optionally calls the specified method once finished.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.FetchAsyncAsStream(Google.Apis.Requests.ExecuteRequestDelegate{System.IO.Stream})">
-            <summary>
-            Executes the request asynchronously without parsing the response, 
-            and calls the specified method once finished.
-            </summary>
-            <remarks>The returned stream is encoded in UTF-8.</remarks>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.BeginFetch(System.AsyncCallback,System.Object)">
-            <summary>
-            Begins an asynchronous Fetch request.
-            </summary>
-            <param name="callback">The method to call once the request has been completed. Optional.</param>
-            <param name="state">
-              A user-defined object used to pass application-specific state information to the
-              <paramref name="callback"/> method invoked when the asynchronous operation completes. Optional.
-            </param>
-            <returns>An IAsyncResult describing the state of the asynchronous operation.</returns>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.BeginFetchAsStream(System.AsyncCallback,System.Object)">
-            <summary>
-            Begins an asynchronous FetchAsStream request.
-            </summary>
-            <param name="callback">The method to call once the request has been completed. Optional.</param>
-            <param name="state">
-              A user-defined object used to pass application-specific state information to the
-              <paramref name="callback"/> method invoked when the asynchronous operation completes. Optional.
-            </param>
-            <returns>An IAsyncResult describing the state of the asynchronous operation.</returns>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.EndFetch(System.IAsyncResult)">
-            <summary>
-            Completes an asynchronous Fetch request.
-            </summary>
-            <param name="asyncResult">The IAsyncResult passed from BeginFetch.</param>
-            <returns>The response object.</returns>
-            <remarks>Will complete the request synchronously if called manually.</remarks>
-        </member>
-        <member name="M:Google.Apis.Requests.ServiceRequest`1.EndFetchAsStream(System.IAsyncResult)">
-            <summary>
-            Completes an asynchronous FetchAsStream request.
-            </summary>
-            <param name="asyncResult">The IAsyncResult passed from BeginFetch.</param>
-            <returns>The response stream.</returns>
-            <remarks>Will complete the request synchronously if called manually.</remarks>
-        </member>
-        <member name="P:Google.Apis.Requests.ServiceRequest`1.ETagAction">
-            <summary>
-            Defines whether the E-Tag will be used in a specified way or ignored.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Requests.ServiceRequest`1.ETag">
-            <summary>
-            The E-Tag to use with this request. If this is null, the e-tag of the body will be used (if possible).
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Requests.ServiceRequest`1.FieldsMask">
-            <summary>
-            Selector specifying which fields to include in a partial response.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Requests.ServiceRequest`1.UserIp">
-            <summary>
-            IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Requests.ServiceRequest`1.QuotaUser">
-            <summary>
-            Available to use for quota purposes for server-side applications.
-            Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-            Overrides UserIp if both are provided.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Requests.ServiceRequest`1.ResourcePath">
-            <summary>
-            Name of the Resource to which the method belongs.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Requests.ServiceRequest`1.MethodName">
-            <summary>
-            The name of the method to which this request belongs.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Requests.ServiceRequest`1.Service">
-            <summary>
-            The service on which the request will be executed.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Requests.ServiceRequest`1.RequestAsyncResult">
-            <summary>
-            Describes the state of an asynchronous fetch operation.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Requests.ServiceRequest`1.RequestAsyncResult.Result">
-            <summary>
-            The result returned by this asynchronous operation.
             </summary>
         </member>
         <member name="T:Google.Apis.Util.LazyBinding">
@@ -1465,7 +1622,7 @@
         <member name="T:Google.Apis.Discovery.IService">
             <summary>
             Represent a specific version of a service as defined in Google Api Discovery Document.
-            Has a collection of IResources and ISchemas
+            Has a collection of IResources and ISchemas.
             </summary>
             <seealso cref="T:Google.Apis.Discovery.IResource"/>
             <seealso cref="T:Google.Apis.Discovery.Schema.ISchema"/>
@@ -1515,34 +1672,6 @@
             True only if this resource is the root resource node defined by the service.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.IService.CreateRequest(System.String,System.String)">
-            <summary>
-            Creates a Request Object based on the HTTP Method Type.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.IService.SerializeRequest(System.Object)">
-            <summary>
-            Serializes the specified object into the format used by this service
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.IService.DeserializeResponse``1(Google.Apis.Requests.IResponse)">
-            <summary>
-            Deserializes the stream defined by the format used by this service into a .NET object
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.IService.DeserializeError(Google.Apis.Requests.IResponse)">
-            <summary>
-            Deserializes an error response into a <see cref="T:Google.Apis.Requests.RequestError"/> object
-            </summary>
-            <exception cref="T:Google.GoogleApiException">If no error is found in the response.</exception>
-            <param name="input"><see cref="T:Google.Apis.Requests.IResponse"/> containing an error.</param>
-            <returns>The <see cref="T:Google.Apis.Requests.RequestError"/> object deserialized from the stream.</returns>
-        </member>
-        <member name="M:Google.Apis.Discovery.IService.HasFeature(Google.Apis.Discovery.Features)">
-            <summary>
-            Returns true if this feature is defined for this service
-            </summary>
-        </member>
         <member name="P:Google.Apis.Discovery.IService.Version">
             <summary> The version of this service </summary>
         </member>
@@ -1554,7 +1683,7 @@
         <member name="P:Google.Apis.Discovery.IService.RpcUri">
             <summary> 
             The Rpc URI of this service. 
-            This field is no longer available with discovery version v1 
+            This field is no longer available with discovery version v1.
             </summary>
         </member>
         <member name="P:Google.Apis.Discovery.IService.Id">
@@ -1587,11 +1716,6 @@
         <member name="P:Google.Apis.Discovery.IService.Description">
             <summary>The description of this API.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IService.GZipEnabled">
-            <summary>
-            True if GZip is supported by the remote server and should be enabled
-            </summary>
-        </member>
         <member name="P:Google.Apis.Discovery.IService.DiscoveryVersion">
             <summary>The version of the discovery that defined this service. </summary>
         </member>
@@ -1606,34 +1730,9 @@
             Common parameters are parameters which apply to all methods of a particular service.
             </remarks>
         </member>
-        <member name="P:Google.Apis.Discovery.IService.Serializer">
-            <summary>
-            Defines the serialisator to use for requests and responses
-            </summary>
-        </member>
         <member name="P:Google.Apis.Discovery.IService.Factory">
             <summary>
             The IServiceFactory used to construct objects for this discovery service.
-            </summary>
-        </member>
-        <member name="F:Google.Apis.Discovery.BaseService.SerializationMethodName">
-            <summary>
-            Name of the method used for serialization (object -> json)
-            </summary>
-        </member>
-        <member name="F:Google.Apis.Discovery.BaseService.DeserializationMethodName">
-            <summary>
-            Name of the method used for deserialization (json -> object)
-            </summary>
-        </member>
-        <member name="F:Google.Apis.Discovery.BaseService.SerializerPropertyName">
-            <summary>
-            Name of the property defining the ISerializer
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.BaseService.CreateRequest(System.String,System.String)">
-            <summary>
-            Creates a Request Object based on the HTTP Method Type.
             </summary>
         </member>
         <member name="M:Google.Apis.Discovery.BaseService.LoadScopes">
@@ -1647,21 +1746,6 @@
             Loads the common parameters from the json information dictionary and parses it into a dictionary.
             Always returns a valid dictionary.
             </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.BaseService.GetResource(Google.Apis.Discovery.IResource,System.String)">
-            <summary>
-            Retrieves a resource using the full resource name.
-            Example:
-                TopResource.SubResource will retrieve the SubResource which can be found under the TopResource.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.BaseService.DeserializeError(Google.Apis.Requests.IResponse)">
-            <summary>
-            Deserializes an error response into a <see cref="T:Google.Apis.Requests.RequestError"/> object
-            </summary>
-            <exception cref="T:Google.GoogleApiException">If no error is found in the response.</exception>
-            <param name="input"><see cref="T:Google.Apis.Requests.IResponse"/> containing an error.</param>
-            <returns>The <see cref="T:Google.Apis.Requests.RequestError"/> object deserialized from the stream.</returns>
         </member>
         <member name="M:Google.Apis.Discovery.BaseService.RemoveAnnotations(Google.Apis.Json.JsonDictionary,System.Int32)">
             <summary>
@@ -1881,7 +1965,7 @@
         </member>
         <member name="M:Google.Apis.Discovery.IServiceFactory.CreateParameter(System.String,Google.Apis.Json.JsonDictionary)">
             <summary>
-            Creates an IParameter from a JsonDictionary description.
+            Creates an IDiscoveryParameter from a JsonDictionary description.
             </summary>
             <param name="name">The name of the parameter.</param>
             <param name="dictionary">A JsonDictionary describing the parameter.</param>
@@ -1939,11 +2023,6 @@
             <param name="rpcName"></param>
             <returns></returns>
         </member>
-        <member name="M:Google.Apis.Requests.IRequest.Returning(Google.Apis.Requests.ReturnType)">
-            <summary>
-            Specifies the return type of this method.
-            </summary>
-        </member>
         <member name="M:Google.Apis.Requests.IRequest.WithParameters(System.Collections.Generic.IDictionary{System.String,System.Object})">
             <summary>
             Specifies the parameter set of this method.
@@ -1957,25 +2036,6 @@
         <member name="M:Google.Apis.Requests.IRequest.WithParameters(System.String)">
             <summary>
             Specifies the parameter query string of this method.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.IRequest.WithFields(System.String)">
-            <summary>
-            Specifies the partial field mask of this method. 
-            The response of this request will only contain the fields specified in this mask.
-            </summary>
-            <param name="mask">Selector specifying which fields to include in a partial response.</param>
-        </member>
-        <member name="M:Google.Apis.Requests.IRequest.WithUserIp(System.String)">
-            <summary>
-            IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.IRequest.WithQuotaUser(System.String)">
-            <summary>
-            Available to use for quota purposes for server-side applications.
-            Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-            Overrides UserIp if both are provided.
             </summary>
         </member>
         <member name="M:Google.Apis.Requests.IRequest.WithBody(System.String)">
@@ -2024,19 +2084,6 @@
             <summary>
             The method to call
             </summary>
-            <returns>
-            A <see cref="T:Google.Apis.Requests.Request"/>
-            </returns>
-        </member>
-        <member name="M:Google.Apis.Requests.Request.Returning(Google.Apis.Requests.ReturnType)">
-            <summary>
-            Sets the type of data that is expected to be returned from the request.
-            
-            Defaults to Json.
-            </summary>
-            <param name="returnType">
-            A <see cref="P:Google.Apis.Requests.Request.ReturnType"/>
-            </param>
             <returns>
             A <see cref="T:Google.Apis.Requests.Request"/>
             </returns>
@@ -2129,7 +2176,7 @@
             Returns all error response handlers associated with this request.
             </summary>
         </member>
-        <member name="M:Google.Apis.Requests.Request.CreateRequest(Google.Apis.Discovery.IService,Google.Apis.Discovery.IMethod)">
+        <member name="M:Google.Apis.Requests.Request.CreateRequest(Google.Apis.Discovery.IClientService,Google.Apis.Requests.IClientServiceRequest)">
             <summary>
             Given an API method, create the appropriate Request for it.
             </summary>
@@ -2142,28 +2189,14 @@
             A <see cref="T:System.String"/>
             </param>
         </member>
-        <member name="M:Google.Apis.Requests.Request.WithFields(System.String)">
-            <summary>
-            Specifies the partial field mask of this method. 
-            The response of this request will only contain the fields specified in this mask.
-            </summary>
-            <param name="mask">Selector specifying which fields to include in a partial response.</param>
-        </member>
-        <member name="M:Google.Apis.Requests.Request.WithUserIp(System.String)">
-            <summary>
-            IP address of the site where the request originates. Use this if you want to enforce per-user limits.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Requests.Request.WithQuotaUser(System.String)">
-            <summary>
-            Available to use for quota purposes for server-side applications.
-            Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-            Overrides UserIp if both are provided.
-            </summary>
-        </member>
         <member name="M:Google.Apis.Requests.Request.BuildRequest">
             <summary>
             Builds the resulting Url for the whole request.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.Request.GetReturnMimeType">
+            <summary>
+            Gets the supported return mime type
             </summary>
         </member>
         <member name="M:Google.Apis.Requests.Request.GetDefaultETagAction(System.String)">
@@ -2284,7 +2317,7 @@
         </member>
         <member name="T:Google.Apis.Discovery.BaseMethod">
             <summary>
-            Abstract implementation of a method
+            Abstract implementation of a method.
             </summary>
         </member>
         <member name="T:Google.Apis.Discovery.IMethod">
@@ -2431,7 +2464,7 @@
         </member>
         <member name="T:Google.Apis.MethodValidator">
             <summary>
-            Logic for validating that a method is correct.
+            Logic for validating that a method (<code>IServiceRequest</code>) is correct.
             </summary>
         </member>
         <member name="M:Google.Apis.MethodValidator.ValidateAllParameters">
@@ -2476,7 +2509,7 @@
         </member>
         <member name="P:Google.Apis.MethodValidator.CurrentMethod">
             <summary>
-            The method which is currently being validated.
+            The serivce requeust which is currently being validated.
             </summary>
         </member>
         <member name="P:Google.Apis.MethodValidator.Parameters">
@@ -2532,42 +2565,6 @@
             <summary>
             DirectoryInfo of the cache directory
             Must be a valid directory
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Requests.ReturnType">
-            <summary>
-            The content return type of a request
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Discovery.IRequestProvider">
-            <summary>
-            Implementors of this interface are able to create arbitory requests against a service
-            resource name and method, as well as to create and retrieve information related to a request.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.IRequestProvider.CreateRequest(System.String,System.String)">
-            <summary>
-            Creates a request with the specified settings.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.IRequestProvider.SerializeObject(System.Object)">
-            <summary>
-            Serializes an object into a string representation.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.IRequestProvider.DeserializeResponse``1(Google.Apis.Requests.IResponse)">
-            <summary>
-            Deserializes a response into the specified object.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IRequestProvider.BaseUri">
-            <summary>
-            The BaseUri of the service. All request paths should be relative to this URI.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IRequestProvider.Authenticator">
-            <summary>
-            The Authenticator for this service.
             </summary>
         </member>
         <member name="T:Google.Apis.Testing.VisibleForTestOnly">
@@ -2917,65 +2914,38 @@
             Abstract implementation of a parameter.
             </summary>
         </member>
-        <member name="T:Google.Apis.Discovery.IParameter">
-            <summary>Represents a parameter for a method. </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Name">
+        <member name="T:Google.Apis.Discovery.IDiscoveryParameter">
             <summary>
-            Name of the parameter.
+            Represents a parameter for a method and includes all the meta data of a parameter, including properties
+            which the runtime component doesn't need to be aware of (e.g. Description).
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IParameter.ParameterType">
-            <summary>
-            The type of the parameter.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Pattern">
-            <summary>
-            The pattern in which this parameter has to be defined.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.IsRequired">
-            <summary>
-            Defines whether this parameter is optional or required.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.IsRepeatable">
+        <member name="P:Google.Apis.Discovery.IDiscoveryParameter.IsRepeatable">
             <summary>
             Defines whether this parameter can be repeated multiple times.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IParameter.DefaultValue">
-            <summary>
-            The default value of this parameter.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.ValueType">
+        <member name="P:Google.Apis.Discovery.IDiscoveryParameter.ValueType">
             <summary>
             The type of the value.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Description">
+        <member name="P:Google.Apis.Discovery.IDiscoveryParameter.Description">
             <summary>
             Description of this parameter.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Maximum">
+        <member name="P:Google.Apis.Discovery.IDiscoveryParameter.Maximum">
             <summary>
             The maximum valid value. (Only for numeric values)
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Minimum">
+        <member name="P:Google.Apis.Discovery.IDiscoveryParameter.Minimum">
             <summary>
             The minimum valid value. (Only for numeric values)
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IParameter.EnumValues">
-            <summary>
-            A list of valid enum values. (Only for enum values)
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.EnumValueDescriptions">
+        <member name="P:Google.Apis.Discovery.IDiscoveryParameter.EnumValueDescriptions">
             <summary>
             A list of valid enum value descriptions. (Only for enum values)
             </summary>
@@ -3347,12 +3317,29 @@
         </member>
         <member name="T:Google.Apis.Util.Utilities">
             <summary>
-            A class containing utility methods
+            A class containing utility methods.
             </summary>
         </member>
         <member name="M:Google.Apis.Util.Utilities.GetValueAsNull``2(System.Collections.Generic.IDictionary{``0,``1},``0)">
             <summary>
-            Fetches an element from a dictionary in a safe way, returning null if there is no value present.
+            Fetches an element from a dictionary in a safe way, returning <c>default(value)</c> if there is no value 
+            present.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Util.Utilities.GetValue``3(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``2})">
+            <summary>
+            Fetches an element from a dictionary in a safe way, 
+            returning a value specified by the input func if there is no value present.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Util.Utilities.NullToEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            If the enumerable is <code>null</code>, returns empty list. Otherwise returns the input list.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Util.Utilities.NullToEmpty``2(System.Collections.Generic.IDictionary{``0,``1})">
+            <summary>
+            If the dictionary is <code>null</code>, returns empty dictionary. Otherwise returns the input dictionary.
             </summary>
         </member>
         <member name="M:Google.Apis.Util.Utilities.GetValueAsStringListOrEmpty``2(System.Collections.Generic.IDictionary{``0,``1},``0)">
@@ -3394,8 +3381,6 @@
             <summary>
             Returns true when the string is NOT null or empty
             </summary>
-            <param name="str"></param>
-            <returns></returns>
         </member>
         <member name="M:Google.Apis.Util.Utilities.IsNotNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
             <summary>
@@ -3421,8 +3406,6 @@
             <summary>
             Returns the defined string value of an enum value
             </summary>
-            <param name="value"></param>
-            <returns></returns>
         </member>
         <member name="M:Google.Apis.Util.Utilities.GetNonNullableType(System.Type)">
             <summary>
@@ -3434,8 +3417,6 @@
             Tries to convert the specified object to a string. Uses custom type converters if available.
             Returns null for a null object.
             </summary>
-            <param name="o"></param>
-            <returns></returns>
         </member>
         <member name="M:Google.Apis.Util.Utilities.GetAsciiString(System.Collections.Generic.IEnumerable{System.Byte})">
             <summary>
@@ -3451,6 +3432,11 @@
             <summary>
             Please don't use this unless absolutely nessasery.
             Returns if the current runtime is Mono, this is used to work around different behavior in the runtime.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Util.Utilities.CreateRuntimeParameter(System.String,System.Boolean,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <code>IParameter</code> by the specified values and add it to the parameters dictionary.
             </summary>
         </member>
         <member name="T:Google.Apis.Discovery.Schema.ISchema">
@@ -3529,19 +3515,14 @@
             Represents an exception thrown by an API Service.
             </summary>
         </member>
-        <member name="M:Google.GoogleApiException.#ctor(Google.Apis.Discovery.IService,System.String,System.Exception)">
+        <member name="M:Google.GoogleApiException.#ctor(System.String,System.String,System.Exception)">
             <summary>
             Creates an API Service exception.
             </summary>
         </member>
-        <member name="M:Google.GoogleApiException.#ctor(Google.Apis.Discovery.IService,System.String)">
+        <member name="M:Google.GoogleApiException.#ctor(System.String,System.String)">
             <summary>
             Creates an API Service exception
-            </summary>
-        </member>
-        <member name="P:Google.GoogleApiException.Service">
-            <summary>
-            The service that has thrown the exception.
             </summary>
         </member>
         <member name="P:Google.GoogleApiException.HttpStatusCode">
@@ -3555,12 +3536,12 @@
             Represents an exception thrown by an api request executed on a service.
             </summary>
         </member>
-        <member name="M:Google.GoogleApiRequestException.#ctor(Google.Apis.Discovery.IService,Google.Apis.Requests.IRequest,Google.Apis.Requests.RequestError,System.Exception)">
+        <member name="M:Google.GoogleApiRequestException.#ctor(System.String,Google.Apis.Requests.IRequest,Google.Apis.Requests.RequestError,System.Exception)">
             <summary>
             Creates an API Request Exception.
             </summary>
         </member>
-        <member name="M:Google.GoogleApiRequestException.#ctor(Google.Apis.Discovery.IService,Google.Apis.Requests.IRequest,Google.Apis.Requests.RequestError)">
+        <member name="M:Google.GoogleApiRequestException.#ctor(System.String,Google.Apis.Requests.IRequest,Google.Apis.Requests.RequestError)">
             <summary>
             Creates an API Request Exception.
             </summary>

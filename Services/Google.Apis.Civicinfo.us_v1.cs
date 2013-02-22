@@ -19,6 +19,8 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
         
         private AdministrativeBody _electionAdministrationBody;
         
+        private string _id;
+        
         private AdministrationRegion _local_jurisdiction;
         
         private string _name;
@@ -33,6 +35,17 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
             set {
                 this._electionAdministrationBody = value;
+            }
+        }
+        
+        /// <summary>An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
             }
         }
         
@@ -392,6 +405,8 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
         
         private string _electorateSpecifications;
         
+        private string _id;
+        
         private string _level;
         
         private string _numberElected;
@@ -455,6 +470,17 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
             set {
                 this._electorateSpecifications = value;
+            }
+        }
+        
+        /// <summary>An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
             }
         }
         
@@ -783,6 +809,8 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
         
         private string _endDate;
         
+        private string _id;
+        
         private string _name;
         
         private string _notes;
@@ -814,6 +842,17 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
             set {
                 this._endDate = value;
+            }
+        }
+        
+        /// <summary>An ID for this object. IDs may change in future requests and should not be cached. Access to this field requires special access that can be requested from the Request more link on the Quotas page.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
             }
         }
         
@@ -1153,270 +1192,67 @@ namespace Google.Apis.Civicinfo.us_v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class CivicinfoService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/eM9rcT1" +
-            "Zj_zHnRZhIGUdNb2Vm7I\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"civicinfo:us_v1\",\"name\":\"c" +
-            "ivicinfo\",\"canonicalName\":\"Civic Info\",\"version\":\"us_v1\",\"revision\":\"20121013\",\"" +
-            "title\":\"Google Civic Information API\",\"description\":\"An API for accessing civic " +
-            "information.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-" +
-            "16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"docum" +
-            "entationLink\":\"https://developers.google.com/civic-information\",\"protocol\":\"rest" +
-            "\",\"baseUrl\":\"https://www.googleapis.com/civicinfo/us_v1/\",\"basePath\":\"/civicinfo" +
-            "/us_v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"civicinfo/us_v1/" +
-            "\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data f" +
-            "ormat for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"R" +
-            "esponses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"" +
-            "type\":\"string\",\"description\":\"Selector specifying which fields to include in a p" +
-            "artial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API " +
-            "key. Your API key identifies your project and provides you with API access, quot" +
-            "a, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"que" +
-            "ry\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the curre" +
-            "nt user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Ret" +
-            "urns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"q" +
-            "uery\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota pu" +
-            "rposes for server-side applications. Can be any arbitrary string assigned to a u" +
-            "ser, but should not exceed 40 characters. Overrides userIp if both are provided." +
-            "\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the" +
-            " site where the request originates. Use this if you want to enforce per-user lim" +
-            "its.\",\"location\":\"query\"}},\"schemas\":{\"AdministrationRegion\":{\"id\":\"Administrati" +
-            "onRegion\",\"type\":\"object\",\"description\":\"Describes information about a regional " +
-            "election administrative area.\",\"properties\":{\"electionAdministrationBody\":{\"$ref" +
-            "\":\"AdministrativeBody\",\"description\":\"The election administration body for this " +
-            "area.\"},\"local_jurisdiction\":{\"$ref\":\"AdministrationRegion\",\"description\":\"The c" +
-            "ity or county that provides election information for this voter. This object can" +
-            " have the same elements as state.\"},\"name\":{\"type\":\"string\",\"description\":\"The n" +
-            "ame of the jurisdiction.\"},\"sources\":{\"type\":\"array\",\"description\":\"A list of so" +
-            "urces for this area. If multiple sources are listed the data has been aggregated" +
-            " from those sources.\",\"items\":{\"$ref\":\"Source\"}}}},\"AdministrativeBody\":{\"id\":\"A" +
-            "dministrativeBody\",\"type\":\"object\",\"description\":\"Information about an election " +
-            "administrative body (e.g. County Board of Elections).\",\"properties\":{\"absenteeVo" +
-            "tingInfoUrl\":{\"type\":\"string\",\"description\":\"A URL provided by this administrati" +
-            "ve body for information on absentee voting.\"},\"ballotInfoUrl\":{\"type\":\"string\",\"" +
-            "description\":\"A URL provided by this administrative body to give contest informa" +
-            "tion to the voter.\"},\"correspondenceAddress\":{\"$ref\":\"SimpleAddressType\",\"descri" +
-            "ption\":\"The mailing address of this administrative body.\"},\"electionInfoUrl\":{\"t" +
-            "ype\":\"string\",\"description\":\"A URL provided by this administrative body for look" +
-            "ing up general election information.\"},\"electionOfficials\":{\"type\":\"array\",\"desc" +
-            "ription\":\"The election officials for this election administrative body.\",\"items\"" +
-            ":{\"$ref\":\"ElectionOfficial\"}},\"electionRegistrationConfirmationUrl\":{\"type\":\"str" +
-            "ing\",\"description\":\"A URL provided by this administrative body for confirming th" +
-            "at the voter is registered to vote.\"},\"electionRegistrationUrl\":{\"type\":\"string\"" +
-            ",\"description\":\"A URL provided by this administrative body for looking up how to" +
-            " register to vote.\"},\"electionRulesUrl\":{\"type\":\"string\",\"description\":\"A URL pr" +
-            "ovided by this administrative body describing election rules to the voter.\"},\"ho" +
-            "ursOfOperation\":{\"type\":\"string\",\"description\":\"A description of the hours of op" +
-            "eration for this administrative body.\"},\"name\":{\"type\":\"string\",\"description\":\"T" +
-            "he name of this election administrative body.\"},\"physicalAddress\":{\"$ref\":\"Simpl" +
-            "eAddressType\",\"description\":\"The physical address of this administrative body.\"}" +
-            ",\"voter_services\":{\"type\":\"array\",\"description\":\"A description of the services t" +
-            "his administrative body may provide.\",\"items\":{\"type\":\"string\"}},\"votingLocation" +
-            "FinderUrl\":{\"type\":\"string\",\"description\":\"A URL provided by this administrative" +
-            " body for looking up where to vote.\"}}},\"Candidate\":{\"id\":\"Candidate\",\"type\":\"ob" +
-            "ject\",\"description\":\"Information about a candidate running for elected office.\"," +
-            "\"properties\":{\"candidateUrl\":{\"type\":\"string\",\"description\":\"The URL for the can" +
-            "didate\'s campaign web site.\"},\"channels\":{\"type\":\"array\",\"description\":\"A list o" +
-            "f known (social) media channels for this candidate.\",\"items\":{\"$ref\":\"Channel\"}}" +
-            ",\"email\":{\"type\":\"string\",\"description\":\"The email address for the candidate\'s c" +
-            "ampaign.\"},\"name\":{\"type\":\"string\",\"description\":\"The candidate\'s name.\"},\"order" +
-            "OnBallot\":{\"type\":\"string\",\"description\":\"The order the candidate appears on the" +
-            " ballot for this contest.\",\"format\":\"int64\"},\"party\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The full name of the party the candidate is a member of.\"},\"phone\":{\"type\":" +
-            "\"string\",\"description\":\"The voice phone number for the candidate\'s campaign offi" +
-            "ce.\"},\"photoUrl\":{\"type\":\"string\",\"description\":\"A URL for a photo of the candid" +
-            "ate.\"}}},\"Channel\":{\"id\":\"Channel\",\"type\":\"object\",\"description\":\"A social media" +
-            " or web channel for a candidate.\",\"properties\":{\"id\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The unique public identifier for the candidate\'s channel.\"},\"type\":{\"type\":" +
-            "\"string\",\"description\":\"The type of channel. The following is a list of types of" +
-            " channels, but is not exhaustive. More channel types may be added at a later tim" +
-            "e. One of: GooglePlus, YouTube, Facebook, Twitter\"}}},\"Contest\":{\"id\":\"Contest\"," +
-            "\"type\":\"object\",\"description\":\"Information about a contest that appears on a vot" +
-            "er\'s ballot.\",\"properties\":{\"ballotPlacement\":{\"type\":\"string\",\"description\":\"A " +
-            "number specifying the position of this contest on the voter\'s ballot.\",\"format\":" +
-            "\"int64\"},\"candidates\":{\"type\":\"array\",\"description\":\"The candidate choices for t" +
-            "his contest.\",\"items\":{\"$ref\":\"Candidate\"}},\"district\":{\"$ref\":\"ElectoralDistric" +
-            "t\",\"description\":\"Information about the electoral district that this contest is " +
-            "in.\"},\"electorateSpecifications\":{\"type\":\"string\",\"description\":\"A description o" +
-            "f any additional eligibility requirements for voting in this contest.\"},\"level\":" +
-            "{\"type\":\"string\",\"description\":\"The level of office for this contest. One of: fe" +
-            "deral, state, county, city, other\"},\"numberElected\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The number of candidates that will be elected to office in this contest.\",\"f" +
-            "ormat\":\"int64\"},\"numberVotingFor\":{\"type\":\"string\",\"description\":\"The number of " +
-            "candidates that a voter may vote for in this contest.\",\"format\":\"int64\"},\"office" +
-            "\":{\"type\":\"string\",\"description\":\"The name of the office for this contest.\"},\"pr" +
-            "imaryParty\":{\"type\":\"string\",\"description\":\"If this is a partisan election, the " +
-            "name of the party it is for.\"},\"referendumSubtitle\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"A brief description of the referendum. This field is only populated for cont" +
-            "ests of type \'Referendum\'.\"},\"referendumTitle\":{\"type\":\"string\",\"description\":\"T" +
-            "he title of the referendum. (e.g. \'Proposition 42\') This field is only populated" +
-            " for contests of type \'Referendum\'.\"},\"referendumUrl\":{\"type\":\"string\",\"descript" +
-            "ion\":\"A link the referendum. This field is only populated for contests of type \'" +
-            "Referendum\'.\"},\"sources\":{\"type\":\"array\",\"description\":\"A list of sources for th" +
-            "is contest. If multiple sources are listed, the data has been aggregated from th" +
-            "ose sources.\",\"items\":{\"$ref\":\"Source\"}},\"special\":{\"type\":\"string\",\"description" +
-            "\":\"\\\"Yes\\\" or \\\"No\\\" depending on whether this a contest being held outside the " +
-            "normal election cycle.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of cont" +
-            "est. Usually this will be \'General\', \'Primary\', or \'Run-off\' for contests with c" +
-            "andidates. For referenda this will be \'Referendum\'.\"}}},\"Election\":{\"id\":\"Electi" +
-            "on\",\"type\":\"object\",\"description\":\"Information about the election that was queri" +
-            "ed.\",\"properties\":{\"electionDay\":{\"type\":\"string\",\"description\":\"Day of the elec" +
-            "tion in YYYY-MM-DD format.\"},\"id\":{\"type\":\"string\",\"description\":\"The unique ID " +
-            "of this election.\",\"format\":\"int64\"},\"name\":{\"type\":\"string\",\"description\":\"A di" +
-            "splayable name for the election.\"}}},\"ElectionOfficial\":{\"id\":\"ElectionOfficial\"" +
-            ",\"type\":\"object\",\"description\":\"Information about individual election officials." +
-            "\",\"properties\":{\"emailAddress\":{\"type\":\"string\",\"description\":\"The email address" +
-            " of the election official.\"},\"faxNumber\":{\"type\":\"string\",\"description\":\"The fax" +
-            " number of the election official.\"},\"name\":{\"type\":\"string\",\"description\":\"The f" +
-            "ull name of the election official.\"},\"officePhoneNumber\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The office phone number of the election official.\"},\"title\":{\"type\":\"st" +
-            "ring\",\"description\":\"The title of the election official.\"}}},\"ElectionsQueryResp" +
-            "onse\":{\"id\":\"ElectionsQueryResponse\",\"type\":\"object\",\"description\":\"The list of " +
-            "elections available for this version of the API.\",\"properties\":{\"elections\":{\"ty" +
-            "pe\":\"array\",\"description\":\"A list of available elections\",\"items\":{\"$ref\":\"Elect" +
-            "ion\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind, fixed to \\\"civicinfo#ele" +
-            "ctionsQueryResponse\\\".\",\"default\":\"civicinfo#electionsQueryResponse\"}}},\"Elector" +
-            "alDistrict\":{\"id\":\"ElectoralDistrict\",\"type\":\"object\",\"description\":\"Describes t" +
-            "he geographic scope of a contest.\",\"properties\":{\"id\":{\"type\":\"string\",\"descript" +
-            "ion\":\"An identifier for this district, relative to its scope. For example, the 3" +
-            "4th State Senate district would have id \\\"34\\\" and a scope of stateUpper.\"},\"nam" +
-            "e\":{\"type\":\"string\",\"description\":\"The name of the district.\"},\"scope\":{\"type\":\"" +
-            "string\",\"description\":\"The geographic scope of this district. If unspecified the" +
-            " district\'s geography is not known. One of: statewide, congressional, stateUpper" +
-            ", stateLower, countywide, judicial, schoolBoard, cityWide, special\"}}},\"PollingL" +
-            "ocation\":{\"id\":\"PollingLocation\",\"type\":\"object\",\"description\":\"A location where" +
-            " a voter can vote. This may be an early vote site or an election day voting loca" +
-            "tion.\",\"properties\":{\"address\":{\"$ref\":\"SimpleAddressType\",\"description\":\"The ad" +
-            "dress of the location\"},\"endDate\":{\"type\":\"string\",\"description\":\"The last date " +
-            "that this early vote site may be used. This field is not populated for polling l" +
-            "ocations.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of the early vote si" +
-            "te. This field is not populated for polling locations.\"},\"notes\":{\"type\":\"string" +
-            "\",\"description\":\"Notes about this location (e.g. accessibility ramp or entrance " +
-            "to use)\"},\"pollingHours\":{\"type\":\"string\",\"description\":\"A description of when t" +
-            "his location is open.\"},\"sources\":{\"type\":\"array\",\"description\":\"A list of sourc" +
-            "es for this location. If multiple sources are listed the data has been aggregate" +
-            "d from those sources.\",\"items\":{\"$ref\":\"Source\"}},\"startDate\":{\"type\":\"string\",\"" +
-            "description\":\"The first date that this early vote site may be used. This field i" +
-            "s not populated for polling locations.\"},\"voterServices\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The services provided by this early vote site. This field is not popula" +
-            "ted for polling locations.\"}}},\"SimpleAddressType\":{\"id\":\"SimpleAddressType\",\"ty" +
-            "pe\":\"object\",\"description\":\"A simple representation of an address.\",\"properties\"" +
-            ":{\"city\":{\"type\":\"string\",\"description\":\"The city or town for the address.\"},\"li" +
-            "ne1\":{\"type\":\"string\",\"description\":\"The street name and number of this address." +
-            "\"},\"line2\":{\"type\":\"string\",\"description\":\"The second line the address, if neede" +
-            "d.\"},\"line3\":{\"type\":\"string\",\"description\":\"The third line of the address, if n" +
-            "eeded.\"},\"locationName\":{\"type\":\"string\",\"description\":\"The name of the location" +
-            ".\"},\"state\":{\"type\":\"string\",\"description\":\"The US two letter state abbreviation" +
-            " of the address.\"},\"zip\":{\"type\":\"string\",\"description\":\"The US Postal Zip Code " +
-            "of the address.\"}}},\"Source\":{\"id\":\"Source\",\"type\":\"object\",\"description\":\"Conta" +
-            "ins information about the data source for the element containing it.\",\"propertie" +
-            "s\":{\"name\":{\"type\":\"string\",\"description\":\"The name of the data source.\"},\"offic" +
-            "ial\":{\"type\":\"boolean\",\"description\":\"Whether this data comes from an official g" +
-            "overnment source.\"}}},\"VoterInfoRequest\":{\"id\":\"VoterInfoRequest\",\"type\":\"object" +
-            "\",\"description\":\"A request for information about a voter.\",\"properties\":{\"addres" +
-            "s\":{\"type\":\"string\",\"description\":\"The registered address of the voter to look u" +
-            "p.\"}}},\"VoterInfoResponse\":{\"id\":\"VoterInfoResponse\",\"type\":\"object\",\"descriptio" +
-            "n\":\"The result of a voter info lookup query.\",\"properties\":{\"contests\":{\"type\":\"" +
-            "array\",\"description\":\"Contests that will appear on the voter\'s ballot\",\"items\":{" +
-            "\"$ref\":\"Contest\"}},\"earlyVoteSites\":{\"type\":\"array\",\"description\":\"Locations whe" +
-            "re the voter is eligible to vote early, prior to election day\",\"items\":{\"$ref\":\"" +
-            "PollingLocation\"}},\"election\":{\"$ref\":\"Election\",\"description\":\"The election tha" +
-            "t was queried.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind, fixed to \\\"civ" +
-            "icinfo#voterInfoResponse\\\".\",\"default\":\"civicinfo#voterInfoResponse\"},\"normalize" +
-            "dInput\":{\"$ref\":\"SimpleAddressType\",\"description\":\"The normalized version of the" +
-            " requested address\"},\"pollingLocations\":{\"type\":\"array\",\"description\":\"Locations" +
-            " where the voter is eligible to vote on election day. For states with mail-in vo" +
-            "ting only, these locations will be nearby drop box locations. Drop box locations" +
-            " are free to the voter and may be used instead of placing the ballot in the mail" +
-            ".\",\"items\":{\"$ref\":\"PollingLocation\"}},\"state\":{\"type\":\"array\",\"description\":\"Lo" +
-            "cal Election Information for the state that the voter votes in. For the US, ther" +
-            "e will only be one element in this array.\",\"items\":{\"$ref\":\"AdministrationRegion" +
-            "\"}},\"status\":{\"type\":\"string\",\"description\":\"The result of the request. One of: " +
-            "success, noStreetSegmentFound, addressUnparseable, noAddressParameter, multipleS" +
-            "treetSegmentsFound, electionOver, electionUnknown, internalLookupFailure\"}}}},\"r" +
-            "esources\":{\"elections\":{\"methods\":{\"electionQuery\":{\"id\":\"civicinfo.elections.el" +
-            "ectionQuery\",\"path\":\"elections\",\"httpMethod\":\"GET\",\"description\":\"List of availa" +
-            "ble elections to query.\",\"response\":{\"$ref\":\"ElectionsQueryResponse\"}},\"voterInf" +
-            "oQuery\":{\"id\":\"civicinfo.elections.voterInfoQuery\",\"path\":\"voterinfo/{electionId" +
-            "}/lookup\",\"httpMethod\":\"POST\",\"description\":\"Looks up information relevant to a " +
-            "voter based on the voter\'s registered address.\",\"parameters\":{\"electionId\":{\"typ" +
-            "e\":\"string\",\"description\":\"The unique ID of the election to look up. A list of e" +
-            "lection IDs can be obtained at.https://www.googleapis.com/civicinfo/{version}/el" +
-            "ections\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"officialOnly\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"If set to true, only data from official state sourc" +
-            "es will be returned.\",\"location\":\"query\"}},\"parameterOrder\":[\"electionId\"],\"requ" +
-            "est\":{\"$ref\":\"VoterInfoRequest\"},\"response\":{\"$ref\":\"VoterInfoResponse\"}}}}}}";
+    public partial class CivicinfoService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "us_v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected CivicinfoService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._elections = new ElectionsResource(this, _authenticator);
+        public CivicinfoService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._elections = new ElectionsResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public CivicinfoService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public CivicinfoService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CivicinfoService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/civicinfo/us_v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "civicinfo";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/civicinfo/us_v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -1424,13 +1260,13 @@ namespace Google.Apis.Civicinfo.us_v1 {
         
         private CivicinfoService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "elections";
         
-        public ElectionsResource(CivicinfoService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public ElectionsResource(CivicinfoService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>List of available elections to query.</summary>
@@ -1444,14 +1280,45 @@ namespace Google.Apis.Civicinfo.us_v1 {
             return new VoterInfoQueryRequest(service, body, electionId);
         }
         
-        public class ElectionQueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Civicinfo.us_v1.Data.ElectionsQueryResponse> {
+        public class ElectionQueryRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Civicinfo.us_v1.Data.ElectionsQueryResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
-            public ElectionQueryRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            public ElectionQueryRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1476,24 +1343,71 @@ namespace Google.Apis.Civicinfo.us_v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            public override string ResourcePath {
                 get {
                     return "elections";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "electionQuery";
                 }
             }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "elections";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
         }
         
-        public class VoterInfoQueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse> {
+        public class VoterInfoQueryRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
             
             private string _electionId;
             
@@ -1501,10 +1415,33 @@ namespace Google.Apis.Civicinfo.us_v1 {
             
             private Google.Apis.Civicinfo.us_v1.Data.VoterInfoRequest _Body;
             
-            public VoterInfoQueryRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Civicinfo.us_v1.Data.VoterInfoRequest body, string electionId) : 
+            public VoterInfoQueryRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Civicinfo.us_v1.Data.VoterInfoRequest body, string electionId) : 
                     base(service) {
                 this.Body = body;
                 this._electionId = electionId;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1526,6 +1463,28 @@ namespace Google.Apis.Civicinfo.us_v1 {
                 }
                 set {
                     this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
                 }
             }
             
@@ -1558,20 +1517,39 @@ namespace Google.Apis.Civicinfo.us_v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "elections";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "voterInfoQuery";
                 }
             }
             
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "voterinfo/{electionId}/lookup";
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("electionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("electionId", true, "path", null, null, new string[0]));
+                parameters.Add("officialOnly", Google.Apis.Util.Utilities.CreateRuntimeParameter("officialOnly", false, "query", "false", null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -1582,7 +1560,7 @@ namespace Google.Apis.Civicinfo.us_v1 {
         
         private ElectionsResource _elections;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

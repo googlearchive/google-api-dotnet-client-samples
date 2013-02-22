@@ -14,13 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-using System;
+
 using DotNetOpenAuth.OAuth2;
+
 using Google;
 using Google.Apis;
-using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Tasks.v1;
 using Google.Apis.Tasks.v1.Data;
@@ -43,14 +44,20 @@ namespace Tasks.ETagCollision
             CommandLine.DisplayGoogleSampleHeader("Tasks API: E-Tag collision");
 
             // Register the authenticator.
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
+            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+                {
+                    ClientIdentifier = credentials.ClientId,
+                    ClientSecret = credentials.ClientSecret
+                };
+
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            var service = new TasksService(auth);
+            var service = new TasksService(new BaseClientService.Initializer()
+                {
+                    Authenticator = auth
+                });
 
             // Run the sample code.
             RunSample(service, true, ETagAction.Ignore);
@@ -92,7 +99,7 @@ namespace Tasks.ETagCollision
 
         private static void RunSample(TasksService service, bool modify, ETagAction behaviour)
         {
-            CommandLine.WriteAction("Testing for E-Tag case " + behaviour + " with modified="+modify+"...");
+            CommandLine.WriteAction("Testing for E-Tag case " + behaviour + " with modified=" + modify + "...");
 
             // Create a new task list.
             TaskList list = service.Tasklists.Insert(new TaskList() { Title = "E-Tag Collision Test" }).Fetch();

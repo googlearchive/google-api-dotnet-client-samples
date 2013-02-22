@@ -85,9 +85,6 @@
         <member name="P:Google.Apis.Groupssettings.v1.Data.Groups.WhoCanViewMembership">
             <summary>Permissions to view membership. Possbile values are: ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW</summary>
         </member>
-        <member name="P:Google.Apis.Groupssettings.v1.GroupssettingsService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="T:Google.Apis.Groupssettings.v1.GroupssettingsService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
@@ -106,14 +103,32 @@
             <summary>Updates an existing resource.</summary>
             <param name="groupUniqueId">Required - The resource ID</param>
         </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.GroupUniqueId">
             <summary>The resource ID</summary>
+        </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -121,17 +136,35 @@
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.GroupUniqueId">
             <summary>The resource ID</summary>
         </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.GroupUniqueId">
             <summary>The resource ID</summary>

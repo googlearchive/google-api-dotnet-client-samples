@@ -47,7 +47,7 @@
             <summary>The total number of quota bytes.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.QuotaBytesUsed">
-            <summary>The number of quota bytes used.</summary>
+            <summary>The number of quota bytes used by Google Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.QuotaBytesUsedAggregate">
             <summary>The number of quota bytes used by all Google apps (Drive, Picasa, etc.).</summary>
@@ -428,8 +428,11 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.Labels">
             <summary>A group of labels for the file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.LastModifyingUser">
+            <summary>The JSON template for a user.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.LastModifyingUserName">
-            <summary>Name of the last user to modify this file. This will only be populated if a user has edited this file.</summary>
+            <summary>Name of the last user to modify this file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.LastViewedByMeDate">
             <summary>Last time this file was viewed by the user (formatted RFC 3339 timestamp).</summary>
@@ -452,6 +455,9 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.OwnerNames">
             <summary>Name(s) of the owner(s) of this file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Owners">
+            <summary>The owner(s) of this file.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.Parents">
              <summary>Collection of parent folders which contain this file.
             Setting this field will put the file in all of the provided folders. On insert, if no folders are provided, the file will be placed in the default root folder.</summary>
@@ -461,6 +467,9 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.SelfLink">
             <summary>A link back to this file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Shared">
+            <summary>Whether the file has been shared.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.SharedWithMeDate">
             <summary>Time at which this file was shared with the user (formatted RFC 3339 timestamp).</summary>
@@ -736,6 +745,9 @@
         <member name="P:Google.Apis.Drive.v2.Data.Revision.Kind">
             <summary>This is always drive#revision.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.LastModifyingUser">
+            <summary>The JSON template for a user.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.Revision.LastModifyingUserName">
             <summary>Name of the last user to modify this revision.</summary>
         </member>
@@ -799,6 +811,9 @@
         <member name="P:Google.Apis.Drive.v2.Data.User.Kind">
             <summary>This is always drive#user.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.User.PermissionId">
+            <summary>The user&apos;s ID as visible in the permissions collection.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.User.Picture">
             <summary>The user&apos;s profile picture.</summary>
         </member>
@@ -807,9 +822,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.User.PictureData.Url">
             <summary>A URL that points to a profile picture of this user.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.DriveService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.DriveService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -832,11 +844,23 @@
         <member name="M:Google.Apis.Drive.v2.AboutResource.Get">
             <summary>Gets the information about the current user along with Drive API settings</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.IncludeSubscribed">
             <summary>When calculating the number of remaining change IDs, whether to include shared files and public files the user has opened. When set to false, this counts only change IDs for owned files and any shared or public files that the user has explictly added to a folder in Drive.</summary>
@@ -854,20 +878,44 @@
         <member name="M:Google.Apis.Drive.v2.AppsResource.List">
             <summary>Lists a user&apos;s apps.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.AppId">
             <summary>The ID of the app.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v2.ChangesResource.Get(System.String)">
             <summary>Gets a specific change.</summary>
@@ -876,20 +924,44 @@
         <member name="M:Google.Apis.Drive.v2.ChangesResource.List">
             <summary>Lists the changes for a user.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.ChangeId">
             <summary>The ID of the change.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.IncludeDeleted">
             <summary>Whether to include deleted items.</summary>
@@ -924,11 +996,23 @@
             <summary>Lists a folder&apos;s children.</summary>
             <param name="folderId">Required - The ID of the folder.</param>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.ChildId">
             <summary>The ID of the child.</summary>
@@ -936,11 +1020,23 @@
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.FolderId">
             <summary>The ID of the folder.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.ChildId">
             <summary>The ID of the child.</summary>
@@ -948,11 +1044,23 @@
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.FolderId">
             <summary>The ID of the folder.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.FolderId">
             <summary>The ID of the folder.</summary>
@@ -960,11 +1068,23 @@
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.FolderId">
             <summary>The ID of the folder.</summary>
@@ -1006,11 +1126,23 @@
             <param name="fileId">Required - The ID of the file.</param>
             <param name="commentId">Required - The ID of the comment.</param>
         </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1018,11 +1150,23 @@
         <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.FileId">
             <summary>The ID of the file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1033,11 +1177,23 @@
         <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.IncludeDeleted">
             <summary>If set, this will succeed when retrieving a deleted comment, and will include any deleted replies.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1045,11 +1201,23 @@
         <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1066,11 +1234,23 @@
         <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.UpdatedMin">
             <summary>Only discussions that were updated after this timestamp will be returned. Formatted as an RFC 3339 timestamp.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1081,11 +1261,23 @@
         <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1150,11 +1342,23 @@
         <member name="F:Google.Apis.Drive.v2.FilesResource.Projection.FULL">
             <summary>Deprecated</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -1171,12 +1375,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Pinned">
             <summary>Whether to pin the head revision of the new copy.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.SourceLanguage">
-            <summary>The language of the original file to be translated.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.TargetLanguage">
-            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.TimedTextLanguage">
             <summary>The language of the timed text.</summary>
         </member>
@@ -1186,20 +1384,44 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.FileId">
             <summary>The ID of the file to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.FileId">
             <summary>The ID for the file in question.</summary>
@@ -1210,11 +1432,23 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.UpdateViewedDate">
             <summary>Whether to update the view date after successfully retrieving the file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -1228,26 +1462,35 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Pinned">
             <summary>Whether to pin the head revision of the uploaded file.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.SourceLanguage">
-            <summary>The language of the original file to be translated.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.TargetLanguage">
-            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.TimedTextLanguage">
             <summary>The language of the timed text.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.TimedTextTrackName">
             <summary>The timed text track name.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.UseContentAsIndexableText">
+            <summary>Whether to use the content as indexable text.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -1261,23 +1504,32 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Pinned">
             <summary>Whether to pin the head revision of the uploaded file.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.SourceLanguage">
-            <summary>The language of the original file to be translated.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.TargetLanguage">
-            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.TimedTextLanguage">
             <summary>The language of the timed text.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.TimedTextTrackName">
             <summary>The timed text track name.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.UseContentAsIndexableText">
+            <summary>Whether to use the content as indexable text.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.MaxResults">
             <summary>Maximum number of files to return.</summary>
@@ -1291,11 +1543,23 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.Q">
             <summary>Query string for searching files.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -1318,12 +1582,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.SetModifiedDate">
             <summary>Whether to set the modified date with the supplied modified date.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.SourceLanguage">
-            <summary>The language of the original file to be translated.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.TargetLanguage">
-            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.TimedTextLanguage">
             <summary>The language of the timed text.</summary>
         </member>
@@ -1333,8 +1591,17 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.UpdateViewedDate">
             <summary>Whether to update the view date after successfully updating the file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.UseContentAsIndexableText">
+            <summary>Whether to use the content as indexable text.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1342,8 +1609,20 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.FileId">
             <summary>The ID of the file to update.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1351,8 +1630,20 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.FileId">
             <summary>The ID of the file to trash.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1360,14 +1651,32 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.FileId">
             <summary>The ID of the file to untrash.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -1390,12 +1699,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.SetModifiedDate">
             <summary>Whether to set the modified date with the supplied modified date.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.SourceLanguage">
-            <summary>The language of the original file to be translated.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.TargetLanguage">
-            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.TimedTextLanguage">
             <summary>The language of the timed text.</summary>
         </member>
@@ -1405,14 +1708,29 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.UpdateViewedDate">
             <summary>Whether to update the view date after successfully updating the file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.UseContentAsIndexableText">
+            <summary>Whether to use the content as indexable text.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -1435,12 +1753,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.SetModifiedDate">
             <summary>Whether to set the modified date with the supplied modified date.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.SourceLanguage">
-            <summary>The language of the original file to be translated.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.TargetLanguage">
-            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.TimedTextLanguage">
             <summary>The language of the timed text.</summary>
         </member>
@@ -1449,6 +1761,9 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.UpdateViewedDate">
             <summary>Whether to update the view date after successfully updating the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.UseContentAsIndexableText">
+            <summary>Whether to use the content as indexable text.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v2.ParentsResource.Delete(System.String,System.String)">
             <summary>Removes a parent from a file.</summary>
@@ -1468,11 +1783,23 @@
             <summary>Lists a file&apos;s parents.</summary>
             <param name="fileId">Required - The ID of the file.</param>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1480,11 +1807,23 @@
         <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.ParentId">
             <summary>The ID of the parent.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1492,11 +1831,23 @@
         <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.ParentId">
             <summary>The ID of the parent.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1504,11 +1855,23 @@
         <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1541,11 +1904,23 @@
             <param name="fileId">Required - The ID for the file.</param>
             <param name="permissionId">Required - The ID for the permission.</param>
         </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.FileId">
             <summary>The ID for the file.</summary>
@@ -1553,11 +1928,23 @@
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.PermissionId">
             <summary>The ID for the permission.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.FileId">
             <summary>The ID for the file.</summary>
@@ -1565,20 +1952,41 @@
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.PermissionId">
             <summary>The ID for the permission.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.EmailMessage">
+            <summary>A custom message to include in notification emails.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.FileId">
             <summary>The ID for the file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.SendNotificationEmails">
-            <summary>Whether to send notification emails.</summary>
+            <summary>Whether to send notification emails when sharing to users or groups.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1586,14 +1994,32 @@
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.FileId">
             <summary>The ID for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.FileId">
             <summary>The ID for the file.</summary>
@@ -1604,11 +2030,23 @@
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.FileId">
             <summary>The ID for the file.</summary>
@@ -1653,11 +2091,23 @@
             <param name="commentId">Required - The ID of the comment.</param>
             <param name="replyId">Required - The ID of the reply.</param>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1668,11 +2118,23 @@
         <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.ReplyId">
             <summary>The ID of the reply.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1686,11 +2148,23 @@
         <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.ReplyId">
             <summary>The ID of the reply.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1701,11 +2175,23 @@
         <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1722,11 +2208,23 @@
         <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.PageToken">
             <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1740,11 +2238,23 @@
         <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.CommentId">
             <summary>The ID of the comment.</summary>
@@ -1782,11 +2292,23 @@
             <param name="fileId">Required - The ID for the file.</param>
             <param name="revisionId">Required - The ID for the revision.</param>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1794,11 +2316,23 @@
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.RevisionId">
             <summary>The ID of the revision.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1806,20 +2340,44 @@
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.RevisionId">
             <summary>The ID of the revision.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.FileId">
             <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.FileId">
             <summary>The ID for the file.</summary>
@@ -1830,11 +2388,23 @@
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.FileId">
             <summary>The ID for the file.</summary>

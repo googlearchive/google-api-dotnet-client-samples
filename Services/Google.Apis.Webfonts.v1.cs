@@ -117,121 +117,67 @@ namespace Google.Apis.Webfonts.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class WebfontsService : Google.Apis.Discovery.IRequestProvider {
-        
-        private Google.Apis.Discovery.IService _service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"etag\":\"\\\"zZ6SZIrxjkCWan0Pp0n2ulHSaJk/-NYZzVN" +
-            "scWryV-b3u6PRKwWChcc\\\"\",\"discoveryVersion\":\"v1\",\"id\":\"webfonts:v1\",\"name\":\"webfo" +
-            "nts\",\"version\":\"v1\",\"revision\":\"20120614\",\"title\":\"Google Web Fonts Developer AP" +
-            "I\",\"description\":\"The Google Web Fonts Developer API.\",\"icons\":{\"x16\":\"http://ww" +
-            "w.google.com/images/icons/feature/font_api-16.png\",\"x32\":\"http://www.google.com/" +
-            "images/icons/feature/font_api-32.gif\"},\"documentationLink\":\"http://code.google.c" +
-            "om/apis/webfonts/docs/developer_api.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://w" +
-            "ww.googleapis.com/webfonts/v1/\",\"basePath\":\"/webfonts/v1/\",\"rootUrl\":\"https://ww" +
-            "w.googleapis.com/\",\"servicePath\":\"webfonts/v1/\",\"batchPath\":\"batch\",\"parameters\"" +
-            ":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\"" +
-            ":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of appl" +
-            "ication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Sele" +
-            "ctor specifying which fields to include in a partial response.\",\"location\":\"quer" +
-            "y\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your " +
-            "project and provides you with API access, quota, and reports. Required unless yo" +
-            "u provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string" +
-            "\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"pre" +
-            "ttyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations an" +
-            "d line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string" +
-            "\",\"description\":\"Available to use for quota purposes for server-side application" +
-            "s. Can be any arbitrary string assigned to a user, but should not exceed 40 char" +
-            "acters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"t" +
-            "ype\":\"string\",\"description\":\"IP address of the site where the request originates" +
-            ". Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"schema" +
-            "s\":{\"Webfont\":{\"id\":\"Webfont\",\"type\":\"object\",\"properties\":{\"family\":{\"type\":\"an" +
-            "y\",\"description\":\"The name of the font.\"},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"This kind represents a webfont object in the webfonts service.\",\"default\":\"webf" +
-            "onts#webfont\"},\"subsets\":{\"type\":\"any\",\"description\":\"The scripts supported by t" +
-            "he font.\"},\"variants\":{\"type\":\"any\",\"description\":\"The available variants for th" +
-            "e font.\"}}},\"WebfontList\":{\"id\":\"WebfontList\",\"type\":\"object\",\"properties\":{\"ite" +
-            "ms\":{\"type\":\"array\",\"description\":\"The list of fonts currently served by the Goo" +
-            "gle Fonts API.\",\"items\":{\"$ref\":\"Webfont\"}},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"This kind represents a list of webfont objects in the webfonts service.\",\"def" +
-            "ault\":\"webfonts#webfontList\"}}}},\"resources\":{\"webfonts\":{\"methods\":{\"list\":{\"id" +
-            "\":\"webfonts.webfonts.list\",\"path\":\"webfonts\",\"httpMethod\":\"GET\",\"description\":\"R" +
-            "etrieves the list of fonts currently served by the Google Web Fonts Developer AP" +
-            "I\",\"parameters\":{\"sort\":{\"type\":\"string\",\"description\":\"Enables sorting of the l" +
-            "ist\",\"enum\":[\"alpha\",\"date\",\"popularity\",\"style\",\"trending\"],\"enumDescriptions\":" +
-            "[\"Sort alphabetically\",\"Sort by date added\",\"Sort by popularity\",\"Sort by number" +
-            " of styles\",\"Sort by trending\"],\"location\":\"query\"}},\"response\":{\"$ref\":\"Webfont" +
-            "List\"}}}}}}";
+    public partial class WebfontsService : Google.Apis.Discovery.BaseClientService {
         
         public const string Version = "v1";
         
         public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string _Key;
+        private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        protected WebfontsService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this._service = _service;
-            this._authenticator = _authenticator;
-            this._webfonts = new WebfontsResource(this, _authenticator);
+        public WebfontsService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+                base(initializer) {
+            this._webfonts = new WebfontsResource(this, Authenticator);
+            this.InitParameters();
         }
         
         public WebfontsService() : 
-                this(Google.Apis.Authentication.NullAuthenticator.Instance) {
+                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
         }
         
-        public WebfontsService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(WebfontsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/webfonts/v1/"))), _authenticator) {
-        }
-        
-        public Google.Apis.Authentication.IAuthenticator Authenticator {
+        public override System.Collections.Generic.IList<string> Features {
             get {
-                return this._authenticator;
+                return new string[0];
             }
         }
         
-        public virtual string Name {
+        public override string Name {
             get {
                 return "webfonts";
             }
         }
         
-        public virtual string BaseUri {
+        public override string BaseUri {
             get {
                 return "https://www.googleapis.com/webfonts/v1/";
             }
         }
         
-        /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        public virtual string Key {
+        public override System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> ServiceParameters {
             get {
-                return this._Key;
-            }
-            set {
-                this._Key = value;
+                return this._serviceParameters;
             }
         }
         
-        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
-            if ((string.IsNullOrEmpty(Key) == false)) {
-                request = request.WithKey(this.Key);
+        public override Google.Apis.Requests.IRequest CreateRequest(Google.Apis.Requests.IClientServiceRequest serviceRequest) {
+            Google.Apis.Requests.IRequest request = Google.Apis.Requests.Request.CreateRequest(this, serviceRequest);
+            if ((string.IsNullOrEmpty(ApiKey) == false)) {
+                request = request.WithKey(this.ApiKey);
             }
-            return request.WithAuthentication(_authenticator);
+            return request.WithAuthentication(Authenticator);
         }
         
-        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            _service.Serializer = serializer;
-        }
-        
-        public virtual string SerializeObject(object obj) {
-            return _service.SerializeRequest(obj);
-        }
-        
-        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
-         {
-            return _service.DeserializeResponse<T>(response);
+        private void InitParameters() {
+            System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+            parameters.Add("alt", Google.Apis.Util.Utilities.CreateRuntimeParameter("alt", false, "query", "json", null, new string[] {
+                            "json"}));
+            parameters.Add("fields", Google.Apis.Util.Utilities.CreateRuntimeParameter("fields", false, "query", null, null, new string[0]));
+            parameters.Add("key", Google.Apis.Util.Utilities.CreateRuntimeParameter("key", false, "query", null, null, new string[0]));
+            parameters.Add("oauth_token", Google.Apis.Util.Utilities.CreateRuntimeParameter("oauth_token", false, "query", null, null, new string[0]));
+            parameters.Add("prettyPrint", Google.Apis.Util.Utilities.CreateRuntimeParameter("prettyPrint", false, "query", "true", null, new string[0]));
+            parameters.Add("quotaUser", Google.Apis.Util.Utilities.CreateRuntimeParameter("quotaUser", false, "query", null, null, new string[0]));
+            parameters.Add("userIp", Google.Apis.Util.Utilities.CreateRuntimeParameter("userIp", false, "query", null, null, new string[0]));
+            this._serviceParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
         }
     }
     
@@ -239,13 +185,13 @@ namespace Google.Apis.Webfonts.v1 {
         
         private WebfontsService service;
         
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "webfonts";
         
-        public WebfontsResource(WebfontsService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public WebfontsResource(WebfontsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
-            this._authenticator = _authenticator;
+            this.authenticator = authenticator;
         }
         
         /// <summary>Retrieves the list of fonts currently served by the Google Web Fonts Developer API</summary>
@@ -278,16 +224,47 @@ namespace Google.Apis.Webfonts.v1 {
             Trending,
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Webfonts.v1.Data.WebfontList> {
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Webfonts.v1.Data.WebfontList> {
+            
+            private string _alt;
+            
+            private string _fields;
             
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
             
+            private string _quotaUser;
+            
+            private string _userIp;
+            
             private System.Nullable<Sort> _sort;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+            public ListRequest(Google.Apis.Discovery.IClientService service) : 
                     base(service) {
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -312,6 +289,28 @@ namespace Google.Apis.Webfonts.v1 {
                 }
             }
             
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
             /// <summary>Enables sorting of the list</summary>
             [Google.Apis.Util.RequestParameterAttribute("sort", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Sort> Sort {
@@ -323,16 +322,39 @@ namespace Google.Apis.Webfonts.v1 {
                 }
             }
             
-            protected override string ResourcePath {
+            public override string ResourcePath {
                 get {
                     return "webfonts";
                 }
             }
             
-            protected override string MethodName {
+            public override string MethodName {
                 get {
                     return "list";
                 }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "webfonts";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, null, new string[] {
+                                "alpha",
+                                "date",
+                                "popularity",
+                                "style",
+                                "trending"}));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
     }
@@ -343,7 +365,7 @@ namespace Google.Apis.Webfonts.v1 {
         
         private WebfontsResource _webfonts;
         
-        private Google.Apis.Discovery.IRequestProvider service {
+        private Google.Apis.Discovery.IClientService service {
             get {
                 return this;
             }

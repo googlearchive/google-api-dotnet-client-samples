@@ -76,9 +76,6 @@
         <member name="P:Google.Apis.Audit.v1.Data.Activity.IdData.UniqQualifier">
             <summary>Unique qualifier if multiple events have the same time.</summary>
         </member>
-        <member name="P:Google.Apis.Audit.v1.AuditService.Key">
-            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
-        </member>
         <member name="M:Google.Apis.Audit.v1.ActivitiesResource.List(System.String,System.String)">
             <summary>Retrieves a list of activities for a specific customer and application.</summary>
             <param name="customerId">Required - Must match pattern C.+ - Represents the customer who is the owner of target object on which action was performed.</param>
@@ -93,11 +90,23 @@
         <member name="F:Google.Apis.Audit.v1.ActivitiesResource.Caller.Customer">
             <summary>Caller is a customer.</summary>
         </member>
+        <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
         <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.ActorApplicationId">
             <summary>Application ID of the application which interacted on behalf of the user while performing the event.</summary>
@@ -128,9 +137,6 @@
         </member>
         <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.MaxResults">
             <summary>Number of activity records to be shown in each page.</summary>
-        </member>
-        <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.Parameters">
-            <summary>Event parameters in the form [parameter1 name]:[parameter1 value],[parameter2 name]:[parameter2 value],...</summary>
         </member>
         <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.StartTime">
             <summary>Return events which occured at or after this time.</summary>

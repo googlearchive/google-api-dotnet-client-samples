@@ -27,6 +27,7 @@ using Google.Apis.Samples.Helper;
 using Google.Apis.Plus.v1;
 using Google.Apis.Plus.v1.Data;
 using Google.Apis.Util;
+using Google.Apis.Discovery;
 
 namespace Google.Apis.Samples.PlusServiceAccount
 {
@@ -68,7 +69,10 @@ namespace Google.Apis.Samples.PlusServiceAccount
                     provider, AssertionFlowClient.GetState);
 
                 // Create the service.
-                var service = new PlusService(auth);
+                var service = new PlusService(new BaseClientService.Initializer()
+                    {
+                        Authenticator = auth
+                    });
                 Activity activity = service.Activities.Get(ACTIVITY_ID).Fetch();
                 CommandLine.WriteLine("   ^1Activity: " + activity.Object.Content);
                 CommandLine.WriteLine("   ^1Video: " + activity.Object.Attachments[0].Url);
