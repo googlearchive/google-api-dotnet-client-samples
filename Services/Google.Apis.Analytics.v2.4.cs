@@ -22,7 +22,7 @@ namespace Google.Apis.Analytics.v2_4 {
     using Google.Apis.Discovery;
     
     
-    public partial class AnalyticsService : Google.Apis.Discovery.BaseClientService {
+    public partial class AnalyticsService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v2.4";
         
@@ -30,7 +30,7 @@ namespace Google.Apis.Analytics.v2_4 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AnalyticsService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public AnalyticsService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._data = new DataResource(this, Authenticator);
             this._management = new ManagementResource(this, Authenticator);
@@ -38,7 +38,7 @@ namespace Google.Apis.Analytics.v2_4 {
         }
         
         public AnalyticsService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -155,7 +155,7 @@ namespace Google.Apis.Analytics.v2_4 {
             
             private System.Nullable<long> _startIndex;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string ids, string startDate, string endDate, string metrics) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string ids, string startDate, string endDate, string metrics) : 
                     base(service) {
                 this._ids = ids;
                 this._startDate = startDate;
@@ -463,7 +463,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 
                 private System.Nullable<long> _startIndex;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service) : 
+                public ListRequest(Google.Apis.Services.IClientService service) : 
                         base(service) {
                     this.InitParameters();
                 }
@@ -634,7 +634,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 
                 private string _webPropertyId;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId, string profileId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string accountId, string webPropertyId, string profileId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
@@ -833,7 +833,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 
                 private string _webPropertyId;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string webPropertyId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string accountId, string webPropertyId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._webPropertyId = webPropertyId;
@@ -1015,7 +1015,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 
                 private System.Nullable<long> _startIndex;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service) : 
+                public ListRequest(Google.Apis.Services.IClientService service) : 
                         base(service) {
                     this.InitParameters();
                 }
@@ -1180,7 +1180,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 
                 private System.Nullable<long> _startIndex;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string accountId) : 
                         base(service) {
                     this._accountId = accountId;
                     this.InitParameters();
@@ -1325,7 +1325,7 @@ namespace Google.Apis.Analytics.v2_4 {
         
         private ManagementResource _management;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

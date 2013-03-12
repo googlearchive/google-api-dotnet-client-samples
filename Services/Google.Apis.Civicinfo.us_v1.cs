@@ -1192,7 +1192,7 @@ namespace Google.Apis.Civicinfo.us_v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class CivicinfoService : Google.Apis.Discovery.BaseClientService {
+    public partial class CivicinfoService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "us_v1";
         
@@ -1200,14 +1200,14 @@ namespace Google.Apis.Civicinfo.us_v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public CivicinfoService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public CivicinfoService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._elections = new ElectionsResource(this, Authenticator);
             this.InitParameters();
         }
         
         public CivicinfoService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -1294,7 +1294,7 @@ namespace Google.Apis.Civicinfo.us_v1 {
             
             private string _userIp;
             
-            public ElectionQueryRequest(Google.Apis.Discovery.IClientService service) : 
+            public ElectionQueryRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -1415,7 +1415,7 @@ namespace Google.Apis.Civicinfo.us_v1 {
             
             private Google.Apis.Civicinfo.us_v1.Data.VoterInfoRequest _Body;
             
-            public VoterInfoQueryRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Civicinfo.us_v1.Data.VoterInfoRequest body, string electionId) : 
+            public VoterInfoQueryRequest(Google.Apis.Services.IClientService service, Google.Apis.Civicinfo.us_v1.Data.VoterInfoRequest body, string electionId) : 
                     base(service) {
                 this.Body = body;
                 this._electionId = electionId;
@@ -1560,7 +1560,7 @@ namespace Google.Apis.Civicinfo.us_v1 {
         
         private ElectionsResource _elections;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

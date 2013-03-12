@@ -17,14 +17,16 @@ limitations under the License.
 using System;
 using System.Collections.Generic;
 using System.Threading;
+
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Discovery;
 using Google.Apis.Prediction.v1_3;
 using Google.Apis.Prediction.v1_3.Data;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 using Google.Apis.Util;
 
 namespace Prediction.Simple

@@ -238,6 +238,9 @@
         <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.Description">
             <summary>Description of this method.</summary>
         </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.EtagRequired">
+            <summary>Whether this method requires an ETag to be specified. The ETag is sent as an HTTP If-Match or If-None-Match header.</summary>
+        </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.HttpMethod">
             <summary>HTTP method used by this method.</summary>
         </member>

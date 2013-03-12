@@ -18,8 +18,8 @@ using System;
 using System.Text.RegularExpressions;
 
 using Google;
-using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
 

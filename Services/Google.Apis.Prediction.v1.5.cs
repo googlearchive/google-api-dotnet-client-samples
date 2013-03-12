@@ -1036,7 +1036,7 @@ namespace Google.Apis.Prediction.v1_5 {
     using Google.Apis.Discovery;
     
     
-    public partial class PredictionService : Google.Apis.Discovery.BaseClientService {
+    public partial class PredictionService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1.5";
         
@@ -1044,7 +1044,7 @@ namespace Google.Apis.Prediction.v1_5 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public PredictionService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public PredictionService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._hostedmodels = new HostedmodelsResource(this, Authenticator);
             this._trainedmodels = new TrainedmodelsResource(this, Authenticator);
@@ -1052,7 +1052,7 @@ namespace Google.Apis.Prediction.v1_5 {
         }
         
         public PredictionService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -1150,7 +1150,7 @@ namespace Google.Apis.Prediction.v1_5 {
             
             private Google.Apis.Prediction.v1_5.Data.Input _Body;
             
-            public PredictRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Prediction.v1_5.Data.Input body, string hostedModelName) : 
+            public PredictRequest(Google.Apis.Services.IClientService service, Google.Apis.Prediction.v1_5.Data.Input body, string hostedModelName) : 
                     base(service) {
                 this.Body = body;
                 this._hostedModelName = hostedModelName;
@@ -1346,7 +1346,7 @@ namespace Google.Apis.Prediction.v1_5 {
             
             private string _id;
             
-            public AnalyzeRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public AnalyzeRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -1473,7 +1473,7 @@ namespace Google.Apis.Prediction.v1_5 {
             
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -1600,7 +1600,7 @@ namespace Google.Apis.Prediction.v1_5 {
             
             private string _id;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -1727,7 +1727,7 @@ namespace Google.Apis.Prediction.v1_5 {
             
             private Google.Apis.Prediction.v1_5.Data.Training _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Prediction.v1_5.Data.Training body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Prediction.v1_5.Data.Training body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -1861,7 +1861,7 @@ namespace Google.Apis.Prediction.v1_5 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -2004,7 +2004,7 @@ namespace Google.Apis.Prediction.v1_5 {
             
             private Google.Apis.Prediction.v1_5.Data.Input _Body;
             
-            public PredictRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Prediction.v1_5.Data.Input body, string id) : 
+            public PredictRequest(Google.Apis.Services.IClientService service, Google.Apis.Prediction.v1_5.Data.Input body, string id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
@@ -2148,7 +2148,7 @@ namespace Google.Apis.Prediction.v1_5 {
             
             private Google.Apis.Prediction.v1_5.Data.Update _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Prediction.v1_5.Data.Update body, string id) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Prediction.v1_5.Data.Update body, string id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
@@ -2283,7 +2283,7 @@ namespace Google.Apis.Prediction.v1_5 {
         
         private TrainedmodelsResource _trainedmodels;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

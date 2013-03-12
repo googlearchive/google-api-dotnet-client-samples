@@ -1209,7 +1209,7 @@ namespace Google.Apis.Customsearch.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class CustomsearchService : Google.Apis.Discovery.BaseClientService {
+    public partial class CustomsearchService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -1217,14 +1217,14 @@ namespace Google.Apis.Customsearch.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public CustomsearchService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public CustomsearchService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._cse = new CseResource(this, Authenticator);
             this.InitParameters();
         }
         
         public CustomsearchService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -1688,7 +1688,7 @@ namespace Google.Apis.Customsearch.v1 {
             
             private System.Nullable<long> _start;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string q) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string q) : 
                     base(service) {
                 this._q = q;
                 this.InitParameters();
@@ -2246,7 +2246,7 @@ namespace Google.Apis.Customsearch.v1 {
         
         private CseResource _cse;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

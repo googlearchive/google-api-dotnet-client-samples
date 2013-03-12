@@ -15,13 +15,15 @@ limitations under the License.
 */
 
 using System;
+
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Books.v1;
 using Google.Apis.Books.v1.Data;
-using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 using Google.Apis.Util;
 
 namespace Books.ListMyLibrary

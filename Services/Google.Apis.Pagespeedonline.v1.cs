@@ -680,7 +680,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class PagespeedonlineService : Google.Apis.Discovery.BaseClientService {
+    public partial class PagespeedonlineService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -688,14 +688,14 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public PagespeedonlineService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public PagespeedonlineService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._pagespeedapi = new PagespeedapiResource(this, Authenticator);
             this.InitParameters();
         }
         
         public PagespeedonlineService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -798,7 +798,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             
             private string _url;
             
-            public RunpagespeedRequest(Google.Apis.Discovery.IClientService service, string url) : 
+            public RunpagespeedRequest(Google.Apis.Services.IClientService service, string url) : 
                     base(service) {
                 this._url = url;
                 this.InitParameters();
@@ -954,7 +954,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         private PagespeedapiResource _pagespeedapi;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

@@ -4159,7 +4159,7 @@ namespace Google.Apis.Books.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class BooksService : Google.Apis.Discovery.BaseClientService {
+    public partial class BooksService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -4167,7 +4167,7 @@ namespace Google.Apis.Books.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public BooksService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public BooksService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._bookshelves = new BookshelvesResource(this, Authenticator);
             this._layers = new LayersResource(this, Authenticator);
@@ -4178,7 +4178,7 @@ namespace Google.Apis.Books.v1 {
         }
         
         public BooksService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -4316,7 +4316,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _userId;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string userId, string shelf) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string userId, string shelf) : 
                         base(service) {
                     this._userId = userId;
                     this._shelf = shelf;
@@ -4506,7 +4506,7 @@ namespace Google.Apis.Books.v1 {
             
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string userId, string shelf) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string userId, string shelf) : 
                     base(service) {
                 this._userId = userId;
                 this._shelf = shelf;
@@ -4657,7 +4657,7 @@ namespace Google.Apis.Books.v1 {
             
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string userId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
                 this.InitParameters();
@@ -4887,7 +4887,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private System.Nullable<long> _w;
                 
-                public GetRequest(Google.Apis.Discovery.IClientService service, string volumeId, string layerId, string annotationDataId, string contentVersion) : 
+                public GetRequest(Google.Apis.Services.IClientService service, string volumeId, string layerId, string annotationDataId, string contentVersion) : 
                         base(service) {
                     this._volumeId = volumeId;
                     this._layerId = layerId;
@@ -5128,7 +5128,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private System.Nullable<long> _w;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string volumeId, string layerId, string contentVersion) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string volumeId, string layerId, string contentVersion) : 
                         base(service) {
                     this._volumeId = volumeId;
                     this._layerId = layerId;
@@ -5433,7 +5433,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _volumeId;
                 
-                public GetRequest(Google.Apis.Discovery.IClientService service, string volumeId, string layerId, string annotationId) : 
+                public GetRequest(Google.Apis.Services.IClientService service, string volumeId, string layerId, string annotationId) : 
                         base(service) {
                     this._volumeId = volumeId;
                     this._layerId = layerId;
@@ -5632,7 +5632,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _volumeId;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string volumeId, string layerId, string contentVersion) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string volumeId, string layerId, string contentVersion) : 
                         base(service) {
                     this._volumeId = volumeId;
                     this._layerId = layerId;
@@ -5930,7 +5930,7 @@ namespace Google.Apis.Books.v1 {
             
             private string _volumeId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string volumeId, string summaryId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string volumeId, string summaryId) : 
                     base(service) {
                 this._volumeId = volumeId;
                 this._summaryId = summaryId;
@@ -6099,7 +6099,7 @@ namespace Google.Apis.Books.v1 {
             
             private string _volumeId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string volumeId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string volumeId) : 
                     base(service) {
                 this._volumeId = volumeId;
                 this.InitParameters();
@@ -6318,7 +6318,7 @@ namespace Google.Apis.Books.v1 {
             
             private Google.Apis.Util.Repeatable<string> _volumeIds;
             
-            public ReleaseDownloadAccessRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Util.Repeatable<string> volumeIds, string cpksver) : 
+            public ReleaseDownloadAccessRequest(Google.Apis.Services.IClientService service, Google.Apis.Util.Repeatable<string> volumeIds, string cpksver) : 
                     base(service) {
                 this._volumeIds = volumeIds;
                 this._cpksver = cpksver;
@@ -6487,7 +6487,7 @@ namespace Google.Apis.Books.v1 {
             
             private string _volumeId;
             
-            public RequestAccessRequest(Google.Apis.Discovery.IClientService service, string source, string volumeId, string nonce, string cpksver) : 
+            public RequestAccessRequest(Google.Apis.Services.IClientService service, string source, string volumeId, string nonce, string cpksver) : 
                     base(service) {
                 this._source = source;
                 this._volumeId = volumeId;
@@ -6666,7 +6666,7 @@ namespace Google.Apis.Books.v1 {
             
             private Google.Apis.Util.Repeatable<string> _volumeIds;
             
-            public SyncVolumeLicensesRequest(Google.Apis.Discovery.IClientService service, string source, string nonce, string cpksver) : 
+            public SyncVolumeLicensesRequest(Google.Apis.Services.IClientService service, string source, string nonce, string cpksver) : 
                     base(service) {
                 this._source = source;
                 this._nonce = nonce;
@@ -6933,7 +6933,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _source;
                 
-                public DeleteRequest(Google.Apis.Discovery.IClientService service, string annotationId) : 
+                public DeleteRequest(Google.Apis.Services.IClientService service, string annotationId) : 
                         base(service) {
                     this._annotationId = annotationId;
                     this.InitParameters();
@@ -7074,7 +7074,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _source;
                 
-                public GetRequest(Google.Apis.Discovery.IClientService service, string annotationId) : 
+                public GetRequest(Google.Apis.Services.IClientService service, string annotationId) : 
                         base(service) {
                     this._annotationId = annotationId;
                     this.InitParameters();
@@ -7215,7 +7215,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private Google.Apis.Books.v1.Data.Annotation _Body;
                 
-                public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Books.v1.Data.Annotation body) : 
+                public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Books.v1.Data.Annotation body) : 
                         base(service) {
                     this.Body = body;
                     this.InitParameters();
@@ -7377,7 +7377,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _volumeId;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service) : 
+                public ListRequest(Google.Apis.Services.IClientService service) : 
                         base(service) {
                     this.InitParameters();
                 }
@@ -7618,7 +7618,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private Google.Apis.Books.v1.Data.Annotation _Body;
                 
-                public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Books.v1.Data.Annotation body, string annotationId) : 
+                public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Books.v1.Data.Annotation body, string annotationId) : 
                         base(service) {
                     this.Body = body;
                     this._annotationId = annotationId;
@@ -7880,7 +7880,7 @@ namespace Google.Apis.Books.v1 {
                     
                     private System.Nullable<long> _startIndex;
                     
-                    public ListRequest(Google.Apis.Discovery.IClientService service, string shelf) : 
+                    public ListRequest(Google.Apis.Services.IClientService service, string shelf) : 
                             base(service) {
                         this._shelf = shelf;
                         this.InitParameters();
@@ -8098,7 +8098,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _volumeId;
                 
-                public AddVolumeRequest(Google.Apis.Discovery.IClientService service, string shelf, string volumeId) : 
+                public AddVolumeRequest(Google.Apis.Services.IClientService service, string shelf, string volumeId) : 
                         base(service) {
                     this._shelf = shelf;
                     this._volumeId = volumeId;
@@ -8249,7 +8249,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _source;
                 
-                public ClearVolumesRequest(Google.Apis.Discovery.IClientService service, string shelf) : 
+                public ClearVolumesRequest(Google.Apis.Services.IClientService service, string shelf) : 
                         base(service) {
                     this._shelf = shelf;
                     this.InitParameters();
@@ -8390,7 +8390,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _source;
                 
-                public GetRequest(Google.Apis.Discovery.IClientService service, string shelf) : 
+                public GetRequest(Google.Apis.Services.IClientService service, string shelf) : 
                         base(service) {
                     this._shelf = shelf;
                     this.InitParameters();
@@ -8529,7 +8529,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _source;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service) : 
+                public ListRequest(Google.Apis.Services.IClientService service) : 
                         base(service) {
                     this.InitParameters();
                 }
@@ -8664,7 +8664,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private long _volumePosition;
                 
-                public MoveVolumeRequest(Google.Apis.Discovery.IClientService service, string shelf, string volumeId, long volumePosition) : 
+                public MoveVolumeRequest(Google.Apis.Services.IClientService service, string shelf, string volumeId, long volumePosition) : 
                         base(service) {
                     this._shelf = shelf;
                     this._volumeId = volumeId;
@@ -8827,7 +8827,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _volumeId;
                 
-                public RemoveVolumeRequest(Google.Apis.Discovery.IClientService service, string shelf, string volumeId) : 
+                public RemoveVolumeRequest(Google.Apis.Services.IClientService service, string shelf, string volumeId) : 
                         base(service) {
                     this._shelf = shelf;
                     this._volumeId = volumeId;
@@ -9037,7 +9037,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _volumeId;
                 
-                public GetRequest(Google.Apis.Discovery.IClientService service, string volumeId) : 
+                public GetRequest(Google.Apis.Services.IClientService service, string volumeId) : 
                         base(service) {
                     this._volumeId = volumeId;
                     this.InitParameters();
@@ -9200,7 +9200,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _volumeId;
                 
-                public SetPositionRequest(Google.Apis.Discovery.IClientService service, string volumeId, string timestamp, string position) : 
+                public SetPositionRequest(Google.Apis.Services.IClientService service, string volumeId, string timestamp, string position) : 
                         base(service) {
                     this._volumeId = volumeId;
                     this._timestamp = timestamp;
@@ -9484,7 +9484,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _volumeId;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string volumeId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string volumeId) : 
                         base(service) {
                     this._volumeId = volumeId;
                     this.InitParameters();
@@ -9670,7 +9670,7 @@ namespace Google.Apis.Books.v1 {
                 
                 private string _source;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service) : 
+                public ListRequest(Google.Apis.Services.IClientService service) : 
                         base(service) {
                     this.InitParameters();
                 }
@@ -9910,7 +9910,7 @@ namespace Google.Apis.Books.v1 {
             
             private string _volumeId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string volumeId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string volumeId) : 
                     base(service) {
                 this._volumeId = volumeId;
                 this.InitParameters();
@@ -10111,7 +10111,7 @@ namespace Google.Apis.Books.v1 {
             
             private System.Nullable<long> _startIndex;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string q) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string q) : 
                     base(service) {
                 this._q = q;
                 this.InitParameters();
@@ -10396,7 +10396,7 @@ namespace Google.Apis.Books.v1 {
         
         private VolumesResource _volumes;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

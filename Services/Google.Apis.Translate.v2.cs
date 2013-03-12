@@ -207,7 +207,7 @@ namespace Google.Apis.Translate.v2 {
     using Google.Apis.Discovery;
     
     
-    public partial class TranslateService : Google.Apis.Discovery.BaseClientService {
+    public partial class TranslateService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v2";
         
@@ -215,7 +215,7 @@ namespace Google.Apis.Translate.v2 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public TranslateService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public TranslateService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._detections = new DetectionsResource(this, Authenticator);
             this._languages = new LanguagesResource(this, Authenticator);
@@ -224,7 +224,7 @@ namespace Google.Apis.Translate.v2 {
         }
         
         public TranslateService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -309,7 +309,7 @@ namespace Google.Apis.Translate.v2 {
             
             private Google.Apis.Util.Repeatable<string> _q;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Util.Repeatable<string> q) : 
+            public ListRequest(Google.Apis.Services.IClientService service, Google.Apis.Util.Repeatable<string> q) : 
                     base(service) {
                 this._q = q;
                 this.InitParameters();
@@ -455,7 +455,7 @@ namespace Google.Apis.Translate.v2 {
             
             private string _target;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -626,7 +626,7 @@ namespace Google.Apis.Translate.v2 {
             
             private string _target;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Util.Repeatable<string> q, string target) : 
+            public ListRequest(Google.Apis.Services.IClientService service, Google.Apis.Util.Repeatable<string> q, string target) : 
                     base(service) {
                 this._q = q;
                 this._target = target;
@@ -796,7 +796,7 @@ namespace Google.Apis.Translate.v2 {
         
         private TranslationsResource _translations;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

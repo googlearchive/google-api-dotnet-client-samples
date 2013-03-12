@@ -188,7 +188,7 @@ namespace Google.Apis.Licensing.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class LicensingService : Google.Apis.Discovery.BaseClientService {
+    public partial class LicensingService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -196,14 +196,14 @@ namespace Google.Apis.Licensing.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public LicensingService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public LicensingService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._licenseAssignments = new LicenseAssignmentsResource(this, Authenticator);
             this.InitParameters();
         }
         
         public LicensingService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -339,7 +339,7 @@ namespace Google.Apis.Licensing.v1 {
             
             private string _userId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string productId, string skuId, string userId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string productId, string skuId, string userId) : 
                     base(service) {
                 this._productId = productId;
                 this._skuId = skuId;
@@ -490,7 +490,7 @@ namespace Google.Apis.Licensing.v1 {
             
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string productId, string skuId, string userId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string productId, string skuId, string userId) : 
                     base(service) {
                 this._productId = productId;
                 this._skuId = skuId;
@@ -641,7 +641,7 @@ namespace Google.Apis.Licensing.v1 {
             
             private Google.Apis.Licensing.v1.Data.LicenseAssignmentInsert _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Licensing.v1.Data.LicenseAssignmentInsert body, string productId, string skuId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Licensing.v1.Data.LicenseAssignmentInsert body, string productId, string skuId) : 
                     base(service) {
                 this.Body = body;
                 this._productId = productId;
@@ -799,7 +799,7 @@ namespace Google.Apis.Licensing.v1 {
             
             private string _productId;
             
-            public ListForProductRequest(Google.Apis.Discovery.IClientService service, string productId, string customerId) : 
+            public ListForProductRequest(Google.Apis.Services.IClientService service, string productId, string customerId) : 
                     base(service) {
                 this._productId = productId;
                 this._customerId = customerId;
@@ -968,7 +968,7 @@ namespace Google.Apis.Licensing.v1 {
             
             private string _skuId;
             
-            public ListForProductAndSkuRequest(Google.Apis.Discovery.IClientService service, string productId, string skuId, string customerId) : 
+            public ListForProductAndSkuRequest(Google.Apis.Services.IClientService service, string productId, string skuId, string customerId) : 
                     base(service) {
                 this._productId = productId;
                 this._skuId = skuId;
@@ -1145,7 +1145,7 @@ namespace Google.Apis.Licensing.v1 {
             
             private Google.Apis.Licensing.v1.Data.LicenseAssignment _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Licensing.v1.Data.LicenseAssignment body, string productId, string skuId, string userId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Licensing.v1.Data.LicenseAssignment body, string productId, string skuId, string userId) : 
                     base(service) {
                 this.Body = body;
                 this._productId = productId;
@@ -1313,7 +1313,7 @@ namespace Google.Apis.Licensing.v1 {
             
             private Google.Apis.Licensing.v1.Data.LicenseAssignment _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Licensing.v1.Data.LicenseAssignment body, string productId, string skuId, string userId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Licensing.v1.Data.LicenseAssignment body, string productId, string skuId, string userId) : 
                     base(service) {
                 this.Body = body;
                 this._productId = productId;
@@ -1466,7 +1466,7 @@ namespace Google.Apis.Licensing.v1 {
         
         private LicenseAssignmentsResource _licenseAssignments;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

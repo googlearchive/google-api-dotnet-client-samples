@@ -2072,7 +2072,7 @@ namespace Google.Apis.Shopping.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class ShoppingService : Google.Apis.Discovery.BaseClientService {
+    public partial class ShoppingService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -2080,14 +2080,14 @@ namespace Google.Apis.Shopping.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public ShoppingService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public ShoppingService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._products = new ProductsResource(this, Authenticator);
             this.InitParameters();
         }
         
         public ShoppingService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -2221,7 +2221,7 @@ namespace Google.Apis.Shopping.v1 {
             
             private string _thumbnails;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string source, long accountId, string productIdType, string productId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string source, long accountId, string productIdType, string productId) : 
                     base(service) {
                 this._source = source;
                 this._accountId = accountId;
@@ -2562,6 +2562,8 @@ namespace Google.Apis.Shopping.v1 {
             
             private string _currency;
             
+            private string _experimentId;
+            
             private System.Nullable<bool> _extrasEnabled;
             
             private string _extrasInfo;
@@ -2624,7 +2626,7 @@ namespace Google.Apis.Shopping.v1 {
             
             private string _useCase;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string source) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string source) : 
                     base(service) {
                 this._source = source;
                 this.InitParameters();
@@ -2858,6 +2860,17 @@ namespace Google.Apis.Shopping.v1 {
                 }
                 set {
                     this._currency = value;
+                }
+            }
+            
+            /// <summary>The Id of the experiment</summary>
+            [Google.Apis.Util.RequestParameterAttribute("experimentId", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string ExperimentId {
+                get {
+                    return this._experimentId;
+                }
+                set {
+                    this._experimentId = value;
                 }
             }
             
@@ -3240,6 +3253,7 @@ namespace Google.Apis.Shopping.v1 {
                 parameters.Add("country", Google.Apis.Util.Utilities.CreateRuntimeParameter("country", false, "query", null, null, new string[0]));
                 parameters.Add("crowdBy", Google.Apis.Util.Utilities.CreateRuntimeParameter("crowdBy", false, "query", null, null, new string[0]));
                 parameters.Add("currency", Google.Apis.Util.Utilities.CreateRuntimeParameter("currency", false, "query", null, null, new string[0]));
+                parameters.Add("experimentId", Google.Apis.Util.Utilities.CreateRuntimeParameter("experimentId", false, "query", null, null, new string[0]));
                 parameters.Add("extras.enabled", Google.Apis.Util.Utilities.CreateRuntimeParameter("extras.enabled", false, "query", null, null, new string[0]));
                 parameters.Add("extras.info", Google.Apis.Util.Utilities.CreateRuntimeParameter("extras.info", false, "query", null, null, new string[0]));
                 parameters.Add("facets.discover", Google.Apis.Util.Utilities.CreateRuntimeParameter("facets.discover", false, "query", null, null, new string[0]));
@@ -3282,7 +3296,7 @@ namespace Google.Apis.Shopping.v1 {
         
         private ProductsResource _products;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

@@ -453,7 +453,7 @@ namespace Google.Apis.Tasks.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class TasksService : Google.Apis.Discovery.BaseClientService {
+    public partial class TasksService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -461,7 +461,7 @@ namespace Google.Apis.Tasks.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public TasksService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public TasksService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._tasklists = new TasklistsResource(this, Authenticator);
             this._tasks = new TasksResource(this, Authenticator);
@@ -469,7 +469,7 @@ namespace Google.Apis.Tasks.v1 {
         }
         
         public TasksService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -593,7 +593,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _tasklist;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tasklist) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string tasklist) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this.InitParameters();
@@ -720,7 +720,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _tasklist;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string tasklist) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string tasklist) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this.InitParameters();
@@ -847,7 +847,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private Google.Apis.Tasks.v1.Data.TaskList _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.TaskList body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Tasks.v1.Data.TaskList body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -981,7 +981,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -1124,7 +1124,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private Google.Apis.Tasks.v1.Data.TaskList _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
@@ -1268,7 +1268,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private Google.Apis.Tasks.v1.Data.TaskList _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
@@ -1477,7 +1477,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _tasklist;
             
-            public ClearRequest(Google.Apis.Discovery.IClientService service, string tasklist) : 
+            public ClearRequest(Google.Apis.Services.IClientService service, string tasklist) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this.InitParameters();
@@ -1606,7 +1606,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _tasklist;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tasklist, string task) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string tasklist, string task) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this._task = task;
@@ -1745,7 +1745,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _tasklist;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string tasklist, string task) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string tasklist, string task) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this._task = task;
@@ -1888,7 +1888,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private Google.Apis.Tasks.v1.Data.Task _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.Task body, string tasklist) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Tasks.v1.Data.Task body, string tasklist) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
@@ -2074,7 +2074,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _updatedMin;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string tasklist) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string tasklist) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this.InitParameters();
@@ -2327,7 +2327,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private string _tasklist;
             
-            public MoveRequest(Google.Apis.Discovery.IClientService service, string tasklist, string task) : 
+            public MoveRequest(Google.Apis.Services.IClientService service, string tasklist, string task) : 
                     base(service) {
                 this._tasklist = tasklist;
                 this._task = task;
@@ -2492,7 +2492,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private Google.Apis.Tasks.v1.Data.Task _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
@@ -2648,7 +2648,7 @@ namespace Google.Apis.Tasks.v1 {
             
             private Google.Apis.Tasks.v1.Data.Task _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
                     base(service) {
                 this.Body = body;
                 this._tasklist = tasklist;
@@ -2793,7 +2793,7 @@ namespace Google.Apis.Tasks.v1 {
         
         private TasksResource _tasks;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

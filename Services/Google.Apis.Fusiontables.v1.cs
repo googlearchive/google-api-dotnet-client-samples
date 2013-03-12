@@ -1375,7 +1375,7 @@ namespace Google.Apis.Fusiontables.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class FusiontablesService : Google.Apis.Discovery.BaseClientService {
+    public partial class FusiontablesService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -1383,7 +1383,7 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public FusiontablesService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public FusiontablesService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._column = new ColumnResource(this, Authenticator);
             this._query = new QueryResource(this, Authenticator);
@@ -1394,7 +1394,7 @@ namespace Google.Apis.Fusiontables.v1 {
         }
         
         public FusiontablesService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -1527,7 +1527,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tableId, string columnId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string tableId, string columnId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._columnId = columnId;
@@ -1666,7 +1666,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string tableId, string columnId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string tableId, string columnId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._columnId = columnId;
@@ -1805,7 +1805,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Column _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -1951,7 +1951,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
                 this.InitParameters();
@@ -2106,7 +2106,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Column _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId, string columnId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId, string columnId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -2262,7 +2262,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Column _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId, string columnId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.Column body, string tableId, string columnId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -2444,7 +2444,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private System.Nullable<bool> _typed;
             
-            public SqlRequest(Google.Apis.Discovery.IClientService service, string sql) : 
+            public SqlRequest(Google.Apis.Services.IClientService service, string sql) : 
                     base(service) {
                 this._sql = sql;
                 this.InitParameters();
@@ -2599,7 +2599,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private System.Nullable<bool> _typed;
             
-            public SqlGetRequest(Google.Apis.Discovery.IClientService service, string sql) : 
+            public SqlGetRequest(Google.Apis.Services.IClientService service, string sql) : 
                     base(service) {
                 this._sql = sql;
                 this.InitParameters();
@@ -2806,7 +2806,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tableId, long styleId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string tableId, long styleId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._styleId = styleId;
@@ -2945,7 +2945,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string tableId, long styleId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string tableId, long styleId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._styleId = styleId;
@@ -3084,7 +3084,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.StyleSetting _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -3230,7 +3230,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
                 this.InitParameters();
@@ -3385,7 +3385,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.StyleSetting _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId, long styleId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId, long styleId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -3541,7 +3541,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.StyleSetting _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId, long styleId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.StyleSetting body, string tableId, long styleId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -3761,7 +3761,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public CopyRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
+            public CopyRequest(Google.Apis.Services.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
                 this.InitParameters();
@@ -3900,7 +3900,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
                 this.InitParameters();
@@ -4027,7 +4027,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
                 this.InitParameters();
@@ -4164,7 +4164,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ImportRowsRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
+            public ImportRowsRequest(Google.Apis.Services.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
                 this.InitParameters();
@@ -4361,7 +4361,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ImportRowsMediaUpload(Google.Apis.Discovery.IClientService service, string tableId, System.IO.Stream stream, string contentType) : 
+            public ImportRowsMediaUpload(Google.Apis.Services.IClientService service, string tableId, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/fusiontables/v1/tables/{tableId}/import", "POST", stream, contentType) {
                 this.Authenticator = service.Authenticator;
                 this._tableId = tableId;
@@ -4513,7 +4513,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Table _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Table body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.Table body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -4647,7 +4647,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -4792,7 +4792,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Table _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Table body, string tableId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.Table body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -4950,7 +4950,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Table _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Table body, string tableId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.Table body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -5160,7 +5160,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private long _templateId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string tableId, long templateId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string tableId, long templateId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._templateId = templateId;
@@ -5299,7 +5299,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private long _templateId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string tableId, long templateId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string tableId, long templateId) : 
                     base(service) {
                 this._tableId = tableId;
                 this._templateId = templateId;
@@ -5438,7 +5438,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Template _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -5584,7 +5584,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _tableId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string tableId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string tableId) : 
                     base(service) {
                 this._tableId = tableId;
                 this.InitParameters();
@@ -5739,7 +5739,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Template _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId, long templateId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId, long templateId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -5895,7 +5895,7 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private Google.Apis.Fusiontables.v1.Data.Template _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId, long templateId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Fusiontables.v1.Data.Template body, string tableId, long templateId) : 
                     base(service) {
                 this.Body = body;
                 this._tableId = tableId;
@@ -6046,7 +6046,7 @@ namespace Google.Apis.Fusiontables.v1 {
         
         private TemplateResource _template;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

@@ -22,8 +22,8 @@ using Google.Apis.Adsense.v1_2;
 using Google.Apis.Adsense.v1_2.Data;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 using Google.Apis.Util;
 
 namespace AdSense.Sample
@@ -61,7 +61,7 @@ namespace AdSense.Sample
                 ClientIdentifier = credentials.ClientId,
                 ClientSecret = credentials.ClientSecret
             };
-            OAuth2Authenticator<NativeApplicationClient> auth = 
+            OAuth2Authenticator<NativeApplicationClient> auth =
                 new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
@@ -73,7 +73,7 @@ namespace AdSense.Sample
             // Execute Publisher calls
             ManagementApiConsumer managementApiConsumer = new ManagementApiConsumer(service, MaxListPageSize);
             managementApiConsumer.RunCalls();
-            
+
             CommandLine.PressAnyKeyToExit();
         }
 

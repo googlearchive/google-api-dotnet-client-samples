@@ -364,7 +364,7 @@ namespace Google.Apis.Oauth2.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class Oauth2Service : Google.Apis.Discovery.BaseClientService {
+    public partial class Oauth2Service : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -372,14 +372,14 @@ namespace Google.Apis.Oauth2.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public Oauth2Service(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public Oauth2Service(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._userinfo = new UserinfoResource(this, Authenticator);
             this.InitParameters();
         }
         
         public Oauth2Service() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -429,6 +429,10 @@ namespace Google.Apis.Oauth2.v1 {
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         public enum Scopes {
+            
+            /// <summary>Know your name, basic info, and list of people you&apos;re connected to on Google+</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/plus.login")]
+            PlusLogin,
             
             /// <summary>Know who you are on Google</summary>
             [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/plus.me")]
@@ -525,7 +529,7 @@ namespace Google.Apis.Oauth2.v1 {
                     
                     private string _userIp;
                     
-                    public GetRequest(Google.Apis.Discovery.IClientService service) : 
+                    public GetRequest(Google.Apis.Services.IClientService service) : 
                             base(service) {
                         this.InitParameters();
                     }
@@ -642,7 +646,7 @@ namespace Google.Apis.Oauth2.v1 {
             
             private string _userIp;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service) : 
+            public GetRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -750,7 +754,7 @@ namespace Google.Apis.Oauth2.v1 {
         
         private UserinfoResource _userinfo;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }
@@ -785,7 +789,7 @@ namespace Google.Apis.Oauth2.v1 {
             
             private string _id_token;
             
-            public TokeninfoRequest(Google.Apis.Discovery.IClientService service) : 
+            public TokeninfoRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }

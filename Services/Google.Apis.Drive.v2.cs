@@ -452,7 +452,7 @@ namespace Google.Apis.Drive.v2.Data {
         }
     }
     
-    /// <summary>Information about a third-party application which the user has installed or given access to Google Drive.</summary>
+    /// <summary>The apps resource provides a list of the apps that a user has installed, with information about each app&apos;s supported MIME types, file extensions, and other details.</summary>
     public class App : Google.Apis.Requests.IDirectResponseSchema {
         
         private System.Nullable<bool> _authorized;
@@ -1033,7 +1033,7 @@ namespace Google.Apis.Drive.v2.Data {
         }
     }
     
-    /// <summary>A reference to a file&apos;s child.</summary>
+    /// <summary>A reference to a folder&apos;s child.</summary>
     public class ChildReference : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _childLink;
@@ -1698,7 +1698,7 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
         
-        /// <summary>Short term download URL for the file. This will only be populated on files with content stored in Drive.</summary>
+        /// <summary>Short lived download URL for the file. This is only populated for files with content stored in Drive.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("downloadUrl")]
         public virtual string DownloadUrl {
             get {
@@ -1764,7 +1764,7 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
         
-        /// <summary>The file extension used when downloading this file. This field is set from the title when inserting or uploading new content. This will only be populated on files with content stored in Drive.</summary>
+        /// <summary>The file extension used when downloading this file. This field is read only. To set the extension, include it in the title when creating the file. This is only populated for files with content stored in Drive.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("fileExtension")]
         public virtual string FileExtension {
             get {
@@ -1775,7 +1775,7 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
         
-        /// <summary>The size of the file in bytes. This will only be populated on files with content stored in Drive.</summary>
+        /// <summary>The size of the file in bytes. This is only populated for files with content stored in Drive.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("fileSize")]
         public virtual string FileSize {
             get {
@@ -1797,7 +1797,7 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
         
-        /// <summary>The id of the file.</summary>
+        /// <summary>The ID of the file.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
@@ -1885,7 +1885,7 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
         
-        /// <summary>An MD5 checksum for the content of this file. This will only be populated on files with content stored in Drive.</summary>
+        /// <summary>An MD5 checksum for the content of this file. This is populated only for files with content stored in Drive.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("md5Checksum")]
         public virtual string Md5Checksum {
             get {
@@ -2051,7 +2051,7 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
         
-        /// <summary>A single permission for a file.</summary>
+        /// <summary>A permission for a file.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("userPermission")]
         public virtual Permission UserPermission {
             get {
@@ -2424,7 +2424,7 @@ namespace Google.Apis.Drive.v2.Data {
             
             private string _text;
             
-            /// <summary>The text to be indexed for this file</summary>
+            /// <summary>The text to be indexed for this file.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("text")]
             public virtual string Text {
                 get {
@@ -2754,7 +2754,7 @@ namespace Google.Apis.Drive.v2.Data {
         }
     }
     
-    /// <summary>A single permission for a file.</summary>
+    /// <summary>A permission for a file.</summary>
     public class Permission : Google.Apis.Requests.IDirectResponseSchema {
         
         private System.Collections.Generic.IList<string> _additionalRoles;
@@ -2977,7 +2977,7 @@ namespace Google.Apis.Drive.v2.Data {
         }
     }
     
-    /// <summary>A single revision of a file.</summary>
+    /// <summary>A revision of a file.</summary>
     public class Revision : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _downloadUrl;
@@ -3299,7 +3299,7 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
         
-        /// <summary>Whether this user is the same as the authenticated user of which the request was made on behalf.</summary>
+        /// <summary>Whether this user is the same as the authenticated user for whom the request was made.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("isAuthenticatedUser")]
         public virtual System.Nullable<bool> IsAuthenticatedUser {
             get {
@@ -3369,7 +3369,7 @@ namespace Google.Apis.Drive.v2 {
     using Google.Apis.Discovery;
     
     
-    public partial class DriveService : Google.Apis.Discovery.BaseClientService {
+    public partial class DriveService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v2";
         
@@ -3377,7 +3377,7 @@ namespace Google.Apis.Drive.v2 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public DriveService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public DriveService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._about = new AboutResource(this, Authenticator);
             this._apps = new AppsResource(this, Authenticator);
@@ -3393,7 +3393,7 @@ namespace Google.Apis.Drive.v2 {
         }
         
         public DriveService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -3504,7 +3504,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _startChangeId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service) : 
+            public GetRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -3661,7 +3661,7 @@ namespace Google.Apis.Drive.v2 {
             return new GetRequest(service, appId);
         }
         
-        /// <summary>Lists a user&apos;s apps.</summary>
+        /// <summary>Lists a user&apos;s installed apps.</summary>
         public virtual ListRequest List() {
             return new ListRequest(service);
         }
@@ -3682,7 +3682,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _appId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string appId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string appId) : 
                     base(service) {
                 this._appId = appId;
                 this.InitParameters();
@@ -3807,7 +3807,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _userIp;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -3949,7 +3949,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _changeId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string changeId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string changeId) : 
                     base(service) {
                 this._changeId = changeId;
                 this.InitParameters();
@@ -4084,7 +4084,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _startChangeId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -4303,7 +4303,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _folderId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string folderId, string childId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string folderId, string childId) : 
                     base(service) {
                 this._folderId = folderId;
                 this._childId = childId;
@@ -4442,7 +4442,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _folderId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string folderId, string childId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string folderId, string childId) : 
                     base(service) {
                 this._folderId = folderId;
                 this._childId = childId;
@@ -4581,7 +4581,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.ChildReference _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.ChildReference body, string folderId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.ChildReference body, string folderId) : 
                     base(service) {
                 this.Body = body;
                 this._folderId = folderId;
@@ -4729,7 +4729,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _q;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string folderId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string folderId) : 
                     base(service) {
                 this._folderId = folderId;
                 this.InitParameters();
@@ -4948,7 +4948,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _fileId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string fileId, string commentId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string fileId, string commentId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._commentId = commentId;
@@ -5089,7 +5089,7 @@ namespace Google.Apis.Drive.v2 {
             
             private System.Nullable<bool> _includeDeleted;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string fileId, string commentId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string fileId, string commentId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._commentId = commentId;
@@ -5240,7 +5240,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.Comment _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.Comment body, string fileId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.Comment body, string fileId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -5390,7 +5390,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _updatedMin;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string fileId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string fileId) : 
                     base(service) {
                 this._fileId = fileId;
                 this.InitParameters();
@@ -5569,7 +5569,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.Comment _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.Comment body, string fileId, string commentId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.Comment body, string fileId, string commentId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -5725,7 +5725,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.Comment _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.Comment body, string fileId, string commentId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.Comment body, string fileId, string commentId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -5932,13 +5932,13 @@ namespace Google.Apis.Drive.v2 {
             return new UntrashRequest(service, fileId);
         }
         
-        /// <summary>Updates file metadata and/or content</summary>
+        /// <summary>Updates file metadata and/or content.</summary>
         /// <param name="fileId">Required - The ID of the file to update.</param>
         public virtual UpdateRequest Update(Google.Apis.Drive.v2.Data.File body, string fileId) {
             return new UpdateRequest(service, body, fileId);
         }
         
-        /// <summary>Updates file metadata and/or content</summary>
+        /// <summary>Updates file metadata and/or content.</summary>
         /// <param name="fileId">Required - The ID of the file to update.</param>
         public virtual UpdateMediaUpload Update(Google.Apis.Drive.v2.Data.File body, string fileId, System.IO.Stream stream, string contentType) {
             return new UpdateMediaUpload(service, body, fileId, stream, contentType);
@@ -5987,7 +5987,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.File _Body;
             
-            public CopyRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.File body, string fileId) : 
+            public CopyRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.File body, string fileId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -6201,7 +6201,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _fileId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string fileId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string fileId) : 
                     base(service) {
                 this._fileId = fileId;
                 this.InitParameters();
@@ -6332,7 +6332,7 @@ namespace Google.Apis.Drive.v2 {
             
             private System.Nullable<bool> _updateViewedDate;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string fileId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string fileId) : 
                     base(service) {
                 this._fileId = fileId;
                 this.InitParameters();
@@ -6499,7 +6499,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.File _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.File body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.File body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -6727,7 +6727,7 @@ namespace Google.Apis.Drive.v2 {
             
             private System.Nullable<bool> _useContentAsIndexableText;
             
-            public InsertMediaUpload(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.File body, System.IO.Stream stream, string contentType) : 
+            public InsertMediaUpload(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.File body, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/drive/v2/files", "POST", stream, contentType) {
                 this.Body = body;
                 this.Authenticator = service.Authenticator;
@@ -6899,7 +6899,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _q;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -7088,7 +7088,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.File _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.File body, string fileId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.File body, string fileId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -7180,7 +7180,7 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
-            /// <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
+            /// <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision is replaced. If true, a new blob is created as head revision, and previous revisions are preserved (causing increased use of the user's data storage quota).</summary>
             [Google.Apis.Util.RequestParameterAttribute("newRevision", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> NewRevision {
                 get {
@@ -7350,7 +7350,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _fileId;
             
-            public TouchRequest(Google.Apis.Discovery.IClientService service, string fileId) : 
+            public TouchRequest(Google.Apis.Services.IClientService service, string fileId) : 
                     base(service) {
                 this._fileId = fileId;
                 this.InitParameters();
@@ -7477,7 +7477,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _fileId;
             
-            public TrashRequest(Google.Apis.Discovery.IClientService service, string fileId) : 
+            public TrashRequest(Google.Apis.Services.IClientService service, string fileId) : 
                     base(service) {
                 this._fileId = fileId;
                 this.InitParameters();
@@ -7604,7 +7604,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _fileId;
             
-            public UntrashRequest(Google.Apis.Discovery.IClientService service, string fileId) : 
+            public UntrashRequest(Google.Apis.Services.IClientService service, string fileId) : 
                     base(service) {
                 this._fileId = fileId;
                 this.InitParameters();
@@ -7753,7 +7753,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.File _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.File body, string fileId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.File body, string fileId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -7845,7 +7845,7 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
-            /// <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
+            /// <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision is replaced. If true, a new blob is created as head revision, and previous revisions are preserved (causing increased use of the user's data storage quota).</summary>
             [Google.Apis.Util.RequestParameterAttribute("newRevision", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> NewRevision {
                 get {
@@ -8035,7 +8035,7 @@ namespace Google.Apis.Drive.v2 {
             
             private System.Nullable<bool> _useContentAsIndexableText;
             
-            public UpdateMediaUpload(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.File body, string fileId, System.IO.Stream stream, string contentType) : 
+            public UpdateMediaUpload(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.File body, string fileId, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/drive/v2/files/{fileId}", "PUT", stream, contentType) {
                 this.Body = body;
                 this.Authenticator = service.Authenticator;
@@ -8127,7 +8127,7 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
-            /// <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
+            /// <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision is replaced. If true, a new blob is created as head revision, and previous revisions are preserved (causing increased use of the user's data storage quota).</summary>
             [Google.Apis.Util.RequestParameterAttribute("newRevision", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> NewRevision {
                 get {
@@ -8285,7 +8285,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _parentId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string fileId, string parentId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string fileId, string parentId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._parentId = parentId;
@@ -8424,7 +8424,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _parentId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string fileId, string parentId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string fileId, string parentId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._parentId = parentId;
@@ -8563,7 +8563,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.ParentReference _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.ParentReference body, string fileId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.ParentReference body, string fileId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -8705,7 +8705,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _fileId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string fileId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string fileId) : 
                     base(service) {
                 this._fileId = fileId;
                 this.InitParameters();
@@ -8888,7 +8888,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _permissionId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string fileId, string permissionId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string fileId, string permissionId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._permissionId = permissionId;
@@ -9027,7 +9027,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _permissionId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string fileId, string permissionId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string fileId, string permissionId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._permissionId = permissionId;
@@ -9170,7 +9170,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.Permission _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.Permission body, string fileId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.Permission body, string fileId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -9336,7 +9336,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _fileId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string fileId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string fileId) : 
                     base(service) {
                 this._fileId = fileId;
                 this.InitParameters();
@@ -9467,7 +9467,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.Permission _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.Permission body, string fileId, string permissionId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.Permission body, string fileId, string permissionId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -9623,7 +9623,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.Permission _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.Permission body, string fileId, string permissionId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.Permission body, string fileId, string permissionId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -9839,7 +9839,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _replyId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string fileId, string commentId, string replyId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string fileId, string commentId, string replyId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._commentId = commentId;
@@ -9992,7 +9992,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _replyId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string fileId, string commentId, string replyId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string fileId, string commentId, string replyId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._commentId = commentId;
@@ -10155,7 +10155,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.CommentReply _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -10315,7 +10315,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string fileId, string commentId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string fileId, string commentId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._commentId = commentId;
@@ -10494,7 +10494,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.CommentReply _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId, string replyId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId, string replyId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -10662,7 +10662,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.CommentReply _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId, string replyId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId, string replyId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -10874,7 +10874,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _revisionId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string fileId, string revisionId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string fileId, string revisionId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._revisionId = revisionId;
@@ -11013,7 +11013,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _revisionId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string fileId, string revisionId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string fileId, string revisionId) : 
                     base(service) {
                 this._fileId = fileId;
                 this._revisionId = revisionId;
@@ -11150,7 +11150,7 @@ namespace Google.Apis.Drive.v2 {
             
             private string _fileId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string fileId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string fileId) : 
                     base(service) {
                 this._fileId = fileId;
                 this.InitParameters();
@@ -11281,7 +11281,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.Revision _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.Revision body, string fileId, string revisionId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.Revision body, string fileId, string revisionId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -11437,7 +11437,7 @@ namespace Google.Apis.Drive.v2 {
             
             private Google.Apis.Drive.v2.Data.Revision _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v2.Data.Revision body, string fileId, string revisionId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.Revision body, string fileId, string revisionId) : 
                     base(service) {
                 this.Body = body;
                 this._fileId = fileId;
@@ -11598,7 +11598,7 @@ namespace Google.Apis.Drive.v2 {
         
         private RevisionsResource _revisions;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

@@ -117,7 +117,7 @@ namespace Google.Apis.Webfonts.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class WebfontsService : Google.Apis.Discovery.BaseClientService {
+    public partial class WebfontsService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -125,14 +125,14 @@ namespace Google.Apis.Webfonts.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public WebfontsService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public WebfontsService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._webfonts = new WebfontsResource(this, Authenticator);
             this.InitParameters();
         }
         
         public WebfontsService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -240,7 +240,7 @@ namespace Google.Apis.Webfonts.v1 {
             
             private System.Nullable<Sort> _sort;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -365,7 +365,7 @@ namespace Google.Apis.Webfonts.v1 {
         
         private WebfontsResource _webfonts;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

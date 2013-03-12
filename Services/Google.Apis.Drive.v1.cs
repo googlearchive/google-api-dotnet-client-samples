@@ -432,7 +432,7 @@ namespace Google.Apis.Drive.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class DriveService : Google.Apis.Discovery.BaseClientService {
+    public partial class DriveService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -440,14 +440,14 @@ namespace Google.Apis.Drive.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public DriveService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public DriveService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._files = new FilesResource(this, Authenticator);
             this.InitParameters();
         }
         
         public DriveService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -584,7 +584,7 @@ namespace Google.Apis.Drive.v1 {
             
             private System.Nullable<bool> _updateViewedDate;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -737,7 +737,7 @@ namespace Google.Apis.Drive.v1 {
             
             private Google.Apis.Drive.v1.Data.File _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v1.Data.File body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v1.Data.File body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -867,7 +867,7 @@ namespace Google.Apis.Drive.v1 {
             
             private string _userIp;
             
-            public InsertMediaUpload(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v1.Data.File body, System.IO.Stream stream, string contentType) : 
+            public InsertMediaUpload(Google.Apis.Services.IClientService service, Google.Apis.Drive.v1.Data.File body, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/drive/v1/files", "POST", stream, contentType) {
                 this.Body = body;
                 this.Authenticator = service.Authenticator;
@@ -964,7 +964,7 @@ namespace Google.Apis.Drive.v1 {
             
             private Google.Apis.Drive.v1.Data.File _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v1.Data.File body, string id) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v1.Data.File body, string id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
@@ -1150,7 +1150,7 @@ namespace Google.Apis.Drive.v1 {
             
             private Google.Apis.Drive.v1.Data.File _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v1.Data.File body, string id) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v1.Data.File body, string id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
@@ -1334,7 +1334,7 @@ namespace Google.Apis.Drive.v1 {
             
             private System.Nullable<bool> _updateViewedDate;
             
-            public UpdateMediaUpload(Google.Apis.Discovery.IClientService service, Google.Apis.Drive.v1.Data.File body, string id, System.IO.Stream stream, string contentType) : 
+            public UpdateMediaUpload(Google.Apis.Services.IClientService service, Google.Apis.Drive.v1.Data.File body, string id, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/drive/v1/files/{id}", "PUT", stream, contentType) {
                 this.Body = body;
                 this.Authenticator = service.Authenticator;
@@ -1456,7 +1456,7 @@ namespace Google.Apis.Drive.v1 {
         
         private FilesResource _files;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

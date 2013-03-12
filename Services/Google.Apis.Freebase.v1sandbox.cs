@@ -452,7 +452,7 @@ namespace Google.Apis.Freebase.v1sandbox {
     using Google.Apis.Discovery;
     
     
-    public partial class FreebaseService : Google.Apis.Discovery.BaseClientService {
+    public partial class FreebaseService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1sandbox";
         
@@ -460,7 +460,7 @@ namespace Google.Apis.Freebase.v1sandbox {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public FreebaseService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public FreebaseService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._text = new TextResource(this, Authenticator);
             this._topic = new TopicResource(this, Authenticator);
@@ -468,7 +468,7 @@ namespace Google.Apis.Freebase.v1sandbox {
         }
         
         public FreebaseService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -581,7 +581,7 @@ namespace Google.Apis.Freebase.v1sandbox {
             
             private System.Nullable<long> _maxlength;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Util.Repeatable<string> id) : 
+            public GetRequest(Google.Apis.Services.IClientService service, Google.Apis.Util.Repeatable<string> id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -765,7 +765,7 @@ namespace Google.Apis.Freebase.v1sandbox {
             
             private System.Nullable<bool> _raw;
             
-            public LookupRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Util.Repeatable<string> id) : 
+            public LookupRequest(Google.Apis.Services.IClientService service, Google.Apis.Util.Repeatable<string> id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -945,7 +945,7 @@ namespace Google.Apis.Freebase.v1sandbox {
         
         private TopicResource _topic;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }
@@ -1041,7 +1041,7 @@ namespace Google.Apis.Freebase.v1sandbox {
             
             private System.Nullable<bool> _pad;
             
-            public ImageRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Util.Repeatable<string> id) : 
+            public ImageRequest(Google.Apis.Services.IClientService service, Google.Apis.Util.Repeatable<string> id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -1250,7 +1250,7 @@ namespace Google.Apis.Freebase.v1sandbox {
             
             private System.Nullable<Uniqueness_failure> _uniqueness_failure;
             
-            public MqlreadRequest(Google.Apis.Discovery.IClientService service, string query) : 
+            public MqlreadRequest(Google.Apis.Services.IClientService service, string query) : 
                     base(service) {
                 this._query = query;
                 this.InitParameters();
@@ -1495,7 +1495,7 @@ namespace Google.Apis.Freebase.v1sandbox {
             
             private string _use_permission_of;
             
-            public MqlwriteRequest(Google.Apis.Discovery.IClientService service, string query) : 
+            public MqlwriteRequest(Google.Apis.Services.IClientService service, string query) : 
                     base(service) {
                 this._query = query;
                 this.InitParameters();

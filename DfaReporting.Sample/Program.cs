@@ -22,9 +22,9 @@ using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Dfareporting.v1_1;
 using Google.Apis.Dfareporting.v1_1.Data;
-using Google.Apis.Util;
 using Google.Apis.Samples.Helper;
-using Google.Apis.Discovery;
+using Google.Apis.Services;
+using Google.Apis.Util;
 
 namespace DfaReporting.Sample
 {

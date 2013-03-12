@@ -175,6 +175,9 @@
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.ChannelId">
             <summary>The ID that YouTube uses to uniquely identify the channel associated with the activity.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.ChannelTitle">
+            <summary>Channel title for the channel responsible for this activity</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.Description">
             <summary>The description of the resource primarily associated with the activity.</summary>
         </member>
@@ -182,7 +185,7 @@
             <summary>The group ID associated with the activity. A group ID identifies user events that are associated with the same user and resource. For example, if a user rates a video and marks the same video as a favorite, the entries for those events would have the same group ID in the user&apos;s activity feed. In your user interface, you can avoid repetition by grouping events with the same groupId value.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.PublishedAt">
-            <summary>The date and time that the activity occurred. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+            <summary>The date and time that the video was uploaded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ActivitySnippet.Thumbnails">
             <summary>A map of thumbnail images associated with the resource that is primarily associated with the activity. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
@@ -198,6 +201,9 @@
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.Channel">
             <summary>A channel resource contains information about a YouTube channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Channel.BrandingSettings">
+            <summary>Branding properties of a YouTube channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Channel.ContentDetails">
             <summary>Details about the content of a channel.</summary>
@@ -222,6 +228,15 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Channel.TopicDetails">
             <summary>Freebase topic information related to the channel.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.ChannelBrandingSettings">
+            <summary>Branding properties of a YouTube channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelBrandingSettings.Channel">
+            <summary>Branding properties for the channel view.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelBrandingSettings.Watch">
+            <summary>Branding properties for the watch.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelContentDetails">
             <summary>Details about the content of a channel.</summary>
@@ -270,6 +285,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelListResponse.PrevPageToken">
             <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.ChannelSettings">
+            <summary>Branding properties for the channel view.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ChannelSnippet">
             <summary>Basic details about a channel, including title, description and thumbnails.</summary>
@@ -363,6 +381,21 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.GuideCategorySnippet.Title">
             <summary>The category&apos;s title.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ImageSettings.BackgroundImageUrl">
+            <summary>Represent a property available in different languages.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ImageSettings.LargeBrandedBannerImageImapScript">
+            <summary>Represent a property available in different languages.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ImageSettings.LargeBrandedBannerImageUrl">
+            <summary>Represent a property available in different languages.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ImageSettings.SmallBrandedBannerImageImapScript">
+            <summary>Represent a property available in different languages.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ImageSettings.SmallBrandedBannerImageUrl">
+            <summary>Represent a property available in different languages.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcast">
             <summary>A live broadcast describes live event configuration.</summary>
@@ -604,6 +637,12 @@
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamStatus.StreamStatus">
             <summary>The status of the stream.</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.LocalizedProperty">
+            <summary>Represent a property available in different languages.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.LocalizedString">
+            <summary>A localized string.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3.Data.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
@@ -799,6 +838,9 @@
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistStatus.PrivacyStatus">
             <summary>The playlist&apos;s privacy status.</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.PropertyValue">
+            <summary>A key value for the experimental branding properties.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3.Data.ResourceId">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
@@ -812,6 +854,18 @@
             <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a playlist. This property is only present if the resourceId.kind value is youtube#playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ResourceId.VideoId">
+            <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a video. This property is only present if the resourceId.kind value is youtube#video.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.ResourceId2">
+            <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ResourceId2.ChannelId">
+            <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a channel. This property is only present if the resourceId.kind value is youtube#channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ResourceId2.PlaylistId">
+            <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a playlist. This property is only present if the resourceId.kind value is youtube#playlist.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ResourceId2.VideoId">
             <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a video. This property is only present if the resourceId.kind value is youtube#video.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.SearchListResponse">
@@ -839,22 +893,19 @@
             <summary>A search result contains information about a YouTube video, channel, or playlist that matches the search parameters specified in an API request. While a search result points to a uniquely identifiable resource, like a video, it does not have its own persistent data.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResult.ETag">
-            <summary>The ETag of the search result.</summary>
+            <summary>Etag of this resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResult.Id">
             <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResult.Kind">
-            <summary>The type of the API response. For this resource, the value will be youtube#searchResult.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.Data.SearchResult.Snippet">
-            <summary>Basic details about a search result, including title, description and thumbnails of the item referenced by the search result.</summary>
-        </member>
-        <member name="T:Google.Apis.Youtube.v3.Data.SearchResultSnippet">
-            <summary>Basic details about a search result, including title, description and thumbnails of the item referenced by the search result.</summary>
+            <summary>The kind, fixed to &quot;youtube#searchResult&quot;.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResultSnippet.ChannelId">
             <summary>The value that YouTube uses to uniquely identify the channel that published the resource that the search result identifies.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.SearchResultSnippet.ChannelTitle">
+            <summary>The title of the channel that published the resource that the search result identifies.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResultSnippet.Description">
             <summary>A description of the search result.</summary>
@@ -866,7 +917,7 @@
             <summary>A map of thumbnail images associated with the search result. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.SearchResultSnippet.Title">
-            <summary>The title to display for the search result.</summary>
+            <summary>The title of the search result.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.SearchResultSnippet.ThumbnailsData">
             <summary>A map of thumbnail images associated with the search result. For each object in the map, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
@@ -982,6 +1033,9 @@
         <member name="P:Google.Apis.Youtube.v3.Data.Video.ProcessingDetails">
             <summary>Describes processing status and progress and availability of some other Video resource parts.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Video.ProjectDetails">
+            <summary>Project specific details about the content of a YouTube Video.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Video.RecordingDetails">
             <summary>Recording information associated with the video.</summary>
         </member>
@@ -1012,9 +1066,6 @@
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategory.Kind">
             <summary>The type of the API resource. For video category resources, the value will be youtube#videoCategory.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3.Data.VideoCategory.Snippet">
-            <summary>Basic details about a video category, such as its localized title.</summary>
-        </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoCategoryListResponse">
             <summary>A paginated list of video categories returned as the response to a youtube.videoCategory.list call.</summary>
         </member>
@@ -1027,20 +1078,17 @@
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategoryListResponse.Kind">
             <summary>The type of the API response. For this operation, the value will be youtube#videoCategoryListResponse.</summary>
         </member>
-        <member name="T:Google.Apis.Youtube.v3.Data.VideoCategorySnippet">
-            <summary>Basic details about a video category, such as its localized title.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoCategorySnippet.ChannelId">
             <summary>The YouTube channel that created the video category.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.Data.VideoCategorySnippet.Title">
-            <summary>The video category&apos;s title.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoContentDetails">
             <summary>Details about the content of a YouTube Video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoContentDetails.Caption">
             <summary>The value of captions indicates whether the video has captions or not.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.VideoContentDetails.CountryRestriction">
+            <summary>Rights management policy for YouTube resources.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoContentDetails.Definition">
             <summary>The value of definition indicates whether the video is available in high definition or only in standard definition.</summary>
@@ -1055,10 +1103,10 @@
             <summary>The value of is_license_content indicates whether the video is licensed content.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoContentDetails.RegionRestriction">
-            <summary>Region restriction of the video.</summary>
+            <summary>DEPRECATED Region restriction of the video.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoContentDetailsRegionRestriction">
-            <summary>Region restriction of the video.</summary>
+            <summary>DEPRECATED Region restriction of the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoContentDetailsRegionRestriction.Allowed">
             <summary>A list of region codes that identify countries where the video is viewable. If this property is present and a country is not listed in its value, then the video is blocked from appearing in that country. If this property is present and contains an empty list, the video is blocked in all countries.</summary>
@@ -1070,76 +1118,79 @@
             <summary>Describes original video file properties, including technical details about audio and video streams, but also metadata information like content length, digitization time, or geotagging information.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.AudioStreams">
-            <summary>Audio streams.</summary>
+            <summary>A list of audio streams contained in the uploaded video file. Each item in the list contains detailed metadata about an audio stream.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.BitrateBps">
-            <summary>Combined audio and video bitrate, in bits per second.</summary>
+            <summary>The uploaded video file&apos;s combined (video and audio) bitrate in bits per second.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.Container">
-            <summary>Container format used.</summary>
+            <summary>The uploaded video file&apos;s container format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.CreationTime">
-            <summary>Date and time when the video file was created, in ISO 8601 format. Currently the only ISO 8601 formats produced are: - Date only: YYYY-MM-DD - Naive time: YYYY-MM-DDTHH:MM:SS - Time with timezone: YYYY-MM-DDTHH:MM:SS+HH:MM</summary>
+             <summary>The date and time when the uploaded video file was created. The value is specified in ISO 8601 format. Currently, the following ISO 8601 formats are supported:  
+            - Date only: YYYY-MM-DD 
+            - Naive time: YYYY-MM-DDTHH:MM:SS 
+            - Time with timezone: YYYY-MM-DDTHH:MM:SS+HH:MM</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.DurationMs">
-            <summary>Video duration in milliseconds.</summary>
+            <summary>The length of the uploaded video in milliseconds.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.FileName">
-            <summary>File name.</summary>
+            <summary>The uploaded file&apos;s name. This field is present whether a video file or another type of file was uploaded.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.FileSize">
-            <summary>File size.</summary>
+            <summary>The uploaded file&apos;s size in bytes. This field is present whether a video file or another type of file was uploaded.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.FileType">
-            <summary>File type.</summary>
+            <summary>The uploaded file&apos;s type as detected by YouTube&apos;s video processing engine. Currently, YouTube only processes video files, but this field is present whether a video file or another type of file was uploaded.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.RecordingLocation">
             <summary>A geoPoint holds geo location information associated with a YouTube resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetails.VideoStreams">
-            <summary>Video streams.</summary>
+            <summary>A list of video streams contained in the uploaded video file. Each item in the list contains detailed metadata about a video stream.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoFileDetailsAudioStream">
             <summary>Information about an audio stream.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsAudioStream.BitrateBps">
-            <summary>Audio stream bitrate, in bits per second.</summary>
+            <summary>The audio stream&apos;s bitrate, in bits per second.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsAudioStream.ChannelCount">
-            <summary>Number of audio channels.</summary>
+            <summary>The number of audio channels that the stream contains.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsAudioStream.Codec">
-            <summary>Audio codec used.</summary>
+            <summary>The audio codec that the stream uses.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsAudioStream.Vendor">
-            <summary>Audio vendor identifier, typically a four-letter vendor code.</summary>
+            <summary>A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoFileDetailsVideoStream">
             <summary>Information about a video stream.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsVideoStream.AspectRatio">
-            <summary>Display aspect ratio, which might differ from width_pixels / height_pixels.</summary>
+            <summary>The video content&apos;s display aspect ratio, which specifies the aspect ratio in which the video should be displayed.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsVideoStream.BitrateBps">
-            <summary>Video stream bitrate, in bits per second.</summary>
+            <summary>The video stream&apos;s bitrate, in bits per second.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsVideoStream.Codec">
-            <summary>Video codec used.</summary>
+            <summary>The video codec that the stream uses.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsVideoStream.FrameRateFps">
-            <summary>Video frame rate, in frames per second.</summary>
+            <summary>The video stream&apos;s frame rate, in frames per second.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsVideoStream.HeightPixels">
-            <summary>Video height in pixels.</summary>
+            <summary>The encoded video content&apos;s height in pixels.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsVideoStream.Rotation">
-            <summary>Rotation that is necessary to display the video properly.</summary>
+            <summary>The amount that YouTube needs to rotate the original source content to properly display the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsVideoStream.Vendor">
-            <summary>Video vendor identifier, typically a four-letter vendor code.</summary>
+            <summary>A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoFileDetailsVideoStream.WidthPixels">
-            <summary>Video width in pixels.</summary>
+            <summary>The encoded video content&apos;s width in pixels. You can calculate the video&apos;s encoding aspect ratio as width_pixelsÂ /Â height_pixels.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoListResponse">
             <summary>A paginated list of videos returned as the response to a youtube.videos.list call.</summary>
@@ -1169,40 +1220,49 @@
             <summary>Describes processing status and progress and availability of some other Video resource parts.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetails.EditorSuggestionsAvailability">
-            <summary>Editor suggestions availability.</summary>
+            <summary>This value indicates whether video editing suggestions, which might improve video quality or the playback experience, are available for the video. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetails.FileDetailsAvailability">
-            <summary>File details availability.</summary>
+            <summary>This value indicates whether file details are available for the uploaded video. You can retrieve a video&apos;s file details by requesting the fileDetails part in your videos.list() request.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetails.ProcessingFailureReason">
-            <summary>Reason why video processing has failed.</summary>
+            <summary>The reason that YouTube failed to process the video. This property will only have a value if the processingStatus property&apos;s value is failed.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetails.ProcessingIssuesAvailability">
-            <summary>Processing issues availability.</summary>
+            <summary>This value indicates whether the video processing engine has generated suggestions that might improve YouTube&apos;s ability to process the the video, warnings that explain video processing problems, or errors that cause video processing problems. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetails.ProcessingProgress">
             <summary>Video processing progress and completion time estimate.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetails.ProcessingStatus">
-            <summary>Video processing status.</summary>
+            <summary>The video&apos;s processing status. This value indicates whether YouTube was able to process the video or if the video is still being processed.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetails.TagSuggestionsAvailability">
-            <summary>Tag suggestions availability.</summary>
+            <summary>This value indicates whether keyword (tag) suggestions are available for the video. Tags can be added to a video&apos;s metadata to make it easier for other users to find the video. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetails.ThumbnailsAvailability">
-            <summary>Thumbnails availability.</summary>
+            <summary>This value indicates whether thumbnail images have been generated for the video.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoProcessingDetailsProcessingProgress">
             <summary>Video processing progress and completion time estimate.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetailsProcessingProgress.PartsProcessed">
-            <summary>Number of parts already processed. Progress expressed in percent should be computed as: 100 * parts_processed / parts_total.</summary>
+             <summary>The number of parts of the video that YouTube has already processed. You can estimate the percentage of the video that YouTube has already processed by calculating:
+            100 * parts_processed / parts_total
+            
+            Note that since the estimated number of parts could increase without a corresponding increase in the number of parts that have already been processed, it is possible that the calculated progress could periodically decrease while YouTube processes a video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetailsProcessingProgress.PartsTotal">
-            <summary>An estimate of total number of parts to process. The number might be updated with more precise estimates as the processing progresses.</summary>
+            <summary>An estimate of the total number of parts that need to be processed for the video. The number may be updated with more precise estimates while YouTube processes the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoProcessingDetailsProcessingProgress.TimeLeftMs">
-            <summary>Estimated time till video processing is complete, in milliseconds.</summary>
+            <summary>An estimate of the amount of time, in millseconds, that YouTube needs to finish processing the video.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.VideoProjectDetails">
+            <summary>Project specific details about the content of a YouTube Video.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.VideoProjectDetails.Tags">
+            <summary>A list of project tags associated with the video during the upload.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoRecordingDetails">
             <summary>Recording information associated with the video.</summary>
@@ -1224,6 +1284,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.ChannelId">
             <summary>The ID that YouTube uses to uniquely identify the channel that the video was uploaded to.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.ChannelTitle">
+            <summary>Channel title for the channel that the video belongs to.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSnippet.Description">
             <summary>The video&apos;s description.</summary>
@@ -1286,34 +1349,37 @@
             <summary>Specifies suggestions on how to improve video content, including encoding hints, tag suggestions, and editor suggestions.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSuggestions.EditorSuggestions">
-            <summary>Editor operations that could improve video quality.</summary>
+            <summary>A list of video editing operations that might improve the video quality or playback experience of the uploaded video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSuggestions.ProcessingErrors">
-            <summary>Errors encountered during video processing.</summary>
+            <summary>A list of errors that will prevent YouTube from successfully processing the uploaded video video. These errors indicate that, regardless of the video&apos;s current processing status, eventually, that status will almost certainly be failed.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSuggestions.ProcessingHints">
-            <summary>Hints about how to improve video processing.</summary>
+            <summary>A list of suggestions that may improve YouTube&apos;s ability to process the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSuggestions.ProcessingWarnings">
-            <summary>Warnings produced by the video processing engine.</summary>
+            <summary>A list of reasons why YouTube may have difficulty transcoding the uploaded video or that might result in an erroneous transcoding. These warnings are generated before YouTube actually processes the uploaded video file. In addition, they identify issues that are unlikely to cause the video processing to fail but that might cause problems such as sync issues, video artifacts, or a missing audio track.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSuggestions.TagSuggestions">
-            <summary>Tags that could be added to aid video discovery.</summary>
+            <summary>A list of keyword tags that could be added to the video&apos;s metadata to increase the likelihood that users will locate your video when searching or browsing on YouTube.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoSuggestionsTagSuggestion">
             <summary>A single tag suggestion with it&apos;s relevance information.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSuggestionsTagSuggestion.CategoryRestricts">
-            <summary>Set of categories this tag should be restricted to. Tag applies to all categories if there are no restricts.</summary>
+            <summary>A set of video categories for which the tag is relevant. You can use this information to display appropriate tag suggestions based on the video category that the video uploader associates with the video. By default, tag suggestions are relevant for all categories if there are no restricts defined for the keyword.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoSuggestionsTagSuggestion.Tag">
-            <summary>Tag label.</summary>
+            <summary>The keyword tag suggested for the video.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoTopicDetails">
             <summary>Freebase topic information related to the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.VideoTopicDetails.TopicIds">
             <summary>A list of Freebase topic IDs associated with the video. You can retrieve information about each topic using the Freebase Topic API.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.WatchSettings">
+            <summary>Branding properties for the watch.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.YoutubeService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -1450,6 +1516,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.MySubscribers">
             <summary>Set this parameter's value to true to retrieve a list of channels that subscribed to the authenticated user's channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.PageToken">
             <summary>The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</summary>
@@ -2122,6 +2191,15 @@
             
             If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a search result, the snippet property contains other properties that identify the result&apos;s title, description, and so forth. If you set part=snippet, the API response will also contain all of those nested properties.</param>
         </member>
+        <member name="T:Google.Apis.Youtube.v3.SearchResource.ChannelType">
+            <summary>The channelType parameter lets you restrict a search to a particular type of channel.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.ChannelType.Any">
+            <summary>Return all channels.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.ChannelType.Show">
+            <summary>Only retrieve shows.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3.SearchResource.Order">
             <summary>The order parameter specifies the method that will be used to order resources in the API response.</summary>
         </member>
@@ -2218,6 +2296,18 @@
         <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoSyndicated.True">
             <summary>Only retrieve syndicated videos.</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3.SearchResource.VideoType">
+            <summary>The videoType parameter lets you restrict a search to a particular type of videos.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoType.Any">
+            <summary>Return all videos.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoType.Episode">
+            <summary>Only retrieve episodes of shows.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3.SearchResource.VideoType.Movie">
+            <summary>Only retrieve movies.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Alt">
             <summary>Data format for the response.</summary>
         </member>
@@ -2239,8 +2329,17 @@
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.ChannelId">
             <summary>The channelId parameter indicates that the API response should only contain resources created by the channel</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.ChannelType">
+            <summary>The channelType parameter lets you restrict a search to a particular type of channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.ForContentOwner">
+            <summary>The forContentOwner parameter restricts the search to only retrieve resources owned by the content owner specified by the onBehalfOfContentOwner parameter. The user must be authenticated as a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.MaxResults">
             <summary>USE_DESCRIPTION --- channels:list:maxResults</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Order">
             <summary>The order parameter specifies the method that will be used to order resources in the API response.</summary>
@@ -2297,6 +2396,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoSyndicated">
             <summary>The videoSyndicated parameter lets you to restrict a search to only videos that can be played outside youtube.com.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.VideoType">
+            <summary>The videoType parameter lets you restrict a search to a particular type of videos.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.SubscriptionsResource.Delete(System.String)">
             <summary>Deletes a subscription.</summary>
@@ -2505,6 +2607,9 @@
         <member name="P:Google.Apis.Youtube.v3.VideosResource.DeleteRequest.Id">
             <summary>The id parameter specifies the YouTube video ID for the resource that is being deleted. In a video resource, the id property specifies the video's ID.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.VideosResource.DeleteRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertRequest.Alt">
             <summary>Data format for the response.</summary>
         </member>
@@ -2575,6 +2680,9 @@
         <member name="P:Google.Apis.Youtube.v3.VideosResource.ListRequest.Id">
             <summary>The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) that are being retrieved. In a video resource, the id property specifies the video's ID.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.VideosResource.ListRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.ListRequest.Part">
              <summary>The part parameter specifies a comma-separated list of one or more video resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, player, statistics, status, and topicDetails.
             
@@ -2597,6 +2705,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.UserIp">
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.Part">
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.

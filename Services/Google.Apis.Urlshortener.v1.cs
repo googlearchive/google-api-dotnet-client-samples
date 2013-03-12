@@ -365,7 +365,7 @@ namespace Google.Apis.Urlshortener.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class UrlshortenerService : Google.Apis.Discovery.BaseClientService {
+    public partial class UrlshortenerService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -373,14 +373,14 @@ namespace Google.Apis.Urlshortener.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public UrlshortenerService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public UrlshortenerService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._url = new UrlResource(this, Authenticator);
             this.InitParameters();
         }
         
         public UrlshortenerService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -514,7 +514,7 @@ namespace Google.Apis.Urlshortener.v1 {
             
             private string _shortUrl;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string shortUrl) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string shortUrl) : 
                     base(service) {
                 this._shortUrl = shortUrl;
                 this.InitParameters();
@@ -656,7 +656,7 @@ namespace Google.Apis.Urlshortener.v1 {
             
             private Google.Apis.Urlshortener.v1.Data.Url _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Urlshortener.v1.Data.Url body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Urlshortener.v1.Data.Url body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -790,7 +790,7 @@ namespace Google.Apis.Urlshortener.v1 {
             
             private string _startToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -924,7 +924,7 @@ namespace Google.Apis.Urlshortener.v1 {
         
         private UrlResource _url;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

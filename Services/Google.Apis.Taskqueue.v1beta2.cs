@@ -385,7 +385,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
     using Google.Apis.Discovery;
     
     
-    public partial class TaskqueueService : Google.Apis.Discovery.BaseClientService {
+    public partial class TaskqueueService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1beta2";
         
@@ -393,7 +393,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public TaskqueueService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public TaskqueueService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._taskqueues = new TaskqueuesResource(this, Authenticator);
             this._tasks = new TasksResource(this, Authenticator);
@@ -401,7 +401,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
         }
         
         public TaskqueueService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -502,7 +502,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
             
             private string _taskqueue;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string taskqueue) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string taskqueue) : 
                     base(service) {
                 this._project = project;
                 this._taskqueue = taskqueue;
@@ -726,7 +726,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
             
             private string _taskqueue;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string taskqueue, string task) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string project, string taskqueue, string task) : 
                     base(service) {
                 this._project = project;
                 this._taskqueue = taskqueue;
@@ -877,7 +877,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
             
             private string _taskqueue;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string taskqueue, string task) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string taskqueue, string task) : 
                     base(service) {
                 this._project = project;
                 this._taskqueue = taskqueue;
@@ -1028,7 +1028,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
             
             private Google.Apis.Taskqueue.v1beta2.Data.Task _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Taskqueue.v1beta2.Data.Task body, string project, string taskqueue) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Taskqueue.v1beta2.Data.Task body, string project, string taskqueue) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -1190,7 +1190,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
             
             private string _taskqueue;
             
-            public LeaseRequest(Google.Apis.Discovery.IClientService service, string project, string taskqueue, long numTasks, long leaseSecs) : 
+            public LeaseRequest(Google.Apis.Services.IClientService service, string project, string taskqueue, long numTasks, long leaseSecs) : 
                     base(service) {
                 this._project = project;
                 this._taskqueue = taskqueue;
@@ -1373,7 +1373,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
             
             private string _taskqueue;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project, string taskqueue) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project, string taskqueue) : 
                     base(service) {
                 this._project = project;
                 this._taskqueue = taskqueue;
@@ -1518,7 +1518,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
             
             private Google.Apis.Taskqueue.v1beta2.Data.Task _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Taskqueue.v1beta2.Data.Task body, string project, string taskqueue, string task, long newLeaseSeconds) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Taskqueue.v1beta2.Data.Task body, string project, string taskqueue, string task, long newLeaseSeconds) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -1696,7 +1696,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
             
             private Google.Apis.Taskqueue.v1beta2.Data.Task _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Taskqueue.v1beta2.Data.Task body, string project, string taskqueue, string task, long newLeaseSeconds) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Taskqueue.v1beta2.Data.Task body, string project, string taskqueue, string task, long newLeaseSeconds) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -1859,7 +1859,7 @@ namespace Google.Apis.Taskqueue.v1beta2 {
         
         private TasksResource _tasks;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

@@ -104,7 +104,7 @@
             <summary>The file type.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.App">
-            <summary>Information about a third-party application which the user has installed or given access to Google Drive.</summary>
+            <summary>The apps resource provides a list of the apps that a user has installed, with information about each app&apos;s supported MIME types, file extensions, and other details.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.Authorized">
             <summary>Whether the app is authorized to access data on the user&apos;s Drive.</summary>
@@ -245,7 +245,7 @@
             <summary>A link back to this list.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.ChildReference">
-            <summary>A reference to a file&apos;s child.</summary>
+            <summary>A reference to a folder&apos;s child.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.ChildReference.ChildLink">
             <summary>A link to the child.</summary>
@@ -387,7 +387,7 @@
             <summary>A short description of the file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.DownloadUrl">
-            <summary>Short term download URL for the file. This will only be populated on files with content stored in Drive.</summary>
+            <summary>Short lived download URL for the file. This is only populated for files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.Editable">
             <summary>Whether the file can be edited by the current user.</summary>
@@ -405,16 +405,16 @@
             <summary>Links for exporting Google Docs to specific formats.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.FileExtension">
-            <summary>The file extension used when downloading this file. This field is set from the title when inserting or uploading new content. This will only be populated on files with content stored in Drive.</summary>
+            <summary>The file extension used when downloading this file. This field is read only. To set the extension, include it in the title when creating the file. This is only populated for files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.FileSize">
-            <summary>The size of the file in bytes. This will only be populated on files with content stored in Drive.</summary>
+            <summary>The size of the file in bytes. This is only populated for files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.IconLink">
             <summary>A link to the file&apos;s icon.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.Id">
-            <summary>The id of the file.</summary>
+            <summary>The ID of the file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadata">
             <summary>Metadata about image media. This will only be present for image types, and its contents will depend on what can be parsed from the image content.</summary>
@@ -438,7 +438,7 @@
             <summary>Last time this file was viewed by the user (formatted RFC 3339 timestamp).</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.Md5Checksum">
-            <summary>An MD5 checksum for the content of this file. This will only be populated on files with content stored in Drive.</summary>
+            <summary>An MD5 checksum for the content of this file. This is populated only for files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.MimeType">
             <summary>The MIME type of the file. This is only mutable on update when uploading new content. This field can be left blank, and the mimetype will be determined from the uploaded content&apos;s MIME type.</summary>
@@ -484,7 +484,7 @@
             <summary>The title of this file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.UserPermission">
-            <summary>A single permission for a file.</summary>
+            <summary>A permission for a file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.WebContentLink">
             <summary>A link for downloading the content of the file in a browser using cookie based authentication. In cases where the content is shared publicly, the content can be downloaded without any credentials.</summary>
@@ -580,7 +580,7 @@
             <summary>Indexable text attributes for the file (can only be written)</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.IndexableTextData.Text">
-            <summary>The text to be indexed for this file</summary>
+            <summary>The text to be indexed for this file.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.File.LabelsData">
             <summary>A group of labels for the file.</summary>
@@ -664,7 +664,7 @@
             <summary>A link back to this reference.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.Permission">
-            <summary>A single permission for a file.</summary>
+            <summary>A permission for a file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.Permission.AdditionalRoles">
             <summary>Additional roles for this user. Only commenter is currently allowed.</summary>
@@ -725,7 +725,7 @@
             <summary>A link back to this list.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.Revision">
-            <summary>A single revision of a file.</summary>
+            <summary>A revision of a file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.Revision.DownloadUrl">
             <summary>Short term download URL for the file. This will only be populated on files with content stored in Drive.</summary>
@@ -806,7 +806,7 @@
             <summary>A plain text displayable name for this user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.User.IsAuthenticatedUser">
-            <summary>Whether this user is the same as the authenticated user of which the request was made on behalf.</summary>
+            <summary>Whether this user is the same as the authenticated user for whom the request was made.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.User.Kind">
             <summary>This is always drive#user.</summary>
@@ -876,7 +876,7 @@
             <param name="appId">Required - The ID of the app.</param>
         </member>
         <member name="M:Google.Apis.Drive.v2.AppsResource.List">
-            <summary>Lists a user&apos;s apps.</summary>
+            <summary>Lists a user&apos;s installed apps.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -1326,11 +1326,11 @@
             <param name="fileId">Required - The ID of the file to untrash.</param>
         </member>
         <member name="M:Google.Apis.Drive.v2.FilesResource.Update(Google.Apis.Drive.v2.Data.File,System.String)">
-            <summary>Updates file metadata and/or content</summary>
+            <summary>Updates file metadata and/or content.</summary>
             <param name="fileId">Required - The ID of the file to update.</param>
         </member>
         <member name="M:Google.Apis.Drive.v2.FilesResource.Update(Google.Apis.Drive.v2.Data.File,System.String,System.IO.Stream,System.String)">
-            <summary>Updates file metadata and/or content</summary>
+            <summary>Updates file metadata and/or content.</summary>
             <param name="fileId">Required - The ID of the file to update.</param>
         </member>
         <member name="T:Google.Apis.Drive.v2.FilesResource.Projection">
@@ -1568,7 +1568,7 @@
             <summary>The ID of the file to update.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.NewRevision">
-            <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
+            <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision is replaced. If true, a new blob is created as head revision, and previous revisions are preserved (causing increased use of the user's data storage quota).</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Ocr">
             <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
@@ -1685,7 +1685,7 @@
             <summary>The ID of the file to update.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.NewRevision">
-            <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
+            <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision is replaced. If true, a new blob is created as head revision, and previous revisions are preserved (causing increased use of the user's data storage quota).</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Ocr">
             <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
@@ -1739,7 +1739,7 @@
             <summary>The ID of the file to update.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.NewRevision">
-            <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
+            <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision is replaced. If true, a new blob is created as head revision, and previous revisions are preserved (causing increased use of the user's data storage quota).</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Ocr">
             <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>

@@ -94,34 +94,34 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Google.Apis.Discovery.BaseClientService">
+        <member name="T:Google.Apis.Services.BaseClientService">
             <summary>
             A safe thread base class for a client service which provides common mechanizm for all services, like 
             serialization and gzip support.
             </summary>
         </member>
-        <member name="T:Google.Apis.Discovery.IClientService">
+        <member name="T:Google.Apis.Services.IClientService">
             <summary>
             Implementors of this interface are able to create arbitory requests against a service
             resource name and method, as well as to create and retrieve information related to a request.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.IClientService.CreateRequest(Google.Apis.Requests.IClientServiceRequest)">
+        <member name="M:Google.Apis.Services.IClientService.CreateRequest(Google.Apis.Requests.IClientServiceRequest)">
             <summary>
             Creates a request with the specified settings.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.IClientService.SerializeObject(System.Object)">
+        <member name="M:Google.Apis.Services.IClientService.SerializeObject(System.Object)">
             <summary>
             Serializes an object into a string representation.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.IClientService.DeserializeResponse``1(Google.Apis.Requests.IResponse)">
+        <member name="M:Google.Apis.Services.IClientService.DeserializeResponse``1(Google.Apis.Requests.IResponse)">
             <summary>
             Deserializes a response into the specified object.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.IClientService.DeserializeError(Google.Apis.Requests.IResponse)">
+        <member name="M:Google.Apis.Services.IClientService.DeserializeError(Google.Apis.Requests.IResponse)">
             <summary>
             Deserializes an error response into a <see cref="T:Google.Apis.Requests.RequestError"/> object
             </summary>
@@ -129,83 +129,84 @@
             <param name="input"><see cref="T:Google.Apis.Requests.IResponse"/> containing an error.</param>
             <returns>The <see cref="T:Google.Apis.Requests.RequestError"/> object deserialized from the stream.</returns>
         </member>
-        <member name="P:Google.Apis.Discovery.IClientService.Name">
+        <member name="P:Google.Apis.Services.IClientService.Name">
             <summary>
             The service name.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IClientService.BaseUri">
+        <member name="P:Google.Apis.Services.IClientService.BaseUri">
             <summary>
             The BaseUri of the service. All request paths should be relative to this URI.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IClientService.Authenticator">
+        <member name="P:Google.Apis.Services.IClientService.Authenticator">
             <summary>
             The Authenticator for this service.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IClientService.Features">
+        <member name="P:Google.Apis.Services.IClientService.Features">
             <summary>
             The supported features by this service.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IClientService.ServiceParameters">
+        <member name="P:Google.Apis.Services.IClientService.ServiceParameters">
             <summary>
             The common parameters information for this service.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IClientService.GZipEnabled">
+        <member name="P:Google.Apis.Services.IClientService.GZipEnabled">
             <summary>
             True if GZip is supported by this service.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IClientService.ApiKey">
+        <member name="P:Google.Apis.Services.IClientService.ApiKey">
             <summary>
             API-Key (DeveloperKey) which this service uses for all requests.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.IClientService.Serializer">
+        <member name="P:Google.Apis.Services.IClientService.Serializer">
             <summary>
             The serializer used by this service.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseClientService.#ctor(Google.Apis.Discovery.BaseClientService.Initializer)">
+        <member name="M:Google.Apis.Services.BaseClientService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
             <summary>
             Constructs a new base client with the specified initializer
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseClientService.HasFeature(Google.Apis.Discovery.Features)">
+        <member name="M:Google.Apis.Services.BaseClientService.HasFeature(Google.Apis.Discovery.Features)">
             <summary>
             Return true if this service contains the specified feature.
             </summary>
         </member>
-        <member name="T:Google.Apis.Discovery.BaseClientService.Initializer">
+        <member name="T:Google.Apis.Services.BaseClientService.Initializer">
             <summary> An initializer class for the client service.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseClientService.Initializer.#ctor">
+        <member name="M:Google.Apis.Services.BaseClientService.Initializer.#ctor">
             <summary>
             Constructs a new initializer with default values.
-            <code>GZipEnabled</code> is <code>code</code> and the <code>Serializer</code> is set to 
-            <code>NewtonsoftJsonSerializer</code>
+            <code>GZipEnabled</code> is set to <code>true</code>, the <code>Serializer</code> is set to 
+            <code>NewtonsoftJsonSerializer</code> and <code>NullAuthenticator.Instance</code> is set as the
+            initializer's <code>Authenticator</code>
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.BaseClientService.Initializer.GZipEnabled">
+        <member name="P:Google.Apis.Services.BaseClientService.Initializer.GZipEnabled">
             <summary>
             Gets and Sets the gzip enabled support.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.BaseClientService.Initializer.Serializer">
+        <member name="P:Google.Apis.Services.BaseClientService.Initializer.Serializer">
             <summary>
             Gets and Sets the Serializer.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.BaseClientService.Initializer.ApiKey">
+        <member name="P:Google.Apis.Services.BaseClientService.Initializer.ApiKey">
             <summary>
             Gets and Sets the API Key.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.BaseClientService.Initializer.Authenticator">
+        <member name="P:Google.Apis.Services.BaseClientService.Initializer.Authenticator">
             <summary>
             Gets and Sets the Authenticator.
             </summary>
@@ -417,7 +418,7 @@
             The name of the "GetBody" method
             </summary>
         </member>
-        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.#ctor(Google.Apis.Discovery.IClientService)">
+        <member name="M:Google.Apis.Requests.ClientServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
             <summary>
             Creates a new service request.
             </summary>
@@ -2176,7 +2177,7 @@
             Returns all error response handlers associated with this request.
             </summary>
         </member>
-        <member name="M:Google.Apis.Requests.Request.CreateRequest(Google.Apis.Discovery.IClientService,Google.Apis.Requests.IClientServiceRequest)">
+        <member name="M:Google.Apis.Requests.Request.CreateRequest(Google.Apis.Services.IClientService,Google.Apis.Requests.IClientServiceRequest)">
             <summary>
             Given an API method, create the appropriate Request for it.
             </summary>
@@ -2792,31 +2793,19 @@
             <returns>The OAuth authorization header</returns>
         </member>
         <member name="T:Google.Apis.Utilities">
-            <summary>String utilities
-            </summary> 
+            <summary> String utilities. </summary>
         </member>
         <member name="F:Google.Apis.Utilities.XSDTrue">
-            <summary>
-            xsd version of bool:true
-            </summary>
+            <summary> xsd version of bool:true. </summary>
         </member>
         <member name="F:Google.Apis.Utilities.XSDFalse">
-            <summary>
-            xsd version of bool:false
-            </summary>
-        </member>
-        <member name="F:Google.Apis.Utilities.DefaultUser">
-            <summary>
-            default user string
-            </summary>
+            <summary> xsd version of bool:false. </summary>
         </member>
         <member name="F:Google.Apis.Utilities.IsRunningOnMono">
-            <summary>
-            True when the Mono-runtime is used to execute this code.
-            </summary>
+            <summary> True when the Mono-runtime is used to execute this code. </summary>
         </member>
         <member name="M:Google.Apis.Utilities.EncodeString(System.String)">
-            <summary>helper to read in a string and Encode it</summary> 
+            <summary> Helper to read in a string and Encode it. </summary> 
             <param name="content">the xmlreader string</param>
             <returns>UTF8 encoded string</returns>
         </member>
@@ -2871,14 +2860,10 @@
             <returns>a string in "hh:mm" format.</returns>
         </member>
         <member name="M:Google.Apis.Utilities.GetLibraryVersion">
-            <summary>
-            Returns the version of the Core library.
-            </summary>
+            <summary> Returns the version of the Core library. </summary>
         </member>
         <member name="M:Google.Apis.Utilities.GetAssemblyTitle">
-            <summary>
-            Returns the title of the calling assembly, or null if not set/unavailable.
-            </summary>
+            <summary> Returns the title of the calling assembly, or null if not set/unavailable. </summary>
         </member>
         <member name="M:Google.Apis.Utilities.Replace(System.String,System.String,System.Char[])">
             <summary>
@@ -3436,7 +3421,7 @@
         </member>
         <member name="M:Google.Apis.Util.Utilities.CreateRuntimeParameter(System.String,System.Boolean,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
-            Creates a new <code>IParameter</code> by the specified values and add it to the parameters dictionary.
+            Creates a new <code>IParameter</code> by the specified values.
             </summary>
         </member>
         <member name="T:Google.Apis.Discovery.Schema.ISchema">
@@ -3523,6 +3508,11 @@
         <member name="M:Google.GoogleApiException.#ctor(System.String,System.String)">
             <summary>
             Creates an API Service exception
+            </summary>
+        </member>
+        <member name="P:Google.GoogleApiException.ServiceName">
+            <summary>
+            Gets the service name which related to this exception.
             </summary>
         </member>
         <member name="P:Google.GoogleApiException.HttpStatusCode">

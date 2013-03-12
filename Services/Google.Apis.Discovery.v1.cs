@@ -958,6 +958,8 @@ namespace Google.Apis.Discovery.v1.Data {
         
         private string _description;
         
+        private System.Nullable<bool> _etagRequired;
+        
         private string _httpMethod;
         
         private string _id;
@@ -990,6 +992,17 @@ namespace Google.Apis.Discovery.v1.Data {
             }
             set {
                 this._description = value;
+            }
+        }
+        
+        /// <summary>Whether this method requires an ETag to be specified. The ETag is sent as an HTTP If-Match or If-None-Match header.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("etagRequired")]
+        public virtual System.Nullable<bool> EtagRequired {
+            get {
+                return this._etagRequired;
+            }
+            set {
+                this._etagRequired = value;
             }
         }
         
@@ -1342,7 +1355,7 @@ namespace Google.Apis.Discovery.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class DiscoveryService : Google.Apis.Discovery.BaseClientService {
+    public partial class DiscoveryService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -1350,14 +1363,14 @@ namespace Google.Apis.Discovery.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public DiscoveryService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public DiscoveryService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._apis = new ApisResource(this, Authenticator);
             this.InitParameters();
         }
         
         public DiscoveryService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -1466,7 +1479,7 @@ namespace Google.Apis.Discovery.v1 {
             
             private string _version;
             
-            public GetRestRequest(Google.Apis.Discovery.IClientService service, string api, string version) : 
+            public GetRestRequest(Google.Apis.Services.IClientService service, string api, string version) : 
                     base(service) {
                 this._api = api;
                 this._version = version;
@@ -1607,7 +1620,7 @@ namespace Google.Apis.Discovery.v1 {
             
             private System.Nullable<bool> _preferred;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -1754,7 +1767,7 @@ namespace Google.Apis.Discovery.v1 {
         
         private ApisResource _apis;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

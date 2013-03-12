@@ -1477,7 +1477,7 @@ namespace Google.Apis.Blogger.v2 {
     using Google.Apis.Discovery;
     
     
-    public partial class BloggerService : Google.Apis.Discovery.BaseClientService {
+    public partial class BloggerService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v2";
         
@@ -1485,7 +1485,7 @@ namespace Google.Apis.Blogger.v2 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public BloggerService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public BloggerService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._blogs = new BlogsResource(this, Authenticator);
             this._comments = new CommentsResource(this, Authenticator);
@@ -1496,7 +1496,7 @@ namespace Google.Apis.Blogger.v2 {
         }
         
         public BloggerService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -1588,7 +1588,7 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _blogId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string blogId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string blogId) : 
                     base(service) {
                 this._blogId = blogId;
                 this.InitParameters();
@@ -1748,7 +1748,7 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _postId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string blogId, string postId, string commentId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string blogId, string postId, string commentId) : 
                     base(service) {
                 this._blogId = blogId;
                 this._postId = postId;
@@ -1905,7 +1905,7 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _startDate;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string blogId, string postId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string blogId, string postId) : 
                     base(service) {
                 this._blogId = blogId;
                 this._postId = postId;
@@ -2119,7 +2119,7 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _pageId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string blogId, string pageId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string blogId, string pageId) : 
                     base(service) {
                 this._blogId = blogId;
                 this._pageId = pageId;
@@ -2258,7 +2258,7 @@ namespace Google.Apis.Blogger.v2 {
             
             private System.Nullable<bool> _fetchBodies;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string blogId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string blogId) : 
                     base(service) {
                 this._blogId = blogId;
                 this.InitParameters();
@@ -2426,7 +2426,7 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _postId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string blogId, string postId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string blogId, string postId) : 
                     base(service) {
                 this._blogId = blogId;
                 this._postId = postId;
@@ -2571,7 +2571,7 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _startDate;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string blogId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string blogId) : 
                     base(service) {
                 this._blogId = blogId;
                 this.InitParameters();
@@ -2794,7 +2794,7 @@ namespace Google.Apis.Blogger.v2 {
                 
                 private string _userId;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string userId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string userId) : 
                         base(service) {
                     this._userId = userId;
                     this.InitParameters();
@@ -2922,7 +2922,7 @@ namespace Google.Apis.Blogger.v2 {
             
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string userId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
                 this.InitParameters();
@@ -3048,7 +3048,7 @@ namespace Google.Apis.Blogger.v2 {
         
         private UsersResource _users;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

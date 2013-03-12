@@ -826,7 +826,7 @@ namespace Google.Apis.Adsense.v1_1 {
     using Google.Apis.Discovery;
     
     
-    public partial class AdsenseService : Google.Apis.Discovery.BaseClientService {
+    public partial class AdsenseService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1.1";
         
@@ -834,7 +834,7 @@ namespace Google.Apis.Adsense.v1_1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AdsenseService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public AdsenseService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._accounts = new AccountsResource(this, Authenticator);
             this._adclients = new AdclientsResource(this, Authenticator);
@@ -846,7 +846,7 @@ namespace Google.Apis.Adsense.v1_1 {
         }
         
         public AdsenseService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -1016,7 +1016,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 
                 private string _pageToken;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string accountId) : 
                         base(service) {
                     this._accountId = accountId;
                     this.InitParameters();
@@ -1234,7 +1234,7 @@ namespace Google.Apis.Adsense.v1_1 {
                     
                     private string _pageToken;
                     
-                    public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string adClientId, string adUnitId) : 
+                    public ListRequest(Google.Apis.Services.IClientService service, string accountId, string adClientId, string adUnitId) : 
                             base(service) {
                         this._accountId = accountId;
                         this._adClientId = adClientId;
@@ -1410,7 +1410,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 
                 private string _adUnitId;
                 
-                public GetRequest(Google.Apis.Discovery.IClientService service, string accountId, string adClientId, string adUnitId) : 
+                public GetRequest(Google.Apis.Services.IClientService service, string accountId, string adClientId, string adUnitId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._adClientId = adClientId;
@@ -1565,7 +1565,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 
                 private string _pageToken;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string adClientId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string accountId, string adClientId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._adClientId = adClientId;
@@ -1807,7 +1807,7 @@ namespace Google.Apis.Adsense.v1_1 {
                     
                     private string _pageToken;
                     
-                    public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string adClientId, string customChannelId) : 
+                    public ListRequest(Google.Apis.Services.IClientService service, string accountId, string adClientId, string customChannelId) : 
                             base(service) {
                         this._accountId = accountId;
                         this._adClientId = adClientId;
@@ -1996,7 +1996,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 
                 private string _customChannelId;
                 
-                public GetRequest(Google.Apis.Discovery.IClientService service, string accountId, string adClientId, string customChannelId) : 
+                public GetRequest(Google.Apis.Services.IClientService service, string accountId, string adClientId, string customChannelId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._adClientId = adClientId;
@@ -2149,7 +2149,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 
                 private string _pageToken;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string adClientId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string accountId, string adClientId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._adClientId = adClientId;
@@ -2352,7 +2352,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 
                 private System.Nullable<long> _startIndex;
                 
-                public GenerateRequest(Google.Apis.Discovery.IClientService service, string accountId, string startDate, string endDate) : 
+                public GenerateRequest(Google.Apis.Services.IClientService service, string accountId, string startDate, string endDate) : 
                         base(service) {
                     this._accountId = accountId;
                     this._startDate = startDate;
@@ -2622,7 +2622,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 
                 private string _pageToken;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string accountId, string adClientId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string accountId, string adClientId) : 
                         base(service) {
                     this._accountId = accountId;
                     this._adClientId = adClientId;
@@ -2786,7 +2786,7 @@ namespace Google.Apis.Adsense.v1_1 {
             
             private System.Nullable<bool> _tree;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string accountId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string accountId) : 
                     base(service) {
                 this._accountId = accountId;
                 this.InitParameters();
@@ -2927,7 +2927,7 @@ namespace Google.Apis.Adsense.v1_1 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -3089,7 +3089,7 @@ namespace Google.Apis.Adsense.v1_1 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -3292,7 +3292,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 
                 private string _pageToken;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string adClientId, string adUnitId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string adClientId, string adUnitId) : 
                         base(service) {
                     this._adClientId = adClientId;
                     this._adUnitId = adUnitId;
@@ -3456,7 +3456,7 @@ namespace Google.Apis.Adsense.v1_1 {
             
             private string _adUnitId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string adClientId, string adUnitId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string adClientId, string adUnitId) : 
                     base(service) {
                 this._adClientId = adClientId;
                 this._adUnitId = adUnitId;
@@ -3599,7 +3599,7 @@ namespace Google.Apis.Adsense.v1_1 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string adClientId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string adClientId) : 
                     base(service) {
                 this._adClientId = adClientId;
                 this.InitParameters();
@@ -3826,7 +3826,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 
                 private string _pageToken;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string adClientId, string customChannelId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string adClientId, string customChannelId) : 
                         base(service) {
                     this._adClientId = adClientId;
                     this._customChannelId = customChannelId;
@@ -4002,7 +4002,7 @@ namespace Google.Apis.Adsense.v1_1 {
             
             private string _customChannelId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string adClientId, string customChannelId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string adClientId, string customChannelId) : 
                     base(service) {
                 this._adClientId = adClientId;
                 this._customChannelId = customChannelId;
@@ -4143,7 +4143,7 @@ namespace Google.Apis.Adsense.v1_1 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string adClientId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string adClientId) : 
                     base(service) {
                 this._adClientId = adClientId;
                 this.InitParameters();
@@ -4335,7 +4335,7 @@ namespace Google.Apis.Adsense.v1_1 {
             
             private System.Nullable<long> _startIndex;
             
-            public GenerateRequest(Google.Apis.Discovery.IClientService service, string startDate, string endDate) : 
+            public GenerateRequest(Google.Apis.Services.IClientService service, string startDate, string endDate) : 
                     base(service) {
                 this._startDate = startDate;
                 this._endDate = endDate;
@@ -4604,7 +4604,7 @@ namespace Google.Apis.Adsense.v1_1 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string adClientId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string adClientId) : 
                     base(service) {
                 this._adClientId = adClientId;
                 this.InitParameters();
@@ -4756,7 +4756,7 @@ namespace Google.Apis.Adsense.v1_1 {
         
         private UrlchannelsResource _urlchannels;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

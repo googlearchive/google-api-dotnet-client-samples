@@ -2611,7 +2611,7 @@ namespace Google.Apis.Gan.v1beta1 {
     using Google.Apis.Discovery;
     
     
-    public partial class GanService : Google.Apis.Discovery.BaseClientService {
+    public partial class GanService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1beta1";
         
@@ -2619,7 +2619,7 @@ namespace Google.Apis.Gan.v1beta1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public GanService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public GanService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._advertisers = new AdvertisersResource(this, Authenticator);
             this._ccOffers = new CcOffersResource(this, Authenticator);
@@ -2631,7 +2631,7 @@ namespace Google.Apis.Gan.v1beta1 {
         }
         
         public GanService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -2777,7 +2777,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private string _roleId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, Role role, string roleId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, Role role, string roleId) : 
                     base(service) {
                 this._role = role;
                 this._roleId = roleId;
@@ -2944,7 +2944,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private string _roleId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, Role role, string roleId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, Role role, string roleId) : 
                     base(service) {
                 this._role = role;
                 this._roleId = roleId;
@@ -3209,7 +3209,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private string _publisher;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string publisher) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string publisher) : 
                     base(service) {
                 this._publisher = publisher;
                 this.InitParameters();
@@ -3489,7 +3489,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private System.Nullable<Type> _type;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, Role role, string roleId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, Role role, string roleId) : 
                     base(service) {
                 this._role = role;
                 this._roleId = roleId;
@@ -3937,7 +3937,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private string _roleId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, Role role, string roleId, string linkId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, Role role, string roleId, string linkId) : 
                     base(service) {
                 this._role = role;
                 this._roleId = roleId;
@@ -4090,7 +4090,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private Google.Apis.Gan.v1beta1.Data.Link _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Gan.v1beta1.Data.Link body, Role role, string roleId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Gan.v1beta1.Data.Link body, Role role, string roleId) : 
                     base(service) {
                 this.Body = body;
                 this._role = role;
@@ -4272,7 +4272,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private string _startDateMin;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, Role role, string roleId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, Role role, string roleId) : 
                     base(service) {
                 this._role = role;
                 this._roleId = roleId;
@@ -4648,7 +4648,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private string _roleId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, Role role, string roleId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, Role role, string roleId) : 
                     base(service) {
                 this._role = role;
                 this._roleId = roleId;
@@ -4815,7 +4815,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private string _roleId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, Role role, string roleId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, Role role, string roleId) : 
                     base(service) {
                 this._role = role;
                 this._roleId = roleId;
@@ -5147,7 +5147,7 @@ namespace Google.Apis.Gan.v1beta1 {
             
             private System.Nullable<Status> _status;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, Role role, string roleId, ReportType reportType) : 
+            public GetRequest(Google.Apis.Services.IClientService service, Role role, string roleId, ReportType reportType) : 
                     base(service) {
                 this._role = role;
                 this._roleId = roleId;
@@ -5436,7 +5436,7 @@ namespace Google.Apis.Gan.v1beta1 {
         
         private ReportsResource _reports;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

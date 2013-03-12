@@ -23,11 +23,11 @@ using DotNetOpenAuth.OAuth2;
 
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Plus.v1;
 using Google.Apis.Plus.v1.Data;
+using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 using Google.Apis.Util;
-using Google.Apis.Discovery;
 
 namespace Google.Apis.Samples.PlusServiceAccount
 {

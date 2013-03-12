@@ -18,12 +18,14 @@ using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+
 using DotNetOpenAuth.OAuth2;
+
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 using Google.Apis.Tasks.v1;
 using Google.Apis.Tasks.v1.Data;
 using Google.Apis.Util;

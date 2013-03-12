@@ -25,7 +25,7 @@ using DotNetOpenAuth.Messaging;
 using DotNetOpenAuth.OAuth2;
 
 using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Discovery;
+using Google.Apis.Services;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Tasks.v1;
 using Google.Apis.Tasks.v1.Data;

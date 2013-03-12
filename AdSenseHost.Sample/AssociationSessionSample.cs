@@ -24,8 +24,8 @@ using Google.Apis.Adsensehost.v4_1;
 using Google.Apis.Adsensehost.v4_1.Data;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 using Google.Apis.Util;
 
 namespace AdSenseHost.Sample

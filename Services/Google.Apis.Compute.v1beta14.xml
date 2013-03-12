@@ -1392,6 +1392,12 @@
             <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Instance name.</param>
             <param name="network_interface">Required - Network interface name.</param>
         </member>
+        <member name="M:Google.Apis.Compute.v1beta14.InstancesResource.AttachDisk(Google.Apis.Compute.v1beta14.Data.AttachedDisk,System.String,System.String,System.String)">
+            <summary>Attaches a disk resource to an instance.</summary>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Project name.</param>
+            <param name="zone">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the zone scoping this request.</param>
+            <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Instance name.</param>
+        </member>
         <member name="M:Google.Apis.Compute.v1beta14.InstancesResource.Delete(System.String,System.String,System.String)">
             <summary>Deletes the specified instance resource.</summary>
             <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
@@ -1405,6 +1411,13 @@
             <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Instance name.</param>
             <param name="access_config">Required - Access config name.</param>
             <param name="network_interface">Required - Network interface name.</param>
+        </member>
+        <member name="M:Google.Apis.Compute.v1beta14.InstancesResource.DetachDisk(System.String,System.String,System.String,System.String)">
+            <summary>Detaches a disk from an instance.</summary>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Project name.</param>
+            <param name="zone">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the zone scoping this request.</param>
+            <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Instance name.</param>
+            <param name="deviceName">Required - Must match pattern \w[\w.-]{0,254} - Disk device name to detach.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta14.InstancesResource.Get(System.String,System.String,System.String)">
             <summary>Returns the specified instance resource.</summary>
@@ -1473,6 +1486,36 @@
         <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AddAccessConfigRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.Instance">
+            <summary>Instance name.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.Project">
+            <summary>Project name.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.Zone">
+            <summary>Name of the zone scoping this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.AttachDiskRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
         <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DeleteRequest.Alt">
             <summary>Data format for the response.</summary>
         </member>
@@ -1531,6 +1574,36 @@
             <summary>Project name.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DeleteAccessConfigRequest.Zone">
+            <summary>Name of the zone scoping this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.DeviceName">
+            <summary>Disk device name to detach.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.Instance">
+            <summary>Instance name.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.Project">
+            <summary>Project name.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.DetachDiskRequest.Zone">
             <summary>Name of the zone scoping this request.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.InstancesResource.GetRequest.Alt">

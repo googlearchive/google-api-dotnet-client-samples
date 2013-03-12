@@ -2975,7 +2975,7 @@ namespace Google.Apis.Orkut.v2 {
     using Google.Apis.Discovery;
     
     
-    public partial class OrkutService : Google.Apis.Discovery.BaseClientService {
+    public partial class OrkutService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v2";
         
@@ -2983,7 +2983,7 @@ namespace Google.Apis.Orkut.v2 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public OrkutService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public OrkutService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._acl = new AclResource(this, Authenticator);
             this._activities = new ActivitiesResource(this, Authenticator);
@@ -3005,7 +3005,7 @@ namespace Google.Apis.Orkut.v2 {
         }
         
         public OrkutService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -3104,7 +3104,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string activityId, string userId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string activityId, string userId) : 
                     base(service) {
                 this._activityId = activityId;
                 this._userId = userId;
@@ -3285,7 +3285,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _activityId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
                 this.InitParameters();
@@ -3420,7 +3420,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string userId, Collection collection) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string userId, Collection collection) : 
                     base(service) {
                 this._userId = userId;
                 this._collection = collection;
@@ -3628,7 +3628,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _activityId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
                 this.InitParameters();
@@ -3757,7 +3757,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.Visibility _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
                     base(service) {
                 this.Body = body;
                 this._activityId = activityId;
@@ -3901,7 +3901,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.Visibility _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
                     base(service) {
                 this.Body = body;
                 this._activityId = activityId;
@@ -4072,7 +4072,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string userId, string badgeId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string userId, string badgeId) : 
                     base(service) {
                 this._userId = userId;
                 this._badgeId = badgeId;
@@ -4209,7 +4209,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string userId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
                 this.InitParameters();
@@ -4387,7 +4387,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _commentId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string commentId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string commentId) : 
                     base(service) {
                 this._commentId = commentId;
                 this.InitParameters();
@@ -4516,7 +4516,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _hl;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string commentId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string commentId) : 
                     base(service) {
                 this._commentId = commentId;
                 this.InitParameters();
@@ -4657,7 +4657,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.Comment _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.Comment body, string activityId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Orkut.v2.Data.Comment body, string activityId) : 
                     base(service) {
                 this.Body = body;
                 this._activityId = activityId;
@@ -4807,7 +4807,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
                 this.InitParameters();
@@ -5025,7 +5025,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _hl;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
                 this.InitParameters();
@@ -5170,7 +5170,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string userId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
                 this.InitParameters();
@@ -5365,7 +5365,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
@@ -5504,7 +5504,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
@@ -5684,7 +5684,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
@@ -5825,7 +5825,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
@@ -5976,7 +5976,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, long communityId, string userId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, long communityId, string userId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._userId = userId;
@@ -6121,7 +6121,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
                 this.InitParameters();
@@ -6336,7 +6336,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _topicId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, long communityId, string topicId, string messageId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, long communityId, string topicId, string messageId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._topicId = topicId;
@@ -6487,7 +6487,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.CommunityMessage _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.CommunityMessage body, long communityId, string topicId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Orkut.v2.Data.CommunityMessage body, long communityId, string topicId) : 
                     base(service) {
                 this.Body = body;
                 this._communityId = communityId;
@@ -6647,7 +6647,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _topicId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId, string topicId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, long communityId, string topicId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._topicId = topicId;
@@ -6852,7 +6852,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.CommunityPollComment _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.CommunityPollComment body, long communityId, string pollId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Orkut.v2.Data.CommunityPollComment body, long communityId, string pollId) : 
                     base(service) {
                 this.Body = body;
                 this._communityId = communityId;
@@ -7012,7 +7012,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pollId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId, string pollId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, long communityId, string pollId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._pollId = pollId;
@@ -7210,7 +7210,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.CommunityPollVote _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.CommunityPollVote body, long communityId, string pollId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Orkut.v2.Data.CommunityPollVote body, long communityId, string pollId) : 
                     base(service) {
                 this.Body = body;
                 this._communityId = communityId;
@@ -7393,7 +7393,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pollId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, long communityId, string pollId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, long communityId, string pollId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._pollId = pollId;
@@ -7548,7 +7548,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
                 this.InitParameters();
@@ -7733,7 +7733,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _hl;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
                 this.InitParameters();
@@ -7914,7 +7914,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _topicId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, long communityId, string topicId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, long communityId, string topicId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._topicId = topicId;
@@ -8055,7 +8055,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _topicId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, long communityId, string topicId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, long communityId, string topicId) : 
                     base(service) {
                 this._communityId = communityId;
                 this._topicId = topicId;
@@ -8208,7 +8208,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.CommunityTopic _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.CommunityTopic body, long communityId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Orkut.v2.Data.CommunityTopic body, long communityId) : 
                     base(service) {
                 this.Body = body;
                 this._communityId = communityId;
@@ -8368,7 +8368,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, long communityId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, long communityId) : 
                     base(service) {
                 this._communityId = communityId;
                 this.InitParameters();
@@ -8551,7 +8551,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string userId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
                 this.InitParameters();
@@ -8697,7 +8697,7 @@ namespace Google.Apis.Orkut.v2 {
             
             private Google.Apis.Orkut.v2.Data.Activity _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Orkut.v2.Data.Activity body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Orkut.v2.Data.Activity body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -8850,7 +8850,7 @@ namespace Google.Apis.Orkut.v2 {
         
         private ScrapsResource _scraps;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

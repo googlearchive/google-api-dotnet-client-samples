@@ -648,7 +648,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class AdexchangebuyerService : Google.Apis.Discovery.BaseClientService {
+    public partial class AdexchangebuyerService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -656,7 +656,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AdexchangebuyerService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public AdexchangebuyerService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._accounts = new AccountsResource(this, Authenticator);
             this._creatives = new CreativesResource(this, Authenticator);
@@ -665,7 +665,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
         }
         
         public AdexchangebuyerService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -774,7 +774,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private long _id;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, long id) : 
+            public GetRequest(Google.Apis.Services.IClientService service, long id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -899,7 +899,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private string _userIp;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -1018,7 +1018,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private Google.Apis.Adexchangebuyer.v1.Data.Account _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Adexchangebuyer.v1.Data.Account body, long id) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Adexchangebuyer.v1.Data.Account body, long id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
@@ -1162,7 +1162,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private Google.Apis.Adexchangebuyer.v1.Data.Account _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Adexchangebuyer.v1.Data.Account body, long id) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Adexchangebuyer.v1.Data.Account body, long id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
@@ -1340,7 +1340,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private string _buyerCreativeId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, long accountId, string buyerCreativeId, string adgroupId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, long accountId, string buyerCreativeId, string adgroupId) : 
                     base(service) {
                 this._accountId = accountId;
                 this._buyerCreativeId = buyerCreativeId;
@@ -1487,7 +1487,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private Google.Apis.Adexchangebuyer.v1.Data.Creative _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Adexchangebuyer.v1.Data.Creative body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Adexchangebuyer.v1.Data.Creative body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -1621,7 +1621,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -1787,7 +1787,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private string _id;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -1912,7 +1912,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             
             private string _userIp;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -2024,7 +2024,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
         
         private DirectDealsResource _directDeals;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

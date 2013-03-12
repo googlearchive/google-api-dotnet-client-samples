@@ -18,8 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-using Google.Apis.Discovery;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 using Google.Apis.Translate.v2;
 using Google.Apis.Translate.v2.Data;
 using TranslationsResource = Google.Apis.Translate.v2.Data.TranslationsResource;

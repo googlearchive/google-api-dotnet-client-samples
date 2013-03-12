@@ -2034,7 +2034,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
     using Google.Apis.Discovery;
     
     
-    public partial class DfareportingService : Google.Apis.Discovery.BaseClientService {
+    public partial class DfareportingService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1.1";
         
@@ -2042,7 +2042,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public DfareportingService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public DfareportingService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._dimensionValues = new DimensionValuesResource(this, Authenticator);
             this._files = new FilesResource(this, Authenticator);
@@ -2052,7 +2052,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
         }
         
         public DfareportingService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -2150,7 +2150,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private Google.Apis.Dfareporting.v1_1.Data.DimensionValueRequest _Body;
             
-            public QueryRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Dfareporting.v1_1.Data.DimensionValueRequest body, string profileId) : 
+            public QueryRequest(Google.Apis.Services.IClientService service, Google.Apis.Dfareporting.v1_1.Data.DimensionValueRequest body, string profileId) : 
                     base(service) {
                 this.Body = body;
                 this._profileId = profileId;
@@ -2370,7 +2370,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private System.Nullable<SortOrder> _sortOrder;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string profileId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string profileId) : 
                     base(service) {
                 this._profileId = profileId;
                 this.InitParameters();
@@ -2677,7 +2677,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
                 
                 private string _reportId;
                 
-                public GetRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId, string fileId) : 
+                public GetRequest(Google.Apis.Services.IClientService service, string profileId, string reportId, string fileId) : 
                         base(service) {
                     this._profileId = profileId;
                     this._reportId = reportId;
@@ -2834,7 +2834,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
                 
                 private System.Nullable<SortOrder> _sortOrder;
                 
-                public ListRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId) : 
+                public ListRequest(Google.Apis.Services.IClientService service, string profileId, string reportId) : 
                         base(service) {
                     this._profileId = profileId;
                     this._reportId = reportId;
@@ -3056,7 +3056,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private string _reportId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string profileId, string reportId) : 
                     base(service) {
                 this._profileId = profileId;
                 this._reportId = reportId;
@@ -3195,7 +3195,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private string _reportId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string profileId, string reportId) : 
                     base(service) {
                 this._profileId = profileId;
                 this._reportId = reportId;
@@ -3334,7 +3334,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private Google.Apis.Dfareporting.v1_1.Data.Report _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Dfareporting.v1_1.Data.Report body, string profileId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Dfareporting.v1_1.Data.Report body, string profileId) : 
                     base(service) {
                 this.Body = body;
                 this._profileId = profileId;
@@ -3484,7 +3484,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private System.Nullable<SortOrder> _sortOrder;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string profileId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string profileId) : 
                     base(service) {
                 this._profileId = profileId;
                 this.InitParameters();
@@ -3668,7 +3668,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private Google.Apis.Dfareporting.v1_1.Data.Report _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Dfareporting.v1_1.Data.Report body, string profileId, string reportId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Dfareporting.v1_1.Data.Report body, string profileId, string reportId) : 
                     base(service) {
                 this.Body = body;
                 this._profileId = profileId;
@@ -3824,7 +3824,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private System.Nullable<bool> _synchronous;
             
-            public RunRequest(Google.Apis.Discovery.IClientService service, string profileId, string reportId) : 
+            public RunRequest(Google.Apis.Services.IClientService service, string profileId, string reportId) : 
                     base(service) {
                 this._profileId = profileId;
                 this._reportId = reportId;
@@ -3977,7 +3977,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private Google.Apis.Dfareporting.v1_1.Data.Report _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Dfareporting.v1_1.Data.Report body, string profileId, string reportId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Dfareporting.v1_1.Data.Report body, string profileId, string reportId) : 
                     base(service) {
                 this.Body = body;
                 this._profileId = profileId;
@@ -4154,7 +4154,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private string _profileId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string profileId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string profileId) : 
                     base(service) {
                 this._profileId = profileId;
                 this.InitParameters();
@@ -4279,7 +4279,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
             
             private string _userIp;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -4393,7 +4393,7 @@ namespace Google.Apis.Dfareporting.v1_1 {
         
         private UserProfilesResource _userProfiles;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

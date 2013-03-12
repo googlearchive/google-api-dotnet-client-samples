@@ -349,6 +349,8 @@ namespace Google.Apis.Calendar.v3.Data {
         
         private string _location;
         
+        private System.Nullable<bool> _primary;
+        
         private System.Nullable<bool> _selected;
         
         private string _summary;
@@ -479,6 +481,17 @@ namespace Google.Apis.Calendar.v3.Data {
             }
             set {
                 this._location = value;
+            }
+        }
+        
+        /// <summary>Whether the calendar is the primary calendar of the authenticated user. Read-only. Optional. The default is False.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("primary")]
+        public virtual System.Nullable<bool> Primary {
+            get {
+                return this._primary;
+            }
+            set {
+                this._primary = value;
             }
         }
         
@@ -2146,7 +2159,7 @@ namespace Google.Apis.Calendar.v3 {
     using Google.Apis.Discovery;
     
     
-    public partial class CalendarService : Google.Apis.Discovery.BaseClientService {
+    public partial class CalendarService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v3";
         
@@ -2154,7 +2167,7 @@ namespace Google.Apis.Calendar.v3 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public CalendarService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public CalendarService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._acl = new AclResource(this, Authenticator);
             this._calendarList = new CalendarListResource(this, Authenticator);
@@ -2167,7 +2180,7 @@ namespace Google.Apis.Calendar.v3 {
         }
         
         public CalendarService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -2299,7 +2312,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _ruleId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string calendarId, string ruleId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string calendarId, string ruleId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this._ruleId = ruleId;
@@ -2438,7 +2451,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _ruleId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string calendarId, string ruleId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string calendarId, string ruleId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this._ruleId = ruleId;
@@ -2577,7 +2590,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.AclRule _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.AclRule body, string calendarId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.AclRule body, string calendarId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -2719,7 +2732,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _calendarId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string calendarId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string calendarId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this.InitParameters();
@@ -2850,7 +2863,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.AclRule _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.AclRule body, string calendarId, string ruleId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.AclRule body, string calendarId, string ruleId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -3006,7 +3019,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.AclRule _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.AclRule body, string calendarId, string ruleId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.AclRule body, string calendarId, string ruleId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -3227,7 +3240,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _calendarId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string calendarId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string calendarId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this.InitParameters();
@@ -3354,7 +3367,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _calendarId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string calendarId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string calendarId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this.InitParameters();
@@ -3483,7 +3496,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.CalendarListEntry _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.CalendarListEntry body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.CalendarListEntry body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -3633,7 +3646,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _showHidden;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -3806,7 +3819,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.CalendarListEntry _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.CalendarListEntry body, string calendarId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.CalendarListEntry body, string calendarId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -3964,7 +3977,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.CalendarListEntry _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.CalendarListEntry body, string calendarId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.CalendarListEntry body, string calendarId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -4167,7 +4180,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _calendarId;
             
-            public ClearRequest(Google.Apis.Discovery.IClientService service, string calendarId) : 
+            public ClearRequest(Google.Apis.Services.IClientService service, string calendarId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this.InitParameters();
@@ -4294,7 +4307,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _calendarId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string calendarId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string calendarId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this.InitParameters();
@@ -4421,7 +4434,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _calendarId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string calendarId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string calendarId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this.InitParameters();
@@ -4548,7 +4561,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.Calendar _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.Calendar body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.Calendar body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -4682,7 +4695,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.Calendar _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.Calendar body, string calendarId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.Calendar body, string calendarId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -4826,7 +4839,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.Calendar _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.Calendar body, string calendarId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.Calendar body, string calendarId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -4985,7 +4998,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _userIp;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service) : 
+            public GetRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -5201,7 +5214,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _sendNotifications;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string calendarId, string eventId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string calendarId, string eventId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this._eventId = eventId;
@@ -5358,7 +5371,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _timeZone;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string calendarId, string eventId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string calendarId, string eventId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this._eventId = eventId;
@@ -5533,7 +5546,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.Event _Body;
             
-            public ImportRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.Event body, string calendarId) : 
+            public ImportRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.Event body, string calendarId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -5681,7 +5694,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.Event _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.Event body, string calendarId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.Event body, string calendarId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -5867,7 +5880,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _timeZone;
             
-            public InstancesRequest(Google.Apis.Discovery.IClientService service, string calendarId, string eventId) : 
+            public InstancesRequest(Google.Apis.Services.IClientService service, string calendarId, string eventId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this._eventId = eventId;
@@ -6011,7 +6024,7 @@ namespace Google.Apis.Calendar.v3 {
                 }
             }
             
-            /// <summary>Whether to include deleted events (with 'eventStatus' equals 'cancelled') in the result. Optional. The default is False.</summary>
+            /// <summary>Whether to include deleted events (with 'status' equals 'cancelled') in the result. Cancelled instances of recurring events will still be included if 'singleEvents' is False. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showDeleted", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowDeleted {
                 get {
@@ -6140,7 +6153,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _updatedMin;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string calendarId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string calendarId) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this.InitParameters();
@@ -6297,7 +6310,7 @@ namespace Google.Apis.Calendar.v3 {
                 }
             }
             
-            /// <summary>Whether to include deleted single events (with 'status' equals 'cancelled') in the result. Cancelled instances of recurring events will still be included if 'singleEvents' is False. Optional. The default is False.</summary>
+            /// <summary>Whether to include deleted events (with 'status' equals 'cancelled') in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if 'showDeleted' and 'singleEvents' are both False. If 'showDeleted' and 'singleEvents' are both True only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showDeleted", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowDeleted {
                 get {
@@ -6443,7 +6456,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _sendNotifications;
             
-            public MoveRequest(Google.Apis.Discovery.IClientService service, string calendarId, string eventId, string destination) : 
+            public MoveRequest(Google.Apis.Services.IClientService service, string calendarId, string eventId, string destination) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this._eventId = eventId;
@@ -6612,7 +6625,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.Event _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.Event body, string calendarId, string eventId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.Event body, string calendarId, string eventId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -6804,7 +6817,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _text;
             
-            public QuickAddRequest(Google.Apis.Discovery.IClientService service, string calendarId, string text) : 
+            public QuickAddRequest(Google.Apis.Services.IClientService service, string calendarId, string text) : 
                     base(service) {
                 this._calendarId = calendarId;
                 this._text = text;
@@ -6963,7 +6976,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.Event _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.Event body, string calendarId, string eventId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.Event body, string calendarId, string eventId) : 
                     base(service) {
                 this.Body = body;
                 this._calendarId = calendarId;
@@ -7170,7 +7183,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private Google.Apis.Calendar.v3.Data.FreeBusyRequest _Body;
             
-            public QueryRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Calendar.v3.Data.FreeBusyRequest body) : 
+            public QueryRequest(Google.Apis.Services.IClientService service, Google.Apis.Calendar.v3.Data.FreeBusyRequest body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -7327,7 +7340,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _setting;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string setting) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string setting) : 
                     base(service) {
                 this._setting = setting;
                 this.InitParameters();
@@ -7452,7 +7465,7 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _userIp;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -7572,7 +7585,7 @@ namespace Google.Apis.Calendar.v3 {
         
         private SettingsResource _settings;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

@@ -2357,7 +2357,7 @@ namespace Google.Apis.Bigquery.v2 {
     using Google.Apis.Discovery;
     
     
-    public partial class BigqueryService : Google.Apis.Discovery.BaseClientService {
+    public partial class BigqueryService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v2";
         
@@ -2365,7 +2365,7 @@ namespace Google.Apis.Bigquery.v2 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public BigqueryService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public BigqueryService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._datasets = new DatasetsResource(this, Authenticator);
             this._jobs = new JobsResource(this, Authenticator);
@@ -2376,7 +2376,7 @@ namespace Google.Apis.Bigquery.v2 {
         }
         
         public BigqueryService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -2519,7 +2519,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _projectId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string projectId, string datasetId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string projectId, string datasetId) : 
                     base(service) {
                 this._projectId = projectId;
                 this._datasetId = datasetId;
@@ -2670,7 +2670,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _projectId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string projectId, string datasetId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string projectId, string datasetId) : 
                     base(service) {
                 this._projectId = projectId;
                 this._datasetId = datasetId;
@@ -2809,7 +2809,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private Google.Apis.Bigquery.v2.Data.Dataset _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Bigquery.v2.Data.Dataset body, string projectId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Bigquery.v2.Data.Dataset body, string projectId) : 
                     base(service) {
                 this.Body = body;
                 this._projectId = projectId;
@@ -2955,7 +2955,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _projectId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string projectId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string projectId) : 
                     base(service) {
                 this._projectId = projectId;
                 this.InitParameters();
@@ -3110,7 +3110,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private Google.Apis.Bigquery.v2.Data.Dataset _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Bigquery.v2.Data.Dataset body, string projectId, string datasetId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Bigquery.v2.Data.Dataset body, string projectId, string datasetId) : 
                     base(service) {
                 this.Body = body;
                 this._projectId = projectId;
@@ -3266,7 +3266,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private Google.Apis.Bigquery.v2.Data.Dataset _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Bigquery.v2.Data.Dataset body, string projectId, string datasetId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Bigquery.v2.Data.Dataset body, string projectId, string datasetId) : 
                     base(service) {
                 this.Body = body;
                 this._projectId = projectId;
@@ -3502,7 +3502,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _projectId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string projectId, string jobId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string projectId, string jobId) : 
                     base(service) {
                 this._projectId = projectId;
                 this._jobId = jobId;
@@ -3647,7 +3647,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private System.Nullable<long> _timeoutMs;
             
-            public GetQueryResultsRequest(Google.Apis.Discovery.IClientService service, string projectId, string jobId) : 
+            public GetQueryResultsRequest(Google.Apis.Services.IClientService service, string projectId, string jobId) : 
                     base(service) {
                 this._projectId = projectId;
                 this._jobId = jobId;
@@ -3822,7 +3822,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private Google.Apis.Bigquery.v2.Data.Job _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Bigquery.v2.Data.Job body, string projectId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Bigquery.v2.Data.Job body, string projectId) : 
                     base(service) {
                 this.Body = body;
                 this._projectId = projectId;
@@ -3964,7 +3964,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _projectId;
             
-            public InsertMediaUpload(Google.Apis.Discovery.IClientService service, Google.Apis.Bigquery.v2.Data.Job body, string projectId, System.IO.Stream stream, string contentType) : 
+            public InsertMediaUpload(Google.Apis.Services.IClientService service, Google.Apis.Bigquery.v2.Data.Job body, string projectId, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/bigquery/v2/projects/{projectId}/jobs", "POST", stream, contentType) {
                 this.Body = body;
                 this.Authenticator = service.Authenticator;
@@ -4072,7 +4072,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private System.Nullable<StateFilter> _stateFilter;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string projectId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string projectId) : 
                     base(service) {
                 this._projectId = projectId;
                 this.InitParameters();
@@ -4266,7 +4266,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private Google.Apis.Bigquery.v2.Data.QueryRequest _Body;
             
-            public QueryRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Bigquery.v2.Data.QueryRequest body, string projectId) : 
+            public QueryRequest(Google.Apis.Services.IClientService service, Google.Apis.Bigquery.v2.Data.QueryRequest body, string projectId) : 
                     base(service) {
                 this.Body = body;
                 this._projectId = projectId;
@@ -4429,7 +4429,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -4602,7 +4602,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _tableId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string projectId, string datasetId, string tableId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string projectId, string datasetId, string tableId) : 
                     base(service) {
                 this._projectId = projectId;
                 this._datasetId = datasetId;
@@ -4849,7 +4849,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _tableId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string projectId, string datasetId, string tableId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string projectId, string datasetId, string tableId) : 
                     base(service) {
                 this._projectId = projectId;
                 this._datasetId = datasetId;
@@ -5000,7 +5000,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _tableId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string projectId, string datasetId, string tableId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string projectId, string datasetId, string tableId) : 
                     base(service) {
                 this._projectId = projectId;
                 this._datasetId = datasetId;
@@ -5151,7 +5151,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private Google.Apis.Bigquery.v2.Data.Table _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Bigquery.v2.Data.Table body, string projectId, string datasetId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Bigquery.v2.Data.Table body, string projectId, string datasetId) : 
                     base(service) {
                 this.Body = body;
                 this._projectId = projectId;
@@ -5309,7 +5309,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private string _projectId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string projectId, string datasetId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string projectId, string datasetId) : 
                     base(service) {
                 this._projectId = projectId;
                 this._datasetId = datasetId;
@@ -5476,7 +5476,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private Google.Apis.Bigquery.v2.Data.Table _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Bigquery.v2.Data.Table body, string projectId, string datasetId, string tableId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Bigquery.v2.Data.Table body, string projectId, string datasetId, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._projectId = projectId;
@@ -5644,7 +5644,7 @@ namespace Google.Apis.Bigquery.v2 {
             
             private Google.Apis.Bigquery.v2.Data.Table _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Bigquery.v2.Data.Table body, string projectId, string datasetId, string tableId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Bigquery.v2.Data.Table body, string projectId, string datasetId, string tableId) : 
                     base(service) {
                 this.Body = body;
                 this._projectId = projectId;
@@ -5805,7 +5805,7 @@ namespace Google.Apis.Bigquery.v2 {
         
         private TablesResource _tables;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

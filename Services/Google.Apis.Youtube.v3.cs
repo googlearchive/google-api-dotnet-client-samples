@@ -608,6 +608,8 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _channelId;
         
+        private string _channelTitle;
+        
         private string _description;
         
         private string _groupId;
@@ -628,6 +630,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._channelId = value;
+            }
+        }
+        
+        /// <summary>Channel title for the channel responsible for this activity</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelTitle")]
+        public virtual string ChannelTitle {
+            get {
+                return this._channelTitle;
+            }
+            set {
+                this._channelTitle = value;
             }
         }
         
@@ -653,7 +666,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The date and time that the activity occurred. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        /// <summary>The date and time that the video was uploaded. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
         public virtual string PublishedAt {
             get {
@@ -705,6 +718,8 @@ namespace Google.Apis.Youtube.v3.Data {
     /// <summary>A channel resource contains information about a YouTube channel.</summary>
     public class Channel {
         
+        private ChannelBrandingSettings _brandingSettings;
+        
         private ChannelContentDetails _contentDetails;
         
         private string _etag;
@@ -720,6 +735,17 @@ namespace Google.Apis.Youtube.v3.Data {
         private ChannelStatus _status;
         
         private ChannelTopicDetails _topicDetails;
+        
+        /// <summary>Branding properties of a YouTube channel.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("brandingSettings")]
+        public virtual ChannelBrandingSettings BrandingSettings {
+            get {
+                return this._brandingSettings;
+            }
+            set {
+                this._brandingSettings = value;
+            }
+        }
         
         /// <summary>Details about the content of a channel.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("contentDetails")]
@@ -806,6 +832,60 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._topicDetails = value;
+            }
+        }
+    }
+    
+    /// <summary>Branding properties of a YouTube channel.</summary>
+    public class ChannelBrandingSettings {
+        
+        private ChannelSettings _channel;
+        
+        private System.Collections.Generic.IList<PropertyValue> _hints;
+        
+        private ImageSettings _image;
+        
+        private WatchSettings _watch;
+        
+        /// <summary>Branding properties for the channel view.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channel")]
+        public virtual ChannelSettings Channel {
+            get {
+                return this._channel;
+            }
+            set {
+                this._channel = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("hints")]
+        public virtual System.Collections.Generic.IList<PropertyValue> Hints {
+            get {
+                return this._hints;
+            }
+            set {
+                this._hints = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("image")]
+        public virtual ImageSettings Image {
+            get {
+                return this._image;
+            }
+            set {
+                this._image = value;
+            }
+        }
+        
+        /// <summary>Branding properties for the watch.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("watch")]
+        public virtual WatchSettings Watch {
+            get {
+                return this._watch;
+            }
+            set {
+                this._watch = value;
             }
         }
     }
@@ -987,6 +1067,142 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._prevPageToken = value;
+            }
+        }
+    }
+    
+    /// <summary>Branding properties for the channel view.</summary>
+    public class ChannelSettings {
+        
+        private string _defaultTab;
+        
+        private string _description;
+        
+        private string _featuredChannelsTitle;
+        
+        private System.Collections.Generic.IList<string> _featuredChannelsUrls;
+        
+        private string _keywords;
+        
+        private System.Nullable<bool> _moderateComments;
+        
+        private System.Nullable<bool> _showBrowseView;
+        
+        private System.Nullable<bool> _showRelatedChannels;
+        
+        private string _title;
+        
+        private string _trackingAnalyticsAccountId;
+        
+        private string _unsubscribedTrailer;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("defaultTab")]
+        public virtual string DefaultTab {
+            get {
+                return this._defaultTab;
+            }
+            set {
+                this._defaultTab = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this._description;
+            }
+            set {
+                this._description = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("featuredChannelsTitle")]
+        public virtual string FeaturedChannelsTitle {
+            get {
+                return this._featuredChannelsTitle;
+            }
+            set {
+                this._featuredChannelsTitle = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("featuredChannelsUrls")]
+        public virtual System.Collections.Generic.IList<string> FeaturedChannelsUrls {
+            get {
+                return this._featuredChannelsUrls;
+            }
+            set {
+                this._featuredChannelsUrls = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("keywords")]
+        public virtual string Keywords {
+            get {
+                return this._keywords;
+            }
+            set {
+                this._keywords = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("moderateComments")]
+        public virtual System.Nullable<bool> ModerateComments {
+            get {
+                return this._moderateComments;
+            }
+            set {
+                this._moderateComments = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("showBrowseView")]
+        public virtual System.Nullable<bool> ShowBrowseView {
+            get {
+                return this._showBrowseView;
+            }
+            set {
+                this._showBrowseView = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("showRelatedChannels")]
+        public virtual System.Nullable<bool> ShowRelatedChannels {
+            get {
+                return this._showRelatedChannels;
+            }
+            set {
+                this._showRelatedChannels = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this._title;
+            }
+            set {
+                this._title = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("trackingAnalyticsAccountId")]
+        public virtual string TrackingAnalyticsAccountId {
+            get {
+                return this._trackingAnalyticsAccountId;
+            }
+            set {
+                this._trackingAnalyticsAccountId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("unsubscribedTrailer")]
+        public virtual string UnsubscribedTrailer {
+            get {
+                return this._unsubscribedTrailer;
+            }
+            set {
+                this._unsubscribedTrailer = value;
             }
         }
     }
@@ -1309,6 +1525,122 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._title = value;
+            }
+        }
+    }
+    
+    public class ImageSettings {
+        
+        private LocalizedProperty _backgroundImageUrl;
+        
+        private string _bannerImageUrl;
+        
+        private string _bannerMobileImageUrl;
+        
+        private LocalizedProperty _largeBrandedBannerImageImapScript;
+        
+        private LocalizedProperty _largeBrandedBannerImageUrl;
+        
+        private LocalizedProperty _smallBrandedBannerImageImapScript;
+        
+        private LocalizedProperty _smallBrandedBannerImageUrl;
+        
+        private string _trackingImageUrl;
+        
+        private string _watchIconImageUrl;
+        
+        /// <summary>Represent a property available in different languages.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("backgroundImageUrl")]
+        public virtual LocalizedProperty BackgroundImageUrl {
+            get {
+                return this._backgroundImageUrl;
+            }
+            set {
+                this._backgroundImageUrl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("bannerImageUrl")]
+        public virtual string BannerImageUrl {
+            get {
+                return this._bannerImageUrl;
+            }
+            set {
+                this._bannerImageUrl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("bannerMobileImageUrl")]
+        public virtual string BannerMobileImageUrl {
+            get {
+                return this._bannerMobileImageUrl;
+            }
+            set {
+                this._bannerMobileImageUrl = value;
+            }
+        }
+        
+        /// <summary>Represent a property available in different languages.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("largeBrandedBannerImageImapScript")]
+        public virtual LocalizedProperty LargeBrandedBannerImageImapScript {
+            get {
+                return this._largeBrandedBannerImageImapScript;
+            }
+            set {
+                this._largeBrandedBannerImageImapScript = value;
+            }
+        }
+        
+        /// <summary>Represent a property available in different languages.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("largeBrandedBannerImageUrl")]
+        public virtual LocalizedProperty LargeBrandedBannerImageUrl {
+            get {
+                return this._largeBrandedBannerImageUrl;
+            }
+            set {
+                this._largeBrandedBannerImageUrl = value;
+            }
+        }
+        
+        /// <summary>Represent a property available in different languages.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("smallBrandedBannerImageImapScript")]
+        public virtual LocalizedProperty SmallBrandedBannerImageImapScript {
+            get {
+                return this._smallBrandedBannerImageImapScript;
+            }
+            set {
+                this._smallBrandedBannerImageImapScript = value;
+            }
+        }
+        
+        /// <summary>Represent a property available in different languages.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("smallBrandedBannerImageUrl")]
+        public virtual LocalizedProperty SmallBrandedBannerImageUrl {
+            get {
+                return this._smallBrandedBannerImageUrl;
+            }
+            set {
+                this._smallBrandedBannerImageUrl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("trackingImageUrl")]
+        public virtual string TrackingImageUrl {
+            get {
+                return this._trackingImageUrl;
+            }
+            set {
+                this._trackingImageUrl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("watchIconImageUrl")]
+        public virtual string WatchIconImageUrl {
+            get {
+                return this._watchIconImageUrl;
+            }
+            set {
+                this._watchIconImageUrl = value;
             }
         }
     }
@@ -2200,6 +2532,62 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
+    /// <summary>Represent a property available in different languages.</summary>
+    public class LocalizedProperty {
+        
+        private string _default;
+        
+        private System.Collections.Generic.IList<LocalizedString> _localizeds;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("default")]
+        public virtual string Default {
+            get {
+                return this._default;
+            }
+            set {
+                this._default = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("localizeds")]
+        public virtual System.Collections.Generic.IList<LocalizedString> Localizeds {
+            get {
+                return this._localizeds;
+            }
+            set {
+                this._localizeds = value;
+            }
+        }
+    }
+    
+    /// <summary>A localized string.</summary>
+    public class LocalizedString {
+        
+        private string _language;
+        
+        private string _value;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("language")]
+        public virtual string Language {
+            get {
+                return this._language;
+            }
+            set {
+                this._language = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("value")]
+        public virtual string Value {
+            get {
+                return this._value;
+            }
+            set {
+                this._value = value;
+            }
+        }
+    }
+    
     /// <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
     public class PageInfo {
         
@@ -2868,6 +3256,34 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
+    /// <summary>A key value for the experimental branding properties.</summary>
+    public class PropertyValue {
+        
+        private string _property;
+        
+        private string _value;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("property")]
+        public virtual string Property {
+            get {
+                return this._property;
+            }
+            set {
+                this._property = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("value")]
+        public virtual string Value {
+            get {
+                return this._value;
+            }
+            set {
+                this._value = value;
+            }
+        }
+    }
+    
     /// <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
     public class ResourceId {
         
@@ -2891,6 +3307,61 @@ namespace Google.Apis.Youtube.v3.Data {
         }
         
         /// <summary>The kind, or type, of the referred resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a playlist. This property is only present if the resourceId.kind value is youtube#playlist.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("playlistId")]
+        public virtual string PlaylistId {
+            get {
+                return this._playlistId;
+            }
+            set {
+                this._playlistId = value;
+            }
+        }
+        
+        /// <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a video. This property is only present if the resourceId.kind value is youtube#video.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("videoId")]
+        public virtual string VideoId {
+            get {
+                return this._videoId;
+            }
+            set {
+                this._videoId = value;
+            }
+        }
+    }
+    
+    /// <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
+    public class ResourceId2 {
+        
+        private string _channelId;
+        
+        private string _kind;
+        
+        private string _playlistId;
+        
+        private string _videoId;
+        
+        /// <summary>The ID that YouTube uses to uniquely identify the referred resource, if that resource is a channel. This property is only present if the resourceId.kind value is youtube#channel.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
+        public virtual string ChannelId {
+            get {
+                return this._channelId;
+            }
+            set {
+                this._channelId = value;
+            }
+        }
+        
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -3011,13 +3482,13 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _etag;
         
-        private ResourceId _id;
+        private ResourceId2 _id;
         
         private string _kind;
         
         private SearchResultSnippet _snippet;
         
-        /// <summary>The ETag of the search result.</summary>
+        /// <summary>Etag of this resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
@@ -3030,7 +3501,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         /// <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
-        public virtual ResourceId Id {
+        public virtual ResourceId2 Id {
             get {
                 return this._id;
             }
@@ -3039,7 +3510,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The type of the API response. For this resource, the value will be youtube#searchResult.</summary>
+        /// <summary>The kind, fixed to &quot;youtube#searchResult&quot;.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -3050,7 +3521,6 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Basic details about a search result, including title, description and thumbnails of the item referenced by the search result.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("snippet")]
         public virtual SearchResultSnippet Snippet {
             get {
@@ -3062,10 +3532,11 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
-    /// <summary>Basic details about a search result, including title, description and thumbnails of the item referenced by the search result.</summary>
     public class SearchResultSnippet {
         
         private string _channelId;
+        
+        private string _channelTitle;
         
         private string _description;
         
@@ -3083,6 +3554,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._channelId = value;
+            }
+        }
+        
+        /// <summary>The title of the channel that published the resource that the search result identifies.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelTitle")]
+        public virtual string ChannelTitle {
+            get {
+                return this._channelTitle;
+            }
+            set {
+                this._channelTitle = value;
             }
         }
         
@@ -3119,7 +3601,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The title to display for the search result.</summary>
+        /// <summary>The title of the search result.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
@@ -3464,6 +3946,8 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private VideoProcessingDetails _processingDetails;
         
+        private VideoProjectDetails _projectDetails;
+        
         private VideoRecordingDetails _recordingDetails;
         
         private VideoSnippet _snippet;
@@ -3561,6 +4045,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._processingDetails = value;
+            }
+        }
+        
+        /// <summary>Project specific details about the content of a YouTube Video.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("projectDetails")]
+        public virtual VideoProjectDetails ProjectDetails {
+            get {
+                return this._projectDetails;
+            }
+            set {
+                this._projectDetails = value;
             }
         }
         
@@ -3675,7 +4170,6 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Basic details about a video category, such as its localized title.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("snippet")]
         public virtual VideoCategorySnippet Snippet {
             get {
@@ -3730,7 +4224,6 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
-    /// <summary>Basic details about a video category, such as its localized title.</summary>
     public class VideoCategorySnippet {
         
         private string _channelId;
@@ -3748,7 +4241,6 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The video category&apos;s title.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
@@ -3764,6 +4256,8 @@ namespace Google.Apis.Youtube.v3.Data {
     public class VideoContentDetails {
         
         private string _caption;
+        
+        private AccessPolicy _countryRestriction;
         
         private string _definition;
         
@@ -3783,6 +4277,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._caption = value;
+            }
+        }
+        
+        /// <summary>Rights management policy for YouTube resources.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("countryRestriction")]
+        public virtual AccessPolicy CountryRestriction {
+            get {
+                return this._countryRestriction;
+            }
+            set {
+                this._countryRestriction = value;
             }
         }
         
@@ -3830,7 +4335,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Region restriction of the video.</summary>
+        /// <summary>DEPRECATED Region restriction of the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("regionRestriction")]
         public virtual VideoContentDetailsRegionRestriction RegionRestriction {
             get {
@@ -3842,7 +4347,7 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
-    /// <summary>Region restriction of the video.</summary>
+    /// <summary>DEPRECATED Region restriction of the video.</summary>
     public class VideoContentDetailsRegionRestriction {
         
         private System.Collections.Generic.IList<string> _allowed;
@@ -3895,7 +4400,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private System.Collections.Generic.IList<VideoFileDetailsVideoStream> _videoStreams;
         
-        /// <summary>Audio streams.</summary>
+        /// <summary>A list of audio streams contained in the uploaded video file. Each item in the list contains detailed metadata about an audio stream.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("audioStreams")]
         public virtual System.Collections.Generic.IList<VideoFileDetailsAudioStream> AudioStreams {
             get {
@@ -3906,7 +4411,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Combined audio and video bitrate, in bits per second.</summary>
+        /// <summary>The uploaded video file&apos;s combined (video and audio) bitrate in bits per second.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("bitrateBps")]
         public virtual string BitrateBps {
             get {
@@ -3917,7 +4422,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Container format used.</summary>
+        /// <summary>The uploaded video file&apos;s container format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("container")]
         public virtual string Container {
             get {
@@ -3928,7 +4433,10 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Date and time when the video file was created, in ISO 8601 format. Currently the only ISO 8601 formats produced are: - Date only: YYYY-MM-DD - Naive time: YYYY-MM-DDTHH:MM:SS - Time with timezone: YYYY-MM-DDTHH:MM:SS+HH:MM</summary>
+        /// <summary>The date and time when the uploaded video file was created. The value is specified in ISO 8601 format. Currently, the following ISO 8601 formats are supported:  
+        ///- Date only: YYYY-MM-DD 
+        ///- Naive time: YYYY-MM-DDTHH:MM:SS 
+        ///- Time with timezone: YYYY-MM-DDTHH:MM:SS+HH:MM</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("creationTime")]
         public virtual string CreationTime {
             get {
@@ -3939,7 +4447,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video duration in milliseconds.</summary>
+        /// <summary>The length of the uploaded video in milliseconds.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("durationMs")]
         public virtual string DurationMs {
             get {
@@ -3950,7 +4458,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>File name.</summary>
+        /// <summary>The uploaded file&apos;s name. This field is present whether a video file or another type of file was uploaded.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("fileName")]
         public virtual string FileName {
             get {
@@ -3961,7 +4469,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>File size.</summary>
+        /// <summary>The uploaded file&apos;s size in bytes. This field is present whether a video file or another type of file was uploaded.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("fileSize")]
         public virtual string FileSize {
             get {
@@ -3972,7 +4480,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>File type.</summary>
+        /// <summary>The uploaded file&apos;s type as detected by YouTube&apos;s video processing engine. Currently, YouTube only processes video files, but this field is present whether a video file or another type of file was uploaded.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("fileType")]
         public virtual string FileType {
             get {
@@ -3994,7 +4502,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video streams.</summary>
+        /// <summary>A list of video streams contained in the uploaded video file. Each item in the list contains detailed metadata about a video stream.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("videoStreams")]
         public virtual System.Collections.Generic.IList<VideoFileDetailsVideoStream> VideoStreams {
             get {
@@ -4017,7 +4525,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _vendor;
         
-        /// <summary>Audio stream bitrate, in bits per second.</summary>
+        /// <summary>The audio stream&apos;s bitrate, in bits per second.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("bitrateBps")]
         public virtual string BitrateBps {
             get {
@@ -4028,7 +4536,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Number of audio channels.</summary>
+        /// <summary>The number of audio channels that the stream contains.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelCount")]
         public virtual System.Nullable<long> ChannelCount {
             get {
@@ -4039,7 +4547,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Audio codec used.</summary>
+        /// <summary>The audio codec that the stream uses.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("codec")]
         public virtual string Codec {
             get {
@@ -4050,7 +4558,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Audio vendor identifier, typically a four-letter vendor code.</summary>
+        /// <summary>A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("vendor")]
         public virtual string Vendor {
             get {
@@ -4081,7 +4589,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private System.Nullable<long> _widthPixels;
         
-        /// <summary>Display aspect ratio, which might differ from width_pixels / height_pixels.</summary>
+        /// <summary>The video content&apos;s display aspect ratio, which specifies the aspect ratio in which the video should be displayed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("aspectRatio")]
         public virtual System.Nullable<double> AspectRatio {
             get {
@@ -4092,7 +4600,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video stream bitrate, in bits per second.</summary>
+        /// <summary>The video stream&apos;s bitrate, in bits per second.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("bitrateBps")]
         public virtual string BitrateBps {
             get {
@@ -4103,7 +4611,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video codec used.</summary>
+        /// <summary>The video codec that the stream uses.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("codec")]
         public virtual string Codec {
             get {
@@ -4114,7 +4622,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video frame rate, in frames per second.</summary>
+        /// <summary>The video stream&apos;s frame rate, in frames per second.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("frameRateFps")]
         public virtual System.Nullable<double> FrameRateFps {
             get {
@@ -4125,7 +4633,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video height in pixels.</summary>
+        /// <summary>The encoded video content&apos;s height in pixels.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("heightPixels")]
         public virtual System.Nullable<long> HeightPixels {
             get {
@@ -4136,7 +4644,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Rotation that is necessary to display the video properly.</summary>
+        /// <summary>The amount that YouTube needs to rotate the original source content to properly display the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("rotation")]
         public virtual string Rotation {
             get {
@@ -4147,7 +4655,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video vendor identifier, typically a four-letter vendor code.</summary>
+        /// <summary>A value that uniquely identifies a video vendor. Typically, the value is a four-letter vendor code.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("vendor")]
         public virtual string Vendor {
             get {
@@ -4158,7 +4666,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video width in pixels.</summary>
+        /// <summary>The encoded video content&apos;s width in pixels. You can calculate the video&apos;s encoding aspect ratio as width_pixelsÂ /Â height_pixels.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("widthPixels")]
         public virtual System.Nullable<long> WidthPixels {
             get {
@@ -4266,7 +4774,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _thumbnailsAvailability;
         
-        /// <summary>Editor suggestions availability.</summary>
+        /// <summary>This value indicates whether video editing suggestions, which might improve video quality or the playback experience, are available for the video. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("editorSuggestionsAvailability")]
         public virtual string EditorSuggestionsAvailability {
             get {
@@ -4277,7 +4785,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>File details availability.</summary>
+        /// <summary>This value indicates whether file details are available for the uploaded video. You can retrieve a video&apos;s file details by requesting the fileDetails part in your videos.list() request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("fileDetailsAvailability")]
         public virtual string FileDetailsAvailability {
             get {
@@ -4288,7 +4796,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Reason why video processing has failed.</summary>
+        /// <summary>The reason that YouTube failed to process the video. This property will only have a value if the processingStatus property&apos;s value is failed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("processingFailureReason")]
         public virtual string ProcessingFailureReason {
             get {
@@ -4299,7 +4807,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Processing issues availability.</summary>
+        /// <summary>This value indicates whether the video processing engine has generated suggestions that might improve YouTube&apos;s ability to process the the video, warnings that explain video processing problems, or errors that cause video processing problems. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("processingIssuesAvailability")]
         public virtual string ProcessingIssuesAvailability {
             get {
@@ -4321,7 +4829,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video processing status.</summary>
+        /// <summary>The video&apos;s processing status. This value indicates whether YouTube was able to process the video or if the video is still being processed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("processingStatus")]
         public virtual string ProcessingStatus {
             get {
@@ -4332,7 +4840,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Tag suggestions availability.</summary>
+        /// <summary>This value indicates whether keyword (tag) suggestions are available for the video. Tags can be added to a video&apos;s metadata to make it easier for other users to find the video. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("tagSuggestionsAvailability")]
         public virtual string TagSuggestionsAvailability {
             get {
@@ -4343,7 +4851,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Thumbnails availability.</summary>
+        /// <summary>This value indicates whether thumbnail images have been generated for the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("thumbnailsAvailability")]
         public virtual string ThumbnailsAvailability {
             get {
@@ -4364,7 +4872,10 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _timeLeftMs;
         
-        /// <summary>Number of parts already processed. Progress expressed in percent should be computed as: 100 * parts_processed / parts_total.</summary>
+        /// <summary>The number of parts of the video that YouTube has already processed. You can estimate the percentage of the video that YouTube has already processed by calculating:
+        ///100 * parts_processed / parts_total
+        ///
+        ///Note that since the estimated number of parts could increase without a corresponding increase in the number of parts that have already been processed, it is possible that the calculated progress could periodically decrease while YouTube processes a video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("partsProcessed")]
         public virtual string PartsProcessed {
             get {
@@ -4375,7 +4886,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>An estimate of total number of parts to process. The number might be updated with more precise estimates as the processing progresses.</summary>
+        /// <summary>An estimate of the total number of parts that need to be processed for the video. The number may be updated with more precise estimates while YouTube processes the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("partsTotal")]
         public virtual string PartsTotal {
             get {
@@ -4386,7 +4897,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Estimated time till video processing is complete, in milliseconds.</summary>
+        /// <summary>An estimate of the amount of time, in millseconds, that YouTube needs to finish processing the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("timeLeftMs")]
         public virtual string TimeLeftMs {
             get {
@@ -4394,6 +4905,23 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._timeLeftMs = value;
+            }
+        }
+    }
+    
+    /// <summary>Project specific details about the content of a YouTube Video.</summary>
+    public class VideoProjectDetails {
+        
+        private System.Collections.Generic.IList<string> _tags;
+        
+        /// <summary>A list of project tags associated with the video during the upload.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("tags")]
+        public virtual System.Collections.Generic.IList<string> Tags {
+            get {
+                return this._tags;
+            }
+            set {
+                this._tags = value;
             }
         }
     }
@@ -4448,6 +4976,8 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _channelId;
         
+        private string _channelTitle;
+        
         private string _description;
         
         private string _publishedAt;
@@ -4477,6 +5007,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._channelId = value;
+            }
+        }
+        
+        /// <summary>Channel title for the channel that the video belongs to.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelTitle")]
+        public virtual string ChannelTitle {
+            get {
+                return this._channelTitle;
+            }
+            set {
+                this._channelTitle = value;
             }
         }
         
@@ -4704,7 +5245,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private System.Collections.Generic.IList<VideoSuggestionsTagSuggestion> _tagSuggestions;
         
-        /// <summary>Editor operations that could improve video quality.</summary>
+        /// <summary>A list of video editing operations that might improve the video quality or playback experience of the uploaded video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("editorSuggestions")]
         public virtual System.Collections.Generic.IList<string> EditorSuggestions {
             get {
@@ -4715,7 +5256,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Errors encountered during video processing.</summary>
+        /// <summary>A list of errors that will prevent YouTube from successfully processing the uploaded video video. These errors indicate that, regardless of the video&apos;s current processing status, eventually, that status will almost certainly be failed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("processingErrors")]
         public virtual System.Collections.Generic.IList<string> ProcessingErrors {
             get {
@@ -4726,7 +5267,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Hints about how to improve video processing.</summary>
+        /// <summary>A list of suggestions that may improve YouTube&apos;s ability to process the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("processingHints")]
         public virtual System.Collections.Generic.IList<string> ProcessingHints {
             get {
@@ -4737,7 +5278,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Warnings produced by the video processing engine.</summary>
+        /// <summary>A list of reasons why YouTube may have difficulty transcoding the uploaded video or that might result in an erroneous transcoding. These warnings are generated before YouTube actually processes the uploaded video file. In addition, they identify issues that are unlikely to cause the video processing to fail but that might cause problems such as sync issues, video artifacts, or a missing audio track.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("processingWarnings")]
         public virtual System.Collections.Generic.IList<string> ProcessingWarnings {
             get {
@@ -4748,7 +5289,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Tags that could be added to aid video discovery.</summary>
+        /// <summary>A list of keyword tags that could be added to the video&apos;s metadata to increase the likelihood that users will locate your video when searching or browsing on YouTube.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("tagSuggestions")]
         public virtual System.Collections.Generic.IList<VideoSuggestionsTagSuggestion> TagSuggestions {
             get {
@@ -4767,7 +5308,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _tag;
         
-        /// <summary>Set of categories this tag should be restricted to. Tag applies to all categories if there are no restricts.</summary>
+        /// <summary>A set of video categories for which the tag is relevant. You can use this information to display appropriate tag suggestions based on the video category that the video uploader associates with the video. By default, tag suggestions are relevant for all categories if there are no restricts defined for the keyword.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("categoryRestricts")]
         public virtual System.Collections.Generic.IList<string> CategoryRestricts {
             get {
@@ -4778,7 +5319,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Tag label.</summary>
+        /// <summary>The keyword tag suggested for the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("tag")]
         public virtual string Tag {
             get {
@@ -4806,6 +5347,46 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
     }
+    
+    /// <summary>Branding properties for the watch.</summary>
+    public class WatchSettings {
+        
+        private string _backgroundColor;
+        
+        private string _featuredPlaylistId;
+        
+        private string _textColor;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("backgroundColor")]
+        public virtual string BackgroundColor {
+            get {
+                return this._backgroundColor;
+            }
+            set {
+                this._backgroundColor = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("featuredPlaylistId")]
+        public virtual string FeaturedPlaylistId {
+            get {
+                return this._featuredPlaylistId;
+            }
+            set {
+                this._featuredPlaylistId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("textColor")]
+        public virtual string TextColor {
+            get {
+                return this._textColor;
+            }
+            set {
+                this._textColor = value;
+            }
+        }
+    }
 }
 namespace Google.Apis.Youtube.v3 {
     using System;
@@ -4815,7 +5396,7 @@ namespace Google.Apis.Youtube.v3 {
     using Google.Apis.Discovery;
     
     
-    public partial class YoutubeService : Google.Apis.Discovery.BaseClientService {
+    public partial class YoutubeService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v3";
         
@@ -4823,7 +5404,7 @@ namespace Google.Apis.Youtube.v3 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public YoutubeService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public YoutubeService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._activities = new ActivitiesResource(this, Authenticator);
             this._channels = new ChannelsResource(this, Authenticator);
@@ -4840,7 +5421,7 @@ namespace Google.Apis.Youtube.v3 {
         }
         
         public YoutubeService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -4956,7 +5537,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.Activity _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Activity body, string part) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.Activity body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -5114,7 +5695,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _publishedBefore;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -5357,11 +5938,13 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _mySubscribers;
             
+            private string _onBehalfOfContentOwner;
+            
             private string _pageToken;
             
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -5488,6 +6071,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</summary>
             [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
@@ -5540,6 +6134,7 @@ namespace Google.Apis.Youtube.v3 {
                 parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
                 parameters.Add("mine", Google.Apis.Util.Utilities.CreateRuntimeParameter("mine", false, "query", null, null, new string[0]));
                 parameters.Add("mySubscribers", Google.Apis.Util.Utilities.CreateRuntimeParameter("mySubscribers", false, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
@@ -5590,7 +6185,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _regionCode;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -5852,7 +6447,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _streamId;
             
-            public BindRequest(Google.Apis.Discovery.IClientService service, string id, string part) : 
+            public BindRequest(Google.Apis.Services.IClientService service, string id, string part) : 
                     base(service) {
                 this._id = id;
                 this._part = part;
@@ -6001,7 +6596,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -6130,7 +6725,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.LiveBroadcast _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -6284,7 +6879,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -6491,7 +7086,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _part;
             
-            public TransitionRequest(Google.Apis.Discovery.IClientService service, BroadcastStatusEnum broadcastStatus, string id, string part) : 
+            public TransitionRequest(Google.Apis.Services.IClientService service, BroadcastStatusEnum broadcastStatus, string id, string part) : 
                     base(service) {
                 this._broadcastStatus = broadcastStatus;
                 this._id = id;
@@ -6643,7 +7238,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.LiveBroadcast _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -6827,7 +7422,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -6956,7 +7551,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.LiveStream _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.LiveStream body, string part) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.LiveStream body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -7108,7 +7703,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -7297,7 +7892,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.LiveStream _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.LiveStream body, string part) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.LiveStream body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -7487,7 +8082,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -7616,7 +8211,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.PlaylistItem _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.PlaylistItem body, string part) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.PlaylistItem body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -7770,7 +8365,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _videoId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -7961,7 +8556,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.PlaylistItem _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.PlaylistItem body, string part) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.PlaylistItem body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -8153,7 +8748,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -8282,7 +8877,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.Playlist _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Playlist body, string part) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.Playlist body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -8436,7 +9031,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -8627,7 +9222,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.Playlist _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Playlist body, string part) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.Playlist body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -8779,6 +9374,19 @@ namespace Google.Apis.Youtube.v3 {
             return new ListRequest(service, part);
         }
         
+        /// <summary>The channelType parameter lets you restrict a search to a particular type of channel.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum ChannelType {
+            
+            /// <summary>Return all channels.</summary>
+            [Google.Apis.Util.StringValueAttribute("any")]
+            Any,
+            
+            /// <summary>Only retrieve shows.</summary>
+            [Google.Apis.Util.StringValueAttribute("show")]
+            Show,
+        }
+        
         /// <summary>The order parameter specifies the method that will be used to order resources in the API response.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Order {
@@ -8915,6 +9523,23 @@ namespace Google.Apis.Youtube.v3 {
             True,
         }
         
+        /// <summary>The videoType parameter lets you restrict a search to a particular type of videos.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum VideoType {
+            
+            /// <summary>Return all videos.</summary>
+            [Google.Apis.Util.StringValueAttribute("any")]
+            Any,
+            
+            /// <summary>Only retrieve episodes of shows.</summary>
+            [Google.Apis.Util.StringValueAttribute("episode")]
+            Episode,
+            
+            /// <summary>Only retrieve movies.</summary>
+            [Google.Apis.Util.StringValueAttribute("movie")]
+            Movie,
+        }
+        
         public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.SearchListResponse> {
             
             private string _alt;
@@ -8931,7 +9556,13 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _channelId;
             
+            private System.Nullable<ChannelType> _channelType;
+            
+            private System.Nullable<bool> _forContentOwner;
+            
             private System.Nullable<long> _maxResults;
+            
+            private string _onBehalfOfContentOwner;
             
             private System.Nullable<Order> _order;
             
@@ -8969,7 +9600,9 @@ namespace Google.Apis.Youtube.v3 {
             
             private System.Nullable<VideoSyndicated> _videoSyndicated;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            private System.Nullable<VideoType> _videoType;
+            
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -9052,6 +9685,28 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>The channelType parameter lets you restrict a search to a particular type of channel.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("channelType", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<ChannelType> ChannelType {
+                get {
+                    return this._channelType;
+                }
+                set {
+                    this._channelType = value;
+                }
+            }
+            
+            /// <summary>The forContentOwner parameter restricts the search to only retrieve resources owned by the content owner specified by the onBehalfOfContentOwner parameter. The user must be authenticated as a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("forContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> ForContentOwner {
+                get {
+                    return this._forContentOwner;
+                }
+                set {
+                    this._forContentOwner = value;
+                }
+            }
+            
             /// <summary>USE_DESCRIPTION --- channels:list:maxResults</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
@@ -9060,6 +9715,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
                 set {
                     this._maxResults = value;
+                }
+            }
+            
+            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
                 }
             }
             
@@ -9260,6 +9926,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>The videoType parameter lets you restrict a search to a particular type of videos.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("videoType", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<VideoType> VideoType {
+                get {
+                    return this._videoType;
+                }
+                set {
+                    this._videoType = value;
+                }
+            }
+            
             public override string ResourcePath {
                 get {
                     return "search";
@@ -9287,7 +9964,12 @@ namespace Google.Apis.Youtube.v3 {
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("channelId", Google.Apis.Util.Utilities.CreateRuntimeParameter("channelId", false, "query", null, null, new string[0]));
+                parameters.Add("channelType", Google.Apis.Util.Utilities.CreateRuntimeParameter("channelType", false, "query", null, null, new string[] {
+                                "any",
+                                "show"}));
+                parameters.Add("forContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("forContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("order", Google.Apis.Util.Utilities.CreateRuntimeParameter("order", false, "query", "SEARCH_SORT_RELEVANCE", null, new string[] {
                                 "date",
                                 "rating",
@@ -9330,6 +10012,10 @@ namespace Google.Apis.Youtube.v3 {
                 parameters.Add("videoSyndicated", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoSyndicated", false, "query", null, null, new string[] {
                                 "any",
                                 "true"}));
+                parameters.Add("videoType", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoType", false, "query", null, null, new string[] {
+                                "any",
+                                "episode",
+                                "movie"}));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
@@ -9403,7 +10089,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -9532,7 +10218,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.Subscription _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Subscription body, string part) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.Subscription body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -9690,7 +10376,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -9932,7 +10618,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _regionCode;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
                     base(service) {
                 this._part = part;
                 this.InitParameters();
@@ -10152,7 +10838,9 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            private string _onBehalfOfContentOwner;
+            
+            public DeleteRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -10232,6 +10920,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             public override string ResourcePath {
                 get {
                     return "videos";
@@ -10259,6 +10958,7 @@ namespace Google.Apis.Youtube.v3 {
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
@@ -10281,7 +10981,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private Google.Apis.Youtube.v3.Data.Video _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Video body, string part) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.Video body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -10425,7 +11125,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _part;
             
-            public InsertMediaUpload(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Video body, string part, System.IO.Stream stream, string contentType) : 
+            public InsertMediaUpload(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.Video body, string part, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/youtube/v3/videos", "POST", stream, contentType) {
                 this.Body = body;
                 this.Authenticator = service.Authenticator;
@@ -10525,9 +11225,11 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
+            private string _onBehalfOfContentOwner;
+            
             private string _part;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string id, string part) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string id, string part) : 
                     base(service) {
                 this._id = id;
                 this._part = part;
@@ -10608,6 +11310,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>The part parameter specifies a comma-separated list of one or more video resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, player, statistics, status, and topicDetails.
             ///
             ///If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a video resource, the snippet property contains the channelId, title, description, tags, and categoryId properties. As such, if you set part=snippet, the API response will contain all of those properties.</summary>
@@ -10645,6 +11358,7 @@ namespace Google.Apis.Youtube.v3 {
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
@@ -10664,11 +11378,13 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _userIp;
             
+            private string _onBehalfOfContentOwner;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.Video _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Youtube.v3.Data.Video body, string part) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.Video body, string part) : 
                     base(service) {
                 this.Body = body;
                 this._part = part;
@@ -10741,6 +11457,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             ///
             ///The part names that you can include in the parameter value are snippet, contentDetails, player, statistics, status, and topicDetails.
@@ -10795,6 +11522,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
@@ -10827,7 +11555,7 @@ namespace Google.Apis.Youtube.v3 {
         
         private VideosResource _videos;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

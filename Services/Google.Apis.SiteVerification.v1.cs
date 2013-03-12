@@ -231,7 +231,7 @@ namespace Google.Apis.SiteVerification.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class SiteVerificationService : Google.Apis.Discovery.BaseClientService {
+    public partial class SiteVerificationService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -239,14 +239,14 @@ namespace Google.Apis.SiteVerification.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public SiteVerificationService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public SiteVerificationService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._webResource = new WebResourceResource(this, Authenticator);
             this.InitParameters();
         }
         
         public SiteVerificationService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -376,7 +376,7 @@ namespace Google.Apis.SiteVerification.v1 {
             
             private string _id;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -503,7 +503,7 @@ namespace Google.Apis.SiteVerification.v1 {
             
             private string _id;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string id) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
                 this._id = id;
                 this.InitParameters();
@@ -630,7 +630,7 @@ namespace Google.Apis.SiteVerification.v1 {
             
             private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest _Body;
             
-            public GetTokenRequest(Google.Apis.Discovery.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest body) : 
+            public GetTokenRequest(Google.Apis.Services.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -764,7 +764,7 @@ namespace Google.Apis.SiteVerification.v1 {
             
             private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string verificationMethod) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string verificationMethod) : 
                     base(service) {
                 this.Body = body;
                 this._verificationMethod = verificationMethod;
@@ -904,7 +904,7 @@ namespace Google.Apis.SiteVerification.v1 {
             
             private string _userIp;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -1023,7 +1023,7 @@ namespace Google.Apis.SiteVerification.v1 {
             
             private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
@@ -1167,7 +1167,7 @@ namespace Google.Apis.SiteVerification.v1 {
             
             private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
                     base(service) {
                 this.Body = body;
                 this._id = id;
@@ -1300,7 +1300,7 @@ namespace Google.Apis.SiteVerification.v1 {
         
         private WebResourceResource _webResource;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

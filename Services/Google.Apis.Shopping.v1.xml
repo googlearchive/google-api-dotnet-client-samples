@@ -582,6 +582,9 @@
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.Currency">
             <summary>Currency restriction (ISO 4217)</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ExperimentId">
+            <summary>The Id of the experiment</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ExtrasEnabled">
             <summary>Whether to return extra information.</summary>
         </member>

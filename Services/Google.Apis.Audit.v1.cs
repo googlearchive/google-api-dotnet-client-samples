@@ -339,7 +339,7 @@ namespace Google.Apis.Audit.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class AuditService : Google.Apis.Discovery.BaseClientService {
+    public partial class AuditService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -347,14 +347,14 @@ namespace Google.Apis.Audit.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AuditService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public AuditService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._activities = new ActivitiesResource(this, Authenticator);
             this.InitParameters();
         }
         
         public AuditService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -473,7 +473,7 @@ namespace Google.Apis.Audit.v1 {
             
             private string _startTime;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string customerId, string applicationId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string customerId, string applicationId) : 
                     base(service) {
                 this._customerId = customerId;
                 this._applicationId = applicationId;
@@ -711,7 +711,7 @@ namespace Google.Apis.Audit.v1 {
         
         private ActivitiesResource _activities;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

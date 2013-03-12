@@ -1640,6 +1640,911 @@ namespace Google.Apis.Plus.v1.Data {
         }
     }
     
+    public class ItemScope {
+        
+        private ItemScope _about;
+        
+        private System.Collections.Generic.IList<string> _additionalName;
+        
+        private ItemScope _address;
+        
+        private string _addressCountry;
+        
+        private string _addressLocality;
+        
+        private string _addressRegion;
+        
+        private System.Collections.Generic.IList<ItemScope> _associated_media;
+        
+        private System.Nullable<long> _attendeeCount;
+        
+        private System.Collections.Generic.IList<ItemScope> _attendees;
+        
+        private ItemScope _audio;
+        
+        private System.Collections.Generic.IList<ItemScope> _author;
+        
+        private string _bestRating;
+        
+        private string _birthDate;
+        
+        private ItemScope _byArtist;
+        
+        private string _caption;
+        
+        private string _contentSize;
+        
+        private string _contentUrl;
+        
+        private System.Collections.Generic.IList<ItemScope> _contributor;
+        
+        private string _dateCreated;
+        
+        private string _dateModified;
+        
+        private string _datePublished;
+        
+        private string _description;
+        
+        private string _duration;
+        
+        private string _embedUrl;
+        
+        private string _endDate;
+        
+        private string _familyName;
+        
+        private string _gender;
+        
+        private ItemScope _geo;
+        
+        private string _givenName;
+        
+        private string _height;
+        
+        private string _id;
+        
+        private string _image;
+        
+        private ItemScope _inAlbum;
+        
+        private string _kind;
+        
+        private System.Nullable<double> _latitude;
+        
+        private ItemScope _location;
+        
+        private System.Nullable<double> _longitude;
+        
+        private string _name;
+        
+        private ItemScope _partOfTVSeries;
+        
+        private System.Collections.Generic.IList<ItemScope> _performers;
+        
+        private string _playerType;
+        
+        private string _postOfficeBoxNumber;
+        
+        private string _postalCode;
+        
+        private string _ratingValue;
+        
+        private ItemScope _reviewRating;
+        
+        private string _startDate;
+        
+        private string _streetAddress;
+        
+        private string _text;
+        
+        private ItemScope _thumbnail;
+        
+        private string _thumbnailUrl;
+        
+        private string _tickerSymbol;
+        
+        private string _type;
+        
+        private string _url;
+        
+        private string _width;
+        
+        private string _worstRating;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("about")]
+        public virtual ItemScope About {
+            get {
+                return this._about;
+            }
+            set {
+                this._about = value;
+            }
+        }
+        
+        /// <summary>An additional name for a Person, can be used for a middle name.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("additionalName")]
+        public virtual System.Collections.Generic.IList<string> AdditionalName {
+            get {
+                return this._additionalName;
+            }
+            set {
+                this._additionalName = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("address")]
+        public virtual ItemScope Address {
+            get {
+                return this._address;
+            }
+            set {
+                this._address = value;
+            }
+        }
+        
+        /// <summary>Address country.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("addressCountry")]
+        public virtual string AddressCountry {
+            get {
+                return this._addressCountry;
+            }
+            set {
+                this._addressCountry = value;
+            }
+        }
+        
+        /// <summary>Address locality.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("addressLocality")]
+        public virtual string AddressLocality {
+            get {
+                return this._addressLocality;
+            }
+            set {
+                this._addressLocality = value;
+            }
+        }
+        
+        /// <summary>Address region.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("addressRegion")]
+        public virtual string AddressRegion {
+            get {
+                return this._addressRegion;
+            }
+            set {
+                this._addressRegion = value;
+            }
+        }
+        
+        /// <summary>The encoding.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("associated_media")]
+        public virtual System.Collections.Generic.IList<ItemScope> Associated_media {
+            get {
+                return this._associated_media;
+            }
+            set {
+                this._associated_media = value;
+            }
+        }
+        
+        /// <summary>Number of attendees.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("attendeeCount")]
+        public virtual System.Nullable<long> AttendeeCount {
+            get {
+                return this._attendeeCount;
+            }
+            set {
+                this._attendeeCount = value;
+            }
+        }
+        
+        /// <summary>A person attending the event.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("attendees")]
+        public virtual System.Collections.Generic.IList<ItemScope> Attendees {
+            get {
+                return this._attendees;
+            }
+            set {
+                this._attendees = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("audio")]
+        public virtual ItemScope Audio {
+            get {
+                return this._audio;
+            }
+            set {
+                this._audio = value;
+            }
+        }
+        
+        /// <summary>The person or persons who created this result. In the example of restaurant reviews, this might be the reviewer&apos;s name.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("author")]
+        public virtual System.Collections.Generic.IList<ItemScope> Author {
+            get {
+                return this._author;
+            }
+            set {
+                this._author = value;
+            }
+        }
+        
+        /// <summary>Best possible rating value that a result might obtain. This property defines the upper bound for the ratingValue. For example, you might have a 5 star rating scale, you would provide 5 as the value for this property.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("bestRating")]
+        public virtual string BestRating {
+            get {
+                return this._bestRating;
+            }
+            set {
+                this._bestRating = value;
+            }
+        }
+        
+        /// <summary>Date of birth.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("birthDate")]
+        public virtual string BirthDate {
+            get {
+                return this._birthDate;
+            }
+            set {
+                this._birthDate = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("byArtist")]
+        public virtual ItemScope ByArtist {
+            get {
+                return this._byArtist;
+            }
+            set {
+                this._byArtist = value;
+            }
+        }
+        
+        /// <summary>The caption for this object.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("caption")]
+        public virtual string Caption {
+            get {
+                return this._caption;
+            }
+            set {
+                this._caption = value;
+            }
+        }
+        
+        /// <summary>File size in (mega/kilo) bytes.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("contentSize")]
+        public virtual string ContentSize {
+            get {
+                return this._contentSize;
+            }
+            set {
+                this._contentSize = value;
+            }
+        }
+        
+        /// <summary>Actual bytes of the media object, for example the image file or video file.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("contentUrl")]
+        public virtual string ContentUrl {
+            get {
+                return this._contentUrl;
+            }
+            set {
+                this._contentUrl = value;
+            }
+        }
+        
+        /// <summary>A list of contributors to this result.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("contributor")]
+        public virtual System.Collections.Generic.IList<ItemScope> Contributor {
+            get {
+                return this._contributor;
+            }
+            set {
+                this._contributor = value;
+            }
+        }
+        
+        /// <summary>The date the result was created such as the date that a review was first created.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("dateCreated")]
+        public virtual string DateCreated {
+            get {
+                return this._dateCreated;
+            }
+            set {
+                this._dateCreated = value;
+            }
+        }
+        
+        /// <summary>The date the result was last modified such as the date that a review was last edited.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("dateModified")]
+        public virtual string DateModified {
+            get {
+                return this._dateModified;
+            }
+            set {
+                this._dateModified = value;
+            }
+        }
+        
+        /// <summary>The initial date that the result was published. For example, a user writes a comment on a blog, which has a result.dateCreated of when they submit it. If the blog users comment moderation, the result.datePublished value would match the date when the owner approved the message.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("datePublished")]
+        public virtual string DatePublished {
+            get {
+                return this._datePublished;
+            }
+            set {
+                this._datePublished = value;
+            }
+        }
+        
+        /// <summary>The string that describes the content of the result.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this._description;
+            }
+            set {
+                this._description = value;
+            }
+        }
+        
+        /// <summary>The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("duration")]
+        public virtual string Duration {
+            get {
+                return this._duration;
+            }
+            set {
+                this._duration = value;
+            }
+        }
+        
+        /// <summary>A URL pointing to a player for a specific video. In general, this is the information in the src element of an embed tag and should not be the same as the content of the loc tag.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("embedUrl")]
+        public virtual string EmbedUrl {
+            get {
+                return this._embedUrl;
+            }
+            set {
+                this._embedUrl = value;
+            }
+        }
+        
+        /// <summary>The end date and time of the event (in ISO 8601 date format).</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("endDate")]
+        public virtual string EndDate {
+            get {
+                return this._endDate;
+            }
+            set {
+                this._endDate = value;
+            }
+        }
+        
+        /// <summary>Family name. This property can be used with givenName instead of the name property.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("familyName")]
+        public virtual string FamilyName {
+            get {
+                return this._familyName;
+            }
+            set {
+                this._familyName = value;
+            }
+        }
+        
+        /// <summary>Gender of the person.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("gender")]
+        public virtual string Gender {
+            get {
+                return this._gender;
+            }
+            set {
+                this._gender = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("geo")]
+        public virtual ItemScope Geo {
+            get {
+                return this._geo;
+            }
+            set {
+                this._geo = value;
+            }
+        }
+        
+        /// <summary>Given name. This property can be used with familyName instead of the name property.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("givenName")]
+        public virtual string GivenName {
+            get {
+                return this._givenName;
+            }
+            set {
+                this._givenName = value;
+            }
+        }
+        
+        /// <summary>The height of the media object.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("height")]
+        public virtual string Height {
+            get {
+                return this._height;
+            }
+            set {
+                this._height = value;
+            }
+        }
+        
+        /// <summary>An identifier for the target. Your app can choose how to identify targets. The target.id is required if you are writing an activity that does not have a corresponding web page or target.url property.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        /// <summary>A URL to the image that represents this result. For example, if a user writes a review of a restaurant and attaches a photo of their meal, you might use that photo as the result.image.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("image")]
+        public virtual string Image {
+            get {
+                return this._image;
+            }
+            set {
+                this._image = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("inAlbum")]
+        public virtual ItemScope InAlbum {
+            get {
+                return this._inAlbum;
+            }
+            set {
+                this._inAlbum = value;
+            }
+        }
+        
+        /// <summary>Identifies this resource as an itemScope.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Latitude.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
+        public virtual System.Nullable<double> Latitude {
+            get {
+                return this._latitude;
+            }
+            set {
+                this._latitude = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("location")]
+        public virtual ItemScope Location {
+            get {
+                return this._location;
+            }
+            set {
+                this._location = value;
+            }
+        }
+        
+        /// <summary>Longitude.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
+        public virtual System.Nullable<double> Longitude {
+            get {
+                return this._longitude;
+            }
+            set {
+                this._longitude = value;
+            }
+        }
+        
+        /// <summary>The name of the result. In the example of a restaurant review, this might be the summary the user gave their review such as &quot;Great ambiance, but overpriced.&quot;</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("name")]
+        public virtual string Name {
+            get {
+                return this._name;
+            }
+            set {
+                this._name = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("partOfTVSeries")]
+        public virtual ItemScope PartOfTVSeries {
+            get {
+                return this._partOfTVSeries;
+            }
+            set {
+                this._partOfTVSeries = value;
+            }
+        }
+        
+        /// <summary>The main performer or performers of the event-for example, a presenter, musician, or actor.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("performers")]
+        public virtual System.Collections.Generic.IList<ItemScope> Performers {
+            get {
+                return this._performers;
+            }
+            set {
+                this._performers = value;
+            }
+        }
+        
+        /// <summary>Player type that is required. For example: Flash or Silverlight.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("playerType")]
+        public virtual string PlayerType {
+            get {
+                return this._playerType;
+            }
+            set {
+                this._playerType = value;
+            }
+        }
+        
+        /// <summary>Post office box number.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("postOfficeBoxNumber")]
+        public virtual string PostOfficeBoxNumber {
+            get {
+                return this._postOfficeBoxNumber;
+            }
+            set {
+                this._postOfficeBoxNumber = value;
+            }
+        }
+        
+        /// <summary>Postal code.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("postalCode")]
+        public virtual string PostalCode {
+            get {
+                return this._postalCode;
+            }
+            set {
+                this._postalCode = value;
+            }
+        }
+        
+        /// <summary>Rating value.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("ratingValue")]
+        public virtual string RatingValue {
+            get {
+                return this._ratingValue;
+            }
+            set {
+                this._ratingValue = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("reviewRating")]
+        public virtual ItemScope ReviewRating {
+            get {
+                return this._reviewRating;
+            }
+            set {
+                this._reviewRating = value;
+            }
+        }
+        
+        /// <summary>The start date and time of the event (in ISO 8601 date format).</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("startDate")]
+        public virtual string StartDate {
+            get {
+                return this._startDate;
+            }
+            set {
+                this._startDate = value;
+            }
+        }
+        
+        /// <summary>Street address.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("streetAddress")]
+        public virtual string StreetAddress {
+            get {
+                return this._streetAddress;
+            }
+            set {
+                this._streetAddress = value;
+            }
+        }
+        
+        /// <summary>The text that is the result of the app activity. For example, if a user leaves a review of a restaurant, this might be the text of the review.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("text")]
+        public virtual string Text {
+            get {
+                return this._text;
+            }
+            set {
+                this._text = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnail")]
+        public virtual ItemScope Thumbnail {
+            get {
+                return this._thumbnail;
+            }
+            set {
+                this._thumbnail = value;
+            }
+        }
+        
+        /// <summary>A URL to a thumbnail image that represents this result.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnailUrl")]
+        public virtual string ThumbnailUrl {
+            get {
+                return this._thumbnailUrl;
+            }
+            set {
+                this._thumbnailUrl = value;
+            }
+        }
+        
+        /// <summary>The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we reccommend using the controlled vocaulary of Market Identifier Codes (MIC) specified in ISO15022.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("tickerSymbol")]
+        public virtual string TickerSymbol {
+            get {
+                return this._tickerSymbol;
+            }
+            set {
+                this._tickerSymbol = value;
+            }
+        }
+        
+        /// <summary>The schema.org URL that best describes the referenced target and matches the type of moment.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("type")]
+        public virtual string Type {
+            get {
+                return this._type;
+            }
+            set {
+                this._type = value;
+            }
+        }
+        
+        /// <summary>The URL that points to the result object. For example, a permalink directly to a restaurant reviewer&apos;s comment.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("url")]
+        public virtual string Url {
+            get {
+                return this._url;
+            }
+            set {
+                this._url = value;
+            }
+        }
+        
+        /// <summary>The width of the media object.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("width")]
+        public virtual string Width {
+            get {
+                return this._width;
+            }
+            set {
+                this._width = value;
+            }
+        }
+        
+        /// <summary>Worst possible rating value that a result might obtain. This property defines the lower bound for the ratingValue.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("worstRating")]
+        public virtual string WorstRating {
+            get {
+                return this._worstRating;
+            }
+            set {
+                this._worstRating = value;
+            }
+        }
+    }
+    
+    public class Moment : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _id;
+        
+        private string _kind;
+        
+        private ItemScope _result;
+        
+        private string _startDate;
+        
+        private ItemScope _target;
+        
+        private string _type;
+        
+        private string _ETag;
+        
+        /// <summary>The moment ID.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        /// <summary>Identifies this resource as a moment.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("result")]
+        public virtual ItemScope Result {
+            get {
+                return this._result;
+            }
+            set {
+                this._result = value;
+            }
+        }
+        
+        /// <summary>Time stamp of when the action occurred in RFC3339 format.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("startDate")]
+        public virtual string StartDate {
+            get {
+                return this._startDate;
+            }
+            set {
+                this._startDate = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("target")]
+        public virtual ItemScope Target {
+            get {
+                return this._target;
+            }
+            set {
+                this._target = value;
+            }
+        }
+        
+        /// <summary>The Google schema for the type of moment to write. For example, http://schemas.google.com/AddActivity.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("type")]
+        public virtual string Type {
+            get {
+                return this._type;
+            }
+            set {
+                this._type = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+    }
+    
+    public class MomentsFeed : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _etag;
+        
+        private System.Collections.Generic.IList<Moment> _items;
+        
+        private string _kind;
+        
+        private string _nextLink;
+        
+        private string _nextPageToken;
+        
+        private string _selfLink;
+        
+        private string _title;
+        
+        private string _updated;
+        
+        /// <summary>ETag of this response for caching purposes.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("etag")]
+        public virtual string ETag {
+            get {
+                return this._etag;
+            }
+            set {
+                this._etag = value;
+            }
+        }
+        
+        /// <summary>The moments in this page of results.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<Moment> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>Identifies this resource as a collection of moments. Value: &quot;plus#momentsFeed&quot;.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Link to the next page of moments.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
+        public virtual string NextLink {
+            get {
+                return this._nextLink;
+            }
+            set {
+                this._nextLink = value;
+            }
+        }
+        
+        /// <summary>The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
+        public virtual string NextPageToken {
+            get {
+                return this._nextPageToken;
+            }
+            set {
+                this._nextPageToken = value;
+            }
+        }
+        
+        /// <summary>Link to this page of moments.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
+        public virtual string SelfLink {
+            get {
+                return this._selfLink;
+            }
+            set {
+                this._selfLink = value;
+            }
+        }
+        
+        /// <summary>The title of this collection of moments.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this._title;
+            }
+            set {
+                this._title = value;
+            }
+        }
+        
+        /// <summary>The RFC 339 timestamp for when this collection of moments was last updated.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this._updated;
+            }
+            set {
+                this._updated = value;
+            }
+        }
+    }
+    
     public class PeopleFeed : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _etag;
@@ -1738,6 +2643,8 @@ namespace Google.Apis.Plus.v1.Data {
         
         private string _aboutMe;
         
+        private Person.AgeRangeData _ageRange;
+        
         private string _birthday;
         
         private string _braggingRights;
@@ -1765,6 +2672,8 @@ namespace Google.Apis.Plus.v1.Data {
         private System.Nullable<bool> _isPlusUser;
         
         private string _kind;
+        
+        private string _language;
         
         private Person.NameData _name;
         
@@ -1796,6 +2705,17 @@ namespace Google.Apis.Plus.v1.Data {
             }
             set {
                 this._aboutMe = value;
+            }
+        }
+        
+        /// <summary>The age range of the person.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("ageRange")]
+        public virtual Person.AgeRangeData AgeRange {
+            get {
+                return this._ageRange;
+            }
+            set {
+                this._ageRange = value;
             }
         }
         
@@ -1956,6 +2876,17 @@ namespace Google.Apis.Plus.v1.Data {
             }
         }
         
+        /// <summary>The user&apos;s preferred language for rendering.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("language")]
+        public virtual string Language {
+            get {
+                return this._language;
+            }
+            set {
+                this._language = value;
+            }
+        }
+        
         /// <summary>An object representation of the individual components of a person&apos;s name.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual Person.NameData Name {
@@ -2085,6 +3016,36 @@ namespace Google.Apis.Plus.v1.Data {
             }
             set {
                 this._verified = value;
+            }
+        }
+        
+        /// <summary>The age range of the person.</summary>
+        public class AgeRangeData {
+            
+            private System.Nullable<long> _max;
+            
+            private System.Nullable<long> _min;
+            
+            /// <summary>The age range&apos;s upper bound, if any.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("max")]
+            public virtual System.Nullable<long> Max {
+                get {
+                    return this._max;
+                }
+                set {
+                    this._max = value;
+                }
+            }
+            
+            /// <summary>The age range&apos;s lower bound, if any.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("min")]
+            public virtual System.Nullable<long> Min {
+                get {
+                    return this._min;
+                }
+                set {
+                    this._min = value;
+                }
             }
         }
         
@@ -2603,7 +3564,7 @@ namespace Google.Apis.Plus.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class PlusService : Google.Apis.Discovery.BaseClientService {
+    public partial class PlusService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -2611,16 +3572,17 @@ namespace Google.Apis.Plus.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public PlusService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public PlusService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._activities = new ActivitiesResource(this, Authenticator);
             this._comments = new CommentsResource(this, Authenticator);
+            this._moments = new MomentsResource(this, Authenticator);
             this._people = new PeopleResource(this, Authenticator);
             this.InitParameters();
         }
         
         public PlusService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -2670,6 +3632,10 @@ namespace Google.Apis.Plus.v1 {
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         public enum Scopes {
+            
+            /// <summary>Know your name, basic info, and list of people you&apos;re connected to on Google+</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/plus.login")]
+            PlusLogin,
             
             /// <summary>Know who you are on Google</summary>
             [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/plus.me")]
@@ -2747,7 +3713,7 @@ namespace Google.Apis.Plus.v1 {
             
             private string _activityId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
                 this.InitParameters();
@@ -2880,7 +3846,7 @@ namespace Google.Apis.Plus.v1 {
             
             private string _userId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string userId, Collection collection) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string userId, Collection collection) : 
                     base(service) {
                 this._userId = userId;
                 this._collection = collection;
@@ -3050,7 +4016,7 @@ namespace Google.Apis.Plus.v1 {
             
             private string _query;
             
-            public SearchRequest(Google.Apis.Discovery.IClientService service, string query) : 
+            public SearchRequest(Google.Apis.Services.IClientService service, string query) : 
                     base(service) {
                 this._query = query;
                 this.InitParameters();
@@ -3266,7 +4232,7 @@ namespace Google.Apis.Plus.v1 {
             
             private string _commentId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string commentId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string commentId) : 
                     base(service) {
                 this._commentId = commentId;
                 this.InitParameters();
@@ -3399,7 +4365,7 @@ namespace Google.Apis.Plus.v1 {
             
             private System.Nullable<SortOrder> _sortOrder;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string activityId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string activityId) : 
                     base(service) {
                 this._activityId = activityId;
                 this.InitParameters();
@@ -3549,6 +4515,552 @@ namespace Google.Apis.Plus.v1 {
         }
     }
     
+    public class MomentsResource {
+        
+        private PlusService service;
+        
+        private Google.Apis.Authentication.IAuthenticator authenticator;
+        
+        private const string Resource = "moments";
+        
+        public MomentsResource(PlusService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            this.service = service;
+            this.authenticator = authenticator;
+        }
+        
+        /// <summary>Record a moment representing a user&apos;s activity such as making a purchase or commenting on a blog.</summary>
+        /// <param name="userId">Required - The ID of the user to record activities for. The only valid values are &quot;me&quot; and the ID of the authenticated user.</param>
+        /// <param name="collection">Required - Must be one of the following values [vault] - The collection to which to write moments.</param>
+        public virtual InsertRequest Insert(Google.Apis.Plus.v1.Data.Moment body, string userId, Collection collection) {
+            return new InsertRequest(service, body, userId, collection);
+        }
+        
+        /// <summary>List all of the moments for a particular user.</summary>
+        /// <param name="userId">Required - The ID of the user to get moments for. The special value &quot;me&quot; can be used to indicate the authenticated user.</param>
+        /// <param name="collection">Required - Must be one of the following values [vault] - The collection of moments to list.</param>
+        public virtual ListRequest List(string userId, CollectionEnum collection) {
+            return new ListRequest(service, userId, collection);
+        }
+        
+        /// <summary>Delete a moment.</summary>
+        /// <param name="id">Required - The ID of the moment to delete.</param>
+        public virtual RemoveRequest Remove(string id) {
+            return new RemoveRequest(service, id);
+        }
+        
+        /// <summary>The collection to which to write moments.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Collection {
+            
+            /// <summary>The default collection for writing new moments.</summary>
+            [Google.Apis.Util.StringValueAttribute("vault")]
+            Vault,
+        }
+        
+        /// <summary>The collection of moments to list.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum CollectionEnum {
+            
+            /// <summary>All moments created by the requesting application for the authenticated user.</summary>
+            [Google.Apis.Util.StringValueAttribute("vault")]
+            Vault,
+        }
+        
+        public class InsertRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.Moment> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private Collection _collection;
+            
+            private System.Nullable<bool> _debug;
+            
+            private string _userId;
+            
+            private Google.Apis.Plus.v1.Data.Moment _Body;
+            
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Plus.v1.Data.Moment body, string userId, Collection collection) : 
+                    base(service) {
+                this.Body = body;
+                this._userId = userId;
+                this._collection = collection;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>The collection to which to write moments.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("collection", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual Collection Collection {
+                get {
+                    return this._collection;
+                }
+            }
+            
+            /// <summary>Return the moment as written. Should be used only for debugging.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("debug", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> Debug {
+                get {
+                    return this._debug;
+                }
+                set {
+                    this._debug = value;
+                }
+            }
+            
+            /// <summary>The ID of the user to record activities for. The only valid values are "me" and the ID of the authenticated user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string UserId {
+                get {
+                    return this._userId;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Plus.v1.Data.Moment Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "moments";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}/moments/{collection}";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("collection", Google.Apis.Util.Utilities.CreateRuntimeParameter("collection", true, "path", null, null, new string[] {
+                                "vault"}));
+                parameters.Add("debug", Google.Apis.Util.Utilities.CreateRuntimeParameter("debug", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.MomentsFeed> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private CollectionEnum _collection;
+            
+            private System.Nullable<long> _maxResults;
+            
+            private string _pageToken;
+            
+            private string _targetUrl;
+            
+            private string _type;
+            
+            private string _userId;
+            
+            public ListRequest(Google.Apis.Services.IClientService service, string userId, CollectionEnum collection) : 
+                    base(service) {
+                this._userId = userId;
+                this._collection = collection;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>The collection of moments to list.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("collection", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual CollectionEnum Collection {
+                get {
+                    return this._collection;
+                }
+            }
+            
+            /// <summary>The maximum number of moments to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> MaxResults {
+                get {
+                    return this._maxResults;
+                }
+                set {
+                    this._maxResults = value;
+                }
+            }
+            
+            /// <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string PageToken {
+                get {
+                    return this._pageToken;
+                }
+                set {
+                    this._pageToken = value;
+                }
+            }
+            
+            /// <summary>Only moments containing this targetUrl will be returned.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("targetUrl", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string TargetUrl {
+                get {
+                    return this._targetUrl;
+                }
+                set {
+                    this._targetUrl = value;
+                }
+            }
+            
+            /// <summary>Only moments of this type will be returned.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("type", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Type {
+                get {
+                    return this._type;
+                }
+                set {
+                    this._type = value;
+                }
+            }
+            
+            /// <summary>The ID of the user to get moments for. The special value "me" can be used to indicate the authenticated user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string UserId {
+                get {
+                    return this._userId;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "moments";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}/moments/{collection}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("collection", Google.Apis.Util.Utilities.CreateRuntimeParameter("collection", true, "path", null, null, new string[] {
+                                "vault"}));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "20", null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("targetUrl", Google.Apis.Util.Utilities.CreateRuntimeParameter("targetUrl", false, "query", null, null, new string[0]));
+                parameters.Add("type", Google.Apis.Util.Utilities.CreateRuntimeParameter("type", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
+        public class RemoveRequest : Google.Apis.Requests.ClientServiceRequest<string> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _id;
+            
+            public RemoveRequest(Google.Apis.Services.IClientService service, string id) : 
+                    base(service) {
+                this._id = id;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>The ID of the moment to delete.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string Id {
+                get {
+                    return this._id;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "moments";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "remove";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "DELETE";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "moments/{id}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+    }
+    
     public class PeopleResource {
         
         private PlusService service;
@@ -3562,16 +5074,23 @@ namespace Google.Apis.Plus.v1 {
             this.authenticator = authenticator;
         }
         
-        /// <summary>Get a person&apos;s profile.</summary>
+        /// <summary>Get a person&apos;s profile. If your app uses scope https://www.googleapis.com/auth/plus.login, this method is guaranteed to return ageRange and language.</summary>
         /// <param name="userId">Required - The ID of the person to get the profile for. The special value &quot;me&quot; can be used to indicate the authenticated user.</param>
         public virtual GetRequest Get(string userId) {
             return new GetRequest(service, userId);
         }
         
+        /// <summary>List all of the people in the specified collection.</summary>
+        /// <param name="userId">Required - Get the collection of people for the person identified. Use &quot;me&quot; to indicate the authenticated user.</param>
+        /// <param name="collection">Required - Must be one of the following values [visible] - The collection of people to list.</param>
+        public virtual ListRequest List(string userId, Collection collection) {
+            return new ListRequest(service, userId, collection);
+        }
+        
         /// <summary>List all of the people in the specified collection for a particular activity.</summary>
         /// <param name="activityId">Required - The ID of the activity to get the list of people for.</param>
         /// <param name="collection">Required - Must be one of the following values [plusoners, resharers] - The collection of people to list.</param>
-        public virtual ListByActivityRequest ListByActivity(string activityId, Collection collection) {
+        public virtual ListByActivityRequest ListByActivity(string activityId, CollectionEnum collection) {
             return new ListByActivityRequest(service, activityId, collection);
         }
         
@@ -3584,6 +5103,28 @@ namespace Google.Apis.Plus.v1 {
         /// <summary>The collection of people to list.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Collection {
+            
+            /// <summary>The list of people who this user has added to one or more circles, limited to the circles visible to the requesting application.</summary>
+            [Google.Apis.Util.StringValueAttribute("visible")]
+            Visible,
+        }
+        
+        /// <summary>The order to return people in.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum OrderBy {
+            
+            /// <summary>Order the people by their display name.</summary>
+            [Google.Apis.Util.StringValueAttribute("alphabetical")]
+            Alphabetical,
+            
+            /// <summary>Order people based on the relevence to the viewer.</summary>
+            [Google.Apis.Util.StringValueAttribute("best")]
+            Best,
+        }
+        
+        /// <summary>The collection of people to list.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum CollectionEnum {
             
             /// <summary>List all people who have +1&apos;d this activity.</summary>
             [Google.Apis.Util.StringValueAttribute("plusoners")]
@@ -3610,7 +5151,7 @@ namespace Google.Apis.Plus.v1 {
             
             private string _userId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string userId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string userId) : 
                     base(service) {
                 this._userId = userId;
                 this.InitParameters();
@@ -3721,6 +5262,190 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private Collection _collection;
+            
+            private System.Nullable<long> _maxResults;
+            
+            private System.Nullable<OrderBy> _orderBy;
+            
+            private string _pageToken;
+            
+            private string _userId;
+            
+            public ListRequest(Google.Apis.Services.IClientService service, string userId, Collection collection) : 
+                    base(service) {
+                this._userId = userId;
+                this._collection = collection;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>The collection of people to list.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("collection", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual Collection Collection {
+                get {
+                    return this._collection;
+                }
+            }
+            
+            /// <summary>The maximum number of people to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> MaxResults {
+                get {
+                    return this._maxResults;
+                }
+                set {
+                    this._maxResults = value;
+                }
+            }
+            
+            /// <summary>The order to return people in.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("orderBy", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<OrderBy> OrderBy {
+                get {
+                    return this._orderBy;
+                }
+                set {
+                    this._orderBy = value;
+                }
+            }
+            
+            /// <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string PageToken {
+                get {
+                    return this._pageToken;
+                }
+                set {
+                    this._pageToken = value;
+                }
+            }
+            
+            /// <summary>Get the collection of people for the person identified. Use "me" to indicate the authenticated user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string UserId {
+                get {
+                    return this._userId;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "people";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "people/{userId}/people/{collection}";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("collection", Google.Apis.Util.Utilities.CreateRuntimeParameter("collection", true, "path", null, null, new string[] {
+                                "visible"}));
+                parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "100", null, new string[0]));
+                parameters.Add("orderBy", Google.Apis.Util.Utilities.CreateRuntimeParameter("orderBy", false, "query", null, null, new string[] {
+                                "alphabetical",
+                                "best"}));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
+                parameters.Add("userId", Google.Apis.Util.Utilities.CreateRuntimeParameter("userId", true, "path", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
         public class ListByActivityRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
             
             private string _alt;
@@ -3737,13 +5462,13 @@ namespace Google.Apis.Plus.v1 {
             
             private string _activityId;
             
-            private Collection _collection;
+            private CollectionEnum _collection;
             
             private System.Nullable<long> _maxResults;
             
             private string _pageToken;
             
-            public ListByActivityRequest(Google.Apis.Discovery.IClientService service, string activityId, Collection collection) : 
+            public ListByActivityRequest(Google.Apis.Services.IClientService service, string activityId, CollectionEnum collection) : 
                     base(service) {
                 this._activityId = activityId;
                 this._collection = collection;
@@ -3826,7 +5551,7 @@ namespace Google.Apis.Plus.v1 {
             
             /// <summary>The collection of people to list.</summary>
             [Google.Apis.Util.RequestParameterAttribute("collection", Google.Apis.Util.RequestParameterType.Path)]
-            public virtual Collection Collection {
+            public virtual CollectionEnum Collection {
                 get {
                     return this._collection;
                 }
@@ -3912,7 +5637,7 @@ namespace Google.Apis.Plus.v1 {
             
             private string _query;
             
-            public SearchRequest(Google.Apis.Discovery.IClientService service, string query) : 
+            public SearchRequest(Google.Apis.Services.IClientService service, string query) : 
                     base(service) {
                 this._query = query;
                 this.InitParameters();
@@ -4068,9 +5793,11 @@ namespace Google.Apis.Plus.v1 {
         
         private CommentsResource _comments;
         
+        private MomentsResource _moments;
+        
         private PeopleResource _people;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }
@@ -4085,6 +5812,12 @@ namespace Google.Apis.Plus.v1 {
         public virtual CommentsResource Comments {
             get {
                 return this._comments;
+            }
+        }
+        
+        public virtual MomentsResource Moments {
+            get {
+                return this._moments;
             }
         }
         

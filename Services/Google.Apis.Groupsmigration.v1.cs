@@ -63,7 +63,7 @@ namespace Google.Apis.Groupsmigration.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class GroupsmigrationService : Google.Apis.Discovery.BaseClientService {
+    public partial class GroupsmigrationService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -71,14 +71,14 @@ namespace Google.Apis.Groupsmigration.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public GroupsmigrationService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public GroupsmigrationService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._archive = new ArchiveResource(this, Authenticator);
             this.InitParameters();
         }
         
         public GroupsmigrationService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -168,7 +168,7 @@ namespace Google.Apis.Groupsmigration.v1 {
             
             private string _groupId;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, string groupId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, string groupId) : 
                     base(service) {
                 this._groupId = groupId;
                 this.InitParameters();
@@ -295,7 +295,7 @@ namespace Google.Apis.Groupsmigration.v1 {
             
             private string _groupId;
             
-            public InsertMediaUpload(Google.Apis.Discovery.IClientService service, string groupId, System.IO.Stream stream, string contentType) : 
+            public InsertMediaUpload(Google.Apis.Services.IClientService service, string groupId, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/groups/v1/groups/{groupId}/archive", "POST", stream, contentType) {
                 this.Authenticator = service.Authenticator;
                 this._groupId = groupId;
@@ -383,7 +383,7 @@ namespace Google.Apis.Groupsmigration.v1 {
         
         private ArchiveResource _archive;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

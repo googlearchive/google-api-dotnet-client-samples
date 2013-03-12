@@ -3469,7 +3469,7 @@ namespace Google.Apis.Compute.v1beta14 {
     using Google.Apis.Discovery;
     
     
-    public partial class ComputeService : Google.Apis.Discovery.BaseClientService {
+    public partial class ComputeService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1beta14";
         
@@ -3477,7 +3477,7 @@ namespace Google.Apis.Compute.v1beta14 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public ComputeService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public ComputeService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._disks = new DisksResource(this, Authenticator);
             this._firewalls = new FirewallsResource(this, Authenticator);
@@ -3495,7 +3495,7 @@ namespace Google.Apis.Compute.v1beta14 {
         }
         
         public ComputeService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -3623,7 +3623,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string zone, string disk) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string project, string zone, string disk) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -3775,7 +3775,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string zone, string disk) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string zone, string disk) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -3929,7 +3929,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Disk _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Disk body, string project, string zone) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Disk body, string project, string zone) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -4102,7 +4102,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project, string zone) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project, string zone) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -4332,7 +4332,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string firewall) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string project, string firewall) : 
                     base(service) {
                 this._project = project;
                 this._firewall = firewall;
@@ -4472,7 +4472,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string firewall) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string firewall) : 
                     base(service) {
                 this._project = project;
                 this._firewall = firewall;
@@ -4612,7 +4612,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Firewall _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Firewall body, string project) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Firewall body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -4761,7 +4761,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
                 this.InitParameters();
@@ -4929,7 +4929,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Firewall _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Firewall body, string project, string firewall) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Firewall body, string project, string firewall) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -5086,7 +5086,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Firewall _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Firewall body, string project, string firewall) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Firewall body, string project, string firewall) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -5275,7 +5275,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string operation) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string project, string operation) : 
                     base(service) {
                 this._project = project;
                 this._operation = operation;
@@ -5415,7 +5415,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string operation) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string operation) : 
                     base(service) {
                 this._project = project;
                 this._operation = operation;
@@ -5559,7 +5559,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
                 this.InitParameters();
@@ -5772,7 +5772,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string image) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string project, string image) : 
                     base(service) {
                 this._project = project;
                 this._image = image;
@@ -5914,7 +5914,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.DeprecationStatus _Body;
             
-            public DeprecateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.DeprecationStatus body, string project, string image) : 
+            public DeprecateRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.DeprecationStatus body, string project, string image) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -6069,7 +6069,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string image) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string image) : 
                     base(service) {
                 this._project = project;
                 this._image = image;
@@ -6209,7 +6209,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Image _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Image body, string project) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Image body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -6358,7 +6358,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
                 this.InitParameters();
@@ -6529,6 +6529,14 @@ namespace Google.Apis.Compute.v1beta14 {
             return new AddAccessConfigRequest(service, body, project, zone, instance, network_interface);
         }
         
+        /// <summary>Attaches a disk resource to an instance.</summary>
+        /// <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Project name.</param>
+        /// <param name="zone">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the zone scoping this request.</param>
+        /// <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Instance name.</param>
+        public virtual AttachDiskRequest AttachDisk(Google.Apis.Compute.v1beta14.Data.AttachedDisk body, string project, string zone, string instance) {
+            return new AttachDiskRequest(service, body, project, zone, instance);
+        }
+        
         /// <summary>Deletes the specified instance resource.</summary>
         /// <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         /// <param name="zone">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the zone scoping this request.</param>
@@ -6545,6 +6553,15 @@ namespace Google.Apis.Compute.v1beta14 {
         /// <param name="network_interface">Required - Network interface name.</param>
         public virtual DeleteAccessConfigRequest DeleteAccessConfig(string project, string zone, string instance, string access_config, string network_interface) {
             return new DeleteAccessConfigRequest(service, project, zone, instance, access_config, network_interface);
+        }
+        
+        /// <summary>Detaches a disk from an instance.</summary>
+        /// <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Project name.</param>
+        /// <param name="zone">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the zone scoping this request.</param>
+        /// <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Instance name.</param>
+        /// <param name="deviceName">Required - Must match pattern \w[\w.-]{0,254} - Disk device name to detach.</param>
+        public virtual DetachDiskRequest DetachDisk(string project, string zone, string instance, string deviceName) {
+            return new DetachDiskRequest(service, project, zone, instance, deviceName);
         }
         
         /// <summary>Returns the specified instance resource.</summary>
@@ -6617,7 +6634,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.AccessConfig _Body;
             
-            public AddAccessConfigRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.AccessConfig body, string project, string zone, string instance, string network_interface) : 
+            public AddAccessConfigRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.AccessConfig body, string project, string zone, string instance, string network_interface) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -6774,6 +6791,175 @@ namespace Google.Apis.Compute.v1beta14 {
             }
         }
         
+        public class AttachDiskRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta14.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _instance;
+            
+            private string _project;
+            
+            private string _zone;
+            
+            private Google.Apis.Compute.v1beta14.Data.AttachedDisk _Body;
+            
+            public AttachDiskRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.AttachedDisk body, string project, string zone, string instance) : 
+                    base(service) {
+                this.Body = body;
+                this._project = project;
+                this._zone = zone;
+                this._instance = instance;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>Instance name.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("instance", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string Instance {
+                get {
+                    return this._instance;
+                }
+            }
+            
+            /// <summary>Project name.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("project", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string Project {
+                get {
+                    return this._project;
+                }
+            }
+            
+            /// <summary>Name of the zone scoping this request.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("zone", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string Zone {
+                get {
+                    return this._zone;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Compute.v1beta14.Data.AttachedDisk Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "instances";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "attachDisk";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/zones/{zone}/instances/{instance}/attachDisk";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                parameters.Add("zone", Google.Apis.Util.Utilities.CreateRuntimeParameter("zone", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
         public class DeleteRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta14.Data.Operation> {
             
             private string _alt;
@@ -6794,7 +6980,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string zone, string instance) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string project, string zone, string instance) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -6950,7 +7136,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public DeleteAccessConfigRequest(Google.Apis.Discovery.IClientService service, string project, string zone, string instance, string access_config, string network_interface) : 
+            public DeleteAccessConfigRequest(Google.Apis.Services.IClientService service, string project, string zone, string instance, string access_config, string network_interface) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -7102,6 +7288,170 @@ namespace Google.Apis.Compute.v1beta14 {
             }
         }
         
+        public class DetachDiskRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta14.Data.Operation> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _deviceName;
+            
+            private string _instance;
+            
+            private string _project;
+            
+            private string _zone;
+            
+            public DetachDiskRequest(Google.Apis.Services.IClientService service, string project, string zone, string instance, string deviceName) : 
+                    base(service) {
+                this._project = project;
+                this._zone = zone;
+                this._instance = instance;
+                this._deviceName = deviceName;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>Disk device name to detach.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("deviceName", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string DeviceName {
+                get {
+                    return this._deviceName;
+                }
+            }
+            
+            /// <summary>Instance name.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("instance", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string Instance {
+                get {
+                    return this._instance;
+                }
+            }
+            
+            /// <summary>Project name.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("project", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string Project {
+                get {
+                    return this._project;
+                }
+            }
+            
+            /// <summary>Name of the zone scoping this request.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("zone", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string Zone {
+                get {
+                    return this._zone;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "instances";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "detachDisk";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "POST";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "{project}/zones/{zone}/instances/{instance}/detachDisk";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("deviceName", Google.Apis.Util.Utilities.CreateRuntimeParameter("deviceName", true, "query", null, "\\w[\\w.-]{0,254}", new string[0]));
+                parameters.Add("instance", Google.Apis.Util.Utilities.CreateRuntimeParameter("instance", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                parameters.Add("project", Google.Apis.Util.Utilities.CreateRuntimeParameter("project", true, "path", null, "(?:(?:[-a-z0-9]{1,63}\\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(" +
+                            "?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?))", new string[0]));
+                parameters.Add("zone", Google.Apis.Util.Utilities.CreateRuntimeParameter("zone", true, "path", null, "[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?", new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+        
         public class GetRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Compute.v1beta14.Data.Instance> {
             
             private string _alt;
@@ -7122,7 +7472,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string zone, string instance) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string zone, string instance) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -7274,7 +7624,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public GetSerialPortOutputRequest(Google.Apis.Discovery.IClientService service, string project, string zone, string instance) : 
+            public GetSerialPortOutputRequest(Google.Apis.Services.IClientService service, string project, string zone, string instance) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -7426,7 +7776,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Instance _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Instance body, string project, string zone) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Instance body, string project, string zone) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -7587,7 +7937,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project, string zone) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project, string zone) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -7767,7 +8117,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Metadata _Body;
             
-            public SetMetadataRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Metadata body, string project, string zone, string instance) : 
+            public SetMetadataRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Metadata body, string project, string zone, string instance) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -7936,7 +8286,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Tags _Body;
             
-            public SetTagsRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Tags body, string project, string zone, string instance) : 
+            public SetTagsRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Tags body, string project, string zone, string instance) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -8128,7 +8478,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string kernel) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string kernel) : 
                     base(service) {
                 this._project = project;
                 this._kernel = kernel;
@@ -8272,7 +8622,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
                 this.InitParameters();
@@ -8465,7 +8815,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string machineType) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string machineType) : 
                     base(service) {
                 this._project = project;
                 this._machineType = machineType;
@@ -8609,7 +8959,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
                 this.InitParameters();
@@ -8815,7 +9165,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string network) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string project, string network) : 
                     base(service) {
                 this._project = project;
                 this._network = network;
@@ -8955,7 +9305,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string network) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string network) : 
                     base(service) {
                 this._project = project;
                 this._network = network;
@@ -9095,7 +9445,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Network _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Network body, string project) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Network body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -9244,7 +9594,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
                 this.InitParameters();
@@ -9434,7 +9784,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
                 this.InitParameters();
@@ -9564,7 +9914,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Metadata _Body;
             
-            public SetCommonInstanceMetadataRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Metadata body, string project) : 
+            public SetCommonInstanceMetadataRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Metadata body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -9749,7 +10099,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _snapshot;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string snapshot) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string project, string snapshot) : 
                     base(service) {
                 this._project = project;
                 this._snapshot = snapshot;
@@ -9889,7 +10239,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _snapshot;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string snapshot) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string snapshot) : 
                     base(service) {
                 this._project = project;
                 this._snapshot = snapshot;
@@ -10029,7 +10379,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private Google.Apis.Compute.v1beta14.Data.Snapshot _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Compute.v1beta14.Data.Snapshot body, string project) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Compute.v1beta14.Data.Snapshot body, string project) : 
                     base(service) {
                 this.Body = body;
                 this._project = project;
@@ -10178,7 +10528,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
                 this.InitParameters();
@@ -10383,7 +10733,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string project, string zone, string operation) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string project, string zone, string operation) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -10535,7 +10885,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string zone, string operation) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string zone, string operation) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -10691,7 +11041,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project, string zone) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project, string zone) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -10894,7 +11244,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _zone;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string project, string zone) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string project, string zone) : 
                     base(service) {
                 this._project = project;
                 this._zone = zone;
@@ -11038,7 +11388,7 @@ namespace Google.Apis.Compute.v1beta14 {
             
             private string _project;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string project) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string project) : 
                     base(service) {
                 this._project = project;
                 this.InitParameters();
@@ -11215,7 +11565,7 @@ namespace Google.Apis.Compute.v1beta14 {
         
         private ZonesResource _zones;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

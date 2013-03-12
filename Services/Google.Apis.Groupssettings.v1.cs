@@ -375,7 +375,7 @@ namespace Google.Apis.Groupssettings.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class GroupssettingsService : Google.Apis.Discovery.BaseClientService {
+    public partial class GroupssettingsService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -383,14 +383,14 @@ namespace Google.Apis.Groupssettings.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public GroupssettingsService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public GroupssettingsService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._groups = new GroupsResource(this, Authenticator);
             this.InitParameters();
         }
         
         public GroupssettingsService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -495,7 +495,7 @@ namespace Google.Apis.Groupssettings.v1 {
             
             private string _groupUniqueId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string groupUniqueId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string groupUniqueId) : 
                     base(service) {
                 this._groupUniqueId = groupUniqueId;
                 this.InitParameters();
@@ -624,7 +624,7 @@ namespace Google.Apis.Groupssettings.v1 {
             
             private Google.Apis.Groupssettings.v1.Data.Groups _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Groupssettings.v1.Data.Groups body, string groupUniqueId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Groupssettings.v1.Data.Groups body, string groupUniqueId) : 
                     base(service) {
                 this.Body = body;
                 this._groupUniqueId = groupUniqueId;
@@ -768,7 +768,7 @@ namespace Google.Apis.Groupssettings.v1 {
             
             private Google.Apis.Groupssettings.v1.Data.Groups _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Groupssettings.v1.Data.Groups body, string groupUniqueId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Groupssettings.v1.Data.Groups body, string groupUniqueId) : 
                     base(service) {
                 this.Body = body;
                 this._groupUniqueId = groupUniqueId;
@@ -901,7 +901,7 @@ namespace Google.Apis.Groupssettings.v1 {
         
         private GroupsResource _groups;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

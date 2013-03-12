@@ -89,7 +89,7 @@ namespace Google.Apis.Androidpublisher.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class AndroidpublisherService : Google.Apis.Discovery.BaseClientService {
+    public partial class AndroidpublisherService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -97,14 +97,14 @@ namespace Google.Apis.Androidpublisher.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AndroidpublisherService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public AndroidpublisherService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._purchases = new PurchasesResource(this, Authenticator);
             this.InitParameters();
         }
         
         public AndroidpublisherService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -202,7 +202,7 @@ namespace Google.Apis.Androidpublisher.v1 {
             
             private string _token;
             
-            public CancelRequest(Google.Apis.Discovery.IClientService service, string packageName, string subscriptionId, string token) : 
+            public CancelRequest(Google.Apis.Services.IClientService service, string packageName, string subscriptionId, string token) : 
                     base(service) {
                 this._packageName = packageName;
                 this._subscriptionId = subscriptionId;
@@ -353,7 +353,7 @@ namespace Google.Apis.Androidpublisher.v1 {
             
             private string _token;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string packageName, string subscriptionId, string token) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string packageName, string subscriptionId, string token) : 
                     base(service) {
                 this._packageName = packageName;
                 this._subscriptionId = subscriptionId;
@@ -491,7 +491,7 @@ namespace Google.Apis.Androidpublisher.v1 {
         
         private PurchasesResource _purchases;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

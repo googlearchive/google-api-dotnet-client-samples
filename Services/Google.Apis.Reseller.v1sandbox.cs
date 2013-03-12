@@ -680,7 +680,7 @@ namespace Google.Apis.Reseller.v1sandbox {
     using Google.Apis.Discovery;
     
     
-    public partial class ResellerService : Google.Apis.Discovery.BaseClientService {
+    public partial class ResellerService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1sandbox";
         
@@ -688,7 +688,7 @@ namespace Google.Apis.Reseller.v1sandbox {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public ResellerService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public ResellerService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._customers = new CustomersResource(this, Authenticator);
             this._subscriptions = new SubscriptionsResource(this, Authenticator);
@@ -696,7 +696,7 @@ namespace Google.Apis.Reseller.v1sandbox {
         }
         
         public ResellerService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -797,7 +797,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private string _customerId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string customerId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string customerId) : 
                     base(service) {
                 this._customerId = customerId;
                 this.InitParameters();
@@ -926,7 +926,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.Customer _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Customer body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Customer body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -1072,7 +1072,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.Customer _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Customer body, string customerId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Customer body, string customerId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
@@ -1216,7 +1216,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.Customer _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Customer body, string customerId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Customer body, string customerId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
@@ -1447,7 +1447,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest _Body;
             
-            public ChangePlanRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest body, string customerId, string subscriptionId) : 
+            public ChangePlanRequest(Google.Apis.Services.IClientService service, Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest body, string customerId, string subscriptionId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
@@ -1603,7 +1603,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.RenewalSettings _Body;
             
-            public ChangeRenewalSettingsRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.RenewalSettings body, string customerId, string subscriptionId) : 
+            public ChangeRenewalSettingsRequest(Google.Apis.Services.IClientService service, Google.Apis.Reseller.v1sandbox.Data.RenewalSettings body, string customerId, string subscriptionId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
@@ -1759,7 +1759,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.Seats _Body;
             
-            public ChangeSeatsRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Seats body, string customerId, string subscriptionId) : 
+            public ChangeSeatsRequest(Google.Apis.Services.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Seats body, string customerId, string subscriptionId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
@@ -1915,7 +1915,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private string _subscriptionId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string customerId, string subscriptionId, DeletionType deletionType) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string customerId, string subscriptionId, DeletionType deletionType) : 
                     base(service) {
                 this._customerId = customerId;
                 this._subscriptionId = subscriptionId;
@@ -2067,7 +2067,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private string _subscriptionId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string customerId, string subscriptionId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string customerId, string subscriptionId) : 
                     base(service) {
                 this._customerId = customerId;
                 this._subscriptionId = subscriptionId;
@@ -2208,7 +2208,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private Google.Apis.Reseller.v1sandbox.Data.Subscription _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Subscription body, string customerId) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Reseller.v1sandbox.Data.Subscription body, string customerId) : 
                     base(service) {
                 this.Body = body;
                 this._customerId = customerId;
@@ -2366,7 +2366,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private string _pageToken;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -2521,7 +2521,7 @@ namespace Google.Apis.Reseller.v1sandbox {
             
             private string _subscriptionId;
             
-            public StartPaidServiceRequest(Google.Apis.Discovery.IClientService service, string customerId, string subscriptionId) : 
+            public StartPaidServiceRequest(Google.Apis.Services.IClientService service, string customerId, string subscriptionId) : 
                     base(service) {
                 this._customerId = customerId;
                 this._subscriptionId = subscriptionId;
@@ -2651,7 +2651,7 @@ namespace Google.Apis.Reseller.v1sandbox {
         
         private SubscriptionsResource _subscriptions;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

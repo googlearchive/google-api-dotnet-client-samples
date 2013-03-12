@@ -945,7 +945,7 @@ namespace Google.Apis.Coordinate.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class CoordinateService : Google.Apis.Discovery.BaseClientService {
+    public partial class CoordinateService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -953,7 +953,7 @@ namespace Google.Apis.Coordinate.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public CoordinateService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public CoordinateService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._customFieldDef = new CustomFieldDefResource(this, Authenticator);
             this._jobs = new JobsResource(this, Authenticator);
@@ -964,7 +964,7 @@ namespace Google.Apis.Coordinate.v1 {
         }
         
         public CoordinateService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -1060,7 +1060,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private string _teamId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string teamId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string teamId) : 
                     base(service) {
                 this._teamId = teamId;
                 this.InitParameters();
@@ -1265,7 +1265,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private string _teamId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string teamId, string jobId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string teamId, string jobId) : 
                     base(service) {
                 this._teamId = teamId;
                 this._jobId = jobId;
@@ -1422,7 +1422,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Job _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string address, string lat, string lng, string title) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string address, string lat, string lng, string title) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
@@ -1670,7 +1670,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private string _teamId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string teamId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string teamId) : 
                     base(service) {
                 this._teamId = teamId;
                 this.InitParameters();
@@ -1857,7 +1857,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Job _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string jobId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string jobId) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
@@ -2158,7 +2158,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Job _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string jobId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Coordinate.v1.Data.Job body, string teamId, string jobId) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
@@ -2465,7 +2465,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private string _workerEmail;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string teamId, string workerEmail, string startTimestampMs) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string teamId, string workerEmail, string startTimestampMs) : 
                     base(service) {
                 this._teamId = teamId;
                 this._workerEmail = workerEmail;
@@ -2673,7 +2673,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private string _teamId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string teamId, string jobId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string teamId, string jobId) : 
                     base(service) {
                 this._teamId = teamId;
                 this._jobId = jobId;
@@ -2820,7 +2820,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Schedule _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Schedule body, string teamId, string jobId) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Coordinate.v1.Data.Schedule body, string teamId, string jobId) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
@@ -3018,7 +3018,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private Google.Apis.Coordinate.v1.Data.Schedule _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Coordinate.v1.Data.Schedule body, string teamId, string jobId) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Coordinate.v1.Data.Schedule body, string teamId, string jobId) : 
                     base(service) {
                 this.Body = body;
                 this._teamId = teamId;
@@ -3226,7 +3226,7 @@ namespace Google.Apis.Coordinate.v1 {
             
             private string _teamId;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string teamId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string teamId) : 
                     base(service) {
                 this._teamId = teamId;
                 this.InitParameters();
@@ -3352,7 +3352,7 @@ namespace Google.Apis.Coordinate.v1 {
         
         private WorkerResource _worker;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

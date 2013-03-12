@@ -416,6 +416,177 @@
         <member name="P:Google.Apis.Plus.v1.Data.CommentFeed.Updated">
             <summary>The time at which this collection of comments was last updated. Formatted as an RFC 3339 timestamp.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.AdditionalName">
+            <summary>An additional name for a Person, can be used for a middle name.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.AddressCountry">
+            <summary>Address country.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.AddressLocality">
+            <summary>Address locality.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.AddressRegion">
+            <summary>Address region.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Associated_media">
+            <summary>The encoding.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.AttendeeCount">
+            <summary>Number of attendees.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Attendees">
+            <summary>A person attending the event.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Author">
+            <summary>The person or persons who created this result. In the example of restaurant reviews, this might be the reviewer&apos;s name.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.BestRating">
+            <summary>Best possible rating value that a result might obtain. This property defines the upper bound for the ratingValue. For example, you might have a 5 star rating scale, you would provide 5 as the value for this property.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.BirthDate">
+            <summary>Date of birth.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Caption">
+            <summary>The caption for this object.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.ContentSize">
+            <summary>File size in (mega/kilo) bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.ContentUrl">
+            <summary>Actual bytes of the media object, for example the image file or video file.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Contributor">
+            <summary>A list of contributors to this result.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.DateCreated">
+            <summary>The date the result was created such as the date that a review was first created.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.DateModified">
+            <summary>The date the result was last modified such as the date that a review was last edited.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.DatePublished">
+            <summary>The initial date that the result was published. For example, a user writes a comment on a blog, which has a result.dateCreated of when they submit it. If the blog users comment moderation, the result.datePublished value would match the date when the owner approved the message.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Description">
+            <summary>The string that describes the content of the result.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Duration">
+            <summary>The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.EmbedUrl">
+            <summary>A URL pointing to a player for a specific video. In general, this is the information in the src element of an embed tag and should not be the same as the content of the loc tag.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.EndDate">
+            <summary>The end date and time of the event (in ISO 8601 date format).</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.FamilyName">
+            <summary>Family name. This property can be used with givenName instead of the name property.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Gender">
+            <summary>Gender of the person.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.GivenName">
+            <summary>Given name. This property can be used with familyName instead of the name property.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Height">
+            <summary>The height of the media object.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Id">
+            <summary>An identifier for the target. Your app can choose how to identify targets. The target.id is required if you are writing an activity that does not have a corresponding web page or target.url property.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Image">
+            <summary>A URL to the image that represents this result. For example, if a user writes a review of a restaurant and attaches a photo of their meal, you might use that photo as the result.image.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Kind">
+            <summary>Identifies this resource as an itemScope.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Latitude">
+            <summary>Latitude.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Longitude">
+            <summary>Longitude.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Name">
+            <summary>The name of the result. In the example of a restaurant review, this might be the summary the user gave their review such as &quot;Great ambiance, but overpriced.&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Performers">
+            <summary>The main performer or performers of the event-for example, a presenter, musician, or actor.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.PlayerType">
+            <summary>Player type that is required. For example: Flash or Silverlight.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.PostOfficeBoxNumber">
+            <summary>Post office box number.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.PostalCode">
+            <summary>Postal code.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.RatingValue">
+            <summary>Rating value.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.StartDate">
+            <summary>The start date and time of the event (in ISO 8601 date format).</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.StreetAddress">
+            <summary>Street address.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Text">
+            <summary>The text that is the result of the app activity. For example, if a user leaves a review of a restaurant, this might be the text of the review.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.ThumbnailUrl">
+            <summary>A URL to a thumbnail image that represents this result.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.TickerSymbol">
+            <summary>The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we reccommend using the controlled vocaulary of Market Identifier Codes (MIC) specified in ISO15022.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Type">
+            <summary>The schema.org URL that best describes the referenced target and matches the type of moment.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Url">
+            <summary>The URL that points to the result object. For example, a permalink directly to a restaurant reviewer&apos;s comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.Width">
+            <summary>The width of the media object.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ItemScope.WorstRating">
+            <summary>Worst possible rating value that a result might obtain. This property defines the lower bound for the ratingValue.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Moment.Id">
+            <summary>The moment ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Moment.Kind">
+            <summary>Identifies this resource as a moment.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Moment.StartDate">
+            <summary>Time stamp of when the action occurred in RFC3339 format.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Moment.Type">
+            <summary>The Google schema for the type of moment to write. For example, http://schemas.google.com/AddActivity.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.MomentsFeed.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.MomentsFeed.Items">
+            <summary>The moments in this page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.MomentsFeed.Kind">
+            <summary>Identifies this resource as a collection of moments. Value: &quot;plus#momentsFeed&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.MomentsFeed.NextLink">
+            <summary>Link to the next page of moments.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.MomentsFeed.NextPageToken">
+            <summary>The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.MomentsFeed.SelfLink">
+            <summary>Link to this page of moments.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.MomentsFeed.Title">
+            <summary>The title of this collection of moments.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.MomentsFeed.Updated">
+            <summary>The RFC 339 timestamp for when this collection of moments was last updated.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.ETag">
             <summary>ETag of this response for caching purposes.</summary>
         </member>
@@ -439,6 +610,9 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.AboutMe">
             <summary>A short biography for this person.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.AgeRange">
+            <summary>The age range of the person.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Birthday">
             <summary>The person&apos;s date of birth, represented as YYYY-MM-DD.</summary>
@@ -485,6 +659,9 @@
         <member name="P:Google.Apis.Plus.v1.Data.Person.Kind">
             <summary>Identifies this resource as a person. Value: &quot;plus#person&quot;.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.Language">
+            <summary>The user&apos;s preferred language for rendering.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Name">
             <summary>An object representation of the individual components of a person&apos;s name.</summary>
         </member>
@@ -528,6 +705,15 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Verified">
             <summary>Whether the person or Google+ Page has been verified.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.Data.Person.AgeRangeData">
+            <summary>The age range of the person.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.AgeRangeData.Max">
+            <summary>The age range&apos;s upper bound, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.AgeRangeData.Min">
+            <summary>The age range&apos;s lower bound, if any.</summary>
         </member>
         <member name="T:Google.Apis.Plus.v1.Data.Person.CoverData">
             <summary>The cover photo content.</summary>
@@ -667,6 +853,9 @@
         </member>
         <member name="T:Google.Apis.Plus.v1.PlusService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Plus.v1.PlusService.Scopes.PlusLogin">
+            <summary>Know your name, basic info, and list of people you&apos;re connected to on Google+</summary>
         </member>
         <member name="F:Google.Apis.Plus.v1.PlusService.Scopes.PlusMe">
             <summary>Know who you are on Google</summary>
@@ -851,11 +1040,129 @@
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.SortOrder">
             <summary>The order in which to sort the list of comments.</summary>
         </member>
+        <member name="M:Google.Apis.Plus.v1.MomentsResource.Insert(Google.Apis.Plus.v1.Data.Moment,System.String,Google.Apis.Plus.v1.MomentsResource.Collection)">
+            <summary>Record a moment representing a user&apos;s activity such as making a purchase or commenting on a blog.</summary>
+            <param name="userId">Required - The ID of the user to record activities for. The only valid values are &quot;me&quot; and the ID of the authenticated user.</param>
+            <param name="collection">Required - Must be one of the following values [vault] - The collection to which to write moments.</param>
+        </member>
+        <member name="M:Google.Apis.Plus.v1.MomentsResource.List(System.String,Google.Apis.Plus.v1.MomentsResource.CollectionEnum)">
+            <summary>List all of the moments for a particular user.</summary>
+            <param name="userId">Required - The ID of the user to get moments for. The special value &quot;me&quot; can be used to indicate the authenticated user.</param>
+            <param name="collection">Required - Must be one of the following values [vault] - The collection of moments to list.</param>
+        </member>
+        <member name="M:Google.Apis.Plus.v1.MomentsResource.Remove(System.String)">
+            <summary>Delete a moment.</summary>
+            <param name="id">Required - The ID of the moment to delete.</param>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.MomentsResource.Collection">
+            <summary>The collection to which to write moments.</summary>
+        </member>
+        <member name="F:Google.Apis.Plus.v1.MomentsResource.Collection.Vault">
+            <summary>The default collection for writing new moments.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.MomentsResource.CollectionEnum">
+            <summary>The collection of moments to list.</summary>
+        </member>
+        <member name="F:Google.Apis.Plus.v1.MomentsResource.CollectionEnum.Vault">
+            <summary>All moments created by the requesting application for the authenticated user.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.Collection">
+            <summary>The collection to which to write moments.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.Debug">
+            <summary>Return the moment as written. Should be used only for debugging.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.UserId">
+            <summary>The ID of the user to record activities for. The only valid values are "me" and the ID of the authenticated user.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.Collection">
+            <summary>The collection of moments to list.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.MaxResults">
+            <summary>The maximum number of moments to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.PageToken">
+            <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.TargetUrl">
+            <summary>Only moments containing this targetUrl will be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.Type">
+            <summary>Only moments of this type will be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.ListRequest.UserId">
+            <summary>The ID of the user to get moments for. The special value "me" can be used to indicate the authenticated user.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.RemoveRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.RemoveRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.RemoveRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.RemoveRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.RemoveRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.RemoveRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.MomentsResource.RemoveRequest.Id">
+            <summary>The ID of the moment to delete.</summary>
+        </member>
         <member name="M:Google.Apis.Plus.v1.PeopleResource.Get(System.String)">
-            <summary>Get a person&apos;s profile.</summary>
+            <summary>Get a person&apos;s profile. If your app uses scope https://www.googleapis.com/auth/plus.login, this method is guaranteed to return ageRange and language.</summary>
             <param name="userId">Required - The ID of the person to get the profile for. The special value &quot;me&quot; can be used to indicate the authenticated user.</param>
         </member>
-        <member name="M:Google.Apis.Plus.v1.PeopleResource.ListByActivity(System.String,Google.Apis.Plus.v1.PeopleResource.Collection)">
+        <member name="M:Google.Apis.Plus.v1.PeopleResource.List(System.String,Google.Apis.Plus.v1.PeopleResource.Collection)">
+            <summary>List all of the people in the specified collection.</summary>
+            <param name="userId">Required - Get the collection of people for the person identified. Use &quot;me&quot; to indicate the authenticated user.</param>
+            <param name="collection">Required - Must be one of the following values [visible] - The collection of people to list.</param>
+        </member>
+        <member name="M:Google.Apis.Plus.v1.PeopleResource.ListByActivity(System.String,Google.Apis.Plus.v1.PeopleResource.CollectionEnum)">
             <summary>List all of the people in the specified collection for a particular activity.</summary>
             <param name="activityId">Required - The ID of the activity to get the list of people for.</param>
             <param name="collection">Required - Must be one of the following values [plusoners, resharers] - The collection of people to list.</param>
@@ -867,10 +1174,25 @@
         <member name="T:Google.Apis.Plus.v1.PeopleResource.Collection">
             <summary>The collection of people to list.</summary>
         </member>
-        <member name="F:Google.Apis.Plus.v1.PeopleResource.Collection.Plusoners">
+        <member name="F:Google.Apis.Plus.v1.PeopleResource.Collection.Visible">
+            <summary>The list of people who this user has added to one or more circles, limited to the circles visible to the requesting application.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.PeopleResource.OrderBy">
+            <summary>The order to return people in.</summary>
+        </member>
+        <member name="F:Google.Apis.Plus.v1.PeopleResource.OrderBy.Alphabetical">
+            <summary>Order the people by their display name.</summary>
+        </member>
+        <member name="F:Google.Apis.Plus.v1.PeopleResource.OrderBy.Best">
+            <summary>Order people based on the relevence to the viewer.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.PeopleResource.CollectionEnum">
+            <summary>The collection of people to list.</summary>
+        </member>
+        <member name="F:Google.Apis.Plus.v1.PeopleResource.CollectionEnum.Plusoners">
             <summary>List all people who have +1&apos;d this activity.</summary>
         </member>
-        <member name="F:Google.Apis.Plus.v1.PeopleResource.Collection.Resharers">
+        <member name="F:Google.Apis.Plus.v1.PeopleResource.CollectionEnum.Resharers">
             <summary>List all people who have reshared this activity.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.Alt">
@@ -893,6 +1215,39 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.UserId">
             <summary>The ID of the person to get the profile for. The special value "me" can be used to indicate the authenticated user.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.Collection">
+            <summary>The collection of people to list.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.MaxResults">
+            <summary>The maximum number of people to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.OrderBy">
+            <summary>The order to return people in.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.PageToken">
+            <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListRequest.UserId">
+            <summary>Get the collection of people for the person identified. Use "me" to indicate the authenticated user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.Alt">
             <summary>Data format for the response.</summary>

@@ -350,7 +350,7 @@ namespace Google.Apis.Latitude.v1 {
     using Google.Apis.Discovery;
     
     
-    public partial class LatitudeService : Google.Apis.Discovery.BaseClientService {
+    public partial class LatitudeService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -358,7 +358,7 @@ namespace Google.Apis.Latitude.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public LatitudeService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public LatitudeService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._currentLocation = new CurrentLocationResource(this, Authenticator);
             this._location = new LocationResource(this, Authenticator);
@@ -366,7 +366,7 @@ namespace Google.Apis.Latitude.v1 {
         }
         
         public LatitudeService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -492,7 +492,7 @@ namespace Google.Apis.Latitude.v1 {
             
             private string _userIp;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -609,7 +609,7 @@ namespace Google.Apis.Latitude.v1 {
             
             private System.Nullable<Granularity> _granularity;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service) : 
+            public GetRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -740,7 +740,7 @@ namespace Google.Apis.Latitude.v1 {
             
             private Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -921,7 +921,7 @@ namespace Google.Apis.Latitude.v1 {
             
             private string _locationId;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string locationId) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string locationId) : 
                     base(service) {
                 this._locationId = locationId;
                 this.InitParameters();
@@ -1050,7 +1050,7 @@ namespace Google.Apis.Latitude.v1 {
             
             private string _locationId;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string locationId) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string locationId) : 
                     base(service) {
                 this._locationId = locationId;
                 this.InitParameters();
@@ -1191,7 +1191,7 @@ namespace Google.Apis.Latitude.v1 {
             
             private Google.Apis.Latitude.v1.Data.Location _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Latitude.v1.Data.Location body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Latitude.v1.Data.Location body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -1329,7 +1329,7 @@ namespace Google.Apis.Latitude.v1 {
             
             private string _minTime;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service) : 
+            public ListRequest(Google.Apis.Services.IClientService service) : 
                     base(service) {
                 this.InitParameters();
             }
@@ -1489,7 +1489,7 @@ namespace Google.Apis.Latitude.v1 {
         
         private LocationResource _location;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }

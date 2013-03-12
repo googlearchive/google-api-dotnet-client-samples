@@ -1032,7 +1032,7 @@ namespace Google.Apis.Storage.v1beta1 {
     using Google.Apis.Discovery;
     
     
-    public partial class StorageService : Google.Apis.Discovery.BaseClientService {
+    public partial class StorageService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1beta1";
         
@@ -1040,7 +1040,7 @@ namespace Google.Apis.Storage.v1beta1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public StorageService(Google.Apis.Discovery.BaseClientService.Initializer initializer) : 
+        public StorageService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._bucketAccessControls = new BucketAccessControlsResource(this, Authenticator);
             this._buckets = new BucketsResource(this, Authenticator);
@@ -1050,7 +1050,7 @@ namespace Google.Apis.Storage.v1beta1 {
         }
         
         public StorageService() : 
-                this(new Google.Apis.Discovery.BaseClientService.Initializer()) {
+                this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
         public override System.Collections.Generic.IList<string> Features {
@@ -1186,7 +1186,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private string _entity;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string bucket, string entity) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string bucket, string entity) : 
                     base(service) {
                 this._bucket = bucket;
                 this._entity = entity;
@@ -1325,7 +1325,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private string _entity;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string bucket, string entity) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string bucket, string entity) : 
                     base(service) {
                 this._bucket = bucket;
                 this._entity = entity;
@@ -1464,7 +1464,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.BucketAccessControl _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.BucketAccessControl body, string bucket) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.BucketAccessControl body, string bucket) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -1606,7 +1606,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private string _bucket;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string bucket) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string bucket) : 
                     base(service) {
                 this._bucket = bucket;
                 this.InitParameters();
@@ -1737,7 +1737,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.BucketAccessControl _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.BucketAccessControl body, string bucket, string entity) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.BucketAccessControl body, string bucket, string entity) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -1893,7 +1893,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.BucketAccessControl _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.BucketAccessControl body, string bucket, string entity) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.BucketAccessControl body, string bucket, string entity) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -2107,7 +2107,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private string _bucket;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string bucket) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string bucket) : 
                     base(service) {
                 this._bucket = bucket;
                 this.InitParameters();
@@ -2236,7 +2236,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private System.Nullable<Projection> _projection;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string bucket) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string bucket) : 
                     base(service) {
                 this._bucket = bucket;
                 this.InitParameters();
@@ -2379,7 +2379,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.Bucket _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.Bucket body) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.Bucket body) : 
                     base(service) {
                 this.Body = body;
                 this.InitParameters();
@@ -2531,7 +2531,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private System.Nullable<Projection> _projection;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string projectId) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string projectId) : 
                     base(service) {
                 this._projectId = projectId;
                 this.InitParameters();
@@ -2700,7 +2700,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.Bucket _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.Bucket body, string bucket) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.Bucket body, string bucket) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -2860,7 +2860,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.Bucket _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.Bucket body, string bucket) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.Bucket body, string bucket) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -3080,7 +3080,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private string _object;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string bucket, string objectValue, string entity) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string bucket, string objectValue, string entity) : 
                     base(service) {
                 this._bucket = bucket;
                 this._object = objectValue;
@@ -3231,7 +3231,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private string _object;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string bucket, string objectValue, string entity) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string bucket, string objectValue, string entity) : 
                     base(service) {
                 this._bucket = bucket;
                 this._object = objectValue;
@@ -3382,7 +3382,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.ObjectAccessControl _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.ObjectAccessControl body, string bucket, string objectValue) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.ObjectAccessControl body, string bucket, string objectValue) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -3536,7 +3536,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private string _object;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string bucket, string objectValue) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string bucket, string objectValue) : 
                     base(service) {
                 this._bucket = bucket;
                 this._object = objectValue;
@@ -3679,7 +3679,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.ObjectAccessControl _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.ObjectAccessControl body, string bucket, string objectValue, string entity) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.ObjectAccessControl body, string bucket, string objectValue, string entity) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -3847,7 +3847,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.ObjectAccessControl _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.ObjectAccessControl body, string bucket, string objectValue, string entity) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.ObjectAccessControl body, string bucket, string objectValue, string entity) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -4084,7 +4084,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private string _object;
             
-            public DeleteRequest(Google.Apis.Discovery.IClientService service, string bucket, string objectValue) : 
+            public DeleteRequest(Google.Apis.Services.IClientService service, string bucket, string objectValue) : 
                     base(service) {
                 this._bucket = bucket;
                 this._object = objectValue;
@@ -4225,7 +4225,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private System.Nullable<Projection> _projection;
             
-            public GetRequest(Google.Apis.Discovery.IClientService service, string bucket, string objectValue) : 
+            public GetRequest(Google.Apis.Services.IClientService service, string bucket, string objectValue) : 
                     base(service) {
                 this._bucket = bucket;
                 this._object = objectValue;
@@ -4382,7 +4382,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.Object _Body;
             
-            public InsertRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.Object body, string bucket) : 
+            public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.Object body, string bucket) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -4554,7 +4554,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private System.Nullable<Projection> _projection;
             
-            public InsertMediaUpload(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.Object body, string bucket, System.IO.Stream stream, string contentType) : 
+            public InsertMediaUpload(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.Object body, string bucket, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/storage/v1beta1/b/{bucket}/o", "POST", stream, contentType) {
                 this.Body = body;
                 this.Authenticator = service.Authenticator;
@@ -4684,7 +4684,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private System.Nullable<Projection> _projection;
             
-            public ListRequest(Google.Apis.Discovery.IClientService service, string bucket) : 
+            public ListRequest(Google.Apis.Services.IClientService service, string bucket) : 
                     base(service) {
                 this._bucket = bucket;
                 this.InitParameters();
@@ -4879,7 +4879,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.Object _Body;
             
-            public PatchRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.Object body, string bucket, string objectValue) : 
+            public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.Object body, string bucket, string objectValue) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -5051,7 +5051,7 @@ namespace Google.Apis.Storage.v1beta1 {
             
             private Google.Apis.Storage.v1beta1.Data.Object _Body;
             
-            public UpdateRequest(Google.Apis.Discovery.IClientService service, Google.Apis.Storage.v1beta1.Data.Object body, string bucket, string objectValue) : 
+            public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta1.Data.Object body, string bucket, string objectValue) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
@@ -5214,7 +5214,7 @@ namespace Google.Apis.Storage.v1beta1 {
         
         private ObjectsResource _objects;
         
-        private Google.Apis.Discovery.IClientService service {
+        private Google.Apis.Services.IClientService service {
             get {
                 return this;
             }
