@@ -421,6 +421,8 @@ namespace Google.Apis.Bigquery.v2.Data {
         
         private string _kind;
         
+        private string _pageToken;
+        
         private System.Collections.Generic.IList<TableRow> _rows;
         
         private TableSchema _schema;
@@ -467,6 +469,17 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
             set {
                 this._kind = value;
+            }
+        }
+        
+        /// <summary>A token used for paging results.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("pageToken")]
+        public virtual string PageToken {
+            get {
+                return this._pageToken;
+            }
+            set {
+                this._pageToken = value;
             }
         }
         
@@ -616,8 +629,6 @@ namespace Google.Apis.Bigquery.v2.Data {
         
         private JobConfigurationLoad _load;
         
-        private JobConfigurationProperties _properties;
-        
         private JobConfigurationQuery _query;
         
         [Newtonsoft.Json.JsonPropertyAttribute("copy")]
@@ -657,16 +668,6 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
             set {
                 this._load = value;
-            }
-        }
-        
-        [Newtonsoft.Json.JsonPropertyAttribute("properties")]
-        public virtual JobConfigurationProperties Properties {
-            get {
-                return this._properties;
-            }
-            set {
-                this._properties = value;
             }
         }
         
@@ -983,9 +984,6 @@ namespace Google.Apis.Bigquery.v2.Data {
                 this._writeDisposition = value;
             }
         }
-    }
-    
-    public class JobConfigurationProperties : System.Collections.Generic.Dictionary<string, string> {
     }
     
     public class JobConfigurationQuery {
@@ -1762,6 +1760,8 @@ namespace Google.Apis.Bigquery.v2.Data {
         
         private string _kind;
         
+        private string _pageToken;
+        
         private System.Collections.Generic.IList<TableRow> _rows;
         
         private TableSchema _schema;
@@ -1799,6 +1799,17 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
             set {
                 this._kind = value;
+            }
+        }
+        
+        /// <summary>A token used for paging results.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("pageToken")]
+        public virtual string PageToken {
+            get {
+                return this._pageToken;
+            }
+            set {
+                this._pageToken = value;
             }
         }
         
@@ -3641,6 +3652,8 @@ namespace Google.Apis.Bigquery.v2 {
             
             private System.Nullable<long> _maxResults;
             
+            private string _pageToken;
+            
             private string _projectId;
             
             private string _startIndex;
@@ -3739,6 +3752,17 @@ namespace Google.Apis.Bigquery.v2 {
                 }
             }
             
+            /// <summary>Page token, returned by a previous call, to request the next page of results</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string PageToken {
+                get {
+                    return this._pageToken;
+                }
+                set {
+                    this._pageToken = value;
+                }
+            }
+            
             /// <summary>Project ID of the query job</summary>
             [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
@@ -3797,6 +3821,7 @@ namespace Google.Apis.Bigquery.v2 {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("jobId", Google.Apis.Util.Utilities.CreateRuntimeParameter("jobId", true, "path", null, null, new string[0]));
                 parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
+                parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
                 parameters.Add("projectId", Google.Apis.Util.Utilities.CreateRuntimeParameter("projectId", true, "path", null, null, new string[0]));
                 parameters.Add("startIndex", Google.Apis.Util.Utilities.CreateRuntimeParameter("startIndex", false, "query", null, null, new string[0]));
                 parameters.Add("timeoutMs", Google.Apis.Util.Utilities.CreateRuntimeParameter("timeoutMs", false, "query", null, null, new string[0]));

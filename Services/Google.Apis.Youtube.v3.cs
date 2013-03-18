@@ -858,6 +858,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
+        /// <summary>Additional experimental branding properties.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("hints")]
         public virtual System.Collections.Generic.IList<PropertyValue> Hints {
             get {
@@ -1357,6 +1358,206 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
+    public class FeaturedChannel {
+        
+        private string _channelId;
+        
+        private ChannelSnippet _channelSnippet;
+        
+        private string _endTimeMs;
+        
+        private string _featureId;
+        
+        private string _imageUrl;
+        
+        private string _startTimeMs;
+        
+        private string _subscriberCount;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
+        public virtual string ChannelId {
+            get {
+                return this._channelId;
+            }
+            set {
+                this._channelId = value;
+            }
+        }
+        
+        /// <summary>Basic details about a channel, including title, description and thumbnails.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelSnippet")]
+        public virtual ChannelSnippet ChannelSnippet {
+            get {
+                return this._channelSnippet;
+            }
+            set {
+                this._channelSnippet = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("endTimeMs")]
+        public virtual string EndTimeMs {
+            get {
+                return this._endTimeMs;
+            }
+            set {
+                this._endTimeMs = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("featureId")]
+        public virtual string FeatureId {
+            get {
+                return this._featureId;
+            }
+            set {
+                this._featureId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("imageUrl")]
+        public virtual string ImageUrl {
+            get {
+                return this._imageUrl;
+            }
+            set {
+                this._imageUrl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("startTimeMs")]
+        public virtual string StartTimeMs {
+            get {
+                return this._startTimeMs;
+            }
+            set {
+                this._startTimeMs = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("subscriberCount")]
+        public virtual string SubscriberCount {
+            get {
+                return this._subscriberCount;
+            }
+            set {
+                this._subscriberCount = value;
+            }
+        }
+    }
+    
+    public class FeaturedVideo {
+        
+        private System.Nullable<long> _concurrentViewers;
+        
+        private string _endTimeMs;
+        
+        private string _featureId;
+        
+        private System.Nullable<bool> _isLive;
+        
+        private string _lengthS;
+        
+        private string _startTimeMs;
+        
+        private string _videoId;
+        
+        private VideoSnippet _videoSnippet;
+        
+        private string _viewCount;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("concurrentViewers")]
+        public virtual System.Nullable<long> ConcurrentViewers {
+            get {
+                return this._concurrentViewers;
+            }
+            set {
+                this._concurrentViewers = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("endTimeMs")]
+        public virtual string EndTimeMs {
+            get {
+                return this._endTimeMs;
+            }
+            set {
+                this._endTimeMs = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("featureId")]
+        public virtual string FeatureId {
+            get {
+                return this._featureId;
+            }
+            set {
+                this._featureId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("isLive")]
+        public virtual System.Nullable<bool> IsLive {
+            get {
+                return this._isLive;
+            }
+            set {
+                this._isLive = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("lengthS")]
+        public virtual string LengthS {
+            get {
+                return this._lengthS;
+            }
+            set {
+                this._lengthS = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("startTimeMs")]
+        public virtual string StartTimeMs {
+            get {
+                return this._startTimeMs;
+            }
+            set {
+                this._startTimeMs = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("videoId")]
+        public virtual string VideoId {
+            get {
+                return this._videoId;
+            }
+            set {
+                this._videoId = value;
+            }
+        }
+        
+        /// <summary>Basic details about a video, including title, description, uploader, thumbnails and category.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("videoSnippet")]
+        public virtual VideoSnippet VideoSnippet {
+            get {
+                return this._videoSnippet;
+            }
+            set {
+                this._videoSnippet = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("viewCount")]
+        public virtual string ViewCount {
+            get {
+                return this._viewCount;
+            }
+            set {
+                this._viewCount = value;
+            }
+        }
+    }
+    
     /// <summary>A geoPoint holds geo location information associated with a YouTube resource.</summary>
     public class GeoPoint {
         
@@ -1645,7 +1846,34 @@ namespace Google.Apis.Youtube.v3.Data {
         }
     }
     
-    /// <summary>A live broadcast describes live event configuration.</summary>
+    public class InvideoFeature {
+        
+        private FeaturedChannel _featuredChannel;
+        
+        private FeaturedVideo _featuredVideo;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("featuredChannel")]
+        public virtual FeaturedChannel FeaturedChannel {
+            get {
+                return this._featuredChannel;
+            }
+            set {
+                this._featuredChannel = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("featuredVideo")]
+        public virtual FeaturedVideo FeaturedVideo {
+            get {
+                return this._featuredVideo;
+            }
+            set {
+                this._featuredVideo = value;
+            }
+        }
+    }
+    
+    /// <summary>A liveBroadcast resource represents an event that will be streamed, via live video, on YouTube.</summary>
     public class LiveBroadcast : Google.Apis.Requests.IDirectResponseSchema {
         
         private LiveBroadcastContentDetails _contentDetails;
@@ -1673,7 +1901,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The eTag of the broadcast.</summary>
+        /// <summary>The ETag of the broadcast.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
@@ -1684,7 +1912,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The unique id of the broadcast.</summary>
+        /// <summary>The ID that YouTube assigns to uniquely identify the broadcast.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
@@ -1695,7 +1923,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The type of this API resource.</summary>
+        /// <summary>The type of the API resource. For live broadcast resources, the value will be youtube#liveBroadcast.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -1757,7 +1985,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private System.Nullable<bool> _startWithSlateCuepoint;
         
-        /// <summary>The id of the stream bound to the broadcast.</summary>
+        /// <summary>This value uniquely identifies the live stream bound to the broadcast.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("boundStreamId")]
         public virtual string BoundStreamId {
             get {
@@ -1768,7 +1996,9 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Whether the live event will be archived or not.</summary>
+        /// <summary>This setting indicates whether the live event should be archived so that YouTube viewers can watch it at a later date. The default value for this property is true.
+        ///
+        ///Important: You must also set the enableDvr property&apos;s value to true if you want the playback to be available immediately after the broadcast ends. If you set this property&apos;s value to true but do not also set the enableDvr property to true, there may be a delay of around one day before the archived video will be available for playback.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("enableArchive")]
         public virtual System.Nullable<bool> EnableArchive {
             get {
@@ -1779,7 +2009,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Whether to enable or disable content encryption.</summary>
+        /// <summary>This setting indicates whether YouTube should enable content encryption for the broadcast.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("enableContentEncryption")]
         public virtual System.Nullable<bool> EnableContentEncryption {
             get {
@@ -1790,7 +2020,9 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Whether the dvr (digital video recording) is enabled or not.</summary>
+        /// <summary>This setting determines whether viewers can access DVR controls while watching the video. DVR controls enable the viewer to control the video playback experience by pausing, rewinding, or fast forwarding content. The default value for this property is true.
+        ///
+        ///Important: You must set the value to true and also set the enableArchive property&apos;s value to true if you want to make playback available immediately after the broadcast ends.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("enableDvr")]
         public virtual System.Nullable<bool> EnableDvr {
             get {
@@ -1801,7 +2033,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Whether to allow the broadcast to be played in an embedded player.</summary>
+        /// <summary>This setting indicates whether the broadcast video can be played in an embedded player. If you choose to archive the video (using the enableArchive property), this setting will also apply to the archived video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("enableEmbed")]
         public virtual System.Nullable<bool> EnableEmbed {
             get {
@@ -1812,7 +2044,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Information about the monitor stream which helps the broadcaster to review the event content before shown to the public.</summary>
+        /// <summary>The monitorStream object contains information about the monitor stream, which the broadcaster can use to review the event content before the broadcast stream is shown publicly.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("monitorStream")]
         public virtual LiveBroadcastContentDetails.MonitorStreamData MonitorStream {
             get {
@@ -1823,7 +2055,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Automatically start with a slate cuepoint.</summary>
+        /// <summary>This setting indicates whether the broadcast should automatically begin with an in-stream slate when you update the broadcast&apos;s status to live. After updating the status, you then need to send a liveCuepoints.insert request that sets the cuepoint&apos;s eventState to end to remove the in-stream slate and make your broadcast stream visible to viewers.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("startWithSlateCuepoint")]
         public virtual System.Nullable<bool> StartWithSlateCuepoint {
             get {
@@ -1834,7 +2066,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Information about the monitor stream which helps the broadcaster to review the event content before shown to the public.</summary>
+        /// <summary>The monitorStream object contains information about the monitor stream, which the broadcaster can use to review the event content before the broadcast stream is shown publicly.</summary>
         public class MonitorStreamData {
             
             private System.Nullable<long> _broadcastStreamDelayMs;
@@ -1843,7 +2075,7 @@ namespace Google.Apis.Youtube.v3.Data {
             
             private System.Nullable<bool> _enableMonitorStream;
             
-            /// <summary>If enableMonitorStream is true, the public broadcast will be delayed by this value.</summary>
+            /// <summary>If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("broadcastStreamDelayMs")]
             public virtual System.Nullable<long> BroadcastStreamDelayMs {
                 get {
@@ -1854,7 +2086,7 @@ namespace Google.Apis.Youtube.v3.Data {
                 }
             }
             
-            /// <summary>The html code of the embedded player for the monitor stream.</summary>
+            /// <summary>HTML code that embeds a player that plays the monitor stream.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("embedHtml")]
             public virtual string EmbedHtml {
                 get {
@@ -1865,7 +2097,11 @@ namespace Google.Apis.Youtube.v3.Data {
                 }
             }
             
-            /// <summary>Whether to enable the monitor stream for the broadcast.</summary>
+            /// <summary>This value determines whether the monitor stream is enabled for the broadcast. If the monitor stream is enabled, then YouTube will broadcast the event content on a special stream intended only for the broadcaster&apos;s consumption. The broadcaster can use the stream to review the event content and also to identify the optimal times to insert cuepoints.
+            ///
+            ///You need to set this value to true if you intend to have a broadcast delay for your event.
+            ///
+            ///Note: This property cannot be updated once the broadcast is in the testing or live state.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("enableMonitorStream")]
             public virtual System.Nullable<bool> EnableMonitorStream {
                 get {
@@ -1893,7 +2129,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _prevPageToken;
         
-        /// <summary>The eTag of the chart.</summary>
+        /// <summary>The ETag of the response.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
@@ -1915,7 +2151,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The type of this API resource.</summary>
+        /// <summary>The type of the API response. For this operation, the value will be youtube#liveBroadcastList.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -1926,7 +2162,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the next page in the result set.</summary>
+        /// <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
@@ -1948,7 +2184,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the previous page in the result set.</summary>
+        /// <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
         public virtual string PrevPageToken {
             get {
@@ -1967,7 +2203,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private LiveBroadcastSlateSettings.SlatesData _slates;
         
-        /// <summary>Whether slate is enabled or not.</summary>
+        /// <summary>An indication of whether a broadcast slate is enabled for the broadcast. Set this property to true to display the slate. Update the property value to false to remove the slate. You can insert or remove the broadcast slate at any time during an event.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("enableSlates")]
         public virtual System.Nullable<bool> EnableSlates {
             get {
@@ -1978,7 +2214,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Broadcast slates.</summary>
+        /// <summary>A map of slates that are displayed for the broadcast in different regions.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("slates")]
         public virtual LiveBroadcastSlateSettings.SlatesData Slates {
             get {
@@ -1989,17 +2225,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Broadcast slates.</summary>
+        /// <summary>A map of slates that are displayed for the broadcast in different regions.</summary>
         public class SlatesData : System.Collections.Generic.Dictionary<string, SlatesData.SlatesDataSchema> {
             
-            /// <summary>Locale code indicating in which region should the slate be displayed.</summary>
+            /// <summary>The locale code that identifies the region where the slate displays.</summary>
             public class SlatesDataSchema {
                 
                 private string _backgroundUrl;
                 
                 private System.Collections.Generic.IList<string> _textLines;
                 
-                /// <summary>Url of the background image.</summary>
+                /// <summary>The URL of the slate&apos;s background image. This value can be set or updated if enableSlates is set to true. The image should have a 16x9 aspect ratio.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("backgroundUrl")]
                 public virtual string BackgroundUrl {
                     get {
@@ -2010,7 +2246,7 @@ namespace Google.Apis.Youtube.v3.Data {
                     }
                 }
                 
-                /// <summary>Multi-line message showing in the slate.</summary>
+                /// <summary>A multiline message that the slate displays. This value can be set or updated if enableSlates is set to true. You can specify up to three lines of text.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("textLines")]
                 public virtual System.Collections.Generic.IList<string> TextLines {
                     get {
@@ -2045,7 +2281,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _title;
         
-        /// <summary>Date and time the broadcast is actual to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        /// <summary>The date and time that the broadcast actually ended. This information is only available once the broadcast&apos;s state is complete. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("actualEndTime")]
         public virtual string ActualEndTime {
             get {
@@ -2056,7 +2292,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Date and time the broadcast is actual to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        /// <summary>The date and time that the broadcast actually started. This information is only available once the broadcast&apos;s state is live. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("actualStartTime")]
         public virtual string ActualStartTime {
             get {
@@ -2067,7 +2303,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Channel publishing the broadcast.</summary>
+        /// <summary>The ID that YouTube uses to uniquely identify the channel that is publishing the broadcast.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
         public virtual string ChannelId {
             get {
@@ -2078,7 +2314,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Description of the broadcast.</summary>
+        /// <summary>The broadcast&apos;s description. As with the title, you can set this field by modifying the broadcast resource or by setting the description field of the corresponding video resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
@@ -2089,7 +2325,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Date and time the broadcast was published at. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        /// <summary>The date and time that the broadcast was added to YouTube&apos;s live broadcast schedule. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
         public virtual string PublishedAt {
             get {
@@ -2100,7 +2336,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Date and time the broadcast is scheduled to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        /// <summary>The date and time that the broadcast is scheduled to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("scheduledEndTime")]
         public virtual string ScheduledEndTime {
             get {
@@ -2111,7 +2347,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Date and time the broadcast is scheduled to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        /// <summary>The date and time that the broadcast is scheduled to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("scheduledStartTime")]
         public virtual string ScheduledStartTime {
             get {
@@ -2122,7 +2358,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video thumbnails.</summary>
+        /// <summary>A map of thumbnail images associated with the broadcast. For each nested object in this object, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("thumbnails")]
         public virtual LiveBroadcastSnippet.ThumbnailsData Thumbnails {
             get {
@@ -2133,7 +2369,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Title of the broadcast.</summary>
+        /// <summary>The broadcast&apos;s title. Note that the broadcast represents exactly one YouTube video. You can set this field by modifying the broadcast resource or by setting the title field of the corresponding video resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
@@ -2144,7 +2380,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Video thumbnails.</summary>
+        /// <summary>A map of thumbnail images associated with the broadcast. For each nested object in this object, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         public class ThumbnailsData : System.Collections.Generic.Dictionary<string, Thumbnail> {
         }
     }
@@ -2156,7 +2392,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _privacyStatus;
         
-        /// <summary>Life status of the live broadcast.</summary>
+        /// <summary>The broadcast&apos;s status. The status can be updated using the API&apos;s liveBroadcasts.transition method.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("lifeCycleStatus")]
         public virtual string LifeCycleStatus {
             get {
@@ -2167,7 +2403,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Privacy settings of the live broadcast. Allowed values: private, unlisted, public.</summary>
+        /// <summary>The broadcast&apos;s privacy status. Note that the broadcast represents exactly one YouTube video, so the privacy settings are identical to those supported for videos. In addition, you can set this field by modifying the broadcast resource or by setting the privacyStatus field of the corresponding video resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("privacyStatus")]
         public virtual string PrivacyStatus {
             get {
@@ -2205,7 +2441,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The eTag of the stream.</summary>
+        /// <summary>The ETag of the stream resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
@@ -2216,7 +2452,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The unique id of the stream.</summary>
+        /// <summary>The ID that YouTube assigns to uniquely identify the stream.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
@@ -2227,7 +2463,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The type of this API resource.</summary>
+        /// <summary>The type of the API resource. For live stream resources, the value will be youtube#liveStream.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -2270,9 +2506,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _ingestionType;
         
-        private LiveStreamCdnMulticastIngestionInfo _multicastIngestionInfo;
-        
-        /// <summary>The format of the inbound data. Allowed values: 240p, 360p, 480p, 720p, 1080p, webm_360p, multicast_qcif, multicast_240p, multicast_360p, multicast_480p, multicast_720p, multicast_1080p.</summary>
+        /// <summary>The format of the video stream that you are sending to YouTube.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("format")]
         public virtual string Format {
             get {
@@ -2294,7 +2528,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The live stream ingestion type. Allowed values: rtmp, http, multicast.</summary>
+        /// <summary>The method or protocol used to transmit the video stream.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("ingestionType")]
         public virtual string IngestionType {
             get {
@@ -2302,17 +2536,6 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._ingestionType = value;
-            }
-        }
-        
-        /// <summary>Brief description of the live stream cdn settings.</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("multicastIngestionInfo")]
-        public virtual LiveStreamCdnMulticastIngestionInfo MulticastIngestionInfo {
-            get {
-                return this._multicastIngestionInfo;
-            }
-            set {
-                this._multicastIngestionInfo = value;
             }
         }
     }
@@ -2326,7 +2549,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _streamName;
         
-        /// <summary>The backup address of the inbound data.</summary>
+        /// <summary>The backup ingestion URL that you should use to stream video to YouTube. You have the option of simultaneously streaming the content that you are sending to the ingestionAddress to this URL.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("backupIngestionAddress")]
         public virtual string BackupIngestionAddress {
             get {
@@ -2337,7 +2560,11 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The address of the inbound data.</summary>
+        /// <summary>The primary ingestion URL that you should use to stream video to YouTube. You must stream video to this URL.
+        ///
+        ///Depending on which application or tool you use to encode your video stream, you may need to enter the stream URL and stream name separately or you may need to concatenate them in the following format:
+        ///
+        ///STREAM_URL/STREAM_NAME</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("ingestionAddress")]
         public virtual string IngestionAddress {
             get {
@@ -2348,7 +2575,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Ingestion stream name.</summary>
+        /// <summary>The HTTP or RTMP stream name that YouTube assigns to the video stream.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("streamName")]
         public virtual string StreamName {
             get {
@@ -2356,23 +2583,6 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._streamName = value;
-            }
-        }
-    }
-    
-    /// <summary>Brief description of the live stream cdn settings.</summary>
-    public class LiveStreamCdnMulticastIngestionInfo {
-        
-        private string _multicastAddress;
-        
-        /// <summary>The IP address of the multicast data.</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("multicastAddress")]
-        public virtual string MulticastAddress {
-            get {
-                return this._multicastAddress;
-            }
-            set {
-                this._multicastAddress = value;
             }
         }
     }
@@ -2392,7 +2602,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _prevPageToken;
         
-        /// <summary>The eTag of the chart.</summary>
+        /// <summary>The ETag of the response.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
@@ -2414,7 +2624,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The type of this API resource.</summary>
+        /// <summary>The type of the API response. For this operation, the value will be youtube#liveStreamList.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -2425,7 +2635,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the next page in the result set.</summary>
+        /// <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
@@ -2447,7 +2657,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the previous page in the result set.</summary>
+        /// <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
         public virtual string PrevPageToken {
             get {
@@ -2470,7 +2680,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _title;
         
-        /// <summary>Channel publishing the live stream.</summary>
+        /// <summary>The ID that YouTube uses to uniquely identify the channel that is transmitting the stream.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
         public virtual string ChannelId {
             get {
@@ -2481,7 +2691,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Description of the live stream.</summary>
+        /// <summary>The stream&apos;s description. The value cannot be longer than 10000 characters.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
@@ -2492,7 +2702,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Date and time the live stream was published at.</summary>
+        /// <summary>The date and time that the stream was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
         public virtual string PublishedAt {
             get {
@@ -2503,7 +2713,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Title of the live stream.</summary>
+        /// <summary>The stream&apos;s title. The value must be between 1 and 128 characters long.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
@@ -2520,7 +2730,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _streamStatus;
         
-        /// <summary>The status of the stream.</summary>
+        /// <summary>The stream&apos;s status.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("streamStatus")]
         public virtual string StreamStatus {
             get {
@@ -2537,7 +2747,7 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private string _default;
         
-        private System.Collections.Generic.IList<LocalizedString> _localizeds;
+        private System.Collections.Generic.IList<LocalizedString> _localized;
         
         [Newtonsoft.Json.JsonPropertyAttribute("default")]
         public virtual string Default {
@@ -2549,13 +2759,13 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        [Newtonsoft.Json.JsonPropertyAttribute("localizeds")]
-        public virtual System.Collections.Generic.IList<LocalizedString> Localizeds {
+        [Newtonsoft.Json.JsonPropertyAttribute("localized")]
+        public virtual System.Collections.Generic.IList<LocalizedString> Localized {
             get {
-                return this._localizeds;
+                return this._localized;
             }
             set {
-                this._localizeds = value;
+                this._localized = value;
             }
         }
     }
@@ -2614,6 +2824,250 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._totalResults = value;
+            }
+        }
+    }
+    
+    /// <summary>A player resource represents all the information needed to play a video.</summary>
+    public class Player {
+        
+        private PlayerAdsPlaylist _adsPlaylist;
+        
+        private string _etag;
+        
+        private ResourceId _id;
+        
+        private InvideoFeature _invideoFeature;
+        
+        private string _kind;
+        
+        private PlayerVideoUrls _videoUrls;
+        
+        /// <summary>The playlist of ads which accompany the content video.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("adsPlaylist")]
+        public virtual PlayerAdsPlaylist AdsPlaylist {
+            get {
+                return this._adsPlaylist;
+            }
+            set {
+                this._adsPlaylist = value;
+            }
+        }
+        
+        /// <summary>The ETag for the player resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("etag")]
+        public virtual string ETag {
+            get {
+                return this._etag;
+            }
+            set {
+                this._etag = value;
+            }
+        }
+        
+        /// <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual ResourceId Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("invideoFeature")]
+        public virtual InvideoFeature InvideoFeature {
+            get {
+                return this._invideoFeature;
+            }
+            set {
+                this._invideoFeature = value;
+            }
+        }
+        
+        /// <summary>The type of the API resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Part containing the URLs pointing to the video data.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("videoUrls")]
+        public virtual PlayerVideoUrls VideoUrls {
+            get {
+                return this._videoUrls;
+            }
+            set {
+                this._videoUrls = value;
+            }
+        }
+    }
+    
+    /// <summary>The playlist of ads which accompany the content video.</summary>
+    public class PlayerAdsPlaylist {
+        
+        private string _vmap_xml;
+        
+        /// <summary>The VMAP XML document that describes where ads should be inserted and what ad formats should be used in those ad breaks. See http://www.iab.net/vmap.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("vmap_xml")]
+        public virtual string Vmap_xml {
+            get {
+                return this._vmap_xml;
+            }
+            set {
+                this._vmap_xml = value;
+            }
+        }
+    }
+    
+    /// <summary>A list of players returned from a youtube.player.list call.</summary>
+    public class PlayerListResponse : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _etag;
+        
+        private string _kind;
+        
+        private System.Collections.Generic.IList<Player> _players;
+        
+        /// <summary>The ETag of the response.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("etag")]
+        public virtual string ETag {
+            get {
+                return this._etag;
+            }
+            set {
+                this._etag = value;
+            }
+        }
+        
+        /// <summary>The type of the API response. For this operation, the value will be youtube#playerListResponse.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>A list of players that match the request criteria.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("players")]
+        public virtual System.Collections.Generic.IList<Player> Players {
+            get {
+                return this._players;
+            }
+            set {
+                this._players = value;
+            }
+        }
+    }
+    
+    /// <summary>Part describing if and why a video can&apos;t be played.</summary>
+    public class PlayerRestrictionDetails {
+        
+        private string _reason;
+        
+        private System.Nullable<bool> _restricted;
+        
+        private string _restriction;
+        
+        /// <summary>Detailed information about the restriction</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("reason")]
+        public virtual string Reason {
+            get {
+                return this._reason;
+            }
+            set {
+                this._reason = value;
+            }
+        }
+        
+        /// <summary>True iff the video can&apos;t be played.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("restricted")]
+        public virtual System.Nullable<bool> Restricted {
+            get {
+                return this._restricted;
+            }
+            set {
+                this._restricted = value;
+            }
+        }
+        
+        /// <summary>A code describing the restriction class.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("restriction")]
+        public virtual string Restriction {
+            get {
+                return this._restriction;
+            }
+            set {
+                this._restriction = value;
+            }
+        }
+    }
+    
+    /// <summary>A single video format the user can access.</summary>
+    public class PlayerVideoUrl {
+        
+        private System.Nullable<long> _itag;
+        
+        private string _url;
+        
+        /// <summary>itag of the video format.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("itag")]
+        public virtual System.Nullable<long> Itag {
+            get {
+                return this._itag;
+            }
+            set {
+                this._itag = value;
+            }
+        }
+        
+        /// <summary>Streamer URL serving the video.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("url")]
+        public virtual string Url {
+            get {
+                return this._url;
+            }
+            set {
+                this._url = value;
+            }
+        }
+    }
+    
+    /// <summary>Part containing the URLs pointing to the video data.</summary>
+    public class PlayerVideoUrls {
+        
+        private PlayerRestrictionDetails _restriction;
+        
+        private System.Collections.Generic.IList<PlayerVideoUrl> _url;
+        
+        /// <summary>Part describing if and why a video can&apos;t be played.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("restriction")]
+        public virtual PlayerRestrictionDetails Restriction {
+            get {
+                return this._restriction;
+            }
+            set {
+                this._restriction = value;
+            }
+        }
+        
+        /// <summary>URLs to the formats that are available to the caller.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("url")]
+        public virtual System.Collections.Generic.IList<PlayerVideoUrl> Url {
+            get {
+                return this._url;
+            }
+            set {
+                this._url = value;
             }
         }
     }
@@ -3930,6 +4384,8 @@ namespace Google.Apis.Youtube.v3.Data {
     /// <summary>A video resource represents a YouTube video.</summary>
     public class Video : Google.Apis.Requests.IDirectResponseSchema {
         
+        private VideoAgeGating _ageGatingDetails;
+        
         private VideoContentDetails _contentDetails;
         
         private string _etag;
@@ -3959,6 +4415,16 @@ namespace Google.Apis.Youtube.v3.Data {
         private VideoSuggestions _suggestions;
         
         private VideoTopicDetails _topicDetails;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("ageGatingDetails")]
+        public virtual VideoAgeGating AgeGatingDetails {
+            get {
+                return this._ageGatingDetails;
+            }
+            set {
+                this._ageGatingDetails = value;
+            }
+        }
         
         /// <summary>Details about the content of a YouTube Video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("contentDetails")]
@@ -4122,6 +4588,48 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._topicDetails = value;
+            }
+        }
+    }
+    
+    public class VideoAgeGating {
+        
+        private System.Nullable<bool> _alcoholContent;
+        
+        private System.Nullable<bool> _restricted;
+        
+        private string _videoGameRating;
+        
+        /// <summary>Indicates whether or not the video has alcoholic beverage content. Only users of legal purchasing age in a particular country, as identified by ICAP, can view the content.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("alcoholContent")]
+        public virtual System.Nullable<bool> AlcoholContent {
+            get {
+                return this._alcoholContent;
+            }
+            set {
+                this._alcoholContent = value;
+            }
+        }
+        
+        /// <summary>Age-restricted trailers. For redband trailers and adult-rated video-games. Only users aged 18+ can view the content. The the field is true the content is restricted to viewers aged 18+. Otherwise The field won&apos;t be present.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("restricted")]
+        public virtual System.Nullable<bool> Restricted {
+            get {
+                return this._restricted;
+            }
+            set {
+                this._restricted = value;
+            }
+        }
+        
+        /// <summary>Video game rating, if any.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("videoGameRating")]
+        public virtual string VideoGameRating {
+            get {
+                return this._videoGameRating;
+            }
+            set {
+                this._videoGameRating = value;
             }
         }
     }
@@ -5411,6 +5919,7 @@ namespace Google.Apis.Youtube.v3 {
             this._guideCategories = new GuideCategoriesResource(this, Authenticator);
             this._liveBroadcasts = new LiveBroadcastsResource(this, Authenticator);
             this._liveStreams = new LiveStreamsResource(this, Authenticator);
+            this._players = new PlayersResource(this, Authenticator);
             this._playlistItems = new PlaylistItemsResource(this, Authenticator);
             this._playlists = new PlaylistsResource(this, Authenticator);
             this._search = new SearchResource(this, Authenticator);
@@ -5932,6 +6441,8 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
+            private System.Nullable<bool> _managedByMe;
+            
             private System.Nullable<long> _maxResults;
             
             private System.Nullable<bool> _mine;
@@ -6038,6 +6549,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>Set this parameter's value to true to instruct the API to only return channels managed by the content owner that the onBehalfOfContentOwner parameter specifies. The user must be authenticated as a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("managedByMe", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> ManagedByMe {
+                get {
+                    return this._managedByMe;
+                }
+                set {
+                    this._managedByMe = value;
+                }
+            }
+            
             /// <summary>The maxResults parameter specifies the maximum number of items that should be returned in the result set.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
@@ -6131,6 +6653,7 @@ namespace Google.Apis.Youtube.v3 {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("categoryId", Google.Apis.Util.Utilities.CreateRuntimeParameter("categoryId", false, "query", null, null, new string[0]));
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
+                parameters.Add("managedByMe", Google.Apis.Util.Utilities.CreateRuntimeParameter("managedByMe", false, "query", null, null, new string[0]));
                 parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
                 parameters.Add("mine", Google.Apis.Util.Utilities.CreateRuntimeParameter("mine", false, "query", null, null, new string[0]));
                 parameters.Add("mySubscribers", Google.Apis.Util.Utilities.CreateRuntimeParameter("mySubscribers", false, "query", null, null, new string[0]));
@@ -6348,81 +6871,85 @@ namespace Google.Apis.Youtube.v3 {
             this.authenticator = authenticator;
         }
         
-        /// <summary>Bind a YouTube live broadcast to a stream.</summary>
-        /// <param name="id">Required - ID of the broadcast to which the stream will be bound</param>
-        /// <param name="part">Required - Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</param>
+        /// <summary>Binds a YouTube broadcast to a stream or removes an existing binding between a broadcast and a stream. A broadcast can only be bound to one video stream.</summary>
+        /// <param name="id">Required - The id parameter specifies the unique ID of the broadcast that is being bound to a video stream.</param>
+        /// <param name="part">Required - The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</param>
         public virtual BindRequest Bind(string id, string part) {
             return new BindRequest(service, id, part);
         }
         
-        /// <summary>Delete a YouTube live broadcast.</summary>
+        /// <summary>Deletes a broadcast.</summary>
         /// <param name="id">Required - The id parameter specifies the YouTube live broadcast ID for the resource that is being deleted.</param>
         public virtual DeleteRequest Delete(string id) {
             return new DeleteRequest(service, id);
         }
         
-        /// <summary>Insert a YouTube live broadcast.</summary>
-        /// <param name="part">Required - Live broadcast parts to be set for the broadcast as well as included in the returned response. Valid values are: snippet, status, slateSettings, contentDetails.</param>
+        /// <summary>Creates a broadcast.</summary>
+        /// <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+        ///
+        ///The part properties that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</param>
         public virtual InsertRequest Insert(Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) {
             return new InsertRequest(service, body, part);
         }
         
-        /// <summary>Browse the YouTube broadcast collection.</summary>
-        /// <param name="part">Required - Live broadcast parts to include in the returned response. Valid values are: id, snippet, status, slateSettings, contentDetails.</param>
+        /// <summary>Returns a list of YouTube broadcasts that match the API request parameters.</summary>
+        /// <param name="part">Required - The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</param>
         public virtual ListRequest List(string part) {
             return new ListRequest(service, part);
         }
         
-        /// <summary>Change the broadcasting status of a YouTube live broadcast and start all the processes associated with it.</summary>
-        /// <param name="broadcastStatus">Required - Must be one of the following values [complete, live, testing] - Desired broadcast status.</param>
-        /// <param name="id">Required - ID of the broadcast to change status</param>
-        /// <param name="part">Required - Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</param>
+        /// <summary>Changes the status of a YouTube live broadcast and initiates any processes associated with the new status. For example, when you transition a broadcast&apos;s status to testing, YouTube starts to transmit video to that broadcast&apos;s monitor stream.</summary>
+        /// <param name="broadcastStatus">Required - Must be one of the following values [complete, live, testing] - The broadcastStatus parameter identifies the state to which the broadcast is changing.</param>
+        /// <param name="id">Required - The id parameter specifies the unique ID of the broadcast that is transitioning to another status.</param>
+        /// <param name="part">Required - The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</param>
         public virtual TransitionRequest Transition(BroadcastStatusEnum broadcastStatus, string id, string part) {
             return new TransitionRequest(service, broadcastStatus, id, part);
         }
         
-        /// <summary>Update a YouTube live broadcast.</summary>
+        /// <summary>Updates a broadcast. For example, you could modify the broadcast settings defined in the liveBroadcast resource&apos;s contentDetails object.</summary>
         /// <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
         ///
-        ///The part names that you can include in the parameter value are id, snippet, status, slateSettings, contentDetails.</param>
+        ///The part properties that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.
+        ///
+        ///Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a broadcast&apos;s privacy status is defined in the status part. As such, if your request is updating a private or unlisted broadcast, and the request&apos;s part parameter value includes the status part, the broadcast&apos;s privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the broadcast will revert to the default privacy setting.</param>
         public virtual UpdateRequest Update(Google.Apis.Youtube.v3.Data.LiveBroadcast body, string part) {
             return new UpdateRequest(service, body, part);
         }
         
-        /// <summary>Filter to only return broadcasts with the given status by the authenticated user.</summary>
+        /// <summary>The broadcastStatus parameter filters the API response to only include broadcasts with the specified status.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum BroadcastStatus {
             
-            /// <summary>Return active broadcasts.</summary>
+            /// <summary>Return current live broadcasts.</summary>
             [Google.Apis.Util.StringValueAttribute("active")]
             Active,
             
-            /// <summary>Return all the broadcasts.</summary>
+            /// <summary>Return all broadcasts.</summary>
             [Google.Apis.Util.StringValueAttribute("all")]
             All,
             
-            /// <summary>Return previously completed broadcasts.</summary>
+            /// <summary>Return broadcasts that have already ended.</summary>
             [Google.Apis.Util.StringValueAttribute("completed")]
             Completed,
             
-            /// <summary>Return upcoming broadcasts.</summary>
+            /// <summary>Return broadcasts that have not yet started.</summary>
             [Google.Apis.Util.StringValueAttribute("upcoming")]
             Upcoming,
         }
         
-        /// <summary>Desired broadcast status.</summary>
+        /// <summary>The broadcastStatus parameter identifies the state to which the broadcast is changing.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum BroadcastStatusEnum {
             
-            /// <summary>Stop broadcasting.</summary>
+            /// <summary>The broadcast is over. YouTube stops transmitting video.</summary>
             [Google.Apis.Util.StringValueAttribute("complete")]
             Complete,
             
-            /// <summary>Start broadcasting.</summary>
+            /// <summary>The broadcast is visible to its audience. YouTube transmits video to the broadcast&apos;s monitor stream and its broadcast stream.</summary>
             [Google.Apis.Util.StringValueAttribute("live")]
             Live,
             
-            /// <summary>Start broadcast testing.</summary>
+            /// <summary>Start testing the broadcast. YouTube transmits video to the broadcast&apos;s monitor stream. Note that you can only transition a broadcast to the testing state if its contentDetails.monitorStream.enableMonitorStream property is set to true.</summary>
             [Google.Apis.Util.StringValueAttribute("testing")]
             Testing,
         }
@@ -6520,7 +7047,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>ID of the broadcast to which the stream will be bound</summary>
+            /// <summary>The id parameter specifies the unique ID of the broadcast that is being bound to a video stream.</summary>
             [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Id {
                 get {
@@ -6528,7 +7055,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</summary>
+            /// <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
                 get {
@@ -6536,7 +7063,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>ID of the stream to bind to the broadcast</summary>
+            /// <summary>The streamId parameter specifies the unique ID of the video stream that is being bound to a broadcast. If this parameter is omitted, the API will remove any existing binding between the broadcast and a video stream.</summary>
             [Google.Apis.Util.RequestParameterAttribute("streamId", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string StreamId {
                 get {
@@ -6798,7 +7325,9 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Live broadcast parts to be set for the broadcast as well as included in the returned response. Valid values are: snippet, status, slateSettings, contentDetails.</summary>
+            /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            ///
+            ///The part properties that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
                 get {
@@ -6872,8 +7401,6 @@ namespace Google.Apis.Youtube.v3 {
             private System.Nullable<long> _maxResults;
             
             private System.Nullable<bool> _mine;
-            
-            private string _onBehalfOf;
             
             private string _pageToken;
             
@@ -6951,7 +7478,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Filter to only return broadcasts with the given status by the authenticated user.</summary>
+            /// <summary>The broadcastStatus parameter filters the API response to only include broadcasts with the specified status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("broadcastStatus", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<BroadcastStatus> BroadcastStatus {
                 get {
@@ -6962,7 +7489,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>IDs of the live broadcasts to be returned.</summary>
+            /// <summary>The id parameter specifies a comma-separated list of YouTube broadcast IDs that identify the broadcasts being retrieved. In a liveBroadcast resource, the id property specifies the broadcast's ID.</summary>
             [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Id {
                 get {
@@ -6973,7 +7500,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Maximum number of results to return</summary>
+            /// <summary>The maxResults parameter specifies the maximum number of items that should be returned in the result set. Acceptable values are 0 to 50, inclusive. The default value is 5.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
@@ -6984,7 +7511,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Filter to only return broadcasts owned by authenticated user.</summary>
+            /// <summary>The mine parameter can be used to instruct the API to only return broadcasts owned by the authenticated user. Set the parameter value to true to only retrieve your own broadcasts.</summary>
             [Google.Apis.Util.RequestParameterAttribute("mine", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Mine {
                 get {
@@ -6995,18 +7522,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>ID of the Google+ Page for the channel that the request is be on behalf of</summary>
-            [Google.Apis.Util.RequestParameterAttribute("onBehalfOf", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string OnBehalfOf {
-                get {
-                    return this._onBehalfOf;
-                }
-                set {
-                    this._onBehalfOf = value;
-                }
-            }
-            
-            /// <summary>Token for the page selection.</summary>
+            /// <summary>The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</summary>
             [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
@@ -7017,7 +7533,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Live broadcast parts to include in the returned response. Valid values are: id, snippet, status, slateSettings, contentDetails.</summary>
+            /// <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
                 get {
@@ -7059,7 +7575,6 @@ namespace Google.Apis.Youtube.v3 {
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", false, "query", null, null, new string[0]));
                 parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", "5", null, new string[0]));
                 parameters.Add("mine", Google.Apis.Util.Utilities.CreateRuntimeParameter("mine", false, "query", null, null, new string[0]));
-                parameters.Add("onBehalfOf", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOf", false, "query", null, null, new string[0]));
                 parameters.Add("pageToken", Google.Apis.Util.Utilities.CreateRuntimeParameter("pageToken", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
@@ -7160,7 +7675,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Desired broadcast status.</summary>
+            /// <summary>The broadcastStatus parameter identifies the state to which the broadcast is changing.</summary>
             [Google.Apis.Util.RequestParameterAttribute("broadcastStatus", Google.Apis.Util.RequestParameterType.Query)]
             public virtual BroadcastStatusEnum BroadcastStatus {
                 get {
@@ -7168,7 +7683,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>ID of the broadcast to change status</summary>
+            /// <summary>The id parameter specifies the unique ID of the broadcast that is transitioning to another status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Id {
                 get {
@@ -7176,7 +7691,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</summary>
+            /// <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
                 get {
@@ -7313,7 +7828,9 @@ namespace Google.Apis.Youtube.v3 {
             
             /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             ///
-            ///The part names that you can include in the parameter value are id, snippet, status, slateSettings, contentDetails.</summary>
+            ///The part properties that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.
+            ///
+            ///Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a broadcast's privacy status is defined in the status part. As such, if your request is updating a private or unlisted broadcast, and the request's part parameter value includes the status part, the broadcast's privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the broadcast will revert to the default privacy setting.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
                 get {
@@ -7380,28 +7897,32 @@ namespace Google.Apis.Youtube.v3 {
             this.authenticator = authenticator;
         }
         
-        /// <summary>Delete a live stream.</summary>
+        /// <summary>Deletes a video stream.</summary>
         /// <param name="id">Required - The id parameter specifies the YouTube live stream ID for the resource that is being deleted.</param>
         public virtual DeleteRequest Delete(string id) {
             return new DeleteRequest(service, id);
         }
         
-        /// <summary>Insert a YouTube live stream.</summary>
-        /// <param name="part">Required - Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</param>
+        /// <summary>Creates a video stream. The stream enables you to send your video to YouTube, which can then broadcast the video to your audience.</summary>
+        /// <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+        ///
+        ///The part properties that you can include in the parameter value are id, snippet, cdn, and status.</param>
         public virtual InsertRequest Insert(Google.Apis.Youtube.v3.Data.LiveStream body, string part) {
             return new InsertRequest(service, body, part);
         }
         
-        /// <summary>Browse the YouTube live stream collection.</summary>
-        /// <param name="part">Required - Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</param>
+        /// <summary>Returns a list of video streams that match the API request parameters.</summary>
+        /// <param name="part">Required - The part parameter specifies a comma-separated list of one or more liveStream resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, cdn, and status.</param>
         public virtual ListRequest List(string part) {
             return new ListRequest(service, part);
         }
         
-        /// <summary>Update a YouTube live stream.</summary>
+        /// <summary>Updates a video stream. If the properties that you want to change cannot be updated, then you need to create a new stream with the proper settings.</summary>
         /// <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
         ///
-        ///The part names that you can include in the parameter value are id, snippet, cdn, status.</param>
+        ///The part properties that you can include in the parameter value are id, snippet, cdn, and status.
+        ///
+        ///Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. If the request body does not specify a value for a mutable property, the existing value for that property will be removed.</param>
         public virtual UpdateRequest Update(Google.Apis.Youtube.v3.Data.LiveStream body, string part) {
             return new UpdateRequest(service, body, part);
         }
@@ -7624,7 +8145,9 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</summary>
+            /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            ///
+            ///The part properties that you can include in the parameter value are id, snippet, cdn, and status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
                 get {
@@ -7775,7 +8298,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>IDs of the live streams to be returned.</summary>
+            /// <summary>The id parameter specifies a comma-separated list of YouTube stream IDs that identify the streams being retrieved. In a liveStream resource, the id property specifies the stream's ID.</summary>
             [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Id {
                 get {
@@ -7786,7 +8309,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Maximum number of results to return</summary>
+            /// <summary>The maxResults parameter specifies the maximum number of items that should be returned in the result set. Acceptable values are 0 to 50, inclusive. The default value is 5.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
@@ -7797,7 +8320,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Filter to only live streams owned by authenticated user.</summary>
+            /// <summary>The mine parameter can be used to instruct the API to only return streams owned by the authenticated user. Set the parameter value to true to only retrieve your own streams.</summary>
             [Google.Apis.Util.RequestParameterAttribute("mine", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Mine {
                 get {
@@ -7808,7 +8331,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>ID of the Google+ Page for the channel that the request is to be on behalf of</summary>
+            /// <summary>ID of the Google+ Page for the channel on whose behalf this request is made</summary>
             [Google.Apis.Util.RequestParameterAttribute("onBehalfOf", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string OnBehalfOf {
                 get {
@@ -7819,7 +8342,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Token for the page selection.</summary>
+            /// <summary>The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</summary>
             [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
@@ -7830,7 +8353,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</summary>
+            /// <summary>The part parameter specifies a comma-separated list of one or more liveStream resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, cdn, and status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
                 get {
@@ -7967,7 +8490,9 @@ namespace Google.Apis.Youtube.v3 {
             
             /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             ///
-            ///The part names that you can include in the parameter value are id, snippet, cdn, status.</summary>
+            ///The part properties that you can include in the parameter value are id, snippet, cdn, and status.
+            ///
+            ///Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. If the request body does not specify a value for a mutable property, the existing value for that property will be removed.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
                 get {
@@ -8016,6 +8541,181 @@ namespace Google.Apis.Youtube.v3 {
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+        }
+    }
+    
+    public class PlayersResource {
+        
+        private YoutubeService service;
+        
+        private Google.Apis.Authentication.IAuthenticator authenticator;
+        
+        private const string Resource = "players";
+        
+        public PlayersResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            this.service = service;
+            this.authenticator = authenticator;
+        }
+        
+        /// <summary>Returns the data required to play the videos specified on the request, or restriction information explaining why it can&apos;t be played.</summary>
+        /// <param name="part">Required - The part parameter specifies a comma-separated list of one or more player resource properties that the API response will include.</param>
+        public virtual ListRequest List(string part) {
+            return new ListRequest(service, part);
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ClientServiceRequest<Google.Apis.Youtube.v3.Data.PlayerListResponse> {
+            
+            private string _alt;
+            
+            private string _fields;
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _userIp;
+            
+            private string _itag;
+            
+            private string _part;
+            
+            private string _videoId;
+            
+            public ListRequest(Google.Apis.Services.IClientService service, string part) : 
+                    base(service) {
+                this._part = part;
+                this.InitParameters();
+            }
+            
+            /// <summary>Data format for the response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Alt {
+                get {
+                    return this._alt;
+                }
+                set {
+                    this._alt = value;
+                }
+            }
+            
+            /// <summary>Selector specifying which fields to include in a partial response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fields", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Fields {
+                get {
+                    return this._fields;
+                }
+                set {
+                    this._fields = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userIp", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UserIp {
+                get {
+                    return this._userIp;
+                }
+                set {
+                    this._userIp = value;
+                }
+            }
+            
+            /// <summary>If specified, the itag parameter specifies a comma-separated list of itags video formats the client is interested in. The returned formats will be a subset of those itags.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("itag", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Itag {
+                get {
+                    return this._itag;
+                }
+                set {
+                    this._itag = value;
+                }
+            }
+            
+            /// <summary>The part parameter specifies a comma-separated list of one or more player resource properties that the API response will include.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            /// <summary>The videoId parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) that are being retrieved.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("videoId", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string VideoId {
+                get {
+                    return this._videoId;
+                }
+                set {
+                    this._videoId = value;
+                }
+            }
+            
+            public override string ResourcePath {
+                get {
+                    return "players";
+                }
+            }
+            
+            public override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+            
+            public override string HttpMethod {
+                get {
+                    return "GET";
+                }
+            }
+            
+            public override string RestPath {
+                get {
+                    return "players";
+                }
+            }
+            
+            private void InitParameters() {
+                System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("itag", Google.Apis.Util.Utilities.CreateRuntimeParameter("itag", false, "query", null, null, new string[0]));
+                parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
+                parameters.Add("videoId", Google.Apis.Util.Utilities.CreateRuntimeParameter("videoId", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
@@ -11543,6 +12243,8 @@ namespace Google.Apis.Youtube.v3 {
         
         private LiveStreamsResource _liveStreams;
         
+        private PlayersResource _players;
+        
         private PlaylistItemsResource _playlistItems;
         
         private PlaylistsResource _playlists;
@@ -11588,6 +12290,12 @@ namespace Google.Apis.Youtube.v3 {
         public virtual LiveStreamsResource LiveStreams {
             get {
                 return this._liveStreams;
+            }
+        }
+        
+        public virtual PlayersResource Players {
+            get {
+                return this._players;
             }
         }
         

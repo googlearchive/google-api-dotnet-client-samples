@@ -2027,6 +2027,9 @@
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.PermissionId">
             <summary>The ID for the permission.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.TransferOwnership">
+            <summary>Whether changing a role to 'owner' should also downgrade the current owners to writers.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -2053,6 +2056,9 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.PermissionId">
             <summary>The ID for the permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.TransferOwnership">
+            <summary>Whether changing a role to 'owner' should also downgrade the current owners to writers.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>

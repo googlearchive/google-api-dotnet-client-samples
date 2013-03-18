@@ -98,6 +98,9 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.GetQueryResultsResponse.Kind">
             <summary>The resource type of the response.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.GetQueryResultsResponse.PageToken">
+            <summary>A token used for paging results.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.GetQueryResultsResponse.Rows">
             <summary>An object with as many results as can be contained within the maximum permitted reply size. To get any additional rows, you can call GetQueryResults and specify the jobReference returned above. Present only when the query completes successfully.</summary>
         </member>
@@ -307,6 +310,9 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.QueryResponse.Kind">
             <summary>The resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.QueryResponse.PageToken">
+            <summary>A token used for paging results.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.QueryResponse.Rows">
             <summary>An object with as many results as can be contained within the maximum permitted reply size. To get any additional rows, you can call GetQueryResults and specify the jobReference returned above.</summary>
@@ -709,6 +715,9 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetQueryResultsRequest.MaxResults">
             <summary>Maximum number of results to read</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetQueryResultsRequest.PageToken">
+            <summary>Page token, returned by a previous call, to request the next page of results</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetQueryResultsRequest.ProjectId">
             <summary>Project ID of the query job</summary>

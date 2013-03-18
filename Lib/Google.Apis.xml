@@ -96,13 +96,13 @@
         </member>
         <member name="T:Google.Apis.Services.BaseClientService">
             <summary>
-            A safe thread base class for a client service which provides common mechanizm for all services, like 
+            A thread-safe base class for a client service which provides common mechanizm for all services, like 
             serialization and gzip support.
             </summary>
         </member>
         <member name="T:Google.Apis.Services.IClientService">
             <summary>
-            Implementors of this interface are able to create arbitory requests against a service
+            Implementors of this interface are able to create arbitrary requests against a service
             resource name and method, as well as to create and retrieve information related to a request.
             </summary>
         </member>
@@ -777,7 +777,7 @@
         </member>
         <member name="F:Google.Apis.Upload.ResumableUpload`1.DefaultChunkSize">
             <summary>
-            Default chunk size is set to 4 times the <see cref="F:Google.Apis.Upload.ResumableUpload`1.MinimumChunkSize"/>of 256KB or 1MB 
+            Default chunk size is set to 40 times the <see cref="F:Google.Apis.Upload.ResumableUpload`1.MinimumChunkSize"/>of 256KB or 10MB 
             total.
             </summary>
             <seealso cref="F:Google.Apis.Upload.ResumableUpload`1.MinimumChunkSize"/>

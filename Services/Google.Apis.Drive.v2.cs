@@ -9465,6 +9465,8 @@ namespace Google.Apis.Drive.v2 {
             
             private string _permissionId;
             
+            private System.Nullable<bool> _transferOwnership;
+            
             private Google.Apis.Drive.v2.Data.Permission _Body;
             
             public PatchRequest(Google.Apis.Services.IClientService service, Google.Apis.Drive.v2.Data.Permission body, string fileId, string permissionId) : 
@@ -9557,6 +9559,17 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
+            /// <summary>Whether changing a role to 'owner' should also downgrade the current owners to writers.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("transferOwnership", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> TransferOwnership {
+                get {
+                    return this._transferOwnership;
+                }
+                set {
+                    this._transferOwnership = value;
+                }
+            }
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Drive.v2.Data.Permission Body {
                 get {
@@ -9599,6 +9612,7 @@ namespace Google.Apis.Drive.v2 {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("fileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("fileId", true, "path", null, null, new string[0]));
                 parameters.Add("permissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("permissionId", true, "path", null, null, new string[0]));
+                parameters.Add("transferOwnership", Google.Apis.Util.Utilities.CreateRuntimeParameter("transferOwnership", false, "query", "false", null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
@@ -9620,6 +9634,8 @@ namespace Google.Apis.Drive.v2 {
             private string _fileId;
             
             private string _permissionId;
+            
+            private System.Nullable<bool> _transferOwnership;
             
             private Google.Apis.Drive.v2.Data.Permission _Body;
             
@@ -9713,6 +9729,17 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
+            /// <summary>Whether changing a role to 'owner' should also downgrade the current owners to writers.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("transferOwnership", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> TransferOwnership {
+                get {
+                    return this._transferOwnership;
+                }
+                set {
+                    this._transferOwnership = value;
+                }
+            }
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Drive.v2.Data.Permission Body {
                 get {
@@ -9755,6 +9782,7 @@ namespace Google.Apis.Drive.v2 {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("fileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("fileId", true, "path", null, null, new string[0]));
                 parameters.Add("permissionId", Google.Apis.Util.Utilities.CreateRuntimeParameter("permissionId", true, "path", null, null, new string[0]));
+                parameters.Add("transferOwnership", Google.Apis.Util.Utilities.CreateRuntimeParameter("transferOwnership", false, "query", "false", null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }

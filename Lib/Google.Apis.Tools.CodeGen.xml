@@ -9,10 +9,29 @@
             Helper class for all decorators.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateAutoProperty(System.String,System.String,System.CodeDom.CodeTypeReference,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Type)">
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateAutoProperty(System.String,System.String,System.CodeDom.CodeTypeReference,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
             <summary>
             Creates and adds a public auto-property (property and backening field) to the class.
             </summary>
+            <param name="name">Suggested name for the property</param>
+            <param name="summaryComment">The property's summary</param>
+            <param name="propertyType">The proeprty's type</param>
+            <param name="usedNames">A list of already in used names, the final name can't used one of those</param>
+            <param name="readOnly">Should a setter be generated?</param>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateAutoProperty(System.String,System.String,System.CodeDom.CodeTypeReference,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Type,System.Nullable{System.CodeDom.MemberAttributes})">
+            <summary>
+            Creates and adds a public auto-property (property and backening field) to the class.
+            Add the ability to add base class (using <code>implementedInterface</code>
+            to the specified propterty and specified <code>attributes</code>.
+            </summary>
+            <param name="name">Suggested name for the property</param>
+            <param name="summaryComment">The property's summary</param>
+            <param name="propertyType">The proeprty's type</param>
+            <param name="usedNames">A list of already in used names, the final name can't used one of those</param>
+            <param name="readOnly">Should a setter be generated?</param>
+            <param name="implementedInterface">The property's ImplementationTypes</param>
+            <param name="attributes">The proeprty's Attributes (default is <code>MemberAttributes.Public</code></param>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateBackingField(System.String,System.CodeDom.CodeTypeReference,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
@@ -59,6 +78,15 @@
             <summary>
             Determines whether the given enum has the same pairs as specified.
             </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.AddInitializeParameters(System.CodeDom.CodeMemberMethod,System.String,System.Collections.Generic.IDictionary{System.String,Google.Apis.Discovery.IDiscoveryParameter})">
+            <summary>
+            Initiazlies the class's parameters by the specified parameters dictionary 
+            (used on service and request levels)
+            </summary>
+            <param name="constructor"></param>
+            <param name="parametersName"></param>
+            <param name="parameters"></param>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.DefaultObjectTypeProvider">
             <summary>
@@ -141,6 +169,12 @@
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BaseRequestConstructorDecorator.AddRequestParameters(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IMethod,System.CodeDom.CodeConstructor,System.Boolean)">
             <summary>
             Adds all required parameters and assign statements of this request to the specified constructor.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.InitRequestParametersDecorator">
+            <summary>
+            Generates InitParameters method which intializes <code>RequestParamters</code> 
+            by the request (IMethod) specific parameters.
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ResumableUploadInheritanceDecorator">
@@ -254,22 +288,22 @@
             Abstract class for all generators
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.GetParameterType(Google.Apis.Discovery.IParameter)">
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.GetParameterType(Google.Apis.Discovery.IDiscoveryParameter)">
             <summary>
             Returns the parameter type specified within the parameter.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.GetUnderlyingParameterType(Google.Apis.Discovery.IParameter)">
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.GetUnderlyingParameterType(Google.Apis.Discovery.IDiscoveryParameter)">
             <summary>
             Retrieves the underlying, unmodified type of a parameter.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.GetParameterTypeReference(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IParameter)">
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.GetParameterTypeReference(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IDiscoveryParameter)">
             <summary>
             Returns the reference to the type which is described in the parameter. Creates types if necessary.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.DeclareInputParameter(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IParameter,Google.Apis.Discovery.IMethod)">
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.DeclareInputParameter(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IDiscoveryParameter,Google.Apis.Discovery.IMethod)">
             <summary>
             Creates a declaration for the specified parameter.
             </summary>
@@ -315,8 +349,8 @@
             A decorator which implements abstract properties of the ServiceRequest class
             
             Example:
-            <c>protected override string ResourceName { get { return ...; } } </c>
-            <c>protected override string MethodName { get { return ...; } } </c>
+            <c>public override string ResourceName { get { return ...; } } </c>
+            <c>public override string MethodName { get { return ...; } } </c>
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestFieldDecorator.GenerateStringConstantPropertyOverride(System.String,System.String)">
@@ -324,7 +358,7 @@
             Generates a property which will return a constant string.
             Will not do a used-name check. Assumes the name can be chosen.
             Example:
-            <c>protected override string PropertyName { get { ... } }</c>
+            <c>public override string PropertyName { get { ... } }</c>
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestInheritanceDecorator">
@@ -479,6 +513,17 @@
             Implements the IResponse interface on a schema. Adds an "Error"- and an "ETag"-property.
             </summary>
         </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.InitServiceParametersDecorator">
+            <summary>
+            Generates InitParameters method which intializes <code>ServiceParamters</code> 
+            by the service (IService) common parameters.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.IServiceDecorator">
+            <summary>
+            IServiceDecorators will decorate the generated Service class.
+            </summary>
+        </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.ScopeEnumDecorator">
             <summary>
             This decorator adds an enumeration containing all of the service's scopes to the service class.
@@ -492,11 +537,6 @@
                 TasksReadonly,
              }
             </code>
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.IServiceDecorator">
-            <summary>
-            IServiceDecorators will decorate the generated Service class.
             </summary>
         </member>
         <member name="F:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.ScopeEnumDecorator.EnumName">
@@ -518,6 +558,29 @@
             <summary>
             Generates an enumeration value name for the specified scope.
             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.BaseClientServiceAbstractPropertiesDecorator" -->
+        <!-- Badly formed XML comment ignored for member "M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.BaseClientServiceAbstractPropertiesDecorator.CreateServiceParametersProperty" -->
+        <!-- Badly formed XML comment ignored for member "M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.BaseClientServiceAbstractPropertiesDecorator.CreateFeaturesProperty(Google.Apis.Discovery.IService)" -->
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.BaseClientServiceAbstractPropertiesDecorator.CreateNameProperty(Google.Apis.Discovery.IService)">
+            <summary>
+            Adds a Name property which returns the name of the service, e.g.
+            <c>
+            public override string Name { get { return "discovery"; } }
+            </c>
+            </summary>
+            <param name="service"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.BaseClientServiceAbstractPropertiesDecorator.CreateUriProperty(Google.Apis.Discovery.IService)">
+            <summary>
+            Adds a BaseUrl property which returns the basic url of the service, e.g.
+            <c>
+            public override string BaseUri { get { return "https://www.googleapis.com/discovery/v1/"; } }
+            </c>
+            </summary>
+            <param name="service"></param>
+            <returns></returns>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator">
             <summary>
@@ -592,36 +655,17 @@
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.EasyConstructServiceDecorator">
             <summary>
             Adds a convenience zero argument constructor to the service.
-            Using the AuthenticatorFactory to get the IAuthenticator and using a DiscoverService based 
-            on a WebDiscoveryDevice. This is an optional decorator.
+            Using the AuthenticatorFactory to get the IAuthenticator. 
+            This is an optional decorator.
             <code>
-              public [..]Service(IAuthenticator auth) { .. }
+              public [..]Service() : this(new Initializer()) {}
             </code>
             </summary>
         </member>
-        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.EasyConstructServiceDecorator.DiscoveryConstantName">
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.EasyConstructServiceDecorator.CreateEmptyConstructor">
             <summary>
-            Name of the constant string field which contains the discovery document.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.EasyConstructServiceDecorator.GetVersionSpecificParameter(Google.Apis.Discovery.IService,System.CodeDom.CodeTypeDeclaration)">
-            <summary>
-            Returns a CodeExpression that creates a Discovery specific FactoryParameter.
-            Resulting Code:     new FactoryParameterV*(new Uri(DiscoveryService.BaseUri))
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.ApiKeyServiceDecorator">
-            <summary>
-            Declares the API-Key property and field.
-            <code>
-                private string key;
-                public virtual string Key { ... }
-            </code>
-            </summary>
-        </member>
-        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.ApiKeyServiceDecorator.PropertyName">
-            <summary>
-            Defines the name of the "ApiKey" property
+            Creates the following constructor
+                public XXXService() : this(new Initializer())
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.VersionInformationServiceDecorator">
@@ -646,13 +690,13 @@
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.CreateRequestMethodServiceDecorator.GenerateCreateRequestMethod">
             <summary>
-            Generates the <c>IRequestProvider.CreateRequest()</c> method.
+            Generates the <c>IClientService.CreateRequest()</c> method.
             </summary>
             <returns><c>CodeMemberMethod</c> describing the method.</returns>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.CreateRequestMethodServiceDecorator.CreateRequestLocalVar">
             <summary>
-            <code>Google.Apis.Requests.Request request = this.genericService.CreateRequest(resource, method);</code>
+            <code>Google.Apis.Requests.IRequest request = Request.CreateRequest(this, serviceRequest);</code>
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.CreateRequestMethodServiceDecorator.CreateWithApiKey">
@@ -665,19 +709,19 @@
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.StandardConstructServiceDecorator">
             <summary>
             Adds the standard constuctor to the service class, 
-                assing genericService and authenticator to local vars
-                and create a Resouce for each resource mentioned in the discovery document.
+            Invokes base service constructor with the initializer class and 
+            creates a Resouce for each resource mentioned in the discovery document.
             e.g.
                 <code>
-                public BuzzService(IService genericService, IAuthenticator authenticator) {
-                   this.genericService = genericService;
-                   this.authenticator = authenticator;
-                   this.activities = new Activities(this);
-                   this.comments = new Comments(this);
-                   this.groups = new Groups(this);
-                   this.people = new People(this);
-                   this.photos = new Photos(this);
-                   this.related = new Related(this);
+                public XXXService(Initializer initializer) : base(initializer) 
+                {
+                   this.activities = new Activities(this, Authenticator);
+                   this.comments = new Comments(this, Authenticator);
+                   this.groups = new Groups(this, Authenticator);
+                   this.people = new People(this, Authenticator);
+                   this.photos = new Photos(this, Authenticator);
+                   this.related = new Related(this, Authenticator);
+                   initParameters();
                }
                 </code>
             </summary>
@@ -692,13 +736,11 @@
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.StandardConstructServiceDecorator.CreateConstructorWithArgs">
             <summary>
-            Creates the constructor with two arguments, ISerivce and IAuthenticator.
-            Then assignes these to local variables.
+            Creates the initializer constructor.
             e.g.
                 <code>
-                    protected BuzzService(IService genericService, IAuthenticator authenticator) {
-                        this.genericService = genericService;
-                        this.authenticator = authenticator;
+                    public XXXService(Initializer initializer)
+                      : base(initializer) {}
                 </code>
             </summary>
         </member>
@@ -957,21 +999,6 @@
             Adds <code>private BuzzService service { get { return this; } }</code> to the resource class.
             </summary>
         </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.StandardServiceFieldServiceDecorator">
-            <summary>
-            Declars the fields genericService and authenticator
-            <code>
-                private Google.Apis.Discovery.IService genericService;
-                private Google.Apis.Authentication.IAuthenticator authenticator;
-            </code>
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.StandardServiceFieldServiceDecorator.AddAuthenticatorProperty(System.CodeDom.CodeTypeDeclaration)">
-            <summary>
-            Add a IAuthenticator property "Authenticator" to the service.
-            </summary>
-            <param name="serviceClass">The service class to decorate.</param>
-        </member>
         <member name="T:Google.Apis.Tools.CodeGen.Generator.ImplementationDetailsGenerator">
             <summary>
             Generator for the SchemaImplementationDetails class. 
@@ -1014,13 +1041,13 @@
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Generator.MethodGeneratorUtils.GetOptionalParameters(Google.Apis.Discovery.IMethod)">
             <summary>
-            Return all optional IParameters from the given method.
+            Return all optional IDiscoveryParameter from the given method.
             Sorted by proposed order, and alphabeticly for the remaining parameters.
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Generator.MethodGeneratorUtils.GetAllParametersSorted(Google.Apis.Discovery.IMethod)">
             <summary>
-            Return all IParameters from the given method.
+            Return all IDiscoveryParameter from the given method.
             Sorted by proposed order, then required, then optional, alphabeticly within those groupings.
             </summary>
         </member>
@@ -1117,11 +1144,6 @@
             Generates a class for one Resource. This uses the passed in decorators to do the work.
             </summary>
             <seealso cref="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.IResourceDecorator"/>
-        </member>
-        <member name="F:Google.Apis.Tools.CodeGen.Generator.ResourceClassGenerator.AuthenticatorName">
-            <summary>
-            Name of the IAuthenticator field of the resource class.
-            </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceClassGenerator.CreateClass">
             <summary>
@@ -1299,49 +1321,6 @@
             Resolves/generates an array type reference for a schema.
             </summary>
         </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.JsonSerializationMethods">
-            <summary>
-            Supplies ObjectToJson method in generated services. Uses Newtonsoft.Json.JsonSerializer
-            </summary>
-        </member>
-        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.JsonSerializationMethods.RegisterSerializerMethodName">
-            <summary>
-            Method name of the "RegisterSerializer" method.
-            </summary>
-        </member>
-        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.JsonSerializationMethods.SerializationMethodName">
-            <summary>
-            Method name of the serialization method.
-            </summary>
-        </member>
-        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.JsonSerializationMethods.DeserializationMethodName">
-            <summary>
-            Method name of the deserialization method.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.JsonSerializationMethods.CreateRegisterSerializer">
-            <summary>
-             Creates the RegisterSerializer method
-             <code>
-                public void RegisterSerializer(ISerializer serializer)
-                {
-                    genericService.Serializer = serializer;
-                }
-             </code>
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.JsonSerializationMethods.CreateObjectToJson">
-            <summary>
-             Creates ObjectToJson method
-             <code>
-                public string ObjectToJson(object obj)
-                {
-                    return genericService.Serialize(obj);
-                }
-             </code>
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.JsonSerializationMethods.CreateResponseToObject" -->
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.SchemaDecorator.NewtonSoftPropertyAttributeDecorator">
             <summary>
             Adds Newtonsoft.Json.JsonPropertyAttribute to each property.

@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Adexchangebuyer.v1.2</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Adexchangebuyer.v1_2.Data.Account">
+            <summary>Configuration data for an Ad Exchange buyer account.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Account.BidderLocation">
+            <summary>Your bidder locations that have distinct URLs.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Account.CookieMatchingNid">
+            <summary>The nid parameter value used in cookie match requests. Please contact your technical account manager if you need to change this.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Account.CookieMatchingUrl">
+            <summary>The base URL used in cookie match requests.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Account.Id">
+            <summary>Account id.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Account.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Account.MaximumTotalQps">
+            <summary>The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Account.BidderLocationData.MaximumQps">
+            <summary>The maximum queries per second the Ad Exchange will send.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Account.BidderLocationData.Region">
+             <summary>The geographical region the Ad Exchange should send requests from. Only used by some quota systems, but always setting the value is recommended. Allowed values:  
+            - ASIA 
+            - EUROPE 
+            - US_EAST 
+            - US_WEST</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Account.BidderLocationData.Url">
+            <summary>The URL to which the Ad Exchange will send bid requests.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1_2.Data.AccountsList">
+            <summary>An account feed lists Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single buyer account.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.AccountsList.Items">
+            <summary>A list of accounts.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.AccountsList.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1_2.Data.Creative">
+            <summary>A creative and its classification data.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.HTMLSnippet">
+            <summary>The HTML snippet that displays the ad when inserted in the web page. If set, videoURL should not be set.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.AccountId">
+            <summary>Account id.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.AdvertiserId">
+            <summary>Detected advertiser id, if any. Read-only. This field should not be set in requests.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.AdvertiserName">
+            <summary>The name of the company being advertised in the creative.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.AgencyId">
+            <summary>The agency id for this creative.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.Attribute">
+            <summary>All attributes for the ads that may be shown from this snippet.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.BuyerCreativeId">
+            <summary>A buyer-specific id identifying the creative in this ad.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.ClickThroughUrl">
+            <summary>The set of destination urls for the snippet.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.DisapprovalReasons">
+            <summary>The reasons for disapproval, if any. Note that not all disapproval reasons may be categorized, so it is possible for the creative to have a status of DISAPPROVED with an empty list for disapproval_reasons. In this case, please reach out to your TAM to help debug the issue. Read-only. This field should not be set in requests.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.Height">
+            <summary>Ad height.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.ProductCategories">
+            <summary>Detected product categories, if any. Read-only. This field should not be set in requests.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.SensitiveCategories">
+            <summary>Detected sensitive categories, if any. Read-only. This field should not be set in requests.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.Status">
+            <summary>Creative serving status. Read-only. This field should not be set in requests.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.VendorType">
+            <summary>All vendor types for the ads that may be shown from this snippet.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.VideoURL">
+            <summary>The url to fetch a video ad. If set, HTMLSnippet should not be set.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.Width">
+            <summary>Ad width.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.DisapprovalReasonsData.Details">
+            <summary>Additional details about the reason for disapproval.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.Creative.DisapprovalReasonsData.Reason">
+            <summary>The categorized reason for disapproval.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1_2.Data.CreativesList">
+            <summary>The creatives feed lists the active creatives for the Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single creative.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.CreativesList.Items">
+            <summary>A list of creatives.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.CreativesList.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.CreativesList.NextPageToken">
+            <summary>Continuation token used to page through creatives. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal">
+            <summary>The configuration data for an Ad Exchange direct deal.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.AccountId">
+            <summary>The account id of the buyer this deal is for.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.Advertiser">
+            <summary>The name of the advertiser this deal is for.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.CurrencyCode">
+            <summary>The currency code that applies to the fixed_cpm value. If not set then assumed to be USD.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.EndTime">
+            <summary>End time for when this deal stops being active. If not set then this deal is valid until manually disabled by the publisher. In seconds since the epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.FixedCpm">
+            <summary>The fixed price for this direct deal. In cpm micros of currency according to currency_code. If set, then this deal is eligible for the fixed price tier of buying (highest priority, pay exactly the configured fixed price).</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.Id">
+            <summary>Deal id.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.PrivateExchangeMinCpm">
+            <summary>The minimum price for this direct deal. In cpm micros of currency according to currency_code. If set, then this deal is eligible for the private exchange tier of buying (below fixed price priority, run as a second price auction).</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.SellerNetwork">
+            <summary>The name of the publisher offering this direct deal.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDeal.StartTime">
+            <summary>Start time for when this deal becomes active. If not set then this deal is active immediately upon creation. In seconds since the epoch.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDealsList">
+            <summary>A direct deals feed lists Direct Deals the Ad Exchange buyer account has access to. This includes direct deals set up for the buyer account as well as its merged stream seats.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDealsList.DirectDeals">
+            <summary>A list of direct deals relevant for your account.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.Data.DirectDealsList.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1_2.AdexchangebuyerService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Adexchangebuyer.v1_2.AdexchangebuyerService.Scopes.AdexchangeBuyer">
+            <summary>Manage your Ad Exchange buyer account configuration</summary>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.Get(System.Int64)">
+            <summary>Gets one account by ID.</summary>
+            <param name="id">Required - The account id</param>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.List">
+            <summary>Retrieves the authenticated user&apos;s list of accounts.</summary>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.Patch(Google.Apis.Adexchangebuyer.v1_2.Data.Account,System.Int64)">
+            <summary>Updates an existing account. This method supports patch semantics.</summary>
+            <param name="id">Required - The account id</param>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.Update(Google.Apis.Adexchangebuyer.v1_2.Data.Account,System.Int64)">
+            <summary>Updates an existing account.</summary>
+            <param name="id">Required - The account id</param>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.GetRequest.Id">
+            <summary>The account id</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.PatchRequest.Id">
+            <summary>The account id</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.UpdateRequest.Id">
+            <summary>The account id</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.AccountsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.Get(System.Int64,System.String)">
+            <summary>Gets the status for a single creative.</summary>
+            <param name="accountId">Required - The id for the account that will serve this creative.</param>
+            <param name="buyerCreativeId">Required - The buyer-specific id for this creative.</param>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.Insert(Google.Apis.Adexchangebuyer.v1_2.Data.Creative)">
+            <summary>Submit a new creative.</summary>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.List">
+            <summary>Retrieves a list of the authenticated user&apos;s active creatives.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.StatusFilter">
+            <summary>When specified, only creatives having the given status are returned.</summary>
+        </member>
+        <member name="F:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.StatusFilter.Approved">
+            <summary>Creatives which have been approved.</summary>
+        </member>
+        <member name="F:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.StatusFilter.Disapproved">
+            <summary>Creatives which have been disapproved.</summary>
+        </member>
+        <member name="F:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.StatusFilter.Not_checked">
+            <summary>Creatives whose status is not yet checked.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.GetRequest.AccountId">
+            <summary>The id for the account that will serve this creative.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.GetRequest.BuyerCreativeId">
+            <summary>The buyer-specific id for this creative.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.ListRequest.MaxResults">
+            <summary>Maximum number of entries returned on one result page. If not set, the default is 100. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.CreativesResource.ListRequest.StatusFilter">
+            <summary>When specified, only creatives having the given status are returned.</summary>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.Get(System.String)">
+            <summary>Gets one direct deal by ID.</summary>
+            <param name="id">Required - The direct deal id</param>
+        </member>
+        <member name="M:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.List">
+            <summary>Retrieves the authenticated user&apos;s list of direct deals.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.GetRequest.Id">
+            <summary>The direct deal id</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1_2.DirectDealsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+    </members>
+</doc>

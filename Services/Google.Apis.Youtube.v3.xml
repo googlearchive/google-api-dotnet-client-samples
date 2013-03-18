@@ -235,6 +235,9 @@
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelBrandingSettings.Channel">
             <summary>Branding properties for the channel view.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelBrandingSettings.Hints">
+            <summary>Additional experimental branding properties.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelBrandingSettings.Watch">
             <summary>Branding properties for the watch.</summary>
         </member>
@@ -334,6 +337,12 @@
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelTopicDetails.TopicIds">
             <summary>A list of Freebase topic IDs associated with the channel. You can retrieve information about each topic using the Freebase Topic API.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.FeaturedChannel.ChannelSnippet">
+            <summary>Basic details about a channel, including title, description and thumbnails.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.FeaturedVideo.VideoSnippet">
+            <summary>Basic details about a video, including title, description, uploader, thumbnails and category.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3.Data.GeoPoint">
             <summary>A geoPoint holds geo location information associated with a YouTube resource.</summary>
         </member>
@@ -398,19 +407,19 @@
             <summary>Represent a property available in different languages.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcast">
-            <summary>A live broadcast describes live event configuration.</summary>
+            <summary>A liveBroadcast resource represents an event that will be streamed, via live video, on YouTube.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcast.ContentDetails">
             <summary>Slate settings of a broadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcast.ETag">
-            <summary>The eTag of the broadcast.</summary>
+            <summary>The ETag of the broadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcast.Id">
-            <summary>The unique id of the broadcast.</summary>
+            <summary>The ID that YouTube assigns to uniquely identify the broadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcast.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API resource. For live broadcast resources, the value will be youtube#liveBroadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcast.SlateSettings">
             <summary>Slate settings of a broadcast.</summary>
@@ -425,121 +434,129 @@
             <summary>Slate settings of a broadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.BoundStreamId">
-            <summary>The id of the stream bound to the broadcast.</summary>
+            <summary>This value uniquely identifies the live stream bound to the broadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.EnableArchive">
-            <summary>Whether the live event will be archived or not.</summary>
+             <summary>This setting indicates whether the live event should be archived so that YouTube viewers can watch it at a later date. The default value for this property is true.
+            
+            Important: You must also set the enableDvr property&apos;s value to true if you want the playback to be available immediately after the broadcast ends. If you set this property&apos;s value to true but do not also set the enableDvr property to true, there may be a delay of around one day before the archived video will be available for playback.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.EnableContentEncryption">
-            <summary>Whether to enable or disable content encryption.</summary>
+            <summary>This setting indicates whether YouTube should enable content encryption for the broadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.EnableDvr">
-            <summary>Whether the dvr (digital video recording) is enabled or not.</summary>
+             <summary>This setting determines whether viewers can access DVR controls while watching the video. DVR controls enable the viewer to control the video playback experience by pausing, rewinding, or fast forwarding content. The default value for this property is true.
+            
+            Important: You must set the value to true and also set the enableArchive property&apos;s value to true if you want to make playback available immediately after the broadcast ends.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.EnableEmbed">
-            <summary>Whether to allow the broadcast to be played in an embedded player.</summary>
+            <summary>This setting indicates whether the broadcast video can be played in an embedded player. If you choose to archive the video (using the enableArchive property), this setting will also apply to the archived video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.MonitorStream">
-            <summary>Information about the monitor stream which helps the broadcaster to review the event content before shown to the public.</summary>
+            <summary>The monitorStream object contains information about the monitor stream, which the broadcaster can use to review the event content before the broadcast stream is shown publicly.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.StartWithSlateCuepoint">
-            <summary>Automatically start with a slate cuepoint.</summary>
+            <summary>This setting indicates whether the broadcast should automatically begin with an in-stream slate when you update the broadcast&apos;s status to live. After updating the status, you then need to send a liveCuepoints.insert request that sets the cuepoint&apos;s eventState to end to remove the in-stream slate and make your broadcast stream visible to viewers.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.MonitorStreamData">
-            <summary>Information about the monitor stream which helps the broadcaster to review the event content before shown to the public.</summary>
+            <summary>The monitorStream object contains information about the monitor stream, which the broadcaster can use to review the event content before the broadcast stream is shown publicly.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.MonitorStreamData.BroadcastStreamDelayMs">
-            <summary>If enableMonitorStream is true, the public broadcast will be delayed by this value.</summary>
+            <summary>If you have set the enableMonitorStream property to true, then this property determines the length of the live broadcast delay.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.MonitorStreamData.EmbedHtml">
-            <summary>The html code of the embedded player for the monitor stream.</summary>
+            <summary>HTML code that embeds a player that plays the monitor stream.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastContentDetails.MonitorStreamData.EnableMonitorStream">
-            <summary>Whether to enable the monitor stream for the broadcast.</summary>
+             <summary>This value determines whether the monitor stream is enabled for the broadcast. If the monitor stream is enabled, then YouTube will broadcast the event content on a special stream intended only for the broadcaster&apos;s consumption. The broadcaster can use the stream to review the event content and also to identify the optimal times to insert cuepoints.
+            
+            You need to set this value to true if you intend to have a broadcast delay for your event.
+            
+            Note: This property cannot be updated once the broadcast is in the testing or live state.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcastList">
             <summary>JSON template for list of broadcasts.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastList.ETag">
-            <summary>The eTag of the chart.</summary>
+            <summary>The ETag of the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastList.Items">
             <summary>A list of broadcasts that match the request criteria.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastList.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#liveBroadcastList.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastList.NextPageToken">
-            <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the next page in the result set.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastList.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastList.PrevPageToken">
-            <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the previous page in the result set.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcastSlateSettings">
             <summary>Slate settings of a broadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSlateSettings.EnableSlates">
-            <summary>Whether slate is enabled or not.</summary>
+            <summary>An indication of whether a broadcast slate is enabled for the broadcast. Set this property to true to display the slate. Update the property value to false to remove the slate. You can insert or remove the broadcast slate at any time during an event.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSlateSettings.Slates">
-            <summary>Broadcast slates.</summary>
+            <summary>A map of slates that are displayed for the broadcast in different regions.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcastSlateSettings.SlatesData">
-            <summary>Broadcast slates.</summary>
+            <summary>A map of slates that are displayed for the broadcast in different regions.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcastSlateSettings.SlatesData.SlatesDataSchema">
-            <summary>Locale code indicating in which region should the slate be displayed.</summary>
+            <summary>The locale code that identifies the region where the slate displays.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSlateSettings.SlatesData.SlatesDataSchema.BackgroundUrl">
-            <summary>Url of the background image.</summary>
+            <summary>The URL of the slate&apos;s background image. This value can be set or updated if enableSlates is set to true. The image should have a 16x9 aspect ratio.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSlateSettings.SlatesData.SlatesDataSchema.TextLines">
-            <summary>Multi-line message showing in the slate.</summary>
+            <summary>A multiline message that the slate displays. This value can be set or updated if enableSlates is set to true. You can specify up to three lines of text.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet">
             <summary>Basic details about a live broadcast, including title, description and thumbnails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.ActualEndTime">
-            <summary>Date and time the broadcast is actual to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+            <summary>The date and time that the broadcast actually ended. This information is only available once the broadcast&apos;s state is complete. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.ActualStartTime">
-            <summary>Date and time the broadcast is actual to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+            <summary>The date and time that the broadcast actually started. This information is only available once the broadcast&apos;s state is live. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.ChannelId">
-            <summary>Channel publishing the broadcast.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the channel that is publishing the broadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.Description">
-            <summary>Description of the broadcast.</summary>
+            <summary>The broadcast&apos;s description. As with the title, you can set this field by modifying the broadcast resource or by setting the description field of the corresponding video resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.PublishedAt">
-            <summary>Date and time the broadcast was published at. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+            <summary>The date and time that the broadcast was added to YouTube&apos;s live broadcast schedule. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.ScheduledEndTime">
-            <summary>Date and time the broadcast is scheduled to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+            <summary>The date and time that the broadcast is scheduled to end. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.ScheduledStartTime">
-            <summary>Date and time the broadcast is scheduled to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+            <summary>The date and time that the broadcast is scheduled to start. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.Thumbnails">
-            <summary>Video thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the broadcast. For each nested object in this object, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.Title">
-            <summary>Title of the broadcast.</summary>
+            <summary>The broadcast&apos;s title. Note that the broadcast represents exactly one YouTube video. You can set this field by modifying the broadcast resource or by setting the title field of the corresponding video resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcastSnippet.ThumbnailsData">
-            <summary>Video thumbnails.</summary>
+            <summary>A map of thumbnail images associated with the broadcast. For each nested object in this object, the key is the name of the thumbnail image, and the value is an object that contains other information about the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveBroadcastStatus">
             <summary>The status of a live broadcast.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastStatus.LifeCycleStatus">
-            <summary>Life status of the live broadcast.</summary>
+            <summary>The broadcast&apos;s status. The status can be updated using the API&apos;s liveBroadcasts.transition method.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveBroadcastStatus.PrivacyStatus">
-            <summary>Privacy settings of the live broadcast. Allowed values: private, unlisted, public.</summary>
+            <summary>The broadcast&apos;s privacy status. Note that the broadcast represents exactly one YouTube video, so the privacy settings are identical to those supported for videos. In addition, you can set this field by modifying the broadcast resource or by setting the privacyStatus field of the corresponding video resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveStream">
             <summary>A live stream describes a live ingestion point.</summary>
@@ -548,13 +565,13 @@
             <summary>Brief description of the live stream cdn settings.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStream.ETag">
-            <summary>The eTag of the stream.</summary>
+            <summary>The ETag of the stream resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStream.Id">
-            <summary>The unique id of the stream.</summary>
+            <summary>The ID that YouTube assigns to uniquely identify the stream.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStream.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API resource. For live stream resources, the value will be youtube#liveStream.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStream.Snippet">
             <summary>Basic details about a live stream, including title and description.</summary>
@@ -566,76 +583,71 @@
             <summary>Brief description of the live stream cdn settings.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamCdn.Format">
-            <summary>The format of the inbound data. Allowed values: 240p, 360p, 480p, 720p, 1080p, webm_360p, multicast_qcif, multicast_240p, multicast_360p, multicast_480p, multicast_720p, multicast_1080p.</summary>
+            <summary>The format of the video stream that you are sending to YouTube.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamCdn.IngestionInfo">
             <summary>Brief description of the live stream cdn settings.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamCdn.IngestionType">
-            <summary>The live stream ingestion type. Allowed values: rtmp, http, multicast.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamCdn.MulticastIngestionInfo">
-            <summary>Brief description of the live stream cdn settings.</summary>
+            <summary>The method or protocol used to transmit the video stream.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveStreamCdnIngestionInfo">
             <summary>Brief description of the live stream cdn settings.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamCdnIngestionInfo.BackupIngestionAddress">
-            <summary>The backup address of the inbound data.</summary>
+            <summary>The backup ingestion URL that you should use to stream video to YouTube. You have the option of simultaneously streaming the content that you are sending to the ingestionAddress to this URL.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamCdnIngestionInfo.IngestionAddress">
-            <summary>The address of the inbound data.</summary>
+             <summary>The primary ingestion URL that you should use to stream video to YouTube. You must stream video to this URL.
+            
+            Depending on which application or tool you use to encode your video stream, you may need to enter the stream URL and stream name separately or you may need to concatenate them in the following format:
+            
+            STREAM_URL/STREAM_NAME</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamCdnIngestionInfo.StreamName">
-            <summary>Ingestion stream name.</summary>
-        </member>
-        <member name="T:Google.Apis.Youtube.v3.Data.LiveStreamCdnMulticastIngestionInfo">
-            <summary>Brief description of the live stream cdn settings.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamCdnMulticastIngestionInfo.MulticastAddress">
-            <summary>The IP address of the multicast data.</summary>
+            <summary>The HTTP or RTMP stream name that YouTube assigns to the video stream.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveStreamList">
             <summary>List of live streams.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamList.ETag">
-            <summary>The eTag of the chart.</summary>
+            <summary>The ETag of the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamList.Items">
             <summary>A list of live streams that match the request criteria.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamList.Kind">
-            <summary>The type of this API resource.</summary>
+            <summary>The type of the API response. For this operation, the value will be youtube#liveStreamList.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamList.NextPageToken">
-            <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the next page in the result set.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamList.PageInfo">
             <summary>Paging details for lists of resources, including total number of items available and number of resources returned in a single page.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamList.PrevPageToken">
-            <summary>The token that can be used as the value of the {@code pageInfo} parameter to retrieve the previous page in the result set.</summary>
+            <summary>The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveStreamSnippet">
             <summary>Basic details about a live stream, including title and description.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamSnippet.ChannelId">
-            <summary>Channel publishing the live stream.</summary>
+            <summary>The ID that YouTube uses to uniquely identify the channel that is transmitting the stream.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamSnippet.Description">
-            <summary>Description of the live stream.</summary>
+            <summary>The stream&apos;s description. The value cannot be longer than 10000 characters.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamSnippet.PublishedAt">
-            <summary>Date and time the live stream was published at.</summary>
+            <summary>The date and time that the stream was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamSnippet.Title">
-            <summary>Title of the live stream.</summary>
+            <summary>The stream&apos;s title. The value must be between 1 and 128 characters long.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LiveStreamStatus">
             <summary>Brief description of the live stream status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.LiveStreamStatus.StreamStatus">
-            <summary>The status of the stream.</summary>
+            <summary>The stream&apos;s status.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.LocalizedProperty">
             <summary>Represent a property available in different languages.</summary>
@@ -651,6 +663,72 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PageInfo.TotalResults">
             <summary>The total number of results in the result set.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.Player">
+            <summary>A player resource represents all the information needed to play a video.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Player.AdsPlaylist">
+            <summary>The playlist of ads which accompany the content video.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Player.ETag">
+            <summary>The ETag for the player resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Player.Id">
+            <summary>A resource id is a generic reference that points to another YouTube resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Player.Kind">
+            <summary>The type of the API resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.Player.VideoUrls">
+            <summary>Part containing the URLs pointing to the video data.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.PlayerAdsPlaylist">
+            <summary>The playlist of ads which accompany the content video.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerAdsPlaylist.Vmap_xml">
+            <summary>The VMAP XML document that describes where ads should be inserted and what ad formats should be used in those ad breaks. See http://www.iab.net/vmap.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.PlayerListResponse">
+            <summary>A list of players returned from a youtube.player.list call.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerListResponse.ETag">
+            <summary>The ETag of the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerListResponse.Kind">
+            <summary>The type of the API response. For this operation, the value will be youtube#playerListResponse.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerListResponse.Players">
+            <summary>A list of players that match the request criteria.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.PlayerRestrictionDetails">
+            <summary>Part describing if and why a video can&apos;t be played.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerRestrictionDetails.Reason">
+            <summary>Detailed information about the restriction</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerRestrictionDetails.Restricted">
+            <summary>True iff the video can&apos;t be played.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerRestrictionDetails.Restriction">
+            <summary>A code describing the restriction class.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.PlayerVideoUrl">
+            <summary>A single video format the user can access.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerVideoUrl.Itag">
+            <summary>itag of the video format.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerVideoUrl.Url">
+            <summary>Streamer URL serving the video.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3.Data.PlayerVideoUrls">
+            <summary>Part containing the URLs pointing to the video data.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerVideoUrls.Restriction">
+            <summary>Part describing if and why a video can&apos;t be played.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlayerVideoUrls.Url">
+            <summary>URLs to the formats that are available to the caller.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.Playlist">
              <summary>A playlist resource represents a YouTube playlist. A playlist is a collection of videos that can be viewed sequentially and shared with other users. A playlist can contain up to 200 videos, and YouTube does not limit the number of playlists that each user creates. By default, playlists are publicly visible to other users, but playlists can be public or private.
@@ -1053,6 +1131,15 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.Video.TopicDetails">
             <summary>Freebase topic information related to the video.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.VideoAgeGating.AlcoholContent">
+            <summary>Indicates whether or not the video has alcoholic beverage content. Only users of legal purchasing age in a particular country, as identified by ICAP, can view the content.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.VideoAgeGating.Restricted">
+            <summary>Age-restricted trailers. For redband trailers and adult-rated video-games. Only users aged 18+ can view the content. The the field is true the content is restricted to viewers aged 18+. Otherwise The field won&apos;t be present.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.VideoAgeGating.VideoGameRating">
+            <summary>Video game rating, if any.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.Data.VideoCategory">
             <summary>A videoCategory resource identifies a category that has been or could be associated with uploaded videos.</summary>
@@ -1508,6 +1595,9 @@
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.Id">
             <summary>The id parameter specifies a comma-separated list of the YouTube channel ID(s) for the resource(s) that are being retrieved. In a channel resource, the id property specifies the channel's YouTube channel ID.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.ManagedByMe">
+            <summary>Set this parameter's value to true to instruct the API to only return channels managed by the content owner that the onBehalfOfContentOwner parameter specifies. The user must be authenticated as a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.ListRequest.MaxResults">
             <summary>The maxResults parameter specifies the maximum number of items that should be returned in the result set.</summary>
         </member>
@@ -1567,60 +1657,64 @@
             <summary>The regionCode parameter instructs the API to return the list of guide categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.LiveBroadcastsResource.Bind(System.String,System.String)">
-            <summary>Bind a YouTube live broadcast to a stream.</summary>
-            <param name="id">Required - ID of the broadcast to which the stream will be bound</param>
-            <param name="part">Required - Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</param>
+            <summary>Binds a YouTube broadcast to a stream or removes an existing binding between a broadcast and a stream. A broadcast can only be bound to one video stream.</summary>
+            <param name="id">Required - The id parameter specifies the unique ID of the broadcast that is being bound to a video stream.</param>
+            <param name="part">Required - The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.LiveBroadcastsResource.Delete(System.String)">
-            <summary>Delete a YouTube live broadcast.</summary>
+            <summary>Deletes a broadcast.</summary>
             <param name="id">Required - The id parameter specifies the YouTube live broadcast ID for the resource that is being deleted.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.LiveBroadcastsResource.Insert(Google.Apis.Youtube.v3.Data.LiveBroadcast,System.String)">
-            <summary>Insert a YouTube live broadcast.</summary>
-            <param name="part">Required - Live broadcast parts to be set for the broadcast as well as included in the returned response. Valid values are: snippet, status, slateSettings, contentDetails.</param>
-        </member>
-        <member name="M:Google.Apis.Youtube.v3.LiveBroadcastsResource.List(System.String)">
-            <summary>Browse the YouTube broadcast collection.</summary>
-            <param name="part">Required - Live broadcast parts to include in the returned response. Valid values are: id, snippet, status, slateSettings, contentDetails.</param>
-        </member>
-        <member name="M:Google.Apis.Youtube.v3.LiveBroadcastsResource.Transition(Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatusEnum,System.String,System.String)">
-            <summary>Change the broadcasting status of a YouTube live broadcast and start all the processes associated with it.</summary>
-            <param name="broadcastStatus">Required - Must be one of the following values [complete, live, testing] - Desired broadcast status.</param>
-            <param name="id">Required - ID of the broadcast to change status</param>
-            <param name="part">Required - Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</param>
-        </member>
-        <member name="M:Google.Apis.Youtube.v3.LiveBroadcastsResource.Update(Google.Apis.Youtube.v3.Data.LiveBroadcast,System.String)">
-             <summary>Update a YouTube live broadcast.</summary>
+             <summary>Creates a broadcast.</summary>
              <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             
-            The part names that you can include in the parameter value are id, snippet, status, slateSettings, contentDetails.</param>
+            The part properties that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</param>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3.LiveBroadcastsResource.List(System.String)">
+            <summary>Returns a list of YouTube broadcasts that match the API request parameters.</summary>
+            <param name="part">Required - The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</param>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3.LiveBroadcastsResource.Transition(Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatusEnum,System.String,System.String)">
+            <summary>Changes the status of a YouTube live broadcast and initiates any processes associated with the new status. For example, when you transition a broadcast&apos;s status to testing, YouTube starts to transmit video to that broadcast&apos;s monitor stream.</summary>
+            <param name="broadcastStatus">Required - Must be one of the following values [complete, live, testing] - The broadcastStatus parameter identifies the state to which the broadcast is changing.</param>
+            <param name="id">Required - The id parameter specifies the unique ID of the broadcast that is transitioning to another status.</param>
+            <param name="part">Required - The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</param>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3.LiveBroadcastsResource.Update(Google.Apis.Youtube.v3.Data.LiveBroadcast,System.String)">
+             <summary>Updates a broadcast. For example, you could modify the broadcast settings defined in the liveBroadcast resource&apos;s contentDetails object.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part properties that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a broadcast&apos;s privacy status is defined in the status part. As such, if your request is updating a private or unlisted broadcast, and the request&apos;s part parameter value includes the status part, the broadcast&apos;s privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the broadcast will revert to the default privacy setting.</param>
         </member>
         <member name="T:Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatus">
-            <summary>Filter to only return broadcasts with the given status by the authenticated user.</summary>
+            <summary>The broadcastStatus parameter filters the API response to only include broadcasts with the specified status.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatus.Active">
-            <summary>Return active broadcasts.</summary>
+            <summary>Return current live broadcasts.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatus.All">
-            <summary>Return all the broadcasts.</summary>
+            <summary>Return all broadcasts.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatus.Completed">
-            <summary>Return previously completed broadcasts.</summary>
+            <summary>Return broadcasts that have already ended.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatus.Upcoming">
-            <summary>Return upcoming broadcasts.</summary>
+            <summary>Return broadcasts that have not yet started.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatusEnum">
-            <summary>Desired broadcast status.</summary>
+            <summary>The broadcastStatus parameter identifies the state to which the broadcast is changing.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatusEnum.Complete">
-            <summary>Stop broadcasting.</summary>
+            <summary>The broadcast is over. YouTube stops transmitting video.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatusEnum.Live">
-            <summary>Start broadcasting.</summary>
+            <summary>The broadcast is visible to its audience. YouTube transmits video to the broadcast&apos;s monitor stream and its broadcast stream.</summary>
         </member>
         <member name="F:Google.Apis.Youtube.v3.LiveBroadcastsResource.BroadcastStatusEnum.Testing">
-            <summary>Start broadcast testing.</summary>
+            <summary>Start testing the broadcast. YouTube transmits video to the broadcast&apos;s monitor stream. Note that you can only transition a broadcast to the testing state if its contentDetails.monitorStream.enableMonitorStream property is set to true.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.BindRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -1641,13 +1735,13 @@
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.BindRequest.Id">
-            <summary>ID of the broadcast to which the stream will be bound</summary>
+            <summary>The id parameter specifies the unique ID of the broadcast that is being bound to a video stream.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.BindRequest.Part">
-            <summary>Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</summary>
+            <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.BindRequest.StreamId">
-            <summary>ID of the stream to bind to the broadcast</summary>
+            <summary>The streamId parameter specifies the unique ID of the video stream that is being bound to a broadcast. If this parameter is omitted, the API will remove any existing binding between the broadcast and a video stream.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.DeleteRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -1689,7 +1783,9 @@
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.InsertRequest.Part">
-            <summary>Live broadcast parts to be set for the broadcast as well as included in the returned response. Valid values are: snippet, status, slateSettings, contentDetails.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part properties that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -1713,25 +1809,22 @@
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ListRequest.BroadcastStatus">
-            <summary>Filter to only return broadcasts with the given status by the authenticated user.</summary>
+            <summary>The broadcastStatus parameter filters the API response to only include broadcasts with the specified status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ListRequest.Id">
-            <summary>IDs of the live broadcasts to be returned.</summary>
+            <summary>The id parameter specifies a comma-separated list of YouTube broadcast IDs that identify the broadcasts being retrieved. In a liveBroadcast resource, the id property specifies the broadcast's ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ListRequest.MaxResults">
-            <summary>Maximum number of results to return</summary>
+            <summary>The maxResults parameter specifies the maximum number of items that should be returned in the result set. Acceptable values are 0 to 50, inclusive. The default value is 5.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ListRequest.Mine">
-            <summary>Filter to only return broadcasts owned by authenticated user.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ListRequest.OnBehalfOf">
-            <summary>ID of the Google+ Page for the channel that the request is be on behalf of</summary>
+            <summary>The mine parameter can be used to instruct the API to only return broadcasts owned by the authenticated user. Set the parameter value to true to only retrieve your own broadcasts.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ListRequest.PageToken">
-            <summary>Token for the page selection.</summary>
+            <summary>The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ListRequest.Part">
-            <summary>Live broadcast parts to include in the returned response. Valid values are: id, snippet, status, slateSettings, contentDetails.</summary>
+            <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.TransitionRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -1752,13 +1845,13 @@
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.TransitionRequest.BroadcastStatus">
-            <summary>Desired broadcast status.</summary>
+            <summary>The broadcastStatus parameter identifies the state to which the broadcast is changing.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.TransitionRequest.Id">
-            <summary>ID of the broadcast to change status</summary>
+            <summary>The id parameter specifies the unique ID of the broadcast that is transitioning to another status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.TransitionRequest.Part">
-            <summary>Live broadcast parts to be returned in the response. Valid values are: id, snippet, status, slateSettings, contentDetails.</summary>
+            <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.UpdateRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -1781,28 +1874,34 @@
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.UpdateRequest.Part">
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             
-            The part names that you can include in the parameter value are id, snippet, status, slateSettings, contentDetails.</summary>
+            The part properties that you can include in the parameter value are id, snippet, contentDetails, slateSettings, and status.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a broadcast's privacy status is defined in the status part. As such, if your request is updating a private or unlisted broadcast, and the request's part parameter value includes the status part, the broadcast's privacy setting will be updated to whatever value the request body specifies. If the request body does not specify a value, the existing privacy setting will be removed and the broadcast will revert to the default privacy setting.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.LiveStreamsResource.Delete(System.String)">
-            <summary>Delete a live stream.</summary>
+            <summary>Deletes a video stream.</summary>
             <param name="id">Required - The id parameter specifies the YouTube live stream ID for the resource that is being deleted.</param>
         </member>
         <member name="M:Google.Apis.Youtube.v3.LiveStreamsResource.Insert(Google.Apis.Youtube.v3.Data.LiveStream,System.String)">
-            <summary>Insert a YouTube live stream.</summary>
-            <param name="part">Required - Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</param>
-        </member>
-        <member name="M:Google.Apis.Youtube.v3.LiveStreamsResource.List(System.String)">
-            <summary>Browse the YouTube live stream collection.</summary>
-            <param name="part">Required - Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</param>
-        </member>
-        <member name="M:Google.Apis.Youtube.v3.LiveStreamsResource.Update(Google.Apis.Youtube.v3.Data.LiveStream,System.String)">
-             <summary>Update a YouTube live stream.</summary>
+             <summary>Creates a video stream. The stream enables you to send your video to YouTube, which can then broadcast the video to your audience.</summary>
              <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             
-            The part names that you can include in the parameter value are id, snippet, cdn, status.</param>
+            The part properties that you can include in the parameter value are id, snippet, cdn, and status.</param>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3.LiveStreamsResource.List(System.String)">
+            <summary>Returns a list of video streams that match the API request parameters.</summary>
+            <param name="part">Required - The part parameter specifies a comma-separated list of one or more liveStream resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, cdn, and status.</param>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3.LiveStreamsResource.Update(Google.Apis.Youtube.v3.Data.LiveStream,System.String)">
+             <summary>Updates a video stream. If the properties that you want to change cannot be updated, then you need to create a new stream with the proper settings.</summary>
+             <param name="part">Required - The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part properties that you can include in the parameter value are id, snippet, cdn, and status.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. If the request body does not specify a value for a mutable property, the existing value for that property will be removed.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.DeleteRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -1844,7 +1943,9 @@
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.InsertRequest.Part">
-            <summary>Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</summary>
+             <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
+            
+            The part properties that you can include in the parameter value are id, snippet, cdn, and status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -1868,22 +1969,22 @@
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.ListRequest.Id">
-            <summary>IDs of the live streams to be returned.</summary>
+            <summary>The id parameter specifies a comma-separated list of YouTube stream IDs that identify the streams being retrieved. In a liveStream resource, the id property specifies the stream's ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.ListRequest.MaxResults">
-            <summary>Maximum number of results to return</summary>
+            <summary>The maxResults parameter specifies the maximum number of items that should be returned in the result set. Acceptable values are 0 to 50, inclusive. The default value is 5.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.ListRequest.Mine">
-            <summary>Filter to only live streams owned by authenticated user.</summary>
+            <summary>The mine parameter can be used to instruct the API to only return streams owned by the authenticated user. Set the parameter value to true to only retrieve your own streams.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.ListRequest.OnBehalfOf">
-            <summary>ID of the Google+ Page for the channel that the request is to be on behalf of</summary>
+            <summary>ID of the Google+ Page for the channel on whose behalf this request is made</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.ListRequest.PageToken">
-            <summary>Token for the page selection.</summary>
+            <summary>The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.ListRequest.Part">
-            <summary>Live stream parts to include in the returned response. Valid values are: id, snippet, cdn, status.</summary>
+            <summary>The part parameter specifies a comma-separated list of one or more liveStream resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, cdn, and status.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.UpdateRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -1906,10 +2007,43 @@
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.UpdateRequest.Part">
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             
-            The part names that you can include in the parameter value are id, snippet, cdn, status.</summary>
+            The part properties that you can include in the parameter value are id, snippet, cdn, and status.
+            
+            Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. If the request body does not specify a value for a mutable property, the existing value for that property will be removed.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveStreamsResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3.PlayersResource.List(System.String)">
+            <summary>Returns the data required to play the videos specified on the request, or restriction information explaining why it can&apos;t be played.</summary>
+            <param name="part">Required - The part parameter specifies a comma-separated list of one or more player resource properties that the API response will include.</param>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.PlayersResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.PlayersResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.PlayersResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.PlayersResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.PlayersResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.PlayersResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.PlayersResource.ListRequest.Itag">
+            <summary>If specified, the itag parameter specifies a comma-separated list of itags video formats the client is interested in. The returned formats will be a subset of those itags.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.PlayersResource.ListRequest.Part">
+            <summary>The part parameter specifies a comma-separated list of one or more player resource properties that the API response will include.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.PlayersResource.ListRequest.VideoId">
+            <summary>The videoId parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) that are being retrieved.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.PlaylistItemsResource.Delete(System.String)">
             <summary>Deletes a playlist item.</summary>
