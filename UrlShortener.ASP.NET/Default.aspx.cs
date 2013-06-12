@@ -69,14 +69,14 @@ namespace UrlShortener.ASP.NET
                 if (IsShortUrl(url))
                 {
                     // Expand the URL by using a Url.Get(..) request.
-                    Url result = _service.Url.Get(url).Fetch();
+                    Url result = _service.Url.Get(url).Execute();
                     resultURL = result.LongUrl;
                 }
                 else
                 {
                     // Shorten the URL by inserting a new Url.
                     Url toInsert = new Url { LongUrl = url };
-                    toInsert = _service.Url.Insert(toInsert).Fetch();
+                    toInsert = _service.Url.Insert(toInsert).Execute();
                     resultURL = toInsert.Id;
                 }
                 output.Text = string.Format("<a href=\"{0}\">{0}</a>", resultURL);

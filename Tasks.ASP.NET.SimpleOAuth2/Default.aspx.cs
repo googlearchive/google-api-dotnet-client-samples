@@ -115,14 +115,14 @@ namespace Tasks.ASP.NET.SimpleOAuth2
         }
 
         /// <summary>
-        /// Fetches the TasksLists of the user.
+        /// Gets the TasksLists of the user.
         /// </summary>
         public void FetchTaskslists()
         {
             try
             {
-                // Fetch all TasksLists of the user asynchronously.
-                TaskLists response = _service.Tasklists.List().Fetch();
+                // Execute all TasksLists of the user asynchronously.
+                TaskLists response = _service.Tasklists.List().Execute();
                 ShowTaskslists(response);
             }
             catch (ThreadAbortException)
@@ -150,14 +150,14 @@ namespace Tasks.ASP.NET.SimpleOAuth2
                 Panel listPanel = new Panel() { BorderWidth = Unit.Pixel(1), BorderColor = Color.Black };
                 listPanel.Controls.Add(new Label { Text = list.Title });
                 listPanel.Controls.Add(new Label { Text = "<hr/>" });
-                listPanel.Controls.Add(new Label { Text = FetchTasks(list) });
+                listPanel.Controls.Add(new Label { Text = GetTasks(list) });
                 lists.Controls.Add(listPanel);
             }
         }
 
-        private string FetchTasks(TaskList taskList)
+        private string GetTasks(TaskList taskList)
         {
-            var tasks = _service.Tasks.List(taskList.Id).Fetch();
+            var tasks = _service.Tasks.List(taskList.Id).Execute();
             if (tasks.Items == null)
             {
                 return "<i>No items</i>";

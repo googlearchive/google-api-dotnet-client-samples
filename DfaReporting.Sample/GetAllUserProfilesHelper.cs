@@ -50,7 +50,7 @@ namespace DfaReporting.Sample
             // Retrieve DFA user profiles and display them. User profiles do not support
             // paging.
 
-            var profiles = service.UserProfiles.List().Fetch();
+            var profiles = service.UserProfiles.List().Execute();
             if (profiles.Items.Count > 0)
             {
                 foreach (var profile in profiles.Items)

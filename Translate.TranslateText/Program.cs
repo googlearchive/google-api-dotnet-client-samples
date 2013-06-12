@@ -66,7 +66,7 @@ namespace Translate.TranslateText
             CommandLine.WriteAction("Translating to '" + input.TargetLanguage + "' ...");
 
             string[] srcText = new[] { "Hello world!", input.SourceText };
-            TranslationsListResponse response = service.Translations.List(srcText, input.TargetLanguage).Fetch();
+            TranslationsListResponse response = service.Translations.List(srcText, input.TargetLanguage).Execute();
             var translations = new List<string>();
 
             foreach (TranslationsResource translation in response.Translations)
@@ -78,7 +78,7 @@ namespace Translate.TranslateText
             // Translate the text (back) to english.
             CommandLine.WriteAction("Translating to english ...");
 
-            response = service.Translations.List(translations, "en").Fetch();
+            response = service.Translations.List(translations, "en").Execute();
 
             foreach (TranslationsResource translation in response.Translations)
             {

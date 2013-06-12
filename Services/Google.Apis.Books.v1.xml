@@ -5,10 +5,10 @@
     </assembly>
     <members>
         <member name="P:Google.Apis.Books.v1.Data.Annotation.AfterSelectedText">
-            <summary>Anchor text after excerpt.</summary>
+            <summary>Anchor text after excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Annotation.BeforeSelectedText">
-            <summary>Anchor text before excerpt.</summary>
+            <summary>Anchor text before excerpt. For requests, if the user bookmarked a screen that has no flowing text on it, then this field should be empty.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Annotation.ClientVersionRanges">
             <summary>Selection ranges sent from the client.</summary>
@@ -580,6 +580,9 @@
         <member name="P:Google.Apis.Books.v1.Data.Volume.UserInfoData.IsPurchased">
             <summary>Whether or not this volume was purchased by the authenticated user making the request. (In LITE projection.)</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.UserInfoData.IsUploaded">
+            <summary>Whether or not this volume was user uploaded.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.UserInfoData.Updated">
             <summary>Timestamp when this volume was last modified by a user action, such as a reading position update, volume purchase or writing a review. (RFC 3339 UTC date-time format).</summary>
         </member>
@@ -863,6 +866,79 @@
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.UserId">
             <summary>ID of user for whom to retrieve bookshelves.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.v1.CloudloadingResource.DeleteBook(System.String)">
+            <summary>Remove the book and its contents</summary>
+            <param name="volumeId">Required - The id of the book to be removed.</param>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.AddBookRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.AddBookRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.AddBookRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.AddBookRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.AddBookRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.AddBookRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.AddBookRequest.Drive_document_id">
+            <summary>A drive document id. The upload_client_token must not be set.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.AddBookRequest.Mime_type">
+            <summary>The document MIME type. It can be set only if the drive_document_id is set.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.AddBookRequest.Name">
+            <summary>The document name. It can be set only if the drive_document_id is set.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.DeleteBookRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.DeleteBookRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.DeleteBookRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.DeleteBookRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.DeleteBookRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.DeleteBookRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.DeleteBookRequest.VolumeId">
+            <summary>The id of the book to be removed.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.UpdateBookRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.UpdateBookRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.UpdateBookRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.UpdateBookRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.UpdateBookRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.UpdateBookRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.CloudloadingResource.UpdateBookRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="M:Google.Apis.Books.v1.LayersResource.Get(System.String,System.String)">
             <summary>Gets the layer summary for a volume.</summary>
@@ -1824,6 +1900,75 @@
         <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.VolumeId">
             <summary>ID of the source volume.</summary>
         </member>
+        <member name="M:Google.Apis.Books.v1.VolumesResource.MybooksResource.List">
+            <summary>Return a list of books in My Library.</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.VolumesResource.MybooksResource.AcquireMethod">
+            <summary>How the book was aquired</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.MybooksResource.AcquireMethod.PREORDERED">
+            <summary>Preordered books (not yet available)</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.MybooksResource.AcquireMethod.PUBLIC_DOMAIN">
+            <summary>Public domain books</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.MybooksResource.AcquireMethod.PURCHASED">
+            <summary>Purchased books</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.MybooksResource.AcquireMethod.SAMPLE">
+            <summary>Sample books</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.MybooksResource.AcquireMethod.UPLOADED">
+            <summary>User uploaded books</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.VolumesResource.MybooksResource.ProcessingState">
+            <summary>The processing state of the user uploaded volumes to be returned. Applicable only if the UPLOADED is specified in the acquireMethod.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.MybooksResource.ProcessingState.COMPLETED_FAILED">
+            <summary>The volume processing hase failed.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.MybooksResource.ProcessingState.COMPLETED_SUCCESS">
+            <summary>The volume processing was completed.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.MybooksResource.ProcessingState.RUNNING">
+            <summary>The volume processing is not completed.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.AcquireMethod">
+            <summary>How the book was aquired</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.Locale">
+            <summary>ISO-639-1 language and ISO-3166-1 country code. Ex:'en_US'. Used for generating recommendations.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.ProcessingState">
+            <summary>The processing state of the user uploaded volumes to be returned. Applicable only if the UPLOADED is specified in the acquireMethod.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.MybooksResource.ListRequest.StartIndex">
+            <summary>Index of the first result to return (starts at 0)</summary>
+        </member>
         <member name="M:Google.Apis.Books.v1.VolumesResource.RecommendedResource.List">
             <summary>Return a list of recommended books for the current user.</summary>
         </member>
@@ -1850,6 +1995,57 @@
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.RecommendedResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.List">
+            <summary>Return a list of books uploaded by the current user.</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ProcessingState">
+            <summary>The processing state of the user uploaded volumes to be returned.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ProcessingState.COMPLETED_FAILED">
+            <summary>The volume processing hase failed.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ProcessingState.COMPLETED_SUCCESS">
+            <summary>The volume processing was completed.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ProcessingState.RUNNING">
+            <summary>The volume processing is not completed.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.Locale">
+            <summary>ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.ProcessingState">
+            <summary>The processing state of the user uploaded volumes to be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.StartIndex">
+            <summary>Index of the first result to return (starts at 0)</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.UseruploadedResource.ListRequest.VolumeId">
+            <summary>The ids of the volumes to be returned. If not specified all that match the processingState are returned.</summary>
         </member>
         <member name="T:Google.Apis.Books.v1.VolumesResource.Projection">
             <summary>Restrict information returned to a set of selected fields.</summary>

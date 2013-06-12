@@ -67,7 +67,7 @@ namespace Shopping.ListProducts
             do
             {
                 request.StartIndex = startIndex;
-                Products response = request.Fetch();
+                Products response = request.Execute();
 
                 if (response.CurrentItemCount == 0)
                 {

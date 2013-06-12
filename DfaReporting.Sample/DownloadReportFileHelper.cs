@@ -43,7 +43,7 @@ namespace DfaReporting.Sample
         }
 
         /// <summary>
-        /// Fetchs the contents of a report file.
+        /// Fetches the contents of a report file.
         /// </summary>
         /// <param name="reportFile">The completed report file to download.</param>
         public void Run(File reportFile)

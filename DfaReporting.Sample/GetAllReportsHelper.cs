@@ -57,7 +57,7 @@ namespace DfaReporting.Sample
                 var request = service.Reports.List(userProfileId);
                 request.MaxResults = maxPageSize;
                 request.PageToken = pageToken;
-                reports = request.Fetch();
+                reports = request.Execute();
 
                 foreach (var report in reports.Items)
                 {

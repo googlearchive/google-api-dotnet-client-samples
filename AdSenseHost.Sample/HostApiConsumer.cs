@@ -124,7 +124,7 @@ namespace AdSenseHost.Sample.Host
                 var customChannelRequest = this.service.Customchannels.List(adClientId);
                 customChannelRequest.MaxResults = this.maxListPageSize;
                 customChannelRequest.PageToken = pageToken;
-                customChannelResponse = customChannelRequest.Fetch();
+                customChannelResponse = customChannelRequest.Execute();
 
                 if (customChannelResponse.Items != null && customChannelResponse.Items.Count > 0)
                 {
@@ -168,7 +168,7 @@ namespace AdSenseHost.Sample.Host
                 var adClientRequest = this.service.Adclients.List();
                 adClientRequest.MaxResults = this.maxListPageSize;
                 adClientRequest.PageToken = pageToken;
-                adClientResponse = adClientRequest.Fetch();
+                adClientResponse = adClientRequest.Execute();
 
                 if (adClientResponse.Items != null && adClientResponse.Items.Count > 0)
                 {
@@ -214,7 +214,7 @@ namespace AdSenseHost.Sample.Host
 
             // Create custom channel.
             CustomChannel customChannel = this.service.Customchannels
-                .Insert(newCustomChannel, adClientId).Fetch();
+                .Insert(newCustomChannel, adClientId).Execute();
 
             CommandLine.WriteLine("Custom channel with id {0}, code {1} and name {2} was created",
                 customChannel.Id, customChannel.Code, customChannel.Name);
@@ -246,7 +246,7 @@ namespace AdSenseHost.Sample.Host
 
             // Update custom channel: Using REST's PATCH method to update just the Name field.
             CustomChannel customChannel = this.service.Customchannels
-                .Patch(patchCustomChannel, adClientId, customChannelId).Fetch();
+                .Patch(patchCustomChannel, adClientId, customChannelId).Execute();
 
             CommandLine.WriteLine("Custom channel with id {0}, code {1} and name {2} was updated",
                 customChannel.Id, customChannel.Code, customChannel.Name);
@@ -270,18 +270,18 @@ namespace AdSenseHost.Sample.Host
 
             // Delete custom channel
             CustomChannel customChannel = this.service.Customchannels
-                .Delete(adClientId, customChannelId).Fetch();
+                .Delete(adClientId, customChannelId).Execute();
 
             // Delete nonexistent custom channel
             try
             {
                 CustomChannel wrongcustomChannel = this.service.Customchannels
-                    .Delete(adClientId, "wrong_id").Fetch();
+                    .Delete(adClientId, "wrong_id").Execute();
             }
-            catch (Google.GoogleApiRequestException ex)
+            catch (Google.GoogleApiException ex)
             {
                 CommandLine.WriteLine("Error with message '{0}' was correctly caught.",
-                    ex.RequestError.Message);
+                    ex.Message);
             }
 
 
@@ -310,7 +310,7 @@ namespace AdSenseHost.Sample.Host
                 var urlChannelRequest = this.service.Urlchannels.List(adClientId);
                 urlChannelRequest.MaxResults = this.maxListPageSize;
                 urlChannelRequest.PageToken = pageToken;
-                urlChannelResponse = urlChannelRequest.Fetch();
+                urlChannelResponse = urlChannelRequest.Execute();
 
                 if (urlChannelResponse.Items != null && urlChannelResponse.Items.Count > 0)
                 {
@@ -351,7 +351,7 @@ namespace AdSenseHost.Sample.Host
 
             // Create URL channel.
             UrlChannel urlChannel = this.service.Urlchannels
-                .Insert(newUrlChannel, adClientId).Fetch();
+                .Insert(newUrlChannel, adClientId).Execute();
 
             CommandLine.WriteLine("URL channel with id {0} and URL pattern {1} was created",
                 urlChannel.Id, urlChannel.UrlPattern);
@@ -375,7 +375,7 @@ namespace AdSenseHost.Sample.Host
 
             // Delete custom channel
             UrlChannel urlChannel = this.service.Urlchannels
-                .Delete(adClientId, urlChannelId).Fetch();
+                .Delete(adClientId, urlChannelId).Execute();
 
             CommandLine.WriteLine("Custom channel with id {0} was deleted.",
                 urlChannelId);
@@ -397,7 +397,7 @@ namespace AdSenseHost.Sample.Host
             // Prepare report.
             var startDate = DateTime.Today.ToString(DateFormat);
             var endDate = DateTime.Today.AddDays(-7).ToString(DateFormat);
-            ReportsResource.GenerateRequest reportRequest 
+            ReportsResource.GenerateRequest reportRequest
                 = this.service.Reports.Generate(startDate, endDate);
 
             // Specify the desired ad client using a filter, as well as other parameters.
@@ -413,7 +413,7 @@ namespace AdSenseHost.Sample.Host
             reportRequest.Sort = new List<string> { "+DATE" };
 
             // Run report.
-            Report reportResponse = reportRequest.Fetch();
+            Report reportResponse = reportRequest.Execute();
 
             if (reportResponse.Rows != null && reportResponse.Rows.Count > 0)
             {

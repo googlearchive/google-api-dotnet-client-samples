@@ -57,7 +57,7 @@ namespace DfaReporting.Sample
             // Run report synchronously.
             ReportsResource.RunRequest request = service.Reports.Run(userProfileId, report.Id);
             request.Synchronous = true;
-            File reportFile = request.Fetch();
+            File reportFile = request.Execute();
 
             CommandLine.WriteLine("Report execution initiated. Checking for completion...");
 
@@ -96,7 +96,7 @@ namespace DfaReporting.Sample
                 }
                 CommandLine.WriteLine("Polling again in {0} seconds.", secondsBetweenPolls);
                 Thread.Sleep(timeToSleep);
-                file = service.Reports.Files.Get(userProfileId, file.ReportId, file.Id).Fetch();
+                file = service.Reports.Files.Get(userProfileId, file.ReportId, file.Id).Execute();
             }
             return file;
         }

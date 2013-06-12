@@ -1,0 +1,614 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Datastore.v1beta1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.AllocateIdsRequest">
+            <summary>The request for AllocateIds.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.AllocateIdsRequest.Keys">
+            <summary>A list of keys with incomplete key paths to allocate IDs for. No key may be reserved/read-only.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.AllocateIdsResponse">
+            <summary>The response for AllocateIds.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.AllocateIdsResponse.Keys">
+            <summary>The keys specified in the request (in the same order), each with its key path completed with a newly allocated ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.AllocateIdsResponse.Kind">
+            <summary>The kind, fixed to &quot;datastore#allocateIdsResponse&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.BeginTransactionRequest">
+            <summary>The request for BeginTransaction.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.BeginTransactionRequest.IsolationLevel">
+            <summary>The transaction isolation level. Either snapshot or serializable. The default isolation level is snapshot isolation, which means that another transaction may not concurrently modify the data that is modified by this transaction. Optionally, a transaction can request to be made serializable which means that another transaction cannot concurrently modify the data that is read or modified by this transaction.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.BeginTransactionResponse">
+            <summary>The response for BeginTransaction.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.BeginTransactionResponse.Kind">
+            <summary>The kind, fixed to &quot;datastore#beginTransactionResponse&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.BeginTransactionResponse.Transaction">
+            <summary>The transaction identifier (always present).</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.BlindWriteRequest">
+            <summary>The request for BlindWrite.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.BlindWriteRequest.Mutation">
+             <summary>A set of changes to apply.
+            
+            No entity in this message may have a reserved property name, not even a property in an entity in a value.
+            
+            If entities with duplicate keys are present, an arbitrary choice will be made as to which is written.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.BlindWriteResponse">
+            <summary>The response for BlindWrite.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.BlindWriteResponse.Kind">
+            <summary>The kind, fixed to &quot;datastore#blindWriteResponse&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.BlindWriteResponse.MutationResult">
+            <summary>The result of applying a mutation.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.CommitRequest">
+            <summary>The request for Commit.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.CommitRequest.Mutation">
+             <summary>A set of changes to apply.
+            
+            No entity in this message may have a reserved property name, not even a property in an entity in a value.
+            
+            If entities with duplicate keys are present, an arbitrary choice will be made as to which is written.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.CommitRequest.Transaction">
+            <summary>The transaction identifier, returned by a call to beginTransaction.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.CommitResponse">
+            <summary>The response for Commit.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.CommitResponse.Kind">
+            <summary>The kind, fixed to &quot;datastore#commitResponse&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.CommitResponse.MutationResult">
+            <summary>The result of applying a mutation.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.CompositeFilter">
+            <summary>A filter that merges the multiple other filters using the given operation.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.CompositeFilter.Filters">
+            <summary>The list of filters to combine. Must contain at least one filter.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.CompositeFilter.Operator">
+            <summary>The operator for combining multiple filters. Only &quot;and&quot; is currently supported.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.Entity">
+             <summary>An entity.
+            
+            An entity is limited to 1 megabyte when stored. That *roughly* corresponds to a limit of 1 megabyte for the serialized form of this message.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Entity.Key">
+            <summary>A unique identifier for an entity. If a key&apos;s partition id or any of its path kinds or names are reserved/read-only, the key is reserved/read-only. A reserved/read-only key is forbidden in certain documented contexts.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Entity.Properties">
+            <summary>The entity&apos;s properties.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.Entity.PropertiesData">
+            <summary>The entity&apos;s properties.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.EntityResult">
+            <summary>The result of fetching an entity from the datastore.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.EntityResult.Entity">
+             <summary>An entity.
+            
+            An entity is limited to 1 megabyte when stored. That *roughly* corresponds to a limit of 1 megabyte for the serialized form of this message.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.Filter">
+            <summary>A holder for any type of filter. Exactly one field should be specified.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Filter.CompositeFilter">
+            <summary>A filter that merges the multiple other filters using the given operation.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Filter.PropertyFilter">
+            <summary>A filter on a specific property.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.Key">
+            <summary>A unique identifier for an entity. If a key&apos;s partition id or any of its path kinds or names are reserved/read-only, the key is reserved/read-only. A reserved/read-only key is forbidden in certain documented contexts.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Key.PartitionId">
+             <summary>An identifier for a particular subset of entities.
+            
+            Entities are partitioned into various subsets, each used by different datasets and different namespaces within a dataset and so forth.
+            
+            All input partition IDs are normalized before use. A partition ID is normalized as follows: If the partition ID is unset, replace it with an empty partition ID. If the partition ID has no dataset ID, assign it the context dataset ID.
+            
+            Partition dimension: A dimension may be unset. A dimension&apos;s value must never contain &quot;!&quot;. A dimension&apos;s value must never be &quot;&quot;. If the value of any dimension matches regex &quot;__.*__&quot;, the partition is reserved/read-only. A reserved/read-only partition ID is forbidden in certain documented contexts.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Key.Path">
+            <summary>The entity path. An entity path consists of one or more elements composed of a kind and a string or numerical identifier, which identify entities. The first element identifies a root entity, the second element identifies a child of the root entity, the third element a child of the second entity, and so forth. The entities identified by all prefixes of the path are called the element&apos;s ancestors. An entity path is always fully complete: ALL of the entity&apos;s ancestors are required to be in the path along with the entity identifier itself. The only exception is that in some documented cases, the identifier in the last path element (for the entity) itself may be omitted. A path can never be empty.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.KeyPathElement">
+             <summary>A (kind, ID/name) pair used to construct a key path.
+            
+            At most one of name or ID may be set. If either is set, the element is complete. If neither is set, the element is incomplete.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.KeyPathElement.Id">
+            <summary>The ID of the entity. Always &gt; 0.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.KeyPathElement.Kind">
+            <summary>The kind of the entity. Kinds matching regex &quot;__.*__&quot; are reserved/read-only. Cannot be &quot;&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.KeyPathElement.Name">
+            <summary>The name of the entity. Names matching regex &quot;__.*__&quot; are reserved/read-only. Cannot be &quot;&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.KindExpression">
+            <summary>A representation of a kind.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.KindExpression.Name">
+            <summary>The name of the kind.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.LookupRequest">
+            <summary>The request for Lookup.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.LookupRequest.Keys">
+            <summary>Keys of entities to look up from the datastore.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.LookupRequest.ReadOptions">
+            <summary>Options shared by read requests.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.LookupResponse">
+            <summary>The response for Lookup.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.LookupResponse.Deferred">
+            <summary>A list of keys that were not looked up due to resource constraints.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.LookupResponse.Found">
+            <summary>Entities found.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.LookupResponse.Kind">
+            <summary>The kind, fixed to &quot;datastore#lookupResponse&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.LookupResponse.Missing">
+            <summary>Entities not found, with only the key populated.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.Mutation">
+             <summary>A set of changes to apply.
+            
+            No entity in this message may have a reserved property name, not even a property in an entity in a value.
+            
+            If entities with duplicate keys are present, an arbitrary choice will be made as to which is written.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Mutation.Delete">
+            <summary>Keys of entities to delete. Each key must have a complete key path and must not be reserved/read-only.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Mutation.Force">
+            <summary>Ignore a user specified read-only period. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Mutation.Insert">
+            <summary>Entities to insert. Each inserted entity&apos;s key must have a complete path and must not be reserved/read-only.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Mutation.InsertAutoId">
+            <summary>Insert entities with a newly allocated ID. Each inserted entity&apos;s key must omit the final identifier in its path and must not be reserved/read-only.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Mutation.Update">
+            <summary>Entities to update. Each updated entity&apos;s key must have a complete path and must not be reserved/read-only.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Mutation.Upsert">
+            <summary>Entities to upsert. Each upserted entity&apos;s key must have a complete path and must not be reserved/read-only.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.MutationResult">
+            <summary>The result of applying a mutation.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.MutationResult.IndexUpdates">
+            <summary>Number of index writes.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.MutationResult.InsertAutoIdKeys">
+            <summary>Keys for insertAutoId entities. One per entity from the request, in the same order.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.PartitionId">
+             <summary>An identifier for a particular subset of entities.
+            
+            Entities are partitioned into various subsets, each used by different datasets and different namespaces within a dataset and so forth.
+            
+            All input partition IDs are normalized before use. A partition ID is normalized as follows: If the partition ID is unset, replace it with an empty partition ID. If the partition ID has no dataset ID, assign it the context dataset ID.
+            
+            Partition dimension: A dimension may be unset. A dimension&apos;s value must never contain &quot;!&quot;. A dimension&apos;s value must never be &quot;&quot;. If the value of any dimension matches regex &quot;__.*__&quot;, the partition is reserved/read-only. A reserved/read-only partition ID is forbidden in certain documented contexts.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PartitionId.DatasetId">
+            <summary>The dataset ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PartitionId.Namespace">
+            <summary>The namespace.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.Property">
+            <summary>An entity property.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Property.Multi">
+            <summary>If this property contains a list of values. Input values may explicitly set multi to false, but otherwise false is always represented by omitting multi.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Property.Values">
+            <summary>The value(s) of the property. When multi is false there is always exactly one value. When multi is true there is always one or more values. Each value can have only one value property populated. For example, you cannot have a values list of { values: [ { integerValue: 22, stringValue: &quot;a&quot; } ] }, but you can have { multi: true, values: [ { integerValue: 22 }, { stringValue: &quot;a&quot; } ] }.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.PropertyExpression">
+            <summary>A representation of a property in a projection.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PropertyExpression.AggregationFunction">
+            <summary>The aggregation function to apply to the property. Optional. Can only be used when grouping by at least one property. Must then be set on all properties in the projection that are not being grouped by. Aggregation functions: first selects the first result as determined by the query&apos;s order.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PropertyExpression.Property">
+            <summary>A reference to a property relative to the kind expressions.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.PropertyFilter">
+            <summary>A filter on a specific property.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PropertyFilter.Operator">
+            <summary>The operator to filter by. One of lessThan, lessThanOrEqual, greaterThan, greaterThanOrEqual, equal, or hasAncestor.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PropertyFilter.Property">
+            <summary>A reference to a property relative to the kind expressions.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PropertyFilter.Value">
+             <summary>A message that can hold any of the supported value types and associated metadata.
+            
+            At most one of the Value fields may be set. If none are set the value is &quot;null&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.PropertyOrder">
+            <summary>The desired order for a specific property.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PropertyOrder.Direction">
+            <summary>The direction to order by. One of ascending or descending. Optional, defaults to ascending.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PropertyOrder.Property">
+            <summary>A reference to a property relative to the kind expressions.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.PropertyReference">
+            <summary>A reference to a property relative to the kind expressions.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.PropertyReference.Name">
+            <summary>The name of the property.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.Query">
+            <summary>A query.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Query.EndCursor">
+            <summary>An ending point for the query results. Optional. Query cursors are returned in query result batches.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Query.Filter">
+            <summary>A holder for any type of filter. Exactly one field should be specified.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Query.GroupBy">
+            <summary>The properties to group by (if empty, no grouping is applied to the result set).</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Query.Kinds">
+            <summary>The kinds to query (if empty, returns entities from all kinds).</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Query.Limit">
+            <summary>The maximum number of results to return. Applies after all other constraints. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Query.Offset">
+            <summary>The number of results to skip. Applies before limit, but after all other constraints (optional, defaults to 0).</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Query.Order">
+            <summary>The order to apply to the query results (if empty, order is unspecified).</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Query.Projection">
+            <summary>The projection to return. If not set the entire entity is returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Query.StartCursor">
+            <summary>A starting point for the query results. Optional. Query cursors are returned in query result batches.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.QueryResultBatch">
+            <summary>A batch of results produced by a query.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.QueryResultBatch.EndCursor">
+            <summary>A cursor that points to the position after the last result in the batch. May be absent.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.QueryResultBatch.EntityResultType">
+            <summary>The result type for every entity in entityResults. full for full entities, projection for entities with only projected properties, keyOnly for entities with only a key.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.QueryResultBatch.EntityResults">
+            <summary>The results for this batch.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.QueryResultBatch.MoreResults">
+            <summary>The state of the query after the current batch. One of notFinished, moreResultsAfterLimit, noMoreResults.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.QueryResultBatch.SkippedResults">
+            <summary>The number of results skipped because of Query.offset.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.ReadOptions">
+            <summary>Options shared by read requests.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.ReadOptions.ReadConsistency">
+            <summary>The read consistency to use. One of default, strong, or eventual. Cannot be set when transaction is set. Lookup and ancestor queries default to strong, global queries default to eventual and cannot be set to strong. Optional. Default is default.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.ReadOptions.Transaction">
+            <summary>The transaction to use. Optional.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.RollbackRequest">
+            <summary>The request for Rollback.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.RollbackRequest.Transaction">
+            <summary>The transaction identifier, returned by a call to beginTransaction.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.RollbackResponse">
+            <summary>The response for Rollback.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.RollbackResponse.Kind">
+            <summary>The kind, fixed to &quot;datastore#rollbackResponse&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.RunQueryRequest">
+            <summary>The request for RunQuery.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.RunQueryRequest.PartitionId">
+             <summary>An identifier for a particular subset of entities.
+            
+            Entities are partitioned into various subsets, each used by different datasets and different namespaces within a dataset and so forth.
+            
+            All input partition IDs are normalized before use. A partition ID is normalized as follows: If the partition ID is unset, replace it with an empty partition ID. If the partition ID has no dataset ID, assign it the context dataset ID.
+            
+            Partition dimension: A dimension may be unset. A dimension&apos;s value must never contain &quot;!&quot;. A dimension&apos;s value must never be &quot;&quot;. If the value of any dimension matches regex &quot;__.*__&quot;, the partition is reserved/read-only. A reserved/read-only partition ID is forbidden in certain documented contexts.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.RunQueryRequest.Query">
+            <summary>A query.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.RunQueryRequest.ReadOptions">
+            <summary>Options shared by read requests.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.RunQueryResponse">
+            <summary>The response for RunQuery.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.RunQueryResponse.Batch">
+            <summary>A batch of results produced by a query.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.RunQueryResponse.Kind">
+            <summary>The kind, fixed to &quot;datastore#runQueryResponse&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.Data.Value">
+             <summary>A message that can hold any of the supported value types and associated metadata.
+            
+            At most one of the Value fields may be set. If none are set the value is &quot;null&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.BlobKeyValue">
+            <summary>A blob key value.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.BlobValue">
+            <summary>A blob value.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.BooleanValue">
+            <summary>A boolean value.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.DateTimeValue">
+            <summary>A timestamp value.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.DoubleValue">
+            <summary>A double value.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.EntityValue">
+             <summary>An entity.
+            
+            An entity is limited to 1 megabyte when stored. That *roughly* corresponds to a limit of 1 megabyte for the serialized form of this message.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.Indexed">
+             <summary>If the value should be indexed.
+            
+            The indexed property may be set to null. When indexed is true, stringValue is limited to 500 characters and the blob value is limited to 500 bytes. Input values by default have indexed set to true; however, you can explicitly set indexed to true if you want. (An output value never has indexed explicitly set to true.) If a value is itself an entity, it cannot have indexed set to true.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.IntegerValue">
+            <summary>An integer value.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.KeyValue">
+            <summary>A unique identifier for an entity. If a key&apos;s partition id or any of its path kinds or names are reserved/read-only, the key is reserved/read-only. A reserved/read-only key is forbidden in certain documented contexts.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.Meaning">
+            <summary>The meaning field is reserved and should not be used.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.Data.Value.StringValue">
+            <summary>A UTF-8 encoded string value.</summary>
+        </member>
+        <member name="T:Google.Apis.Datastore.v1beta1.DatastoreService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Datastore.v1beta1.DatastoreService.Scopes.UserinfoEmail">
+            <summary>View your email address</summary>
+        </member>
+        <member name="M:Google.Apis.Datastore.v1beta1.DatasetsResource.AllocateIds(Google.Apis.Datastore.v1beta1.Data.AllocateIdsRequest,System.String)">
+            <summary>Allocate IDs for incomplete keys (useful for referencing an entity before it is inserted).</summary>
+            <param name="datasetId">Required - Identifies the dataset.</param>
+        </member>
+        <member name="M:Google.Apis.Datastore.v1beta1.DatasetsResource.BeginTransaction(Google.Apis.Datastore.v1beta1.Data.BeginTransactionRequest,System.String)">
+            <summary>Begin a new transaction.</summary>
+            <param name="datasetId">Required - Identifies the dataset.</param>
+        </member>
+        <member name="M:Google.Apis.Datastore.v1beta1.DatasetsResource.BlindWrite(Google.Apis.Datastore.v1beta1.Data.BlindWriteRequest,System.String)">
+            <summary>Create, delete or modify some entities outside a transaction.</summary>
+            <param name="datasetId">Required - Identifies the dataset.</param>
+        </member>
+        <member name="M:Google.Apis.Datastore.v1beta1.DatasetsResource.Commit(Google.Apis.Datastore.v1beta1.Data.CommitRequest,System.String)">
+            <summary>Commit a transaction, optionally creating, deleting or modifying some entities.</summary>
+            <param name="datasetId">Required - Identifies the dataset.</param>
+        </member>
+        <member name="M:Google.Apis.Datastore.v1beta1.DatasetsResource.Lookup(Google.Apis.Datastore.v1beta1.Data.LookupRequest,System.String)">
+            <summary>Look up some entities by key.</summary>
+            <param name="datasetId">Required - Identifies the dataset.</param>
+        </member>
+        <member name="M:Google.Apis.Datastore.v1beta1.DatasetsResource.Rollback(Google.Apis.Datastore.v1beta1.Data.RollbackRequest,System.String)">
+            <summary>Roll back a transaction.</summary>
+            <param name="datasetId">Required - Identifies the dataset.</param>
+        </member>
+        <member name="M:Google.Apis.Datastore.v1beta1.DatasetsResource.RunQuery(Google.Apis.Datastore.v1beta1.Data.RunQueryRequest,System.String)">
+            <summary>Query for entities.</summary>
+            <param name="datasetId">Required - Identifies the dataset.</param>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.AllocateIdsRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.AllocateIdsRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.AllocateIdsRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.AllocateIdsRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.AllocateIdsRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.AllocateIdsRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.AllocateIdsRequest.DatasetId">
+            <summary>Identifies the dataset.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.AllocateIdsRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BeginTransactionRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BeginTransactionRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BeginTransactionRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BeginTransactionRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BeginTransactionRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BeginTransactionRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BeginTransactionRequest.DatasetId">
+            <summary>Identifies the dataset.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BeginTransactionRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BlindWriteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BlindWriteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BlindWriteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BlindWriteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BlindWriteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BlindWriteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BlindWriteRequest.DatasetId">
+            <summary>Identifies the dataset.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.BlindWriteRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.CommitRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.CommitRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.CommitRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.CommitRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.CommitRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.CommitRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.CommitRequest.DatasetId">
+            <summary>Identifies the dataset.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.CommitRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.LookupRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.LookupRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.LookupRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.LookupRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.LookupRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.LookupRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.LookupRequest.DatasetId">
+            <summary>Identifies the dataset.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.LookupRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RollbackRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RollbackRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RollbackRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RollbackRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RollbackRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RollbackRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RollbackRequest.DatasetId">
+            <summary>Identifies the dataset.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RollbackRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RunQueryRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RunQueryRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RunQueryRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RunQueryRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RunQueryRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RunQueryRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RunQueryRequest.DatasetId">
+            <summary>Identifies the dataset.</summary>
+        </member>
+        <member name="P:Google.Apis.Datastore.v1beta1.DatasetsResource.RunQueryRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

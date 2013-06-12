@@ -235,7 +235,7 @@
             <summary>The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in &apos;attendees&apos; with the &apos;organizer&apos; field set to True. To change the organizer, use the &quot;move&quot; operation. Read-only, except when importing an event.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.PrivateCopy">
-            <summary>Whether this is a private event copy where changes are not shared with other copies on other calendars. Optional. Immutable.</summary>
+            <summary>Whether this is a private event copy where changes are not shared with other copies on other calendars. Optional. Immutable. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.Recurrence">
             <summary>List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event. This field is omitted for single events or instances of recurring events.</summary>
@@ -248,6 +248,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.Sequence">
             <summary>Sequence number as per iCalendar.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.Source">
+            <summary>Source of an event from which it was created; for example a web page, an email message or any document identifiable by an URL using HTTP/HTTPS protocol. Accessible only by the creator of the event.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.Status">
              <summary>Status of the event. Optional. Possible values are:  
@@ -358,6 +361,15 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.RemindersData.UseDefault">
             <summary>Whether the default reminders of the calendar apply to the event.</summary>
+        </member>
+        <member name="T:Google.Apis.Calendar.v3.Data.Event.SourceData">
+            <summary>Source of an event from which it was created; for example a web page, an email message or any document identifiable by an URL using HTTP/HTTPS protocol. Accessible only by the creator of the event.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.SourceData.Title">
+            <summary>Title of the source; for example a title of a web page or an email subject.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.SourceData.Url">
+            <summary>URL of the source pointing to a resource. URL&apos;s protocol must be HTTP or HTTPS.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.EventAttendee.AdditionalGuests">
             <summary>Number of additional guests. Optional. The default is 0.</summary>
@@ -1339,7 +1351,7 @@
             <summary>Free text search terms to find events that match these terms in any field, except for extended properties. Optional.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.ShowDeleted">
-            <summary>Whether to include deleted events (with 'status' equals 'cancelled') in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if 'showDeleted' and 'singleEvents' are both False. If 'showDeleted' and 'singleEvents' are both True only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.</summary>
+            <summary>Whether to include deleted events (with 'status' equals 'cancelled') in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if 'showDeleted' and 'singleEvents' are both False. If 'showDeleted' and 'singleEvents' are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.ShowHiddenInvitations">
             <summary>Whether to include hidden invitations in the result. Optional. The default is False.</summary>

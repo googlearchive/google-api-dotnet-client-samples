@@ -184,7 +184,8 @@
         </member>
         <member name="P:Google.Apis.Dfareporting.v1_1.Data.Recipient.DeliveryType">
              <summary>The delivery type for the recipient, one of:  
-            - &quot;ATTACHMENT&quot;  (support for additional options will be added later)</summary>
+            - &quot;ATTACHMENT&quot; 
+            - &quot;LINK&quot;</summary>
         </member>
         <member name="P:Google.Apis.Dfareporting.v1_1.Data.Recipient.Email">
             <summary>The email address of the recipient.</summary>
@@ -335,7 +336,8 @@
         </member>
         <member name="P:Google.Apis.Dfareporting.v1_1.Data.Report.DeliveryData.EmailOwnerDeliveryType">
              <summary>The type of delivery for the owner to receive, if enabled. One of:  
-            - &quot;ATTACHMENT&quot;  (support for additional options will be added later)</summary>
+            - &quot;ATTACHMENT&quot; 
+            - &quot;LINK&quot;</summary>
         </member>
         <member name="P:Google.Apis.Dfareporting.v1_1.Data.Report.DeliveryData.Message">
             <summary>The message to be sent with each email.</summary>

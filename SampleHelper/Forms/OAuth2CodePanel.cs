@@ -43,7 +43,8 @@ namespace Google.Apis.Samples.Helper.Forms
             InitializeComponent();
         }
 
-        public OAuth2CodePanel(Form owner, Uri authUri) : this()
+        public OAuth2CodePanel(Form owner, Uri authUri)
+            : this()
         {
             AuthorizationUri = authUri;
             owner.Closed += (sender, args) => Unload();
@@ -122,18 +123,18 @@ namespace Google.Apis.Samples.Helper.Forms
                     Invoke(
                         new Action(
                             () =>
+                            {
+                                // Enter the code into the textbox.
+                                textCode.Text = code;
+                                textCode.Enabled = false;
+
+                                if (OnValidAuthorizationCode != null)
                                 {
-                                    // Enter the code into the textbox.
-                                    textCode.Text = code;
-                                    textCode.Enabled = false;
+                                    OnValidAuthorizationCode(this, EventArgs.Empty);
+                                }
 
-                                    if (OnValidAuthorizationCode != null)
-                                    {
-                                        OnValidAuthorizationCode(this, EventArgs.Empty);
-                                    }
-
-                                    FocusConsoleWindow();
-                                }));
+                                FocusConsoleWindow();
+                            }));
 
                     return;
                 }
@@ -221,8 +222,8 @@ namespace Google.Apis.Samples.Helper.Forms
                 Application.DoEvents();
                 SetForegroundWindow(Process.GetCurrentProcess().MainWindowHandle);
             }
-            catch (InvalidOperationException) {}
-            catch (BadImageFormatException) {}
+            catch (InvalidOperationException) { }
+            catch (BadImageFormatException) { }
         }
 
         protected virtual void MinimizeWindow(IntPtr hWnd)
@@ -234,8 +235,8 @@ namespace Google.Apis.Samples.Helper.Forms
                 Application.DoEvents();
                 ShowWindow(hWnd, ShowWindowCommands.ForceMinimized);
             }
-            catch (InvalidOperationException) {}
-            catch (BadImageFormatException) {}
+            catch (InvalidOperationException) { }
+            catch (BadImageFormatException) { }
         }
 
         /// <summary>Enumeration of the different ways of showing a window using 

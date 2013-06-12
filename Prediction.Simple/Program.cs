@@ -102,14 +102,14 @@ namespace Prediction.Simple
             CommandLine.WriteAction("Performing training of the service ...");
             CommandLine.WriteResult("Bucket", id);
             Training training = new Training { Id = id };
-            training = service.Training.Insert(training).Fetch();
+            training = service.Training.Insert(training).Execute();
 
             // Wait until the training is complete.
             while (training.TrainingStatus == "RUNNING")
             {
                 CommandLine.Write("..");
                 Thread.Sleep(1000);
-                training = service.Training.Get(id).Fetch();
+                training = service.Training.Get(id).Execute();
             }
             CommandLine.WriteLine();
             CommandLine.WriteAction("Training complete!");
@@ -121,7 +121,7 @@ namespace Prediction.Simple
             CommandLine.RequestUserInput("Text to analyze", ref text);
 
             var input = new Input { InputValue = new Input.InputData { CsvInstance = new List<string> { text } } };
-            Output result = service.Training.Predict(input, id).Fetch();
+            Output result = service.Training.Predict(input, id).Execute();
             CommandLine.WriteResult("Language", result.OutputLabel);
         }
     }

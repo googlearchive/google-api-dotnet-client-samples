@@ -22,6 +22,9 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.Data.Task.QueueName">
             <summary>Name of the queue that the task is in.</summary>
         </member>
+        <member name="P:Google.Apis.Taskqueue.v1beta2.Data.Task.Retry_count">
+            <summary>The number of leases applied to this task.</summary>
+        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.Data.Task.Tag">
             <summary>Tag for the task, could be used later to lease tasks grouped by a specific tag.</summary>
         </member>

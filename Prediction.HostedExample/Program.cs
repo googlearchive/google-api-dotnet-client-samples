@@ -103,7 +103,7 @@ namespace Prediction.HostedExample
             CommandLine.RequestUserInput("Text to analyze", ref text);
 
             var input = new Input { InputValue = new Input.InputData { CsvInstance = new List<string> { text } } };
-            Output result = service.Hostedmodels.Predict(input, "sample.languageid").Fetch();
+            Output result = service.Hostedmodels.Predict(input, "sample.languageid").Execute();
             CommandLine.WriteResult("Language", result.OutputLabel);
         }
     }

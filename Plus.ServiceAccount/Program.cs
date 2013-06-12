@@ -73,7 +73,7 @@ namespace Google.Apis.Samples.PlusServiceAccount
                     {
                         Authenticator = auth
                     });
-                Activity activity = service.Activities.Get(ACTIVITY_ID).Fetch();
+                Activity activity = service.Activities.Get(ACTIVITY_ID).Execute();
                 CommandLine.WriteLine("   ^1Activity: " + activity.Object.Content);
                 CommandLine.WriteLine("   ^1Video: " + activity.Object.Attachments[0].Url);
                 // Success.

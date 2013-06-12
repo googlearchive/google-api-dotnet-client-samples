@@ -202,6 +202,66 @@
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectoralDistrict.Scope">
             <summary>The geographic scope of this district. If unspecified the district&apos;s geography is not known. One of: statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, cityWide, special</summary>
         </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.GeographicDivision">
+            <summary>Describes a political geography.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.GeographicDivision.Confidence">
+            <summary>Numerical value between 0 and 1 that expresses level of confidence that a given district is relevant to the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.GeographicDivision.Name">
+            <summary>The name of the division.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.GeographicDivision.OcdId">
+            <summary>The unique Open Civic Data identifier for this division.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.GeographicDivision.Offices">
+            <summary>List of offices elected from this division.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.GeographicDivision.Type">
+            <summary>The type of this division. If unspecified the division&apos;s geography is not known.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.Office">
+            <summary>Information about an Office held by one or more Officials.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Office.Name">
+            <summary>The human-readable name of the office.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Office.Officials">
+            <summary>A list of people who presently hold the office.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Office.Sources">
+            <summary>A list of sources for this contest. If multiple sources are listed, the data has been aggregated from those sources.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.Official">
+            <summary>Information about a official holding an elected office.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Official.Address">
+            <summary>Addresses at which to contact the official.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Official.Channels">
+            <summary>A list of known (social) media channels for this official.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Official.Emails">
+            <summary>The direct email addresses for the official.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Official.Id">
+            <summary>A unique identifier for this official.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Official.Name">
+            <summary>The official&apos;s name.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Official.Party">
+            <summary>The full name of the party the official belongs to.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Official.Phones">
+            <summary>The official&apos;s public contact phone numbers.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Official.PhotoUrl">
+            <summary>A URL for a photo of the official.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Official.Urls">
+            <summary>The official&apos;s public website URLs.</summary>
+        </member>
         <member name="T:Google.Apis.Civicinfo.us_v1.Data.PollingLocation">
             <summary>A location where a voter can vote. This may be an early vote site or an election day voting location.</summary>
         </member>
@@ -231,6 +291,30 @@
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.VoterServices">
             <summary>The services provided by this early vote site. This field is not populated for polling locations.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.RepresentativeInfoRequest">
+            <summary>A request for political geography and representative information for an address.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.RepresentativeInfoResponse">
+            <summary>The result of a representative info lookup query.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.RepresentativeInfoResponse.Divisions">
+            <summary>Political geographic divisions that contain the requested address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.RepresentativeInfoResponse.Kind">
+            <summary>The kind, fixed to &quot;civicinfo#representativeInfoResponse&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.RepresentativeInfoResponse.NormalizedInput">
+            <summary>A simple representation of an address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.RepresentativeInfoResponse.Offices">
+            <summary>Elected offices referenced by the divisions listed above. Will only be present if &quot;offices&quot; was true in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.RepresentativeInfoResponse.Officials">
+            <summary>Officials holding the offices listed above. Will only be present if &quot;offices&quot; was true in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.RepresentativeInfoResponse.Status">
+            <summary>The result of the request. One of: success, noStreetSegmentFound, addressUnparseable, noAddressParameter, multipleStreetSegmentsFound, electionOver, electionUnknown, internalLookupFailure</summary>
         </member>
         <member name="T:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType">
             <summary>A simple representation of an address.</summary>
@@ -348,6 +432,33 @@
             <summary>If set to true, only data from official state sources will be returned.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Civicinfo.us_v1.RepresentativesResource.RepresentativeInfoQuery(Google.Apis.Civicinfo.us_v1.Data.RepresentativeInfoRequest)">
+            <summary>Looks up political geography and (optionally) representative information based on an address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.RepresentativesResource.RepresentativeInfoQueryRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.RepresentativesResource.RepresentativeInfoQueryRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.RepresentativesResource.RepresentativeInfoQueryRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.RepresentativesResource.RepresentativeInfoQueryRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.RepresentativesResource.RepresentativeInfoQueryRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.RepresentativesResource.RepresentativeInfoQueryRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.RepresentativesResource.RepresentativeInfoQueryRequest.IncludeOffices">
+            <summary>Whether to return information about offices and officials. If false, only the top-level district information will be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.RepresentativesResource.RepresentativeInfoQueryRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
     </members>

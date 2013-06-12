@@ -70,7 +70,7 @@ namespace DfaReporting.Sample
             dimensionQuery.MaxResults = maxPageSize;
 
             // Retrieve values and display them.
-            var values = dimensionQuery.Fetch();
+            var values = dimensionQuery.Execute();
 
             if (values.Items.Count > 0)
             {

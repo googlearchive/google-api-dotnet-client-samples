@@ -56,7 +56,7 @@ namespace Google.Apis.Samples.TasksOAuth2
                 {
                     Authenticator = auth
                 });
-            TaskLists results = service.Tasklists.List().Fetch();
+            TaskLists results = service.Tasklists.List().Execute();
             CommandLine.WriteLine("   ^1Lists:");
 
             foreach (TaskList list in results.Items)

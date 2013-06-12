@@ -125,7 +125,7 @@ namespace Google.Apis.Samples.Helper
         public static IEnumerable<string> GenerateCommandLineHelp<T>(T configuration)
         {
             const BindingFlags flags = BindingFlags.Public | BindingFlags.Instance;
-            List<KeyValuePair<PropertyInfo, ArgumentAttribute>> properties = 
+            List<KeyValuePair<PropertyInfo, ArgumentAttribute>> properties =
                 typeof(T).GetProperties(flags).WithAttribute<PropertyInfo, ArgumentAttribute>().ToList();
 
             var query = from kv in properties

@@ -89,6 +89,9 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.ErrorProto.Reason">
             <summary>Specifies the error reason. For example, reason will be &quot;required&quot; or &quot;invalid&quot; if some field was missing or malformed.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.GetQueryResultsResponse.CacheHit">
+            <summary>Whether the query result was fetched from the query cache.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.GetQueryResultsResponse.ETag">
             <summary>A hash of this response.</summary>
         </member>
@@ -119,6 +122,9 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.Job.SelfLink">
             <summary>[Output-only] A URL that can be used to access this resource again.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobConfiguration.DryRun">
+            <summary>[Optional] If set, don&apos;t actually run this job. A valid query will return a mostly empty response with some processing statistics, while an invalid query will return the same error it would if it wasn&apos;t a dry run. Behavior of non-query jobs is undefined.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationExtract.DestinationFormat">
             <summary>[Experimental] Optional and defaults to CSV. Format with which files should be exported. To export to CSV, specify &quot;CSV&quot;. Tables with nested or repeated fields cannot be exported as CSV. To export to newline-delimited JSON, specify &quot;NEWLINE_DELIMITED_JSON&quot;.</summary>
         </member>
@@ -139,6 +145,9 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLink.WriteDisposition">
             <summary>[Optional] Whether to overwrite an existing table (WRITE_TRUNCATE), append to an existing table (WRITE_APPEND), or require that the the table is empty (WRITE_EMPTY). Default is WRITE_APPEND.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowJaggedRows">
+            <summary>[Optional] Accept rows that are missing trailing optional columns. The missing values are treated as nulls. Default is false which treats short rows as errors. Only applicable to CSV, ignored for other formats.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowQuotedNewlines">
             <summary>Indicates if BigQuery should allow quoted data sections that contain newline characters in a CSV file. The default value is false.</summary>
@@ -191,6 +200,9 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationQuery.Query">
             <summary>[Required] BigQuery SQL query to execute.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationQuery.UseQueryCache">
+            <summary>[Optional] Whether to look for the result in the query cache. The query cache is a best-effort cache that will be flushed whenever tables in the query are modified. Moreover, the query cache is only available when a query does not have a destination table specified.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationQuery.WriteDisposition">
             <summary>[Optional] Whether to overwrite an existing table (WRITE_TRUNCATE), append to an existing table (WRITE_APPEND), or require that the the table is empty (WRITE_EMPTY). Default is WRITE_EMPTY.</summary>
         </member>
@@ -239,6 +251,9 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.JobStatistics.TotalBytesProcessed">
             <summary>[Output-only] [Deprecated] Use the bytes processed in the query statistics instead.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobStatistics2.CacheHit">
+            <summary>[Output-only] Whether the query result was fetched from the query cache.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobStatistics2.TotalBytesProcessed">
             <summary>[Output-only] Total bytes processed for this job.</summary>
         </member>
@@ -284,6 +299,9 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.ProjectList.ProjectsData.Kind">
             <summary>The resource type.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.ProjectList.ProjectsData.NumericId">
+            <summary>The numeric ID of this project.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.ProjectReference.ProjectId">
             <summary>[Required] ID of the project. Can be either the numeric ID or the assigned ID of the project.</summary>
         </member>
@@ -305,6 +323,12 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.QueryRequest.TimeoutMs">
             <summary>[Optional] How long to wait for the query to complete, in milliseconds, before returning. Default is to return immediately. If the timeout passes before the job completes, the request will fail with a TIMEOUT error.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.QueryRequest.UseQueryCache">
+            <summary>[Optional] Whether to look for the result in the query cache. The query cache is a best-effort cache that will be flushed whenever tables in the query are modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.QueryResponse.CacheHit">
+            <summary>Whether the query result was fetched from the query cache.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.QueryResponse.JobComplete">
             <summary>Whether the query has completed or not. If rows or totalRows are present, this will always be true. If this is false, totalRows will not be available.</summary>
         </member>
@@ -316,6 +340,9 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.QueryResponse.Rows">
             <summary>An object with as many results as can be contained within the maximum permitted reply size. To get any additional rows, you can call GetQueryResults and specify the jobReference returned above.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.QueryResponse.TotalBytesProcessed">
+            <summary>The total number of bytes processed for this query. If this query was a dry run, this is the number of bytes that would be processed if the query were run.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.QueryResponse.TotalRows">
             <summary>The total number of rows in the complete query result set, which can be more than the number of rows in this single page of results.</summary>
@@ -354,7 +381,7 @@
             <summary>[Output-only] A URL that can be used to access this resource again.</summary>
         </member>
         <member name="T:Google.Apis.Bigquery.v2.Data.TableCell">
-            <summary>Represents a single cell in the result set.</summary>
+            <summary>Represents a single cell in the result set. Users of the java client can detect whether their value result is null by calling &apos;com.google.api.client.util.Data.isNull(cell.getV())&apos;.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.TableDataList.ETag">
             <summary>A hash of this page of results.</summary>

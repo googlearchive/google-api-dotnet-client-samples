@@ -121,11 +121,17 @@
         <member name="P:Google.Apis.Drive.v2.Data.App.Kind">
             <summary>This is always drive#app.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.LongDescription">
+            <summary>A long description of the app.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.Name">
             <summary>The name of the app.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.ObjectType">
             <summary>The type of object this app creates (e.g. Chart). If empty, the app name should be used instead.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.OpenUrlTemplate">
+            <summary>The template url for opening files with this app. The template will contain {ids} and/or {exportIds} to be replaced by the actual file ids.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.PrimaryFileExtensions">
             <summary>The list of primary file extensions.</summary>
@@ -133,8 +139,11 @@
         <member name="P:Google.Apis.Drive.v2.Data.App.PrimaryMimeTypes">
             <summary>The list of primary mime types.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.ProductId">
+            <summary>The ID of the product listing for this app.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.ProductUrl">
-            <summary>The product URL.</summary>
+            <summary>A link to the product listing for this app.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.SecondaryFileExtensions">
             <summary>The list of secondary file extensions.</summary>
@@ -142,11 +151,17 @@
         <member name="P:Google.Apis.Drive.v2.Data.App.SecondaryMimeTypes">
             <summary>The list of secondary mime types.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.ShortDescription">
+            <summary>A short description of the app.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.SupportsCreate">
             <summary>Whether this app supports creating new objects.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.SupportsImport">
             <summary>Whether this app supports importing Google Docs.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.SupportsMultiOpen">
+            <summary>Whether this app supports opening more than one file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.UseByDefault">
             <summary>Whether the app is selected as the default handler for the types it supports.</summary>
@@ -327,8 +342,14 @@
         <member name="P:Google.Apis.Drive.v2.Data.CommentList.Kind">
             <summary>This is always drive#commentList.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentList.NextLink">
+            <summary>A link to the next page of comments.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.CommentList.NextPageToken">
             <summary>The token to use to request the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentList.SelfLink">
+            <summary>A link back to this list.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.CommentReply">
             <summary>A JSON representation of a reply to a comment on a file in Google Drive.</summary>
@@ -371,8 +392,14 @@
         <member name="P:Google.Apis.Drive.v2.Data.CommentReplyList.Kind">
             <summary>This is always drive#commentReplyList.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReplyList.NextLink">
+            <summary>A link to the next page of replies.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.CommentReplyList.NextPageToken">
             <summary>The token to use to request the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReplyList.SelfLink">
+            <summary>A link back to this list.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.File">
             <summary>The metadata for a file.</summary>
@@ -380,8 +407,14 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.AlternateLink">
             <summary>A link for opening the file in using a relevant Google editor or viewer.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.AppDataContents">
+            <summary>Whether this file is in the appdata folder.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.CreatedDate">
             <summary>Create time for this file (formatted ISO8601 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.DefaultOpenWithLink">
+            <summary>A link to open this file with the user&apos;s default app for this file. Only populated when the drive.apps.readonly scope is used.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.Description">
             <summary>A short description of the file.</summary>
@@ -448,6 +481,9 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ModifiedDate">
             <summary>Last time this file was modified by anyone (formatted RFC 3339 timestamp). This is only mutable on update when the setModifiedDate parameter is set.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.OpenWithLinks">
+            <summary>A map of the id of each of the user&apos;s apps to a link to open this file with that app. Only populated when the drive.apps.readonly scope is used.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.OriginalFilename">
             <summary>The original filename if the file was uploaded manually, or the original title if the file was inserted through the API. Note that renames of the title will not change the original filename. This will only be populated on files with content stored in Drive.</summary>
@@ -600,6 +636,9 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.LabelsData.Viewed">
             <summary>Whether this file has been viewed by this user.</summary>
         </member>
+        <member name="T:Google.Apis.Drive.v2.Data.File.OpenWithLinksData">
+            <summary>A map of the id of each of the user&apos;s apps to a link to open this file with that app. Only populated when the drive.apps.readonly scope is used.</summary>
+        </member>
         <member name="T:Google.Apis.Drive.v2.Data.File.ThumbnailData">
             <summary>Thumbnail for the file. Only accepted on upload and for files that are not already thumbnailed by Google.</summary>
         </member>
@@ -724,6 +763,42 @@
         <member name="P:Google.Apis.Drive.v2.Data.PermissionList.SelfLink">
             <summary>A link back to this list.</summary>
         </member>
+        <member name="T:Google.Apis.Drive.v2.Data.Property">
+            <summary>A key-value pair that is either public or private to an application.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Property.ETag">
+            <summary>ETag of the property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Property.Key">
+            <summary>The key of this property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Property.Kind">
+            <summary>This is always drive#property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Property.SelfLink">
+            <summary>The link back to this property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Property.Value">
+            <summary>The value of this property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Property.Visibility">
+            <summary>The visibility of this property.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.PropertyList">
+            <summary>A collection of properties, key-value pairs that are either public or private to an application.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.PropertyList.ETag">
+            <summary>The ETag of the list.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.PropertyList.Items">
+            <summary>The list of properties.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.PropertyList.Kind">
+            <summary>This is always drive#propertyList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.PropertyList.SelfLink">
+            <summary>The link back to this list.</summary>
+        </member>
         <member name="T:Google.Apis.Drive.v2.Data.Revision">
             <summary>A revision of a file.</summary>
         </member>
@@ -840,6 +915,9 @@
         </member>
         <member name="F:Google.Apis.Drive.v2.DriveService.Scopes.DriveReadonly">
             <summary>View the files and documents in your Google Drive</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v2.DriveService.Scopes.DriveScripts">
+            <summary>Modify your Google Apps Script scripts&apos; behavior</summary>
         </member>
         <member name="M:Google.Apis.Drive.v2.AboutResource.Get">
             <summary>Gets the information about the current user along with Drive API settings</summary>
@@ -2061,6 +2139,193 @@
             <summary>Whether changing a role to 'owner' should also downgrade the current owners to writers.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PropertiesResource.Delete(System.String,System.String)">
+            <summary>Deletes a property.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="propertyKey">Required - The key of the property.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PropertiesResource.Get(System.String,System.String)">
+            <summary>Gets a property by its key.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="propertyKey">Required - The key of the property.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PropertiesResource.Insert(Google.Apis.Drive.v2.Data.Property,System.String)">
+            <summary>Adds a property to a file.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PropertiesResource.List(System.String)">
+            <summary>Lists a file&apos;s properties.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PropertiesResource.Patch(Google.Apis.Drive.v2.Data.Property,System.String,System.String)">
+            <summary>Updates a property. This method supports patch semantics.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="propertyKey">Required - The key of the property.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PropertiesResource.Update(Google.Apis.Drive.v2.Data.Property,System.String,System.String)">
+            <summary>Updates a property.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="propertyKey">Required - The key of the property.</param>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.DeleteRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.DeleteRequest.PropertyKey">
+            <summary>The key of the property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.DeleteRequest.Visibility">
+            <summary>The visibility of the property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.GetRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.GetRequest.PropertyKey">
+            <summary>The key of the property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.GetRequest.Visibility">
+            <summary>The visibility of the property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.InsertRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.ListRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.PropertyKey">
+            <summary>The key of the property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.Visibility">
+            <summary>The visibility of the property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.PropertyKey">
+            <summary>The key of the property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.Visibility">
+            <summary>The visibility of the property.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PropertiesResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v2.RepliesResource.Delete(System.String,System.String,System.String)">

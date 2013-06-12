@@ -644,9 +644,6 @@
             - &quot;female&quot; - Female gender. 
             - &quot;other&quot; - Other.</summary>
         </member>
-        <member name="P:Google.Apis.Plus.v1.Data.Person.HasApp">
-            <summary>If &quot;true&quot;, indicates that the person has installed the app that is making the request and has chosen to expose this install state to the caller. A value of &quot;false&quot; indicates that the install state cannot be determined (it is either not installed or the person has chosen to keep this information private).</summary>
-        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Id">
             <summary>The ID of this person.</summary>
         </member>
@@ -823,19 +820,45 @@
         <member name="P:Google.Apis.Plus.v1.Data.Person.PlacesLivedData.Value">
             <summary>A place where this person has lived. For example: &quot;Seattle, WA&quot;, &quot;Near Toronto&quot;.</summary>
         </member>
-        <member name="P:Google.Apis.Plus.v1.Data.Person.UrlsData.Primary">
-            <summary>If &quot;true&quot;, this URL is the person&apos;s primary URL.</summary>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.UrlsData.Label">
+            <summary>The label of the URL.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.UrlsData.Type">
              <summary>The type of URL. Possible values are:  
-            - &quot;home&quot; - URL for home. 
-            - &quot;work&quot; - URL for work. 
-            - &quot;blog&quot; - URL for blog. 
-            - &quot;profile&quot; - URL for profile. 
+            - &quot;otherProfile&quot; - URL for another profile. 
+            - &quot;contributor&quot; - URL for which this person is a contributor to. 
+            - &quot;website&quot; - URL for this Google+ Page&apos;s primary website. 
             - &quot;other&quot; - Other.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.UrlsData.Value">
             <summary>The URL value.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Place.Address">
+            <summary>The physical address of the place.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Place.DisplayName">
+            <summary>The display name of the place.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Place.Kind">
+            <summary>Identifies this resource as a place. Value: &quot;plus#place&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Place.Position">
+            <summary>The position of the place.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.Data.Place.AddressData">
+            <summary>The physical address of the place.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Place.AddressData.Formatted">
+            <summary>The formatted address for display.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.Data.Place.PositionData">
+            <summary>The position of the place.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Place.PositionData.Latitude">
+            <summary>The latitude of this position.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Place.PositionData.Longitude">
+            <summary>The longitude of this position.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.PlusAclentryResource.DisplayName">
             <summary>A descriptive name for this entry. Suitable for display.</summary>
@@ -849,6 +872,7 @@
             - &quot;circle&quot; - Access to members of a circle. 
             - &quot;myCircles&quot; - Access to members of all the person&apos;s circles. 
             - &quot;extendedCircles&quot; - Access to members of everyone in a person&apos;s circles, plus all of the people in their circles. 
+            - &quot;domain&quot; - Access to members of the person&apos;s Google Apps domain. 
             - &quot;public&quot; - Access to anyone on the web.</summary>
         </member>
         <member name="T:Google.Apis.Plus.v1.PlusService.Scopes">

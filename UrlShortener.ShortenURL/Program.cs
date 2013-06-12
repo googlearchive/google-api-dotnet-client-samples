@@ -55,7 +55,7 @@ namespace Google.Apis.Samples.CmdUrlShortener
             CommandLine.WriteLine();
 
             // Resolve URL
-            Url response = service.Url.Get(urlToResolve).Fetch();
+            Url response = service.Url.Get(urlToResolve).Execute();
 
             // Display response
             CommandLine.WriteLine(" ^1Status:   ^9{0}", response.Status);
@@ -70,7 +70,7 @@ namespace Google.Apis.Samples.CmdUrlShortener
             CommandLine.WriteLine();
 
             // Shorten URL
-            Url response = service.Url.Insert(new Url { LongUrl = urlToShorten }).Fetch();
+            Url response = service.Url.Insert(new Url { LongUrl = urlToShorten }).Execute();
 
             // Display response
             CommandLine.WriteLine(" ^1Short URL: ^9{0}", response.Id);

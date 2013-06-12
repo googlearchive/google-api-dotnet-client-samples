@@ -66,7 +66,7 @@ namespace Google.Apis.Samples.Helper.NativeAuthorizationFlows
                 {
                     return code;
                 }
-                
+
                 // Check whether we got an error response:
                 string error = context.Request.QueryString["error"];
                 if (!string.IsNullOrEmpty(error))

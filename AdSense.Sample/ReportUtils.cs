@@ -85,7 +85,7 @@ namespace AdSense.Sample
             reportRequest.MaxResults = pageSize;
 
             // Run next page of report.
-            return reportRequest.Fetch();
+            return reportRequest.Execute();
         }
     }
 }

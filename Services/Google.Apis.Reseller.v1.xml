@@ -121,6 +121,9 @@
         <member name="P:Google.Apis.Reseller.v1.Data.Subscription.SkuId">
             <summary>Name of the sku for which this subscription is purchased.</summary>
         </member>
+        <member name="P:Google.Apis.Reseller.v1.Data.Subscription.Status">
+            <summary>Status of the subscription.</summary>
+        </member>
         <member name="P:Google.Apis.Reseller.v1.Data.Subscription.SubscriptionId">
             <summary>The id of the subscription.</summary>
         </member>

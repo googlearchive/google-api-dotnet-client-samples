@@ -94,7 +94,7 @@ namespace TasksExample.WinForms.NoteMgr
                 });
 
             // Open a NoteForm for every task list.
-            foreach (TaskList list in Service.Tasklists.List().Fetch().Items)
+            foreach (TaskList list in Service.Tasklists.List().Execute().Items)
             {
                 // Open a NoteForm.
                 new NoteForm(list).Show();

@@ -53,7 +53,7 @@ namespace PageSpeedOnline.SimpleTest
 
             // Run the request.
             CommandLine.WriteAction("Measuring page score ...");
-            var result = service.Pagespeedapi.Runpagespeed(url).Fetch();
+            var result = service.Pagespeedapi.Runpagespeed(url).Execute();
 
             // Display the results.
             CommandLine.WriteResult("Page score", result.Score);

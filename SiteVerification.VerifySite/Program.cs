@@ -15,13 +15,12 @@ limitations under the License.
 */
 
 using System;
-
 using DotNetOpenAuth.OAuth2;
-
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 using Google.Apis.SiteVerification.v1;
 using Google.Apis.SiteVerification.v1.Data;
 using Google.Apis.Util;
@@ -54,7 +53,10 @@ namespace SiteVerification.VerifySite
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            var service = new SiteVerificationService();
+            var service = new SiteVerificationService(new BaseClientService.Initializer
+                {
+                    Authenticator = auth
+                });
             RunVerification(service);
             CommandLine.PressAnyKeyToExit();
         }
@@ -87,7 +89,7 @@ namespace SiteVerification.VerifySite
                     Type = "site"
                 }
             });
-            var response = request.Fetch();
+            var response = request.Execute();
             CommandLine.WriteResult("Token", response.Token);
             Util.SetClipboard(response.Token);
             CommandLine.WriteLine();
@@ -102,7 +104,7 @@ namespace SiteVerification.VerifySite
             body.Site = new SiteVerificationWebResourceResource.SiteData();
             body.Site.Identifier = site;
             body.Site.Type = "site";
-            var verificationResponse = service.WebResource.Insert(body, "meta").Fetch();
+            var verificationResponse = service.WebResource.Insert(body, "meta").Execute();
             CommandLine.WriteResult("Verification", verificationResponse.Id);
             CommandLine.WriteAction("Verification successful!");
         }

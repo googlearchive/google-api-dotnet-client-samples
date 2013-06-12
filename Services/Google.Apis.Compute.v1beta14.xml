@@ -159,6 +159,7 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.Data.Firewall.AllowedData.Ports">
              <summary>An optional list of ports which are allowed. It is an error to specify this for any protocol that isn&apos;t UDP or TCP. Each entry must be either an integer or a range. If not specified, connections through any port are allowed.
+            
             Example inputs include: [&quot;22&quot;], [&quot;80&quot;,&quot;443&quot;] and [&quot;12345-12349&quot;].</summary>
         </member>
         <member name="T:Google.Apis.Compute.v1beta14.Data.FirewallList">
@@ -246,7 +247,7 @@
             <summary>An instance resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.Data.Instance.CanIpForward">
-            <summary>Reserved for future use.</summary>
+            <summary>Allows this instance to send packets with source IP addresses other than its own and receive packets with destination IP addresses other than its own. If this instance will be used as an IP gateway or it will be set as the next-hop in a Route resource, say true. If unsure, leave this set to false.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.Data.Instance.CreationTimestamp">
             <summary>Creation timestamp in RFC3339 text format (output only).</summary>
@@ -282,7 +283,7 @@
             <summary>Array of configurations for this interface. This specifies how this interface is configured to interact with other network services, such as connecting to the internet. Currently, ONE_TO_ONE_NAT is the only access config supported. If there are no accessConfigs specified, then this instance will have no external internet access.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.Data.Instance.SelfLink">
-            <summary>Server defined URL for the resource (output only).</summary>
+            <summary>Server defined URL for this resource (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.Data.Instance.ServiceAccounts">
             <summary>A list of service accounts each with specified scopes, for which access tokens are to be made available to the instance through metadata queries.</summary>
@@ -417,13 +418,13 @@
             <summary>The machine type resources.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.Data.MachineTypeList.Kind">
-            <summary>Type of resource.</summary>
+            <summary>Type of the resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.Data.MachineTypeList.NextPageToken">
             <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.Data.MachineTypeList.SelfLink">
-            <summary>Server defined URL for this resource (output only).</summary>
+            <summary>Server defined URL for the resource (output only).</summary>
         </member>
         <member name="T:Google.Apis.Compute.v1beta14.Data.Metadata">
             <summary>A metadata key/value entry.</summary>
@@ -658,6 +659,69 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.Data.Quota.Usage">
             <summary>Current usage of this metric.</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta14.Data.Route">
+            <summary>The route resource. A Route is a rule that specifies how certain packets should be handled by the virtual network. Routes are associated with VMs by tag and the set of Routes for a particular VM is called its routing table. For each packet leaving a VM, the system searches that VM&apos;s routing table for a single best matching Route. Routes match packets by destination IP address, preferring smaller or more specific ranges over larger ones. If there is a tie, the system selects the Route with the smallest priority value. If there is still a tie, it uses the layer three and four packet headers to select just one of the remaining matching Routes. The packet is then forwarded as specified by the next_hop field of the winning Route -- either to another VM destination, a VM gateway or a GCE operated gateway. Packets that do not match any Route in the sending VM&apos;s routing table will be dropped.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.CreationTimestamp">
+            <summary>Creation timestamp in RFC3339 text format (output only).</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.Description">
+            <summary>An optional textual description of the resource; provided by the client when the resource is created.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.DestRange">
+            <summary>Which packets does this route apply to?</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.Id">
+            <summary>Unique identifier for the resource; defined by the server (output only).</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.Kind">
+            <summary>Type of the resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.Name">
+            <summary>Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.Network">
+            <summary>URL of the network to which this route is applied; provided by the client when the route is created.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.NextHopGateway">
+            <summary>The URL to a gateway that should handle matching packets.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.NextHopInstance">
+            <summary>The URL to an instance that should handle matching packets.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.NextHopIp">
+            <summary>The network IP address of an instance that should handle matching packets.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.NextHopNetwork">
+            <summary>The URL of the local network if it should handle matching packets.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.Priority">
+            <summary>Breaks ties between Routes of equal specificity. Routes with smaller values win when tied with routes with larger values.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.SelfLink">
+            <summary>Server defined URL for the resource (output only).</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.Route.Tags">
+            <summary>A list of instance tags to which this route applies.</summary>
+        </member>
+        <member name="T:Google.Apis.Compute.v1beta14.Data.RouteList">
+            <summary>Contains a list of route resources.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.RouteList.Id">
+            <summary>Unique identifier for the resource; defined by the server (output only).</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.RouteList.Items">
+            <summary>The route resources.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.RouteList.Kind">
+            <summary>Type of resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.RouteList.NextPageToken">
+            <summary>A token used to continue a truncated list request (output only).</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.Data.RouteList.SelfLink">
+            <summary>Server defined URL for this resource (output only).</summary>
         </member>
         <member name="T:Google.Apis.Compute.v1beta14.Data.SerialPortOutput">
             <summary>An instance serial console output.</summary>
@@ -2078,6 +2142,126 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta14.ProjectsResource.SetCommonInstanceMetadataRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Compute.v1beta14.RoutesResource.Delete(System.String,System.String)">
+            <summary>Deletes the specified route resource.</summary>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="route">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the route resource to delete.</param>
+        </member>
+        <member name="M:Google.Apis.Compute.v1beta14.RoutesResource.Get(System.String,System.String)">
+            <summary>Returns the specified route resource.</summary>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="route">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the route resource to return.</param>
+        </member>
+        <member name="M:Google.Apis.Compute.v1beta14.RoutesResource.Insert(Google.Apis.Compute.v1beta14.Data.Route,System.String)">
+            <summary>Creates a route resource in the specified project using the data included in the request.</summary>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+        </member>
+        <member name="M:Google.Apis.Compute.v1beta14.RoutesResource.List(System.String)">
+            <summary>Retrieves the list of route resources available to the specified project.</summary>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.DeleteRequest.Project">
+            <summary>Name of the project scoping this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.DeleteRequest.Route">
+            <summary>Name of the route resource to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.GetRequest.Project">
+            <summary>Name of the project scoping this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.GetRequest.Route">
+            <summary>Name of the route resource to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.InsertRequest.Project">
+            <summary>Name of the project scoping this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.Filter">
+            <summary>Optional. Filter expression for filtering listed resources.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.MaxResults">
+            <summary>Optional. Maximum count of results to be returned. Maximum and default value is 100.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.PageToken">
+            <summary>Optional. Tag returned by a previous list request truncated by maxResults. Used to continue a previous list request.</summary>
+        </member>
+        <member name="P:Google.Apis.Compute.v1beta14.RoutesResource.ListRequest.Project">
+            <summary>Name of the project scoping this request.</summary>
         </member>
         <member name="M:Google.Apis.Compute.v1beta14.SnapshotsResource.Delete(System.String,System.String)">
             <summary>Deletes the specified persistent disk snapshot resource.</summary>

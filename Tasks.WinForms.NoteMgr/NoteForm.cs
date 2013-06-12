@@ -48,7 +48,7 @@ namespace TasksExample.WinForms.NoteMgr
             Text = taskList.Title;
 
             // Load all notes:
-            Tasks tasks = Program.Service.Tasks.List(taskList.Id).Fetch();
+            Tasks tasks = Program.Service.Tasks.List(taskList.Id).Execute();
             if (tasks.Items != null)
             {
                 foreach (Task task in tasks.Items)
@@ -135,7 +135,7 @@ namespace TasksExample.WinForms.NoteMgr
                 {
                     NoteItem noteb = note;
                     if(note.RelatedTask != null && !String.IsNullOrEmpty(note.RelatedTask.Id))
-                        requests.Add(() => Program.Service.Tasks.Delete(taskList.Id, noteb.RelatedTask.Id).Fetch());
+                        requests.Add(() => Program.Service.Tasks.Delete(taskList.Id, noteb.RelatedTask.Id).Execute());
                 }
                 deletedNotes.Clear();
 
@@ -151,7 +151,7 @@ namespace TasksExample.WinForms.NoteMgr
             if (isNew)
             {
                 NoteItem previousSaved = previous;
-                yield return () => note.RelatedTask = tasks.Insert(note.RelatedTask, taskList.Id).Fetch();
+                yield return () => note.RelatedTask = tasks.Insert(note.RelatedTask, taskList.Id).Execute();
                 yield return () =>
                                  {
                                      var req = tasks.Move(taskList.Id, note.RelatedTask.Id);
@@ -159,7 +159,7 @@ namespace TasksExample.WinForms.NoteMgr
                                      {
                                          req.Previous = previousSaved.RelatedTask.Id;
                                      }
-                                     note.RelatedTask = req.Fetch();
+                                     note.RelatedTask = req.Execute();
                                  };
             }
             else
@@ -168,7 +168,7 @@ namespace TasksExample.WinForms.NoteMgr
                     () =>
                         {
                             var req = tasks.Update(note.RelatedTask, taskList.Id, note.RelatedTask.Id);
-                            note.RelatedTask = req.Fetch();
+                            note.RelatedTask = req.Execute();
                         };
             }
         }

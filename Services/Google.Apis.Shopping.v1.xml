@@ -283,6 +283,9 @@
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Internal15">
             <summary>Google Internal.</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Internal16">
+            <summary>Google Internal. Attribute names are deliberately vague.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Internal3">
             <summary>Google Internal.</summary>
         </member>
@@ -375,6 +378,9 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.ImagesData.ThumbnailsData.Width">
             <summary>Width of thumbnail (omitted if not specified in the request).</summary>
+        </member>
+        <member name="T:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Internal16Data">
+            <summary>Google Internal. Attribute names are deliberately vague.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Internal4Data.Confidence">
             <summary>Google Internal.</summary>
@@ -581,9 +587,6 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.Currency">
             <summary>Currency restriction (ISO 4217)</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ExperimentId">
-            <summary>The Id of the experiment</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ExtrasEnabled">
             <summary>Whether to return extra information.</summary>

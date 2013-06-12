@@ -106,7 +106,7 @@ namespace TasksSample.CreateTasks
         private static bool ListExists(TasksService service, string list)
         {
             return
-                (from TaskList taskList in service.Tasklists.List().Fetch().Items
+                (from TaskList taskList in service.Tasklists.List().Execute().Items
                  where taskList.Title == list
                  select taskList).Count() > 0;
         }
@@ -115,21 +115,21 @@ namespace TasksSample.CreateTasks
         {
             var list = new TaskList();
             list.Title = SampleListName;
-            list = service.Tasklists.Insert(list).Fetch();
+            list = service.Tasklists.Insert(list).Execute();
 
-            service.Tasks.Insert(new Task { Title = "Test the Tasklist API" }, list.Id).Fetch();
-            service.Tasks.Insert(new Task { Title = "Do the laundry" }, list.Id).Fetch();
+            service.Tasks.Insert(new Task { Title = "Test the Tasklist API" }, list.Id).Execute();
+            service.Tasks.Insert(new Task { Title = "Do the laundry" }, list.Id).Execute();
         }
 
         private static void ListTaskLists(TasksService service)
         {
             CommandLine.WriteLine("   ^1Task lists:");
-            var list = service.Tasklists.List().Fetch();
+            var list = service.Tasklists.List().Execute();
             foreach (var item in list.Items)
             {
                 CommandLine.WriteLine("     ^2" + item.Title);
 
-                Tasks tasks = service.Tasks.List(item.Id).Fetch();
+                Tasks tasks = service.Tasks.List(item.Id).Execute();
                 if (tasks.Items != null)
                 {
                     foreach (Task t in tasks.Items)

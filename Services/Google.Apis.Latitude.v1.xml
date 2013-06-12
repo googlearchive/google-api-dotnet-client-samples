@@ -4,39 +4,6 @@
         <name>Google.Apis.Latitude.v1</name>
     </assembly>
     <members>
-        <member name="T:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson">
-            <summary>A Location resource identifies a user&apos;s position at a particular time. It may include metadata about the user&apos;s position, such as a venue if the location was recorded at the time of a check-in.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.Accuracy">
-            <summary>Accuracy of the latitude and longitude coordinates, in non-negative meters. Optional.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.ActivityId">
-            <summary>Unique ID of the Buzz message that corresponds to the check-in associated with this location. Available only for check-in locations. Optional.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.Altitude">
-            <summary>Altitude of the location, in meters. Optional.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.AltitudeAccuracy">
-            <summary>Accuracy of the altitude value, in meters. Optional.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.Heading">
-            <summary>Direction of travel of the user when this location was recorded. In degrees, clockwise relative to true north. Optional.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.Kind">
-            <summary>Kind of this item.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.Latitude">
-            <summary>Latitude of the location, in decimal degrees.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.Longitude">
-            <summary>Longitude of the location, in decimal degrees.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.Speed">
-            <summary>Ground speed of the user at the time this location was recorded, in meters per second. Non-negative. Optional.</summary>
-        </member>
-        <member name="P:Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson.TimestampMs">
-            <summary>Timestamp of the Location Resource, in milliseconds since the epoch (UTC). This is also the Location Resource&apos;s unique id.</summary>
-        </member>
         <member name="T:Google.Apis.Latitude.v1.Data.Location">
             <summary>A Location resource identifies a user&apos;s position at a particular time. It may include metadata about the user&apos;s position, such as a venue if the location was recorded at the time of a check-in.</summary>
         </member>

@@ -100,7 +100,7 @@ namespace AdSenseHost.Sample
 
             // Request a new association session.
             AssociationSession associationSession = adsense.Associationsessions.Start(
-                AssociationsessionsResource.ProductCode.AFC, websiteUrl).Fetch();
+                AssociationsessionsResource.ProductCode.AFC, websiteUrl).Execute();
 
             CommandLine.WriteLine("Association with ID {0} and redirect URL \n{1}\n was started.",
                 associationSession.Id, associationSession.RedirectUrl);
@@ -124,7 +124,7 @@ namespace AdSenseHost.Sample
 
             // Verify the association session token.
             AssociationSession associationSession = adsense.Associationsessions.Verify(callbackToken)
-                .Fetch();
+                .Execute();
 
             CommandLine.WriteLine("Association for account {0} has status {1} and ID {2}.",
                 associationSession.AccountId, associationSession.Status, associationSession.Id);

@@ -36,7 +36,7 @@ Class Program
     Private Shared Sub RunSample(ByVal service As DiscoveryService)
         ' Run the request.
         CommandLine.WriteAction("Executing List-request ...")
-        Dim result = service.Apis.List().Fetch()
+        Dim result = service.Apis.List().Execute()
 
         ' Display the results.
         If result.Items IsNot Nothing Then

@@ -151,9 +151,6 @@
         <member name="P:Google.Apis.Coordinate.v1.Data.LocationListResponse.NextPageToken">
             <summary>A token to provide to get the next page of results.</summary>
         </member>
-        <member name="P:Google.Apis.Coordinate.v1.Data.LocationListResponse.PageInfo">
-            <summary>Page information.</summary>
-        </member>
         <member name="P:Google.Apis.Coordinate.v1.Data.LocationListResponse.TokenPagination">
             <summary>Pagination information.</summary>
         </member>
@@ -174,21 +171,6 @@
         </member>
         <member name="P:Google.Apis.Coordinate.v1.Data.LocationRecord.Longitude">
             <summary>Longitude.</summary>
-        </member>
-        <member name="T:Google.Apis.Coordinate.v1.Data.PageInfo">
-            <summary>Page information.</summary>
-        </member>
-        <member name="P:Google.Apis.Coordinate.v1.Data.PageInfo.Kind">
-            <summary>Identifies this object as page information.</summary>
-        </member>
-        <member name="P:Google.Apis.Coordinate.v1.Data.PageInfo.ResultPerPage">
-            <summary>Number of results per page.</summary>
-        </member>
-        <member name="P:Google.Apis.Coordinate.v1.Data.PageInfo.StartIndex">
-            <summary>Page start index.</summary>
-        </member>
-        <member name="P:Google.Apis.Coordinate.v1.Data.PageInfo.TotalResults">
-            <summary>Number of results available.</summary>
         </member>
         <member name="T:Google.Apis.Coordinate.v1.Data.Schedule">
             <summary>Job schedule.</summary>

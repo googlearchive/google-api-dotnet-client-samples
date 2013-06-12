@@ -85,7 +85,7 @@ namespace DfaReporting.Sample
             criteria.DimensionFilters = new List<DimensionValue> { floodlightConfigId };
 
             report.FloodlightCriteria = criteria;
-            Report result = service.Reports.Insert(report, userProfileId).Fetch();
+            Report result = service.Reports.Insert(report, userProfileId).Execute();
             CommandLine.WriteLine("Created report with ID \"{0}\" and display name \"{1}\"", result.Id, result.Name);
             CommandLine.WriteLine();
             return result;

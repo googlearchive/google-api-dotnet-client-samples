@@ -44,7 +44,7 @@ namespace Discovery.ListAPIs
         {
             // Run the request.
             CommandLine.WriteAction("Executing List-request ...");
-            var result = service.Apis.List().Fetch();
+            var result = service.Apis.List().Execute();
 
             // Display the results.
             if (result.Items != null)

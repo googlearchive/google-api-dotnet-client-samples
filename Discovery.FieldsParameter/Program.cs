@@ -46,7 +46,7 @@ namespace Discovery.FieldsParameter
             CommandLine.WriteAction("Executing Partial GET ...");
             var request = service.Apis.GetRest("discovery", "v1");
             request.Fields = "description,title";
-            var result = request.Fetch();
+            var result = request.Execute();
 
             // Display the results.
             CommandLine.WriteResult("Description", result.Description);

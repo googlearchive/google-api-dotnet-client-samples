@@ -115,7 +115,7 @@ namespace AdSenseHost.Sample.Publisher
                 var adClientRequest = this.service.Accounts.Adclients.List(accountId);
                 adClientRequest.MaxResults = this.maxListPageSize;
                 adClientRequest.PageToken = pageToken;
-                adClientResponse = adClientRequest.Fetch();
+                adClientResponse = adClientRequest.Execute();
 
                 if (adClientResponse.Items != null && adClientResponse.Items.Count > 0)
                 {
@@ -162,7 +162,7 @@ namespace AdSenseHost.Sample.Publisher
                 var adUnitRequest = this.service.Accounts.Adunits.List(accountId, adClientId);
                 adUnitRequest.MaxResults = this.maxListPageSize;
                 adUnitRequest.PageToken = pageToken;
-                adUnitResponse = adUnitRequest.Fetch();
+                adUnitResponse = adUnitRequest.Execute();
 
                 if (adUnitResponse.Items != null && adUnitResponse.Items.Count > 0)
                 {
@@ -225,7 +225,7 @@ namespace AdSenseHost.Sample.Publisher
             AccountsResource.AdunitsResource.InsertRequest insertRequest = this.service.Accounts.Adunits
                 .Insert(newAdUnit, accountId, adClientId);
 
-            AdUnit adUnit = insertRequest.Fetch();
+            AdUnit adUnit = insertRequest.Execute();
 
             CommandLine.WriteLine("Ad unit of type {0}, name {1} and status {2} was created",
                 adUnit.ContentAdsSettings.Type, adUnit.Name, adUnit.Status);
@@ -256,7 +256,7 @@ namespace AdSenseHost.Sample.Publisher
 
             // Update custom channel: Using REST's PATCH method to update just the Name field.
             AdUnit adUnit = this.service.Accounts.Adunits
-                .Patch(patchAdUnit, accountId, adClientId, adUnitId).Fetch();
+                .Patch(patchAdUnit, accountId, adClientId, adUnitId).Execute();
 
             CommandLine.WriteLine("Ad unit with id {0}, was updated with text color {1}.",
                 adUnit.Id, adUnit.CustomStyle.Colors.Text);
@@ -281,7 +281,7 @@ namespace AdSenseHost.Sample.Publisher
 
             // Delete ad unit
             AdUnit adUnit = this.service.Accounts.Adunits
-                .Delete(accountId, adClientId, adUnitId).Fetch();
+                .Delete(accountId, adClientId, adUnitId).Execute();
 
             CommandLine.WriteLine("Ad unit with id {0} was deleted.",
                 adUnitId);
@@ -322,7 +322,7 @@ namespace AdSenseHost.Sample.Publisher
             reportRequest.Sort = new List<string> { "+DATE" };
 
             // Run report.
-            Report reportResponse = reportRequest.Fetch();
+            Report reportResponse = reportRequest.Execute();
 
             if (reportResponse.Rows != null && reportResponse.Rows.Count > 0)
             {

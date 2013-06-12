@@ -102,17 +102,17 @@ namespace Tasks.ETagCollision
             CommandLine.WriteAction("Testing for E-Tag case " + behaviour + " with modified=" + modify + "...");
 
             // Create a new task list.
-            TaskList list = service.Tasklists.Insert(new TaskList() { Title = "E-Tag Collision Test" }).Fetch();
+            TaskList list = service.Tasklists.Insert(new TaskList() { Title = "E-Tag Collision Test" }).Execute();
 
             // Add a task
-            Task myTask = service.Tasks.Insert(new Task() { Title = "My Task" }, list.Id).Fetch();
+            Task myTask = service.Tasks.Insert(new Task() { Title = "My Task" }, list.Id).Execute();
 
             // Retrieve a second instance of this task, modify it and commit it
             if (modify)
             {
-                Task myTaskB = service.Tasks.Get(list.Id, myTask.Id).Fetch();
+                Task myTaskB = service.Tasks.Get(list.Id, myTask.Id).Execute();
                 myTaskB.Title = "My Task B!";
-                service.Tasks.Update(myTaskB, list.Id, myTaskB.Id).Fetch();
+                service.Tasks.Update(myTaskB, list.Id, myTaskB.Id).Execute();
             }
 
             // Modfiy the original task, and see what happens
@@ -122,18 +122,18 @@ namespace Tasks.ETagCollision
 
             try
             {
-                request.Fetch();
+                request.Execute();
                 CommandLine.WriteResult("Result", "Success!");
             }
-            catch (GoogleApiRequestException ex)
+            catch (GoogleApiException ex)
             {
                 CommandLine.WriteResult(
-                    "Result", "Failure! (" + ex.RequestError.Code + " - " + ex.RequestError.Message + ")");
+                    "Result", "Failure! (" + ex.Message + ")");
             }
             finally
             {
                 // Delete the created list. 
-                service.Tasklists.Delete(list.Id).Fetch();
+                service.Tasklists.Delete(list.Id).Execute();
                 CommandLine.WriteLine();
             }
         }

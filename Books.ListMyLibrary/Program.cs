@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using System;
+using System.Threading.Tasks;
 
 using DotNetOpenAuth.OAuth2;
 
@@ -60,7 +61,7 @@ namespace Books.ListMyLibrary
                 });
 
             ListLibrary(service);
-            CommandLine.PressAnyKeyToExit();
+            Console.ReadLine();
         }
 
         private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
@@ -93,24 +94,48 @@ namespace Books.ListMyLibrary
 
         private static void ListLibrary(BooksService service)
         {
-            CommandLine.WriteAction("Listing Bookshelves ...");
-            var response = service.Mylibrary.Bookshelves.List().Fetch();
-            CommandLine.WriteLine();
+            CommandLine.WriteAction("Listing Bookshelves... (using async execution)");
+            // execute async
+            var task = service.Mylibrary.Bookshelves.List().ExecuteAsync();
 
-            if (response.Items == null)
+            // on success display my library's volumes
+            CommandLine.WriteLine();
+            task.ContinueWith(async t => await DisplayVolumes(service, t.Result),
+                TaskContinuationOptions.OnlyOnRanToCompletion);
+
+            // on failure print the error
+            task.ContinueWith(t =>
+                {
+                    CommandLine.Write("Error occurred on executing async operation");
+                    if (t.IsCanceled)
+                    {
+                        CommandLine.Write("Task was canceled");
+                    }
+                    if (t.Exception != null)
+                    {
+                        CommandLine.Write("exception occurred. Exception is " + t.Exception.Message);
+                    }
+                }, TaskContinuationOptions.NotOnRanToCompletion);
+        }
+
+        private static async Task DisplayVolumes(BooksService service, Bookshelves bookshelves)
+        {
+            if (bookshelves.Items == null)
             {
                 CommandLine.WriteError("No bookshelves found!");
                 return;
             }
-            foreach (Bookshelf item in response.Items)
+
+            foreach (Bookshelf item in bookshelves.Items)
             {
                 CommandLine.WriteResult(item.Title, item.VolumeCount + " volumes");
 
                 // List all volumes in this bookshelf.
                 if (item.VolumeCount > 0)
                 {
+                    CommandLine.WriteAction("Query volumes... (Execute Async)");
                     var request = service.Mylibrary.Bookshelves.Volumes.List(item.Id.ToString());
-                    Volumes inBookshelf = request.Fetch();
+                    Volumes inBookshelf = await request.ExecuteAsync();
                     if (inBookshelf.Items == null)
                     {
                         continue;
@@ -119,7 +144,8 @@ namespace Books.ListMyLibrary
                     foreach (Volume volume in inBookshelf.Items)
                     {
                         CommandLine.WriteResult(
-                            "-- " + volume.VolumeInfo.Title, volume.VolumeInfo.Description ?? "no description");
+                            "-- " + volume.VolumeInfo.Title, volume.VolumeInfo.Description ??
+                            "no description");
                     }
                 }
             }

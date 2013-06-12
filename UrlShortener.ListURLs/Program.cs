@@ -69,7 +69,7 @@ namespace UrlShortener.ListURLs
                 // Create and execute the request.
                 var request = service.Url.List();
                 request.StartToken = nextPageToken;
-                UrlHistory result = request.Fetch();
+                UrlHistory result = request.Execute();
 
                 // List all items on this page.
                 if (result.Items != null)

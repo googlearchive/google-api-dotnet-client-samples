@@ -25,6 +25,9 @@
         <member name="P:Google.Apis.Pagespeedonline.v1.Data.Result.Score">
             <summary>The Page Speed Score (0-100), which indicates how much faster a page could be. A high score indicates little room for improvement, while a lower score indicates more room for improvement.</summary>
         </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.Data.Result.Screenshot">
+            <summary>Base64 encoded screenshot of the page that was analyzed.</summary>
+        </member>
         <member name="P:Google.Apis.Pagespeedonline.v1.Data.Result.Title">
             <summary>Title of the page, as displayed in the browser&apos;s title bar.</summary>
         </member>
@@ -154,6 +157,21 @@
         <member name="P:Google.Apis.Pagespeedonline.v1.Data.Result.PageStatsData.TotalRequestBytes">
             <summary>Total size of all request bytes sent by the page.</summary>
         </member>
+        <member name="T:Google.Apis.Pagespeedonline.v1.Data.Result.ScreenshotData">
+            <summary>Base64 encoded screenshot of the page that was analyzed.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.Data.Result.ScreenshotData.Data">
+            <summary>Image data base64 encoded.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.Data.Result.ScreenshotData.Height">
+            <summary>Height of screenshot in pixels.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.Data.Result.ScreenshotData.Mime_type">
+            <summary>Mime type of image data. E.g. &quot;image/jpeg&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.Data.Result.ScreenshotData.Width">
+            <summary>Width of screenshot in pixels.</summary>
+        </member>
         <member name="T:Google.Apis.Pagespeedonline.v1.Data.Result.VersionData">
             <summary>The version of the Page Speed SDK used to generate these results.</summary>
         </member>
@@ -199,6 +217,9 @@
         </member>
         <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.Rule">
             <summary>A Page Speed rule to run; if none are given, all rules are run</summary>
+        </member>
+        <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.Screenshot">
+            <summary>Indicates if binary data containing a screenshot should be included</summary>
         </member>
         <member name="P:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.RunpagespeedRequest.Strategy">
             <summary>The analysis strategy to use</summary>

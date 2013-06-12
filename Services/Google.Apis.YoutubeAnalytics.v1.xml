@@ -28,6 +28,9 @@
         <member name="T:Google.Apis.YoutubeAnalytics.v1.YoutubeAnalyticsService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
+        <member name="F:Google.Apis.YoutubeAnalytics.v1.YoutubeAnalyticsService.Scopes.YtAnalyticsMonetaryReadonly">
+            <summary>View YouTube Analytics monetary reports for your YouTube content</summary>
+        </member>
         <member name="F:Google.Apis.YoutubeAnalytics.v1.YoutubeAnalyticsService.Scopes.YtAnalyticsReadonly">
             <summary>View YouTube Analytics reports for your YouTube content</summary>
         </member>

@@ -784,6 +784,14 @@
             <summary>Import more rows into a table.</summary>
             <param name="tableId">Required - The table into which new rows are being imported.</param>
         </member>
+        <member name="M:Google.Apis.Fusiontables.v1.TableResource.ImportTable(System.String)">
+            <summary>Import a new table.</summary>
+            <param name="name">Required - The name to be assigned to the new table.</param>
+        </member>
+        <member name="M:Google.Apis.Fusiontables.v1.TableResource.ImportTable(System.String,System.IO.Stream,System.String)">
+            <summary>Import a new table.</summary>
+            <param name="name">Required - The name to be assigned to the new table.</param>
+        </member>
         <member name="M:Google.Apis.Fusiontables.v1.TableResource.Insert(Google.Apis.Fusiontables.v1.Data.Table)">
             <summary>Creates a new table.</summary>
         </member>
@@ -935,6 +943,60 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportRowsMediaUpload.TableId">
             <summary>The table into which new rows are being imported.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableRequest.Delimiter">
+            <summary>The delimiter used to separate cell values. This can only consist of a single character. Default is ','.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableRequest.Encoding">
+            <summary>The encoding of the content. Default is UTF-8. Use 'auto-detect' if you are unsure of the encoding.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableRequest.Name">
+            <summary>The name to be assigned to the new table.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableMediaUpload.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableMediaUpload.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableMediaUpload.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableMediaUpload.Delimiter">
+            <summary>The delimiter used to separate cell values. This can only consist of a single character. Default is ','.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableMediaUpload.Encoding">
+            <summary>The encoding of the content. Default is UTF-8. Use 'auto-detect' if you are unsure of the encoding.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ImportTableMediaUpload.Name">
+            <summary>The name to be assigned to the new table.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.InsertRequest.Alt">
             <summary>Data format for the response.</summary>

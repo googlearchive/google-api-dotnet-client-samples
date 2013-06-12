@@ -86,13 +86,16 @@ namespace Tasks.WPF.ListTasks
             InitializeComponent();
         }
 
-        private void UpdateTaskLists()
+        private async void UpdateTaskLists()
         {
+            // Notice - this is not best practice to create async void method, but for this sample it works.
+
             // Download a new version of the TaskLists and add the UI controls
             lists.Children.Clear();
-            foreach (TaskList list in Service.Tasklists.List().Fetch().Items)
+            var tasklists = await Service.Tasklists.List().ExecuteAsync();
+            foreach (TaskList list in tasklists.Items)
             {
-                var tasks = Service.Tasks.List(list.Id).Fetch();
+                var tasks = await Service.Tasks.List(list.Id).ExecuteAsync();
                 Expander listUI = CreateUITasklist(list, tasks);
                 lists.Children.Add(listUI);
             }
@@ -139,10 +142,10 @@ namespace Tasks.WPF.ListTasks
             // Create the service.
             Service = new TasksService(new BaseClientService.Initializer()
                 {
-                    Authenticator = CreateAuthenticator()
+                    Authenticator = CreateAuthenticator(),
                 });
 
-            // Fetch all TaskLists.
+            // Get all TaskLists.
             UpdateTaskLists();
         }
     }
