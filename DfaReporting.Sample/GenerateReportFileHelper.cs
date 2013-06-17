@@ -17,11 +17,10 @@ limitations under the License.
 using System;
 using System.Threading;
 
-using Google.Apis.Dfareporting.v1_1;
-using Google.Apis.Dfareporting.v1_1.Data;
-
+using Google.Apis.Dfareporting.v1_2;
+using Google.Apis.Dfareporting.v1_2.Data;
 using Google.Apis.Samples.Helper;
-
+using Google.Apis.Util;
 
 namespace DfaReporting.Sample
 {
@@ -30,7 +29,6 @@ namespace DfaReporting.Sample
     /// </summary>
     internal class GenerateReportFileHelper
     {
-        private const int secondsBetweenPolls = 30;
         private readonly DfareportingService service;
 
         /// <summary>
@@ -48,21 +46,20 @@ namespace DfaReporting.Sample
         /// <param name="userProfileId">The ID number of the DFA user profile to run this request as.</param>
         /// <param name="report">The report to request a new file for.</param>
         /// <returns>The generated report file.</returns>
-        public File Run(string userProfileId, Report report)
+        public File Run(string userProfileId, Report report, bool isSynchronous)
         {
             CommandLine.WriteLine("=================================================================");
             CommandLine.WriteLine("Generating a report file for report with ID {0}", report.Id);
             CommandLine.WriteLine("=================================================================");
 
-            // Run report synchronously.
             ReportsResource.RunRequest request = service.Reports.Run(userProfileId, report.Id);
-            request.Synchronous = true;
+            request.Synchronous = isSynchronous;
             File reportFile = request.Execute();
 
             CommandLine.WriteLine("Report execution initiated. Checking for completion...");
 
             reportFile = waitForReportRunCompletion(service, userProfileId, reportFile);
-
+            
             if (!reportFile.Status.Equals("REPORT_AVAILABLE"))
             {
                 CommandLine.WriteLine("Report file generation failed to finish. Final status is: {0}",
@@ -76,8 +73,8 @@ namespace DfaReporting.Sample
         }
 
         /// <summary>
-        /// Waits for a report file to generate, checking its status every 30 seconds. Will wait no longer than 5 minutes.
-        /// Reports with a lot of data can take longer than 5 minutes to generate.
+        /// Waits for a report file to generate by polling for its status using exponential backoff. In the worst case,
+        /// there will be 10 attempts to determine if the report is no longer processing.
         /// </summary>
         /// <param name="service">DfaReporting service object used to run the requests.</param>
         /// <param name="userProfileId">The ID number of the DFA user profile to run this request as.</param>
@@ -87,15 +84,21 @@ namespace DfaReporting.Sample
         private static File waitForReportRunCompletion(DfareportingService service, string userProfileId,
             File file)
         {
-            TimeSpan timeToSleep = TimeSpan.FromSeconds(secondsBetweenPolls);
-            for (int i = 0; i <= 10; i++)
+            ExponentialBackOff backOff = new ExponentialBackOff();
+            TimeSpan interval;
+
+            file = service.Reports.Files.Get(userProfileId, file.ReportId, file.Id).Execute();
+
+            for (int i = 1; i <= backOff.MaxNumOfRetries; i++)
             {
                 if (!file.Status.Equals("PROCESSING"))
                 {
                     break;
                 }
-                CommandLine.WriteLine("Polling again in {0} seconds.", secondsBetweenPolls);
-                Thread.Sleep(timeToSleep);
+
+                interval = backOff.GetNextBackOff(i);
+                CommandLine.WriteLine("Polling again in {0} seconds.", interval);
+                Thread.Sleep(interval);
                 file = service.Reports.Files.Get(userProfileId, file.ReportId, file.Id).Execute();
             }
             return file;

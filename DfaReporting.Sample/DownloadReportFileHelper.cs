@@ -17,10 +17,9 @@ limitations under the License.
 using System.IO;
 using System.Net;
 
-using Google.Apis.Dfareporting.v1_1;
-using Google.Apis.Dfareporting.v1_1.Data;
-using File = Google.Apis.Dfareporting.v1_1.Data.File;
-
+using Google.Apis.Dfareporting.v1_2;
+using Google.Apis.Dfareporting.v1_2.Data;
+using File = Google.Apis.Dfareporting.v1_2.Data.File;
 using Google.Apis.Samples.Helper;
 
 

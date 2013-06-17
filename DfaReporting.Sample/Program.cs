@@ -20,8 +20,8 @@ using DotNetOpenAuth.OAuth2;
 
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Dfareporting.v1_1;
-using Google.Apis.Dfareporting.v1_1.Data;
+using Google.Apis.Dfareporting.v1_2;
+using Google.Apis.Dfareporting.v1_2.Data;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
 using Google.Apis.Util;
@@ -127,7 +127,7 @@ namespace DfaReporting.Sample
 
                 Report standardReport = new CreateStandardReportHelper(service).Insert(
                     userProfileId, advertiser, StartDate, EndDate);
-                File file = new GenerateReportFileHelper(service).Run(userProfileId, standardReport);
+                File file = new GenerateReportFileHelper(service).Run(userProfileId, standardReport, true);
 
                 if (file != null)
                 {
@@ -149,7 +149,7 @@ namespace DfaReporting.Sample
 
                 Report floodlightReport = new CreateFloodlightReportHelper(service).Insert(
                     userProfileId, floodlightConfigId, StartDate, EndDate);
-                File file = new GenerateReportFileHelper(service).Run(userProfileId, floodlightReport);
+                File file = new GenerateReportFileHelper(service).Run(userProfileId, floodlightReport, false);
 
                 if (file != null)
                 {

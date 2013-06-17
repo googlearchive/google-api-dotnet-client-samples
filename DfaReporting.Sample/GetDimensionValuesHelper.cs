@@ -16,11 +16,9 @@ limitations under the License.
 
 using System;
 
-using Google.Apis.Dfareporting.v1_1;
-using Google.Apis.Dfareporting.v1_1.Data;
-
+using Google.Apis.Dfareporting.v1_2;
+using Google.Apis.Dfareporting.v1_2.Data;
 using Google.Apis.Samples.Helper;
-
 
 namespace DfaReporting.Sample
 {

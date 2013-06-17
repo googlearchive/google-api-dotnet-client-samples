@@ -94,8 +94,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\Services\Google.Apis.Dfareporting.v1.1.cs">
-      <Link>Google.Apis.SiteVerification.v1.cs</Link>
+    <Compile Include="..\Services\Google.Apis.Dfareporting.v1.2.cs">
+      <Link>Google.Apis.Dfareporting.v1.2.cs</Link>
     </Compile>
     <Compile Include="CreateFloodlightReportHelper.cs" />
     <Compile Include="CreateStandardReportHelper.cs" />
