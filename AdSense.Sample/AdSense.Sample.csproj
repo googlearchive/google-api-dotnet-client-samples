@@ -51,6 +51,9 @@
     <Reference Include="Google.Apis">
       <HintPath>..\Lib\Google.Apis.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis.Adsense.v1.3">
+      <HintPath>..\Services\Google.Apis.Adsense.v1.3.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis.Authentication.OAuth2">
       <HintPath>..\Lib\Google.Apis.Authentication.OAuth2.dll</HintPath>
     </Reference>
@@ -101,9 +104,6 @@
   <ItemGroup>
     <Compile Include="AdSenseSample.cs" />
     <Compile Include="ReportUtils.cs" />
-    <Compile Include="..\Services\Google.Apis.Adsense.v1.2.cs">
-      <Link>Google.Apis.SiteVerification.v1.cs</Link>
-    </Compile>
     <Compile Include="ManagementApiConsumer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,7 +123,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.6\tools\Microsoft.Bcl.Build.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

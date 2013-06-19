@@ -19,8 +19,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Google.Apis.Adsense.v1_2;
-using Google.Apis.Adsense.v1_2.Data;
+using Google.Apis.Adsense.v1_3;
+using Google.Apis.Adsense.v1_3.Data;
 using Google.Apis.Samples.Helper;
 
 namespace AdSense.Sample

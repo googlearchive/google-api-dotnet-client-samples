@@ -127,12 +127,18 @@ Copyright (C) Microsoft Corporation. All rights reserved.
       <_BclBuildProjectReferenceProperties>BclBuildReferencingProject=$(MSBuildProjectFullPath);BclBuildReferencingProjectConfig=$(MSBuildProjectDirectory)\packages.config</_BclBuildProjectReferenceProperties>
       <_BclBuildProjectReferenceProperties Condition="'$(SkipValidatePackageReferences)' != ''">$(_BclBuildProjectReferenceProperties);SkipValidatePackageReferences=$(SkipValidatePackageReferences)</_BclBuildProjectReferenceProperties>
     </PropertyGroup>
-
+  <!--
+    Lines commented out in order to support Visual Studio 2010. This is to avoid the error:
+    "...
+    "AdditionalProperties" parameter is not valid (). Correct syntax is
+    AdditionalProperties="<name>=<value>".
+    ..."
     <ItemGroup>
       <ProjectReference>
         <AdditionalProperties>%(ProjectReference.AdditionalProperties);$(_BclBuildProjectReferenceProperties)</AdditionalProperties>
       </ProjectReference>
     </ItemGroup>
+    -->
   </Target>
 
   <!-- 

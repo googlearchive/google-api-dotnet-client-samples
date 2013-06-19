@@ -18,8 +18,8 @@ using System;
 
 using DotNetOpenAuth.OAuth2;
 
-using Google.Apis.Adsense.v1_2;
-using Google.Apis.Adsense.v1_2.Data;
+using Google.Apis.Adsense.v1_3;
+using Google.Apis.Adsense.v1_3.Data;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Samples.Helper;

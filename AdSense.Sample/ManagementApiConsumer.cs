@@ -18,8 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Google.Apis.Adsense.v1_2;
-using Google.Apis.Adsense.v1_2.Data;
+using Google.Apis.Adsense.v1_3;
+using Google.Apis.Adsense.v1_3.Data;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Util;
 
@@ -30,42 +30,42 @@ namespace AdSense.Sample
     /// These include:
     /// <list type="bullet">
     /// <item>
-    /// <description>Retrieves the list of accounts</description> 
+    /// <description>Retrieves the list of accounts</description>
     /// </item>
     /// <item>
-    /// <description>Retrieves the list of ad clients</description> 
+    /// <description>Retrieves the list of ad clients</description>
     /// </item>
     /// <item>
-    /// <description>Retrieves the list of ad units for a random ad client</description> 
+    /// <description>Retrieves the list of ad units for a random ad client</description>
     /// </item>
     /// <item>
-    /// <description>Retrieves the list of custom channels for a random ad unit</description> 
+    /// <description>Retrieves the list of custom channels for a random ad unit</description>
     /// </item>
     /// <item>
-    /// <description>Retrieves the list of custom channels</description> 
+    /// <description>Retrieves the list of custom channels</description>
     /// </item>
     /// <item>
-    /// <description>Retrieves the list of ad units tagged by a random custom channel</description> 
+    /// <description>Retrieves the list of ad units tagged by a random custom channel</description>
     /// </item>
     /// <item>
-    /// <description>Retrieves the list of URL channels for the logged in user</description> 
+    /// <description>Retrieves the list of URL channels for the logged in user</description>
     /// </item>
     /// <item>
-    /// <description>Retrieves the list of saved ad styles for the logged in user</description> 
+    /// <description>Retrieves the list of saved ad styles for the logged in user</description>
     /// </item>
     /// <item>
-    /// <description>Retrieves the list of saved reports for the logged in user</description> 
+    /// <description>Retrieves the list of saved reports for the logged in user</description>
     /// </item>
     /// <item>
-    /// <description>Generates a random saved report</description> 
+    /// <description>Generates a random saved report</description>
     /// </item>
     /// <item>
-    /// <description>Generates a saved report</description> 
+    /// <description>Generates a saved report</description>
     /// </item>
     /// <item>
-    /// <description>Generates a saved report with paging</description> 
+    /// <description>Generates a saved report with paging</description>
     /// </item>
-    /// </list> 
+    /// </list>
     /// </summary>
     public class ManagementApiConsumer
     {
@@ -138,6 +138,9 @@ namespace AdSense.Sample
                 GenerateReport(exampleAdClient.Id);
                 GenerateReportWithPaging(exampleAdClient.Id);
             }
+
+            DisplayAllMetricsAndDimensions();
+            DisplayAllAlerts();
 
             CommandLine.PressAnyKeyToExit();
         }
@@ -563,15 +566,15 @@ namespace AdSense.Sample
             var reportRequest = this.service.Reports.Generate(startDate, endDate);
 
             // Specify the desired ad client using a filter, as well as other parameters.
-            reportRequest.Filter = new List<string> 
+            reportRequest.Filter = new List<string>
             {
-                "AD_CLIENT_ID==" + 
-                ReportUtils.EscapeFilterParameter(adClientId) 
+                "AD_CLIENT_ID==" +
+                ReportUtils.EscapeFilterParameter(adClientId)
             };
-            reportRequest.Metric = new List<string> 
+            reportRequest.Metric = new List<string>
             {
                 "PAGE_VIEWS", "AD_REQUESTS", "AD_REQUESTS_COVERAGE",
-                "AD_REQUESTS_CTR", "COST_PER_CLICK", "AD_REQUESTS_RPM", "EARNINGS" 
+                "AD_REQUESTS_CTR", "COST_PER_CLICK", "AD_REQUESTS_RPM", "EARNINGS"
             };
             reportRequest.Dimension = new List<string> { "DATE" };
             reportRequest.Sort = new List<string> { "+DATE" };
@@ -615,15 +618,15 @@ namespace AdSense.Sample
             var startIndex = 0;
 
             // Specify the desired ad client using a filter, as well as other parameters.
-            reportRequest.Filter = new List<string> 
+            reportRequest.Filter = new List<string>
             {
-                "AD_CLIENT_ID==" + 
-                ReportUtils.EscapeFilterParameter(adClientId) 
+                "AD_CLIENT_ID==" +
+                ReportUtils.EscapeFilterParameter(adClientId)
             };
-            reportRequest.Metric = new List<string> 
+            reportRequest.Metric = new List<string>
             {
                 "PAGE_VIEWS", "AD_REQUESTS", "AD_REQUESTS_COVERAGE",
-                "AD_REQUESTS_CTR", "COST_PER_CLICK", "AD_REQUESTS_RPM", "EARNINGS" 
+                "AD_REQUESTS_CTR", "COST_PER_CLICK", "AD_REQUESTS_RPM", "EARNINGS"
             };
             reportRequest.Dimension = new List<string> { "DATE" };
             reportRequest.Sort = new List<string> { "+DATE" };
@@ -634,6 +637,7 @@ namespace AdSense.Sample
             if (reportResponse.Rows.IsNullOrEmpty())
             {
                 CommandLine.WriteLine("No rows returned.");
+                CommandLine.WriteLine();
                 return;
             }
 
@@ -672,7 +676,7 @@ namespace AdSense.Sample
         /// <param name="savedReportId">The ID of the saved report to generate.</param>
         private void GenerateSavedReport(string savedReportId)
         {
-            ReportsResource.SavedResource.GenerateRequest savedReportRequest = 
+            ReportsResource.SavedResource.GenerateRequest savedReportRequest =
                 this.service.Reports.Saved.Generate(savedReportId);
             AdsenseReportsGenerateResponse savedReportResponse = savedReportRequest.Execute();
 
@@ -734,9 +738,7 @@ namespace AdSense.Sample
             return savedReportResponse;
         }
 
-        /// <summary>
-        /// Displays all the saved ad styles for the logged in user's default account.
-        /// </summary>
+        /// <summary> Displays all the saved ad styles for the logged in user's default account. </summary>
         private void DisplayAllSavedAdStyles()
         {
             CommandLine.WriteLine("=================================================================");
@@ -759,9 +761,9 @@ namespace AdSense.Sample
                     foreach (var savedAdStyle in savedAdStyleResponse.Items)
                     {
                         CommandLine.WriteLine(
-                            "Saved ad style with ID \"{0}\" and background color \"{1}\" was found.",
+                            "Saved ad style with ID \"{0}\" and name \"{1}\" was found.",
                             savedAdStyle.Id,
-                            savedAdStyle.AdStyle.Colors.Background);
+                            savedAdStyle.Name);
                     }
                 }
                 else
@@ -772,6 +774,86 @@ namespace AdSense.Sample
                 pageToken = savedAdStyleResponse.NextPageToken;
             }
             while (pageToken != null);
+
+            CommandLine.WriteLine();
+        }
+
+        /// <summary>
+        /// Displays all the available metrics and dimensions for the logged in user's default account.
+        /// </summary>
+        private void DisplayAllMetricsAndDimensions()
+        {
+            CommandLine.WriteLine("=================================================================");
+            CommandLine.WriteLine("Listing all metrics");
+            CommandLine.WriteLine("=================================================================");
+
+            Metadata metricsResponse = this.service.Metadata.Metrics.List().Execute();
+
+            if (metricsResponse.Items.IsNotNullOrEmpty())
+            {
+                foreach (var metric in metricsResponse.Items)
+                {
+                    CommandLine.WriteLine(
+                        "Metric with ID \"{0}\" is available for products: \"{1}\".",
+                        metric.Id,
+                        String.Join(", ", metric.SupportedProducts.ToArray()));
+                }
+            }
+            else
+            {
+                CommandLine.WriteLine("No available metrics found.");
+            }
+
+            CommandLine.WriteLine();
+            CommandLine.WriteLine("=================================================================");
+            CommandLine.WriteLine("Listing all dimensions");
+            CommandLine.WriteLine("=================================================================");
+
+            Metadata dimensionsResponse = this.service.Metadata.Dimensions.List().Execute();
+
+            if (dimensionsResponse.Items.IsNotNullOrEmpty())
+            {
+                foreach (var dimension in dimensionsResponse.Items)
+                {
+                    CommandLine.WriteLine(
+                        "Dimension with ID \"{0}\" is available for products: \"{1}\".",
+                        dimension.Id,
+                        String.Join(", ", dimension.SupportedProducts.ToArray()));
+                }
+            }
+            else
+            {
+                CommandLine.WriteLine("No available dimensions found.");
+            }
+
+            CommandLine.WriteLine();
+        }
+
+
+        /// <summary> Prints all the alerts for the logged in user's default account. </summary>
+        private void DisplayAllAlerts()
+        {
+            CommandLine.WriteLine("=================================================================");
+            CommandLine.WriteLine("Listing all alerts");
+            CommandLine.WriteLine("=================================================================");
+
+            Alerts alertsResponse = this.service.Alerts.List().Execute();
+
+            if (alertsResponse.Items.IsNotNullOrEmpty())
+            {
+                foreach (var alert in alertsResponse.Items)
+                {
+                    CommandLine.WriteLine(
+                        "Alert with ID \"{0}\" type \"{1}\" and severity \"{2}\" was found.",
+                        alert.Id,
+                        alert.Type,
+                        alert.Severity);
+                }
+            }
+            else
+            {
+                CommandLine.WriteLine("No alerts found.");
+            }
 
             CommandLine.WriteLine();
         }
