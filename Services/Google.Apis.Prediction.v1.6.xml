@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Prediction.v1.6</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescription">
+            <summary>Description of the data the model was trained on.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.Errors">
+            <summary>List of errors with the data.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.Kind">
+            <summary>What kind of resource this is.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.ModelDescription">
+            <summary>Description of the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.SelfLink">
+            <summary>A URL to re-request this resource.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData">
+            <summary>Description of the data the model was trained on.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.Features">
+            <summary>Description of the input features in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeature">
+            <summary>Description of the output value or label.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.Categorical">
+            <summary>Description of the categorical values of this feature.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.Index">
+            <summary>The feature index.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.Numeric">
+            <summary>Description of the numeric values of this feature.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.Text">
+            <summary>Description of multiple-word text values of this feature.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.CategoricalData">
+            <summary>Description of the categorical values of this feature.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.CategoricalData.Count">
+            <summary>Number of categorical values for this feature in the data.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.CategoricalData.Values">
+            <summary>List of all the categories for this feature in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.CategoricalData.ValuesData.Count">
+            <summary>Number of times this feature had this value.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.CategoricalData.ValuesData.Value">
+            <summary>The category name.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.NumericData">
+            <summary>Description of the numeric values of this feature.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.NumericData.Count">
+            <summary>Number of numeric values for this feature in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.NumericData.Mean">
+            <summary>Mean of the numeric values of this feature in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.NumericData.Variance">
+            <summary>Variance of the numeric values of this feature in the data set.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.TextData">
+            <summary>Description of multiple-word text values of this feature.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.FeaturesData.TextData.Count">
+            <summary>Number of multiple-word text values for this feature.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeatureData">
+            <summary>Description of the output value or label.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeatureData.Numeric">
+            <summary>Description of the output values in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeatureData.Text">
+            <summary>Description of the output labels in the data set.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeatureData.NumericData">
+            <summary>Description of the output values in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeatureData.NumericData.Count">
+            <summary>Number of numeric output values in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeatureData.NumericData.Mean">
+            <summary>Mean of the output values in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeatureData.NumericData.Variance">
+            <summary>Variance of the output values in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeatureData.TextData.Count">
+            <summary>Number of times the output label occurred in the data set.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.DataDescriptionData.OutputFeatureData.TextData.Value">
+            <summary>The output label.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.ModelDescriptionData">
+            <summary>Description of the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.ModelDescriptionData.ConfusionMatrix">
+            <summary>An output confusion matrix. This shows an estimate for how this model will do in predictions. This is first indexed by the true class label. For each true class label, this provides a pair {predicted_label, count}, where count is the estimated number of times the model will predict the predicted label given the true label. Will not output if more then 100 classes (Categorical models only).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Analyze.ModelDescriptionData.ConfusionMatrixRowTotals">
+            <summary>A list of the confusion matrix row totals.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.ModelDescriptionData.ConfusionMatrixData">
+            <summary>An output confusion matrix. This shows an estimate for how this model will do in predictions. This is first indexed by the true class label. For each true class label, this provides a pair {predicted_label, count}, where count is the estimated number of times the model will predict the predicted label given the true label. Will not output if more then 100 classes (Categorical models only).</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.ModelDescriptionData.ConfusionMatrixData.ConfusionMatrixDataSchema">
+            <summary>Confusion matrix information for the true class label.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Analyze.ModelDescriptionData.ConfusionMatrixRowTotalsData">
+            <summary>A list of the confusion matrix row totals.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Input.InputValue">
+            <summary>Input to the model for a prediction.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Input.InputData">
+            <summary>Input to the model for a prediction.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Input.InputData.CsvInstance">
+            <summary>A list of input features, these can be strings or doubles.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.ModelType">
+            <summary>Type of predictive model (classification or regression).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.SourceModel">
+            <summary>The Id of the model to be copied over.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.StorageDataLocation">
+            <summary>Google storage location of the training data file.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.StoragePMMLLocation">
+            <summary>Google storage location of the preprocessing pmml file.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.StoragePMMLModelLocation">
+            <summary>Google storage location of the pmml model file.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.TrainingInstances">
+            <summary>Instances to train model on.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.Utility">
+            <summary>A class weighting function, which allows the importance weights for class labels to be specified (Categorical models only).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.TrainingInstancesData.CsvInstance">
+            <summary>The input features for this instance.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert.TrainingInstancesData.Output">
+            <summary>The generic output value - could be regression or class label.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Insert.UtilityData">
+            <summary>Class label (string).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.Created">
+            <summary>Insert time of the model (as a RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.Kind">
+            <summary>What kind of resource this is.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.ModelInfo">
+            <summary>Model metadata.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.ModelType">
+            <summary>Type of predictive model (CLASSIFICATION or REGRESSION).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.SelfLink">
+            <summary>A URL to re-request this resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.StorageDataLocation">
+            <summary>Google storage location of the training data file.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.StoragePMMLLocation">
+            <summary>Google storage location of the preprocessing pmml file.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.StoragePMMLModelLocation">
+            <summary>Google storage location of the pmml model file.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.TrainingComplete">
+            <summary>Training completion time (as a RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.TrainingStatus">
+            <summary>The current status of the training job. This can be one of following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.Data.Insert2.ModelInfoData">
+            <summary>Model metadata.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.ModelInfoData.ClassWeightedAccuracy">
+            <summary>Estimated accuracy of model taking utility weights into account (Categorical models only).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.ModelInfoData.ClassificationAccuracy">
+            <summary>A number between 0.0 and 1.0, where 1.0 is 100% accurate. This is an estimate, based on the amount and quality of the training data, of the estimated prediction accuracy. You can use this is a guide to decide whether the results are accurate enough for your needs. This estimate will be more reliable if your real input data is similar to your training data (Categorical models only).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.ModelInfoData.MeanSquaredError">
+            <summary>An estimated mean squared error. The can be used to measure the quality of the predicted model (Regression models only).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.ModelInfoData.ModelType">
+            <summary>Type of predictive model (CLASSIFICATION or REGRESSION).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.ModelInfoData.NumberInstances">
+            <summary>Number of valid data instances used in the trained model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Insert2.ModelInfoData.NumberLabels">
+            <summary>Number of class labels in the trained model (Categorical models only).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.List.Items">
+            <summary>List of models.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.List.Kind">
+            <summary>What kind of resource this is.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.List.NextPageToken">
+            <summary>Pagination token to fetch the next page, if one exists.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.List.SelfLink">
+            <summary>A URL to re-request this resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Output.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Output.Kind">
+            <summary>What kind of resource this is.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Output.OutputLabel">
+            <summary>The most likely class label (Categorical models only).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Output.OutputMulti">
+            <summary>A list of class labels with their estimated probabilities (Categorical models only).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Output.OutputValue">
+            <summary>The estimated regression value (Regression models only).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Output.SelfLink">
+            <summary>A URL to re-request this resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Output.OutputMultiData.Label">
+            <summary>The class label.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Output.OutputMultiData.Score">
+            <summary>The probability of the class label.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Update.CsvInstance">
+            <summary>The input features for this instance.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.Data.Update.Output">
+            <summary>The generic output value - could be regression or class label.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_6.PredictionService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Prediction.v1_6.PredictionService.Scopes.DevstorageFull_control">
+            <summary>Manage your data and permissions in Google Cloud Storage</summary>
+        </member>
+        <member name="F:Google.Apis.Prediction.v1_6.PredictionService.Scopes.DevstorageRead_only">
+            <summary>View your data in Google Cloud Storage</summary>
+        </member>
+        <member name="F:Google.Apis.Prediction.v1_6.PredictionService.Scopes.DevstorageRead_write">
+            <summary>Manage your data in Google Cloud Storage</summary>
+        </member>
+        <member name="F:Google.Apis.Prediction.v1_6.PredictionService.Scopes.Prediction">
+            <summary>Manage your data in the Google Prediction API</summary>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_6.HostedmodelsResource.Predict(Google.Apis.Prediction.v1_6.Data.Input,System.String,System.String)">
+            <summary>Submit input and request an output against a hosted model.</summary>
+            <param name="project">Required - The project associated with the model.</param>
+            <param name="hostedModelName">Required - The name of a hosted model.</param>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.HostedmodelsResource.PredictRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.HostedmodelsResource.PredictRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.HostedmodelsResource.PredictRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.HostedmodelsResource.PredictRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.HostedmodelsResource.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.HostedmodelsResource.PredictRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.HostedmodelsResource.PredictRequest.HostedModelName">
+            <summary>The name of a hosted model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.HostedmodelsResource.PredictRequest.Project">
+            <summary>The project associated with the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.HostedmodelsResource.PredictRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_6.TrainedmodelsResource.Analyze(System.String,System.String)">
+            <summary>Get analysis of the model and the data the model was trained on.</summary>
+            <param name="project">Required - The project associated with the model.</param>
+            <param name="id">Required - The unique name for the predictive model.</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_6.TrainedmodelsResource.Delete(System.String,System.String)">
+            <summary>Delete a trained model.</summary>
+            <param name="project">Required - The project associated with the model.</param>
+            <param name="id">Required - The unique name for the predictive model.</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_6.TrainedmodelsResource.Get(System.String,System.String)">
+            <summary>Check training status of your model.</summary>
+            <param name="project">Required - The project associated with the model.</param>
+            <param name="id">Required - The unique name for the predictive model.</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_6.TrainedmodelsResource.Insert(Google.Apis.Prediction.v1_6.Data.Insert,System.String)">
+            <summary>Train a Prediction API model.</summary>
+            <param name="project">Required - The project associated with the model.</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_6.TrainedmodelsResource.List(System.String)">
+            <summary>List available models.</summary>
+            <param name="project">Required - The project associated with the model.</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_6.TrainedmodelsResource.Predict(Google.Apis.Prediction.v1_6.Data.Input,System.String,System.String)">
+            <summary>Submit model id and request a prediction.</summary>
+            <param name="project">Required - The project associated with the model.</param>
+            <param name="id">Required - The unique name for the predictive model.</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_6.TrainedmodelsResource.Update(Google.Apis.Prediction.v1_6.Data.Update,System.String,System.String)">
+            <summary>Add new data to a trained model.</summary>
+            <param name="project">Required - The project associated with the model.</param>
+            <param name="id">Required - The unique name for the predictive model.</param>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.AnalyzeRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.AnalyzeRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.AnalyzeRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.AnalyzeRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.AnalyzeRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.AnalyzeRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.AnalyzeRequest.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.AnalyzeRequest.Project">
+            <summary>The project associated with the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.DeleteRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.DeleteRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.DeleteRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.DeleteRequest.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.DeleteRequest.Project">
+            <summary>The project associated with the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.GetRequest.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.GetRequest.Project">
+            <summary>The project associated with the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.InsertRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.InsertRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.InsertRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.InsertRequest.Project">
+            <summary>The project associated with the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.ListRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.ListRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.ListRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.ListRequest.PageToken">
+            <summary>Pagination token.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.ListRequest.Project">
+            <summary>The project associated with the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.PredictRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.PredictRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.PredictRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.PredictRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.PredictRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.PredictRequest.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.PredictRequest.Project">
+            <summary>The project associated with the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.PredictRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.UpdateRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.UpdateRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.UpdateRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.UpdateRequest.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.UpdateRequest.Project">
+            <summary>The project associated with the model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_6.TrainedmodelsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

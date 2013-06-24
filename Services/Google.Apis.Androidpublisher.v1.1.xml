@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Androidpublisher.v1.1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Androidpublisher.v1_1.Data.InappPurchase">
+            <summary>A Purchase resource indicates the status of a user&apos;s subscription purchase.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.Data.InappPurchase.ConsumptionState">
+             <summary>The consumption state of the inapp product. Possible values are:  
+            - - Consumed 
+            - - Yet to be consumed</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.Data.InappPurchase.DeveloperPayload">
+            <summary>A developer-specified string that contains supplemental information about an order.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.Data.InappPurchase.Kind">
+            <summary>This kind represents a inappPurchase object in the androidpublisher service.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.Data.InappPurchase.PurchaseState">
+             <summary>The purchase state of the order. Possible values are:  
+            - - Purchased 
+            - - Cancelled</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.Data.InappPurchase.PurchaseTime">
+            <summary>The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970).</summary>
+        </member>
+        <member name="T:Google.Apis.Androidpublisher.v1_1.Data.SubscriptionPurchase">
+            <summary>A Purchase resource indicates the status of a user&apos;s subscription purchase.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.Data.SubscriptionPurchase.AutoRenewing">
+            <summary>Whether the subscription will automatically be renewed when it reaches its current expiry time.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.Data.SubscriptionPurchase.InitiationTimestampMsec">
+            <summary>Time at which the subscription was granted, in milliseconds since Epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.Data.SubscriptionPurchase.Kind">
+            <summary>This kind represents a subscriptionPurchase object in the androidpublisher service.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.Data.SubscriptionPurchase.ValidUntilTimestampMsec">
+            <summary>Time at which the subscription will expire, in milliseconds since Epoch.</summary>
+        </member>
+        <member name="M:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.Get(System.String,System.String,System.String)">
+            <summary>Checks the purchase and consumption status of an inapp item.</summary>
+            <param name="packageName">Required - The package name of the application the inapp product was sold in (for example, &apos;com.some.thing&apos;).</param>
+            <param name="productId">Required - The inapp product SKU (for example, &apos;com.some.thing.inapp1&apos;).</param>
+            <param name="token">Required - The token provided to the user&apos;s device when the inapp product was purchased.</param>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.GetRequest.PackageName">
+            <summary>The package name of the application the inapp product was sold in (for example, 'com.some.thing').</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.GetRequest.ProductId">
+            <summary>The inapp product SKU (for example, 'com.some.thing.inapp1').</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.InapppurchasesResource.GetRequest.Token">
+            <summary>The token provided to the user's device when the inapp product was purchased.</summary>
+        </member>
+        <member name="M:Google.Apis.Androidpublisher.v1_1.PurchasesResource.Cancel(System.String,System.String,System.String)">
+            <summary>Cancels a user&apos;s subscription purchase. The subscription remains valid until its expiration time.</summary>
+            <param name="packageName">Required - The package name of the application for which this subscription was purchased (for example, &apos;com.some.thing&apos;).</param>
+            <param name="subscriptionId">Required - The purchased subscription ID (for example, &apos;monthly001&apos;).</param>
+            <param name="token">Required - The token provided to the user&apos;s device when the subscription was purchased.</param>
+        </member>
+        <member name="M:Google.Apis.Androidpublisher.v1_1.PurchasesResource.Get(System.String,System.String,System.String)">
+            <summary>Checks whether a user&apos;s subscription purchase is valid and returns its expiry time.</summary>
+            <param name="packageName">Required - The package name of the application for which this subscription was purchased (for example, &apos;com.some.thing&apos;).</param>
+            <param name="subscriptionId">Required - The purchased subscription ID (for example, &apos;monthly001&apos;).</param>
+            <param name="token">Required - The token provided to the user&apos;s device when the subscription was purchased.</param>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.CancelRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.CancelRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.CancelRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.CancelRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.CancelRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.CancelRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.CancelRequest.PackageName">
+            <summary>The package name of the application for which this subscription was purchased (for example, 'com.some.thing').</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.CancelRequest.SubscriptionId">
+            <summary>The purchased subscription ID (for example, 'monthly001').</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.CancelRequest.Token">
+            <summary>The token provided to the user's device when the subscription was purchased.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.GetRequest.Alt">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.GetRequest.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.GetRequest.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.GetRequest.PackageName">
+            <summary>The package name of the application for which this subscription was purchased (for example, 'com.some.thing').</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.GetRequest.SubscriptionId">
+            <summary>The purchased subscription ID (for example, 'monthly001').</summary>
+        </member>
+        <member name="P:Google.Apis.Androidpublisher.v1_1.PurchasesResource.GetRequest.Token">
+            <summary>The token provided to the user's device when the subscription was purchased.</summary>
+        </member>
+    </members>
+</doc>

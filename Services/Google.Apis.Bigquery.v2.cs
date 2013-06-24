@@ -34,7 +34,7 @@ namespace Google.Apis.Bigquery.v2.Data {
         private string _selfLink;
         
         /// <summary>[Optional] Describes users&apos; rights on the dataset. You can assign the same role to multiple users, and assign multiple roles to the same user.
-        ///Default values assigned to a new dataset are as follows: OWNER - Project owners, dataset creator READ - Project readers WRITE - Project writers
+        ///Default values assigned to a new dataset are as follows: OWNER - Project owners, dataset creator READER - Project readers WRITER - Project writers
         ///See ACLs and Rights for a description of these rights. If you specify any of these roles when creating a dataset, the assigned roles will overwrite the defaults listed above.
         ///To revoke rights to a dataset, call datasets.update() and omit the names of anyone whose rights you wish to revoke. However, every dataset must have at least one entity granted OWNER role.
         ///Each access object can have only one of the following members: userByEmail, groupByEmail, domain, or allAuthenticatedUsers.</summary>
@@ -180,7 +180,7 @@ namespace Google.Apis.Bigquery.v2.Data {
                 }
             }
             
-            /// <summary>[Required] Describes the rights granted to the user specified by the other member of the access object. The following string values are supported: READ - User can call any list() or get() method on any collection or resource. WRITE - User can call any method on any collection except for datasets, on which they can call list() and get(). OWNER - User can call any method. The dataset creator is granted this role by default.</summary>
+            /// <summary>[Required] Describes the rights granted to the user specified by the other member of the access object. The following string values are supported: READER - User can call any list() or get() method on any collection or resource. WRITER - User can call any method on any collection except for datasets, on which they can call list() and get(). OWNER - User can call any method. The dataset creator is granted this role by default.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("role")]
             public virtual string Role {
                 get {
@@ -225,7 +225,7 @@ namespace Google.Apis.Bigquery.v2.Data {
         
         private string _nextPageToken;
         
-        /// <summary>An array of one or more summarized dataset resources. Absent when there are no datasets in the specified project.</summary>
+        /// <summary>An array of the dataset resources in the project. Each resource contains basic information. For full information about a particular dataset resource, use the Datasets: get method. This property is omitted when there are no datasets in the project.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("datasets")]
         public virtual System.Collections.Generic.IList<DatasetList.DatasetsData> Datasets {
             get {
@@ -236,7 +236,7 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
         }
         
-        /// <summary>A hash of this page of results. See Paging Through Results in the developer&apos;s guide.</summary>
+        /// <summary>A hash value of the results page. You can use this property to determine if the page has changed since the last request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
@@ -247,7 +247,7 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
         }
         
-        /// <summary>The type of list.</summary>
+        /// <summary>The list type. This property always returns the value &quot;bigquery#datasetList&quot;.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -258,7 +258,7 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
         }
         
-        /// <summary>A token to request the next page of results. Present only when there is more than one page of results.* See Paging Through Results in the developer&apos;s guide.</summary>
+        /// <summary>A token that can be used to request the next results page. This property is omitted on the final results page.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
@@ -289,7 +289,7 @@ namespace Google.Apis.Bigquery.v2.Data {
                 }
             }
             
-            /// <summary>A descriptive name for this dataset, if one exists.</summary>
+            /// <summary>A descriptive name for the dataset, if one exists.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("friendlyName")]
             public virtual string FriendlyName {
                 get {
@@ -300,7 +300,7 @@ namespace Google.Apis.Bigquery.v2.Data {
                 }
             }
             
-            /// <summary>The fully-qualified unique name of this dataset in the format projectId:datasetId.</summary>
+            /// <summary>The fully-qualified, unique, opaque ID of the dataset.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
@@ -311,7 +311,7 @@ namespace Google.Apis.Bigquery.v2.Data {
                 }
             }
             
-            /// <summary>The resource type.</summary>
+            /// <summary>The resource type. This property always returns the value &quot;bigquery#dataset&quot;.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("kind")]
             public virtual string Kind {
                 get {
@@ -1032,6 +1032,8 @@ namespace Google.Apis.Bigquery.v2.Data {
         
         private TableReference _destinationTable;
         
+        private System.Nullable<double> _minCompletionRatio;
+        
         private System.Nullable<bool> _preserveNulls;
         
         private string _priority;
@@ -1081,6 +1083,17 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
             set {
                 this._destinationTable = value;
+            }
+        }
+        
+        /// <summary>[Experimental] Specifies the the minimum fraction of data that must be scanned before a query returns. This should be specified as a value between 0.0 and 1.0 inclusive. The default value is 1.0.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("minCompletionRatio")]
+        public virtual System.Nullable<double> MinCompletionRatio {
+            get {
+                return this._minCompletionRatio;
+            }
+            set {
+                this._minCompletionRatio = value;
             }
         }
         
@@ -1462,6 +1475,8 @@ namespace Google.Apis.Bigquery.v2.Data {
         
         private System.Nullable<bool> _cacheHit;
         
+        private System.Nullable<double> _completionRatio;
+        
         private string _totalBytesProcessed;
         
         /// <summary>[Output-only] Whether the query result was fetched from the query cache.</summary>
@@ -1472,6 +1487,17 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
             set {
                 this._cacheHit = value;
+            }
+        }
+        
+        /// <summary>[Output-Only] Approximate fraction of data processed for this query. This will be 1.0 unless min_completion_ratio for the query was set to something other than 1.0.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("completionRatio")]
+        public virtual System.Nullable<double> CompletionRatio {
+            get {
+                return this._completionRatio;
+            }
+            set {
+                this._completionRatio = value;
             }
         }
         
@@ -1744,6 +1770,8 @@ namespace Google.Apis.Bigquery.v2.Data {
         
         private System.Nullable<long> _maxResults;
         
+        private System.Nullable<double> _minCompletionRatio;
+        
         private System.Nullable<bool> _preserveNulls;
         
         private string _query;
@@ -1792,6 +1820,17 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
             set {
                 this._maxResults = value;
+            }
+        }
+        
+        /// <summary>[Experimental] Specifies the the minimum fraction of data that must be scanned before a query returns. This should be specified as a value between 0.0 and 1.0 inclusive. The default value is 1.0.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("minCompletionRatio")]
+        public virtual System.Nullable<double> MinCompletionRatio {
+            get {
+                return this._minCompletionRatio;
+            }
+            set {
+                this._minCompletionRatio = value;
             }
         }
         
@@ -2266,7 +2305,7 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
         }
         
-        /// <summary>[Required] The field data type. Possible values include STRING, INTEGER, FLOAT, BOOLEAN, TIMESTAMP or RECORD (where RECORD indicates a nested schema).</summary>
+        /// <summary>[Required] The field data type. Possible values include STRING, INTEGER, FLOAT, BOOLEAN, TIMESTAMP or RECORD (where RECORD indicates that the field contains a nested schema).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("type")]
         public virtual string Type {
             get {
