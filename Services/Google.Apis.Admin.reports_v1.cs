@@ -9,12 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Admin.reports_v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
-    /// <summary>JSON template for a collection of activites. Author: prakhar@google.com (Prakhar Jain)</summary>
+    /// <summary>JSON template for a collection of activites.</summary>
     public class Activities : Google.Apis.Requests.IDirectResponseSchema {
         
         private System.Collections.Generic.IList<Activity> _items;
@@ -68,7 +65,7 @@ namespace Google.Apis.Admin.reports_v1.Data {
         }
     }
     
-    /// <summary>JSON template for the activity resource. Author: prakhar@google.com (Prakhar Jain)</summary>
+    /// <summary>JSON template for the activity resource.</summary>
     public class Activity {
         
         private Activity.ActorData _actor;
@@ -359,7 +356,7 @@ namespace Google.Apis.Admin.reports_v1.Data {
         }
     }
     
-    /// <summary>JSON template for a usage report. Author: prakhar@google.com (Prakhar Jain)</summary>
+    /// <summary>JSON template for a usage report.</summary>
     public class UsageReport {
         
         private string _date;
@@ -539,7 +536,7 @@ namespace Google.Apis.Admin.reports_v1.Data {
         }
     }
     
-    /// <summary>JSON template for a collection of usage reports. Author: prakhar@google.com (Prakhar Jain)</summary>
+    /// <summary>JSON template for a collection of usage reports.</summary>
     public class UsageReports : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _kind;
@@ -678,14 +675,9 @@ namespace Google.Apis.Admin.reports_v1.Data {
     }
 }
 namespace Google.Apis.Admin.reports_v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class AdminService : Google.Apis.Services.BaseClientService {
+    public partial class ReportsService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "reports_v1";
         
@@ -693,7 +685,7 @@ namespace Google.Apis.Admin.reports_v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AdminService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public ReportsService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._activities = new ActivitiesResource(this, Authenticator);
             this._customerUsageReports = new CustomerUsageReportsResource(this, Authenticator);
@@ -701,7 +693,7 @@ namespace Google.Apis.Admin.reports_v1 {
             this.InitParameters();
         }
         
-        public AdminService() : 
+        public ReportsService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -763,13 +755,13 @@ namespace Google.Apis.Admin.reports_v1 {
     
     public class ActivitiesResource {
         
-        private AdminService service;
+        private ReportsService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "activities";
         
-        public ActivitiesResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ActivitiesResource(ReportsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -1017,13 +1009,13 @@ namespace Google.Apis.Admin.reports_v1 {
     
     public class CustomerUsageReportsResource {
         
-        private AdminService service;
+        private ReportsService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "customerUsageReports";
         
-        public CustomerUsageReportsResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public CustomerUsageReportsResource(ReportsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -1187,13 +1179,13 @@ namespace Google.Apis.Admin.reports_v1 {
     
     public class UserUsageReportResource {
         
-        private AdminService service;
+        private ReportsService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "userUsageReport";
         
-        public UserUsageReportResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public UserUsageReportResource(ReportsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -1397,7 +1389,7 @@ namespace Google.Apis.Admin.reports_v1 {
         }
     }
     
-    public partial class AdminService {
+    public partial class ReportsService {
         
         private const string Resource = "";
         

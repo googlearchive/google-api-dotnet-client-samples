@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Groupssettings.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>JSON template for Group resource</summary>
@@ -368,11 +365,6 @@ namespace Google.Apis.Groupssettings.v1.Data {
     }
 }
 namespace Google.Apis.Groupssettings.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class GroupssettingsService : Google.Apis.Services.BaseClientService {

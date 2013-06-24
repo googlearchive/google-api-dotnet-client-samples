@@ -889,6 +889,15 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Object">
             <summary>Name of the object.</summary>
         </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Alt">
             <summary>Data format for the response.</summary>
         </member>
@@ -915,6 +924,15 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Projection">
             <summary>Set of properties to return. Defaults to no_acl.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -1038,6 +1056,15 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Alt">
             <summary>Data format for the response.</summary>

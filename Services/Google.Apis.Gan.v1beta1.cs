@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Gan.v1beta1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>An AdvertiserResource.</summary>
@@ -2604,11 +2601,6 @@ namespace Google.Apis.Gan.v1beta1.Data {
     }
 }
 namespace Google.Apis.Gan.v1beta1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class GanService : Google.Apis.Services.BaseClientService {

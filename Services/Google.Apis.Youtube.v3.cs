@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Youtube.v3.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Rights management policy for YouTube resources.</summary>
@@ -1360,6 +1357,8 @@ namespace Google.Apis.Youtube.v3.Data {
         
         private System.Nullable<bool> _moderateComments;
         
+        private string _profileColor;
+        
         private System.Nullable<bool> _showBrowseView;
         
         private System.Nullable<bool> _showRelatedChannels;
@@ -1433,6 +1432,17 @@ namespace Google.Apis.Youtube.v3.Data {
             }
             set {
                 this._moderateComments = value;
+            }
+        }
+        
+        /// <summary>A prominent color that can be rendered on this channel page.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("profileColor")]
+        public virtual string ProfileColor {
+            get {
+                return this._profileColor;
+            }
+            set {
+                this._profileColor = value;
             }
         }
         
@@ -4025,7 +4035,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
-        /// <summary>Channel title for the channel that the video belongs to.</summary>
+        /// <summary>The channel title of the channel that the video belongs to.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelTitle")]
         public virtual string ChannelTitle {
             get {
@@ -4058,6 +4068,7 @@ namespace Google.Apis.Youtube.v3.Data {
             }
         }
         
+        /// <summary>Keyword tags associated with the playlist.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("tags")]
         public virtual System.Collections.Generic.IList<string> Tags {
             get {
@@ -6774,14 +6785,9 @@ namespace Google.Apis.Youtube.v3.Data {
     }
 }
 namespace Google.Apis.Youtube.v3 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class YoutubeService : Google.Apis.Services.BaseClientService {
+    public partial class YouTubeService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v3";
         
@@ -6789,7 +6795,7 @@ namespace Google.Apis.Youtube.v3 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public YoutubeService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public YouTubeService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._activities = new ActivitiesResource(this, Authenticator);
             this._channelBanners = new ChannelBannersResource(this, Authenticator);
@@ -6807,7 +6813,7 @@ namespace Google.Apis.Youtube.v3 {
             this.InitParameters();
         }
         
-        public YoutubeService() : 
+        public YouTubeService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -6877,13 +6883,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class ActivitiesResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "activities";
         
-        public ActivitiesResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ActivitiesResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -7060,7 +7066,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _channelId;
             
-            private string _home;
+            private System.Nullable<bool> _home;
             
             private System.Nullable<long> _maxResults;
             
@@ -7161,7 +7167,7 @@ namespace Google.Apis.Youtube.v3 {
             
             /// <summary>Set this parameter's value to true to retrieve the activity feed that displays on the YouTube home page for the currently authenticated user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("home", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Home {
+            public virtual System.Nullable<bool> Home {
                 get {
                     return this._home;
                 }
@@ -7282,13 +7288,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class ChannelBannersResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "channelBanners";
         
-        public ChannelBannersResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ChannelBannersResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -7316,6 +7322,8 @@ namespace Google.Apis.Youtube.v3 {
             private string _quotaUser;
             
             private string _userIp;
+            
+            private string _onBehalfOfContentOwner;
             
             private Google.Apis.Youtube.v3.Data.ChannelBannerInsertResponse _Body;
             
@@ -7391,6 +7399,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Youtube.v3.Data.ChannelBannerInsertResponse Body {
                 get {
@@ -7425,6 +7444,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
@@ -7442,6 +7462,8 @@ namespace Google.Apis.Youtube.v3 {
             private string _quotaUser;
             
             private string _userIp;
+            
+            private string _onBehalfOfContentOwner;
             
             public InsertMediaUpload(Google.Apis.Services.IClientService service, Google.Apis.Youtube.v3.Data.ChannelBannerInsertResponse body, System.IO.Stream stream, string contentType) : 
                     base(service, string.Format("/{0}{1}{2}", "upload", service.BasePath, "channelBanners/insert"), "POST", stream, contentType) {
@@ -7513,18 +7535,29 @@ namespace Google.Apis.Youtube.v3 {
                     this._userIp = value;
                 }
             }
+            
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
         }
     }
     
     public class ChannelsResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "channels";
         
-        public ChannelsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ChannelsResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -7573,7 +7606,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private System.Nullable<bool> _mine;
             
-            private string _mySubscribers;
+            private System.Nullable<bool> _mySubscribers;
             
             private string _onBehalfOfContentOwner;
             
@@ -7721,7 +7754,7 @@ namespace Google.Apis.Youtube.v3 {
             
             /// <summary>Set this parameter's value to true to retrieve a list of channels that subscribed to the authenticated user's channel.</summary>
             [Google.Apis.Util.RequestParameterAttribute("mySubscribers", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string MySubscribers {
+            public virtual System.Nullable<bool> MySubscribers {
                 get {
                     return this._mySubscribers;
                 }
@@ -7810,6 +7843,8 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _userIp;
             
+            private string _onBehalfOfContentOwner;
+            
             private string _part;
             
             private Google.Apis.Youtube.v3.Data.Channel _Body;
@@ -7887,6 +7922,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             ///
             ///The part names that you can include in the parameter value are id and invideoPromotion.
@@ -7933,6 +7979,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
@@ -7941,13 +7988,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class GuideCategoriesResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "guideCategories";
         
-        public GuideCategoriesResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public GuideCategoriesResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -8128,13 +8175,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class LiveBroadcastsResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "liveBroadcasts";
         
-        public LiveBroadcastsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public LiveBroadcastsResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -8243,6 +8290,8 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
+            private string _onBehalfOfContentOwner;
+            
             private string _part;
             
             private string _streamId;
@@ -8328,6 +8377,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
@@ -8368,6 +8428,7 @@ namespace Google.Apis.Youtube.v3 {
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 parameters.Add("streamId", Google.Apis.Util.Utilities.CreateRuntimeParameter("streamId", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
@@ -8393,6 +8454,8 @@ namespace Google.Apis.Youtube.v3 {
             private string _id;
             
             private string _offsetTimeMs;
+            
+            private string _onBehalfOfContentOwner;
             
             private string _part;
             
@@ -8499,6 +8562,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
@@ -8530,6 +8604,7 @@ namespace Google.Apis.Youtube.v3 {
                 parameters.Add("displaySlate", Google.Apis.Util.Utilities.CreateRuntimeParameter("displaySlate", false, "query", null, null, new string[0]));
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
                 parameters.Add("offsetTimeMs", Google.Apis.Util.Utilities.CreateRuntimeParameter("offsetTimeMs", false, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
@@ -8550,6 +8625,8 @@ namespace Google.Apis.Youtube.v3 {
             private string _userIp;
             
             private string _id;
+            
+            private string _onBehalfOfContentOwner;
             
             public DeleteRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
@@ -8631,6 +8708,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             public override string MethodName {
                 get {
                     return "delete";
@@ -8652,6 +8740,7 @@ namespace Google.Apis.Youtube.v3 {
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
@@ -8669,6 +8758,8 @@ namespace Google.Apis.Youtube.v3 {
             private string _quotaUser;
             
             private string _userIp;
+            
+            private string _onBehalfOfContentOwner;
             
             private string _part;
             
@@ -8747,6 +8838,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             ///
             ///The part properties that you can include in the parameter value are id, snippet, contentDetails, and status.</summary>
@@ -8791,6 +8893,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
@@ -9009,6 +9112,8 @@ namespace Google.Apis.Youtube.v3 {
             
             private string _id;
             
+            private string _onBehalfOfContentOwner;
+            
             private string _part;
             
             public TransitionRequest(Google.Apis.Services.IClientService service, BroadcastStatusEnum broadcastStatus, string id, string part) : 
@@ -9101,6 +9206,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.</summary>
             [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Part {
@@ -9134,6 +9250,7 @@ namespace Google.Apis.Youtube.v3 {
                                 "live",
                                 "testing"}));
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
@@ -9152,6 +9269,8 @@ namespace Google.Apis.Youtube.v3 {
             private string _quotaUser;
             
             private string _userIp;
+            
+            private string _onBehalfOfContentOwner;
             
             private string _part;
             
@@ -9230,6 +9349,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
             ///
             ///The part properties that you can include in the parameter value are id, snippet, contentDetails, and status.
@@ -9276,6 +9406,7 @@ namespace Google.Apis.Youtube.v3 {
             
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("part", Google.Apis.Util.Utilities.CreateRuntimeParameter("part", true, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
@@ -9284,13 +9415,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class LiveStreamsResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "liveStreams";
         
-        public LiveStreamsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public LiveStreamsResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -9908,13 +10039,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class PlaylistItemsResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "playlistItems";
         
-        public PlaylistItemsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public PlaylistItemsResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -10550,13 +10681,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class PlaylistsResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "playlists";
         
-        public PlaylistsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public PlaylistsResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -11192,13 +11323,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class SearchResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "search";
         
-        public SearchResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public SearchResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -11584,7 +11715,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
             [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string OnBehalfOfContentOwner {
                 get {
@@ -11901,13 +12032,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class SubscriptionsResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "subscriptions";
         
-        public SubscriptionsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public SubscriptionsResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -12452,13 +12583,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class ThumbnailsResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "thumbnails";
         
-        public ThumbnailsResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ThumbnailsResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -12695,13 +12826,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class VideoCategoriesResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "videoCategories";
         
-        public VideoCategoriesResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public VideoCategoriesResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -12878,13 +13009,13 @@ namespace Google.Apis.Youtube.v3 {
     
     public class VideosResource {
         
-        private YoutubeService service;
+        private YouTubeService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "videos";
         
-        public VideosResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public VideosResource(YouTubeService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -13070,7 +13201,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
             [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string OnBehalfOfContentOwner {
                 get {
@@ -13122,6 +13253,8 @@ namespace Google.Apis.Youtube.v3 {
             private string _userIp;
             
             private string _id;
+            
+            private string _onBehalfOfContentOwner;
             
             public GetRatingRequest(Google.Apis.Services.IClientService service, string id) : 
                     base(service) {
@@ -13203,6 +13336,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             public override string MethodName {
                 get {
                     return "getRating";
@@ -13224,6 +13368,7 @@ namespace Google.Apis.Youtube.v3 {
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
         }
@@ -13338,9 +13483,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.
-            ///
-            ///The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner. If you include this parameter in your request, you must also specify a value for the onBehalfOfContentOwnerChannel parameter, or the request will generate an error.</summary>
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
             [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string OnBehalfOfContentOwner {
                 get {
@@ -13537,9 +13680,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.
-            ///
-            ///The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner. If you include this parameter in your request, you must also specify a value for the onBehalfOfContentOwnerChannel parameter, or the request will generate an error.</summary>
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
             [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string OnBehalfOfContentOwner {
                 get {
@@ -13718,7 +13859,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
             [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string OnBehalfOfContentOwner {
                 get {
@@ -13797,6 +13938,8 @@ namespace Google.Apis.Youtube.v3 {
             private string _userIp;
             
             private string _id;
+            
+            private string _onBehalfOfContentOwner;
             
             private Rating _rating;
             
@@ -13881,6 +14024,17 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+            [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string OnBehalfOfContentOwner {
+                get {
+                    return this._onBehalfOfContentOwner;
+                }
+                set {
+                    this._onBehalfOfContentOwner = value;
+                }
+            }
+            
             /// <summary>Specifies the rating to record.</summary>
             [Google.Apis.Util.RequestParameterAttribute("rating", Google.Apis.Util.RequestParameterType.Query)]
             public virtual Rating Rating {
@@ -13910,6 +14064,7 @@ namespace Google.Apis.Youtube.v3 {
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("id", Google.Apis.Util.Utilities.CreateRuntimeParameter("id", true, "query", null, null, new string[0]));
+                parameters.Add("onBehalfOfContentOwner", Google.Apis.Util.Utilities.CreateRuntimeParameter("onBehalfOfContentOwner", false, "query", null, null, new string[0]));
                 parameters.Add("rating", Google.Apis.Util.Utilities.CreateRuntimeParameter("rating", true, "query", null, null, new string[] {
                                 "dislike",
                                 "like",
@@ -14011,7 +14166,7 @@ namespace Google.Apis.Youtube.v3 {
                 }
             }
             
-            /// <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            /// <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
             [Google.Apis.Util.RequestParameterAttribute("onBehalfOfContentOwner", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string OnBehalfOfContentOwner {
                 get {
@@ -14077,7 +14232,7 @@ namespace Google.Apis.Youtube.v3 {
         }
     }
     
-    public partial class YoutubeService {
+    public partial class YouTubeService {
         
         private const string Resource = "";
         

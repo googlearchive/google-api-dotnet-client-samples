@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Adexchangebuyer.v1_2.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Configuration data for an Ad Exchange buyer account.</summary>
@@ -700,11 +697,6 @@ namespace Google.Apis.Adexchangebuyer.v1_2.Data {
     }
 }
 namespace Google.Apis.Adexchangebuyer.v1_2 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class AdexchangebuyerService : Google.Apis.Services.BaseClientService {

@@ -90,7 +90,8 @@ namespace TasksExample.WinForms.NoteMgr
             // Initialize the service.
             Service = new TasksService(new BaseClientService.Initializer()
                 {
-                    Authenticator = CreateAuthenticator()
+                    Authenticator = CreateAuthenticator(),
+                    ApplicationName = "Tasks API Sample"
                 });
 
             // Open a NoteForm for every task list.

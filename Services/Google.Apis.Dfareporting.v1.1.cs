@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Dfareporting.v1_1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Represents an activity group.</summary>
@@ -2029,11 +2026,6 @@ namespace Google.Apis.Dfareporting.v1_1.Data {
     }
 }
 namespace Google.Apis.Dfareporting.v1_1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class DfareportingService : Google.Apis.Services.BaseClientService {

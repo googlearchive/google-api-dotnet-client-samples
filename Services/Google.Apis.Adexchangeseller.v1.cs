@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Adexchangeseller.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class AdClient {
@@ -808,14 +805,9 @@ namespace Google.Apis.Adexchangeseller.v1.Data {
     }
 }
 namespace Google.Apis.Adexchangeseller.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class AdexchangesellerService : Google.Apis.Services.BaseClientService {
+    public partial class AdExchangeSellerService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -823,7 +815,7 @@ namespace Google.Apis.Adexchangeseller.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AdexchangesellerService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public AdExchangeSellerService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._adclients = new AdclientsResource(this, Authenticator);
             this._adunits = new AdunitsResource(this, Authenticator);
@@ -833,7 +825,7 @@ namespace Google.Apis.Adexchangeseller.v1 {
             this.InitParameters();
         }
         
-        public AdexchangesellerService() : 
+        public AdExchangeSellerService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -896,13 +888,13 @@ namespace Google.Apis.Adexchangeseller.v1 {
     
     public class AdclientsResource {
         
-        private AdexchangesellerService service;
+        private AdExchangeSellerService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "adclients";
         
-        public AdclientsResource(AdexchangesellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public AdclientsResource(AdExchangeSellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -1052,7 +1044,7 @@ namespace Google.Apis.Adexchangeseller.v1 {
     
     public class AdunitsResource {
         
-        private AdexchangesellerService service;
+        private AdExchangeSellerService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
@@ -1060,7 +1052,7 @@ namespace Google.Apis.Adexchangeseller.v1 {
         
         private CustomchannelsResource _customchannels;
         
-        public AdunitsResource(AdexchangesellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public AdunitsResource(AdExchangeSellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
             this._customchannels = new CustomchannelsResource(service, authenticator);
@@ -1087,13 +1079,13 @@ namespace Google.Apis.Adexchangeseller.v1 {
         
         public class CustomchannelsResource {
             
-            private AdexchangesellerService service;
+            private AdExchangeSellerService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "adunits.customchannels";
             
-            public CustomchannelsResource(AdexchangesellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public CustomchannelsResource(AdExchangeSellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -1566,7 +1558,7 @@ namespace Google.Apis.Adexchangeseller.v1 {
     
     public class CustomchannelsResource {
         
-        private AdexchangesellerService service;
+        private AdExchangeSellerService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
@@ -1574,7 +1566,7 @@ namespace Google.Apis.Adexchangeseller.v1 {
         
         private AdunitsResource _adunits;
         
-        public CustomchannelsResource(AdexchangesellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public CustomchannelsResource(AdExchangeSellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
             this._adunits = new AdunitsResource(service, authenticator);
@@ -1601,13 +1593,13 @@ namespace Google.Apis.Adexchangeseller.v1 {
         
         public class AdunitsResource {
             
-            private AdexchangesellerService service;
+            private AdExchangeSellerService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "customchannels.adunits";
             
-            public AdunitsResource(AdexchangesellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public AdunitsResource(AdExchangeSellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -2080,7 +2072,7 @@ namespace Google.Apis.Adexchangeseller.v1 {
     
     public class ReportsResource {
         
-        private AdexchangesellerService service;
+        private AdExchangeSellerService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
@@ -2088,7 +2080,7 @@ namespace Google.Apis.Adexchangeseller.v1 {
         
         private SavedResource _saved;
         
-        public ReportsResource(AdexchangesellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ReportsResource(AdExchangeSellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
             this._saved = new SavedResource(service, authenticator);
@@ -2109,13 +2101,13 @@ namespace Google.Apis.Adexchangeseller.v1 {
         
         public class SavedResource {
             
-            private AdexchangesellerService service;
+            private AdExchangeSellerService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "reports.saved";
             
-            public SavedResource(AdexchangesellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public SavedResource(AdExchangeSellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -2464,10 +2456,13 @@ namespace Google.Apis.Adexchangeseller.v1 {
             
             private System.Nullable<long> _startIndex;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public GenerateRequest(Google.Apis.Services.IClientService service, string startDate, string endDate) : 
                     base(service) {
                 this._startDate = startDate;
                 this._endDate = endDate;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -2648,6 +2643,12 @@ namespace Google.Apis.Adexchangeseller.v1 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("dimension", Google.Apis.Util.Utilities.CreateRuntimeParameter("dimension", false, "query", null, "[a-zA-Z_]+", new string[0]));
@@ -2661,18 +2662,33 @@ namespace Google.Apis.Adexchangeseller.v1 {
                 parameters.Add("startIndex", Google.Apis.Util.Utilities.CreateRuntimeParameter("startIndex", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
+            }
         }
     }
     
     public class UrlchannelsResource {
         
-        private AdexchangesellerService service;
+        private AdExchangeSellerService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "urlchannels";
         
-        public UrlchannelsResource(AdexchangesellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public UrlchannelsResource(AdExchangeSellerService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -2833,7 +2849,7 @@ namespace Google.Apis.Adexchangeseller.v1 {
         }
     }
     
-    public partial class AdexchangesellerService {
+    public partial class AdExchangeSellerService {
         
         private const string Resource = "";
         

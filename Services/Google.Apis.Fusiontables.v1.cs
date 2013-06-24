@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Fusiontables.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Specifies the minimum and maximum values, the color, opacity, icon and weight of a bucket within a StyleSetting.</summary>
@@ -1368,11 +1365,6 @@ namespace Google.Apis.Fusiontables.v1.Data {
     }
 }
 namespace Google.Apis.Fusiontables.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class FusiontablesService : Google.Apis.Services.BaseClientService {

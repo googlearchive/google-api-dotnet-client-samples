@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Storage.v1beta2.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>A bucket.</summary>
@@ -1470,11 +1467,6 @@ namespace Google.Apis.Storage.v1beta2.Data {
     }
 }
 namespace Google.Apis.Storage.v1beta2 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class StorageService : Google.Apis.Services.BaseClientService {
@@ -5679,11 +5671,14 @@ namespace Google.Apis.Storage.v1beta2 {
             
             private Google.Apis.Storage.v1beta2.Data.ComposeRequest _Body;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public ComposeRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta2.Data.ComposeRequest body, string destinationBucket, string destinationObject) : 
                     base(service) {
                 this.Body = body;
                 this._destinationBucket = destinationBucket;
                 this._destinationObject = destinationObject;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -5819,6 +5814,12 @@ namespace Google.Apis.Storage.v1beta2 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
@@ -5830,6 +5831,21 @@ namespace Google.Apis.Storage.v1beta2 {
                 parameters.Add("ifGenerationMatch", Google.Apis.Util.Utilities.CreateRuntimeParameter("ifGenerationMatch", false, "query", null, null, new string[0]));
                 parameters.Add("ifMetagenerationMatch", Google.Apis.Util.Utilities.CreateRuntimeParameter("ifMetagenerationMatch", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
             }
         }
         
@@ -5877,6 +5893,8 @@ namespace Google.Apis.Storage.v1beta2 {
             
             private Google.Apis.Storage.v1beta2.Data.Object _Body;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public CopyRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta2.Data.Object body, string sourceBucket, string sourceObject, string destinationBucket, string destinationObject) : 
                     base(service) {
                 this.Body = body;
@@ -5884,6 +5902,7 @@ namespace Google.Apis.Storage.v1beta2 {
                 this._sourceObject = sourceObject;
                 this._destinationBucket = destinationBucket;
                 this._destinationObject = destinationObject;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -6124,6 +6143,12 @@ namespace Google.Apis.Storage.v1beta2 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
@@ -6147,6 +6172,21 @@ namespace Google.Apis.Storage.v1beta2 {
                 parameters.Add("sourceGeneration", Google.Apis.Util.Utilities.CreateRuntimeParameter("sourceGeneration", false, "query", null, null, new string[0]));
                 parameters.Add("sourceObject", Google.Apis.Util.Utilities.CreateRuntimeParameter("sourceObject", true, "path", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
             }
         }
         
@@ -6383,10 +6423,13 @@ namespace Google.Apis.Storage.v1beta2 {
             
             private System.Nullable<Projection> _projection;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public GetRequest(Google.Apis.Services.IClientService service, string bucket, string objectValue) : 
                     base(service) {
                 this._bucket = bucket;
                 this._object = objectValue;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -6556,6 +6599,12 @@ namespace Google.Apis.Storage.v1beta2 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("bucket", Google.Apis.Util.Utilities.CreateRuntimeParameter("bucket", true, "path", null, null, new string[0]));
@@ -6569,6 +6618,21 @@ namespace Google.Apis.Storage.v1beta2 {
                                 "full",
                                 "noAcl"}));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
             }
         }
         
@@ -6602,10 +6666,13 @@ namespace Google.Apis.Storage.v1beta2 {
             
             private Google.Apis.Storage.v1beta2.Data.Object _Body;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public InsertRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta2.Data.Object body, string bucket) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -6777,6 +6844,12 @@ namespace Google.Apis.Storage.v1beta2 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
@@ -6793,6 +6866,21 @@ namespace Google.Apis.Storage.v1beta2 {
                                 "full",
                                 "noAcl"}));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
             }
         }
         
@@ -7446,11 +7534,14 @@ namespace Google.Apis.Storage.v1beta2 {
             
             private Google.Apis.Storage.v1beta2.Data.Object _Body;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public UpdateRequest(Google.Apis.Services.IClientService service, Google.Apis.Storage.v1beta2.Data.Object body, string bucket, string objectValue) : 
                     base(service) {
                 this.Body = body;
                 this._bucket = bucket;
                 this._object = objectValue;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -7630,6 +7721,12 @@ namespace Google.Apis.Storage.v1beta2 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             protected override object GetBody() {
                 return this.Body;
             }
@@ -7647,6 +7744,21 @@ namespace Google.Apis.Storage.v1beta2 {
                                 "full",
                                 "noAcl"}));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
             }
         }
         

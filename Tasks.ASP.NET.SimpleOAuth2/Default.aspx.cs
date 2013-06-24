@@ -62,7 +62,8 @@ namespace Tasks.ASP.NET.SimpleOAuth2
                 _authenticator = CreateAuthenticator();
                 _service = new TasksService(new BaseClientService.Initializer()
                     {
-                        Authenticator = _authenticator
+                        Authenticator = _authenticator,
+                        ApplicationName = "Tasks API Sample",
                     });
 
 

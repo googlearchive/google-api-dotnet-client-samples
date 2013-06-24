@@ -15,8 +15,9 @@ limitations under the License.
 */
 
 using System;
+
 using DotNetOpenAuth.OAuth2;
-using Google.Apis.Authentication;
+
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Samples.Helper;
@@ -55,7 +56,8 @@ namespace SiteVerification.VerifySite
             // Create the service.
             var service = new SiteVerificationService(new BaseClientService.Initializer
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "SiteVerification API Sample",
                 });
             RunVerification(service);
             CommandLine.PressAnyKeyToExit();

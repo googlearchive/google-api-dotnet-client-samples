@@ -38,7 +38,8 @@ namespace PageSpeedOnline.SimpleTest
             // Create the service.
             var service = new PagespeedonlineService(new BaseClientService.Initializer()
                 {
-                    ApiKey = GetApiKey()
+                    ApiKey = GetApiKey(),
+                    ApplicationName = "PageSpeedOnline API Sample",
                 });
 
             RunSample(service);

@@ -135,13 +135,13 @@
         <member name="P:Google.Apis.Adsense.v1.Data.UrlChannels.NextPageToken">
             <summary>Continuation token used to page through URL channels. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
         </member>
-        <member name="T:Google.Apis.Adsense.v1.AdsenseService.Scopes">
+        <member name="T:Google.Apis.Adsense.v1.AdSenseService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
-        <member name="F:Google.Apis.Adsense.v1.AdsenseService.Scopes.Adsense">
+        <member name="F:Google.Apis.Adsense.v1.AdSenseService.Scopes.Adsense">
             <summary>View and manage your AdSense data</summary>
         </member>
-        <member name="F:Google.Apis.Adsense.v1.AdsenseService.Scopes.AdsenseReadonly">
+        <member name="F:Google.Apis.Adsense.v1.AdSenseService.Scopes.AdsenseReadonly">
             <summary>View your AdSense data</summary>
         </member>
         <member name="M:Google.Apis.Adsense.v1.AdclientsResource.List">

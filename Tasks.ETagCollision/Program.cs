@@ -56,7 +56,8 @@ namespace Tasks.ETagCollision
             // Create the service.
             var service = new TasksService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "Tasks API Sample",
                 });
 
             // Run the sample code.

@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Groupsmigration.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>JSON response template for groups migration API.</summary>
@@ -56,14 +53,9 @@ namespace Google.Apis.Groupsmigration.v1.Data {
     }
 }
 namespace Google.Apis.Groupsmigration.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class GroupsmigrationService : Google.Apis.Services.BaseClientService {
+    public partial class GroupsMigrationService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -71,13 +63,13 @@ namespace Google.Apis.Groupsmigration.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public GroupsmigrationService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public GroupsMigrationService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._archive = new ArchiveResource(this, Authenticator);
             this.InitParameters();
         }
         
-        public GroupsmigrationService() : 
+        public GroupsMigrationService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -127,13 +119,13 @@ namespace Google.Apis.Groupsmigration.v1 {
     
     public class ArchiveResource {
         
-        private GroupsmigrationService service;
+        private GroupsMigrationService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "archive";
         
-        public ArchiveResource(GroupsmigrationService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ArchiveResource(GroupsMigrationService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -368,7 +360,7 @@ namespace Google.Apis.Groupsmigration.v1 {
         }
     }
     
-    public partial class GroupsmigrationService {
+    public partial class GroupsMigrationService {
         
         private const string Resource = "";
         

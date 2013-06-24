@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Dfareporting.v1_2.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Represents an activity group.</summary>
@@ -2046,11 +2043,6 @@ namespace Google.Apis.Dfareporting.v1_2.Data {
     }
 }
 namespace Google.Apis.Dfareporting.v1_2 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class DfareportingService : Google.Apis.Services.BaseClientService {
@@ -2396,10 +2388,13 @@ namespace Google.Apis.Dfareporting.v1_2 {
             
             private string _reportId;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public GetRequest(Google.Apis.Services.IClientService service, string reportId, string fileId) : 
                     base(service) {
                 this._reportId = reportId;
                 this._fileId = fileId;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -2503,11 +2498,32 @@ namespace Google.Apis.Dfareporting.v1_2 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("fileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("fileId", true, "path", null, null, new string[0]));
                 parameters.Add("reportId", Google.Apis.Util.Utilities.CreateRuntimeParameter("reportId", true, "path", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
             }
         }
         
@@ -2851,11 +2867,14 @@ namespace Google.Apis.Dfareporting.v1_2 {
                 
                 private string _reportId;
                 
+                private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+                
                 public GetRequest(Google.Apis.Services.IClientService service, string profileId, string reportId, string fileId) : 
                         base(service) {
                     this._profileId = profileId;
                     this._reportId = reportId;
                     this._fileId = fileId;
+                    this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                     this.InitParameters();
                 }
                 
@@ -2967,12 +2986,33 @@ namespace Google.Apis.Dfareporting.v1_2 {
                     }
                 }
                 
+                public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                    get {
+                        return this._mediaDownloader;
+                    }
+                }
+                
                 private void InitParameters() {
                     System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                     parameters.Add("fileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("fileId", true, "path", null, null, new string[0]));
                     parameters.Add("profileId", Google.Apis.Util.Utilities.CreateRuntimeParameter("profileId", true, "path", null, null, new string[0]));
                     parameters.Add("reportId", Google.Apis.Util.Utilities.CreateRuntimeParameter("reportId", true, "path", null, null, new string[0]));
                     this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+                }
+                
+                /// <summary>Synchronously download the media into the given stream.</summary>
+                public virtual void Download(System.IO.Stream stream) {
+                    _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+                }
+                
+                /// <summary>Asynchronously download the media into the given stream.</summary>
+                public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                    return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+                }
+                
+                /// <summary>Asynchronously download the media into the given stream.</summary>
+                public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                    return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
                 }
             }
             

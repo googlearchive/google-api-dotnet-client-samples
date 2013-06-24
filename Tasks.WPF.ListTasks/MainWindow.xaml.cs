@@ -143,6 +143,7 @@ namespace Tasks.WPF.ListTasks
             Service = new TasksService(new BaseClientService.Initializer()
                 {
                     Authenticator = CreateAuthenticator(),
+                    ApplicationName = "Tasks API Sample",
                 });
 
             // Get all TaskLists.

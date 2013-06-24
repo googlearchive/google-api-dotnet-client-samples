@@ -648,6 +648,15 @@
         <member name="F:Google.Apis.Dfareporting.v1_2.FilesResource.SortOrder.DESCENDING">
             <summary>Descending order.</summary>
         </member>
+        <member name="M:Google.Apis.Dfareporting.v1_2.FilesResource.GetRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Dfareporting.v1_2.FilesResource.GetRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Dfareporting.v1_2.FilesResource.GetRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
         <member name="P:Google.Apis.Dfareporting.v1_2.FilesResource.GetRequest.Alt">
             <summary>Data format for the response.</summary>
         </member>
@@ -769,6 +778,15 @@
         </member>
         <member name="F:Google.Apis.Dfareporting.v1_2.ReportsResource.FilesResource.SortOrder.DESCENDING">
             <summary>Descending order.</summary>
+        </member>
+        <member name="M:Google.Apis.Dfareporting.v1_2.ReportsResource.FilesResource.GetRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Dfareporting.v1_2.ReportsResource.FilesResource.GetRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Dfareporting.v1_2.ReportsResource.FilesResource.GetRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
         </member>
         <member name="P:Google.Apis.Dfareporting.v1_2.ReportsResource.FilesResource.GetRequest.Alt">
             <summary>Data format for the response.</summary>

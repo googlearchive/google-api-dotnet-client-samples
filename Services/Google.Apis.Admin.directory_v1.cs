@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Admin.directory_v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>JSON template for Alias object in Apps Directory API.</summary>
@@ -2471,14 +2468,9 @@ namespace Google.Apis.Admin.directory_v1.Data {
     }
 }
 namespace Google.Apis.Admin.directory_v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class AdminService : Google.Apis.Services.BaseClientService {
+    public partial class DirectoryService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "directory_v1";
         
@@ -2486,7 +2478,7 @@ namespace Google.Apis.Admin.directory_v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AdminService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public DirectoryService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._chromeosdevices = new ChromeosdevicesResource(this, Authenticator);
             this._groups = new GroupsResource(this, Authenticator);
@@ -2497,7 +2489,7 @@ namespace Google.Apis.Admin.directory_v1 {
             this.InitParameters();
         }
         
-        public AdminService() : 
+        public DirectoryService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -2611,13 +2603,13 @@ namespace Google.Apis.Admin.directory_v1 {
     
     public class ChromeosdevicesResource {
         
-        private AdminService service;
+        private DirectoryService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "chromeosdevices";
         
-        public ChromeosdevicesResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ChromeosdevicesResource(DirectoryService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -3405,7 +3397,7 @@ namespace Google.Apis.Admin.directory_v1 {
     
     public class GroupsResource {
         
-        private AdminService service;
+        private DirectoryService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
@@ -3413,7 +3405,7 @@ namespace Google.Apis.Admin.directory_v1 {
         
         private AliasesResource _aliases;
         
-        public GroupsResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public GroupsResource(DirectoryService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
             this._aliases = new AliasesResource(service, authenticator);
@@ -3461,13 +3453,13 @@ namespace Google.Apis.Admin.directory_v1 {
         
         public class AliasesResource {
             
-            private AdminService service;
+            private DirectoryService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "groups.aliases";
             
-            public AliasesResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public AliasesResource(DirectoryService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -4710,13 +4702,13 @@ namespace Google.Apis.Admin.directory_v1 {
     
     public class MembersResource {
         
-        private AdminService service;
+        private DirectoryService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "members";
         
-        public MembersResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public MembersResource(DirectoryService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -5631,13 +5623,13 @@ namespace Google.Apis.Admin.directory_v1 {
     
     public class MobiledevicesResource {
         
-        private AdminService service;
+        private DirectoryService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "mobiledevices";
         
-        public MobiledevicesResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public MobiledevicesResource(DirectoryService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -6381,13 +6373,13 @@ namespace Google.Apis.Admin.directory_v1 {
     
     public class OrgunitsResource {
         
-        private AdminService service;
+        private DirectoryService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "orgunits";
         
-        public OrgunitsResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public OrgunitsResource(DirectoryService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -7302,7 +7294,7 @@ namespace Google.Apis.Admin.directory_v1 {
     
     public class UsersResource {
         
-        private AdminService service;
+        private DirectoryService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
@@ -7312,7 +7304,7 @@ namespace Google.Apis.Admin.directory_v1 {
         
         private PhotosResource _photos;
         
-        public UsersResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public UsersResource(DirectoryService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
             this._aliases = new AliasesResource(service, authenticator);
@@ -7379,13 +7371,13 @@ namespace Google.Apis.Admin.directory_v1 {
         
         public class AliasesResource {
             
-            private AdminService service;
+            private DirectoryService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "users.aliases";
             
-            public AliasesResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public AliasesResource(DirectoryService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -7804,13 +7796,13 @@ namespace Google.Apis.Admin.directory_v1 {
         
         public class PhotosResource {
             
-            private AdminService service;
+            private DirectoryService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "users.photos";
             
-            public PhotosResource(AdminService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public PhotosResource(DirectoryService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -9533,7 +9525,7 @@ namespace Google.Apis.Admin.directory_v1 {
         }
     }
     
-    public partial class AdminService {
+    public partial class DirectoryService {
         
         private const string Resource = "";
         

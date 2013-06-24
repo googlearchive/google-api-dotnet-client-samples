@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Androidpublisher.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>A Purchase resource indicates the status of a user&apos;s subscription purchase.</summary>
@@ -82,14 +79,9 @@ namespace Google.Apis.Androidpublisher.v1.Data {
     }
 }
 namespace Google.Apis.Androidpublisher.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class AndroidpublisherService : Google.Apis.Services.BaseClientService {
+    public partial class AndroidPublisherService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -97,13 +89,13 @@ namespace Google.Apis.Androidpublisher.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AndroidpublisherService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public AndroidPublisherService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._purchases = new PurchasesResource(this, Authenticator);
             this.InitParameters();
         }
         
-        public AndroidpublisherService() : 
+        public AndroidPublisherService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -153,13 +145,13 @@ namespace Google.Apis.Androidpublisher.v1 {
     
     public class PurchasesResource {
         
-        private AndroidpublisherService service;
+        private AndroidPublisherService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "purchases";
         
-        public PurchasesResource(AndroidpublisherService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public PurchasesResource(AndroidPublisherService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -471,7 +463,7 @@ namespace Google.Apis.Androidpublisher.v1 {
         }
     }
     
-    public partial class AndroidpublisherService {
+    public partial class AndroidPublisherService {
         
         private const string Resource = "";
         

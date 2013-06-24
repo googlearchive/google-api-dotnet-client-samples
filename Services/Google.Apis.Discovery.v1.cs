@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Discovery.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class DirectoryList : Google.Apis.Requests.IDirectResponseSchema {
@@ -1387,11 +1384,6 @@ namespace Google.Apis.Discovery.v1.Data {
     }
 }
 namespace Google.Apis.Discovery.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class DiscoveryService : Google.Apis.Services.BaseClientService {

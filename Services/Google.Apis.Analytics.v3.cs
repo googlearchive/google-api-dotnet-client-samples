@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Analytics.v3.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>JSON template for Analytics account entry.</summary>
@@ -4256,11 +4253,6 @@ namespace Google.Apis.Analytics.v3.Data {
     }
 }
 namespace Google.Apis.Analytics.v3 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class AnalyticsService : Google.Apis.Services.BaseClientService {

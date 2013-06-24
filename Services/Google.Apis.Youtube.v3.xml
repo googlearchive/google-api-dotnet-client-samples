@@ -382,6 +382,9 @@
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelSettings.ModerateComments">
             <summary>Whether user-submitted comments left on the channel page need to be approved by the channel owner to be publicly visible.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.ChannelSettings.ProfileColor">
+            <summary>A prominent color that can be rendered on this channel page.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.Data.ChannelSettings.ShowBrowseView">
             <summary>Whether the tab to browse the videos should be displayed.</summary>
         </member>
@@ -1082,13 +1085,16 @@
             <summary>The ID that YouTube uses to uniquely identify the channel that published the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.ChannelTitle">
-            <summary>Channel title for the channel that the video belongs to.</summary>
+            <summary>The channel title of the channel that the video belongs to.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.Description">
             <summary>The playlist&apos;s description.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.PublishedAt">
             <summary>The date and time that the playlist was created. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.Tags">
+            <summary>Keyword tags associated with the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.Data.PlaylistSnippet.Thumbnails">
             <summary>Internal representation of thumbnails for a YouTube resource.</summary>
@@ -1795,19 +1801,19 @@
         <member name="P:Google.Apis.Youtube.v3.Data.WatchSettings.TextColor">
             <summary>The background color for the video watch page&apos;s branded area.</summary>
         </member>
-        <member name="T:Google.Apis.Youtube.v3.YoutubeService.Scopes">
+        <member name="T:Google.Apis.Youtube.v3.YouTubeService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
-        <member name="F:Google.Apis.Youtube.v3.YoutubeService.Scopes.Youtube">
+        <member name="F:Google.Apis.Youtube.v3.YouTubeService.Scopes.Youtube">
             <summary>Manage your YouTube account</summary>
         </member>
-        <member name="F:Google.Apis.Youtube.v3.YoutubeService.Scopes.YoutubeReadonly">
+        <member name="F:Google.Apis.Youtube.v3.YouTubeService.Scopes.YoutubeReadonly">
             <summary>View your YouTube account</summary>
         </member>
-        <member name="F:Google.Apis.Youtube.v3.YoutubeService.Scopes.YoutubeUpload">
+        <member name="F:Google.Apis.Youtube.v3.YouTubeService.Scopes.YoutubeUpload">
             <summary>Manage your YouTube videos</summary>
         </member>
-        <member name="F:Google.Apis.Youtube.v3.YoutubeService.Scopes.Youtubepartner">
+        <member name="F:Google.Apis.Youtube.v3.YouTubeService.Scopes.Youtubepartner">
             <summary>View and manage your assets and associated content on YouTube</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.ActivitiesResource.Insert(Google.Apis.Youtube.v3.Data.Activity,System.String)">
@@ -1919,6 +1925,9 @@
         <member name="P:Google.Apis.Youtube.v3.ChannelBannersResource.InsertRequest.UserIp">
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.ChannelBannersResource.InsertRequest.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelBannersResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -1939,6 +1948,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelBannersResource.InsertMediaUpload.UserIp">
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.ChannelBannersResource.InsertMediaUpload.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3.ChannelsResource.List(System.String)">
              <summary>Returns a collection of zero or more channel resources that match the request criteria.</summary>
@@ -2021,6 +2033,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.UpdateRequest.UserIp">
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.ChannelsResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.ChannelsResource.UpdateRequest.Part">
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
@@ -2156,6 +2171,9 @@
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.BindRequest.Id">
             <summary>The id parameter specifies the unique ID of the broadcast that is being bound to a video stream.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.BindRequest.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.BindRequest.Part">
             <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.</summary>
         </member>
@@ -2189,6 +2207,9 @@
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ControlRequest.OffsetTimeMs">
             <summary>The offsetTimeMs parameter specifies a point in time in the video when the specified action (e.g. display a slate) is executed. The property value identifies a positive time offset, in milliseconds, from the beginning of the monitor stream. Though measured in milliseconds, the value is actually an approximation, and YouTube will act as closely as possible to that time. If not specified, it indicates that the action should be performed as soon as possible. If your broadcast stream is not delayed, then it should not be specified. However, if your broadcast stream is delayed, then the parameter can specify the time when the operation should be executed. See the Getting started guide for more details. Note: The offset is measured from the time that the testing phase began.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ControlRequest.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.ControlRequest.Part">
             <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.</summary>
         </member>
@@ -2213,6 +2234,9 @@
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.DeleteRequest.Id">
             <summary>The id parameter specifies the YouTube live broadcast ID for the resource that is being deleted.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.DeleteRequest.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.InsertRequest.Alt">
             <summary>Data format for the response.</summary>
         </member>
@@ -2230,6 +2254,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.InsertRequest.UserIp">
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.InsertRequest.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.InsertRequest.Part">
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
@@ -2299,6 +2326,9 @@
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.TransitionRequest.Id">
             <summary>The id parameter specifies the unique ID of the broadcast that is transitioning to another status.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.TransitionRequest.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.TransitionRequest.Part">
             <summary>The part parameter specifies a comma-separated list of one or more liveBroadcast resource properties that the API response will include. The part names that you can include in the parameter value are id, snippet, contentDetails, and status.</summary>
         </member>
@@ -2319,6 +2349,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.UpdateRequest.UserIp">
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.UpdateRequest.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.LiveBroadcastsResource.UpdateRequest.Part">
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
@@ -2909,7 +2942,7 @@
             <summary>USE_DESCRIPTION --- channels:list:maxResults</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.SearchResource.ListRequest.Order">
             <summary>The order parameter specifies the method that will be used to order resources in the API response.</summary>
@@ -3263,7 +3296,7 @@
             <summary>The id parameter specifies the YouTube video ID for the resource that is being deleted. In a video resource, the id property specifies the video's ID.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.DeleteRequest.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.GetRatingRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -3285,6 +3318,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.GetRatingRequest.Id">
             <summary>The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) that are being retrieved. In a video resource, the id property specifies the video's ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3.VideosResource.GetRatingRequest.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -3308,9 +3344,7 @@
             <summary>The autoLevels parameter specifies whether the video should be auto-leveled by YouTube.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertRequest.OnBehalfOfContentOwner">
-             <summary>This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.
-            
-            The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner. If you include this parameter in your request, you must also specify a value for the onBehalfOfContentOwnerChannel parameter, or the request will generate an error.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertRequest.OnBehalfOfContentOwnerChannel">
              <summary>This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.
@@ -3352,9 +3386,7 @@
             <summary>The autoLevels parameter specifies whether the video should be auto-leveled by YouTube.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertMediaUpload.OnBehalfOfContentOwner">
-             <summary>This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.
-            
-            The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner. If you include this parameter in your request, you must also specify a value for the onBehalfOfContentOwnerChannel parameter, or the request will generate an error.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.InsertMediaUpload.OnBehalfOfContentOwnerChannel">
              <summary>This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.
@@ -3399,7 +3431,7 @@
             <summary>Set this parameter's value to like or dislike to instruct the API to only return videos liked or disliked by the authenticated user.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.ListRequest.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.ListRequest.PageToken">
             <summary>USE_DESCRIPTION --- channels:list:pageToken</summary>
@@ -3430,6 +3462,9 @@
         <member name="P:Google.Apis.Youtube.v3.VideosResource.RateRequest.Id">
             <summary>The id parameter specifies the YouTube video ID.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3.VideosResource.RateRequest.OnBehalfOfContentOwner">
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.RateRequest.Rating">
             <summary>Specifies the rating to record.</summary>
         </member>
@@ -3452,7 +3487,7 @@
             <summary>IP address of the site where the request originates. Use this if you want to enforce per-user limits.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.OnBehalfOfContentOwner">
-            <summary>The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.</summary>
+            <summary>USE_DESCRIPTION --- channels:list:onBehalfOfContentOwner</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3.VideosResource.UpdateRequest.Part">
              <summary>The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.

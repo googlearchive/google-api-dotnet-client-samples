@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Books.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Annotation : Google.Apis.Requests.IDirectResponseSchema {
@@ -4278,11 +4275,6 @@ namespace Google.Apis.Books.v1.Data {
     }
 }
 namespace Google.Apis.Books.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class BooksService : Google.Apis.Services.BaseClientService {

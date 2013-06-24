@@ -57,7 +57,8 @@ namespace Books.ListMyLibrary
             // Create the service.
             var service = new BooksService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "Books API Sample",
                 });
 
             ListLibrary(service);

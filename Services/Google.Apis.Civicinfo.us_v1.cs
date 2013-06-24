@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Civicinfo.us_v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Describes information about a regional election administrative area.</summary>
@@ -1527,14 +1524,9 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
     }
 }
 namespace Google.Apis.Civicinfo.us_v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class CivicinfoService : Google.Apis.Services.BaseClientService {
+    public partial class CivicInfoService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "us_v1";
         
@@ -1542,14 +1534,14 @@ namespace Google.Apis.Civicinfo.us_v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public CivicinfoService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public CivicInfoService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._elections = new ElectionsResource(this, Authenticator);
             this._representatives = new RepresentativesResource(this, Authenticator);
             this.InitParameters();
         }
         
-        public CivicinfoService() : 
+        public CivicInfoService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -1599,13 +1591,13 @@ namespace Google.Apis.Civicinfo.us_v1 {
     
     public class ElectionsResource {
         
-        private CivicinfoService service;
+        private CivicInfoService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "elections";
         
-        public ElectionsResource(CivicinfoService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ElectionsResource(CivicInfoService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -1885,13 +1877,13 @@ namespace Google.Apis.Civicinfo.us_v1 {
     
     public class RepresentativesResource {
         
-        private CivicinfoService service;
+        private CivicInfoService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "representatives";
         
-        public RepresentativesResource(CivicinfoService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public RepresentativesResource(CivicInfoService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -2042,7 +2034,7 @@ namespace Google.Apis.Civicinfo.us_v1 {
         }
     }
     
-    public partial class CivicinfoService {
+    public partial class CivicInfoService {
         
         private const string Resource = "";
         

@@ -70,7 +70,7 @@ namespace AdSense.Sample
     public class ManagementApiConsumer
     {
         private static readonly string DateFormat = "yyyy-MM-dd";
-        private AdsenseService service;
+        private AdSenseService service;
         private int maxListPageSize;
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace AdSense.Sample
         /// </summary>
         /// <param name="service">AdSense service object on which to run the requests.</param>
         /// <param name="maxListPageSize">The maximum page size to retrieve.</param>
-        public ManagementApiConsumer(AdsenseService service, int maxListPageSize)
+        public ManagementApiConsumer(AdSenseService service, int maxListPageSize)
         {
             this.service = service;
             this.maxListPageSize = maxListPageSize;

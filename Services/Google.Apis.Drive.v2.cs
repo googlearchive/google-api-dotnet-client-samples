@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Drive.v2.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>An item with user information and settings.</summary>
@@ -3660,11 +3657,6 @@ namespace Google.Apis.Drive.v2.Data {
     }
 }
 namespace Google.Apis.Drive.v2 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class DriveService : Google.Apis.Services.BaseClientService {

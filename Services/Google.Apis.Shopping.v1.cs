@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Shopping.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Product : Google.Apis.Requests.IDirectResponseSchema {
@@ -2118,11 +2115,6 @@ namespace Google.Apis.Shopping.v1.Data {
     }
 }
 namespace Google.Apis.Shopping.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class ShoppingService : Google.Apis.Services.BaseClientService {
@@ -2249,12 +2241,6 @@ namespace Google.Apis.Shopping.v1 {
             private System.Nullable<bool> _categoriesUseGcsConfig;
             
             private string _location;
-            
-            private System.Nullable<bool> _plusOneEnabled;
-            
-            private string _plusOneStyles;
-            
-            private System.Nullable<bool> _plusOneUseGcsConfig;
             
             private string _productId;
             
@@ -2410,39 +2396,6 @@ namespace Google.Apis.Shopping.v1 {
                 }
             }
             
-            /// <summary>Whether to return +1 button code</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.enabled", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> PlusOneEnabled {
-                get {
-                    return this._plusOneEnabled;
-                }
-                set {
-                    this._plusOneEnabled = value;
-                }
-            }
-            
-            /// <summary>+1 button rendering styles</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.styles", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string PlusOneStyles {
-                get {
-                    return this._plusOneStyles;
-                }
-                set {
-                    this._plusOneStyles = value;
-                }
-            }
-            
-            /// <summary>Whether to use +1 button styles configured in the GCS account</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> PlusOneUseGcsConfig {
-                get {
-                    return this._plusOneUseGcsConfig;
-                }
-                set {
-                    this._plusOneUseGcsConfig = value;
-                }
-            }
-            
             /// <summary>Id of product</summary>
             [Google.Apis.Util.RequestParameterAttribute("productId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProductId {
@@ -2548,9 +2501,6 @@ namespace Google.Apis.Shopping.v1 {
                 parameters.Add("categories.include", Google.Apis.Util.Utilities.CreateRuntimeParameter("categories.include", false, "query", null, null, new string[0]));
                 parameters.Add("categories.useGcsConfig", Google.Apis.Util.Utilities.CreateRuntimeParameter("categories.useGcsConfig", false, "query", null, null, new string[0]));
                 parameters.Add("location", Google.Apis.Util.Utilities.CreateRuntimeParameter("location", false, "query", null, null, new string[0]));
-                parameters.Add("plusOne.enabled", Google.Apis.Util.Utilities.CreateRuntimeParameter("plusOne.enabled", false, "query", null, null, new string[0]));
-                parameters.Add("plusOne.styles", Google.Apis.Util.Utilities.CreateRuntimeParameter("plusOne.styles", false, "query", null, null, new string[0]));
-                parameters.Add("plusOne.useGcsConfig", Google.Apis.Util.Utilities.CreateRuntimeParameter("plusOne.useGcsConfig", false, "query", null, null, new string[0]));
                 parameters.Add("productId", Google.Apis.Util.Utilities.CreateRuntimeParameter("productId", true, "path", null, null, new string[0]));
                 parameters.Add("productIdType", Google.Apis.Util.Utilities.CreateRuntimeParameter("productIdType", true, "path", null, null, new string[0]));
                 parameters.Add("recommendations.enabled", Google.Apis.Util.Utilities.CreateRuntimeParameter("recommendations.enabled", false, "query", null, null, new string[0]));
@@ -2628,12 +2578,6 @@ namespace Google.Apis.Shopping.v1 {
             private System.Nullable<long> _maxResults;
             
             private System.Nullable<long> _maxVariants;
-            
-            private System.Nullable<bool> _plusOneEnabled;
-            
-            private string _plusOneStyles;
-            
-            private System.Nullable<bool> _plusOneUseGcsConfig;
             
             private System.Nullable<bool> _promotionsEnabled;
             
@@ -3027,39 +2971,6 @@ namespace Google.Apis.Shopping.v1 {
                 }
             }
             
-            /// <summary>Whether to return +1 button code</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.enabled", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> PlusOneEnabled {
-                get {
-                    return this._plusOneEnabled;
-                }
-                set {
-                    this._plusOneEnabled = value;
-                }
-            }
-            
-            /// <summary>+1 button rendering styles</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.styles", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string PlusOneStyles {
-                get {
-                    return this._plusOneStyles;
-                }
-                set {
-                    this._plusOneStyles = value;
-                }
-            }
-            
-            /// <summary>Whether to use +1 button styles configured in the GCS account</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> PlusOneUseGcsConfig {
-                get {
-                    return this._plusOneUseGcsConfig;
-                }
-                set {
-                    this._plusOneUseGcsConfig = value;
-                }
-            }
-            
             /// <summary>Whether to return promotion information</summary>
             [Google.Apis.Util.RequestParameterAttribute("promotions.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PromotionsEnabled {
@@ -3290,9 +3201,6 @@ namespace Google.Apis.Shopping.v1 {
                 parameters.Add("location", Google.Apis.Util.Utilities.CreateRuntimeParameter("location", false, "query", null, null, new string[0]));
                 parameters.Add("maxResults", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxResults", false, "query", null, null, new string[0]));
                 parameters.Add("maxVariants", Google.Apis.Util.Utilities.CreateRuntimeParameter("maxVariants", false, "query", null, null, new string[0]));
-                parameters.Add("plusOne.enabled", Google.Apis.Util.Utilities.CreateRuntimeParameter("plusOne.enabled", false, "query", null, null, new string[0]));
-                parameters.Add("plusOne.styles", Google.Apis.Util.Utilities.CreateRuntimeParameter("plusOne.styles", false, "query", null, null, new string[0]));
-                parameters.Add("plusOne.useGcsConfig", Google.Apis.Util.Utilities.CreateRuntimeParameter("plusOne.useGcsConfig", false, "query", null, null, new string[0]));
                 parameters.Add("promotions.enabled", Google.Apis.Util.Utilities.CreateRuntimeParameter("promotions.enabled", false, "query", null, null, new string[0]));
                 parameters.Add("promotions.useGcsConfig", Google.Apis.Util.Utilities.CreateRuntimeParameter("promotions.useGcsConfig", false, "query", null, null, new string[0]));
                 parameters.Add("q", Google.Apis.Util.Utilities.CreateRuntimeParameter("q", false, "query", null, null, new string[0]));

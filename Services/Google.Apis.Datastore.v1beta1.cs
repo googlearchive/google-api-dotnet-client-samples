@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Datastore.v1beta1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>The request for AllocateIds.</summary>
@@ -1390,11 +1387,6 @@ namespace Google.Apis.Datastore.v1beta1.Data {
     }
 }
 namespace Google.Apis.Datastore.v1beta1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class DatastoreService : Google.Apis.Services.BaseClientService {

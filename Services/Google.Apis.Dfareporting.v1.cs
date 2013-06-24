@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Dfareporting.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Represents a dimension filter.</summary>
@@ -1214,11 +1211,6 @@ namespace Google.Apis.Dfareporting.v1.Data {
     }
 }
 namespace Google.Apis.Dfareporting.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class DfareportingService : Google.Apis.Services.BaseClientService {

@@ -16,7 +16,6 @@ limitations under the License.
 
 using System;
 using System.Diagnostics;
-using System.Linq;
 
 using DotNetOpenAuth.OAuth2;
 
@@ -54,7 +53,8 @@ namespace Google.Apis.Samples.TasksOAuth2
             // Create the service.
             var service = new TasksService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "Tasks API Sample"
                 });
             TaskLists results = service.Tasklists.List().Execute();
             CommandLine.WriteLine("   ^1Lists:");

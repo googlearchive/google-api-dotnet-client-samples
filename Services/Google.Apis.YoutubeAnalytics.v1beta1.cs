@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.YoutubeAnalytics.v1beta1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Contains a single result table. The table is returned as an array of rows that contain the values for the cells of the table. Depending on the metric or dimension, the cell can contain a string (video ID, country code) or a number (number of views or number of likes).</summary>
@@ -111,14 +108,9 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1.Data {
     }
 }
 namespace Google.Apis.YoutubeAnalytics.v1beta1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class YoutubeAnalyticsService : Google.Apis.Services.BaseClientService {
+    public partial class YouTubeAnalyticsService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1beta1";
         
@@ -126,13 +118,13 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public YoutubeAnalyticsService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public YouTubeAnalyticsService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._reports = new ReportsResource(this, Authenticator);
             this.InitParameters();
         }
         
-        public YoutubeAnalyticsService() : 
+        public YouTubeAnalyticsService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -195,13 +187,13 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
     
     public class ReportsResource {
         
-        private YoutubeAnalyticsService service;
+        private YouTubeAnalyticsService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "reports";
         
-        public ReportsResource(YoutubeAnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ReportsResource(YouTubeAnalyticsService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -439,7 +431,7 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
                 parameters.Add("ids", Google.Apis.Util.Utilities.CreateRuntimeParameter("ids", true, "query", null, "[a-zA-Z]+==[a-zA-Z0-9_+-]+", new string[0]));
                 parameters.Add("max-results", Google.Apis.Util.Utilities.CreateRuntimeParameter("max-results", false, "query", null, null, new string[0]));
                 parameters.Add("metrics", Google.Apis.Util.Utilities.CreateRuntimeParameter("metrics", true, "query", null, "[0-9a-zA-Z,]+", new string[0]));
-                parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, "(-)?[0-9a-zA-Z,]+", new string[0]));
+                parameters.Add("sort", Google.Apis.Util.Utilities.CreateRuntimeParameter("sort", false, "query", null, "[-0-9a-zA-Z,]+", new string[0]));
                 parameters.Add("start-date", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-date", true, "query", null, "[0-9]{4}-[0-9]{2}-[0-9]{2}", new string[0]));
                 parameters.Add("start-index", Google.Apis.Util.Utilities.CreateRuntimeParameter("start-index", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
@@ -447,7 +439,7 @@ namespace Google.Apis.YoutubeAnalytics.v1beta1 {
         }
     }
     
-    public partial class YoutubeAnalyticsService {
+    public partial class YouTubeAnalyticsService {
         
         private const string Resource = "";
         

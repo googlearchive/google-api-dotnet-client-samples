@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Reseller.v1sandbox.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>JSON template for address of a customer.</summary>
@@ -686,11 +683,6 @@ namespace Google.Apis.Reseller.v1sandbox.Data {
     }
 }
 namespace Google.Apis.Reseller.v1sandbox {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class ResellerService : Google.Apis.Services.BaseClientService {

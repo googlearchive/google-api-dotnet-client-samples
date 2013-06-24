@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Compute.v1beta15.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>An access configuration attached to an instance&apos;s network interface.</summary>
@@ -5207,11 +5204,6 @@ namespace Google.Apis.Compute.v1beta15.Data {
     }
 }
 namespace Google.Apis.Compute.v1beta15 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class ComputeService : Google.Apis.Services.BaseClientService {

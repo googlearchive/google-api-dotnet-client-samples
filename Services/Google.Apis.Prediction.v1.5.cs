@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Prediction.v1_5.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Analyze : Google.Apis.Requests.IDirectResponseSchema {
@@ -1029,11 +1026,6 @@ namespace Google.Apis.Prediction.v1_5.Data {
     }
 }
 namespace Google.Apis.Prediction.v1_5 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class PredictionService : Google.Apis.Services.BaseClientService {

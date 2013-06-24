@@ -225,7 +225,9 @@
             <summary>Each item in the user&apos;s timeline is represented as a TimelineItem JSON structure, described below.</summary>
         </member>
         <member name="P:Google.Apis.Mirror.v1.Data.TimelineItem.Attachments">
-            <summary>A list of media attachments associated with this item.</summary>
+             <summary>A list of media attachments associated with this item. As a convenience, you can refer to attachments in your HTML payloads with the attachment or cid scheme. For example:  
+            - attachment: &lt;img src=&quot;attachment:attachment_index&quot;&gt; where attachment_index is the 0-based index of this array. 
+            - cid: &lt;img src=&quot;cid:attachment_id&quot;&gt; where attachment_id is the ID of the attachment.</summary>
         </member>
         <member name="P:Google.Apis.Mirror.v1.Data.TimelineItem.BundleId">
             <summary>The bundle ID for this item. Services can specify a bundleId to group many items together. They appear under a single top-level item on the device.</summary>
@@ -724,6 +726,15 @@
         </member>
         <member name="P:Google.Apis.Mirror.v1.TimelineResource.AttachmentsResource.DeleteRequest.ItemId">
             <summary>The ID of the timeline item the attachment belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Mirror.v1.TimelineResource.AttachmentsResource.GetRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Mirror.v1.TimelineResource.AttachmentsResource.GetRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Mirror.v1.TimelineResource.AttachmentsResource.GetRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
         </member>
         <member name="P:Google.Apis.Mirror.v1.TimelineResource.AttachmentsResource.GetRequest.Alt">
             <summary>Data format for the response.</summary>

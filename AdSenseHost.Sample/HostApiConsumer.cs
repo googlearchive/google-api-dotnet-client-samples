@@ -59,7 +59,7 @@ namespace AdSenseHost.Sample.Host
     /// </summary>
     public class HostApiConsumer
     {
-        AdsensehostService service;
+        AdSenseHostService service;
         int maxListPageSize;
         private static readonly string DateFormat = "yyyy-MM-dd";
 
@@ -68,7 +68,7 @@ namespace AdSenseHost.Sample.Host
         /// </summary>
         /// <param name="service">AdSensehost service object on which to run the requests.</param>
         /// <param name="maxListPageSize">The maximum page size to retrieve.</param>
-        public HostApiConsumer(AdsensehostService service, int maxListPageSize)
+        public HostApiConsumer(AdSenseHostService service, int maxListPageSize)
         {
             this.service = service;
             this.maxListPageSize = maxListPageSize;
@@ -388,7 +388,7 @@ namespace AdSenseHost.Sample.Host
         /// </summary>
         /// <param name="adsense">AdSense service object on which to run the requests.</param>
         /// <param name="adClientId">The ID for the ad client to be used.</param>
-        private void GenerateReport(AdsensehostService service, string adClientId)
+        private void GenerateReport(AdSenseHostService service, string adClientId)
         {
             CommandLine.WriteLine("=================================================================");
             CommandLine.WriteLine("Running report for ad client {0}", adClientId);

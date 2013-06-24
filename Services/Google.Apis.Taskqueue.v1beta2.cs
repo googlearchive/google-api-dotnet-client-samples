@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Taskqueue.v1beta2.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Task : Google.Apis.Requests.IDirectResponseSchema {
@@ -391,11 +388,6 @@ namespace Google.Apis.Taskqueue.v1beta2.Data {
     }
 }
 namespace Google.Apis.Taskqueue.v1beta2 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class TaskqueueService : Google.Apis.Services.BaseClientService {

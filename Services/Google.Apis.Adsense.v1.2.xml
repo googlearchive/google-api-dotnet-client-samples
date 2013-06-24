@@ -330,13 +330,13 @@
         <member name="P:Google.Apis.Adsense.v1_2.Data.UrlChannels.NextPageToken">
             <summary>Continuation token used to page through URL channels. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
         </member>
-        <member name="T:Google.Apis.Adsense.v1_2.AdsenseService.Scopes">
+        <member name="T:Google.Apis.Adsense.v1_2.AdSenseService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
-        <member name="F:Google.Apis.Adsense.v1_2.AdsenseService.Scopes.Adsense">
+        <member name="F:Google.Apis.Adsense.v1_2.AdSenseService.Scopes.Adsense">
             <summary>View and manage your AdSense data</summary>
         </member>
-        <member name="F:Google.Apis.Adsense.v1_2.AdsenseService.Scopes.AdsenseReadonly">
+        <member name="F:Google.Apis.Adsense.v1_2.AdSenseService.Scopes.AdsenseReadonly">
             <summary>View your AdSense data</summary>
         </member>
         <member name="M:Google.Apis.Adsense.v1_2.AccountsResource.Get(System.String)">
@@ -671,6 +671,15 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_2.AccountsResource.ReportsResource.SavedResource.ListRequest.PageToken">
             <summary>A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_2.AccountsResource.ReportsResource.GenerateRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_2.AccountsResource.ReportsResource.GenerateRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_2.AccountsResource.ReportsResource.GenerateRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_2.AccountsResource.ReportsResource.GenerateRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -1154,6 +1163,15 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_2.ReportsResource.SavedResource.ListRequest.PageToken">
             <summary>A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_2.ReportsResource.GenerateRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_2.ReportsResource.GenerateRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_2.ReportsResource.GenerateRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_2.ReportsResource.GenerateRequest.Alt">
             <summary>Data format for the response.</summary>

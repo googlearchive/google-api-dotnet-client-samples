@@ -9,17 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Analytics.v2_4.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
 }
 namespace Google.Apis.Analytics.v2_4 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class AnalyticsService : Google.Apis.Services.BaseClientService {

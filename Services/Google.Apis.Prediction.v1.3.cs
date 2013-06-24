@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Prediction.v1_3.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Input {
@@ -414,11 +411,6 @@ namespace Google.Apis.Prediction.v1_3.Data {
     }
 }
 namespace Google.Apis.Prediction.v1_3 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class PredictionService : Google.Apis.Services.BaseClientService {

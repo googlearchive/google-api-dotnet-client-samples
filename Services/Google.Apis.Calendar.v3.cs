@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Calendar.v3.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Acl : Google.Apis.Requests.IDirectResponseSchema {
@@ -2195,11 +2192,6 @@ namespace Google.Apis.Calendar.v3.Data {
     }
 }
 namespace Google.Apis.Calendar.v3 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class CalendarService : Google.Apis.Services.BaseClientService {

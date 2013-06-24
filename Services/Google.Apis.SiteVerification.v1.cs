@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.SiteVerification.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class SiteVerificationWebResourceGettokenRequest {
@@ -224,11 +221,6 @@ namespace Google.Apis.SiteVerification.v1.Data {
     }
 }
 namespace Google.Apis.SiteVerification.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class SiteVerificationService : Google.Apis.Services.BaseClientService {

@@ -586,52 +586,52 @@
         <member name="P:Google.Apis.Admin.directory_v1.Data.Users.UsersValue">
             <summary>List of user objects.</summary>
         </member>
-        <member name="T:Google.Apis.Admin.directory_v1.AdminService.Scopes">
+        <member name="T:Google.Apis.Admin.directory_v1.DirectoryService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryDeviceChromeos">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryDeviceChromeos">
             <summary>View and manage your Chrome OS devices&apos; metadata</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryDeviceChromeosReadonly">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryDeviceChromeosReadonly">
             <summary>View your Chrome OS devices&apos; metadata</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryDeviceMobile">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryDeviceMobile">
             <summary>View and manage your mobile devices&apos; metadata</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryDeviceMobileAction">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryDeviceMobileAction">
             <summary>Manage your mobile devices by performing administrative tasks</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryDeviceMobileReadonly">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryDeviceMobileReadonly">
             <summary>View your mobile devices&apos; metadata</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryGroup">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryGroup">
             <summary>View and manage the provisioning of groups on your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryGroupMember">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryGroupMember">
             <summary>View and manage group subscriptions on your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryGroupMemberReadonly">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryGroupMemberReadonly">
             <summary>View group subscriptions on your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryGroupReadonly">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryGroupReadonly">
             <summary>View groups on your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryOrgunit">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryOrgunit">
             <summary>View and manage organization units on your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryOrgunitReadonly">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryOrgunitReadonly">
             <summary>View organization units on your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryUser">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryUser">
             <summary>View and manage the provisioning of users on your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryUserAlias">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryUserAlias">
             <summary>View and manage user aliases on your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryUserAliasReadonly">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryUserAliasReadonly">
             <summary>View user aliases on your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.directory_v1.AdminService.Scopes.AdminDirectoryUserReadonly">
+        <member name="F:Google.Apis.Admin.directory_v1.DirectoryService.Scopes.AdminDirectoryUserReadonly">
             <summary>View users on your domain</summary>
         </member>
         <member name="M:Google.Apis.Admin.directory_v1.ChromeosdevicesResource.Get(System.String,System.String)">

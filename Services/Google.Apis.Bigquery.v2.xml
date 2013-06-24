@@ -455,6 +455,9 @@
         <member name="F:Google.Apis.Bigquery.v2.BigqueryService.Scopes.Bigquery">
             <summary>View and manage your data in Google BigQuery</summary>
         </member>
+        <member name="F:Google.Apis.Bigquery.v2.BigqueryService.Scopes.CloudPlatform">
+            <summary>MESSAGE UNDER CONSTRUCTION View and manage your data across Google Cloud Platform services</summary>
+        </member>
         <member name="F:Google.Apis.Bigquery.v2.BigqueryService.Scopes.DevstorageFull_control">
             <summary>Manage your data and permissions in Google Cloud Storage</summary>
         </member>

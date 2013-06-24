@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Mirror.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Represents media content, such as a photo, that can be attached to a timeline item.</summary>
@@ -916,7 +913,9 @@ namespace Google.Apis.Mirror.v1.Data {
         
         private string _updated;
         
-        /// <summary>A list of media attachments associated with this item.</summary>
+        /// <summary>A list of media attachments associated with this item. As a convenience, you can refer to attachments in your HTML payloads with the attachment or cid scheme. For example:  
+        ///- attachment: &lt;img src=&quot;attachment:attachment_index&quot;&gt; where attachment_index is the 0-based index of this array. 
+        ///- cid: &lt;img src=&quot;cid:attachment_id&quot;&gt; where attachment_id is the ID of the attachment.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("attachments")]
         public virtual System.Collections.Generic.IList<Attachment> Attachments {
             get {
@@ -1320,11 +1319,6 @@ namespace Google.Apis.Mirror.v1.Data {
     }
 }
 namespace Google.Apis.Mirror.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class MirrorService : Google.Apis.Services.BaseClientService {
@@ -3241,10 +3235,13 @@ namespace Google.Apis.Mirror.v1 {
                 
                 private string _itemId;
                 
+                private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+                
                 public GetRequest(Google.Apis.Services.IClientService service, string itemId, string attachmentId) : 
                         base(service) {
                     this._itemId = itemId;
                     this._attachmentId = attachmentId;
+                    this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                     this.InitParameters();
                 }
                 
@@ -3348,11 +3345,32 @@ namespace Google.Apis.Mirror.v1 {
                     }
                 }
                 
+                public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                    get {
+                        return this._mediaDownloader;
+                    }
+                }
+                
                 private void InitParameters() {
                     System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                     parameters.Add("attachmentId", Google.Apis.Util.Utilities.CreateRuntimeParameter("attachmentId", true, "path", null, null, new string[0]));
                     parameters.Add("itemId", Google.Apis.Util.Utilities.CreateRuntimeParameter("itemId", true, "path", null, null, new string[0]));
                     this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+                }
+                
+                /// <summary>Synchronously download the media into the given stream.</summary>
+                public virtual void Download(System.IO.Stream stream) {
+                    _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+                }
+                
+                /// <summary>Asynchronously download the media into the given stream.</summary>
+                public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                    return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+                }
+                
+                /// <summary>Asynchronously download the media into the given stream.</summary>
+                public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                    return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
                 }
             }
             

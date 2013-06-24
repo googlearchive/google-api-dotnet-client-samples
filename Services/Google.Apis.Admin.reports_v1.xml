@@ -5,7 +5,7 @@
     </assembly>
     <members>
         <member name="T:Google.Apis.Admin.reports_v1.Data.Activities">
-            <summary>JSON template for a collection of activites. Author: prakhar@google.com (Prakhar Jain)</summary>
+            <summary>JSON template for a collection of activites.</summary>
         </member>
         <member name="P:Google.Apis.Admin.reports_v1.Data.Activities.Items">
             <summary>Each record in read response.</summary>
@@ -17,7 +17,7 @@
             <summary>Token for retrieving the next page</summary>
         </member>
         <member name="T:Google.Apis.Admin.reports_v1.Data.Activity">
-            <summary>JSON template for the activity resource. Author: prakhar@google.com (Prakhar Jain)</summary>
+            <summary>JSON template for the activity resource.</summary>
         </member>
         <member name="P:Google.Apis.Admin.reports_v1.Data.Activity.Actor">
             <summary>User doing the action.</summary>
@@ -89,7 +89,7 @@
             <summary>Unique qualifier if multiple events have the same time.</summary>
         </member>
         <member name="T:Google.Apis.Admin.reports_v1.Data.UsageReport">
-            <summary>JSON template for a usage report. Author: prakhar@google.com (Prakhar Jain)</summary>
+            <summary>JSON template for a usage report.</summary>
         </member>
         <member name="P:Google.Apis.Admin.reports_v1.Data.UsageReport.Date">
             <summary>The date to which the record belongs.</summary>
@@ -134,7 +134,7 @@
             <summary>String value of the parameter.</summary>
         </member>
         <member name="T:Google.Apis.Admin.reports_v1.Data.UsageReports">
-            <summary>JSON template for a collection of usage reports. Author: prakhar@google.com (Prakhar Jain)</summary>
+            <summary>JSON template for a collection of usage reports.</summary>
         </member>
         <member name="P:Google.Apis.Admin.reports_v1.Data.UsageReports.Kind">
             <summary>The kind of object.</summary>
@@ -163,13 +163,13 @@
         <member name="P:Google.Apis.Admin.reports_v1.Data.UsageReports.WarningsData.DataData.Value">
             <summary>Value associated with a key-value pair to give detailed information on the warning.</summary>
         </member>
-        <member name="T:Google.Apis.Admin.reports_v1.AdminService.Scopes">
+        <member name="T:Google.Apis.Admin.reports_v1.ReportsService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
-        <member name="F:Google.Apis.Admin.reports_v1.AdminService.Scopes.AdminReportsAuditReadonly">
+        <member name="F:Google.Apis.Admin.reports_v1.ReportsService.Scopes.AdminReportsAuditReadonly">
             <summary>View audit reports of Google Apps for your domain</summary>
         </member>
-        <member name="F:Google.Apis.Admin.reports_v1.AdminService.Scopes.AdminReportsUsageReadonly">
+        <member name="F:Google.Apis.Admin.reports_v1.ReportsService.Scopes.AdminReportsUsageReadonly">
             <summary>View usage reports of Google Apps for your domain</summary>
         </member>
         <member name="M:Google.Apis.Admin.reports_v1.ActivitiesResource.List(System.String,System.String)">

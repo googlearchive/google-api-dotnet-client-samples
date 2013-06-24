@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Plus.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Acl {
@@ -3658,11 +3655,6 @@ namespace Google.Apis.Plus.v1.Data {
     }
 }
 namespace Google.Apis.Plus.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class PlusService : Google.Apis.Services.BaseClientService {

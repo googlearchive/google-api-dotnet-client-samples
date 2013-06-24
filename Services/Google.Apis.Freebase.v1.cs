@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Freebase.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class ContentserviceGet : Google.Apis.Requests.IDirectResponseSchema {
@@ -445,11 +442,6 @@ namespace Google.Apis.Freebase.v1.Data {
     }
 }
 namespace Google.Apis.Freebase.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class FreebaseService : Google.Apis.Services.BaseClientService {
@@ -1024,9 +1016,12 @@ namespace Google.Apis.Freebase.v1 {
             
             private System.Nullable<bool> _pad;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public ImageRequest(Google.Apis.Services.IClientService service, Google.Apis.Util.Repeatable<string> id) : 
                     base(service) {
                 this._id = id;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -1177,6 +1172,12 @@ namespace Google.Apis.Freebase.v1 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("fallbackid", Google.Apis.Util.Utilities.CreateRuntimeParameter("fallbackid", false, "query", "/freebase/no_image_png", "/[^.]*$", new string[0]));
@@ -1190,6 +1191,21 @@ namespace Google.Apis.Freebase.v1 {
                                 "fit"}));
                 parameters.Add("pad", Google.Apis.Util.Utilities.CreateRuntimeParameter("pad", false, "query", "false", null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
             }
         }
         
@@ -1227,9 +1243,12 @@ namespace Google.Apis.Freebase.v1 {
             
             private System.Nullable<Uniqueness_failure> _uniqueness_failure;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public MqlreadRequest(Google.Apis.Services.IClientService service, string query) : 
                     base(service) {
                 this._query = query;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -1424,6 +1443,12 @@ namespace Google.Apis.Freebase.v1 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("as_of_time", Google.Apis.Util.Utilities.CreateRuntimeParameter("as_of_time", false, "query", null, null, new string[0]));
@@ -1439,6 +1464,21 @@ namespace Google.Apis.Freebase.v1 {
                                 "hard",
                                 "soft"}));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
             }
         }
         
@@ -1466,9 +1506,12 @@ namespace Google.Apis.Freebase.v1 {
             
             private string _use_permission_of;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public MqlwriteRequest(Google.Apis.Services.IClientService service, string query) : 
                     base(service) {
                 this._query = query;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -1608,6 +1651,12 @@ namespace Google.Apis.Freebase.v1 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("callback", Google.Apis.Util.Utilities.CreateRuntimeParameter("callback", false, "query", null, "([A-Za-z0-9_$.]|\\[|\\])+", new string[0]));
@@ -1616,6 +1665,21 @@ namespace Google.Apis.Freebase.v1 {
                 parameters.Add("query", Google.Apis.Util.Utilities.CreateRuntimeParameter("query", true, "query", null, null, new string[0]));
                 parameters.Add("use_permission_of", Google.Apis.Util.Utilities.CreateRuntimeParameter("use_permission_of", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
+            }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
             }
         }
     }

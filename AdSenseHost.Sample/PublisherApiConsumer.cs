@@ -49,16 +49,16 @@ namespace AdSenseHost.Sample.Publisher
     /// </summary>
     public class PublisherApiConsumer
     {
-        AdsensehostService service;
+        AdSenseHostService service;
         int maxListPageSize;
         private static readonly string DateFormat = "yyyy-MM-dd";
 
         /// <summary>
-        /// Runs multiple Publisher requests againt the AdSense Host API.
+        /// Runs multiple Publisher requests against the AdSense Host API.
         /// </summary>
         /// <param name="service">AdSensehost service object on which to run the requests.</param>
         /// <param name="maxListPageSize">The maximum page size to retrieve.</param>
-        public PublisherApiConsumer(AdsensehostService service, int maxListPageSize)
+        public PublisherApiConsumer(AdSenseHostService service, int maxListPageSize)
         {
             this.service = service;
             this.maxListPageSize = maxListPageSize;
@@ -306,7 +306,7 @@ namespace AdSenseHost.Sample.Publisher
             // Prepare report.
             var startDate = DateTime.Today.ToString(DateFormat);
             var endDate = DateTime.Today.AddDays(-7).ToString(DateFormat);
-            AccountsResource.ReportsResource.GenerateRequest reportRequest 
+            AccountsResource.ReportsResource.GenerateRequest reportRequest
                 = this.service.Accounts.Reports.Generate(accountId, startDate, endDate);
 
             // Specify the desired ad client using a filter, as well as other parameters.

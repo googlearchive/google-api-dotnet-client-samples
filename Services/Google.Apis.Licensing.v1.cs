@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Licensing.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     /// <summary>Template for LiscenseAssignment Resource</summary>
@@ -181,11 +178,6 @@ namespace Google.Apis.Licensing.v1.Data {
     }
 }
 namespace Google.Apis.Licensing.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class LicensingService : Google.Apis.Services.BaseClientService {

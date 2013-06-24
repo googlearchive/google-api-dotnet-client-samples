@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Bigquery.v2.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Dataset : Google.Apis.Requests.IDirectResponseSchema {
@@ -2478,11 +2475,6 @@ namespace Google.Apis.Bigquery.v2.Data {
     }
 }
 namespace Google.Apis.Bigquery.v2 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class BigqueryService : Google.Apis.Services.BaseClientService {
@@ -2557,6 +2549,10 @@ namespace Google.Apis.Bigquery.v2 {
             /// <summary>View and manage your data in Google BigQuery</summary>
             [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/bigquery")]
             Bigquery,
+            
+            /// <summary>MESSAGE UNDER CONSTRUCTION View and manage your data across Google Cloud Platform services</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/cloud-platform")]
+            CloudPlatform,
             
             /// <summary>Manage your data and permissions in Google Cloud Storage</summary>
             [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/devstorage.full_control")]

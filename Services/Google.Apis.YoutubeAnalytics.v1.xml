@@ -25,13 +25,13 @@
         <member name="P:Google.Apis.YoutubeAnalytics.v1.Data.ResultTable.ColumnHeadersData.Name">
             <summary>The name of the dimension or metric.</summary>
         </member>
-        <member name="T:Google.Apis.YoutubeAnalytics.v1.YoutubeAnalyticsService.Scopes">
+        <member name="T:Google.Apis.YoutubeAnalytics.v1.YouTubeAnalyticsService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
-        <member name="F:Google.Apis.YoutubeAnalytics.v1.YoutubeAnalyticsService.Scopes.YtAnalyticsMonetaryReadonly">
+        <member name="F:Google.Apis.YoutubeAnalytics.v1.YouTubeAnalyticsService.Scopes.YtAnalyticsMonetaryReadonly">
             <summary>View YouTube Analytics monetary reports for your YouTube content</summary>
         </member>
-        <member name="F:Google.Apis.YoutubeAnalytics.v1.YoutubeAnalyticsService.Scopes.YtAnalyticsReadonly">
+        <member name="F:Google.Apis.YoutubeAnalytics.v1.YouTubeAnalyticsService.Scopes.YtAnalyticsReadonly">
             <summary>View YouTube Analytics reports for your YouTube content</summary>
         </member>
         <member name="M:Google.Apis.YoutubeAnalytics.v1.ReportsResource.Query(System.String,System.String,System.String,System.String)">

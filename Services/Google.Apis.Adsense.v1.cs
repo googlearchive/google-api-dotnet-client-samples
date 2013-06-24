@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Adsense.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class AdClient {
@@ -607,14 +604,9 @@ namespace Google.Apis.Adsense.v1.Data {
     }
 }
 namespace Google.Apis.Adsense.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class AdsenseService : Google.Apis.Services.BaseClientService {
+    public partial class AdSenseService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1";
         
@@ -622,7 +614,7 @@ namespace Google.Apis.Adsense.v1 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AdsenseService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public AdSenseService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._adclients = new AdclientsResource(this, Authenticator);
             this._adunits = new AdunitsResource(this, Authenticator);
@@ -632,7 +624,7 @@ namespace Google.Apis.Adsense.v1 {
             this.InitParameters();
         }
         
-        public AdsenseService() : 
+        public AdSenseService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -695,13 +687,13 @@ namespace Google.Apis.Adsense.v1 {
     
     public class AdclientsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "adclients";
         
-        public AdclientsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public AdclientsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -851,13 +843,13 @@ namespace Google.Apis.Adsense.v1 {
     
     public class AdunitsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "adunits";
         
-        public AdunitsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public AdunitsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -1034,13 +1026,13 @@ namespace Google.Apis.Adsense.v1 {
     
     public class CustomchannelsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "customchannels";
         
-        public CustomchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public CustomchannelsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -1203,13 +1195,13 @@ namespace Google.Apis.Adsense.v1 {
     
     public class ReportsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "reports";
         
-        public ReportsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ReportsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -1469,13 +1461,13 @@ namespace Google.Apis.Adsense.v1 {
     
     public class UrlchannelsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "urlchannels";
         
-        public UrlchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public UrlchannelsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -1636,7 +1628,7 @@ namespace Google.Apis.Adsense.v1 {
         }
     }
     
-    public partial class AdsenseService {
+    public partial class AdSenseService {
         
         private const string Resource = "";
         

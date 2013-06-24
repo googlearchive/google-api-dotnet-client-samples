@@ -14,12 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-using System;
 using System.Linq;
 
 using DotNetOpenAuth.OAuth2;
 
-using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Services;
@@ -58,7 +56,8 @@ namespace TasksSample.CreateTasks
             // Create the service.
             var service = new TasksService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "Tasks API Sample",
                 });
 
             // Execute request: Create sample list.

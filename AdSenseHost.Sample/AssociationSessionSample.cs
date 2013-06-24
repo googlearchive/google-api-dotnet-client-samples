@@ -45,7 +45,7 @@ namespace AdSenseHost.Sample
     /// </summary>
     internal class AssociationSessionSample
     {
-        private static readonly string Scope = AdsensehostService.Scopes.Adsensehost.GetStringValue();
+        private static readonly string Scope = AdSenseHostService.Scopes.Adsensehost.GetStringValue();
 
         [STAThread]
         public static void Main(string[] args)
@@ -66,9 +66,10 @@ namespace AdSenseHost.Sample
                 new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            AdsensehostService service = new AdsensehostService(new BaseClientService.Initializer()
+            AdSenseHostService service = new AdSenseHostService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "Adsense Host API Sample",
                 });
 
             string websiteUrl = null;
@@ -92,7 +93,7 @@ namespace AdSenseHost.Sample
         /// <param name="adsense">AdSensehost service object on which to run the requests.</param>
         /// <param name="websiteUrl">The URL of the user's hosted website.</param>
         /// <returns>The created association.</returns>
-        public static AssociationSession StartAssociationSession(AdsensehostService adsense, string websiteUrl)
+        public static AssociationSession StartAssociationSession(AdSenseHostService adsense, string websiteUrl)
         {
             CommandLine.WriteLine("=================================================================");
             CommandLine.WriteLine("Creating new association session");
@@ -116,7 +117,7 @@ namespace AdSenseHost.Sample
         /// </summary>
         /// <param name="adsense">AdSensehost service object on which to run the requests.</param>
         /// <param name="callbackToken">The token returned from the association callback.</param>
-        public static void VerifyAssociationSession(AdsensehostService adsense, string callbackToken)
+        public static void VerifyAssociationSession(AdSenseHostService adsense, string callbackToken)
         {
             CommandLine.WriteLine("=================================================================");
             CommandLine.WriteLine("Verifying new association session");

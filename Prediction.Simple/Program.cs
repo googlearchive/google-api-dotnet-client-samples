@@ -60,7 +60,8 @@ namespace Prediction.Simple
             // Create the service.
             var service = new PredictionService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "Prediction API Sample",
                 });
             RunPrediction(service);
             CommandLine.PressAnyKeyToExit();

@@ -49,6 +49,15 @@
         <member name="F:Google.Apis.Freebase.v1.FreebaseService.Uniqueness_failure.Soft">
             <summary>Just return the first encountered object.</summary>
         </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
         <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Alt">
             <summary>Data format for the response.</summary>
         </member>
@@ -84,6 +93,15 @@
         </member>
         <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Pad">
             <summary>A boolean specifying whether the resulting image should be padded up to the requested dimensions.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Alt">
             <summary>Data format for the response.</summary>
@@ -132,6 +150,15 @@
         </member>
         <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Uniqueness_failure">
             <summary>How MQL responds to uniqueness failures.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.Download(System.IO.Stream)">
+            <summary>Synchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.DownloadAsync(System.IO.Stream)">
+            <summary>Asynchronously download the media into the given stream.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>Asynchronously download the media into the given stream.</summary>
         </member>
         <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.Alt">
             <summary>Data format for the response.</summary>

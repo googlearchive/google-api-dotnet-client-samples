@@ -59,7 +59,8 @@ namespace Translate.TranslateText
             // Create the service.
             var service = new TranslateService(new BaseClientService.Initializer()
                 {
-                    ApiKey = GetApiKey()
+                    ApiKey = GetApiKey(),
+                    ApplicationName = "Translate API Sample"
                 });
 
             // Execute the first translation request.

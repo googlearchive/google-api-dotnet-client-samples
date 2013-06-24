@@ -18,17 +18,14 @@ using System;
 
 using DotNetOpenAuth.OAuth2;
 
+using AdSenseHost.Sample.Host;
+using AdSenseHost.Sample.Publisher;
 using Google.Apis.Adsensehost.v4_1;
-using Google.Apis.Adsensehost.v4_1.Data;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
 using Google.Apis.Util;
-
-using AdSenseHost.Sample.Host;
-using AdSenseHost.Sample.Publisher;
-using Google.Apis.Discovery;
 
 namespace AdSenseHost.Sample
 {
@@ -45,7 +42,7 @@ namespace AdSenseHost.Sample
     /// </summary>
     internal class AdSenseHostSample
     {
-        private static readonly string Scope = AdsensehostService.Scopes.Adsensehost.GetStringValue();
+        private static readonly string Scope = AdSenseHostService.Scopes.Adsensehost.GetStringValue();
         private static readonly int MaxListPageSize = 50;
 
         [STAThread]
@@ -66,9 +63,10 @@ namespace AdSenseHost.Sample
                 new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            AdsensehostService service = new AdsensehostService(new BaseClientService.Initializer()
+            var service = new AdSenseHostService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "AdSense API Sample",
                 });
 
             // Execute Host calls

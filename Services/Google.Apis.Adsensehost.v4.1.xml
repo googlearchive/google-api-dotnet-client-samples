@@ -276,10 +276,10 @@
         <member name="P:Google.Apis.Adsensehost.v4_1.Data.UrlChannels.NextPageToken">
             <summary>Continuation token used to page through URL channels. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
         </member>
-        <member name="T:Google.Apis.Adsensehost.v4_1.AdsensehostService.Scopes">
+        <member name="T:Google.Apis.Adsensehost.v4_1.AdSenseHostService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
-        <member name="F:Google.Apis.Adsensehost.v4_1.AdsensehostService.Scopes.Adsensehost">
+        <member name="F:Google.Apis.Adsensehost.v4_1.AdSenseHostService.Scopes.Adsensehost">
             <summary>View and manage your AdSense host data and associated accounts</summary>
         </member>
         <member name="M:Google.Apis.Adsensehost.v4_1.AccountsResource.Get(System.String)">

@@ -492,15 +492,6 @@
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.Location">
             <summary>Location used to determine tax and shipping</summary>
         </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PlusOneEnabled">
-            <summary>Whether to return +1 button code</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PlusOneStyles">
-            <summary>+1 button rendering styles</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PlusOneUseGcsConfig">
-            <summary>Whether to use +1 button styles configured in the GCS account</summary>
-        </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.ProductId">
             <summary>Id of product</summary>
         </member>
@@ -620,15 +611,6 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.MaxVariants">
             <summary>Maximum number of variant results to return per result</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PlusOneEnabled">
-            <summary>Whether to return +1 button code</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PlusOneStyles">
-            <summary>+1 button rendering styles</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PlusOneUseGcsConfig">
-            <summary>Whether to use +1 button styles configured in the GCS account</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PromotionsEnabled">
             <summary>Whether to return promotion information</summary>

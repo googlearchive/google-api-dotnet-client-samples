@@ -85,7 +85,8 @@ namespace DfaReporting.Sample
             // Create the service.
             var service = new DfareportingService(new BaseClientService.Initializer
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "DFA API Sample",
                 });
 
             // Choose a user profile ID to use in the following samples.

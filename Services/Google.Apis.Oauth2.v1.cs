@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Oauth2.v1.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Tokeninfo {
@@ -357,11 +354,6 @@ namespace Google.Apis.Oauth2.v1.Data {
     }
 }
 namespace Google.Apis.Oauth2.v1 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
     public partial class Oauth2Service : Google.Apis.Services.BaseClientService {

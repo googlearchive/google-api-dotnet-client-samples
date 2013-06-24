@@ -44,7 +44,7 @@ namespace AdSense.Sample
     /// </summary>
     internal class AdSenseSample
     {
-        private static readonly string Scope = AdsenseService.Scopes.AdsenseReadonly.GetStringValue();
+        private static readonly string Scope = AdSenseService.Scopes.AdsenseReadonly.GetStringValue();
         private static readonly int MaxListPageSize = 50;
 
         [STAThread]
@@ -65,7 +65,7 @@ namespace AdSense.Sample
                 new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            AdsenseService service = new AdsenseService(new BaseClientService.Initializer()
+            var service = new AdSenseService(new BaseClientService.Initializer()
             {
                 Authenticator = auth
             });

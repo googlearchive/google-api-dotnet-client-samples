@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace Google.Apis.Adsense.v1_2.Data {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
     
     
     public class Account : Google.Apis.Requests.IDirectResponseSchema {
@@ -1478,14 +1475,9 @@ namespace Google.Apis.Adsense.v1_2.Data {
     }
 }
 namespace Google.Apis.Adsense.v1_2 {
-    using System;
-    using System.IO;
-    using System.Collections.Generic;
-    using Google.Apis;
-    using Google.Apis.Discovery;
     
     
-    public partial class AdsenseService : Google.Apis.Services.BaseClientService {
+    public partial class AdSenseService : Google.Apis.Services.BaseClientService {
         
         public const string Version = "v1.2";
         
@@ -1493,7 +1485,7 @@ namespace Google.Apis.Adsense.v1_2 {
         
         private System.Collections.Generic.IDictionary<string, Google.Apis.Discovery.IParameter> _serviceParameters;
         
-        public AdsenseService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
+        public AdSenseService(Google.Apis.Services.BaseClientService.Initializer initializer) : 
                 base(initializer) {
             this._accounts = new AccountsResource(this, Authenticator);
             this._adclients = new AdclientsResource(this, Authenticator);
@@ -1505,7 +1497,7 @@ namespace Google.Apis.Adsense.v1_2 {
             this.InitParameters();
         }
         
-        public AdsenseService() : 
+        public AdSenseService() : 
                 this(new Google.Apis.Services.BaseClientService.Initializer()) {
         }
         
@@ -1568,7 +1560,7 @@ namespace Google.Apis.Adsense.v1_2 {
     
     public class AccountsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
@@ -1586,7 +1578,7 @@ namespace Google.Apis.Adsense.v1_2 {
         
         private UrlchannelsResource _urlchannels;
         
-        public AccountsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public AccountsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
             this._adclients = new AdclientsResource(service, authenticator);
@@ -1646,13 +1638,13 @@ namespace Google.Apis.Adsense.v1_2 {
         
         public class AdclientsResource {
             
-            private AdsenseService service;
+            private AdSenseService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "accounts.adclients";
             
-            public AdclientsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public AdclientsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -1815,7 +1807,7 @@ namespace Google.Apis.Adsense.v1_2 {
         
         public class AdunitsResource {
             
-            private AdsenseService service;
+            private AdSenseService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
@@ -1823,7 +1815,7 @@ namespace Google.Apis.Adsense.v1_2 {
             
             private CustomchannelsResource _customchannels;
             
-            public AdunitsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public AdunitsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
                 this._customchannels = new CustomchannelsResource(service, authenticator);
@@ -1852,13 +1844,13 @@ namespace Google.Apis.Adsense.v1_2 {
             
             public class CustomchannelsResource {
                 
-                private AdsenseService service;
+                private AdSenseService service;
                 
                 private Google.Apis.Authentication.IAuthenticator authenticator;
                 
                 private const string Resource = "accounts.adunits.customchannels";
                 
-                public CustomchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+                public CustomchannelsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                     this.service = service;
                     this.authenticator = authenticator;
                 }
@@ -2368,7 +2360,7 @@ namespace Google.Apis.Adsense.v1_2 {
         
         public class CustomchannelsResource {
             
-            private AdsenseService service;
+            private AdSenseService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
@@ -2376,7 +2368,7 @@ namespace Google.Apis.Adsense.v1_2 {
             
             private AdunitsResource _adunits;
             
-            public CustomchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public CustomchannelsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
                 this._adunits = new AdunitsResource(service, authenticator);
@@ -2405,13 +2397,13 @@ namespace Google.Apis.Adsense.v1_2 {
             
             public class AdunitsResource {
                 
-                private AdsenseService service;
+                private AdSenseService service;
                 
                 private Google.Apis.Authentication.IAuthenticator authenticator;
                 
                 private const string Resource = "accounts.customchannels.adunits";
                 
-                public AdunitsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+                public AdunitsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                     this.service = service;
                     this.authenticator = authenticator;
                 }
@@ -2922,7 +2914,7 @@ namespace Google.Apis.Adsense.v1_2 {
         
         public class ReportsResource {
             
-            private AdsenseService service;
+            private AdSenseService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
@@ -2930,7 +2922,7 @@ namespace Google.Apis.Adsense.v1_2 {
             
             private SavedResource _saved;
             
-            public ReportsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public ReportsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
                 this._saved = new SavedResource(service, authenticator);
@@ -2952,13 +2944,13 @@ namespace Google.Apis.Adsense.v1_2 {
             
             public class SavedResource {
                 
-                private AdsenseService service;
+                private AdSenseService service;
                 
                 private Google.Apis.Authentication.IAuthenticator authenticator;
                 
                 private const string Resource = "accounts.reports.saved";
                 
-                public SavedResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+                public SavedResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                     this.service = service;
                     this.authenticator = authenticator;
                 }
@@ -3337,11 +3329,14 @@ namespace Google.Apis.Adsense.v1_2 {
                 
                 private System.Nullable<long> _startIndex;
                 
+                private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+                
                 public GenerateRequest(Google.Apis.Services.IClientService service, string accountId, string startDate, string endDate) : 
                         base(service) {
                     this._accountId = accountId;
                     this._startDate = startDate;
                     this._endDate = endDate;
+                    this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                     this.InitParameters();
                 }
                 
@@ -3541,6 +3536,12 @@ namespace Google.Apis.Adsense.v1_2 {
                     }
                 }
                 
+                public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                    get {
+                        return this._mediaDownloader;
+                    }
+                }
+                
                 private void InitParameters() {
                     System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                     parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", true, "path", null, null, new string[0]));
@@ -3556,18 +3557,33 @@ namespace Google.Apis.Adsense.v1_2 {
                     parameters.Add("startIndex", Google.Apis.Util.Utilities.CreateRuntimeParameter("startIndex", false, "query", null, null, new string[0]));
                     this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
                 }
+                
+                /// <summary>Synchronously download the media into the given stream.</summary>
+                public virtual void Download(System.IO.Stream stream) {
+                    _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+                }
+                
+                /// <summary>Asynchronously download the media into the given stream.</summary>
+                public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                    return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+                }
+                
+                /// <summary>Asynchronously download the media into the given stream.</summary>
+                public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                    return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
+                }
             }
         }
         
         public class SavedadstylesResource {
             
-            private AdsenseService service;
+            private AdSenseService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "accounts.savedadstyles";
             
-            public SavedadstylesResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public SavedadstylesResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -3870,13 +3886,13 @@ namespace Google.Apis.Adsense.v1_2 {
         
         public class UrlchannelsResource {
             
-            private AdsenseService service;
+            private AdSenseService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "accounts.urlchannels";
             
-            public UrlchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public UrlchannelsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -4325,13 +4341,13 @@ namespace Google.Apis.Adsense.v1_2 {
     
     public class AdclientsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "adclients";
         
-        public AdclientsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public AdclientsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -4481,7 +4497,7 @@ namespace Google.Apis.Adsense.v1_2 {
     
     public class AdunitsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
@@ -4489,7 +4505,7 @@ namespace Google.Apis.Adsense.v1_2 {
         
         private CustomchannelsResource _customchannels;
         
-        public AdunitsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public AdunitsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
             this._customchannels = new CustomchannelsResource(service, authenticator);
@@ -4516,13 +4532,13 @@ namespace Google.Apis.Adsense.v1_2 {
         
         public class CustomchannelsResource {
             
-            private AdsenseService service;
+            private AdSenseService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "adunits.customchannels";
             
-            public CustomchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public CustomchannelsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -4995,7 +5011,7 @@ namespace Google.Apis.Adsense.v1_2 {
     
     public class CustomchannelsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
@@ -5003,7 +5019,7 @@ namespace Google.Apis.Adsense.v1_2 {
         
         private AdunitsResource _adunits;
         
-        public CustomchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public CustomchannelsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
             this._adunits = new AdunitsResource(service, authenticator);
@@ -5030,13 +5046,13 @@ namespace Google.Apis.Adsense.v1_2 {
         
         public class AdunitsResource {
             
-            private AdsenseService service;
+            private AdSenseService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "customchannels.adunits";
             
-            public AdunitsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public AdunitsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -5509,7 +5525,7 @@ namespace Google.Apis.Adsense.v1_2 {
     
     public class ReportsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
@@ -5517,7 +5533,7 @@ namespace Google.Apis.Adsense.v1_2 {
         
         private SavedResource _saved;
         
-        public ReportsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public ReportsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
             this._saved = new SavedResource(service, authenticator);
@@ -5538,13 +5554,13 @@ namespace Google.Apis.Adsense.v1_2 {
         
         public class SavedResource {
             
-            private AdsenseService service;
+            private AdSenseService service;
             
             private Google.Apis.Authentication.IAuthenticator authenticator;
             
             private const string Resource = "reports.saved";
             
-            public SavedResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+            public SavedResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
                 this.service = service;
                 this.authenticator = authenticator;
             }
@@ -5897,10 +5913,13 @@ namespace Google.Apis.Adsense.v1_2 {
             
             private System.Nullable<long> _startIndex;
             
+            private Google.Apis.Download.IMediaDownloader _mediaDownloader;
+            
             public GenerateRequest(Google.Apis.Services.IClientService service, string startDate, string endDate) : 
                     base(service) {
                 this._startDate = startDate;
                 this._endDate = endDate;
+                this._mediaDownloader = new Google.Apis.Download.MediaDownloader(service);
                 this.InitParameters();
             }
             
@@ -6103,6 +6122,12 @@ namespace Google.Apis.Adsense.v1_2 {
                 }
             }
             
+            public virtual Google.Apis.Download.IMediaDownloader MediaDownloader {
+                get {
+                    return this._mediaDownloader;
+                }
+            }
+            
             private void InitParameters() {
                 System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter> parameters = new System.Collections.Generic.Dictionary<string, Google.Apis.Discovery.IParameter>();
                 parameters.Add("accountId", Google.Apis.Util.Utilities.CreateRuntimeParameter("accountId", false, "query", null, null, new string[0]));
@@ -6118,18 +6143,33 @@ namespace Google.Apis.Adsense.v1_2 {
                 parameters.Add("startIndex", Google.Apis.Util.Utilities.CreateRuntimeParameter("startIndex", false, "query", null, null, new string[0]));
                 this._requestParameters = new Google.Apis.Util.ReadOnlyDictionary<string, Google.Apis.Discovery.IParameter>(parameters);
             }
+            
+            /// <summary>Synchronously download the media into the given stream.</summary>
+            public virtual void Download(System.IO.Stream stream) {
+                _mediaDownloader.Download(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream);
+            }
+            
+            /// <summary>Asynchronously download the media into the given stream.</summary>
+            public virtual System.Threading.Tasks.Task<Google.Apis.Download.IDownloadProgress> DownloadAsync(System.IO.Stream stream, System.Threading.CancellationToken cancellationToken) {
+                return _mediaDownloader.DownloadAsync(this.GenerateRequestUri(), stream, cancellationToken);
+            }
         }
     }
     
     public class SavedadstylesResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "savedadstyles";
         
-        public SavedadstylesResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public SavedadstylesResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -6406,13 +6446,13 @@ namespace Google.Apis.Adsense.v1_2 {
     
     public class UrlchannelsResource {
         
-        private AdsenseService service;
+        private AdSenseService service;
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string Resource = "urlchannels";
         
-        public UrlchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
+        public UrlchannelsResource(AdSenseService service, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.service = service;
             this.authenticator = authenticator;
         }
@@ -6573,7 +6613,7 @@ namespace Google.Apis.Adsense.v1_2 {
         }
     }
     
-    public partial class AdsenseService {
+    public partial class AdSenseService {
         
         private const string Resource = "";
         

@@ -39,7 +39,8 @@ namespace Shopping.ListProducts
             // Create the service.
             var service = new ShoppingService(new BaseClientService.Initializer()
                 {
-                    ApiKey = GetApiKey()
+                    ApiKey = GetApiKey(),
+                    ApplicationName = "Shopping API Sample",
                 });
             RunSample(service);
             CommandLine.PressAnyKeyToExit();

@@ -71,7 +71,8 @@ namespace Google.Apis.Samples.PlusServiceAccount
                 // Create the service.
                 var service = new PlusService(new BaseClientService.Initializer()
                     {
-                        Authenticator = auth
+                        Authenticator = auth,
+                        ApplicationName = "Plus API Sample",
                     });
                 Activity activity = service.Activities.Get(ACTIVITY_ID).Execute();
                 CommandLine.WriteLine("   ^1Activity: " + activity.Object.Content);

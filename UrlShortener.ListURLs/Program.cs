@@ -56,7 +56,8 @@ namespace UrlShortener.ListURLs
             // Create the service.
             var service = new UrlshortenerService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth
+                    Authenticator = auth,
+                    ApplicationName = "UrlShortener API Sample",
                 });
 
             // List all shortened URLs:
