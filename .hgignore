@@ -40,3 +40,6 @@ packages/**
 *.dotCover
 *.orig
 *.userprefs
+
+key.p12
+ClientCredentials.cs
