@@ -36,22 +36,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetOpenAuth">
-      <HintPath>..\Lib\ThirdParty\DotNetOpenAuth.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Authentication.1.5.0-beta\lib\net40\DotNetOpenAuth.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Google.Apis.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.1.5.0-beta\lib\net40\Google.Apis.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis.Authentication.OAuth2">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Google.Apis.Authentication.OAuth2.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Authentication.1.5.0-beta\lib\net40\Google.Apis.Authentication.OAuth2.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis.Drive.v2">
-      <HintPath>..\Services\Google.Apis.Drive.v2.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Drive.v2.1.5.0.93-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Drive.v2.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.FullProfile">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Google.Apis.FullProfile.dll</HintPath>
+    <Reference Include="Google.Apis.PlatformServices">
+      <HintPath>..\packages\Google.Apis.1.5.0-beta\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

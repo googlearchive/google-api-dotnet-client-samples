@@ -64,7 +64,7 @@ namespace Shopping.ListProducts
             request.Q = query;
 
             // Parse the response.
-            long startIndex = 1;
+            int startIndex = 1;
             do
             {
                 request.StartIndex = startIndex;

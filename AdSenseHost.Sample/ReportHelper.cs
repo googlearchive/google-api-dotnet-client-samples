@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Google.Apis.Adsensehost.v4_1.Data;
+using Google.Apis.AdSenseHost.v4_1.Data;
 using Google.Apis.Samples.Helper;
 
 namespace AdSenseHost.Sample

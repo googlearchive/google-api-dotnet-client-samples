@@ -19,8 +19,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Google.Apis.Adsense.v1_3;
-using Google.Apis.Adsense.v1_3.Data;
+using Google.Apis.AdSense.v1_3;
+using Google.Apis.AdSense.v1_3.Data;
 using Google.Apis.Samples.Helper;
 
 namespace AdSense.Sample
@@ -86,6 +86,11 @@ namespace AdSense.Sample
 
             // Run next page of report.
             return reportRequest.Execute();
+        }
+
+        public static IList<T> NullToEmpty<T>(this IList<T> list)
+        {
+            return list ?? new List<T>();
         }
     }
 }

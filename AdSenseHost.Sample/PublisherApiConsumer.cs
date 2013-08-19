@@ -17,8 +17,8 @@ limitations under the License.
 using System;
 using System.Collections.Generic;
 
-using Google.Apis.Adsensehost.v4_1;
-using Google.Apis.Adsensehost.v4_1.Data;
+using Google.Apis.AdSenseHost.v4_1;
+using Google.Apis.AdSenseHost.v4_1.Data;
 using Google.Apis.Samples.Helper;
 
 namespace AdSenseHost.Sample.Publisher

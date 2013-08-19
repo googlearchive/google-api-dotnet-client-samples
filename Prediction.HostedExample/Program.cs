@@ -102,7 +102,7 @@ namespace Prediction.HostedExample
             string text = "mucho bueno";
             CommandLine.RequestUserInput("Text to analyze", ref text);
 
-            var input = new Input { InputValue = new Input.InputData { CsvInstance = new List<string> { text } } };
+            var input = new Input { InputValue = new Input.InputData { CsvInstance = new List<object> { text } } };
             Output result = service.Hostedmodels.Predict(input, "sample.languageid").Execute();
             CommandLine.WriteResult("Language", result.OutputLabel);
         }

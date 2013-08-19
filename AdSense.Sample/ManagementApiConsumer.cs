@@ -18,8 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Google.Apis.Adsense.v1_3;
-using Google.Apis.Adsense.v1_3.Data;
+using Google.Apis.AdSense.v1_3.Data;
+using Google.Apis.AdSense.v1_3;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Util;
 
@@ -166,7 +166,7 @@ namespace AdSense.Sample
                 accountRequest.PageToken = pageToken;
                 accountResponse = accountRequest.Execute();
 
-                if (accountResponse.Items.IsNotNullOrEmpty())
+                if (!accountResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var account in accountResponse.Items)
                     {
@@ -248,7 +248,7 @@ namespace AdSense.Sample
                 adClientRequest.PageToken = pageToken;
                 adClientResponse = adClientRequest.Execute();
 
-                if (adClientResponse.Items.IsNotNullOrEmpty())
+                if (!adClientResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var adClient in adClientResponse.Items)
                     {
@@ -294,7 +294,7 @@ namespace AdSense.Sample
                 adClientRequest.PageToken = pageToken;
                 adClientResponse = adClientRequest.Execute();
 
-                if (adClientResponse.Items.IsNotNullOrEmpty())
+                if (!adClientResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var adClient in adClientResponse.Items)
                     {
@@ -344,7 +344,7 @@ namespace AdSense.Sample
                 adUnitRequest.PageToken = pageToken;
                 adUnitResponse = adUnitRequest.Execute();
 
-                if (adUnitResponse.Items.IsNotNullOrEmpty())
+                if (!adUnitResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var adUnit in adUnitResponse.Items)
                     {
@@ -393,7 +393,7 @@ namespace AdSense.Sample
                 customChannelRequest.PageToken = pageToken;
                 customChannelResponse = customChannelRequest.Execute();
 
-                if (customChannelResponse.Items.IsNotNullOrEmpty())
+                if (!customChannelResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var customChannel in customChannelResponse.Items)
                     {
@@ -440,7 +440,7 @@ namespace AdSense.Sample
                 adUnitRequest.PageToken = pageToken;
                 adUnitResponse = adUnitRequest.Execute();
 
-                if (adUnitResponse.Items.IsNotNullOrEmpty())
+                if (!adUnitResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var adUnit in adUnitResponse.Items)
                     {
@@ -486,7 +486,7 @@ namespace AdSense.Sample
                 customChannelRequest.PageToken = pageToken;
                 customChannelResponse = customChannelRequest.Execute();
 
-                if (customChannelResponse.Items.IsNotNullOrEmpty())
+                if (!customChannelResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var customChannel in customChannelResponse.Items)
                     {
@@ -529,7 +529,7 @@ namespace AdSense.Sample
                 urlChannelRequest.PageToken = pageToken;
                 urlChannelResponse = urlChannelRequest.Execute();
 
-                if (urlChannelResponse.Items.IsNotNullOrEmpty())
+                if (!urlChannelResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var urlChannel in urlChannelResponse.Items)
                     {
@@ -582,7 +582,7 @@ namespace AdSense.Sample
             // Run report.
             var reportResponse = reportRequest.Execute();
 
-            if (reportResponse.Rows.IsNotNullOrEmpty())
+            if (!reportResponse.Rows.IsNullOrEmpty())
             {
                 ReportUtils.DisplayHeaders(reportResponse.Headers);
                 ReportUtils.DisplayRows(reportResponse.Rows);
@@ -681,7 +681,7 @@ namespace AdSense.Sample
             AdsenseReportsGenerateResponse savedReportResponse = savedReportRequest.Execute();
 
             // Run report.
-            if (savedReportResponse.Rows.IsNotNullOrEmpty())
+            if (!savedReportResponse.Rows.IsNullOrEmpty())
             {
                 ReportUtils.DisplayHeaders(savedReportResponse.Headers);
                 ReportUtils.DisplayRows(savedReportResponse.Rows);
@@ -715,7 +715,7 @@ namespace AdSense.Sample
                 savedReportRequest.PageToken = pageToken;
                 savedReportResponse = savedReportRequest.Execute();
 
-                if (savedReportResponse.Items.IsNotNullOrEmpty())
+                if (!savedReportResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var savedReport in savedReportResponse.Items)
                     {
@@ -756,7 +756,7 @@ namespace AdSense.Sample
                 savedAdStyleRequest.PageToken = pageToken;
                 savedAdStyleResponse = savedAdStyleRequest.Execute();
 
-                if (savedAdStyleResponse.Items.IsNotNullOrEmpty())
+                if (!savedAdStyleResponse.Items.IsNullOrEmpty())
                 {
                     foreach (var savedAdStyle in savedAdStyleResponse.Items)
                     {
@@ -789,7 +789,7 @@ namespace AdSense.Sample
 
             Metadata metricsResponse = this.service.Metadata.Metrics.List().Execute();
 
-            if (metricsResponse.Items.IsNotNullOrEmpty())
+            if (!metricsResponse.Items.IsNullOrEmpty())
             {
                 foreach (var metric in metricsResponse.Items)
                 {
@@ -811,7 +811,7 @@ namespace AdSense.Sample
 
             Metadata dimensionsResponse = this.service.Metadata.Dimensions.List().Execute();
 
-            if (dimensionsResponse.Items.IsNotNullOrEmpty())
+            if (!dimensionsResponse.Items.IsNullOrEmpty())
             {
                 foreach (var dimension in dimensionsResponse.Items)
                 {
@@ -839,7 +839,7 @@ namespace AdSense.Sample
 
             Alerts alertsResponse = this.service.Alerts.List().Execute();
 
-            if (alertsResponse.Items.IsNotNullOrEmpty())
+            if (!alertsResponse.Items.IsNullOrEmpty())
             {
                 foreach (var alert in alertsResponse.Items)
                 {

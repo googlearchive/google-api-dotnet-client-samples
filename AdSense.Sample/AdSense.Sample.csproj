@@ -46,16 +46,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetOpenAuth">
-      <HintPath>..\Lib\ThirdParty\DotNetOpenAuth.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Authentication.1.5.0-beta\lib\net40\DotNetOpenAuth.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis">
-      <HintPath>..\Lib\Google.Apis.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.1.5.0-beta\lib\net40\Google.Apis.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Adsense.v1.3">
-      <HintPath>..\Services\Google.Apis.Adsense.v1.3.dll</HintPath>
+      <Reference Include="Google.Apis.PlatformServices">
+          <HintPath>..\packages\Google.Apis.1.5.0-beta\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+      </Reference>
+    <Reference Include="Google.Apis.AdSense.v1_3">
+      <HintPath>..\packages\Google.Apis.AdSense.v1_3.1.5.0.24-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.AdSense.v1_3.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis.Authentication.OAuth2">
-      <HintPath>..\Lib\Google.Apis.Authentication.OAuth2.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Authentication.1.5.0-beta\lib\net40\Google.Apis.Authentication.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

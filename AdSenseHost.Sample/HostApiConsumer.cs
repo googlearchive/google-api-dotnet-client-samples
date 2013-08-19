@@ -18,8 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Google.Apis.Adsensehost.v4_1;
-using Google.Apis.Adsensehost.v4_1.Data;
+using Google.Apis.AdSenseHost.v4_1;
+using Google.Apis.AdSenseHost.v4_1.Data;
 using Google.Apis.Samples.Helper;
 
 namespace AdSenseHost.Sample.Host
@@ -386,7 +386,7 @@ namespace AdSenseHost.Sample.Host
         /// <summary>
         ///  This example prints a report, using a filter for a specified ad client.
         /// </summary>
-        /// <param name="adsense">AdSense service object on which to run the requests.</param>
+        /// <param name="service">AdSense service object on which to run the requests.</param>
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         private void GenerateReport(AdSenseHostService service, string adClientId)
         {

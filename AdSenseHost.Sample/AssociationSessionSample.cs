@@ -18,10 +18,8 @@ using System;
 
 using DotNetOpenAuth.OAuth2;
 
-using AdSenseHost.Sample.Host;
-using AdSenseHost.Sample.Publisher;
-using Google.Apis.Adsensehost.v4_1;
-using Google.Apis.Adsensehost.v4_1.Data;
+using Google.Apis.AdSenseHost.v4_1;
+using Google.Apis.AdSenseHost.v4_1.Data;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Samples.Helper;
@@ -101,7 +99,7 @@ namespace AdSenseHost.Sample
 
             // Request a new association session.
             AssociationSession associationSession = adsense.Associationsessions.Start(
-                AssociationsessionsResource.ProductCode.AFC, websiteUrl).Execute();
+                AssociationsessionsResource.StartRequest.ProductCodeEnum.AFC, websiteUrl).Execute();
 
             CommandLine.WriteLine("Association with ID {0} and redirect URL \n{1}\n was started.",
                 associationSession.Id, associationSession.RedirectUrl);
