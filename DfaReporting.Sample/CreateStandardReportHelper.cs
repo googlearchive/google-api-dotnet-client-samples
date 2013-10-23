@@ -19,7 +19,6 @@ using System.Collections.Generic;
 
 using Google.Apis.Dfareporting.v1_2;
 using Google.Apis.Dfareporting.v1_2.Data;
-using Google.Apis.Samples.Helper;
 
 namespace DfaReporting.Sample
 {
@@ -49,9 +48,9 @@ namespace DfaReporting.Sample
         /// <returns>The newly created report</returns>
         public Report Insert(string userProfileId, DimensionValue advertiser, DateTime startDate, DateTime endDate)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Creating a new standard report for advertiser {0}%n", advertiser.Value);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Creating a new standard report for advertiser {0}%n", advertiser.Value);
+            Console.WriteLine("=================================================================");
 
             // Create a report.
             var report = new Report();
@@ -71,17 +70,14 @@ namespace DfaReporting.Sample
             };
             // Set the dimensions, metrics, and filters you want in the report. The available values can be found 
             // here: https://developers.google.com/doubleclick-advertisers/reporting/v1.1/dimensions
-            criteria.Dimensions = new List<SortedDimension> {
-                new SortedDimension { Name = "dfa:advertiser" } };
-            criteria.MetricNames = new List<string> {
-                "dfa:clicks",
-                "dfa:impressions" };
+            criteria.Dimensions = new List<SortedDimension> { new SortedDimension { Name = "dfa:advertiser" } };
+            criteria.MetricNames = new List<string> { "dfa:clicks", "dfa:impressions" };
             criteria.DimensionFilters = new List<DimensionValue> { advertiser };
 
             report.Criteria = criteria;
             Report result = service.Reports.Insert(report, userProfileId).Execute();
-            CommandLine.WriteLine("Created report with ID \"{0}\" and display name \"{1}\"", result.Id, result.Name);
-            CommandLine.WriteLine();
+            Console.WriteLine("Created report with ID \"{0}\" and display name \"{1}\"", result.Id, result.Name);
+            Console.WriteLine();
             return result;
         }
     }

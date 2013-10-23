@@ -16,16 +16,15 @@ limitations under the License.
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
-using DotNetOpenAuth.OAuth2;
-
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Prediction.v1_3;
 using Google.Apis.Prediction.v1_3.Data;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
-using Google.Apis.Util;
+using Google.Apis.Util.Store;
 
 namespace Prediction.HostedExample
 {
@@ -39,72 +38,55 @@ namespace Prediction.HostedExample
         [STAThread]
         static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Prediction API");
+            Console.WriteLine("Prediction API");
+            Console.WriteLine("==============");
 
-            CommandLine.WriteLine();
-
-            // Register the authenticator.
-            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
-                {
-                    ClientIdentifier = credentials.ClientId,
-                    ClientSecret = credentials.ClientSecret
-                };
-
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
-
-            // Create the service.
-            var service = new PredictionService(new BaseClientService.Initializer()
-                {
-                    Authenticator = auth,
-                    ApplicationName = "Prediction API Sample",
-                });
-
-            RunPrediction(service);
-            CommandLine.PressAnyKeyToExit();
-        }
-
-        private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
-        {
-            // You should use a more secure way of storing the key here as
-            // .NET applications can be disassembled using a reflection tool.
-            const string STORAGE = "google.samples.dotnet.prediction";
-            const string KEY = "AF41sdBra7ufra)VD:@#A#a++=3e";
-            string scope = PredictionService.Scopes.Prediction.GetStringValue();
-
-            // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
-            if (state != null)
+            try
             {
-                try
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
                 {
-                    client.RefreshToken(state);
-                    return state; // Yes - we are done.
-                }
-                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
-                {
-                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
+                    Console.WriteLine("ERROR: " + e.Message);
                 }
             }
 
-            // Retrieve the authorization from the user.
-            state = AuthorizationMgr.RequestNativeAuthorization(client, scope);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
-            return state;
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
 
-        private static void RunPrediction(PredictionService service)
+        private async Task Run()
         {
-            // Make a prediction.
-            CommandLine.WriteAction("Performing a prediction...");
-            string text = "mucho bueno";
-            CommandLine.RequestUserInput("Text to analyze", ref text);
+            UserCredential credential;
+            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            {
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    new[] { PredictionService.Scope.Prediction },
+                    "user", CancellationToken.None, new FileDataStore("Prediction.HostedExample"));
+            }
 
+            // Create the service.
+            var service = new PredictionService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "Prediction API Sample",
+            });
+
+            // Make a prediction.
+            Console.WriteLine("Performing a prediction...");
+            string text = "mucho bueno";
+            Console.WriteLine("Enter a test to analyze [{0}]: ", text);
+            string userInput = Console.ReadLine();
+            if (!string.IsNullOrEmpty(userInput))
+            {
+                text = userInput;
+            }
             var input = new Input { InputValue = new Input.InputData { CsvInstance = new List<object> { text } } };
-            Output result = service.Hostedmodels.Predict(input, "sample.languageid").Execute();
-            CommandLine.WriteResult("Language", result.OutputLabel);
+            Output result = await service.Hostedmodels.Predict(input, "sample.languageid").ExecuteAsync();
+            Console.WriteLine("Language: " + result.OutputLabel);
         }
     }
 }

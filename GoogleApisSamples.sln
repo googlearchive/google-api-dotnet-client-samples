@@ -1,8 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleApis.SampleHelper", "SampleHelper\GoogleApis.SampleHelper.csproj", "{08079AFF-9A91-4387-8792-C731D18D4373}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.CreateTasks", "Tasks.CreateTasks\Tasks.CreateTasks.csproj", "{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.SimpleOAuth2", "Tasks.SimpleOAuth2\Tasks.SimpleOAuth2.csproj", "{F3E675B8-24D9-48E7-9C5C-E009CB6E21F7}"
@@ -66,10 +64,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{08079AFF-9A91-4387-8792-C731D18D4373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08079AFF-9A91-4387-8792-C731D18D4373}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08079AFF-9A91-4387-8792-C731D18D4373}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08079AFF-9A91-4387-8792-C731D18D4373}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU

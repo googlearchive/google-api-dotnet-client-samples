@@ -15,9 +15,11 @@ limitations under the License.
 */
 
 using System;
+using System.Threading.Tasks;
+
 using Google.Apis.Discovery.v1;
 using Google.Apis.Discovery.v1.Data;
-using Google.Apis.Samples.Helper;
+using Google.Apis.Services;
 
 namespace Discovery.ListAPIs
 {
@@ -30,28 +32,43 @@ namespace Discovery.ListAPIs
         [STAThread]
         static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Discovery API");
+            Console.WriteLine("Discovery API Sample");
+            Console.WriteLine("====================");
 
-            // Create the service.
-            var service = new DiscoveryService();
-            RunSample(service);
-            CommandLine.PressAnyKeyToExit();
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
+                {
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
 
-        private static void RunSample(DiscoveryService service)
+        private async Task Run()
         {
+            // Create the service.
+            var service = new DiscoveryService(new BaseClientService.Initializer
+                {
+                    ApplicationName = "Discovery Sample",
+                });
+
             // Run the request.
-            CommandLine.WriteAction("Executing List-request ...");
-            var result = service.Apis.List().Execute();
+            Console.WriteLine("Executing a list request...");
+            var result = await service.Apis.List().ExecuteAsync();
 
             // Display the results.
             if (result.Items != null)
             {
                 foreach (DirectoryList.ItemsData api in result.Items)
                 {
-                    CommandLine.WriteResult(api.Id, api.Title);
+                    Console.WriteLine(api.Id + " - " + api.Title);
                 }
             }
         }

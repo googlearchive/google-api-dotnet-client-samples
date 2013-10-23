@@ -15,7 +15,6 @@
 
 Imports Google.Apis.Discovery.v1
 Imports Google.Apis.Discovery.v1.Data
-Imports Google.Apis.Samples.Helper
 
 ''' <summary>
 ''' This example uses the discovery API to list all APIs in the discovery repository.
@@ -23,25 +22,26 @@ Imports Google.Apis.Samples.Helper
 ''' </summary>
 Class Program
     Shared Sub Main()
-        ' Display the header and initialize the sample.
-        CommandLine.EnableExceptionHandling()
-        CommandLine.DisplayGoogleSampleHeader("Discovery API")
+        Console.WriteLine("Discovery API Sample")
+        Console.WriteLine("====================")
 
         ' Create the service.
         Dim service = New DiscoveryService()
         RunSample(service)
-        CommandLine.PressAnyKeyToExit()
+
+        Console.WriteLine("Press any key to continue...")
+        Console.ReadKey()
     End Sub
 
     Private Shared Sub RunSample(ByVal service As DiscoveryService)
         ' Run the request.
-        CommandLine.WriteAction("Executing List-request ...")
+        Console.WriteLine("Executing a list request...")
         Dim result = service.Apis.List().Execute()
 
         ' Display the results.
         If result.Items IsNot Nothing Then
             For Each api As DirectoryList.ItemsData In result.Items
-                CommandLine.WriteResult(api.Id, api.Title)
+                Console.WriteLine(api.Id & " - " & api.Title)
             Next
         End If
     End Sub

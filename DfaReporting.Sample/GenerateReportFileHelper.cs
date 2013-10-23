@@ -19,56 +19,47 @@ using System.Threading;
 
 using Google.Apis.Dfareporting.v1_2;
 using Google.Apis.Dfareporting.v1_2.Data;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Util;
 
 namespace DfaReporting.Sample
 {
-    /// <summary>
-    /// This example generates a report file from a report.
-    /// </summary>
+    /// <summary>This example generates a report file from a report.</summary>
     internal class GenerateReportFileHelper
     {
         private readonly DfareportingService service;
 
-        /// <summary>
-        /// Instantiate a helper for generating a new file for a report.
-        /// </summary>
+        /// <summary>Instantiate a helper for generating a new file for a report.</summary>
         /// <param name="service">DfaReporting service object used to run the requests.</param>
         public GenerateReportFileHelper(DfareportingService service)
         {
             this.service = service;
         }
 
-        /// <summary>
-        /// Requests the generation of a new report file from a given report.
-        /// </summary>
+        /// <summary>Requests the generation of a new report file from a given report.</summary>
         /// <param name="userProfileId">The ID number of the DFA user profile to run this request as.</param>
         /// <param name="report">The report to request a new file for.</param>
         /// <returns>The generated report file.</returns>
         public File Run(string userProfileId, Report report, bool isSynchronous)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Generating a report file for report with ID {0}", report.Id);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Generating a report file for report with ID {0}", report.Id);
+            Console.WriteLine("=================================================================");
 
             ReportsResource.RunRequest request = service.Reports.Run(userProfileId, report.Id);
             request.Synchronous = isSynchronous;
             File reportFile = request.Execute();
 
-            CommandLine.WriteLine("Report execution initiated. Checking for completion...");
+            Console.WriteLine("Report execution initiated. Checking for completion...");
 
             reportFile = waitForReportRunCompletion(service, userProfileId, reportFile);
-            
             if (!reportFile.Status.Equals("REPORT_AVAILABLE"))
             {
-                CommandLine.WriteLine("Report file generation failed to finish. Final status is: {0}",
-                    reportFile.Status);
+                Console.WriteLine("Report file generation failed to finish. Final status is: {0}", reportFile.Status);
                 return null;
             }
 
-            CommandLine.WriteLine("Report file with ID \"{0}\" generated.", reportFile.Id);
-            CommandLine.WriteLine();
+            Console.WriteLine("Report file with ID \"{0}\" generated.", reportFile.Id);
+            Console.WriteLine();
             return reportFile;
         }
 
@@ -97,7 +88,7 @@ namespace DfaReporting.Sample
                 }
 
                 interval = backOff.GetNextBackOff(i);
-                CommandLine.WriteLine("Polling again in {0} seconds.", interval);
+                Console.WriteLine("Polling again in {0} seconds.", interval);
                 Thread.Sleep(interval);
                 file = service.Reports.Files.Get(userProfileId, file.ReportId, file.Id).Execute();
             }

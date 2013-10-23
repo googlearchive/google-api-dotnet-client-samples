@@ -14,14 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using System;
 using System.IO;
 using System.Net;
 
 using Google.Apis.Dfareporting.v1_2;
 using Google.Apis.Dfareporting.v1_2.Data;
 using File = Google.Apis.Dfareporting.v1_2.Data.File;
-using Google.Apis.Samples.Helper;
-
+using Google.Apis.Download;
 
 namespace DfaReporting.Sample
 {
@@ -41,27 +41,24 @@ namespace DfaReporting.Sample
             this.service = service;
         }
 
-        /// <summary>
-        /// Fetches the contents of a report file.
-        /// </summary>
+        /// <summary>Fetches the contents of a report file.</summary>
         /// <param name="reportFile">The completed report file to download.</param>
         public void Run(File reportFile)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Retrieving and printing a report file for report with ID {0}",
-                reportFile.ReportId);
-            CommandLine.WriteLine("The ID number of this report file is {0}", reportFile.Id);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Retrieving and printing a report file for report with ID {0}", reportFile.ReportId);
+            Console.WriteLine("The ID number of this report file is {0}", reportFile.Id);
+            Console.WriteLine("=================================================================");
 
             string url = reportFile.Urls.ApiUrl;
-            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
-            service.Authenticator.ApplyAuthenticationToRequest(webRequest);
-            using (Stream stream = webRequest.GetResponse().GetResponseStream())
+            using (var stream = new MemoryStream())
             {
-                StreamReader reader = new StreamReader(new BufferedStream(stream));
+                new MediaDownloader(service).Download(url, stream);
+                stream.Position = 0;
 
+                StreamReader reader = new StreamReader(stream);
                 string report = reader.ReadToEnd();
-                CommandLine.WriteLine(report);
+                Console.WriteLine(report);
             }
         }
     }

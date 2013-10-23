@@ -15,16 +15,15 @@ limitations under the License.
 */
 
 using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
-using DotNetOpenAuth.OAuth2;
-
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Dfareporting.v1_2;
 using Google.Apis.Dfareporting.v1_2.Data;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
-using Google.Apis.Util;
+using Google.Apis.Util.Store;
 
 namespace DfaReporting.Sample
 {
@@ -59,8 +58,10 @@ namespace DfaReporting.Sample
     /// </summary>
     internal class Program
     {
-        private static readonly string DfaReportingScope = DfareportingService.Scopes.Dfareporting.GetStringValue();
-        private const string DevStorageScopeReadOnly = "https://www.googleapis.com/auth/devstorage.read_only";
+        private static readonly IEnumerable<string> scopes = new[] {
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            DfareportingService.Scope.Dfareporting };
+
         private const int MaxListPageSize = 50;
         private const int MaxReportPageSize = 10;
         private static readonly DateTime StartDate = DateTime.Today.AddDays(-7);
@@ -69,28 +70,51 @@ namespace DfaReporting.Sample
         [STAThread]
         static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("DFA Reporting API Command Line Sample");
+            Console.WriteLine("DFA Reporting API Command Line Sample");
+            Console.WriteLine("=====================================");
+            Console.WriteLine("");
 
-            // Register the authenticator.
-            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
                 {
-                    ClientIdentifier = credentials.ClientId,
-                    ClientSecret = credentials.ClientSecret
-                };
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+        private async Task Run()
+        {
+            UserCredential credential;
+            using (var stream = new System.IO.FileStream("client_secrets.json", System.IO.FileMode.Open,
+                System.IO.FileAccess.Read))
+            {
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    scopes,
+                    "dfa-user", CancellationToken.None, new FileDataStore("DfaReporting.Sample"));
+            }
 
             // Create the service.
             var service = new DfareportingService(new BaseClientService.Initializer
                 {
-                    Authenticator = auth,
+                    HttpClientInitializer = credential,
                     ApplicationName = "DFA API Sample",
                 });
 
             // Choose a user profile ID to use in the following samples.
-            string userProfileId = GetUserProfileId(service);
+            var userProfileId = GetUserProfileId(service);
+            if (string.IsNullOrEmpty(userProfileId))
+            {
+                return;
+            }
 
             // Create and run a standard report.
             CreateAndRunStandardReport(service, userProfileId);
@@ -100,8 +124,6 @@ namespace DfaReporting.Sample
 
             // List all of the Reports you have access to.
             new GetAllReportsHelper(service).List(userProfileId, MaxReportPageSize);
-
-            CommandLine.PressAnyKeyToExit();
         }
 
         private static string GetUserProfileId(DfareportingService service)
@@ -109,9 +131,8 @@ namespace DfaReporting.Sample
             UserProfileList userProfiles = new GetAllUserProfilesHelper(service).Run();
             if (userProfiles.Items.Count == 0)
             {
-                CommandLine.WriteLine("No user profiles found.");
-                CommandLine.PressAnyKeyToExit();
-                Environment.Exit(1);
+                Console.WriteLine("No user profiles found.");
+                return null;
             }
             return userProfiles.Items[0].ProfileId;
         }
@@ -158,35 +179,6 @@ namespace DfaReporting.Sample
                     new DownloadReportFileHelper(service).Run(file);
                 }
             }
-        }
-
-        private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
-        {
-            // You should use a more secure way of storing the key here as
-            // .NET applications can be disassembled using a reflection tool.
-            const string STORAGE = "google.samples.dotnet.dfareporting";
-            const string KEY = "GV^F*(#$:P_NLOn890HC";
-
-            // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
-            if (state != null)
-            {
-                try
-                {
-                    client.RefreshToken(state);
-                    return state;
-                    // Yes - we are done.
-                }
-                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
-                {
-                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
-                }
-            }
-
-            // Retrieve the authorization from the user.
-            state = AuthorizationMgr.RequestNativeAuthorization(client, DfaReportingScope, DevStorageScopeReadOnly);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
-            return state;
         }
     }
 }

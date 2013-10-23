@@ -13,17 +13,15 @@
 'limitations under the License.
 
 Imports System.Collections.Generic
+Imports System.IO
+Imports System.Threading
 
-Imports DotNetOpenAuth.OAuth2
-
-Imports Google.Apis.Authentication.OAuth2
-Imports Google.Apis.Authentication.OAuth2.DotNetOpenAuth
 Imports Google.Apis.Calendar.v3
 Imports Google.Apis.Calendar.v3.Data
 Imports Google.Apis.Calendar.v3.EventsResource
-Imports Google.Apis.Samples.Helper
 Imports Google.Apis.Services
-Imports Google.Apis.Util
+Imports Google.Apis.Auth.OAuth2
+Imports Google.Apis.Util.Store
 
 ''' <summary>
 ''' An sample for the Calendar API which displays a list of calendars and events in the first calendar.
@@ -31,30 +29,31 @@ Imports Google.Apis.Util
 ''' </summary>
 Module Program
 
-    '' Calendar scopes which is initialized on the main method
+    '' Calendar scopes which is initialized on the main method.
     Dim scopes As IList(Of String) = New List(Of String)()
 
-    '' Calendar service
+    '' Calendar service.
     Dim service As CalendarService
 
     Sub Main()
-        ' Add the calendar specific scope to the scopes list
-        scopes.Add(CalendarService.Scopes.Calendar.GetStringValue())
+        ' Add the calendar specific scope to the scopes list.
+        scopes.Add(CalendarService.Scope.Calendar)
 
-        ' Display the header and initialize the sample
-        CommandLine.EnableExceptionHandling()
-        CommandLine.DisplayGoogleSampleHeader("Google.Api.Calendar.v3 Sample")
+        ' Display the header and initialize the sample.
+        Console.WriteLine("Google.Apis.Calendar.v3 Sample")
+        Console.WriteLine("==============================")
 
-        ' Create the authenticator
-        Dim credentials As FullClientCredentials = PromptingClientCredentials.EnsureFullClientCredentials()
-        Dim provider = New NativeApplicationClient(GoogleAuthenticationServer.Description)
-        provider.ClientIdentifier = credentials.ClientId
-        provider.ClientSecret = credentials.ClientSecret
-        Dim auth As New OAuth2Authenticator(Of NativeApplicationClient)(provider, AddressOf GetAuthorization)
+        Dim credential As UserCredential
+        Using stream As New FileStream("client_secrets.json", FileMode.Open, FileAccess.Read)
+            credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets, scopes, "user", CancellationToken.None,
+                    New FileDataStore("Calendar.VB.Sample")).Result
+        End Using
 
         ' Create the calendar service using an initializer instance
         Dim initializer As New BaseClientService.Initializer()
-        initializer.Authenticator = auth
+        initializer.HttpClientInitializer = credential
+        initializer.ApplicationName = "VB.NET Calendar Sample"
         service = New CalendarService(initializer)
 
         ' Fetch the list of calendar list
@@ -67,44 +66,21 @@ Module Program
             DisplayFirstCalendarEvents(calendar)
         Next
 
-        CommandLine.PressAnyKeyToExit()
+        Console.WriteLine("Press any key to continue...")
+        Console.ReadKey()
     End Sub
-
-    Function GetAuthorization(client As NativeApplicationClient) As IAuthorizationState
-        ' You should use a more secure way of storing the key here as
-        ' .NET applications can be disassembled using a reflection tool.
-        Const STORAGE As String = "google.samples.dotnet.calendar"
-        Const KEY As String = "s0mekey"
-
-        ' Check if there is a cached refresh token available.
-        Dim state As IAuthorizationState = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY)
-        If Not state Is Nothing Then
-            Try
-                client.RefreshToken(state)
-                Return state ' we are done
-            Catch ex As DotNetOpenAuth.Messaging.ProtocolException
-                CommandLine.WriteError("Using an existing refresh token failed: " + ex.Message)
-                CommandLine.WriteLine()
-            End Try
-        End If
-
-        ' Retrieve the authorization from the user
-        state = AuthorizationMgr.RequestNativeAuthorization(client, scopes.ToArray())
-        AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state)
-        Return state
-    End Function
 
     ''' <summary>Displays all calendars.</summary>
     Private Sub DisplayList(list As IList(Of CalendarListEntry))
-        CommandLine.WriteLine("Lists of calendars:")
+        Console.WriteLine("Lists of calendars:")
         For Each item As CalendarListEntry In list
-            CommandLine.WriteResult(item.Summary, "Location: " & item.Location & ", TimeZone: " & item.TimeZone)
+            Console.WriteLine(item.Summary & ". Location: " & item.Location & ", TimeZone: " & item.TimeZone)
         Next
     End Sub
 
     ''' <summary>Displays the calendar's events.</summary>
     Private Sub DisplayFirstCalendarEvents(list As CalendarListEntry)
-        CommandLine.WriteLine(Environment.NewLine & "Maximum 5 first events from {0}:", list.Summary)
+        Console.WriteLine(Environment.NewLine & "Maximum 5 first events from {0}:", list.Summary)
         Dim requeust As ListRequest = service.Events.List(list.Id)
         ' Set MaxResults and TimeMin with sample values
         requeust.MaxResults = 5
@@ -118,7 +94,7 @@ Module Program
                 End If
             End If
 
-            CommandLine.WriteResult(calendarEvent.Summary, "Start at: " & startDate)
+            Console.WriteLine(calendarEvent.Summary & ". Start at: " & startDate)
         Next
     End Sub
 

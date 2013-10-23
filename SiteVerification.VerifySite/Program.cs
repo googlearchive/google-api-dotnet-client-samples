@@ -15,16 +15,14 @@ limitations under the License.
 */
 
 using System;
+using System.IO;
+using System.Threading;
 
-using DotNetOpenAuth.OAuth2;
-
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Samples.Helper;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.SiteVerification.v1;
 using Google.Apis.SiteVerification.v1.Data;
-using Google.Apis.Util;
+using Google.Apis.Util.Store;
 
 namespace SiteVerification.VerifySite
 {
@@ -37,36 +35,32 @@ namespace SiteVerification.VerifySite
     /// </summary>
     internal class Program
     {
-        private static readonly string Scope = SiteVerificationService.Scopes.Siteverification.GetStringValue();
-
         [STAThread]
         static void Main(string[] args)
         {
             // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Site Verification sample");
+            Console.WriteLine("Site Verification sample");
+            Console.WriteLine("========================");
 
-            // Register the authenticator.
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
-            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
+            UserCredential credential;
+            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            {
+                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    new[] { SiteVerificationService.Scope.Siteverification },
+                    "user", CancellationToken.None, new FileDataStore("SiteVerification.VerifySite")).Result;
+            }
 
             // Create the service.
             var service = new SiteVerificationService(new BaseClientService.Initializer
                 {
-                    Authenticator = auth,
+                    HttpClientInitializer = credential,
                     ApplicationName = "SiteVerification API Sample",
                 });
             RunVerification(service);
-            CommandLine.PressAnyKeyToExit();
-        }
 
-        private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
-        {
-            // Retrieve the authorization from the user.
-            return AuthorizationMgr.RequestNativeAuthorization(client, Scope);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -75,13 +69,12 @@ namespace SiteVerification.VerifySite
         private static void RunVerification(SiteVerificationService service)
         {
             // Request user input.
-            string site = Util.GetSingleLineClipboardContent(96);
-            CommandLine.WriteAction("Please enter the URL of the site to verify:");
-            CommandLine.RequestUserInput("URL", ref site);
-            CommandLine.WriteLine();
+            Console.WriteLine("Please enter the URL of the site to verify:");
+            var site = Console.ReadLine();
+            Console.WriteLine();
 
             // Example of a GetToken call.
-            CommandLine.WriteAction("Retrieving a meta token ...");
+            Console.WriteLine("Retrieving a meta token ...");
             var request = service.WebResource.GetToken(new SiteVerificationWebResourceGettokenRequest()
             {
                 VerificationMethod = "meta",
@@ -92,23 +85,24 @@ namespace SiteVerification.VerifySite
                 }
             });
             var response = request.Execute();
-            CommandLine.WriteResult("Token", response.Token);
-            Util.SetClipboard(response.Token);
-            CommandLine.WriteLine();
+            Console.WriteLine("Token: " + response.Token);
+            Console.WriteLine();
 
-            CommandLine.WriteAction("Please place this token on your webpage now.");
-            CommandLine.PressEnterToContinue();
-            CommandLine.WriteLine();
+            Console.WriteLine("Please place this token on your webpage now.");
+            Console.WriteLine("Press ENTER to continue");
+            Console.ReadLine();
+            Console.WriteLine();
 
             // Example of an Insert call.
-            CommandLine.WriteAction("Verifiying...");
+            Console.WriteLine("Verifying...");
             var body = new SiteVerificationWebResourceResource();
             body.Site = new SiteVerificationWebResourceResource.SiteData();
             body.Site.Identifier = site;
             body.Site.Type = "site";
             var verificationResponse = service.WebResource.Insert(body, "meta").Execute();
-            CommandLine.WriteResult("Verification", verificationResponse.Id);
-            CommandLine.WriteAction("Verification successful!");
+
+            Console.WriteLine("Verification:" + verificationResponse.Id);
+            Console.WriteLine("Verification successful!");
         }
     }
 }

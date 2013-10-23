@@ -18,13 +18,19 @@
 hg clone https://code.google.com/p/google-api-dotnet-client.samples/ google-api-dotnet-client-samples</code></pre> 
  
 <h3>2. API access Instructions</h3> 
-<p><b>Important:</b> after checking out the project, and before compiling
-and running it, you need to:
+<p><b>Important:</b> after checking out the project, compiling and running it, you need to do the following:
 <ul> 
-<li><a href="http://code.google.com/apis/console-help/#creatingdeletingprojects">Create a project in Google APIs console</a></li> 
-<li><a href="http://code.google.com/apis/console-help/#activatingapis">Activate</a> the Drive API</li> 
-</ul> 
-</p> 
+<li>Visit the <a href="https://code.google.com/apis/console/">Google APIs console</a></li>
+	<li>If this is your first time, click "Create project..."</li>
+	<li>Otherwise, click on the drop down under the "Google APIs" logo at
+	    the top left, and click "Create..." under "Other projects"</li>
+	<li>Click on "API Access", and then on "Create an OAuth 2.0 Client ID...".</li>
+	<li>Enter a product name and click "Next".</li>
+	<li>Select "Installed application" and click "Create client ID".</li>
+	<li>In the newly created "Client ID for installed applications", copy the client ID and client secrets into the AdSenseSample.cs file.</li>
+	<li><a href="https://code.google.com/apis/console/?api=drive">Activate</a> the Drive API for your project.</li> 
+</ul>
+</p>
  
 <h3>Setup Project in Visual Studio</h3> 
 <ul>
@@ -32,6 +38,5 @@ and running it, you need to:
         <li>Click on Build &gt; Rebuild Solution</li>
         <li>Execute the .exe in <i>Drive.Sample\bin\Debug</i></li>
 </ul>
-
 </body> 
 </html>

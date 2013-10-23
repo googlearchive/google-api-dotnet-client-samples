@@ -15,21 +15,17 @@ limitations under the License.
 */
 
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
-using DotNetOpenAuth.OAuth2;
-
 using Google;
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Download;
 using Google.Apis.Drive.v2;
 using Google.Apis.Drive.v2.Data;
 using Google.Apis.Logging;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
 using Google.Apis.Upload;
-using Google.Apis.Util;
 
 namespace Drive.Sample
 {
@@ -52,10 +48,10 @@ namespace Drive.Sample
         private const int DownloadChunkSize = 256 * KB;
 
         // CHANGE THIS with full path to the file you want to upload
-        private const string UploadFileName = @"FILE_TO_UPLOAD_HERE";
+        private const string UploadFileName = @"Z:\shared\2012-09-14 20.57.32.jpg";
 
         // CHANGE THIS with a download directory
-        private const string DownloadDirectoryName = @"DIRECTORY_TO_SAVE_THE_DOWNLOADED_MEDIA_HERE";
+        private const string DownloadDirectoryName = @"z:\Shared\";
 
         // CHANGE THIS if you upload a file type other than a jpg
         private const string ContentType = @"image/jpeg";
@@ -66,8 +62,7 @@ namespace Drive.Sample
         private static readonly ILogger Logger;
 
         /// <summary>The Drive API scopes.</summary>
-        private static readonly string[] Scopes = new[] { 
-            DriveService.Scopes.DriveFile.GetStringValue(), DriveService.Scopes.Drive.GetStringValue() };
+        private static readonly string[] Scopes = new[] { DriveService.Scope.DriveFile, DriveService.Scope.Drive };
 
         /// <summary>
         /// The file which was uploaded. We will use its download Url to download it using our media downloader object.
@@ -76,51 +71,63 @@ namespace Drive.Sample
 
         static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Drive API");
+            Console.WriteLine("Google Drive API Sample");
 
-            // Register the authenticator.
-            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
                 {
-                    ClientIdentifier = credentials.ClientId,
-                    ClientSecret = credentials.ClientSecret
-                };
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+        private async Task Run()
+        {
+            GoogleWebAuthorizationBroker.Folder = "Drive.Sample";
+            UserCredential credential;
+            using (var stream = new System.IO.FileStream("client_secrets.json",
+                System.IO.FileMode.Open, System.IO.FileAccess.Read))
+            {
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets, Scopes, "user", CancellationToken.None);
+            }
 
             // Create the service.
             var service = new DriveService(new BaseClientService.Initializer()
             {
-                Authenticator = auth,
+                HttpClientInitializer = credential,
                 ApplicationName = "Drive API Sample",
             });
 
-            UploadFileAsync(service).ContinueWith(t =>
-                {
-                    // uploaded succeeded
-                    Console.WriteLine("\"{0}\" was uploaded successfully", uploadedFile.Title);
-                    DownloadFile(service, uploadedFile.DownloadUrl);
-                    DeleteFile(service, uploadedFile);
-                }, TaskContinuationOptions.OnlyOnRanToCompletion);
+            await UploadFileAsync(service);
 
-            CommandLine.PressAnyKeyToExit();
+            // uploaded succeeded
+            Console.WriteLine("\"{0}\" was uploaded successfully", uploadedFile.Title);
+            await DownloadFile(service, uploadedFile.DownloadUrl);
+            await DeleteFile(service, uploadedFile);
         }
 
         /// <summary>Uploads file asynchronously.</summary>
-        private static Task<IUploadProgress> UploadFileAsync(DriveService service)
+        private Task<IUploadProgress> UploadFileAsync(DriveService service)
         {
             var title = UploadFileName;
             if (title.LastIndexOf('\\') != -1)
             {
                 title = title.Substring(title.LastIndexOf('\\') + 1);
             }
+
             var uploadStream = new System.IO.FileStream(UploadFileName, System.IO.FileMode.Open,
                 System.IO.FileAccess.Read);
-            var insert = service.Files.Insert(new File
-                {
-                    Title = title,
-                }, uploadStream, ContentType);
+
+            var insert = service.Files.Insert(new File { Title = title }, uploadStream, ContentType);
 
             insert.ChunkSize = FilesResource.InsertMediaUpload.MinimumChunkSize * 2;
             insert.ProgressChanged += Upload_ProgressChanged;
@@ -144,7 +151,7 @@ namespace Drive.Sample
         }
 
         /// <summary>Downloads the media from the given URL.</summary>
-        private static void DownloadFile(DriveService service, string url)
+        private async Task DownloadFile(DriveService service, string url)
         {
             var downloader = new MediaDownloader(service);
             downloader.ChunkSize = DownloadChunkSize;
@@ -158,7 +165,7 @@ namespace Drive.Sample
             using (var fileStream = new System.IO.FileStream(fileName,
                 System.IO.FileMode.Create, System.IO.FileAccess.Write))
             {
-                var progress = downloader.Download(url, fileStream);
+                var progress = await downloader.DownloadAsync(url, fileStream);
                 if (progress.Status == DownloadStatus.Completed)
                 {
                     Console.WriteLine(fileName + " was downloaded successfully");
@@ -172,11 +179,11 @@ namespace Drive.Sample
         }
 
         /// <summary>Deletes the given file from drive (not the file system).</summary>
-        private static void DeleteFile(DriveService service, File file)
+        private async Task DeleteFile(DriveService service, File file)
         {
-            CommandLine.WriteLine("Deleting file '{0}'...", file.Id);
-            service.Files.Delete(file.Id).Execute();
-            CommandLine.WriteLine("File was deleted successfully");
+            Console.WriteLine("Deleting file '{0}'...", file.Id);
+            await service.Files.Delete(file.Id).ExecuteAsync();
+            Console.WriteLine("File was deleted successfully");
         }
 
         #region Progress and Response changes
@@ -197,33 +204,5 @@ namespace Drive.Sample
         }
 
         #endregion
-
-        private static IAuthorizationState GetAuthorization(NativeApplicationClient client)
-        {
-            // You should use a more secure way of storing the key here as
-            // .NET applications can be disassembled using a reflection tool.
-            const string STORAGE = "google.samples.dotnet.drive";
-            const string KEY = "y},drdzf11x9;87";
-
-            // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
-            if (state != null)
-            {
-                try
-                {
-                    client.RefreshToken(state);
-                    return state; // Yes - we are done.
-                }
-                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
-                {
-                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
-                }
-            }
-
-            // Retrieve the authorization from the user.
-            state = AuthorizationMgr.RequestNativeAuthorization(client, Scopes);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
-            return state;
-        }
     }
 }

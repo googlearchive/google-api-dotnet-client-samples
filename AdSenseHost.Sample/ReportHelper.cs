@@ -20,13 +20,11 @@ using System.Linq;
 using System.Text;
 
 using Google.Apis.AdSenseHost.v4_1.Data;
-using Google.Apis.Samples.Helper;
 
 namespace AdSenseHost.Sample
 {
     internal class ReportHelper
     {
-
         /// <summary>
         /// Displays the headers for the report.
         /// </summary>
@@ -35,9 +33,9 @@ namespace AdSenseHost.Sample
         {
             foreach (var header in headers)
             {
-                CommandLine.Write("{0, -25}", header.Name);
+                Console.WriteLine("{0, -25}", header.Name);
             }
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -50,9 +48,9 @@ namespace AdSenseHost.Sample
             {
                 foreach (var column in row)
                 {
-                    CommandLine.Write("{0, -25}", column);
+                    Console.WriteLine("{0, -25}", column);
                 }
-                CommandLine.WriteLine();
+                Console.WriteLine();
             }
         }
 

@@ -14,9 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using System;
+
 using Google.Apis.Dfareporting.v1_2;
 using Google.Apis.Dfareporting.v1_2.Data;
-using Google.Apis.Samples.Helper;
 
 namespace DfaReporting.Sample
 {
@@ -43,10 +44,9 @@ namespace DfaReporting.Sample
         /// <param name="maxPageSize">The maximum number of results per page.</param>
         public void List(string userProfileId, int maxPageSize)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all reports");
-            CommandLine.WriteLine("=================================================================");
-
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all reports");
+            Console.WriteLine("=================================================================");
 
             // Retrieve account list in pages and display data as we receive it.
             string pageToken = null;
@@ -60,14 +60,14 @@ namespace DfaReporting.Sample
 
                 foreach (var report in reports.Items)
                 {
-                    CommandLine.WriteLine("Report with ID \"{0}\" and display name \"{1}\" was found.%n",
-                        report.Id, report.Name);
+                    Console.WriteLine("Report with ID \"{0}\" and display name \"{1}\" was found.", report.Id,
+                        report.Name);
                 }
 
                 pageToken = reports.NextPageToken;
             } while (reports.Items.Count > 0);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
     }
 }

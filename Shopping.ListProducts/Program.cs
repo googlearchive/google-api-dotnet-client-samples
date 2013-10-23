@@ -15,8 +15,8 @@ limitations under the License.
 */
 
 using System;
+using System.Threading.Tasks;
 
-using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
 using Google.Apis.Shopping.v1;
 using Google.Apis.Shopping.v1.Data;
@@ -32,32 +32,44 @@ namespace Shopping.ListProducts
         [STAThread]
         static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Shopping API: List products");
+            Console.WriteLine("Shopping API Sample");
+            Console.WriteLine("===================");
 
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
+                {
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+        private async Task Run()
+        {
             // Create the service.
             var service = new ShoppingService(new BaseClientService.Initializer()
-                {
-                    ApiKey = GetApiKey(),
-                    ApplicationName = "Shopping API Sample",
-                });
-            RunSample(service);
-            CommandLine.PressAnyKeyToExit();
-        }
+            {
+                ApiKey = GetApiKey(),
+                ApplicationName = "Shopping API Sample",
+            });
 
-        private static string GetApiKey()
-        {
-            return PromptingClientCredentials.EnsureSimpleClientCredentials().ApiKey;
-        }
-
-        static void RunSample(ShoppingService service)
-        {
             // Build the request.
             string query = "Camera";
-            CommandLine.RequestUserInput("Product to search for", ref query);
-            CommandLine.WriteLine();
-            CommandLine.WriteAction("Executing request ...");
+            Console.Write("Enter a product to search for [{0}]: ", query);
+            var input = Console.ReadLine();
+            if (!string.IsNullOrEmpty(input))
+            {
+                query = input;
+            }
+            Console.WriteLine();
+            Console.WriteLine("Executing request ...");
 
             var request = service.Products.List("public");
             request.Country = "us";
@@ -68,7 +80,7 @@ namespace Shopping.ListProducts
             do
             {
                 request.StartIndex = startIndex;
-                Products response = request.Execute();
+                Products response = await request.ExecuteAsync();
 
                 if (response.CurrentItemCount == 0)
                 {
@@ -78,9 +90,21 @@ namespace Shopping.ListProducts
                 // Show the items.
                 foreach (Product item in response.Items)
                 {
-                    CommandLine.WriteResult((startIndex++) + ". Result", item.ProductValue.Title.TrimByLength(60));
+                    Console.WriteLine((startIndex++) + ". Result:" + item.ProductValue.Title);
                 }
-            } while (CommandLine.RequestUserChoice("Do you want to see more items?"));
+            } while (CanContinue());
+        }
+
+        private static string GetApiKey()
+        {
+            Console.Write("Enter the API Key: ");
+            return Console.ReadLine();
+        }
+
+        private bool CanContinue()
+        {
+            Console.WriteLine("Do you want to see more items? [Enter 'Yes' or 'No']");
+            return Console.ReadLine().ToLower() == "yes";
         }
     }
 }

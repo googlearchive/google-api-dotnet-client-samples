@@ -16,18 +16,15 @@ limitations under the License.
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 
-using DotNetOpenAuth.OAuth2;
-
-using Google.Apis.Authentication;
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Prediction.v1_3;
 using Google.Apis.Prediction.v1_3.Data;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
-using Google.Apis.Util;
+using Google.Apis.Util.Store;
 
 namespace Prediction.Simple
 {
@@ -35,95 +32,82 @@ namespace Prediction.Simple
     /// Sample for the prediction API.
     /// This sample trains a simple model, and makes a prediction on the user input.
     /// 
-    /// This sample requires you to have the file specified in ClientCredentials.cs uploaded to Google-Storage.
-    /// Instructions on enabling G-Storage: http://code.google.com/apis/storage/docs/signup.html
     /// </summary>
     internal class Program
     {
         [STAThread]
         static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Prediction API");
+            Console.WriteLine("Prediction API");
+            Console.WriteLine("==============");
 
-            CommandLine.WriteLine();
-
-            // Register the authenticator.
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
                 {
-                    ClientIdentifier = ClientCredentials.ClientID,
-                    ClientSecret = ClientCredentials.ClientSecret
-                };
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+        private async Task Run()
+        {
+            UserCredential credential;
+            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            {
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    new[] { PredictionService.Scope.Prediction },
+                    "user", CancellationToken.None, new FileDataStore("PredictionAPIStore"));
+            }
 
             // Create the service.
             var service = new PredictionService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth,
+                    HttpClientInitializer = credential,
                     ApplicationName = "Prediction API Sample",
                 });
-            RunPrediction(service);
-            CommandLine.PressAnyKeyToExit();
-        }
 
-        private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
-        {
-            // You should use a more secure way of storing the key here as
-            // .NET applications can be disassembled using a reflection tool.
-            const string STORAGE = "google.samples.dotnet.prediction";
-            const string KEY = "AF41sdBra7ufra)VD:@#A#a++=3e";
-            string scope = PredictionService.Scopes.Prediction.GetStringValue();
-
-            // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
-            if (state != null)
-            {
-                try
-                {
-                    client.RefreshToken(state);
-                    return state; // Yes - we are done.
-                }
-                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
-                {
-                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
-                }
-            }
-
-            // Retrieve the authorization from the user.
-            state = AuthorizationMgr.RequestNativeAuthorization(client, scope);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
-            return state;
-        }
-
-        private static void RunPrediction(PredictionService service)
-        {
             // Train the service with the existing bucket data.
-            string id = ClientCredentials.BucketPath;
-            CommandLine.WriteAction("Performing training of the service ...");
-            CommandLine.WriteResult("Bucket", id);
+            string id = "<My Bucket>/language_id.txt";
+
+            // Instructions on enabling G-Storage: http://code.google.com/apis/storage/docs/signup.html.
+            Console.WriteLine("Performing training of the service ...");
+            Console.WriteLine("Bucket " + id);
             Training training = new Training { Id = id };
-            training = service.Training.Insert(training).Execute();
+            training = await service.Training.Insert(training).ExecuteAsync();
 
             // Wait until the training is complete.
             while (training.TrainingStatus == "RUNNING")
             {
-                CommandLine.Write("..");
-                Thread.Sleep(1000);
-                training = service.Training.Get(id).Execute();
+                Console.WriteLine("...");
+                await TaskEx.Delay(1000);
+                training = await service.Training.Get(id).ExecuteAsync();
             }
-            CommandLine.WriteLine();
-            CommandLine.WriteAction("Training complete!");
-            CommandLine.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Training complete!");
+            Console.WriteLine();
 
             // Make a prediction.
-            CommandLine.WriteAction("Performing a prediction...");
-            string text = "mucho bueno";
-            CommandLine.RequestUserInput("Text to analyze", ref text);
+            Console.WriteLine("Performing a prediction...");
 
+            string text = "mucho bueno";
+            Console.Write("Enter test to analyze [{0}]: ", text);
+            var userInput = Console.ReadLine();
+            if (!string.IsNullOrEmpty(userInput))
+            {
+                text = userInput;
+            }
             var input = new Input { InputValue = new Input.InputData { CsvInstance = new List<object> { text } } };
-            Output result = service.Training.Predict(input, id).Execute();
-            CommandLine.WriteResult("Language", result.OutputLabel);
+            Output result = await service.Training.Predict(input, id).ExecuteAsync();
+            Console.WriteLine("Language: {0}", result.OutputLabel);
         }
     }
 }

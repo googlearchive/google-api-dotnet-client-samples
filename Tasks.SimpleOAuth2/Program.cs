@@ -15,17 +15,14 @@ limitations under the License.
 */
 
 using System;
-using System.Diagnostics;
+using System.IO;
+using System.Threading;
 
-using DotNetOpenAuth.OAuth2;
-
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Samples.Helper;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Tasks.v1;
 using Google.Apis.Tasks.v1.Data;
-using Google.Apis.Util;
+using Google.Apis.Util.Store;
 
 namespace Google.Apis.Samples.TasksOAuth2
 {
@@ -37,51 +34,35 @@ namespace Google.Apis.Samples.TasksOAuth2
     {
         public static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Tasks API");
+            Console.WriteLine("Tasks OAuth2 Sample");
+            Console.WriteLine("===================");
 
-            // Register the authenticator.
-            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
-                {
-                    ClientIdentifier = credentials.ClientId,
-                    ClientSecret = credentials.ClientSecret
-                };
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
+            UserCredential credential;
+            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            {
+                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    new[] { TasksService.Scope.Tasks },
+                    "user", CancellationToken.None, new FileDataStore("Tasks.Auth.Store")).Result;
+            }
 
             // Create the service.
             var service = new TasksService(new BaseClientService.Initializer()
-                {
-                    Authenticator = auth,
-                    ApplicationName = "Tasks API Sample"
-                });
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "Tasks API Sample",
+            });
+
             TaskLists results = service.Tasklists.List().Execute();
-            CommandLine.WriteLine("   ^1Lists:");
+            Console.WriteLine("\tLists:");
 
             foreach (TaskList list in results.Items)
             {
-                CommandLine.WriteLine("     ^2" + list.Title);
+                Console.WriteLine("\t\t" + list.Title);
             }
 
-            CommandLine.PressAnyKeyToExit();
-        }
-
-        private static IAuthorizationState GetAuthorization(NativeApplicationClient arg)
-        {
-            // Get the auth URL:
-            IAuthorizationState state = new AuthorizationState(new[] { TasksService.Scopes.Tasks.GetStringValue() });
-            state.Callback = new Uri(NativeApplicationClient.OutOfBandCallbackUrl);
-            Uri authUri = arg.RequestUserAuthorization(state);
-
-            // Request authorization from the user (by opening a browser window):
-            Process.Start(authUri.ToString());
-            Console.Write("  Authorization Code: ");
-            string authCode = Console.ReadLine();
-            Console.WriteLine();
-
-            // Retrieve the access token by using the authorization code:
-            return arg.ProcessUserAuthorization(authCode, state);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
     }
 }

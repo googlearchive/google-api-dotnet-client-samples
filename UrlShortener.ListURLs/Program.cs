@@ -15,53 +15,66 @@ limitations under the License.
 */
 
 using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
-using DotNetOpenAuth.OAuth2;
-
-using Google.Apis.Authentication;
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Samples.Helper;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
-using Google.Apis.Util;
+using Google.Apis.Util.Store;
 
 namespace UrlShortener.ListURLs
 {
     /// <summary>
-    /// URLShortener OAuth2 Sample
-    /// 
-    /// This sample uses OAuth2 to retrieve a list of all the URL's you have shortened so far.
+    /// URLShortener OAuth2 Sample. This sample uses OAuth2 to retrieve a list of all the URL's you have shortened so 
+    /// far.
     /// </summary>
     internal class Program
     {
-        private static readonly string Scope = UrlshortenerService.Scopes.Urlshortener.GetStringValue();
-
         static void Main(string[] args)
         {
-            // Initialize this sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("URLShortener -- List URLs");
+            Console.WriteLine("URLShortener - List URLs");
+            Console.WriteLine("========================");
 
-            // Register the authenticator.
-            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
                 {
-                    ClientIdentifier = credentials.ClientId,
-                    ClientSecret = credentials.ClientSecret,
-                };
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+        private async Task Run()
+        {
+            UserCredential credential;
+            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            {
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    new[] { UrlshortenerService.Scope.Urlshortener },
+                    "user", CancellationToken.None, new FileDataStore("UrlShortener.Auth.Store"));
+            }
+
 
             // Create the service.
             var service = new UrlshortenerService(new BaseClientService.Initializer()
-                {
-                    Authenticator = auth,
-                    ApplicationName = "UrlShortener API Sample",
-                });
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "UrlShortener.ListURLs Sample",
+            });
 
             // List all shortened URLs:
-            CommandLine.WriteAction("Retrieving list of shortened urls...");
+            Console.WriteLine("Retrieving list of shortened urls...");
 
             int i = 0;
             string nextPageToken = null;
@@ -70,56 +83,25 @@ namespace UrlShortener.ListURLs
                 // Create and execute the request.
                 var request = service.Url.List();
                 request.StartToken = nextPageToken;
-                UrlHistory result = request.Execute();
+                UrlHistory result = await request.ExecuteAsync();
 
                 // List all items on this page.
                 if (result.Items != null)
                 {
                     foreach (Url item in result.Items)
                     {
-                        CommandLine.WriteResult((++i) + ".) URL", item.Id + " -> " + item.LongUrl);
+                        Console.WriteLine((++i) + ") URL" + item.Id + " -> " + item.LongUrl);
                     }
                 }
 
-                // Continue with the next page
+                // Continue with the next page.
                 nextPageToken = result.NextPageToken;
             } while (!string.IsNullOrEmpty(nextPageToken));
 
             if (i == 0)
             {
-                CommandLine.WriteAction("You don't have any shortened URLs! Visit http://goo.gl and create some.");
+                Console.WriteLine("You don't have any shortened URLs! Visit http://goo.gl and create some.");
             }
-
-            // ... and we are done.
-            CommandLine.PressAnyKeyToExit();
-        }
-
-        private static IAuthorizationState GetAuthorization(NativeApplicationClient client)
-        {
-            // You should use a more secure way of storing the key here as
-            // .NET applications can be disassembled using a reflection tool.
-            const string STORAGE = "google.samples.dotnet.urlshortener";
-            const string KEY = "S7Uf8AsapUWrac798uga5U8e5azePhAf";
-
-            // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
-            if (state != null)
-            {
-                try
-                {
-                    client.RefreshToken(state);
-                    return state; // Yes - we are done.
-                }
-                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
-                {
-                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
-                }
-            }
-
-            // Retrieve the authorization from the user.
-            state = AuthorizationMgr.RequestNativeAuthorization(client, Scope);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
-            return state;
         }
     }
 }

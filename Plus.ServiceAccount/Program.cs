@@ -15,19 +15,12 @@ limitations under the License.
 */
 
 using System;
-using System.Diagnostics;
-using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
-using DotNetOpenAuth.OAuth2;
-
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Plus.v1;
 using Google.Apis.Plus.v1.Data;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
-using Google.Apis.Util;
 
 namespace Google.Apis.Samples.PlusServiceAccount
 {
@@ -47,47 +40,32 @@ namespace Google.Apis.Samples.PlusServiceAccount
 
         public static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Plus API - Service Account");
+            Console.WriteLine("Plus API - Service Account");
+            Console.WriteLine("==========================");
 
-            String serviceAccountEmail = CommandLine.RequestUserInput<String>(
-                "Service account e-mail address (from the APIs Console)");
+            String serviceAccountEmail = "SERVICE_ACCOUNT_EMAIL_HERE";
 
-            try
+            var certificate = new X509Certificate2(@"key.p12", "notasecret", X509KeyStorageFlags.Exportable);
+
+            ServiceAccountCredential credential = new ServiceAccountCredential(
+               new ServiceAccountCredential.Initializer(serviceAccountEmail)
+               {
+                   Scopes = new[] { PlusService.Scope.PlusMe }
+               }.FromCertificate(certificate));
+
+            // Create the service.
+            var service = new PlusService(new BaseClientService.Initializer()
             {
-                X509Certificate2 certificate = new X509Certificate2(
-                    @"key.p12", "notasecret", X509KeyStorageFlags.Exportable);
-                // service account credential (uncomment ServiceAccountUser for domain-wide delegation)
-                var provider = new AssertionFlowClient(GoogleAuthenticationServer.Description, certificate)
-                {
-                    ServiceAccountId = serviceAccountEmail,
-                    Scope = PlusService.Scopes.PlusMe.GetStringValue(),
-                    // ServiceAccountUser = "user@example.com",
-                };
-                var auth = new OAuth2Authenticator<AssertionFlowClient>(
-                    provider, AssertionFlowClient.GetState);
+                HttpClientInitializer = credential,
+                ApplicationName = "Plus API Sample",
+            });
 
-                // Create the service.
-                var service = new PlusService(new BaseClientService.Initializer()
-                    {
-                        Authenticator = auth,
-                        ApplicationName = "Plus API Sample",
-                    });
-                Activity activity = service.Activities.Get(ACTIVITY_ID).Execute();
-                CommandLine.WriteLine("   ^1Activity: " + activity.Object.Content);
-                CommandLine.WriteLine("   ^1Video: " + activity.Object.Attachments[0].Url);
-                // Success.
-                CommandLine.PressAnyKeyToExit();
-            }
-            catch (CryptographicException)
-            {
-                CommandLine.WriteLine(
-                    "Unable to load certificate, please download key.p12 file from the Google " +
-                    "APIs Console at https://code.google.com/apis/console/");
-                CommandLine.PressAnyKeyToExit();
-            }
+            Activity activity = service.Activities.Get(ACTIVITY_ID).Execute();
+            Console.WriteLine("  Activity: " + activity.Object.Content);
+            Console.WriteLine("  Video: " + activity.Object.Attachments[0].Url);
 
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
     }
 }

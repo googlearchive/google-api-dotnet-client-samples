@@ -14,10 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-using Google.Apis.Authentication;
-using Google.Apis.Samples.Helper;
+using System;
+using System.Threading.Tasks;
+
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
+using Google.Apis.Services;
 
 namespace Google.Apis.Samples.CmdUrlShortener
 {
@@ -27,53 +29,95 @@ namespace Google.Apis.Samples.CmdUrlShortener
     /// </summary>
     internal class Program
     {
-        /// <summary>
-        /// Main method
-        /// </summary>
+        private readonly UrlshortenerService service;
+
         internal static void Main(string[] args)
         {
-            // Initialize this sample
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("URL Shortener");
+            Console.WriteLine("URL Shortener Sample");
+            Console.WriteLine("====================");
 
-            // Create the service
-            var service = new UrlshortenerService();
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
+                {
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
 
-            // Ask the user what he wants to do
-            CommandLine.RequestUserChoice(
-                "What do you want to do?", new UserOption("Create a short URL", () => CreateShortURL(service)),
-                new UserOption("Resolve a short URL", () => ResolveShortURL(service)));
-
-            CommandLine.PressAnyKeyToExit();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
 
-        private static void ResolveShortURL(UrlshortenerService service)
+        public Program()
+        {
+            service = new UrlshortenerService(new BaseClientService.Initializer
+                {
+                    ApplicationName = "UrlShortener.ShortenURL sample",
+                });
+        }
+
+        private async Task Run()
+        {
+            Console.WriteLine("What do you want to do?");
+            Console.WriteLine("Press 1 to create a short URL");
+            Console.WriteLine("Press 2 to resolve a short URL");
+
+            var input = Console.ReadLine();
+            if (input == "1")
+            {
+                await CreateShortURL();
+            }
+            else if (input == "2")
+            {
+                await ResolveShortURL();
+            }
+            else
+            {
+                Console.WriteLine("Invalid option!");
+            }
+        }
+
+        private async Task ResolveShortURL()
         {
             // Request input
             string urlToResolve = "http://goo.gl/hcEg7";
-            CommandLine.RequestUserInput("URL to resolve", ref urlToResolve);
-            CommandLine.WriteLine();
+            Console.Write("\tEnter a URL to resolve [{0}]: ", urlToResolve);
+            var input = Console.ReadLine();
+            if (!string.IsNullOrEmpty(input))
+            {
+                urlToResolve = input;
+            }
+            Console.WriteLine();
 
             // Resolve URL
-            Url response = service.Url.Get(urlToResolve).Execute();
+            Url response = await service.Url.Get(urlToResolve).ExecuteAsync();
 
             // Display response
-            CommandLine.WriteLine(" ^1Status:   ^9{0}", response.Status);
-            CommandLine.WriteLine(" ^1Long URL: ^9{0}", response.LongUrl);
+            Console.WriteLine("\tStatus:  {0}", response.Status);
+            Console.WriteLine("\tLong URL:{0}", response.LongUrl);
         }
 
-        private static void CreateShortURL(UrlshortenerService service)
+        private async Task CreateShortURL()
         {
             // Request input
             string urlToShorten = "http://maps.google.com/";
-            CommandLine.RequestUserInput("URL to shorten", ref urlToShorten);
-            CommandLine.WriteLine();
+            Console.Write("\tEnter a URL to shorten[{0}]: ", urlToShorten);
+            var input = Console.ReadLine();
+            if (!string.IsNullOrEmpty(input))
+            {
+                urlToShorten = input;
+            }
+            Console.WriteLine();
 
             // Shorten URL
-            Url response = service.Url.Insert(new Url { LongUrl = urlToShorten }).Execute();
+            Url response = await service.Url.Insert(new Url { LongUrl = urlToShorten }).ExecuteAsync();
 
             // Display response
-            CommandLine.WriteLine(" ^1Short URL: ^9{0}", response.Id);
+            Console.WriteLine("\tShort URL:{0}", response.Id);
         }
     }
 }

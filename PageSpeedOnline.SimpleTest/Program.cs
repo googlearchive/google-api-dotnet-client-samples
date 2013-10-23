@@ -15,9 +15,9 @@ limitations under the License.
 */
 
 using System;
+using System.Threading.Tasks;
 
 using Google.Apis.Pagespeedonline.v1;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
 
 namespace PageSpeedOnline.SimpleTest
@@ -31,10 +31,27 @@ namespace PageSpeedOnline.SimpleTest
         [STAThread]
         static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Page Speed Online API");
+            Console.WriteLine("Page Speed Online API");
+            Console.WriteLine("=====================");
 
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
+                {
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+        private async Task Run()
+        {
             // Create the service.
             var service = new PagespeedonlineService(new BaseClientService.Initializer()
                 {
@@ -42,27 +59,28 @@ namespace PageSpeedOnline.SimpleTest
                     ApplicationName = "PageSpeedOnline API Sample",
                 });
 
-            RunSample(service);
-            CommandLine.PressAnyKeyToExit();
-        }
-
-        private static void RunSample(PagespeedonlineService service)
-        {
             string url = "http://example.com";
-            CommandLine.RequestUserInput("URL to test", ref url);
-            CommandLine.WriteLine();
+            Console.Write("Enter a URL to search [{0}]: ", url);
+            var input = Console.ReadLine();
+            if (!string.IsNullOrEmpty(input))
+            {
+                url = input;
+            }
+
+            Console.WriteLine();
 
             // Run the request.
-            CommandLine.WriteAction("Measuring page score ...");
-            var result = service.Pagespeedapi.Runpagespeed(url).Execute();
+            Console.WriteLine("Measuring page score ...");
+            var result = await service.Pagespeedapi.Runpagespeed(url).ExecuteAsync();
 
             // Display the results.
-            CommandLine.WriteResult("Page score", result.Score);
+            Console.WriteLine("Page score: " + result.Score);
         }
 
         private static string GetApiKey()
         {
-            return PromptingClientCredentials.EnsureSimpleClientCredentials().ApiKey;
+            Console.Write("Enter the API Key: ");
+            return Console.ReadLine();
         }
     }
 }

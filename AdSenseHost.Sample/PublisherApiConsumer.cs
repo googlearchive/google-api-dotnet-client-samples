@@ -19,7 +19,6 @@ using System.Collections.Generic;
 
 using Google.Apis.AdSenseHost.v4_1;
 using Google.Apis.AdSenseHost.v4_1.Data;
-using Google.Apis.Samples.Helper;
 
 namespace AdSenseHost.Sample.Publisher
 {
@@ -66,15 +65,13 @@ namespace AdSenseHost.Sample.Publisher
 
         internal void RunCalls()
         {
-            CommandLine.WriteLine("For the rest of the samples you'll need a Publisher ID. If you haven't "
-                + "associated an AdSense account to your Host, set AssociationSession.cs as startup object "
-                + "and rebuild.");
+            Console.WriteLine("For the rest of the samples you'll need a Publisher ID. If you haven't associated an " +
+                "AdSense account to your Host, set AssociationSession.cs as startup object and rebuild.");
 
             // Get publisher ID from user.
-            string publisherId = null;
-            CommandLine.RequestUserInput("Insert Publisher ID", ref publisherId);
-
-            if (publisherId == null)
+            Console.WriteLine("Insert Publisher ID");
+            string publisherId = Console.ReadLine();
+            if (string.IsNullOrEmpty(publisherId))
             {
                 return;
             }
@@ -102,9 +99,9 @@ namespace AdSenseHost.Sample.Publisher
         /// <returns>The last page of retrieved ad clients.</returns>
         private AdClients GetAllAdClients(string accountId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all ad clients for account {0}", accountId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all ad clients for account {0}", accountId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve ad client list in pages and display data as we receive it.
             string pageToken = null;
@@ -121,37 +118,34 @@ namespace AdSenseHost.Sample.Publisher
                 {
                     foreach (var adClient in adClientResponse.Items)
                     {
-                        CommandLine.WriteLine("Ad client for product \"{0}\" with ID \"{1}\" was found.",
+                        Console.WriteLine("Ad client for product \"{0}\" with ID \"{1}\" was found.",
                             adClient.ProductCode, adClient.Id);
-                        CommandLine.WriteLine("\tSupports reporting: {0}",
+                        Console.WriteLine("\tSupports reporting: {0}",
                             adClient.SupportsReporting.Value ? "Yes" : "No");
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No ad clients found.");
+                    Console.WriteLine("No ad clients found.");
                 }
 
                 pageToken = adClientResponse.NextPageToken;
 
             } while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the last page of ad clients, so that the main sample has something to run.
             return adClientResponse;
         }
 
-        /// <summary>
-        /// This example prints all ad units in a publisher ad client.
-        /// </summary>
+        /// <summary>This example prints all ad units in a publisher ad client.</summary>
         /// <param name="accountId">The ID for the publisher account to be used.</param>
         /// <param name="adClientId">An arbitrary publisher ad client ID.</param>
         private void GetAllAdUnits(string accountId, string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all ad units for ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all ad units for ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve ad client list in pages and display data as we receive it.
             string pageToken = null;
@@ -168,33 +162,29 @@ namespace AdSenseHost.Sample.Publisher
                 {
                     foreach (var adUnit in adUnitResponse.Items)
                     {
-                        CommandLine.WriteLine("Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" " +
+                        Console.WriteLine("Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" " +
                             "was found.", adUnit.Code, adUnit.Name, adUnit.Status);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No ad units found.");
+                    Console.WriteLine("No ad units found.");
                 }
 
                 pageToken = adUnitResponse.NextPageToken;
-
             } while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
-        /// <summary>
-        /// This example adds a new ad unit to a publisher ad client.
-        /// </summary>
+        /// <summary>This example adds a new ad unit to a publisher ad client.</summary>
         /// <param name="accountId">The ID for the publisher account to be used.</param>
         /// <param name="adClientId">An arbitrary publisher ad client ID.</param>
         /// <returns>The created ad unit.</returns>
         private AdUnit AddAdUnit(string accountId, string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Adding ad unit to ad client {0}", accountId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Adding ad unit to ad client {0}", accountId);
+            Console.WriteLine("=================================================================");
 
             AdUnit newAdUnit = new AdUnit();
 
@@ -227,27 +217,25 @@ namespace AdSenseHost.Sample.Publisher
 
             AdUnit adUnit = insertRequest.Execute();
 
-            CommandLine.WriteLine("Ad unit of type {0}, name {1} and status {2} was created",
+            Console.WriteLine("Ad unit of type {0}, name {1} and status {2} was created",
                 adUnit.ContentAdsSettings.Type, adUnit.Name, adUnit.Status);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the Ad Unit that was just created
             return adUnit;
         }
 
-        /// <summary>
-        /// This example updates an ad unit on a publisher ad client.
-        /// </summary>
+        /// <summary>This example updates an ad unit on a publisher ad client.</summary>
         /// <param name="accountId">The ID for the publisher account to be used.</param>
         /// <param name="adClientId">An arbitrary publisher ad client ID.</param>
         /// <param name="adUnitId">The ID of the ad unit to be updated.</param>
         /// <returns>The updated custom channel.</returns>
         private AdUnit UpdateAdUnit(string accountId, string adClientId, string adUnitId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Updating ad unit {0}", adUnitId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Updating ad unit {0}", adUnitId);
+            Console.WriteLine("=================================================================");
 
             AdUnit patchAdUnit = new AdUnit();
             patchAdUnit.CustomStyle = new AdStyle();
@@ -258,35 +246,31 @@ namespace AdSenseHost.Sample.Publisher
             AdUnit adUnit = this.service.Accounts.Adunits
                 .Patch(patchAdUnit, accountId, adClientId, adUnitId).Execute();
 
-            CommandLine.WriteLine("Ad unit with id {0}, was updated with text color {1}.",
+            Console.WriteLine("Ad unit with id {0}, was updated with text color {1}.",
                 adUnit.Id, adUnit.CustomStyle.Colors.Text);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the Ad Unit that was just created
             return adUnit;
         }
 
-        /// <summary>
-        /// This example deletes an Ad Unit on a publisher ad client.
-        /// </summary>
+        /// <summary>This example deletes an Ad Unit on a publisher ad client.</summary>
         /// <param name="accountId">The ID for the publisher account to be used.</param>
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         /// <param name="adUnitId">The ID for the Ad Unit to be deleted.</param>
         private void DeleteAdUnit(string accountId, string adClientId, string adUnitId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Deleting ad unit {0}", adUnitId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Deleting ad unit {0}", adUnitId);
+            Console.WriteLine("=================================================================");
 
             // Delete ad unit
-            AdUnit adUnit = this.service.Accounts.Adunits
-                .Delete(accountId, adClientId, adUnitId).Execute();
+            AdUnit adUnit = this.service.Accounts.Adunits.Delete(accountId, adClientId, adUnitId).Execute();
 
-            CommandLine.WriteLine("Ad unit with id {0} was deleted.",
-                adUnitId);
+            Console.WriteLine("Ad unit with id {0} was deleted.", adUnitId);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -299,9 +283,9 @@ namespace AdSenseHost.Sample.Publisher
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         private void GenerateReport(string accountId, string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Running report for ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Running report for ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Prepare report.
             var startDate = DateTime.Today.ToString(DateFormat);
@@ -331,10 +315,10 @@ namespace AdSenseHost.Sample.Publisher
             }
             else
             {
-                CommandLine.WriteLine("No rows returned.");
+                Console.WriteLine("No rows returned.");
             }
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
     }
 }

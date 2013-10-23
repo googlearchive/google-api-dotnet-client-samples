@@ -15,9 +15,10 @@ limitations under the License.
 */
 
 using System;
+
 using Google.Apis.Discovery.v1;
 using Google.Apis.Discovery.v1.Data;
-using Google.Apis.Samples.Helper;
+using System.Threading.Tasks;
 
 namespace Discovery.FieldsParameter
 {
@@ -30,28 +31,41 @@ namespace Discovery.FieldsParameter
         [STAThread]
         static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Discovery API -- 'Fields'-Parameter");
+            Console.WriteLine("Discovery API Field Parameter Sample");
+            Console.WriteLine("====================================");
 
-            // Create the service.
-            var service = new DiscoveryService();
-            RunSample(service);
-            CommandLine.PressAnyKeyToExit();
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
+                {
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
 
-        private static void RunSample(DiscoveryService service)
+        private async Task Run()
         {
+            var service = new DiscoveryService();
+
             // Run the request.
-            CommandLine.WriteAction("Executing Partial GET ...");
+            Console.WriteLine("Executing Partial GET ...");
             var request = service.Apis.GetRest("discovery", "v1");
             request.Fields = "description,title";
-            var result = request.Execute();
+            var result = await request.ExecuteAsync();
 
             // Display the results.
-            CommandLine.WriteResult("Description", result.Description);
-            CommandLine.WriteResult("Title", result.Title);
-            CommandLine.WriteResult("Name (not requested)", result.Name);
+            Console.WriteLine("\tDescription: " + result.Description);
+            Console.WriteLine();
+            Console.WriteLine("\tTitle:" + result.Title);
+            Console.WriteLine();
+            Console.WriteLine("\tName (not requested): " + result.Name);
         }
     }
 }

@@ -15,17 +15,15 @@ limitations under the License.
 */
 
 using System;
+using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 
-using DotNetOpenAuth.OAuth2;
-
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Books.v1;
 using Google.Apis.Books.v1.Data;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
-using Google.Apis.Util;
+using Google.Apis.Util.Store;
 
 namespace Books.ListMyLibrary
 {
@@ -36,117 +34,90 @@ namespace Books.ListMyLibrary
     /// </summary>
     internal class Program
     {
-        private static readonly string Scope = BooksService.Scopes.Books.GetStringValue();
-
         [STAThread]
         static void Main(string[] args)
         {
-            // Display the header and initialize the sample.
-            CommandLine.EnableExceptionHandling();
-            CommandLine.DisplayGoogleSampleHeader("Books API: List MyLibrary");
+            Console.WriteLine("Books API Sample: List MyLibrary");
+            Console.WriteLine("================================");
 
-            // Register the authenticator.
-            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
+            try
+            {
+                new Program().Run().Wait();
+            }
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
                 {
-                    ClientIdentifier = credentials.ClientId,
-                    ClientSecret = credentials.ClientSecret
-                };
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+        private async Task Run()
+        {
+            UserCredential credential;
+            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            {
+                credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    new[] { BooksService.Scope.Books },
+                    "user", CancellationToken.None, new FileDataStore("Books.ListMyLibrary"));
+            }
 
             // Create the service.
             var service = new BooksService(new BaseClientService.Initializer()
                 {
-                    Authenticator = auth,
+                    HttpClientInitializer = credential,
                     ApplicationName = "Books API Sample",
                 });
 
-            ListLibrary(service);
-            Console.ReadLine();
+            await ListLibrary(service);
         }
 
-        private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
+        private async Task ListLibrary(BooksService service)
         {
-            // You should use a more secure way of storing the key here as
-            // .NET applications can be disassembled using a reflection tool.
-            const string STORAGE = "google.samples.dotnet.books";
-            const string KEY = "=UwuqAtRaqe-3daV";
+            Console.WriteLine("Listing Bookshelves... (Execute ASYNC)");
+            Console.WriteLine("======================================");
 
-            // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
-            if (state != null)
-            {
-                try
-                {
-                    client.RefreshToken(state);
-                    return state; // Yes - we are done.
-                }
-                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
-                {
-                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
-                }
-            }
+            // Execute async.
+            var bookselve = await service.Mylibrary.Bookshelves.List().ExecuteAsync();
 
-            // Retrieve the authorization from the user.
-            state = AuthorizationMgr.RequestNativeAuthorization(client, Scope);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
-            return state;
+            // On success display my library's volumes.
+            await DisplayVolumes(service, bookselve);
         }
 
-        private static void ListLibrary(BooksService service)
-        {
-            CommandLine.WriteAction("Listing Bookshelves... (using async execution)");
-            // execute async
-            var task = service.Mylibrary.Bookshelves.List().ExecuteAsync();
-
-            // on success display my library's volumes
-            CommandLine.WriteLine();
-            task.ContinueWith(async t => await DisplayVolumes(service, t.Result),
-                TaskContinuationOptions.OnlyOnRanToCompletion);
-
-            // on failure print the error
-            task.ContinueWith(t =>
-                {
-                    CommandLine.Write("Error occurred on executing async operation");
-                    if (t.IsCanceled)
-                    {
-                        CommandLine.Write("Task was canceled");
-                    }
-                    if (t.Exception != null)
-                    {
-                        CommandLine.Write("exception occurred. Exception is " + t.Exception.Message);
-                    }
-                }, TaskContinuationOptions.NotOnRanToCompletion);
-        }
-
-        private static async Task DisplayVolumes(BooksService service, Bookshelves bookshelves)
+        private async Task DisplayVolumes(BooksService service, Bookshelves bookshelves)
         {
             if (bookshelves.Items == null)
             {
-                CommandLine.WriteError("No bookshelves found!");
+                Console.WriteLine("No bookshelves found!");
                 return;
             }
 
             foreach (Bookshelf item in bookshelves.Items)
             {
-                CommandLine.WriteResult(item.Title, item.VolumeCount + " volumes");
+                Console.WriteLine(item.Title + "\t" +
+                    (item.VolumeCount.HasValue ? item.VolumeCount + " volumes" : ""));
 
                 // List all volumes in this bookshelf.
                 if (item.VolumeCount > 0)
                 {
-                    CommandLine.WriteAction("Query volumes... (Execute Async)");
+                    Console.WriteLine("Query volumes... (Execute ASYNC)");
+                    Console.WriteLine("================================");
                     var request = service.Mylibrary.Bookshelves.Volumes.List(item.Id.ToString());
                     Volumes inBookshelf = await request.ExecuteAsync();
                     if (inBookshelf.Items == null)
                     {
                         continue;
                     }
-
                     foreach (Volume volume in inBookshelf.Items)
                     {
-                        CommandLine.WriteResult(
-                            "-- " + volume.VolumeInfo.Title, volume.VolumeInfo.Description ??
+                        Console.WriteLine("-- " + volume.VolumeInfo.Title + "\t" + volume.VolumeInfo.Description ??
                             "no description");
+                        Console.WriteLine();
                     }
                 }
             }

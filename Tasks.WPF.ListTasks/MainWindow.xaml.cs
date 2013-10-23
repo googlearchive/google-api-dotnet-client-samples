@@ -15,20 +15,17 @@ limitations under the License.
 */
 
 using System;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 
-using DotNetOpenAuth.OAuth2;
-
-using Google.Apis.Authentication;
-using Google.Apis.Authentication.OAuth2;
-using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Samples.Helper;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Tasks.v1;
 using Google.Apis.Tasks.v1.Data;
-using Google.Apis.Util;
+using Google.Apis.Util.Store;
 
 namespace Tasks.WPF.ListTasks
 {
@@ -37,49 +34,8 @@ namespace Tasks.WPF.ListTasks
     /// </summary>
     public partial class MainWindow : Window
     {
-        /// <summary>
-        /// The remote service on which all the requests are executed.
-        /// </summary>
+        /// <summary>The remote service on which all the requests are executed.</summary>
         public static TasksService Service { get; private set; }
-
-        private static IAuthenticator CreateAuthenticator()
-        {
-            var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description)
-                {
-                    ClientIdentifier = ClientCredentials.ClientID,
-                    ClientSecret = ClientCredentials.ClientSecret
-                };
-            return new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
-        }
-
-        private static IAuthorizationState GetAuthorization(NativeApplicationClient client)
-        {
-            // You should use a more secure way of storing the key here as
-            // .NET applications can be disassembled using a reflection tool.
-            const string STORAGE = "google.samples.dotnet.tasks";
-            const string KEY = "y},drdzf11x9;87";
-            string scope = TasksService.Scopes.Tasks.GetStringValue();
-
-            // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
-            if (state != null)
-            {
-                try
-                {
-                    client.RefreshToken(state);
-                    return state; // Yes - we are done.
-                }
-                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
-                {
-                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
-                }
-            }
-
-            // Retrieve the authorization from the user.
-            state = AuthorizationMgr.RequestNativeAuthorization(client, scope);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
-            return state;
-        }
 
         public MainWindow()
         {
@@ -92,6 +48,7 @@ namespace Tasks.WPF.ListTasks
 
             // Download a new version of the TaskLists and add the UI controls
             lists.Children.Clear();
+
             var tasklists = await Service.Tasklists.List().ExecuteAsync();
             foreach (TaskList list in tasklists.Items)
             {
@@ -137,14 +94,22 @@ namespace Tasks.WPF.ListTasks
             return checkbox;
         }
 
-        private void Window_Initialized(object sender, EventArgs e)
+        private async void Window_Initialized(object sender, EventArgs e)
         {
             // Create the service.
-            Service = new TasksService(new BaseClientService.Initializer()
+            using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
+            {
+                var credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                                    GoogleClientSecrets.Load(stream).Secrets,
+                                    new[] { TasksService.Scope.Tasks },
+                                    "user", CancellationToken.None, new FileDataStore("Tasks.Auth.Store"));
+
+                Service = new TasksService(new BaseClientService.Initializer()
                 {
-                    Authenticator = CreateAuthenticator(),
+                    HttpClientInitializer = credential,
                     ApplicationName = "Tasks API Sample",
                 });
+            }
 
             // Get all TaskLists.
             UpdateTaskLists();

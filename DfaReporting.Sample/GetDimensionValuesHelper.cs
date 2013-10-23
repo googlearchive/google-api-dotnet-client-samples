@@ -18,7 +18,6 @@ using System;
 
 using Google.Apis.Dfareporting.v1_2;
 using Google.Apis.Dfareporting.v1_2.Data;
-using Google.Apis.Samples.Helper;
 
 namespace DfaReporting.Sample
 {
@@ -54,10 +53,9 @@ namespace DfaReporting.Sample
         public DimensionValueList Query(string dimensionName, string userProfileId, DateTime startDate,
             DateTime endDate, int maxPageSize)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing available {0} values", dimensionName);
-            CommandLine.WriteLine("=================================================================");
-
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing available {0} values", dimensionName);
+            Console.WriteLine("=================================================================");
 
             // Create a dimension value query which selects available dimension values.
             var request = new DimensionValueRequest();
@@ -74,16 +72,14 @@ namespace DfaReporting.Sample
             {
                 foreach (var dimensionValue in values.Items)
                 {
-                    CommandLine.WriteLine("{0} with value \"{1}\" was found.", dimensionName,
-                        dimensionValue.Value);
+                    Console.WriteLine("{0} with value \"{1}\" was found.", dimensionName, dimensionValue.Value);
                 }
             }
             else
             {
-                CommandLine.WriteLine("No values found.");
+                Console.WriteLine("No values found.");
             }
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
             return values;
         }
     }

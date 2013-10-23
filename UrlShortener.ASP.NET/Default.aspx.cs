@@ -18,7 +18,6 @@ using System;
 using System.Text.RegularExpressions;
 
 using Google;
-using Google.Apis.Samples.Helper;
 using Google.Apis.Services;
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
@@ -26,24 +25,22 @@ using Google.Apis.Urlshortener.v1.Data;
 namespace UrlShortener.ASP.NET
 {
     /// <summary>
-    /// ASP.NET UrlShortener Sample
-    /// 
-    /// This sample makes use of ASP.NET and the UrlShortener API to demonstrate how to do make unauthenticated
-    /// requests to an api.
+    /// ASP.NET UrlShortener Sample. This sample makes use of ASP.NET and the UrlShortener API to demonstrate how to do
+    /// make unauthenticated requests to an API.
     /// </summary>
     public partial class _Default : System.Web.UI.Page
     {
-        private static UrlshortenerService _service;
+        private static UrlshortenerService service;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             // If we did not construct the service so far, do it now.
-            if (_service == null)
+            if (service == null)
             {
                 BaseClientService.Initializer initializer = new BaseClientService.Initializer();
                 // You can enter your developer key for services requiring a developer key.
                 /* initializer.ApiKey = "<Insert Developer Key here>"; */
-                _service = new UrlshortenerService(initializer);
+                service = new UrlshortenerService(initializer);
 
             }
         }
@@ -69,21 +66,24 @@ namespace UrlShortener.ASP.NET
                 if (IsShortUrl(url))
                 {
                     // Expand the URL by using a Url.Get(..) request.
-                    Url result = _service.Url.Get(url).Execute();
+                    Url result = service.Url.Get(url).Execute();
                     resultURL = result.LongUrl;
                 }
                 else
                 {
                     // Shorten the URL by inserting a new Url.
                     Url toInsert = new Url { LongUrl = url };
-                    toInsert = _service.Url.Insert(toInsert).Execute();
+                    toInsert = service.Url.Insert(toInsert).Execute();
                     resultURL = toInsert.Id;
                 }
                 output.Text = string.Format("<a href=\"{0}\">{0}</a>", resultURL);
             }
             catch (GoogleApiException ex)
             {
-                output.Text = ex.ToHtmlString();
+                var str = ex.ToString();
+                str = str.Replace(Environment.NewLine, Environment.NewLine + "<br/>");
+                str = str.Replace("  ", " &nbsp;");
+                output.Text = string.Format("<font color=\"red\">{0}</font>", str);
             }
         }
 

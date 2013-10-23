@@ -20,8 +20,6 @@ using System.Linq;
 
 using Google.Apis.AdSense.v1_3.Data;
 using Google.Apis.AdSense.v1_3;
-using Google.Apis.Samples.Helper;
-using Google.Apis.Util;
 
 namespace AdSense.Sample
 {
@@ -73,9 +71,7 @@ namespace AdSense.Sample
         private AdSenseService service;
         private int maxListPageSize;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagementApiConsumer"/> class.
-        /// </summary>
+        /// <summary>Initializes a new instance of the <see cref="ManagementApiConsumer"/> class.</summary>
         /// <param name="service">AdSense service object on which to run the requests.</param>
         /// <param name="maxListPageSize">The maximum page size to retrieve.</param>
         public ManagementApiConsumer(AdSenseService service, int maxListPageSize)
@@ -84,9 +80,7 @@ namespace AdSense.Sample
             this.maxListPageSize = maxListPageSize;
         }
 
-        /// <summary>
-        /// Runs multiple Publisher requests against the AdSense Management API.
-        /// </summary>
+        /// <summary>Runs multiple Publisher requests against the AdSense Management API.</summary>
         internal void RunCalls()
         {
             Accounts accounts = GetAllAccounts();
@@ -141,19 +135,15 @@ namespace AdSense.Sample
 
             DisplayAllMetricsAndDimensions();
             DisplayAllAlerts();
-
-            CommandLine.PressAnyKeyToExit();
         }
 
-        /// <summary>
-        /// Gets and prints all accounts for the logged in user.
-        /// </summary>
+        /// <summary>Gets and prints all accounts for the logged in user.</summary>
         /// <returns>The last page of retrieved accounts.</returns>
         private Accounts GetAllAccounts()
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all AdSense accounts");
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all AdSense accounts");
+            Console.WriteLine("=================================================================");
 
             // Retrieve account list in pages and display data as we receive it.
             string pageToken = null;
@@ -170,42 +160,37 @@ namespace AdSense.Sample
                 {
                     foreach (var account in accountResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "Account with ID \"{0}\" and name \"{1}\" was found.",
-                            account.Id,
+                        Console.WriteLine("Account with ID \"{0}\" and name \"{1}\" was found.", account.Id,
                             account.Name);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No accounts found.");
+                    Console.WriteLine("No accounts found.");
                 }
 
                 pageToken = accountResponse.NextPageToken;
             }
             while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the last page of accounts, so that the main sample has something to run.
             return accountResponse;
         }
 
-        /// <summary>
-        /// Displays the AdSense account tree for a given account.
-        /// </summary>
+        /// <summary>Displays the AdSense account tree for a given account.</summary>
         /// <param name="accountId">The ID for the account to be used.</param>
         private void DisplayAccountTree(string accountId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Displaying AdSense account tree for {0}", accountId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Displaying AdSense account tree for {0}", accountId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve account.
             var account = this.service.Accounts.Get(accountId).Execute();
             this.DisplayTree(account, 0);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -215,11 +200,8 @@ namespace AdSense.Sample
         /// <param name="level">The depth at which the top account exists in the tree.</param>
         private void DisplayTree(Account parentAccount, int level)
         {
-            CommandLine.WriteLine(
-                "{0}Account with ID \"{1}\" and name \"{2}\" was found.",
-                new string(' ', 2 * level),
-                parentAccount.Id,
-                parentAccount.Name);
+            Console.WriteLine("{0}Account with ID \"{1}\" and name \"{2}\" was found.", new string(' ', 2 * level),
+                parentAccount.Id, parentAccount.Name);
 
             foreach (var subAccount in parentAccount.SubAccounts.NullToEmpty())
             {
@@ -233,9 +215,9 @@ namespace AdSense.Sample
         /// <param name="accountId">The ID for the account to be used.</param>
         private void DisplayAllAdClientsForAccount(string accountId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all ad clients for account {0}", accountId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all ad clients for account {0}", accountId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve ad client list in pages and display data as we receive it.
             string pageToken = null;
@@ -252,25 +234,22 @@ namespace AdSense.Sample
                 {
                     foreach (var adClient in adClientResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "Ad client for product \"{0}\" with ID \"{1}\" was found.",
-                            adClient.ProductCode,
-                            adClient.Id);
-                        CommandLine.WriteLine(
-                            "\tSupports reporting: {0}",
+                        Console.WriteLine("Ad client for product \"{0}\" with ID \"{1}\" was found.",
+                            adClient.ProductCode, adClient.Id);
+                        Console.WriteLine("\tSupports reporting: {0}",
                             adClient.SupportsReporting.Value ? "Yes" : "No");
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No ad clients found.");
+                    Console.WriteLine("No ad clients found.");
                 }
 
                 pageToken = adClientResponse.NextPageToken;
             }
             while (pageToken != null);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -279,9 +258,9 @@ namespace AdSense.Sample
         /// <returns>The last page of retrieved accounts.</returns>
         private AdClients GetAllAdClients()
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all ad clients for default account");
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all ad clients for default account");
+            Console.WriteLine("=================================================================");
 
             // Retrieve ad client list in pages and display data as we receive it.
             string pageToken = null;
@@ -298,25 +277,21 @@ namespace AdSense.Sample
                 {
                     foreach (var adClient in adClientResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "Ad client for product \"{0}\" with ID \"{1}\" was found.",
-                            adClient.ProductCode,
-                            adClient.Id);
-                        CommandLine.WriteLine(
-                            "\tSupports reporting: {0}",
+                        Console.WriteLine("Ad client for product \"{0}\" with ID \"{1}\" was found.",
+                            adClient.ProductCode, adClient.Id);
+                        Console.WriteLine("\tSupports reporting: {0}",
                             adClient.SupportsReporting.Value ? "Yes" : "No");
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No ad clients found.");
+                    Console.WriteLine("No ad clients found.");
                 }
 
                 pageToken = adClientResponse.NextPageToken;
             }
             while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the last page of ad clients, so that the main sample has something to run.
             return adClientResponse;
@@ -329,9 +304,9 @@ namespace AdSense.Sample
         /// <returns>The last page of retrieved accounts.</returns>
         private AdUnits GetAllAdUnits(string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all ad units for ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all ad units for ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve ad client list in pages and display data as we receive it.
             string pageToken = null;
@@ -348,24 +323,20 @@ namespace AdSense.Sample
                 {
                     foreach (var adUnit in adUnitResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" " +
-                               "was found.",
-                            adUnit.Code,
-                            adUnit.Name,
-                            adUnit.Status);
+                        Console.WriteLine("Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" was found.",
+                            adUnit.Code, adUnit.Name, adUnit.Status);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No ad units found.");
+                    Console.WriteLine("No ad units found.");
                 }
 
                 pageToken = adUnitResponse.NextPageToken;
             }
             while (pageToken != null);
+            Console.WriteLine();
 
-            CommandLine.WriteLine();
 
             // Return the last page of ad units, so that the main sample has something to run.
             return adUnitResponse;
@@ -378,9 +349,9 @@ namespace AdSense.Sample
         /// <returns>The last page of custom channels.</returns>
         private CustomChannels GetAllCustomChannels(string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all custom channels for ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all custom channels for ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve custom channel list in pages and display data as we receive it.
             string pageToken = null;
@@ -397,22 +368,19 @@ namespace AdSense.Sample
                 {
                     foreach (var customChannel in customChannelResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "Custom channel with code \"{0}\" and name \"{1}\" was found.",
-                            customChannel.Code,
-                            customChannel.Name);
+                        Console.WriteLine("Custom channel with code \"{0}\" and name \"{1}\" was found.",
+                            customChannel.Code, customChannel.Name);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No custom channels found.");
+                    Console.WriteLine("No custom channels found.");
                 }
 
                 pageToken = customChannelResponse.NextPageToken;
             }
             while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the last page of custom channels, so that the main sample has something to run.
             return customChannelResponse;
@@ -425,9 +393,9 @@ namespace AdSense.Sample
         /// <param name="customChannelId">The ID for the custom channel to be used.</param>
         private void DisplayAllAdUnits(string adClientId, string customChannelId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all ad units for custom channel {0}", customChannelId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all ad units for custom channel {0}", customChannelId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve ad client list in pages and display data as we receive it.
             string pageToken = null;
@@ -444,36 +412,29 @@ namespace AdSense.Sample
                 {
                     foreach (var adUnit in adUnitResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" " +
-                                "was found.",
-                            adUnit.Code,
-                            adUnit.Name,
-                            adUnit.Status);
+                        Console.WriteLine("Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" was found.",
+                            adUnit.Code, adUnit.Name, adUnit.Status);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No ad units found.");
+                    Console.WriteLine("No ad units found.");
                 }
 
                 pageToken = adUnitResponse.NextPageToken;
             }
             while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
-        /// <summary>
-        /// Displays all custom channels an ad unit has been added to.
-        /// </summary>
+        /// <summary>Displays all custom channels an ad unit has been added to.</summary>
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         /// <param name="adUnitId">The ID for the ad unit to be used.</param>
         private void DisplayAllCustomChannelsForAdUnit(string adClientId, string adUnitId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all custom channels for ad unit {0}", adUnitId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all custom channels for ad unit {0}", adUnitId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve custom channel list in pages and display data as we receive it.
             string pageToken = null;
@@ -490,33 +451,28 @@ namespace AdSense.Sample
                 {
                     foreach (var customChannel in customChannelResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "Custom channel with code \"{0}\" and name \"{1}\" was found.",
-                            customChannel.Code,
-                            customChannel.Name);
+                        Console.WriteLine("Custom channel with code \"{0}\" and name \"{1}\" was found.",
+                            customChannel.Code, customChannel.Name);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No custom channels found.");
+                    Console.WriteLine("No custom channels found.");
                 }
 
                 pageToken = customChannelResponse.NextPageToken;
             }
             while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
-        /// <summary>
-        /// Displays all URL channels in an ad client.
-        /// </summary>
+        /// <summary>Displays all URL channels in an ad client.</summary>
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         private void DisplayAllUrlChannels(string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all URL channels for ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all URL channels for ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve URL channel list in pages and display data as we receive it.
             string pageToken = null;
@@ -533,32 +489,27 @@ namespace AdSense.Sample
                 {
                     foreach (var urlChannel in urlChannelResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "URL channel with pattern \"{0}\" was found.",
-                            urlChannel.UrlPattern);
+                        Console.WriteLine("URL channel with pattern \"{0}\" was found.", urlChannel.UrlPattern);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No URL channels found.");
+                    Console.WriteLine("No URL channels found.");
                 }
 
                 pageToken = urlChannelResponse.NextPageToken;
             }
             while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
-        /// <summary>
-        /// Retrieves a report, using a filter for a specified ad client.
-        /// </summary>
+        /// <summary>Retrieves a report, using a filter for a specified ad client.</summary>
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         private void GenerateReport(string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Running report for ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Running report for ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Prepare report.
             var startDate = DateTime.Today.ToString(DateFormat);
@@ -589,10 +540,9 @@ namespace AdSense.Sample
             }
             else
             {
-                CommandLine.WriteLine("No rows returned.");
+                Console.WriteLine("No rows returned.");
             }
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -606,9 +556,9 @@ namespace AdSense.Sample
         {
             int rowLimit = 5000;
 
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Running paginated report for ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Running paginated report for ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Prepare report.
             var startDate = DateTime.Today.ToString(DateFormat);
@@ -636,8 +586,8 @@ namespace AdSense.Sample
 
             if (reportResponse.Rows.IsNullOrEmpty())
             {
-                CommandLine.WriteLine("No rows returned.");
-                CommandLine.WriteLine();
+                Console.WriteLine("No rows returned.");
+                Console.WriteLine();
                 return;
             }
 
@@ -666,8 +616,7 @@ namespace AdSense.Sample
                 // Display results.
                 ReportUtils.DisplayRows(reportResponse.Rows);
             }
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -688,10 +637,9 @@ namespace AdSense.Sample
             }
             else
             {
-                CommandLine.WriteLine("No rows returned.");
+                Console.WriteLine("No rows returned.");
             }
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -700,9 +648,9 @@ namespace AdSense.Sample
         /// <returns>The last page of the retrieved saved reports.</returns>
         private SavedReports GetAllSavedReports()
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all saved reports");
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all saved reports");
+            Console.WriteLine("=================================================================");
 
             // Retrieve ad client list in pages and display data as we receive it.
             string pageToken = null;
@@ -719,31 +667,28 @@ namespace AdSense.Sample
                 {
                     foreach (var savedReport in savedReportResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "Saved report with ID \"{0}\" and name \"{1}\" was found.",
-                            savedReport.Id,
-                            savedReport.Name);
+                        Console.WriteLine("Saved report with ID \"{0}\" and name \"{1}\" was found.",
+                            savedReport.Id, savedReport.Name);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No saved saved reports found.");
+                    Console.WriteLine("No saved saved reports found.");
                 }
 
                 pageToken = savedReportResponse.NextPageToken;
             }
             while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
             return savedReportResponse;
         }
 
         /// <summary> Displays all the saved ad styles for the logged in user's default account. </summary>
         private void DisplayAllSavedAdStyles()
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all saved ad styles");
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all saved ad styles");
+            Console.WriteLine("=================================================================");
 
             // Retrieve ad client list in pages and display data as we receive it.
             string pageToken = null;
@@ -760,22 +705,19 @@ namespace AdSense.Sample
                 {
                     foreach (var savedAdStyle in savedAdStyleResponse.Items)
                     {
-                        CommandLine.WriteLine(
-                            "Saved ad style with ID \"{0}\" and name \"{1}\" was found.",
-                            savedAdStyle.Id,
-                            savedAdStyle.Name);
+                        Console.WriteLine("Saved ad style with ID \"{0}\" and name \"{1}\" was found.",
+                            savedAdStyle.Id, savedAdStyle.Name);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No saved ad styles found.");
+                    Console.WriteLine("No saved ad styles found.");
                 }
 
                 pageToken = savedAdStyleResponse.NextPageToken;
             }
             while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -783,9 +725,9 @@ namespace AdSense.Sample
         /// </summary>
         private void DisplayAllMetricsAndDimensions()
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all metrics");
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all metrics");
+            Console.WriteLine("=================================================================");
 
             Metadata metricsResponse = this.service.Metadata.Metrics.List().Execute();
 
@@ -793,21 +735,19 @@ namespace AdSense.Sample
             {
                 foreach (var metric in metricsResponse.Items)
                 {
-                    CommandLine.WriteLine(
-                        "Metric with ID \"{0}\" is available for products: \"{1}\".",
-                        metric.Id,
-                        String.Join(", ", metric.SupportedProducts.ToArray()));
+                    Console.WriteLine("Metric with ID \"{0}\" is available for products: \"{1}\".",
+                        metric.Id, String.Join(", ", metric.SupportedProducts.ToArray()));
                 }
             }
             else
             {
-                CommandLine.WriteLine("No available metrics found.");
+                Console.WriteLine("No available metrics found.");
             }
+            Console.WriteLine();
 
-            CommandLine.WriteLine();
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all dimensions");
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all dimensions");
+            Console.WriteLine("=================================================================");
 
             Metadata dimensionsResponse = this.service.Metadata.Dimensions.List().Execute();
 
@@ -815,27 +755,24 @@ namespace AdSense.Sample
             {
                 foreach (var dimension in dimensionsResponse.Items)
                 {
-                    CommandLine.WriteLine(
-                        "Dimension with ID \"{0}\" is available for products: \"{1}\".",
-                        dimension.Id,
-                        String.Join(", ", dimension.SupportedProducts.ToArray()));
+                    Console.WriteLine("Dimension with ID \"{0}\" is available for products: \"{1}\".",
+                        dimension.Id, String.Join(", ", dimension.SupportedProducts.ToArray()));
                 }
             }
             else
             {
-                CommandLine.WriteLine("No available dimensions found.");
+                Console.WriteLine("No available dimensions found.");
             }
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
 
         /// <summary> Prints all the alerts for the logged in user's default account. </summary>
         private void DisplayAllAlerts()
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all alerts");
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all alerts");
+            Console.WriteLine("=================================================================");
 
             Alerts alertsResponse = this.service.Alerts.List().Execute();
 
@@ -843,19 +780,15 @@ namespace AdSense.Sample
             {
                 foreach (var alert in alertsResponse.Items)
                 {
-                    CommandLine.WriteLine(
-                        "Alert with ID \"{0}\" type \"{1}\" and severity \"{2}\" was found.",
-                        alert.Id,
-                        alert.Type,
-                        alert.Severity);
+                    Console.WriteLine("Alert with ID \"{0}\" type \"{1}\" and severity \"{2}\" was found.",
+                        alert.Id, alert.Type, alert.Severity);
                 }
             }
             else
             {
-                CommandLine.WriteLine("No alerts found.");
+                Console.WriteLine("No alerts found.");
             }
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
     }
 }

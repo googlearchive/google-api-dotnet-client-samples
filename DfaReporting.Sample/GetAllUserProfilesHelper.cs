@@ -14,9 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using System;
+
 using Google.Apis.Dfareporting.v1_2;
 using Google.Apis.Dfareporting.v1_2.Data;
-using Google.Apis.Samples.Helper;
 
 namespace DfaReporting.Sample
 {
@@ -42,28 +43,27 @@ namespace DfaReporting.Sample
         /// <returns>The list of user profiles received.</returns>
         public UserProfileList Run()
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all DFA user profiles");
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all DFA user profiles");
+            Console.WriteLine("=================================================================");
 
             // Retrieve DFA user profiles and display them. User profiles do not support
             // paging.
-
             var profiles = service.UserProfiles.List().Execute();
             if (profiles.Items.Count > 0)
             {
                 foreach (var profile in profiles.Items)
                 {
-                    CommandLine.WriteLine("User profile with ID \"{0}\" and name \"{1}\" was found.",
+                    Console.WriteLine("User profile with ID \"{0}\" and name \"{1}\" was found.",
                         profile.ProfileId, profile.UserName);
                 }
             }
             else
             {
-                CommandLine.WriteLine("No profiles found.");
+                Console.WriteLine("No profiles found.");
             }
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
             return profiles;
         }
     }

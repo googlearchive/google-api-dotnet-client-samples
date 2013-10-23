@@ -21,7 +21,6 @@ using System.Text;
 
 using Google.Apis.AdSense.v1_3;
 using Google.Apis.AdSense.v1_3.Data;
-using Google.Apis.Samples.Helper;
 
 namespace AdSense.Sample
 {
@@ -38,10 +37,9 @@ namespace AdSense.Sample
         {
             foreach (var header in headers)
             {
-                CommandLine.Write("{0, -25}", header.Name);
+                Console.WriteLine("{0, -25}", header.Name);
             }
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -54,10 +52,9 @@ namespace AdSense.Sample
             {
                 foreach (var column in row)
                 {
-                    CommandLine.Write("{0, -25}", column);
+                    Console.WriteLine("{0, -25}", column);
                 }
-
-                CommandLine.WriteLine();
+                Console.WriteLine();
             }
         }
 
@@ -91,6 +88,11 @@ namespace AdSense.Sample
         public static IList<T> NullToEmpty<T>(this IList<T> list)
         {
             return list ?? new List<T>();
+        }
+
+        public static bool IsNullOrEmpty<T>(this IList<T> list)
+        {
+            return list == null || list.Count == 0;
         }
     }
 }

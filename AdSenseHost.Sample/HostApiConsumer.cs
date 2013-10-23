@@ -20,7 +20,6 @@ using System.Linq;
 
 using Google.Apis.AdSenseHost.v4_1;
 using Google.Apis.AdSenseHost.v4_1.Data;
-using Google.Apis.Samples.Helper;
 
 namespace AdSenseHost.Sample.Host
 {
@@ -99,7 +98,7 @@ namespace AdSenseHost.Sample.Host
             }
             else
             {
-                CommandLine.WriteLine("No host ad clients found, unable to run remaining host samples.");
+                Console.WriteLine("No host ad clients found, unable to run remaining host samples.");
             }
         }
 
@@ -111,9 +110,9 @@ namespace AdSenseHost.Sample.Host
         private CustomChannels GetAllCustomChannels(string adClientId)
         {
 
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all custom channels for ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all custom channels for ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve custom channel list in pages and display data as we receive it.
             string pageToken = null;
@@ -130,20 +129,20 @@ namespace AdSenseHost.Sample.Host
                 {
                     foreach (var customChannel in customChannelResponse.Items)
                     {
-                        CommandLine.WriteLine("Custom channel with code \"{0}\" and name \"{1}\" was found.",
+                        Console.WriteLine("Custom channel with code \"{0}\" and name \"{1}\" was found.",
                             customChannel.Code, customChannel.Name);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No custom channels found.");
+                    Console.WriteLine("No custom channels found.");
                 }
 
                 pageToken = customChannelResponse.NextPageToken;
 
             } while (pageToken != null);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the last page of custom channels, so that the main sample has something to run.
             return customChannelResponse;
@@ -155,9 +154,9 @@ namespace AdSenseHost.Sample.Host
         /// <returns>The last page of ad clients.</returns>
         private AdClients GetAllAdClients()
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all ad clients for default account");
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all ad clients for default account");
+            Console.WriteLine("=================================================================");
 
             // Retrieve ad client list in pages and display data as we receive it.
             string pageToken = null;
@@ -174,22 +173,22 @@ namespace AdSenseHost.Sample.Host
                 {
                     foreach (var adClient in adClientResponse.Items)
                     {
-                        CommandLine.WriteLine("Ad client for product \"{0}\" with ID \"{1}\" was found.",
+                        Console.WriteLine("Ad client for product \"{0}\" with ID \"{1}\" was found.",
                             adClient.ProductCode, adClient.Id);
-                        CommandLine.WriteLine("\tSupports reporting: {0}",
+                        Console.WriteLine("\tSupports reporting: {0}",
                             adClient.SupportsReporting.Value ? "Yes" : "No");
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No ad clients found.");
+                    Console.WriteLine("No ad clients found.");
                 }
 
                 pageToken = adClientResponse.NextPageToken;
 
             } while (pageToken != null);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the last page of ad clients, so that the main sample has something to run.
             return adClientResponse;
@@ -202,9 +201,9 @@ namespace AdSenseHost.Sample.Host
         /// <returns>The created custom channel.</returns>
         private CustomChannel AddCustomChannel(string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Adding custom channel to ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Adding custom channel to ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             CustomChannel newCustomChannel = new CustomChannel();
 
@@ -216,26 +215,24 @@ namespace AdSenseHost.Sample.Host
             CustomChannel customChannel = this.service.Customchannels
                 .Insert(newCustomChannel, adClientId).Execute();
 
-            CommandLine.WriteLine("Custom channel with id {0}, code {1} and name {2} was created",
+            Console.WriteLine("Custom channel with id {0}, code {1} and name {2} was created",
                 customChannel.Id, customChannel.Code, customChannel.Name);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the Custom Channel that was just created
             return customChannel;
         }
 
-        /// <summary>
-        /// This example updates a custom channel on a host ad client.
-        /// </summary>
+        /// <summary>This example updates a custom channel on a host ad client.</summary>
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         /// <param name="customChannelId">The ID for the custom channel to be updated.</param>
         /// <returns>The updated custom channel.</returns>
         private CustomChannel UpdateCustomChannel(string adClientId, string customChannelId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Updating custom channel {0}", customChannelId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Updating custom channel {0}", customChannelId);
+            Console.WriteLine("=================================================================");
 
 
             CustomChannel patchCustomChannel = new CustomChannel();
@@ -248,25 +245,23 @@ namespace AdSenseHost.Sample.Host
             CustomChannel customChannel = this.service.Customchannels
                 .Patch(patchCustomChannel, adClientId, customChannelId).Execute();
 
-            CommandLine.WriteLine("Custom channel with id {0}, code {1} and name {2} was updated",
+            Console.WriteLine("Custom channel with id {0}, code {1} and name {2} was updated",
                 customChannel.Id, customChannel.Code, customChannel.Name);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the Custom Channel that was just created
             return customChannel;
         }
 
-        /// <summary>
-        /// This example deletes a custom channel on a host ad client.
-        /// </summary>
+        /// <summary>This example deletes a custom channel on a host ad client.</summary>
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         /// <param name="customChannelId">The ID for the custom channel to be updated.</param>
         private void DeleteCustomChannel(string adClientId, string customChannelId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Deleting custom channel {0}", customChannelId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Deleting custom channel {0}", customChannelId);
+            Console.WriteLine("=================================================================");
 
             // Delete custom channel
             CustomChannel customChannel = this.service.Customchannels
@@ -280,15 +275,11 @@ namespace AdSenseHost.Sample.Host
             }
             catch (Google.GoogleApiException ex)
             {
-                CommandLine.WriteLine("Error with message '{0}' was correctly caught.",
-                    ex.Message);
+                Console.WriteLine("Error with message '{0}' was correctly caught.", ex.Message);
             }
 
-
-            CommandLine.WriteLine("Custom channel with id {0} was deleted.",
-                customChannelId);
-
-            CommandLine.WriteLine();
+            Console.WriteLine("Custom channel with id {0} was deleted.", customChannelId);
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -297,9 +288,9 @@ namespace AdSenseHost.Sample.Host
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         private void GetAllUrlChannels(string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Listing all URL channels for host ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all URL channels for host ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Retrieve URL channel list in pages and display data as we receive it.
             string pageToken = null;
@@ -316,20 +307,19 @@ namespace AdSenseHost.Sample.Host
                 {
                     foreach (var urlChannel in urlChannelResponse.Items)
                     {
-                        CommandLine.WriteLine("URL channel with pattern \"{0}\" was found.",
+                        Console.WriteLine("URL channel with pattern \"{0}\" was found.",
                             urlChannel.UrlPattern);
                     }
                 }
                 else
                 {
-                    CommandLine.WriteLine("No URL channels found.");
+                    Console.WriteLine("No URL channels found.");
                 }
 
                 pageToken = urlChannelResponse.NextPageToken;
 
             } while (pageToken != null);
-
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -344,19 +334,19 @@ namespace AdSenseHost.Sample.Host
             newUrlChannel.UrlPattern = "www.example.com/"
                 + random.Next(0, 10000).ToString();
 
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Adding URL channel to ad client {0} with pattern {1}", adClientId,
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Adding URL channel to ad client {0} with pattern {1}", adClientId,
                 newUrlChannel.UrlPattern);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
 
             // Create URL channel.
             UrlChannel urlChannel = this.service.Urlchannels
                 .Insert(newUrlChannel, adClientId).Execute();
 
-            CommandLine.WriteLine("URL channel with id {0} and URL pattern {1} was created",
+            Console.WriteLine("URL channel with id {0} and URL pattern {1} was created",
                 urlChannel.Id, urlChannel.UrlPattern);
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
 
             // Return the URL Channel that was just created
             return urlChannel;
@@ -369,18 +359,15 @@ namespace AdSenseHost.Sample.Host
         /// <param name="urlChannelId">The ID for the URL channel to be deleted.</param>
         private void DeleteUrlChannel(string adClientId, string urlChannelId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Deleting URL channel {0}", urlChannelId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Deleting URL channel {0}", urlChannelId);
+            Console.WriteLine("=================================================================");
 
             // Delete custom channel
-            UrlChannel urlChannel = this.service.Urlchannels
-                .Delete(adClientId, urlChannelId).Execute();
+            UrlChannel urlChannel = this.service.Urlchannels.Delete(adClientId, urlChannelId).Execute();
 
-            CommandLine.WriteLine("Custom channel with id {0} was deleted.",
-                urlChannelId);
-
-            CommandLine.WriteLine();
+            Console.WriteLine("Custom channel with id {0} was deleted.", urlChannelId);
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -390,9 +377,9 @@ namespace AdSenseHost.Sample.Host
         /// <param name="adClientId">The ID for the ad client to be used.</param>
         private void GenerateReport(AdSenseHostService service, string adClientId)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Running report for ad client {0}", adClientId);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Running report for ad client {0}", adClientId);
+            Console.WriteLine("=================================================================");
 
             // Prepare report.
             var startDate = DateTime.Today.ToString(DateFormat);
@@ -422,10 +409,10 @@ namespace AdSenseHost.Sample.Host
             }
             else
             {
-                CommandLine.WriteLine("No rows returned.");
+                Console.WriteLine("No rows returned.");
             }
 
-            CommandLine.WriteLine();
+            Console.WriteLine();
         }
 
         /// <summary>

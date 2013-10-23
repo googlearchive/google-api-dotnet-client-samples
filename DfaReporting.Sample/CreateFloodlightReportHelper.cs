@@ -19,7 +19,6 @@ using System.Collections.Generic;
 
 using Google.Apis.Dfareporting.v1_2;
 using Google.Apis.Dfareporting.v1_2.Data;
-using Google.Apis.Samples.Helper;
 
 namespace DfaReporting.Sample
 {
@@ -50,10 +49,10 @@ namespace DfaReporting.Sample
         public Report Insert(string userProfileId, DimensionValue floodlightConfigId, DateTime startDate,
             DateTime endDate)
         {
-            CommandLine.WriteLine("=================================================================");
-            CommandLine.WriteLine("Creating a new floodlight report for Floodlight config ID {0}",
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Creating a new floodlight report for Floodlight config ID {0}",
                 floodlightConfigId.Value);
-            CommandLine.WriteLine("=================================================================");
+            Console.WriteLine("=================================================================");
 
             // Create a report.
             Report report = new Report();
@@ -85,8 +84,8 @@ namespace DfaReporting.Sample
 
             report.FloodlightCriteria = criteria;
             Report result = service.Reports.Insert(report, userProfileId).Execute();
-            CommandLine.WriteLine("Created report with ID \"{0}\" and display name \"{1}\"", result.Id, result.Name);
-            CommandLine.WriteLine();
+            Console.WriteLine("Created report with ID \"{0}\" and display name \"{1}\"", result.Id, result.Name);
+            Console.WriteLine();
             return result;
         }
     }
