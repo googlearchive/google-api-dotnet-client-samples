@@ -55,7 +55,7 @@
     </Reference>
     <Reference Include="Google.Apis.Books.v1, Version=1.6.0.40, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Google.Apis.Books.v1.1.6.0.2-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Books.v1.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Books.v1.1.6.0.40-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Books.v1.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis.PlatformServices, Version=1.6.0.14506, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
