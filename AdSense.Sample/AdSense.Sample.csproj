@@ -51,11 +51,16 @@
     <Reference Include="Google.Apis.AdSense.v1_3">
       <HintPath>..\packages\Google.Apis.AdSense.v1_3.1.6.0.38-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.AdSense.v1_3.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis.AdSense.v1_4">
+      <HintPath>..\packages\Google.Apis.AdSense.v1_4.1.6.0.2-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.AdSense.v1_4.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis.Auth">
-      <HintPath>..\packages\Google.Apis.Auth.1.6.0-beta\lib\net40\Google.Apis.Auth.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Auth.1.6.0.1-beta\lib\net40\Google.Apis.Auth.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Google.Apis.Auth.PlatformServices">
-      <HintPath>..\packages\Google.Apis.Auth.1.6.0-beta\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Auth.1.6.0.1-beta\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Google.Apis.PlatformServices">
       <HintPath>..\packages\Google.Apis.1.6.0-beta\lib\net40\Google.Apis.PlatformServices.dll</HintPath>

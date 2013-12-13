@@ -19,8 +19,8 @@ using System.IO;
 using System.Threading;
 
 using Google.Apis.Auth.OAuth2;
-using Google.Apis.AdSense.v1_3;
-using Google.Apis.AdSense.v1_3.Data;
+using Google.Apis.AdSense.v1_4;
+using Google.Apis.AdSense.v1_4.Data;
 using Google.Apis.Services;
 
 namespace AdSense.Sample
@@ -54,8 +54,8 @@ namespace AdSense.Sample
                 new ClientSecrets
                 {
                     ClientId = "PUT_CLIENT_ID_HERE",
-                    ClientSecret = "PUT_CLIENT_SECRETS_HERE"
-                }, new[] { AdSenseService.Scope.AdsenseReadonly }, "user", CancellationToken.None).Result;
+                    ClientSecret = "PUT_CLIENT_SECRET_HERE"
+                }, new string[] { AdSenseService.Scope.Adsense }, "user", CancellationToken.None).Result;
 
             // Create the service.
             var service = new AdSenseService(new BaseClientService.Initializer()

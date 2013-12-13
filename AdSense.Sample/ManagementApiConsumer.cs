@@ -18,8 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Google.Apis.AdSense.v1_3.Data;
-using Google.Apis.AdSense.v1_3;
+using Google.Apis.AdSense.v1_4.Data;
+using Google.Apis.AdSense.v1_4;
 
 namespace AdSense.Sample
 {
@@ -71,7 +71,7 @@ namespace AdSense.Sample
         private AdSenseService service;
         private int maxListPageSize;
 
-        /// <summary>Initializes a new instance of the <see cref="ManagementApiConsumer"/> class.</summary>
+        /// <summary>Initializes a new instance of the <see cref="ManagementApiConsumer"/>class.</summary>
         /// <param name="service">AdSense service object on which to run the requests.</param>
         /// <param name="maxListPageSize">The maximum page size to retrieve.</param>
         public ManagementApiConsumer(AdSenseService service, int maxListPageSize)
@@ -151,8 +151,8 @@ namespace AdSense.Sample
 
             do
             {
-                var accountRequest = this.service.Accounts.List();
-                accountRequest.MaxResults = this.maxListPageSize;
+                var accountRequest = service.Accounts.List();
+                accountRequest.MaxResults = maxListPageSize;
                 accountRequest.PageToken = pageToken;
                 accountResponse = accountRequest.Execute();
 
@@ -187,8 +187,8 @@ namespace AdSense.Sample
             Console.WriteLine("=================================================================");
 
             // Retrieve account.
-            var account = this.service.Accounts.Get(accountId).Execute();
-            this.DisplayTree(account, 0);
+            var account = service.Accounts.Get(accountId).Execute();
+            DisplayTree(account, 0);
 
             Console.WriteLine();
         }
@@ -225,8 +225,8 @@ namespace AdSense.Sample
 
             do
             {
-                var adClientRequest = this.service.Accounts.Adclients.List(accountId);
-                adClientRequest.MaxResults = this.maxListPageSize;
+                var adClientRequest = service.Accounts.Adclients.List(accountId);
+                adClientRequest.MaxResults = maxListPageSize;
                 adClientRequest.PageToken = pageToken;
                 adClientResponse = adClientRequest.Execute();
 
@@ -268,8 +268,8 @@ namespace AdSense.Sample
 
             do
             {
-                var adClientRequest = this.service.Adclients.List();
-                adClientRequest.MaxResults = this.maxListPageSize;
+                var adClientRequest = service.Adclients.List();
+                adClientRequest.MaxResults = maxListPageSize;
                 adClientRequest.PageToken = pageToken;
                 adClientResponse = adClientRequest.Execute();
 
@@ -314,8 +314,8 @@ namespace AdSense.Sample
 
             do
             {
-                var adUnitRequest = this.service.Adunits.List(adClientId);
-                adUnitRequest.MaxResults = this.maxListPageSize;
+                var adUnitRequest = service.Adunits.List(adClientId);
+                adUnitRequest.MaxResults = maxListPageSize;
                 adUnitRequest.PageToken = pageToken;
                 adUnitResponse = adUnitRequest.Execute();
 
@@ -359,8 +359,8 @@ namespace AdSense.Sample
 
             do
             {
-                var customChannelRequest = this.service.Customchannels.List(adClientId);
-                customChannelRequest.MaxResults = this.maxListPageSize;
+                var customChannelRequest = service.Customchannels.List(adClientId);
+                customChannelRequest.MaxResults = maxListPageSize;
                 customChannelRequest.PageToken = pageToken;
                 customChannelResponse = customChannelRequest.Execute();
 
@@ -403,8 +403,8 @@ namespace AdSense.Sample
 
             do
             {
-                var adUnitRequest = this.service.Customchannels.Adunits.List(adClientId, customChannelId);
-                adUnitRequest.MaxResults = this.maxListPageSize;
+                var adUnitRequest = service.Customchannels.Adunits.List(adClientId, customChannelId);
+                adUnitRequest.MaxResults = maxListPageSize;
                 adUnitRequest.PageToken = pageToken;
                 adUnitResponse = adUnitRequest.Execute();
 
@@ -442,8 +442,8 @@ namespace AdSense.Sample
 
             do
             {
-                var customChannelRequest = this.service.Adunits.Customchannels.List(adClientId, adUnitId);
-                customChannelRequest.MaxResults = this.maxListPageSize;
+                var customChannelRequest = service.Adunits.Customchannels.List(adClientId, adUnitId);
+                customChannelRequest.MaxResults = maxListPageSize;
                 customChannelRequest.PageToken = pageToken;
                 customChannelResponse = customChannelRequest.Execute();
 
@@ -480,8 +480,8 @@ namespace AdSense.Sample
 
             do
             {
-                var urlChannelRequest = this.service.Urlchannels.List(adClientId);
-                urlChannelRequest.MaxResults = this.maxListPageSize;
+                var urlChannelRequest = service.Urlchannels.List(adClientId);
+                urlChannelRequest.MaxResults = maxListPageSize;
                 urlChannelRequest.PageToken = pageToken;
                 urlChannelResponse = urlChannelRequest.Execute();
 
@@ -512,9 +512,9 @@ namespace AdSense.Sample
             Console.WriteLine("=================================================================");
 
             // Prepare report.
-            var startDate = DateTime.Today.ToString(DateFormat);
-            var endDate = DateTime.Today.AddDays(-7).ToString(DateFormat);
-            var reportRequest = this.service.Reports.Generate(startDate, endDate);
+            var startDate = DateTime.Today.AddDays(-7).ToString(DateFormat);
+            var endDate = DateTime.Today.ToString(DateFormat);
+            var reportRequest = service.Reports.Generate(startDate, endDate);
 
             // Specify the desired ad client using a filter, as well as other parameters.
             reportRequest.Filter = new List<string>
@@ -536,6 +536,7 @@ namespace AdSense.Sample
             if (!reportResponse.Rows.IsNullOrEmpty())
             {
                 ReportUtils.DisplayHeaders(reportResponse.Headers);
+                Console.WriteLine("Showing data from {0} to {1}", reportResponse.StartDate, reportResponse.EndDate);
                 ReportUtils.DisplayRows(reportResponse.Rows);
             }
             else
@@ -561,10 +562,10 @@ namespace AdSense.Sample
             Console.WriteLine("=================================================================");
 
             // Prepare report.
-            var startDate = DateTime.Today.ToString(DateFormat);
-            var endDate = DateTime.Today.AddDays(-7).ToString(DateFormat);
-            var reportRequest = this.service.Reports.Generate(startDate, endDate);
-            var pageSize = this.maxListPageSize;
+            var startDate = DateTime.Today.AddDays(-7).ToString(DateFormat);
+            var endDate = DateTime.Today.ToString(DateFormat);
+            var reportRequest = service.Reports.Generate(startDate, endDate);
+            var pageSize = maxListPageSize;
             var startIndex = 0;
 
             // Specify the desired ad client using a filter, as well as other parameters.
@@ -597,12 +598,12 @@ namespace AdSense.Sample
             // Display first page of results.
             ReportUtils.DisplayRows(reportResponse.Rows);
 
-            var totalRows = Math.Min(int.Parse(reportResponse.TotalMatchedRows), rowLimit);
+            var totalRows = Math.Min(reportResponse.TotalMatchedRows.Value, rowLimit);
             for (startIndex = reportResponse.Rows.Count; startIndex < totalRows;
                 startIndex += reportResponse.Rows.Count)
             {
                 // Check to see if we're going to go above the limit and get as many results as we can.
-                pageSize = Math.Min(this.maxListPageSize, totalRows - startIndex);
+                pageSize = Math.Min(maxListPageSize, (int) totalRows - startIndex);
 
                 // Run next page of report.
                 reportResponse = ReportUtils.GetPage(reportRequest, startIndex, pageSize);
@@ -626,7 +627,7 @@ namespace AdSense.Sample
         private void GenerateSavedReport(string savedReportId)
         {
             ReportsResource.SavedResource.GenerateRequest savedReportRequest =
-                this.service.Reports.Saved.Generate(savedReportId);
+                service.Reports.Saved.Generate(savedReportId);
             AdsenseReportsGenerateResponse savedReportResponse = savedReportRequest.Execute();
 
             // Run report.
@@ -658,8 +659,8 @@ namespace AdSense.Sample
 
             do
             {
-                var savedReportRequest = this.service.Reports.Saved.List();
-                savedReportRequest.MaxResults = this.maxListPageSize;
+                var savedReportRequest = service.Reports.Saved.List();
+                savedReportRequest.MaxResults = maxListPageSize;
                 savedReportRequest.PageToken = pageToken;
                 savedReportResponse = savedReportRequest.Execute();
 
@@ -683,7 +684,7 @@ namespace AdSense.Sample
             return savedReportResponse;
         }
 
-        /// <summary> Displays all the saved ad styles for the logged in user's default account. </summary>
+        /// <summary>Displays all the saved ad styles for the logged in user's default account.</summary>
         private void DisplayAllSavedAdStyles()
         {
             Console.WriteLine("=================================================================");
@@ -696,8 +697,8 @@ namespace AdSense.Sample
 
             do
             {
-                var savedAdStyleRequest = this.service.Savedadstyles.List();
-                savedAdStyleRequest.MaxResults = this.maxListPageSize;
+                var savedAdStyleRequest = service.Savedadstyles.List();
+                savedAdStyleRequest.MaxResults = maxListPageSize;
                 savedAdStyleRequest.PageToken = pageToken;
                 savedAdStyleResponse = savedAdStyleRequest.Execute();
 
@@ -729,7 +730,7 @@ namespace AdSense.Sample
             Console.WriteLine("Listing all metrics");
             Console.WriteLine("=================================================================");
 
-            Metadata metricsResponse = this.service.Metadata.Metrics.List().Execute();
+            Metadata metricsResponse = service.Metadata.Metrics.List().Execute();
 
             if (!metricsResponse.Items.IsNullOrEmpty())
             {
@@ -749,7 +750,7 @@ namespace AdSense.Sample
             Console.WriteLine("Listing all dimensions");
             Console.WriteLine("=================================================================");
 
-            Metadata dimensionsResponse = this.service.Metadata.Dimensions.List().Execute();
+            Metadata dimensionsResponse = service.Metadata.Dimensions.List().Execute();
 
             if (!dimensionsResponse.Items.IsNullOrEmpty())
             {
@@ -767,14 +768,14 @@ namespace AdSense.Sample
         }
 
 
-        /// <summary> Prints all the alerts for the logged in user's default account. </summary>
+        /// <summary>Prints all the alerts for the logged in user's default account.</summary>
         private void DisplayAllAlerts()
         {
             Console.WriteLine("=================================================================");
             Console.WriteLine("Listing all alerts");
             Console.WriteLine("=================================================================");
 
-            Alerts alertsResponse = this.service.Alerts.List().Execute();
+            Alerts alertsResponse = service.Alerts.List().Execute();
 
             if (!alertsResponse.Items.IsNullOrEmpty())
             {
@@ -782,12 +783,44 @@ namespace AdSense.Sample
                 {
                     Console.WriteLine("Alert with ID \"{0}\" type \"{1}\" and severity \"{2}\" was found.",
                         alert.Id, alert.Type, alert.Severity);
+                    // Uncomment to dismiss (delete) the alert. Note that there is no way to revert this.
+                    // service.Alerts.Delete(alert.Id);
                 }
             }
             else
             {
                 Console.WriteLine("No alerts found.");
             }
+            Console.WriteLine();
+        }
+
+
+        /// <summary>Prints all the alerts for the logged in user's default account.</summary>
+        private void DisplayAllPayments()
+        {
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Listing all payments");
+            Console.WriteLine("=================================================================");
+
+            Payments paymentsResponse = service.Payments.List().Execute();
+
+            if (!paymentsResponse.Items.IsNullOrEmpty())
+            {
+                foreach (var payment in paymentsResponse.Items)
+                {
+                    Console.WriteLine(
+                        "Payment with ID \"{0}\" of {1}{2} and date \"{3}\" was found.",
+                        payment.Id,
+                        payment.PaymentAmount,
+                        payment.PaymentAmountCurrencyCode,
+                        payment.PaymentDate);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No payments found.");
+            }
+
             Console.WriteLine();
         }
     }
