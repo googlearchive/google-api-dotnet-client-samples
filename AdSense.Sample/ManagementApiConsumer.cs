@@ -71,7 +71,7 @@ namespace AdSense.Sample
         private AdSenseService service;
         private int maxListPageSize;
 
-        /// <summary>Initializes a new instance of the <see cref="ManagementApiConsumer"/>class.</summary>
+        /// <summary>Initializes a new instance of the <see cref="ManagementApiConsumer"/> class.</summary>
         /// <param name="service">AdSense service object on which to run the requests.</param>
         /// <param name="maxListPageSize">The maximum page size to retrieve.</param>
         public ManagementApiConsumer(AdSenseService service, int maxListPageSize)
