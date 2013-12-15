@@ -48,10 +48,10 @@ namespace Drive.Sample
         private const int DownloadChunkSize = 256 * KB;
 
         // CHANGE THIS with full path to the file you want to upload
-        private const string UploadFileName = @"Z:\shared\2012-09-14 20.57.32.jpg";
+        private const string UploadFileName = @"FILE_TO_UPLOAD";
 
         // CHANGE THIS with a download directory
-        private const string DownloadDirectoryName = @"z:\Shared\";
+        private const string DownloadDirectoryName = @"DIRECTORY_FOR_DOWNLOADING";
 
         // CHANGE THIS if you upload a file type other than a jpg
         private const string ContentType = @"image/jpeg";
