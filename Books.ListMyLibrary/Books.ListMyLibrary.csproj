@@ -55,9 +55,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Google.Apis.Auth.1.7.0-beta\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Books.v1, Version=1.7.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Google.Apis.Books.v1.1.7.0.43-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Books.v1.dll</HintPath>
+    <Reference Include="Google.Apis.Books.v1">
+      <HintPath>..\packages\Google.Apis.Books.v1.1.7.0.44-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Books.v1.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis.Core, Version=1.7.0.24059, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
