@@ -50,7 +50,7 @@ namespace DfaReporting.Sample
         /// <param name="endDate">Values which existed before this end date will be returned.</param>
         /// <param name="maxPageSize">The maximum page size to retrieve.</param>
         /// <returns>The first page of dimension values received.</returns>
-        public DimensionValueList Query(string dimensionName, string userProfileId, DateTime startDate,
+        public DimensionValueList Query(string dimensionName, long userProfileId, DateTime startDate,
             DateTime endDate, int maxPageSize)
         {
             Console.WriteLine("=================================================================");

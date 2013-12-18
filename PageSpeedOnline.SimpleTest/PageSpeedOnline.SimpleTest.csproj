@@ -42,13 +42,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Google.Apis">
-      <HintPath>..\packages\Google.Apis.1.6.0-beta\lib\net40\Google.Apis.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.1.7.0-beta\lib\net40\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>..\packages\Google.Apis.Core.1.7.0-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Core.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis.Pagespeedonline.v1">
-      <HintPath>..\packages\Google.Apis.Pagespeedonline.v1.1.6.0.31-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Pagespeedonline.v1.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Pagespeedonline.v1.1.7.0.34-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Pagespeedonline.v1.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis.PlatformServices">
-      <HintPath>..\packages\Google.Apis.1.6.0-beta\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.1.7.0-beta\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>

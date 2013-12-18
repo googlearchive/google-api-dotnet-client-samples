@@ -42,7 +42,7 @@ namespace DfaReporting.Sample
         /// </summary>
         /// <param name="userProfileId">The ID number of the DFA user profile to run this request as.</param>
         /// <param name="maxPageSize">The maximum number of results per page.</param>
-        public void List(string userProfileId, int maxPageSize)
+        public void List(long userProfileId, int maxPageSize)
         {
             Console.WriteLine("=================================================================");
             Console.WriteLine("Listing all reports");

@@ -84,7 +84,7 @@ Module Program
         Dim requeust As ListRequest = service.Events.List(list.Id)
         ' Set MaxResults and TimeMin with sample values
         requeust.MaxResults = 5
-        requeust.TimeMin = "2012-01-01T00:00:00-00:00"
+        requeust.TimeMin = New DateTime(2013, 10, 1, 20, 0, 0)
         ' Fetch the list of events
         For Each calendarEvent As Data.Event In requeust.Execute().Items
             Dim startDate As String = "Unspecified"

@@ -111,22 +111,22 @@ namespace DfaReporting.Sample
 
             // Choose a user profile ID to use in the following samples.
             var userProfileId = GetUserProfileId(service);
-            if (string.IsNullOrEmpty(userProfileId))
+            if (!userProfileId.HasValue)
             {
                 return;
             }
 
             // Create and run a standard report.
-            CreateAndRunStandardReport(service, userProfileId);
+            CreateAndRunStandardReport(service, userProfileId.Value);
 
             // Create and run a Floodlight report.
-            CreateAndRunFloodlightReport(service, userProfileId);
+            CreateAndRunFloodlightReport(service, userProfileId.Value);
 
             // List all of the Reports you have access to.
-            new GetAllReportsHelper(service).List(userProfileId, MaxReportPageSize);
+            new GetAllReportsHelper(service).List(userProfileId.Value, MaxReportPageSize);
         }
 
-        private static string GetUserProfileId(DfareportingService service)
+        private static long? GetUserProfileId(DfareportingService service)
         {
             UserProfileList userProfiles = new GetAllUserProfilesHelper(service).Run();
             if (userProfiles.Items.Count == 0)
@@ -137,7 +137,7 @@ namespace DfaReporting.Sample
             return userProfiles.Items[0].ProfileId;
         }
 
-        private static void CreateAndRunStandardReport(DfareportingService service, string userProfileId)
+        private static void CreateAndRunStandardReport(DfareportingService service, long userProfileId)
         {
             DimensionValueList advertisers = new GetDimensionValuesHelper(service).Query(
                 "dfa:advertiser", userProfileId, StartDate, EndDate, MaxListPageSize);
@@ -159,7 +159,7 @@ namespace DfaReporting.Sample
             }
         }
 
-        private static void CreateAndRunFloodlightReport(DfareportingService service, string userProfileId)
+        private static void CreateAndRunFloodlightReport(DfareportingService service, long userProfileId)
         {
             DimensionValueList floodlightConfigIds = new GetDimensionValuesHelper(service).Query(
                 "dfa:floodlightConfigId", userProfileId, StartDate, EndDate, MaxListPageSize);

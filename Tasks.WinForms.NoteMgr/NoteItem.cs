@@ -76,7 +76,8 @@ namespace TasksExample.WinForms.NoteMgr
         /// <summary>
         /// Creates a new note item and associates the action events with the specified NoteForm.
         /// </summary>
-        public NoteItem(NoteForm form, Task relatedTask) : this()
+        public NoteItem(NoteForm form, Task relatedTask)
+            : this()
         {
             NewNoteRequest += form.AddNote;
             DeleteNoteRequest += form.DeleteNote;
@@ -120,7 +121,7 @@ namespace TasksExample.WinForms.NoteMgr
                 RelatedTask.Title = NoteText;
                 changes = true;
             }
-            if (NoteFinished != (!string.IsNullOrEmpty(RelatedTask.Completed)))
+            if (NoteFinished != RelatedTask.Completed.HasValue)
             {
                 RelatedTask.Status = NoteFinished ? "completed" : "needsAction";
                 changes = true;

@@ -39,19 +39,19 @@ namespace DfaReporting.Sample
         /// <param name="userProfileId">The ID number of the DFA user profile to run this request as.</param>
         /// <param name="report">The report to request a new file for.</param>
         /// <returns>The generated report file.</returns>
-        public File Run(string userProfileId, Report report, bool isSynchronous)
+        public File Run(long userProfileId, Report report, bool isSynchronous)
         {
             Console.WriteLine("=================================================================");
             Console.WriteLine("Generating a report file for report with ID {0}", report.Id);
             Console.WriteLine("=================================================================");
 
-            ReportsResource.RunRequest request = service.Reports.Run(userProfileId, report.Id);
+            ReportsResource.RunRequest request = service.Reports.Run(userProfileId, report.Id.Value);
             request.Synchronous = isSynchronous;
             File reportFile = request.Execute();
 
             Console.WriteLine("Report execution initiated. Checking for completion...");
 
-            reportFile = waitForReportRunCompletion(service, userProfileId, reportFile);
+            reportFile = WaitForReportRunCompletion(service, userProfileId, reportFile);
             if (!reportFile.Status.Equals("REPORT_AVAILABLE"))
             {
                 Console.WriteLine("Report file generation failed to finish. Final status is: {0}", reportFile.Status);
@@ -72,13 +72,13 @@ namespace DfaReporting.Sample
         /// <param name="file">The report file to poll the status of.</param>
         /// <returns>The report file object, either once it is no longer processing or
         ///     once too much time has passed.</returns>
-        private static File waitForReportRunCompletion(DfareportingService service, string userProfileId,
+        private static File WaitForReportRunCompletion(DfareportingService service, long userProfileId,
             File file)
         {
             ExponentialBackOff backOff = new ExponentialBackOff();
             TimeSpan interval;
 
-            file = service.Reports.Files.Get(userProfileId, file.ReportId, file.Id).Execute();
+            file = service.Reports.Files.Get(userProfileId, file.ReportId.Value, file.Id.Value).Execute();
 
             for (int i = 1; i <= backOff.MaxNumOfRetries; i++)
             {
@@ -90,7 +90,7 @@ namespace DfaReporting.Sample
                 interval = backOff.GetNextBackOff(i);
                 Console.WriteLine("Polling again in {0} seconds.", interval);
                 Thread.Sleep(interval);
-                file = service.Reports.Files.Get(userProfileId, file.ReportId, file.Id).Execute();
+                file = service.Reports.Files.Get(userProfileId, file.ReportId.Value, file.Id.Value).Execute();
             }
             return file;
         }

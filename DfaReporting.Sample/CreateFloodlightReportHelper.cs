@@ -46,7 +46,7 @@ namespace DfaReporting.Sample
         /// <param name="startDate">The starting date of the report.</param>
         /// <param name="endDate">The ending date of the report.</param>
         /// <returns>The newly created report</returns>
-        public Report Insert(string userProfileId, DimensionValue floodlightConfigId, DateTime startDate,
+        public Report Insert(long userProfileId, DimensionValue floodlightConfigId, DateTime startDate,
             DateTime endDate)
         {
             Console.WriteLine("=================================================================");
