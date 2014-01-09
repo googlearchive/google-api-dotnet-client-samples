@@ -1,5 +1,5 @@
 /*
-Copyright 2012 Google Inc
+Copyright 2014 Google Inc
 
 Licensed under the Apache License, Version 2.0(the "License");
 you may not use this file except in compliance with the License.
@@ -15,13 +15,14 @@ limitations under the License.
 */
 
 using System;
+
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
 using Google.Apis.Auth.OAuth2;
-using Google.Apis.Dfareporting.v1_2;
-using Google.Apis.Dfareporting.v1_2.Data;
+using Google.Apis.Dfareporting.v1_3;
+using Google.Apis.Dfareporting.v1_3.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 
@@ -38,6 +39,9 @@ namespace DfaReporting.Sample
     /// </item>
     /// <item>
     /// <description>Creating a new standard report</description>
+    /// </item>
+    /// <item>
+    /// <description>Listing the compatible fiends for this standard report</description>
     /// </item>
     /// <item>
     /// <description>Listing the first 50 available Floodlight configuration IDs for a user profile</description>
@@ -59,7 +63,6 @@ namespace DfaReporting.Sample
     internal class Program
     {
         private static readonly IEnumerable<string> scopes = new[] {
-            "https://www.googleapis.com/auth/devstorage.read_only",
             DfareportingService.Scope.Dfareporting };
 
         private const int MaxListPageSize = 50;
@@ -149,6 +152,10 @@ namespace DfaReporting.Sample
 
                 Report standardReport = new CreateStandardReportHelper(service).Insert(
                     userProfileId, advertiser, StartDate, EndDate);
+
+                // List all of the fields compatible with this standard report.
+                new GetCompatibleFieldsHelper(service).Run(userProfileId, standardReport);
+
                 File file = new GenerateReportFileHelper(service).Run(userProfileId, standardReport, true);
 
                 if (file != null)
