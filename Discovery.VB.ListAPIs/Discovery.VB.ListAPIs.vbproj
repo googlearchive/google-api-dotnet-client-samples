@@ -58,17 +58,21 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Google.Apis">
-      <HintPath>..\packages\Google.Apis.1.7.0-beta\lib\net40\Google.Apis.dll</HintPath>
+    <Reference Include="Google.Apis, Version=1.8.0.15611, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.1.8.0-rc\lib\net40\Google.Apis.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Core">
-      <HintPath>..\packages\Google.Apis.Core.1.7.0-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Core.dll</HintPath>
+    <Reference Include="Google.Apis.Core, Version=1.8.0.15610, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.Core.1.8.0-rc\lib\portable-net4+sl4+wp71+win8\Google.Apis.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Discovery.v1">
-      <HintPath>..\packages\Google.Apis.Discovery.v1.1.7.0.35-beta\lib\portable-net4+sl4+wp71+win8\Google.Apis.Discovery.v1.dll</HintPath>
+    <Reference Include="Google.Apis.Discovery.v1, Version=1.8.0.37, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.Discovery.v1.1.8.0.370-rc\lib\portable-net4+sl4+wp71+win8\Google.Apis.Discovery.v1.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.PlatformServices">
-      <HintPath>..\packages\Google.Apis.1.7.0-beta\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.8.0.15614, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.1.8.0-rc\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
