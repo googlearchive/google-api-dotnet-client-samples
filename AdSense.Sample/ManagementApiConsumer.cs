@@ -18,8 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Google.Apis.AdSense.v1_4.Data;
 using Google.Apis.AdSense.v1_4;
+using Google.Apis.AdSense.v1_4.Data;
 
 namespace AdSense.Sample
 {
@@ -70,6 +70,7 @@ namespace AdSense.Sample
         private static readonly string DateFormat = "yyyy-MM-dd";
         private AdSenseService service;
         private int maxListPageSize;
+        private Account adSenseAccount;
 
         /// <summary>Initializes a new instance of the <see cref="ManagementApiConsumer"/> class.</summary>
         /// <param name="service">AdSense service object on which to run the requests.</param>
@@ -86,11 +87,11 @@ namespace AdSense.Sample
             Accounts accounts = GetAllAccounts();
 
             // Get an example account, so we can run the following samples.
-            var exampleAccount = accounts.Items.NullToEmpty().FirstOrDefault();
-            if (exampleAccount != null)
+            adSenseAccount = accounts.Items.NullToEmpty().FirstOrDefault();
+            if (adSenseAccount != null)
             {
-                DisplayAccountTree(exampleAccount.Id);
-                DisplayAllAdClientsForAccount(exampleAccount.Id);
+                DisplayAccountTree(adSenseAccount.Id);
+                DisplayAllAdClientsForAccount(adSenseAccount.Id);
             }
 
             var adClients = GetAllAdClients();
@@ -160,7 +161,9 @@ namespace AdSense.Sample
                 {
                     foreach (var account in accountResponse.Items)
                     {
-                        Console.WriteLine("Account with ID \"{0}\" and name \"{1}\" was found.", account.Id,
+                        Console.WriteLine(
+                            "Account with ID \"{0}\" and name \"{1}\" was found.", 
+                            account.Id,
                             account.Name);
                     }
                 }
@@ -200,8 +203,11 @@ namespace AdSense.Sample
         /// <param name="level">The depth at which the top account exists in the tree.</param>
         private void DisplayTree(Account parentAccount, int level)
         {
-            Console.WriteLine("{0}Account with ID \"{1}\" and name \"{2}\" was found.", new string(' ', 2 * level),
-                parentAccount.Id, parentAccount.Name);
+            Console.WriteLine(
+                "{0}Account with ID \"{1}\" and name \"{2}\" was found.",
+                new string(' ', 2 * level),
+                parentAccount.Id,
+                parentAccount.Name);
 
             foreach (var subAccount in parentAccount.SubAccounts.NullToEmpty())
             {
@@ -234,9 +240,12 @@ namespace AdSense.Sample
                 {
                     foreach (var adClient in adClientResponse.Items)
                     {
-                        Console.WriteLine("Ad client for product \"{0}\" with ID \"{1}\" was found.",
-                            adClient.ProductCode, adClient.Id);
-                        Console.WriteLine("\tSupports reporting: {0}",
+                        Console.WriteLine(
+                            "Ad client for product \"{0}\" with ID \"{1}\" was found.",
+                            adClient.ProductCode, 
+                           adClient.Id);
+                        Console.WriteLine(
+                            "\tSupports reporting: {0}",
                             adClient.SupportsReporting.Value ? "Yes" : "No");
                     }
                 }
@@ -268,7 +277,7 @@ namespace AdSense.Sample
 
             do
             {
-                var adClientRequest = service.Adclients.List();
+                var adClientRequest = service.Accounts.Adclients.List(adSenseAccount.Id);
                 adClientRequest.MaxResults = maxListPageSize;
                 adClientRequest.PageToken = pageToken;
                 adClientResponse = adClientRequest.Execute();
@@ -277,9 +286,12 @@ namespace AdSense.Sample
                 {
                     foreach (var adClient in adClientResponse.Items)
                     {
-                        Console.WriteLine("Ad client for product \"{0}\" with ID \"{1}\" was found.",
-                            adClient.ProductCode, adClient.Id);
-                        Console.WriteLine("\tSupports reporting: {0}",
+                        Console.WriteLine(
+                            "Ad client for product \"{0}\" with ID \"{1}\" was found.",
+                            adClient.ProductCode,
+                            adClient.Id);
+                        Console.WriteLine(
+                            "\tSupports reporting: {0}",
                             adClient.SupportsReporting.Value ? "Yes" : "No");
                     }
                 }
@@ -323,8 +335,11 @@ namespace AdSense.Sample
                 {
                     foreach (var adUnit in adUnitResponse.Items)
                     {
-                        Console.WriteLine("Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" was found.",
-                            adUnit.Code, adUnit.Name, adUnit.Status);
+                        Console.WriteLine(
+                            "Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" was found.",
+                            adUnit.Code,
+                            adUnit.Name,
+                            adUnit.Status);
                     }
                 }
                 else
@@ -336,7 +351,6 @@ namespace AdSense.Sample
             }
             while (pageToken != null);
             Console.WriteLine();
-
 
             // Return the last page of ad units, so that the main sample has something to run.
             return adUnitResponse;
@@ -359,7 +373,7 @@ namespace AdSense.Sample
 
             do
             {
-                var customChannelRequest = service.Customchannels.List(adClientId);
+                var customChannelRequest = service.Accounts.Customchannels.List(adSenseAccount.Id, adClientId);
                 customChannelRequest.MaxResults = maxListPageSize;
                 customChannelRequest.PageToken = pageToken;
                 customChannelResponse = customChannelRequest.Execute();
@@ -368,8 +382,10 @@ namespace AdSense.Sample
                 {
                     foreach (var customChannel in customChannelResponse.Items)
                     {
-                        Console.WriteLine("Custom channel with code \"{0}\" and name \"{1}\" was found.",
-                            customChannel.Code, customChannel.Name);
+                        Console.WriteLine(
+                            "Custom channel with code \"{0}\" and name \"{1}\" was found.",
+                            customChannel.Code,
+                            customChannel.Name);
                     }
                 }
                 else
@@ -403,7 +419,10 @@ namespace AdSense.Sample
 
             do
             {
-                var adUnitRequest = service.Customchannels.Adunits.List(adClientId, customChannelId);
+                var adUnitRequest = service.Accounts.Customchannels.Adunits.List(
+                    adSenseAccount.Id,
+                    adClientId,
+                    customChannelId);
                 adUnitRequest.MaxResults = maxListPageSize;
                 adUnitRequest.PageToken = pageToken;
                 adUnitResponse = adUnitRequest.Execute();
@@ -412,8 +431,11 @@ namespace AdSense.Sample
                 {
                     foreach (var adUnit in adUnitResponse.Items)
                     {
-                        Console.WriteLine("Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" was found.",
-                            adUnit.Code, adUnit.Name, adUnit.Status);
+                        Console.WriteLine(
+                            "Ad unit with code \"{0}\", name \"{1}\" and status \"{2}\" was found.",
+                            adUnit.Code,
+                            adUnit.Name,
+                            adUnit.Status);
                     }
                 }
                 else
@@ -442,7 +464,10 @@ namespace AdSense.Sample
 
             do
             {
-                var customChannelRequest = service.Adunits.Customchannels.List(adClientId, adUnitId);
+                var customChannelRequest = service.Accounts.Adunits.Customchannels.List(
+                    adSenseAccount.Id,
+                    adClientId,
+                    adUnitId);
                 customChannelRequest.MaxResults = maxListPageSize;
                 customChannelRequest.PageToken = pageToken;
                 customChannelResponse = customChannelRequest.Execute();
@@ -451,8 +476,10 @@ namespace AdSense.Sample
                 {
                     foreach (var customChannel in customChannelResponse.Items)
                     {
-                        Console.WriteLine("Custom channel with code \"{0}\" and name \"{1}\" was found.",
-                            customChannel.Code, customChannel.Name);
+                        Console.WriteLine(
+                            "Custom channel with code \"{0}\" and name \"{1}\" was found.",
+                            customChannel.Code,
+                            customChannel.Name);
                     }
                 }
                 else
@@ -480,7 +507,7 @@ namespace AdSense.Sample
 
             do
             {
-                var urlChannelRequest = service.Urlchannels.List(adClientId);
+                var urlChannelRequest = service.Accounts.Urlchannels.List(adSenseAccount.Id, adClientId);
                 urlChannelRequest.MaxResults = maxListPageSize;
                 urlChannelRequest.PageToken = pageToken;
                 urlChannelResponse = urlChannelRequest.Execute();
@@ -514,7 +541,7 @@ namespace AdSense.Sample
             // Prepare report.
             var startDate = DateTime.Today.AddDays(-7).ToString(DateFormat);
             var endDate = DateTime.Today.ToString(DateFormat);
-            var reportRequest = service.Reports.Generate(startDate, endDate);
+            var reportRequest = service.Accounts.Reports.Generate(adSenseAccount.Id, startDate, endDate);
 
             // Specify the desired ad client using a filter, as well as other parameters.
             reportRequest.Filter = new List<string>
@@ -543,6 +570,7 @@ namespace AdSense.Sample
             {
                 Console.WriteLine("No rows returned.");
             }
+
             Console.WriteLine();
         }
 
@@ -564,7 +592,7 @@ namespace AdSense.Sample
             // Prepare report.
             var startDate = DateTime.Today.AddDays(-7).ToString(DateFormat);
             var endDate = DateTime.Today.ToString(DateFormat);
-            var reportRequest = service.Reports.Generate(startDate, endDate);
+            var reportRequest = service.Accounts.Reports.Generate(adSenseAccount.Id, startDate, endDate);
             var pageSize = maxListPageSize;
             var startIndex = 0;
 
@@ -603,7 +631,7 @@ namespace AdSense.Sample
                 startIndex += reportResponse.Rows.Count)
             {
                 // Check to see if we're going to go above the limit and get as many results as we can.
-                pageSize = Math.Min(maxListPageSize, (int) totalRows - startIndex);
+                pageSize = Math.Min(maxListPageSize, (int)totalRows - startIndex);
 
                 // Run next page of report.
                 reportResponse = ReportUtils.GetPage(reportRequest, startIndex, pageSize);
@@ -617,6 +645,7 @@ namespace AdSense.Sample
                 // Display results.
                 ReportUtils.DisplayRows(reportResponse.Rows);
             }
+
             Console.WriteLine();
         }
 
@@ -626,8 +655,11 @@ namespace AdSense.Sample
         /// <param name="savedReportId">The ID of the saved report to generate.</param>
         private void GenerateSavedReport(string savedReportId)
         {
-            ReportsResource.SavedResource.GenerateRequest savedReportRequest =
-                service.Reports.Saved.Generate(savedReportId);
+            Console.WriteLine("=================================================================");
+            Console.WriteLine("Running saved report {0}", savedReportId);
+            Console.WriteLine("=================================================================");
+
+            var savedReportRequest = service.Accounts.Reports.Saved.Generate(adSenseAccount.Id, savedReportId);
             AdsenseReportsGenerateResponse savedReportResponse = savedReportRequest.Execute();
 
             // Run report.
@@ -640,6 +672,7 @@ namespace AdSense.Sample
             {
                 Console.WriteLine("No rows returned.");
             }
+
             Console.WriteLine();
         }
 
@@ -659,7 +692,7 @@ namespace AdSense.Sample
 
             do
             {
-                var savedReportRequest = service.Reports.Saved.List();
+                var savedReportRequest = service.Accounts.Reports.Saved.List(adSenseAccount.Id);
                 savedReportRequest.MaxResults = maxListPageSize;
                 savedReportRequest.PageToken = pageToken;
                 savedReportResponse = savedReportRequest.Execute();
@@ -668,8 +701,10 @@ namespace AdSense.Sample
                 {
                     foreach (var savedReport in savedReportResponse.Items)
                     {
-                        Console.WriteLine("Saved report with ID \"{0}\" and name \"{1}\" was found.",
-                            savedReport.Id, savedReport.Name);
+                        Console.WriteLine(
+                            "Saved report with ID \"{0}\" and name \"{1}\" was found.",
+                            savedReport.Id,
+                            savedReport.Name);
                     }
                 }
                 else
@@ -706,8 +741,10 @@ namespace AdSense.Sample
                 {
                     foreach (var savedAdStyle in savedAdStyleResponse.Items)
                     {
-                        Console.WriteLine("Saved ad style with ID \"{0}\" and name \"{1}\" was found.",
-                            savedAdStyle.Id, savedAdStyle.Name);
+                        Console.WriteLine(
+                            "Saved ad style with ID \"{0}\" and name \"{1}\" was found.",
+                            savedAdStyle.Id,
+                            savedAdStyle.Name);
                     }
                 }
                 else
@@ -736,14 +773,17 @@ namespace AdSense.Sample
             {
                 foreach (var metric in metricsResponse.Items)
                 {
-                    Console.WriteLine("Metric with ID \"{0}\" is available for products: \"{1}\".",
-                        metric.Id, String.Join(", ", metric.SupportedProducts.ToArray()));
+                    Console.WriteLine(
+                        "Metric with ID \"{0}\" is available for products: \"{1}\".",
+                        metric.Id,
+                        String.Join(", ", metric.SupportedProducts.ToArray()));
                 }
             }
             else
             {
                 Console.WriteLine("No available metrics found.");
             }
+
             Console.WriteLine();
 
             Console.WriteLine("=================================================================");
@@ -756,17 +796,26 @@ namespace AdSense.Sample
             {
                 foreach (var dimension in dimensionsResponse.Items)
                 {
-                    Console.WriteLine("Dimension with ID \"{0}\" is available for products: \"{1}\".",
-                        dimension.Id, String.Join(", ", dimension.SupportedProducts.ToArray()));
+                    if (dimension.SupportedProducts.IsNullOrEmpty())
+                    {
+                        Console.WriteLine("Dimension with ID \"{0}\" is available for no products.", dimension.Id);
+                    }
+                    else
+                    {
+                        Console.WriteLine(
+                            "Dimension with ID \"{0}\" is available for products: \"{1}\".",
+                            dimension.Id,
+                            String.Join(", ", dimension.SupportedProducts.ToArray()));
+                    }
                 }
             }
             else
             {
                 Console.WriteLine("No available dimensions found.");
             }
+
             Console.WriteLine();
         }
-
 
         /// <summary>Prints all the alerts for the logged in user's default account.</summary>
         private void DisplayAllAlerts()
@@ -781,8 +830,12 @@ namespace AdSense.Sample
             {
                 foreach (var alert in alertsResponse.Items)
                 {
-                    Console.WriteLine("Alert with ID \"{0}\" type \"{1}\" and severity \"{2}\" was found.",
-                        alert.Id, alert.Type, alert.Severity);
+                    Console.WriteLine(
+                        "Alert with ID \"{0}\" type \"{1}\" and severity \"{2}\" was found.",
+                        alert.Id,
+                        alert.Type,
+                        alert.Severity);
+
                     // Uncomment to dismiss (delete) the alert. Note that there is no way to revert this.
                     // service.Alerts.Delete(alert.Id);
                 }
@@ -791,9 +844,9 @@ namespace AdSense.Sample
             {
                 Console.WriteLine("No alerts found.");
             }
+
             Console.WriteLine();
         }
-
 
         /// <summary>Prints all the alerts for the logged in user's default account.</summary>
         private void DisplayAllPayments()

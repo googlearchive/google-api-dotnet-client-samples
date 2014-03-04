@@ -39,6 +39,7 @@ namespace AdSense.Sample
             {
                 Console.WriteLine("{0, -25}", header.Name);
             }
+
             Console.WriteLine();
         }
 
@@ -54,6 +55,7 @@ namespace AdSense.Sample
                 {
                     Console.WriteLine("{0, -25}", column);
                 }
+
                 Console.WriteLine();
             }
         }
@@ -76,7 +78,7 @@ namespace AdSense.Sample
         /// <param name="pageSize">The maximum page size.</param>
         /// <returns>A page of results</returns>
         public static AdsenseReportsGenerateResponse GetPage(
-            ReportsResource.GenerateRequest reportRequest, int startIndex, int pageSize)
+            AccountsResource.ReportsResource.GenerateRequest reportRequest, int startIndex, int pageSize)
         {
             reportRequest.StartIndex = startIndex;
             reportRequest.MaxResults = pageSize;

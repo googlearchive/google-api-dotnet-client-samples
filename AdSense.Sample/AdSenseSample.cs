@@ -18,9 +18,9 @@ using System;
 using System.IO;
 using System.Threading;
 
-using Google.Apis.Auth.OAuth2;
 using Google.Apis.AdSense.v1_4;
 using Google.Apis.AdSense.v1_4.Data;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 
 namespace AdSense.Sample
@@ -53,9 +53,12 @@ namespace AdSense.Sample
             var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                 new ClientSecrets
                 {
-                    ClientId = "PUT_CLIENT_ID_HERE",
-                    ClientSecret = "PUT_CLIENT_SECRET_HERE"
-                }, new string[] { AdSenseService.Scope.Adsense }, "user", CancellationToken.None).Result;
+                    ClientId = "INSERT_CLIENT_ID_HERE",
+                    ClientSecret = "INSERT_CLIENT_SECRET_HERE"
+                },
+                new string[] { AdSenseService.Scope.Adsense }, 
+                "user", 
+                CancellationToken.None).Result;
 
             // Create the service.
             var service = new AdSenseService(new BaseClientService.Initializer()
