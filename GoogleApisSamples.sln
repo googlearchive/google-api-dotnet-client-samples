@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.ShortenURL", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteVerification.VerifySite", "SiteVerification.VerifySite\SiteVerification.VerifySite.csproj", "{BBEE8AEC-77B6-4A22-8293-9AAAB4FFBF05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.ListProducts", "Shopping.ListProducts\Shopping.ListProducts.csproj", "{DD020FB0-CD42-4BB6-BDC0-F4E692027428}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageSpeedOnline.SimpleTest", "PageSpeedOnline.SimpleTest\PageSpeedOnline.SimpleTest.csproj", "{E38C4646-DF5F-4B38-B980-4970C4718F47}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discovery.ListAPIs", "Discovery.ListAPIs\Discovery.ListAPIs.csproj", "{57DDF57A-56A9-43F8-864F-EBAEE37EE78C}"
@@ -88,10 +86,6 @@ Global
 		{BBEE8AEC-77B6-4A22-8293-9AAAB4FFBF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBEE8AEC-77B6-4A22-8293-9AAAB4FFBF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBEE8AEC-77B6-4A22-8293-9AAAB4FFBF05}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD020FB0-CD42-4BB6-BDC0-F4E692027428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD020FB0-CD42-4BB6-BDC0-F4E692027428}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD020FB0-CD42-4BB6-BDC0-F4E692027428}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD020FB0-CD42-4BB6-BDC0-F4E692027428}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E38C4646-DF5F-4B38-B980-4970C4718F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E38C4646-DF5F-4B38-B980-4970C4718F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E38C4646-DF5F-4B38-B980-4970C4718F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
