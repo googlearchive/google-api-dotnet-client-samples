@@ -539,9 +539,10 @@ namespace AdSense.Sample
             Console.WriteLine("=================================================================");
 
             // Prepare report.
-            var startDate = DateTime.Today.AddDays(-7).ToString(DateFormat);
-            var endDate = DateTime.Today.ToString(DateFormat);
-            var reportRequest = service.Accounts.Reports.Generate(adSenseAccount.Id, startDate, endDate);
+            var startDate = DateTime.Today.AddDays(-7);
+            var endDate = DateTime.Today;
+            var reportRequest = service.Accounts.Reports.Generate(
+                adSenseAccount.Id, startDate.ToString(DateFormat), endDate.ToString(DateFormat));
 
             // Specify the desired ad client using a filter, as well as other parameters.
             reportRequest.Filter = new List<string>
@@ -559,6 +560,7 @@ namespace AdSense.Sample
 
             // Run report.
             var reportResponse = reportRequest.Execute();
+            ReportUtils.FillGapsDates(reportResponse, startDate, endDate);
 
             if (!reportResponse.Rows.IsNullOrEmpty())
             {

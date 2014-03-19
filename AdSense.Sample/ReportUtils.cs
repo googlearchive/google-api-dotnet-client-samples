@@ -29,6 +29,9 @@ namespace AdSense.Sample
     /// </summary>
     public static class ReportUtils
     {
+        public const string DATEPATTERN = "yyyy-MM-dd";
+        public const string MONTHPATTERN = "yyyy-MM";
+
         /// <summary>
         /// Displays the headers for the report.
         /// </summary>
@@ -95,6 +98,81 @@ namespace AdSense.Sample
         public static bool IsNullOrEmpty<T>(this IList<T> list)
         {
             return list == null || list.Count == 0;
+        }
+
+        /// <summary>
+        /// Fetched reports from the API can have chronological gaps. For example, days with no logged activity are 
+        /// not shown at all. This method fills day and month gaps and sets the values to "N/A". It doesn't fill 
+        /// "WEEK" dimension.
+        /// </summary>
+        /// <param name="reportResponse">The object containing the report data.</param>
+        /// <returns>The full report.</returns>
+        public static void FillGapsDates(
+            AdsenseReportsGenerateResponse reportResponse, DateTime fromDate, DateTime toDate)
+        {
+            if (!reportResponse.Rows.IsNullOrEmpty())
+            {
+                return;
+            }
+
+            var enumeratedHeaders = reportResponse.Headers.Select((n, i) => new { header = n, index = i });
+            
+
+            var firstDateHeader = enumeratedHeaders.FirstOrDefault(x => x.header.Name == "DATE");
+            int dateIndex = firstDateHeader != null ? firstDateHeader.index : -1;
+
+            var firstMonthHeader = enumeratedHeaders.FirstOrDefault(x => x.header.Name == "MONTH");
+            int monthIndex = firstMonthHeader != null ? firstMonthHeader.index : -1;
+
+            if (dateIndex == -1 && monthIndex == -1)
+            {
+                return;
+            }
+            
+            if (reportResponse.Rows == null)
+            {
+                reportResponse.Rows = new List<IList<string>>();
+            }
+
+            // Start date (day) filling.
+            if (dateIndex != -1)
+            {
+                for (DateTime date = fromDate; date.Date <= toDate.Date; date = date.AddDays(1))
+                {
+                    if (reportResponse.Rows.Any(x => x[dateIndex] == date.ToString(DATEPATTERN)))
+                    {
+                        continue;
+                    }
+
+                    List<string> emptyRow = Enumerable.Repeat("N/A", reportResponse.Headers.Count()).ToList<string>();
+                    emptyRow[dateIndex] = date.ToString(DATEPATTERN);
+
+                    // If the result has both days and months, add the month early.
+                    if (monthIndex != -1)
+                    {
+                        emptyRow[monthIndex] = date.ToString(MONTHPATTERN);
+                    }
+
+                    reportResponse.Rows.Add(emptyRow);
+                }
+            }
+
+            // Start month filling.
+            if (monthIndex != -1)
+            {
+                for (DateTime date = fromDate; date.Date <= toDate.Date; date = date.AddMonths(1))
+                {
+                    // Don't modify rows already in the response.
+                    if (reportResponse.Rows.Any(x => x[monthIndex] == date.ToString(MONTHPATTERN)))
+                    {
+                        continue;
+                    }
+
+                    List<string> emptyRow = Enumerable.Repeat("N/A", reportResponse.Headers.Count()).ToList<string>();
+                    emptyRow[monthIndex] = date.ToString(MONTHPATTERN);
+                    reportResponse.Rows.Add(emptyRow);
+                }
+            }
         }
     }
 }
