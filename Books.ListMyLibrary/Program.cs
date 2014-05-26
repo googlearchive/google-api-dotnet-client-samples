@@ -20,6 +20,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using Google.Apis.Auth.OAuth2;
+using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Books.v1;
 using Google.Apis.Books.v1.Data;
 using Google.Apis.Services;
@@ -74,12 +75,32 @@ namespace Books.ListMyLibrary
                     ApplicationName = "Books API Sample",
                 });
 
+            // List library.
+            await ListLibrary(service);
+
+            // Revoke the credential.
+            await credential.RevokeTokenAsync(CancellationToken.None);
+
+            // Request should fail now - invalid grant.
+            try
+            {
+                await ListLibrary(service);
+            }
+            catch (TokenResponseException ex)
+            {
+                Console.WriteLine(ex.Error);
+            }
+
+            // Reauthorize the user. A browser should be opened, and the user should enter his or her credential again.
+            await GoogleWebAuthorizationBroker.ReauthorizeAsync(credential, CancellationToken.None);
+
+            // The request should succeed now.
             await ListLibrary(service);
         }
 
         private async Task ListLibrary(BooksService service)
         {
-            Console.WriteLine("Listing Bookshelves... (Execute ASYNC)");
+            Console.WriteLine("\n\n\nListing Bookshelves... (Execute ASYNC)");
             Console.WriteLine("======================================");
 
             // Execute async.
@@ -106,7 +127,7 @@ namespace Books.ListMyLibrary
                 if (item.VolumeCount > 0)
                 {
                     Console.WriteLine("Query volumes... (Execute ASYNC)");
-                    Console.WriteLine("================================");
+                    Console.WriteLine("--------------------------------");
                     var request = service.Mylibrary.Bookshelves.Volumes.List(item.Id.ToString());
                     Volumes inBookshelf = await request.ExecuteAsync();
                     if (inBookshelf.Items == null)
