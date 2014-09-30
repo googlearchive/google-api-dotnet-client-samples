@@ -42,4 +42,3 @@ packages/**
 *.userprefs
 
 key.p12
-ClientCredentials.cs

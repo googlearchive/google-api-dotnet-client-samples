@@ -79,6 +79,7 @@ namespace Books.ListMyLibrary
             await ListLibrary(service);
 
             // Revoke the credential.
+            Console.WriteLine("\n!!!REVOKE ACCESS TOKEN!!!\n");
             await credential.RevokeTokenAsync(CancellationToken.None);
 
             // Request should fail now - invalid grant.
