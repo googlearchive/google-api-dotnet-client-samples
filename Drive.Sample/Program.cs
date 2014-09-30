@@ -138,7 +138,7 @@ namespace Drive.Sample
             task.ContinueWith(t =>
             {
                 // NotOnRanToCompletion - this code will be called if the upload fails
-                Console.WriteLine("Upload Filed. " + t.Exception);
+                Console.WriteLine("Upload Failed. " + t.Exception);
             }, TaskContinuationOptions.NotOnRanToCompletion);
             task.ContinueWith(t =>
             {
