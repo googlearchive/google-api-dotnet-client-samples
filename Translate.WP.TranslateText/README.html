@@ -1,0 +1,41 @@
+<html> 
+<title>Google .NET Client API &ndash; Translate.WP.TranslateText</title> 
+<body> 
+<h2>Instructions for the Google .NET Client API &ndash; Translate.WP.TranslateText</h2> 
+ 
+<h3>Browse Online</h3> 
+ 
+<ul> 
+  <li><a href="http://code.google.com/p/google-api-dotnet-client/source/browse/?repo=samples#hg%2FTranslate.WP.TranslateText">Browse Source</a>, 
+  or main file <a href="http://code.google.com/p/google-api-dotnet-client/source/browse/Translate.WP.TranslateText/MainPage.xaml.cs?repo=samples">MainPage.xaml.cs</a></li> 
+</ul> 
+ 
+<h3>1. Checkout Instructions</h3> 
+ 
+<p><b>Prerequisites:</b> Install Visual Studio, and <a
+  href="http://mercurial.selenic.com/">Mercurial</a>.</p> 
+ 
+<pre><code>cd <i>[someDirectory]</i> 
+hg clone https://code.google.com/p/google-api-dotnet-client.samples/ google-api-dotnet-client-samples</code></pre> 
+ 
+<h3>2. API access Instructions</h3> 
+<p><b>Important:</b> after checking out the project, and before compiling
+and running it, you need to:
+<ul> 
+<li><a href="https://developers.google.com/console/help/?csw=1#creatingdeletingprojects">Create a project in Google APIs console</a></li> 
+<li><a href="https://developers.google.com/console/help/?csw=1#activatingapis">Activate</a> the Translate API for your project </li> 
+</ul> 
+</p> 
+ 
+<h3>Setup Project in Visual Studio</h3> 
+<ul>
+	<li>Open the GoogleApisSamples.sln with Visual Studio</li>
+	<li>Click on Build &gt; Rebuild Solution</li>
+    <li>Find your API Key which is generated on the <a href="https://console.developers.google.com/project">Google APIs
+        Console</a> API Access pane.</li>
+    <li>Edit MainPage.xaml.cs and replace the value of the API_KEY constant with your API Key</li>
+    <li>Launch the app in the Windows Phone emulator</li>
+</ul>
+
+</body> 
+</html> 

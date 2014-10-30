@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="Translate.WP.TranslateText.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Translate.WP.TranslateText"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">
+    <Page.Resources>
+        <x:String x:Key="DefaultOriginalText">Octopus pants have eight legs.</x:String>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,15,0,0"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="100"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="TRANSLATE API SAMPLE" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+        </StackPanel>
+
+        <StackPanel x:Name="ContentRoot" Margin="19,30,19,0">
+            <TextBlock Text="English text:"/>
+            <TextBox x:Name="OriginalText" x:Uid="OriginalText" Text="{Binding OriginalText, Mode=TwoWay}"/>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Button x:Name="TranslateBtn" Content="Translate" Click="TranslateBtn_Click" />
+                <ComboBox x:Name="TargetLanguage" Width="120" SelectedValue="{Binding TargetLanguage, Mode=TwoWay}">
+                    <!-- German -->
+                    <x:String>de</x:String>
+                    <!-- Greek -->
+                    <x:String>el</x:String>
+                    <!-- Spanish -->
+                    <x:String>es</x:String>
+                    <!-- Finnish -->
+                    <x:String>fi</x:String>
+                    <!-- French -->
+                    <x:String>fr</x:String>
+                    <!-- Hebrew -->
+                    <x:String>iw</x:String>
+                    <!-- Japanese -->
+                    <x:String>ja</x:String>
+                    <!-- Norwegian -->
+                    <x:String>no</x:String>
+                    <!-- Russian -->
+                    <x:String>ru</x:String>
+                    <!-- Chinese (Simplified) -->
+                    <x:String>zh-CN</x:String>
+                </ComboBox>
+            </StackPanel>
+            <TextBlock Text="Translated text:"/>
+            <TextBox x:Name="TranslatedText" Text="{Binding TranslatedText}" IsReadOnly="True"/>
+
+            <TextBlock Text="Back to English:"/>
+            <TextBox x:Name="ReTranslatedText" Text="{Binding ReTranslatedText}" IsReadOnly="True"/>
+        </StackPanel>
+    </Grid>
+</Page>
