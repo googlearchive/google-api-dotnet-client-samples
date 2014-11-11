@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="Blogger.Sample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Blogger.Sample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <Grid Background="WhiteSmoke">
+            <TextBlock xml:space="preserve" FontSize="70" VerticalAlignment="Bottom">
+                <Run Foreground="Blue">G</Run><Run Foreground="Red">o</Run><Run Foreground="DarkOrange">o</Run><Run Foreground="Blue">g</Run><Run Foreground="Green">l</Run><Run Foreground="Red">e</Run><Run Foreground="Black">  -  BloggerApp</Run>
+            </TextBlock>
+        </Grid>
+
+        <Button Grid.Row="1" Content="Get Blogs" Command="{Binding GetBlogsCommand}" />
+        <ListBox Grid.Row="2" ItemsSource="{Binding Blogs}" SelectedItem="{Binding SelectedBlog, Mode=TwoWay}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox Grid.Row="3" ItemsSource="{Binding SelectedBlog.Posts}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>
