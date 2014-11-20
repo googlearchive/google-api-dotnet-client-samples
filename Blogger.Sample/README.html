@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Google .NET Client API &ndash; Blogger.Sample</title>
+</head>
+
+<body>
+
+<h2>Instructions for the Google .NET Client API &ndash; Blogger.Sample for Windows 8.1 and Windows Phone 8.1</h2>
+ 
+<h3>Browse Source</h3>
+
+<ul>
+    <li>
+        <a href="https://code.google.com/p/google-api-dotnet-client/source/browse?repo=samples#hg%2FBlogger.Sample">Blogger.Sample</a>
+    </li>
+</ul>
+ 
+<h3>1. Checkout Instructions</h3>
+
+<p><b>Prerequisites:</b> Install Visual Studio, and <a href="http://mercurial.selenic.com/">Mercurial</a>.</p>
+
+<pre>
+    <code>cd <i>[someDirectory]</i>
+    hg clone https://code.google.com/p/google-api-dotnet-client.samples/ google-api-dotnet-client-samples
+    </code>
+</pre>
+
+<h3>2. API Access Instructions</h3>
+
+<p><b>Important:</b> after checking out the project, you need to do the following:
+</p>
+
+<ul>
+    <li><a href="https://developers.google.com/console/help/?csw=1#creatingdeletingprojects">Create a project</a>
+        in the Google APIs console</li>
+    <li><a href="https://developers.google.com/console/help/?csw=1#activatingapis">Activate</a>
+        the Blogger API for your project</li>
+    <li>Update the client_id and client_secret in
+        <a href="https://code.google.com/p/google-api-dotnet-client/source/browse/Blogger.Sample/Blogger.Sample.Shared/Assets/client_secrets.json?repo=samples">
+            client_secrets.json</a></li>
+</ul>
+
+<h3>Set Up Project in Visual Studio</h3>
+
+<ol>
+    <li>Open the GoogleApisSamples.sln with Visual Studio</li>
+    <li>Build the solution</li>
+    <li>Launch the Windows Phone or Windows app in the emulator</li>
+</ol>
+
+</body> 
+</html> 
