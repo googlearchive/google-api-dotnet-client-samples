@@ -58,10 +58,11 @@ namespace Blogger.Sample
         /// </summary>
         public async void ContinueWebAuthentication(WebAuthenticationBrokerContinuationEventArgs args)
         {
-            await PasswordVaultDataStore.Default.StoreAsync<WebAuthResult>(
-                WebAuthResult.Name, new WebAuthResult(args.WebAuthenticationResult));
+            await PasswordVaultDataStore.Default.StoreAsync<SerializableWebAuthResult>(
+                SerializableWebAuthResult.Name, new SerializableWebAuthResult(args.WebAuthenticationResult));
             await ((BlogsViewModel)this.DataContext).GetBlogsAsync();
-            await PasswordVaultDataStore.Default.DeleteAsync<WebAuthResult>(WebAuthResult.Name);
+            await PasswordVaultDataStore.Default.DeleteAsync<SerializableWebAuthResult>(
+                SerializableWebAuthResult.Name);
         }
     }
 }
