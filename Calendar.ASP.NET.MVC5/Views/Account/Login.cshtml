@@ -1,0 +1,23 @@
+﻿@*
+    This file is added automatically by the MVC 5 application template.
+    Some unnecessary code has been removed for the purpose of this sample.
+*@
+
+@using Calendar.ASP.NET.MVC5.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
