@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.CreateTasks", "Tasks.CreateTasks\Tasks.CreateTasks.csproj", "{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}"
 EndProject
@@ -59,6 +59,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogger.Sample.Windows", "Blogger.Sample\Blogger.Sample.Windows\Blogger.Sample.Windows.csproj", "{CE06C3BA-5996-44D0-91CA-4C54546A092C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogger.Sample.WindowsPhone", "Blogger.Sample\Blogger.Sample.WindowsPhone\Blogger.Sample.WindowsPhone.csproj", "{E510E358-E951-463A-B8AA-8261B95EDF5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.ASP.NET.MVC5", "Calendar.ASP.NET.MVC5\Calendar.ASP.NET.MVC5.csproj", "{8BCE976E-62FE-415E-91EB-7E6522806FE8}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -341,6 +343,16 @@ Global
 		{E510E358-E951-463A-B8AA-8261B95EDF5B}.Release|x86.ActiveCfg = Release|x86
 		{E510E358-E951-463A-B8AA-8261B95EDF5B}.Release|x86.Build.0 = Release|x86
 		{E510E358-E951-463A-B8AA-8261B95EDF5B}.Release|x86.Deploy.0 = Release|x86
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Release|ARM.ActiveCfg = Release|Any CPU
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Release|x64.ActiveCfg = Release|Any CPU
+		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

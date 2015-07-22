@@ -42,3 +42,4 @@ packages/**
 *.userprefs
 
 key.p12
+App_Data/*.[lm]df
