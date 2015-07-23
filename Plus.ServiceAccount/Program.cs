@@ -61,8 +61,8 @@ namespace Google.Apis.Samples.PlusServiceAccount
             });
 
             Activity activity = service.Activities.Get(ACTIVITY_ID).Execute();
-            Console.WriteLine("  Activity: " + activity.Object.Content);
-            Console.WriteLine("  Video: " + activity.Object.Attachments[0].Url);
+            Console.WriteLine("  Activity: " + activity.Object__.Content);
+            Console.WriteLine("  Video: " + activity.Object__.Attachments[0].Url);
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
