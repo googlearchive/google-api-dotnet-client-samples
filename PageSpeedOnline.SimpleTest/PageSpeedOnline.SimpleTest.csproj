@@ -42,21 +42,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Google.Apis, Version=1.9.2.27817, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+    <Reference Include="Google.Apis, Version=1.9.3.19379, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Google.Apis.1.9.2\lib\net40\Google.Apis.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.1.9.3\lib\net40\Google.Apis.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Core, Version=1.9.2.27816, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+    <Reference Include="Google.Apis.Core, Version=1.9.3.19379, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Google.Apis.Core.1.9.2\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.Core.1.9.3\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis.Pagespeedonline.v1, Version=1.9.2.56, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Google.Apis.Pagespeedonline.v1.1.9.2.560\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Pagespeedonline.v1.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.PlatformServices, Version=1.9.2.27818, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+    <Reference Include="Google.Apis.PlatformServices, Version=1.9.3.19381, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Google.Apis.1.9.2\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+      <HintPath>..\packages\Google.Apis.1.9.3\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
