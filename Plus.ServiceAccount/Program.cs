@@ -43,7 +43,7 @@ namespace Google.Apis.Samples.PlusServiceAccount
             Console.WriteLine("Plus API - Service Account");
             Console.WriteLine("==========================");
 
-            String serviceAccountEmail = "42347375620-8h9lsc99kre04v3v3prdo6rmfeu32fhv@developer.gserviceaccount.com";
+            String serviceAccountEmail = "SERVICE_ACCOUNT_EMAIL_HERE";
 
             var certificate = new X509Certificate2(@"key.p12", "notasecret", X509KeyStorageFlags.Exportable);
 
