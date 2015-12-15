@@ -59,6 +59,8 @@ namespace Blogger.Sample.Repository
             await AuthenticateAsync();
 
             var list = await service.Blogs.ListByUser("self").ExecuteAsync();
+            if (list.Items == null) return Enumerable.Empty<Blog>();
+
             return from blog in list.Items
                    select new Blog
                    {
