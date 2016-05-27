@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.CreateTasks", "Tasks.CreateTasks\Tasks.CreateTasks.csproj", "{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}"
 EndProject
@@ -61,6 +61,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogger.Sample.WindowsPhone", "Blogger.Sample\Blogger.Sample.WindowsPhone\Blogger.Sample.WindowsPhone.csproj", "{E510E358-E951-463A-B8AA-8261B95EDF5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.ASP.NET.MVC5", "Calendar.ASP.NET.MVC5\Calendar.ASP.NET.MVC5.csproj", "{8BCE976E-62FE-415E-91EB-7E6522806FE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumableUpload.CS.Sample", "ResumableUpload.CS.Sample\ResumableUpload.CS.Sample.csproj", "{815F16B2-93F7-421C-B6FF-B7C8B160276E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ResumableUpload.VB.Sample", "ResumableUpload.VB.Sample\ResumableUpload.VB.Sample.vbproj", "{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -353,6 +357,26 @@ Global
 		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Release|ARM.ActiveCfg = Release|Any CPU
 		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Release|x64.ActiveCfg = Release|Any CPU
 		{8BCE976E-62FE-415E-91EB-7E6522806FE8}.Release|x86.ActiveCfg = Release|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Release|ARM.ActiveCfg = Release|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Release|x64.ActiveCfg = Release|Any CPU
+		{815F16B2-93F7-421C-B6FF-B7C8B160276E}.Release|x86.ActiveCfg = Release|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Release|x64.ActiveCfg = Release|Any CPU
+		{7B152A9E-1F40-4DEE-8E8D-8D15B71C669C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
