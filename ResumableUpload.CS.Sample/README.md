@@ -6,6 +6,7 @@
 ## API access Instructions
 
 Visit the [Google APIs console](https://code.google.com/apis/console/)
+
 	- Click on the drop down to the far right of the "Google APIs" logo, and click "Create a project..." 
 	- Enter a project name
 	- Click **Create**
@@ -24,6 +25,7 @@ Visit the [Google APIs console](https://code.google.com/apis/console/)
 	- Copy the **Client ID** and **Client secret** to use when editing the sample source program
 
 ## Setup Project in Visual Studio
+
         - Open the GoogleApisSamples.sln with Visual Studio.
 	- Click Tools / NuGet Package Manager / Manage NuGet Packages for Solution.
         - Click on Updates / nuget.org and install all update packages.
