@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ResumableUpload.CS.Sample")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Demonstrates ResumeableUpload Class")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ResumableUpload.CS.Sample")]

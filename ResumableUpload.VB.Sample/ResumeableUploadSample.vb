@@ -1,6 +1,5 @@
-﻿Option Strict
-Option Explicit
-
+﻿Option Strict On
+Option Explicit On
 Imports System
 Imports System.IO
 Imports System.Reflection
@@ -22,6 +21,7 @@ Module ResumeableUploadSample
     ' Demonstrates:
     '      .UploadAsync(CancellationToken cancellationToken) - Initiate a ResumableUpload.
     '      .ResumeAsync(CancellationToken cancellationToken) - After interruption, resume an upload within the same execution of the application.
+    '      .ResumeAsync(CancellationToken cancellationToken, Uri uploadUri) - Resume an upload in a subsequent execution of the application.
     ' 
     ' See https://developers.google.com/api-client-library/dotnet/guide/media_upload for more details regarding ResumableUpload.
     ' See https://developers.google.com/resources/api-libraries/documentation/youtube/v3/csharp/latest/ for YouTube Data API documentation.
@@ -47,13 +47,13 @@ Module ResumeableUploadSample
     ''' </summary>
     Const CLIENTID As String = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com"
     ''' <summary>
-    ''' <para>ClientId and ClientSecret are found in your client_secret_*****.apps.googleusercontent.com.json file.</para>
+    ''' ClientId and ClientSecret are found in your client_secret_*****.apps.googleusercontent.com.json file.
     ''' </summary>
     Const CLIENTSECRET As String = "xxxxxxxxxxxxxxxxxxxxxxxx"
     ''' <summary>
     ''' Fullpath filename of file to be uploaded
     ''' </summary>
-    Private VIDEOFULLPATHFILENAME As String = "C:\Users\<Your Username>\Videos\Video\Video.mp4"
+    Private VIDEOFULLPATHFILENAME As String = "C:\Users\YourUsername\Videos\Video\Video.mp4"
     ''' <summary>
     ''' Maximum attempts to resume upload after a disruption.
     ''' </summary>
@@ -100,9 +100,6 @@ Module ResumeableUploadSample
         Else
             OKtoContinue = False
         End If
-        '
-        ' Upload a file
-        '
         If OKtoContinue Then
             Try
                 YouTube = New YouTubeService(New BaseClientService.Initializer() With
@@ -138,12 +135,21 @@ Module ResumeableUploadSample
         VideoInsertRequest.ChunkSize = HalfMBChunkSize          ' .5MB
         AddHandler VideoInsertRequest.ResponseReceived, AddressOf VideoInsertRequest_ResponseReceived
         AddHandler VideoInsertRequest.ProgressChanged, AddressOf VideoInsertRequest_ProgressChanged
+        ' The following line is only required if your application will support resuming upon a program restart
+        AddHandler VideoInsertRequest.UploadSessionData, AddressOf VideoInsertRequest_UploadSessionData
         UploadCancellationToken = New System.Threading.CancellationToken
         ResumeRetriesCount = 0
         ProgressPercent = 0
         VideoFileLength = New FileInfo(VIDEOFULLPATHFILENAME).Length
         Try
-            Await VideoInsertRequest.UploadAsync(UploadCancellationToken)
+            ' Check if previous upload program was terminated and, if so, prompt to resume prior upload
+            Dim uploadUri As Uri = GetSessionRestartUri()
+            If uploadUri = Nothing Then
+                Await VideoInsertRequest.UploadAsync(UploadCancellationToken)
+            Else
+                Console.WriteLine("Restarting prior upload session.")
+                Await VideoInsertRequest.ResumeAsync(UploadCancellationToken, uploadUri)
+            End If
         Catch ex As Exception
             ' Error handling is done in VideoInsertRequest_ProgressChanged() Event.
             ' Exception messages displayed here seem to be redundant.
@@ -185,8 +191,8 @@ Module ResumeableUploadSample
             .RecordingDetails = New VideoRecordingDetails With
                                 {.Location = New GeoPoint With
                                     {.Latitude = 41.327464, .Longitude = -72.194555, .Altitude = 10},
-                                         .LocationDescription = "East Lyme, CT, U.S.A.",
-                                         .RecordingDate = DateTime.Now.Date}
+                                    .LocationDescription = "East Lyme, CT, U.S.A.",
+                                    .RecordingDate = DateTime.Now.Date}
         End With
     End Function
     ''' <summary>
@@ -200,6 +206,8 @@ Module ResumeableUploadSample
         ' This sample shows the ClientID and ClientSecret in the source code. 
         ' Other samples in the sample library show how to read the Client Secrets from the client_secret_*****.apps.googleusercontent.com.json file. 
         '
+        ' If a prior credential data store ("Google.Apis.Auth.YouTube") is not available, will prompt for usename & password.
+        ' If a prior credential data store ("Google.Apis.Auth.YouTube") is found, will, if necessary, refresh the credentials.
         Dim uc As UserCredential = Nothing
         Try
             uc = Await GoogleWebAuthorizationBroker.AuthorizeAsync(
@@ -209,11 +217,31 @@ Module ResumeableUploadSample
                                     "user",
                                     CancellationToken.None,
                                     New Google.Apis.Util.Store.FileDataStore(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Google.Apis.Auth.YouTube")))
-
         Catch ex As Exception
             Console.WriteLine(String.Format("Google Authorization: {0}", ex.Message))
         End Try
         Return uc
+    End Function
+    ''' <summary>
+    ''' <para>If an UploadUri was saved in a previous execution of this program and the full path filename saved with the UploadUri matches</para>
+    ''' <para>the full path filename of the file currently being uploaded, prompt the user to approve resuming the upload.</para>
+    ''' <para>Otherwise, return null indicating that the upload should be started from the beginning.</para>
+    ''' </summary>
+    ''' <remarks>
+    '''  This method is only required if your application will support resuming upon a program restart
+    ''' </remarks>
+    ''' <returns>UploadUri if found and if user approves resuming. Otherwise, null is returned.</returns>
+    Private Function GetSessionRestartUri() As Uri
+        If My.Settings.ResumeUri.Length > 0 AndAlso My.Settings.ResumeFilename = VIDEOFULLPATHFILENAME Then
+            ' An UploadUri from a previous execution is present, ask if a resume should be attempted
+            If MsgBox(String.Format("Resume previous upload?{0}{0}{1}", vbNewLine, VIDEOFULLPATHFILENAME), MsgBoxStyle.Question Or MsgBoxStyle.YesNo, "Resume Upload") = MsgBoxResult.Yes Then
+                Return New Uri(My.Settings.ResumeUri)
+            Else
+                Return Nothing
+            End If
+        Else
+            Return Nothing
+        End If
     End Function
     ''' <summary>
     ''' Determines if a .ResumeAsync() should be attempted.
@@ -223,6 +251,25 @@ Module ResumeableUploadSample
     Private Function IsResumeable() As Boolean
         Return CBool(ResumeRetriesCount < MAX_RESUME_RETRIES AndAlso (Not UploadCancellationToken.IsCancellationRequested))
     End Function
+    ''' <summary>
+    ''' <para>The event handler called by the .NET Client Library upon initialization of the resumable session URI.</para>
+    ''' <para>This event handler is not needed if your application will not support resuming after a program restart.</para>
+    ''' <para>*</para>
+    ''' <para>Called once for each file after the upload has been initialized and the resumeable session URI (UploadUri) is available.</para>
+    ''' <para>The example is for a Windows Desktop application. Change the contents of this method to suit your tastes and platform.</para>
+    ''' <para>*</para>
+    ''' <para>It is strongly recommended that the full path filename be saved along with the UploadUri string value so that</para>
+    ''' <para>upon program restart, the full path filename can be compared with the full path filename currently opened.</para>
+    ''' <para>See GetSessionRestartUri() in this sample proggram.</para>
+    ''' </summary>
+    ''' <param name="UploadSessionData">ResumeableUploadSessionData Class object containing the resumable session URI (UploadUri)</param>
+    Private Sub VideoInsertRequest_UploadSessionData(ByVal uploadSessionData As IUploadSessionData)
+        ' Save UploadUri.AbsoluteUri and FullPath Filename values for use if program faults and we want to restart the program
+        My.Settings.ResumeUri = uploadSessionData.UploadUri.AbsoluteUri
+        My.Settings.ResumeFilename = VIDEOFULLPATHFILENAME
+        ' Saved to a user.config file within a subdirectory of C:\Users\<yourusername>\AppData\Local
+        My.Settings.Save()
+    End Sub
     ''' <summary>
     ''' The event handler called by the .NET Client Library to indicate the current status of the upload.
     ''' </summary>
@@ -252,8 +299,7 @@ Module ResumeableUploadSample
                 Dim p As Integer = CInt(sngPercent)
                 If p > ProgressPercent Then
                     ' Only report whole percent progress
-                    Dim msg As String = String.Format("Status: Uploading {0:N0}% ({1:N})", p, uploadStatusInfo.BytesSent)
-                    Console.WriteLine(msg)
+                    Console.WriteLine(String.Format("Status: Uploading {0:N0}% ({1:N})", p, uploadStatusInfo.BytesSent))
                     ProgressPercent = p
                 End If
 
@@ -267,6 +313,11 @@ Module ResumeableUploadSample
     ''' <param name="videoResource">Video object passed by upload process</param>
     Private Sub VideoInsertRequest_ResponseReceived(ByVal videoResource As Video)
         Console.WriteLine(String.Format("Video ID={0} uploaded.", videoResource.Id))
+        ' Set to empty strings to indciate that upload completed.
+        My.Settings.ResumeUri = ""
+        My.Settings.ResumeFilename = ""
+        ' Saved to a user.config file within a subdirectory of C:\Users\<yourusername>\AppData\Local
+        My.Settings.Save()
     End Sub
 
 End Module

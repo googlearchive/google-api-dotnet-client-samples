@@ -1,7 +1,7 @@
-# Google .NET Client API - ResumableUpload.CS.Sample
+# Google .NET Client API - ResumableUpload.VB.Sample
 
 ## Browse Online
-[Browse Source](https://github.com/google/google-api-dotnet-client-samples) or main file [ResumeableUploadSample.vb](https://github.com/google/google-api-dotnet-client-samples/ResumableUpload.VB.Sample/ResumeableUploadSample.vb)
+[Browse Source](https://github.com/google/google-api-dotnet-client-samples) or main file [ResumeableUploadSample.vb](https://github.com/google/google-api-dotnet-client-samples/blob/master/ResumableUpload.VB.Sample/ResumeableUploadSample.vb)
  
 ## API access Instructions
 
