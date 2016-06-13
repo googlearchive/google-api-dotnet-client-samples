@@ -19,7 +19,7 @@ Visit the [Google APIs console](https://code.google.com/apis/console/)
 - Click **Create client ID**
 - Enter "Product name shown to users"
 - Click **Continue**
-- Click **I\'ll do this later**
+- Click **I'll do this later**
 - Click the name of your newly created OAuth 2.0 client ID
 - Copy the **Client ID** and **Client secret** to use when editing the sample source program
 
