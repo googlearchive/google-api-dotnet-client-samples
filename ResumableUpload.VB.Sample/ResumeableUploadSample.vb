@@ -21,7 +21,7 @@ Module ResumeableUploadSample
     ' Demonstrates:
     '      .UploadAsync(CancellationToken cancellationToken) - Initiate a ResumableUpload.
     '      .ResumeAsync(CancellationToken cancellationToken) - After interruption, resume an upload within the same execution of the application.
-    '      .ResumeAsync(CancellationToken cancellationToken, Uri uploadUri) - Resume an upload in a subsequent execution of the application.
+    '      .ResumeAsync(Uri uploadUri, CancellationToken cancellationToken) - Resume an upload in a subsequent execution of the application.
     ' 
     ' See https://developers.google.com/api-client-library/dotnet/guide/media_upload for more details regarding ResumableUpload.
     ' See https://developers.google.com/resources/api-libraries/documentation/youtube/v3/csharp/latest/ for YouTube Data API documentation.
@@ -148,7 +148,7 @@ Module ResumeableUploadSample
                 Await VideoInsertRequest.UploadAsync(UploadCancellationToken)
             Else
                 Console.WriteLine("Restarting prior upload session.")
-                Await VideoInsertRequest.ResumeAsync(UploadCancellationToken, uploadUri)
+                Await VideoInsertRequest.ResumeAsync(uploadUri, UploadCancellationToken)
             End If
         Catch ex As Exception
             ' Error handling is done in VideoInsertRequest_ProgressChanged() Event.
