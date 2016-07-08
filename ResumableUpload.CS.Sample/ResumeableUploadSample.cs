@@ -45,7 +45,7 @@ namespace ResumableUpload.CS.Sample
         /// <para>This sample shows the ClientID and ClientSecret in the source code.</para>
         /// <para>Other samples in the sample library show how to read the Client Secrets from the client_secret_*****.apps.googleusercontent.com.json file.</para>
         /// </summary>
-        const string CLIENTID = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com";
+        const string CLIENTID ="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com";
         /// <summary>
         /// ClientId and ClientSecret are found in your client_secret_*****.apps.googleusercontent.com.json file.
         /// </summary>
@@ -53,7 +53,7 @@ namespace ResumableUpload.CS.Sample
         /// <summary>
         /// Fullpath filename of file to be uploaded
         /// </summary>
-        static string VIDEOFULLPATHFILENAME = @"C:\Users\YourUsername\Videos\Video\Video.mp4";
+        static string VIDEOFULLPATHFILENAME =  @"C:\Users\YourUsername\Videos\Video\Video.mp4";
         /// <summary>
         /// Maximum attempts to resume upload after a disruption.
         /// </summary>
@@ -215,7 +215,7 @@ namespace ResumableUpload.CS.Sample
                 Title = "Test Title",
                 Description = "Test Description",
                 Tags = new string[] { "keyword1", "keyword2", "keyword3" },
-                CategoryId = "25" // News & Politics
+                CategoryId ="25" // News & Politics
             };
             VideoResource.Snippet = vs;
             VideoResource.Status = new VideoStatus { Embeddable = true, PrivacyStatus = "private" }; // PrivacyStatus must be all lowercase.
@@ -353,7 +353,15 @@ namespace ResumableUpload.CS.Sample
                     }
                     break;
                 case UploadStatus.Failed:
-                    Console.WriteLine(string.Format("Upload Failed: {0}", uploadStatusInfo.Exception.Message));
+                    Google.GoogleApiException APIException = uploadStatusInfo.Exception as Google.GoogleApiException;
+                    if ((APIException == null) || (APIException.Error==null))
+                    {
+                        Console.WriteLine(string.Format("Upload Failed: {0}", uploadStatusInfo.Exception.Message));
+                    }
+                    else
+                    {
+                        Console.WriteLine(string.Format("Upload Failed: {0}", APIException.Error.ToString()));
+                    }
                     break;
             }
         }

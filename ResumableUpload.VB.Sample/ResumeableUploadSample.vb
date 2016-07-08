@@ -304,7 +304,12 @@ Module ResumeableUploadSample
                 End If
 
             Case UploadStatus.Failed
-                Console.WriteLine(String.Format("Upload Failed: {0}", uploadStatusInfo.Exception.Message))
+                Dim APIException As Google.GoogleApiException = TryCast(uploadStatusInfo.Exception, Google.GoogleApiException)
+                If (APIException Is Nothing) OrElse (APIException.Error Is Nothing) Then
+                    Console.WriteLine(String.Format("Upload Failed: {0}", uploadStatusInfo.Exception.Message))
+                Else
+                    Console.WriteLine(String.Format("Upload Failed: {0}", APIException.Error.ToString()))
+                End If
         End Select
     End Sub
     ''' <summary>
