@@ -362,6 +362,11 @@ namespace ResumableUpload.CS.Sample
                     {
                         Console.WriteLine(string.Format("Upload Failed: {0}", APIException.Error.ToString()));
                     }
+                    // Do not retry if the request is in error
+                    if (uploadStatusInfo.Exception.Message.Contains("Google.Apis.Requests.RequestError"))
+                    {
+                        ResumeRetriesCount = Int32.MaxValue;
+                    }
                     break;
             }
         }

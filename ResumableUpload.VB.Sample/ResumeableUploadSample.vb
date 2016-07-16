@@ -310,6 +310,10 @@ Module ResumeableUploadSample
                 Else
                     Console.WriteLine(String.Format("Upload Failed: {0}", APIException.Error.ToString()))
                 End If
+                ' Do not retry if the request is in error
+                If uploadStatusInfo.Exception.Message.Contains("Google.Apis.Requests.RequestError") Then
+                    ResumeRetriesCount = Int32.MaxValue
+                End If
         End Select
     End Sub
     ''' <summary>
