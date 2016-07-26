@@ -309,10 +309,12 @@ Module ResumeableUploadSample
                     Console.WriteLine(String.Format("Upload Failed: {0}", uploadStatusInfo.Exception.Message))
                 Else
                     Console.WriteLine(String.Format("Upload Failed: {0}", APIException.Error.ToString()))
-                End If
-                ' Do not retry if the request is in error
-                If uploadStatusInfo.Exception.Message.Contains("Google.Apis.Requests.RequestError") Then
-                    ResumeRetriesCount = Int32.MaxValue
+                    ' Do not retry if the request is in error
+                    Dim StatusCode As Int32 = CInt(APIException.HttpStatusCode)
+                    ' See https://developers.google.com/youtube/v3/guides/using_resumable_upload_protocol
+                    If ((StatusCode / 100) = 4 OrElse ((StatusCode / 100) = 5 AndAlso Not (StatusCode = 500 Or StatusCode = 502 Or StatusCode = 503 Or StatusCode = 504))) Then
+                        ResumeRetriesCount = Int32.MaxValue
+                    End If
                 End If
         End Select
     End Sub
