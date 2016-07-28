@@ -364,7 +364,7 @@ namespace ResumableUpload.CS.Sample
                         // Do not retry if the request is in error
                         int StatusCode = (int)APIException.HttpStatusCode;
                         // See https://developers.google.com/youtube/v3/guides/using_resumable_upload_protocol
-                        if ((StatusCode / 100) == 4 || ((StatusCode / 100) == 5 && !(StatusCode == 500 || StatusCode == 502 || StatusCode == 503 || StatusCode == 504)))
+                        if ((StatusCode / 100) == 4 || ((StatusCode / 100) == 5 && !(StatusCode == 500 | StatusCode == 502 | StatusCode == 503 | StatusCode == 504)))
                         {
                             ResumeRetriesCount = Int32.MaxValue;
                         }
