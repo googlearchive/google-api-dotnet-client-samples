@@ -22,6 +22,7 @@ namespace ResumableUpload.CS.Sample
         // Demonstrates:
         //      UploadAsync(CancellationToken cancellationToken) - Initiate a ResumableUpload.
         //      ResumeAsync(CancellationToken cancellationToken) - After interruption, resume an upload within the same execution of the application.
+        //      ResumeAsync(Uri uploadUri, CancellationToken cancellationToken) - Resume an upload in a subsequent execution of the application.
         // 
         // See https://developers.google.com/api-client-library/dotnet/guide/media_upload for more details regarding ResumableUpload.
         // See https://developers.google.com/resources/api-libraries/documentation/youtube/v3/csharp/latest/ for YouTube Data API documentation.
@@ -46,13 +47,13 @@ namespace ResumableUpload.CS.Sample
         /// </summary>
         const string CLIENTID = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com";
         /// <summary>
-        /// <para>ClientId and ClientSecret are found in your client_secret_*****.apps.googleusercontent.com.json file.</para>
+        /// ClientId and ClientSecret are found in your client_secret_*****.apps.googleusercontent.com.json file.
         /// </summary>
         const string CLIENTSECRET = "xxxxxxxxxxxxxxxxxxxxxxxx";
         /// <summary>
         /// Fullpath filename of file to be uploaded
         /// </summary>
-        static string VIDEOFULLPATHFILENAME = @"C:\Users\<Your Username>\Videos\Video\Video.mp4";
+        static string VIDEOFULLPATHFILENAME = @"C:\Users\YourUsername\Videos\Video\Video.mp4";
         /// <summary>
         /// Maximum attempts to resume upload after a disruption.
         /// </summary>
@@ -111,9 +112,6 @@ namespace ResumableUpload.CS.Sample
             }
             if (OKtoContinue)
             {
-                //
-                // Upload a file
-                //
                 try
                 {
                     YouTube = new YouTubeService(new BaseClientService.Initializer
@@ -154,13 +152,25 @@ namespace ResumableUpload.CS.Sample
             VideoInsertRequest.ChunkSize = HalfMBChunkSize;   // .5MB
             VideoInsertRequest.ResponseReceived += VideoInsertRequest_ResponseReceived;
             VideoInsertRequest.ProgressChanged += VideoInsertRequest_ProgressChanged;
+            // The following line is only required if your application will support resuming upon a program restart
+            VideoInsertRequest.UploadSessionData += VideoInsertRequest_UploadSessionData;
             UploadCancellationToken = new System.Threading.CancellationToken();
             ResumeRetriesCount = 0;
             ProgressPercent = 0;
             VideoFileLength = new FileInfo(VIDEOFULLPATHFILENAME).Length;
             try
             {
-                await VideoInsertRequest.UploadAsync(UploadCancellationToken);
+                // Check if previous upload program was terminated and, if so, prompt to resume prior upload
+                Uri uploadUri = GetSessionRestartUri();
+                if (uploadUri == null)
+                {
+                    await VideoInsertRequest.UploadAsync(UploadCancellationToken);
+                }
+                else
+                {
+                    Console.WriteLine("Restarting prior upload session.");
+                    await VideoInsertRequest.ResumeAsync(uploadUri, UploadCancellationToken);
+                }
             }
             catch (Exception ex)
             {
@@ -229,8 +239,11 @@ namespace ResumableUpload.CS.Sample
             // This sample shows the ClientID and ClientSecret in the source code. 
             // Other samples in the sample library show how to read the Client Secrets from the client_secret_*****.apps.googleusercontent.com.json file. 
             //
+            // If a prior credential data store ("Google.Apis.Auth.YouTube") is not available, will prompt for usename & password.
+            // If a prior credential data store ("Google.Apis.Auth.YouTube") is found, will, if necessary, refresh the credentials.
             UserCredential uc = null;
-            try {
+            try
+            {
                 uc = await GoogleWebAuthorizationBroker.AuthorizeAsync(
                          new ClientSecrets
                          {
@@ -241,7 +254,6 @@ namespace ResumableUpload.CS.Sample
                             "user",
                             CancellationToken.None,
                             new Google.Apis.Util.Store.FileDataStore(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Google.Apis.Auth.YouTube")));
-
             }
             catch (Exception ex)
             {
@@ -249,12 +261,60 @@ namespace ResumableUpload.CS.Sample
             }
             return uc;
         }
+        /// <summary>
+        /// If an UploadUri was saved in a previous execution of this program and the full path filename saved with the UploadUri matches
+        /// the full path filename of the file currently being uploaded, prompt the user to approve resuming the upload. 
+        /// Otherwise, return null indicating that the upload should be started from the beginning.
+        /// </summary>
+        /// <remarks>
+        ///  This method is only required if your application will support resuming upon a program restart
+        /// </remarks>
+        /// <returns>UploadUri if found and if user approves resuming. Otherwise, null is returned.</returns>
+        private static Uri GetSessionRestartUri()
+        {
+            if (Properties.Settings.Default.ResumeUri.Length > 0 && Properties.Settings.Default.ResumeFilename == VIDEOFULLPATHFILENAME)
+            {
+                // An UploadUri from a previous execution is present, ask if a resume should be attempted
+                if (MessageBox.Show(string.Format("Resume previous upload?\n\n{0}", VIDEOFULLPATHFILENAME), "Resume Upload", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    return new Uri(Properties.Settings.Default.ResumeUri);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
         /// <summary>Determines if a .ResumeAsync should be attempted.</summary>
         /// <returns>True means .ResumeAsync() should be attempted.</returns>
         /// <remarks>When Globals.ResumeRetries==int32.MaxValue, the upload has completed successfully and IsResumeable() will return false.</remarks>
         private static bool IsResumeable()
         {
             return ((ResumeRetriesCount < MAX_RESUME_RETRIES) && (!UploadCancellationToken.IsCancellationRequested));
+        }
+        /// <summary>
+        /// <para>The event handler called by the .NET Client Library upon initialization of the resumable session URI.</para>
+        /// <para>This event handler is not needed if your application will not support resuming after a program restart.</para>
+        /// <para>*</para>
+        /// <para>Called once for each file after the upload has been initialized and the resumeable session URI (UploadUri) is available.</para>
+        /// <para>The example is for a Windows Desktop application. Change the contents of this method to suit your tastes and platform.</para>
+        /// <para>*</para>
+        /// <para>It is strongly recommended that the full path filename be saved along with the UploadUri string value so that</para>
+        /// <para>upon program restart, the full path filename can be compared with the full path filename currently opened.</para>
+        /// <para>See GetSessionRestartUri() in this sample proggram.</para>
+        /// </summary>
+        /// <param name="uploadSessionData">ResumeableUploadSessionData Class object containing the resumable session URI (UploadUri)</param>
+        static void VideoInsertRequest_UploadSessionData(IUploadSessionData uploadSessionData)
+        {
+            // Save UploadUri.AbsoluteUri and FullPath Filename values for use if program faults and we want to restart the program
+            Properties.Settings.Default.ResumeUri = uploadSessionData.UploadUri.AbsoluteUri;
+            Properties.Settings.Default.ResumeFilename = VIDEOFULLPATHFILENAME;
+            // Saved to a user.config file within a subdirectory of C:\Users\<yourusername>\AppData\Local
+            Properties.Settings.Default.Save();
         }
         /// <summary>
         /// The event handler called by the .NET Client Library to indicate the current status of the upload.
@@ -288,13 +348,27 @@ namespace ResumableUpload.CS.Sample
                     if (p > ProgressPercent)
                     {
                         // Only report whole percent progress
-                        string msg = String.Format("Status: Uploading {0:N0}% ({1:N})", p, uploadStatusInfo.BytesSent);
-                        Console.WriteLine(msg);
+                        Console.WriteLine(String.Format("Status: Uploading {0:N0}% ({1:N})", p, uploadStatusInfo.BytesSent));
                         ProgressPercent = p;
                     }
                     break;
                 case UploadStatus.Failed:
-                    Console.WriteLine(string.Format("Upload Failed: {0}", uploadStatusInfo.Exception.Message));
+                    Google.GoogleApiException APIException = uploadStatusInfo.Exception as Google.GoogleApiException;
+                    if ((APIException == null) || (APIException.Error==null))
+                    {
+                        Console.WriteLine(string.Format("Upload Failed: {0}", uploadStatusInfo.Exception.Message));
+                    }
+                    else
+                    {
+                        Console.WriteLine(string.Format("Upload Failed: {0}", APIException.Error.ToString()));
+                        // Do not retry if the request is in error
+                        int StatusCode = (int)APIException.HttpStatusCode;
+                        // See https://developers.google.com/youtube/v3/guides/using_resumable_upload_protocol
+                        if ((StatusCode / 100) == 4 || ((StatusCode / 100) == 5 && !(StatusCode == 500 | StatusCode == 502 | StatusCode == 503 | StatusCode == 504)))
+                        {
+                            ResumeRetriesCount = Int32.MaxValue;
+                        }
+                    }
                     break;
             }
         }
@@ -305,6 +379,11 @@ namespace ResumableUpload.CS.Sample
         static void VideoInsertRequest_ResponseReceived(Video videoResource)
         {
             Console.WriteLine(string.Format("Video ID={0} uploaded.", videoResource.Id));
+            // Set to empty strings to indciate that upload completed.
+            Properties.Settings.Default.ResumeUri = "";
+            Properties.Settings.Default.ResumeFilename = "";
+            // Saved to a user.config file within a subdirectory of C:\Users\<yourusername>\AppData\Local
+            Properties.Settings.Default.Save();
         }
     }
 }

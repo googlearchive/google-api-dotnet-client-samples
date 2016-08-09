@@ -22,5 +22,29 @@ namespace ResumableUpload.CS.Sample.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ResumeUri {
+            get {
+                return ((string)(this["ResumeUri"]));
+            }
+            set {
+                this["ResumeUri"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ResumeFilename {
+            get {
+                return ((string)(this["ResumeFilename"]));
+            }
+            set {
+                this["ResumeFilename"] = value;
+            }
+        }
     }
 }

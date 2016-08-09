@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("ResumableUpload.VB.Sample")> 
-<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyDescription("Demonstrates ResumeableUpload Class")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("ResumableUpload.VB.Sample")> 
 <Assembly: AssemblyCopyright("Copyright ©  2016")> 
