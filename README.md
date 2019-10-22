@@ -1,4 +1,8 @@
 ## This repository is no longer under active development
 
-As of June 2019, we are working on removing references to it, and
-will archive it.
+The https://github.com/LindaLawton/Google-Dotnet-Samples repository
+contains samples by Linda Lawton. Google has not created these
+sample projects, or the tutorials that go along with them; they are
+entirely unofficial in that sense, and Google takes no
+responsibility for their accuracy. That said, you may well still
+find them useful.
